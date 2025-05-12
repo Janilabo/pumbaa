@@ -225,3 +225,19 @@ function Double_Opposite(const x: Double): Double; cdecl; inline;
 begin
   Result := (x * -1);
 end;
+
+{==============================================================================]
+ <Double_Sign>
+ @action: Indicates whether x value is positive, negative or zero.
+          x < 0 = -1            x = 0 = 0             x > 0 = 1
+ @note: None
+[==============================================================================}
+function Double_Sign(const x: Double): Int32; cdecl; inline;
+begin
+  if (x = 0) then
+    Exit(0);
+  if (x > 0) then
+    Result := 1
+  else
+    Result := -1;
+end;

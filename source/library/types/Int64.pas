@@ -106,3 +106,19 @@ function Int64_Opposite(const x: Int64): Int64; cdecl; inline;
 begin
   Result := (x * -1);
 end;
+
+{==============================================================================]
+ <Int64_Sign>
+ @action: Indicates whether x value is positive, negative or zero.
+          x < 0 = -1            x = 0 = 0             x > 0 = 1
+ @note: None
+[==============================================================================}
+function Int64_Sign(const x: Int64): Int32; cdecl; inline;
+begin
+  if (x = 0) then
+    Exit(0);
+  if (x > 0) then
+    Result := 1
+  else
+    Result := -1;
+end;

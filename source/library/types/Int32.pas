@@ -161,3 +161,19 @@ function Int32_Opposite(const x: Int32): Int32; cdecl; inline;
 begin
   Result := (x * -1);
 end;
+
+{==============================================================================]
+ <Int32_Sign>
+ @action: Indicates whether x value is positive, negative or zero.
+          x < 0 = -1            x = 0 = 0             x > 0 = 1
+ @note: None
+[==============================================================================}
+function Int32_Sign(const x: Int32): Int32; cdecl; inline;
+begin
+  if (x = 0) then
+    Exit(0);
+  if (x > 0) then
+    Result := 1
+  else
+    Result := -1;
+end;

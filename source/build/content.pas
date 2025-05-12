@@ -24,6 +24,7 @@ begin
   AddFunction(@Double_Distance, 'function Double_Distance(const x, T: Double): Double;');
   AddFunction(@Double_Difference, 'function Double_Difference(const x, T: Double): Double;');
   AddFunction(@Double_Opposite, 'function Double_Opposite(const x: Double): Double;');
+  AddFunction(@Double_Sign, 'function Double_Sign(const x: Double): Int32;');
 
   AddFunction(@Int32_Inc, 'function Int32_Inc(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_Dec, 'function Int32_Dec(var x: Int32; const N: Int32 = 1): Int32;');
@@ -39,6 +40,7 @@ begin
   AddFunction(@Int32_Distance, 'function Int32_Distance(const x, T: Int32): Int32;');
   AddFunction(@Int32_Difference, 'function Int32_Difference(const x, T: Int32): Int32;');
   AddFunction(@Int32_Opposite, 'function Int32_Opposite(const x: Int32): Int32;');
+  AddFunction(@Int32_Sign, 'function Int32_Sign(const x: Int32): Int32;');
 
   AddFunction(@Int64_Inc, 'function Int64_Inc(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Dec, 'function Int64_Dec(var x: Int64; const N: Int64 = 1): Int64;');
@@ -49,4 +51,13 @@ begin
   AddFunction(@Int64_Distance, 'function Int64_Distance(const x, T: Int64): Int64;');
   AddFunction(@Int64_Difference, 'function Int64_Difference(const x, T: Int64): Int64;');
   AddFunction(@Int64_Opposite, 'function Int64_Opposite(const x: Int64): Int64;');
+  AddFunction(@Int64_Sign, 'function Int64_Sign(const x: Int64): Int32;');
+
+  AddFunction(@String_Pos, 'function String_Pos(const str, s: string; const offset: Int32 = 0): Int32;');
+  AddFunction(@String_Between, 'function String_Between(const str, s1, s2: string; const offset: Int32 = 0): string;');
+  AddFunction(@String_Count, 'function String_Count(const str, s: string; const overlap: Boolean = True): Int32;'); 
+  AddFunction(@String_FromLeft, 'function String_FromLeft(const str: string; const x: Int32): string;');
+  AddFunction(@String_FromRight, 'function String_FromRight(const str: string; const x: Int32): string;');
+  AddFunction(@String_Explode, 'function String_Explode(const str, d: string; const limit: Int32 = -1): TStringArray; overload;');
+  AddFunction(@String_Exploded, 'function String_Exploded(const str: string; const d: TStringArray; const limit: Int32 = -1): TStringArray; overload;');
 end;
