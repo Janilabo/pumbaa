@@ -20,6 +20,10 @@ begin
   AddFunction(@Double_MinDecimal, 'function Double_MinDecimal(const x: Double): Double;');
   AddFunction(@Double_MaxDecimal, 'function Double_MaxDecimal(const x: Double): Double;');
   AddFunction(@Double_Copy, 'function Double_Copy(const x: Double; const a: Int32): Double;');
+  AddFunction(@Double_Compare, 'function Double_Compare(const x, T: Double): Int32;');
+  AddFunction(@Double_Distance, 'function Double_Distance(const x, T: Double): Double;');
+  AddFunction(@Double_Difference, 'function Double_Difference(const x, T: Double): Double;');
+  AddFunction(@Double_Opposite, 'function Double_Opposite(const x: Double): Double;');
 
   AddFunction(@Int32_Inc, 'function Int32_Inc(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_Dec, 'function Int32_Dec(var x: Int32; const N: Int32 = 1): Int32;');
@@ -31,10 +35,18 @@ begin
   AddFunction(@Int32_Negative, 'function Int32_Negative(const x: Int32): Boolean;');
   AddFunction(@Int32_Positive, 'function Int32_Positive(const x: Int32): Boolean;');
   AddFunction(@Int32_Neutral, 'function Int32_Neutral(const x: Int32): Boolean;');
+  AddFunction(@Int32_Compare, 'function Int32_Compare(const x, T: Int32): Int32;');
+  AddFunction(@Int32_Distance, 'function Int32_Distance(const x, T: Int32): Int32;');
+  AddFunction(@Int32_Difference, 'function Int32_Difference(const x, T: Int32): Int32;');
+  AddFunction(@Int32_Opposite, 'function Int32_Opposite(const x: Int32): Int32;');
 
   AddFunction(@Int64_Inc, 'function Int64_Inc(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Dec, 'function Int64_Dec(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Increase, 'function Int64_Increase(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Decrease, 'function Int64_Decrease(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Digits, 'function Int64_Digits(const x: Int64): TIntegerArray;');
+  AddFunction(@Int64_Compare, 'function Int64_Compare(const x, T: Int64): Int32;');
+  AddFunction(@Int64_Distance, 'function Int64_Distance(const x, T: Int64): Int64;');
+  AddFunction(@Int64_Difference, 'function Int64_Difference(const x, T: Int64): Int64;');
+  AddFunction(@Int64_Opposite, 'function Int64_Opposite(const x: Int64): Int64;');
 end;

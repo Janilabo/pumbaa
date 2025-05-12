@@ -59,3 +59,50 @@ begin
   for i := 0 to (l - 1) do
     Result[i] := StrToInt(s[(i + 1)]);
 end;
+
+{==============================================================================]
+ <Int64_Compare>
+ @action: Compares x with target T.
+          Results: 0=EQUAL, 1=x>T, -1=x<T
+ @note: None
+[==============================================================================}
+function Int64_Compare(const x, T: Int64): Int32; cdecl; inline;
+begin
+  if (x = T) then
+    Exit(0);
+  if (x > T) then
+    Result := 1
+  else
+    Result := -1;
+end;
+
+{==============================================================================]
+ <Int64_Distance>
+ @action: Returns the distance between x and T.
+ @note: None
+[==============================================================================}
+function Int64_Distance(const x, T: Int64): Int64; cdecl; inline;
+begin
+  Result := Abs(T - x);
+end;
+
+{==============================================================================]
+ <Int64_Difference>
+ @action: Returns the difference from x to T.
+ @note: None
+[==============================================================================}
+function Int64_Difference(const x, T: Int64): Int64; cdecl; inline;
+begin
+  Result := (T - x);
+end;
+
+{==============================================================================]
+ <Int64_Opposite>
+ @action: Returns the opposite number of x. 
+          -9999 to 9999 OR 9999 to -9999 (- <=> +) 
+ @note: None
+[==============================================================================}
+function Int64_Opposite(const x: Int64): Int64; cdecl; inline;
+begin
+  Result := (x * -1);
+end;

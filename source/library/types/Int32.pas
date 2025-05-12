@@ -114,3 +114,50 @@ function Int32_Neutral(const x: Int32): Boolean; cdecl; inline;
 begin
   Result := (x = 0);
 end;
+
+{==============================================================================]
+ <Int32_Compare>
+ @action: Compares x with target T.
+          Results: 0=EQUAL, 1=x>T, -1=x<T
+ @note: None
+[==============================================================================}
+function Int32_Compare(const x, T: Int32): Int32; cdecl; inline;
+begin
+  if (x = T) then
+    Exit(0);
+  if (x > T) then
+    Result := 1
+  else
+    Result := -1;
+end;
+
+{==============================================================================]
+ <Int32_Distance>
+ @action: Returns the distance between x and T.
+ @note: None
+[==============================================================================}
+function Int32_Distance(const x, T: Int32): Int32; cdecl; inline;
+begin
+  Result := Abs(T - x);
+end;
+
+{==============================================================================]
+ <Int32_Difference>
+ @action: Returns the difference from x to T.
+ @note: None
+[==============================================================================}
+function Int32_Difference(const x, T: Int32): Int32; cdecl; inline;
+begin
+  Result := (T - x);
+end;
+
+{==============================================================================]
+ <Int32_Opposite>
+ @action: Returns the opposite number of x. 
+          -9999 to 9999 OR 9999 to -9999 (- <=> +) 
+ @note: None
+[==============================================================================}
+function Int32_Opposite(const x: Int32): Int32; cdecl; inline;
+begin
+  Result := (x * -1);
+end;

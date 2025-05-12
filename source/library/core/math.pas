@@ -12,7 +12,7 @@ begin
 end;
 
 {==============================================================================]
-<Math_Percentage>
+ <Math_Percentage>
  @action: Returns value from source by percent.
  @note: Percent-to-Value conversion!
 [==============================================================================}
