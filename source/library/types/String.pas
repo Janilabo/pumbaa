@@ -587,7 +587,7 @@ end;
   @action: Returns str centered with fill characters where size is the length of the Result.
   @note: Supports custom filling character by fill!
 [==============================================================================}
-function String_Center(const str: string; const size: Int32; const fill: Char = ' '): string; cdecl;
+function String_Center(const str: string; const size: Int32; const fill: Char = #32): string; cdecl;
 var
   l, p: Int32;
 begin
@@ -691,4 +691,71 @@ begin
   for i := l downto 1 do
     if (Pos(str[i], regex) > 0) then
       Insert('\', Result, i);
+end;
+
+{==============================================================================]
+  <String_TrimLeft>
+  @action: Returns str with left-side trimmed/cleaned of t.
+  @note: None
+[==============================================================================}
+function String_TrimLeft(const str: string; const t: Char = #32): string; cdecl;
+var
+  i, l: Integer;
+begin
+  l := Length(str);
+  for i := 1 to l do
+    if (str[i] <> t) then
+      Exit(Copy(str, i, ((l + 1) - i)));
+  Result := '';
+end;
+
+{==============================================================================]
+  <String_TrimRight>
+  @action: Returns str with right-side trimmed/cleaned of t.
+  @note: None
+[==============================================================================}
+function String_TrimRight(const str: string; const t: Char = #32): string; cdecl;
+var
+  i, l: Integer;
+begin
+  l := Length(str);
+  for i := l downto 1 do
+    if (str[i] <> t) then
+      Exit(Copy(str, 1, i));
+  Result := '';
+end;
+
+{==============================================================================]
+  <String_Trim>
+  @action: Returns str with left-side and right-side trimmed/cleaned of t.
+  @note: None
+[==============================================================================}
+function String_Trim(const str: string; const t: Char = #32): string; cdecl;
+var
+  i, l, x, y: Integer;
+begin
+  Result := '';
+  l := Length(str);
+  if (l > 0) then;
+  begin
+    y := 0;
+    for i := l downto 1 do
+      if (str[i] = t) then
+        Inc(y)
+      else
+        Break;
+    if (y = l) then
+      Exit;
+    x := 0;
+    for i := 1 to l do
+      if (str[i] = t) then
+        Inc(x)
+      else
+        Break;
+    if (l <= (x + y)) then
+      Exit;
+    SetLength(Result, (l - (x + y)));
+    for i := x to ((l - y) - 1) do
+      Result[((i - x) + 1)] := str[(i + 1)];
+  end;
 end;
