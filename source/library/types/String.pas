@@ -1,29 +1,27 @@
 {==============================================================================]
   <String_Pos>
   @action: Returns s position from str. Starts scanning from offset.
-           If s doesn't exist in str, result will be set as 0.
+           If s doesn't exist in str, Result will be set as 0.
   @note: Supports offset.
 [==============================================================================}
 function String_Pos(const str, s: string; const offset: Int32 = 0): Int32; cdecl;
 var
-  a, b, o: Int32;
+  a, b, i: Int32;
 begin
-  if (offset > 1) then
+  if (offset < 2) then
+    Exit(Pos(s, str));
+  a := Length(str);
+  b := Length(s);
+  if ((a > 0) and (b > 0) and (b <= a)) then
+  for Result := offset to ((a - b) + 1) do
   begin
-    a := Length(str);
-    b := Length(s);
-    o := offset;
-    if ((a > 0) and (b > 0) and (b <= a) and (o < ((a - b) + 2))) then
-    begin
-      if (o < 1) then
-        o := 1;
-      for Result := o to ((a - b) + 1) do
-        if (s = Copy(str, Result, b)) then
-          Exit;
-    end;
-	Result := 0;
-  end else
-    Result := Pos(s, str);
+    i := 1;
+    while ((i <= b) and (str[((Result + i) - 1)] = s[i])) do
+      i := (i + 1);
+    if (i > b) then
+      Exit;
+  end;
+  Result := 0;
 end;
 
 {==============================================================================]
