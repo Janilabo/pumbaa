@@ -53,7 +53,10 @@ begin
   AddFunction(@Int64_Opposite, 'function Int64_Opposite(const x: Int64): Int64;');
   AddFunction(@Int64_Sign, 'function Int64_Sign(const x: Int64): Int32;');
 
+  AddFunction(@String_At, 'function String_At(const str, s: string; const index: Int32 = 1): Boolean;');
   AddFunction(@String_Pos, 'function String_Pos(const str, s: string; const offset: Int32 = 0): Int32;');
+  AddFunction(@String_PosLast, 'function String_PosLast(const str, s: string; const offset: Int32 = -1): Int32;');
+  AddFunction(@String_Position, 'function String_Position(const str, s: string; const offset: Int32 = 0): Int32;');
   AddFunction(@String_Between, 'function String_Between(const str, s1, s2: string; const offset: Int32 = 0): string;');
   AddFunction(@String_Count, 'function String_Count(const str, s: string; const overlap: Boolean = True): Int32;'); 
   AddFunction(@String_FromLeft, 'function String_FromLeft(const str: string; const x: Int32): string;');

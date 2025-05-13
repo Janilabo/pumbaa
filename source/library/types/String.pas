@@ -1,10 +1,65 @@
 {==============================================================================]
+  <String_At>
+  @action: Checks if string s is at index position in str.
+  @note: UNSAFE: Minimal checking for efficiency!
+[==============================================================================}
+function String_At(const str, s: string; const index: Int32 = 1): Boolean; cdecl; inline;
+var
+  i, l: Int32;
+begin
+  l := Length(s);
+  for i := 1 to l do
+    if (str[(((index) + i) - 1)] <> s[i]) then
+      Exit(False);
+  Result := (l > 0);
+end;
+{==============================================================================]
   <String_Pos>
+  @action: Returns last position of s string in str.
+  @note: Starts search from offset position.!
+[==============================================================================}
+function String_Pos(const str, s: string; const offset: Int32 = 0): Int32; cdecl;
+var
+  a, b, i: Int32;
+begin
+  a := Length(str);
+  b := Length(s);
+  if ((a > 0) and (b > 0) and (b <= a)) then
+  for Result := Max(1, offset) to ((a - b) + 1) do
+    if String_At(str, s, Result) then
+      Exit;
+  Result := 0;
+end;
+
+{==============================================================================]
+  <String_PosLast>
+  @action: Returns last position of s string in str.
+  @note: Starts search from offset position. -1 means str length!
+[==============================================================================}
+function String_PosLast(const str, s: string; const offset: Int32 = -1): Int32; cdecl;
+var
+  a, b, o, i: Int32;
+begin
+  a := Length(str);
+  b := Length(s);
+  if (offset = -1) then
+    o := ((a - b) + 1)
+  else
+    o := Max(1, offset);
+  if ((a > 0) and (b > 0) and (b <= a)) then
+  for Result := o downto 1 do
+    if String_At(str, s, Result) then
+      Exit;
+  Result := 0;
+end;
+
+{==============================================================================]
+  <String_Position>
   @action: Returns s position from str. Starts scanning from offset.
            If s doesn't exist in str, Result will be set as 0.
   @note: Supports offset.
 [==============================================================================}
-function String_Pos(const str, s: string; const offset: Int32 = 0): Int32; cdecl;
+function String_Position(const str, s: string; const offset: Int32 = 0): Int32; cdecl;
 var
   a, b, i: Int32;
 begin
