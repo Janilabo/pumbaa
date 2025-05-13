@@ -98,7 +98,7 @@ begin
   SetMemoryManager(manager);
 end;
 
-procedure OnDetach(data: Pointer); cdecl;
+procedure OnDetach(); cdecl;
 begin
   SetMemoryManager(memoryManager);
 end;

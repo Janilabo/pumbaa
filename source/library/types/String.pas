@@ -13,6 +13,21 @@ begin
       Exit(False);
   Result := (l > 0);
 end;
+
+{==============================================================================]
+  <String_Get>
+  @action: Fast method for getting substring from string index position by size.
+  @note: UNSAFE! Minimal checks for efficiency.
+[==============================================================================}
+function String_Get(const str: string; const index, size: Int32): string; cdecl; inline;
+var
+  i: Int32;
+begin
+  SetLength(Result, size);
+  for i := 1 to size do
+    Result[i] := str[((index + i) - 1)];
+end;
+
 {==============================================================================]
   <String_Pos>
   @action: Returns last position of s string in str.
@@ -20,7 +35,7 @@ end;
 [==============================================================================}
 function String_Pos(const str, s: string; const offset: Int32 = 0): Int32; cdecl;
 var
-  a, b, i: Int32;
+  a, b: Int32;
 begin
   a := Length(str);
   b := Length(s);
@@ -38,7 +53,7 @@ end;
 [==============================================================================}
 function String_PosLast(const str, s: string; const offset: Int32 = -1): Int32; cdecl;
 var
-  a, b, o, i: Int32;
+  a, b, o: Int32;
 begin
   a := Length(str);
   b := Length(s);
@@ -88,17 +103,14 @@ function String_Between(const str, s1, s2: string; const offset: Int32 = 0): str
 var
   b, e, l: Int32;
 begin
-  Result := '';
-  if (offset > 1) then
-    b := String_Pos(str, s1, offset)
-  else
-    b := Pos(s1, str);
+  b := String_Pos(str, s1, offset);
   if (b = 0) then
-    Exit;
+    Exit('');
   l := Length(s1);
   e := String_Pos(str, s2, (b + l));
-  if (e > 0) then
-    Result := Copy(str, (b + l), (e - (b + l)))
+  if (e = 0) then
+    Exit('');
+  Result := String_Get(str, (b + l), (e - (b + l)));
 end;
 
 {==============================================================================]
@@ -323,7 +335,7 @@ end;
   @action: Returns chunk of string between a and b.
   @note: Supports reversed chunk, when a is higher than b.
 [==============================================================================}
-function String_Chunk(const str: string; const a, b: Int32): string;
+function String_Chunk(const str: string; const a, b: Int32): string; cdecl;
 var
   i, l, x, y: Int32;
 begin
@@ -397,10 +409,7 @@ end;
 [==============================================================================}
 function String_StartsWith(const str, s: string): Boolean; cdecl;
 begin
-  if ((s <> '') and (str <> '')) then
-    Result := (s = Copy(str, 1, Length(s)))
-  else
-    Result := False;
+  Result := ((s <> '') and (Length(str) >= Length(s)) and String_At(str, s));
 end;
 
 {==============================================================================]
@@ -410,13 +419,11 @@ end;
 [==============================================================================}
 function String_EndsWith(const str, s: string): Boolean; cdecl;
 var
-  l: Int32;
+  l, t: Int32;
 begin
   l := Length(s);
-  if ((s <> '') and (str <> '')) then
-    Result := (s = Copy(str, (Length(str) - (l - 1)), l))
-  else
-    Result := False;
+  t := Length(str);
+  Result := ((l > 0) and (t >= l) and String_At(str, s, ((t - l) + 1)));
 end;
 
 {==============================================================================]
@@ -424,48 +431,29 @@ end;
   @action: Returns true if s was found in str and it was set as the beginning of the str.
   @note: None
 [==============================================================================}
-function String_Begin(var str: string; const s: string): Boolean; cdecl;
+function String_Begin(var str: string; const s: string; const offset: Int32 = 0): Boolean; cdecl;
 var
-  p, l: Int32;
+  p: Int32;
 begin
-  l := Length(s);
-  if ((str <> '') and (l <= Length(str))) then
-  begin
-    p := Pos(s, str);
-    Result := (p > 0);
-    if Result then
-      str := Copy(str, p, (Length(str) - (p - 1)));
-  end else
-    Result := False;
+  p := String_Pos(str, s, offset);
+  Result := (p > 0);
+  if Result then
+    str := Copy(str, p, (Length(str) - (p - 1)));
 end;
 
 {==============================================================================]
   <String_End>
   @action: Returns true if s was found in str and it was set as the ending of the str.
-  @note: None
+  @note: Supports offset.
 [==============================================================================}
-function String_End(var str: string; const s: string): Boolean; cdecl;
+function String_End(var str: string; const s: string; const offset: Int32 = -1): Boolean; cdecl;
 var
-  t, p, l: Int32;
+  p: Int32;
 begin
-  l := Length(s);
-  if ((str <> '') and (l <= Length(str))) then
-  begin
-    if (Length(s) <= l) then
-    begin
-      p := 0;
-      repeat
-        t := String_Pos(str, s, (p + 1));
-        if (t > 0) then
-          p := t;
-      until (t <= 0);
-      Result := (p > 0);
-      if Result then
-        str := Copy(str, 1, ((p + l) - 1));
-    end else
-      Result := False;
-  end else
-    Result := False;
+  p := String_PosLast(str, s, offset);
+  Result := (p > 0);
+  if Result then
+    str := Copy(str, 1, ((p + Length(s)) - 1));
 end;
 
 {==============================================================================]
@@ -563,55 +551,34 @@ begin
 end;
 
 {==============================================================================]
-  <String_LastAfter>
+  <String_AfterLast>
   @action: Returns string that is found after last s in str.
-  @note: None
+  @note: Supports offset.
 [==============================================================================}
-function String_LastAfter(const str, s: string): string; cdecl;
+function String_AfterLast(const str, s: string; const offset: Int32 = -1): string; cdecl;
 var
-  sL, l, p, lp: Int32;
+  p: Int32;
 begin
-  l := Length(str);
-  sL := Length(s);
-  if (sL <= l) then
-  begin
-    p := 0;
-    repeat
-      p := String_Pos(str, s, (p + 1));
-      if (p > 0) then
-        lp := p;
-    until (p <= 0);
-    if (lp > 0) then
-      Result := Copy(str, (lp + sL), ((1 + l) - (lp + sL)))
-    else
-      Result := '';
-  end else
+  p := String_PosLast(str, s, offset);
+  if (p > 0) then
+    Result := Copy(str, (p + 1), (Length(str) - p))
+  else
     Result := '';
 end;
 
 {==============================================================================]
-  <String_LastBefore>
+  <String_BeforeLast>
   @action: Returns string that is found before last s in str.
   @note: None
 [==============================================================================}
-function String_LastBefore(const str, s: string): string; cdecl;
+function String_BeforeLast(const str, s: string; const offset: Int32 = -1): string; cdecl;
 var
-  l, p, lp: Int32;
+  p: Int32;
 begin
-  l := Length(str);
-  if (Length(s) <= l) then
-  begin
-    p := 0;
-    repeat
-      p := String_Pos(str, s, (p + 1));
-      if (p > 0) then
-        lp := p;
-    until (p <= 0);
-    if (lp > 0) then
-      Result := Copy(str, 1, (lp - 1))
-    else
-      Result := '';
-  end else
+  p := String_PosLast(str, s, offset);
+  if (p > 0) then
+    Result := Copy(str, 1, (p - Length(s)))
+  else
     Result := '';
 end;
 
@@ -689,7 +656,7 @@ end;
   @action: Compares str with T.
   @note: Results: 0=EQUAL, 1=str>T, -1=str<T
 [==============================================================================}
-function String_Compare(const str, T: string): Int32; cdecl;
+function String_Compare(const str, T: string): Int32; cdecl; inline;
 begin
   if (str = T) then
     Exit(0);
@@ -717,7 +684,6 @@ end;
 function String_PregQuote(const str: string; const regex: string = '.\+*?[^]$(){}=!<>|:-'): string; cdecl;
 var
   l, i: Int32;
-  r: string;
 begin
   Result := str;
   l := Length(str);

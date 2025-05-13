@@ -54,6 +54,7 @@ begin
   AddFunction(@Int64_Sign, 'function Int64_Sign(const x: Int64): Int32;');
 
   AddFunction(@String_At, 'function String_At(const str, s: string; const index: Int32 = 1): Boolean;');
+  AddFunction(@String_Get, 'function String_Get(const str: string; const index, size: Int32): string;');
   AddFunction(@String_Pos, 'function String_Pos(const str, s: string; const offset: Int32 = 0): Int32;');
   AddFunction(@String_PosLast, 'function String_PosLast(const str, s: string; const offset: Int32 = -1): Int32;');
   AddFunction(@String_Position, 'function String_Position(const str, s: string; const offset: Int32 = 0): Int32;');
@@ -69,14 +70,14 @@ begin
   AddFunction(@String_Reversed, 'function String_Reversed(const str: string): string;');
   AddFunction(@String_StartsWith, 'function String_StartsWith(const str, s: string): Boolean;');
   AddFunction(@String_EndsWith, 'function String_EndsWith(const str, s: string): Boolean;');
-  AddFunction(@String_Begin, 'function String_Begin(var str: string; const s: string): Boolean;');
-  AddFunction(@String_End, 'function String_End(var str: string; const s: string): Boolean;');
+  AddFunction(@String_Begin, 'function String_Begin(var str: string; const s: string; const offset: Int32 = 0): Boolean;');
+  AddFunction(@String_End, 'function String_End(var str: string; const s: string; const offset: Int32 = -1): Boolean;');
   AddFunction(@String_Behind, 'function String_Behind(const str: string; const position, size: Int32): string;');
   AddFunction(@String_Ahead, 'function String_Ahead(const str: string; const position, size: Int32): string;');
   AddFunction(@String_After, 'function String_After(const str, s: string; offset: Int32 = -1): string;');
   AddFunction(@String_Before, 'function String_Before(const str, s: string; offset: Int32 = -1): string;');
-  AddFunction(@String_LastAfter, 'function String_LastAfter(const str, s: string): string;');
-  AddFunction(@String_LastBefore, 'function String_LastBefore(const str, s: string): string;');
+  AddFunction(@String_AfterLast, 'function String_AfterLast(const str, s: string; const offset: Int32 = -1): string;');
+  AddFunction(@String_BeforeLast, 'function String_BeforeLast(const str, s: string; const offset: Int32 = -1): string;');
   AddFunction(@String_Center, 'function String_Center(const str: string; const size: Int32; const fill: Char = '' ''): string;');
   AddFunction(@String_Stuff, 'function String_Stuff(const str, s: string; const iFrom, iCount: Integer): string;');
   AddFunction(@String_Duplicate, 'function String_Duplicate(const str: string; const count: Int32 = 2): string;');
