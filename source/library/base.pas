@@ -38,4 +38,7 @@ type
 {$I generic\TArray_Append.pas}
 {$I generic\TArray_Add.pas}
 {$I generic\TArray_Create.pas}
-{$I generic\TArray_Build.pas} 
+{$I generic\TArray_Build.pas}
+{$I generic\TArray_Contains.pas}
+{$I generic\TArray_Filter.pas}
+{$I generic\TArray_Extract.pas} 

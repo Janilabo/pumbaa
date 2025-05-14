@@ -5,7 +5,7 @@
 [==============================================================================}
 
 // TIntegerArray
-function TArray_Create(const size: Int32; const item: Int32): TIntegerArray; cdecl;
+function TArray_Create(const size: Int32; const item: Int32): TIntegerArray; overload; cdecl;
 var
   i: Int32;
 begin
@@ -15,7 +15,7 @@ begin
 end;
 
 // TDoubleArray
-function TArray_Create(const size: Int32; const item: Double): TDoubleArray; cdecl;
+function TArray_Create(const size: Int32; const item: Double): TDoubleArray; overload; cdecl;
 var
   i: Int32;
 begin
@@ -25,7 +25,7 @@ begin
 end;
 
 // TStringArray
-function TArray_Create(const size: Int32; const item: string): TStringArray; cdecl;
+function TArray_Create(const size: Int32; const item: string): TStringArray; overload; cdecl;
 var
   i: Int32;
 begin
@@ -35,7 +35,7 @@ begin
 end;
 
 // TCharArray
-function TArray_Create(const size: Int32; const item: Char): TCharArray; cdecl;
+function TArray_Create(const size: Int32; const item: Char): TCharArray; overload; cdecl;
 var
   i: Int32;
 begin
@@ -45,7 +45,7 @@ begin
 end;
 
 // TBooleanArray
-function TArray_Create(const size: Int32; const item: Boolean): TBooleanArray; cdecl;
+function TArray_Create(const size: Int32; const item: Boolean): TBooleanArray; overload; cdecl;
 var
   i: Int32;
 begin
@@ -55,7 +55,7 @@ begin
 end;
 
 // TPointArray
-function TArray_Create(const size: Int32; const item: TPoint): TPointArray; cdecl;
+function TArray_Create(const size: Int32; const item: TPoint): TPointArray; overload; cdecl;
 var
   i: Int32;
 begin
@@ -65,7 +65,7 @@ begin
 end;
 
 // TBoxArray
-function TArray_Create(const size: Int32; const item: TBox): TBoxArray; cdecl;
+function TArray_Create(const size: Int32; const item: TBox): TBoxArray; overload; cdecl;
 var
   i: Int32;
 begin
@@ -75,7 +75,7 @@ begin
 end;
 
 // TRangeArray
-function TArray_Create(const size: Int32; const item: TRange): TRangeArray; cdecl;
+function TArray_Create(const size: Int32; const item: TRange): TRangeArray; overload; cdecl;
 var
   i: Int32;
 begin

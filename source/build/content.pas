@@ -160,7 +160,7 @@ begin
   AddFunction(@T_AddEx_TBoxArray, 'function T_AddEx_TBoxArray(const arr: TBoxArray; const items: TBoxArray): TBoxArray;');
   AddFunction(@T_AddEx_TRangeArray, 'function T_AddEx_TRangeArray(const arr: TRangeArray; const items: TRangeArray): TRangeArray;');
 
-  AddFunction(@T_Create_TIntegerArray, 'function T_Create_TIntegerArray(const size: Int32; const item: Int32): TIntegerArray;;');
+  AddFunction(@T_Create_TIntegerArray, 'function T_Create_TIntegerArray(const size: Int32; const item: Int32): TIntegerArray;');
   AddFunction(@T_Create_TDoubleArray, 'function T_Create_TDoubleArray(const size: Int32; const item: Double): TDoubleArray;');
   AddFunction(@T_Create_TStringArray, 'function T_Create_TStringArray(const size: Int32; const item: string): TStringArray;');
   AddFunction(@T_Create_TCharArray, 'function T_Create_TCharArray(const size: Int32; const item: Char): TCharArray;');
@@ -177,4 +177,10 @@ begin
   AddFunction(@T_Build_TPointArray, 'function T_Build_TPointArray(const item: TPoint; const size: Int32 = 1): TPointArray;');
   AddFunction(@T_Build_TBoxArray, 'function T_Build_TBoxArray(const item: TBox; const size: Int32 = 1): TBoxArray;');
   AddFunction(@T_Build_TRangeArray, 'function T_Build_TRangeArray(const item: TRange; const size: Int32 = 1): TRangeArray;');
+
+  AddFunction(@T_Contains_TIntegerArray, 'function T_Contains_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Boolean;');
+  AddFunction(@T_Extract_TIntegerArray, 'function T_Extract_TIntegerArray(var arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Int32;');
+  AddFunction(@T_ExtractEx_TIntegerArray, 'function T_ExtractEx_TIntegerArray(var arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): Int32;');
+  AddFunction(@T_Filter_TIntegerArray, 'function T_Filter_TIntegerArray(var arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Int32;');
+  AddFunction(@T_FilterEx_TIntegerArray, 'function T_FilterEx_TIntegerArray(var arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): Int32;');
 end;
