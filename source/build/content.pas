@@ -179,8 +179,8 @@ begin
   AddFunction(@T_Build_TRangeArray, 'function T_Build_TRangeArray(const item: TRange; const size: Int32 = 1): TRangeArray;');
 
   AddFunction(@T_Contains_TIntegerArray, 'function T_Contains_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Boolean;');
-  AddFunction(@T_Extract_TIntegerArray, 'function T_Extract_TIntegerArray(var arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Int32;');
-  AddFunction(@T_ExtractEx_TIntegerArray, 'function T_ExtractEx_TIntegerArray(var arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): Int32;');
-  AddFunction(@T_Filter_TIntegerArray, 'function T_Filter_TIntegerArray(var arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Int32;');
-  AddFunction(@T_FilterEx_TIntegerArray, 'function T_FilterEx_TIntegerArray(var arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): Int32;');
+  AddFunction(@T_Extract_TIntegerArray, 'function T_Extract_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray;');
+  AddFunction(@T_ExtractEx_TIntegerArray, 'function T_ExtractEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): TIntegerArray;');
+  AddFunction(@T_Filter_TIntegerArray, 'function T_Filter_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray;');
+  AddFunction(@T_FilterEx_TIntegerArray, 'function T_FilterEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): TIntegerArray;');
 end;
