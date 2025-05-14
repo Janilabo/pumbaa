@@ -34,4 +34,8 @@ type
 
 {$I generic\TArray_AllEqual.pas}
 {$I generic\TArray_AllSame.pas}
-{$I generic\TArray_AllUnique.pas} 
+{$I generic\TArray_AllUnique.pas}
+{$I generic\TArray_Append.pas}
+{$I generic\TArray_Add.pas}
+{$I generic\TArray_Create.pas}
+{$I generic\TArray_Build.pas} 
