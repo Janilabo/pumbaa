@@ -80,7 +80,13 @@ function T_Build_TBoxArray(const item: TBox; const size: Int32 = 1): TBoxArray; 
 function T_Build_TRangeArray(const item: TRange; const size: Int32 = 1): TRangeArray; cdecl; begin Result := TArray_Build(item, size); end;
 
 function T_Contains_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Boolean; cdecl; begin Result := TArray_Contains(arr, item, start); end;
+
 function T_Extract_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray; begin Result := TArray_Extract(arr, item, start); end;
 function T_ExtractEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): TIntegerArray; begin Result := TArray_Extract(arr, items, start); end;
 function T_Filter_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray; begin Result := TArray_Filter(arr, item, start); end;
 function T_FilterEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): TIntegerArray; begin Result := TArray_Filter(arr, items, start); end;
+
+function T_FilterEvery_TIntegerArray(const arr: TIntegerArray; const X: Int32 = 1; const start: Int32 = 0): TIntegerArray; cdecl; begin Result := TArray_FilterEvery(arr, X, start); end;
+function T_ExtractEvery_TIntegerArray(const arr: TIntegerArray; const X: Int32 = 1; const start: Int32 = 0): TIntegerArray; cdecl; begin Result := TArray_ExtractEvery(arr, X, start); end;
+
+function T_Reverse_TIntegerArray(var arr: TIntegerArray): Boolean; cdecl; begin Result := TArray_Reverse(arr); end;

@@ -25,6 +25,87 @@ type
   TRangeArray = array of TRange;
   T2DRangeArray = array of TRangeArray;  
 
+procedure Swap(var A, B: Int32); overload; inline;
+var
+  T: Int32;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
+procedure Swap(var A, B: Int64); overload; inline;
+var
+  T: Int64;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
+procedure Swap(var A, B: Double); overload; inline;
+var
+  T: Double;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
+procedure Swap(var A, B: string); overload; inline;
+var
+  T: string;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
+procedure Swap(var A, B: Char); overload; inline;
+var
+  T: Char;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
+procedure Swap(var A, B: Boolean); overload; inline;
+var
+  T: Boolean;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
+procedure Swap(var A, B: TPoint); overload; inline;
+var
+  T: TPoint;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
+procedure Swap(var A, B: TBox); overload; inline;
+var
+  T: TBox;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
+procedure Swap(var A, B: TRange); overload; inline;
+var
+  T: TRange;
+begin
+  T := A;
+  A := B;
+  B := T;
+end;
+
 {$I core\math.pas}
 
 {$I types\Double.pas}
@@ -41,4 +122,7 @@ type
 {$I generic\TArray_Build.pas}
 {$I generic\TArray_Contains.pas}
 {$I generic\TArray_Filter.pas}
-{$I generic\TArray_Extract.pas} 
+{$I generic\TArray_Extract.pas}
+{$I generic\TArray_FilterEvery.pas}
+{$I generic\TArray_ExtractEvery.pas}
+{$I generic\TArray_Reverse.pas} 

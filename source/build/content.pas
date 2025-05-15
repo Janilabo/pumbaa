@@ -38,6 +38,8 @@ begin
   AddFunction(@Int32_Dec, 'function Int32_Dec(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_Increase, 'function Int32_Increase(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_Decrease, 'function Int32_Decrease(var x: Int32; const N: Int32 = 1): Int32;');
+  AddFunction(@Int32_DigitCount, 'function Int32_DigitCount(const x: Int32): Int32;');
+  AddFunction(@Int32_Digitz, 'function Int32_Digitz(const x: Int32): TIntegerArray;');
   AddFunction(@Int32_Digits, 'function Int32_Digits(const x: Int32): TIntegerArray;');
   AddFunction(@Int32_NegA, 'function Int32_NegA(const x: Int32): Int32;');
   AddFunction(@Int32_Neg, 'function Int32_Neg(const x: Int32): Int32;');
@@ -54,6 +56,8 @@ begin
   AddFunction(@Int64_Dec, 'function Int64_Dec(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Increase, 'function Int64_Increase(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Decrease, 'function Int64_Decrease(var x: Int64; const N: Int64 = 1): Int64;');
+  AddFunction(@Int64_DigitCount, 'function Int64_DigitCount(const x: Int64): Int32;');
+  AddFunction(@Int64_Digitz, 'function Int64_Digitz(const x: Int64): TIntegerArray;');
   AddFunction(@Int64_Digits, 'function Int64_Digits(const x: Int64): TIntegerArray;');
   AddFunction(@Int64_Compare, 'function Int64_Compare(const x, T: Int64): Int32;');
   AddFunction(@Int64_Distance, 'function Int64_Distance(const x, T: Int64): Int64;');
@@ -74,7 +78,8 @@ begin
   AddFunction(@String_Exploded, 'function String_Exploded(const str: string; const d: TStringArray; const limit: Int32 = -1): TStringArray;');
   AddFunction(@String_Slice, 'function String_Slice(const str: string; const a, b: Int32): string;');
   AddFunction(@String_Chunk, 'function String_Chunk(const str: string; const a, b: Int32): string;');
-  AddFunction(@String_Reverse, 'function String_Reverse(const str: string): string;');
+  AddFunction(@String_Reverse, 'function String_Reverse(var str: string): Boolean;');
+  AddFunction(@String_Flip, 'function String_Flip(const str: string): string;');
   AddFunction(@String_Reversed, 'function String_Reversed(const str: string): string;');
   AddFunction(@String_StartsWith, 'function String_StartsWith(const str, s: string): Boolean;');
   AddFunction(@String_EndsWith, 'function String_EndsWith(const str, s: string): Boolean;');
@@ -179,8 +184,14 @@ begin
   AddFunction(@T_Build_TRangeArray, 'function T_Build_TRangeArray(const item: TRange; const size: Int32 = 1): TRangeArray;');
 
   AddFunction(@T_Contains_TIntegerArray, 'function T_Contains_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Boolean;');
+
   AddFunction(@T_Extract_TIntegerArray, 'function T_Extract_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray;');
   AddFunction(@T_ExtractEx_TIntegerArray, 'function T_ExtractEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): TIntegerArray;');
   AddFunction(@T_Filter_TIntegerArray, 'function T_Filter_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray;');
   AddFunction(@T_FilterEx_TIntegerArray, 'function T_FilterEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): TIntegerArray;');
+  
+  AddFunction(@T_FilterEvery_TIntegerArray, 'function T_FilterEvery_TIntegerArray(const arr: TIntegerArray; const X: Int32 = 1; const start: Int32 = 0): TIntegerArray;');
+  AddFunction(@T_ExtractEvery_TIntegerArray, 'function T_ExtractEvery_TIntegerArray(const arr: TIntegerArray; const X: Int32 = 1; const start: Int32 = 0): TIntegerArray;');
+
+  AddFunction(@T_Reverse_TIntegerArray, 'function T_Reverse_TIntegerArray(var arr: TIntegerArray): Boolean;');
 end;

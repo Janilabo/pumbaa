@@ -367,7 +367,28 @@ end;
   @action: Returns reversed str.
   @note: None
 [==============================================================================}
-function String_Reverse(const str: string): string; cdecl;
+function String_Reverse(var str: string): Boolean; cdecl;
+var
+  i, l: Integer;
+  c: Char;
+begin
+  l := Length(str);
+  Result := (l > 1);
+  if Result then
+  for i := 0 to ((l div 2) - 1) do
+  begin
+    c := str[(i + 1)];
+    str[(i + 1)] := str[(l - i)];
+    str[(l - i)] := c;
+  end;
+end;
+
+{==============================================================================]
+  <String_Flip>
+  @action: Returns reversed str.
+  @note: None
+[==============================================================================}
+function String_Flip(const str: string): string; cdecl;
 var
   i, l: Int32;
 begin
