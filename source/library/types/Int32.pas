@@ -45,7 +45,8 @@ end;
 {==============================================================================]
  <Int32_DigitCount>
  @action: Returns count of digits Int32 x value contains.
- @note: If x is negative value, the negative sign is ignored. 
+ @note: If x is negative value, the negative sign is ignored.
+        Works with -2147483648 - 2147483647! 
 [==============================================================================}
 function Int32_DigitCount(const x: Int32): Int32; cdecl;
 var
@@ -58,14 +59,15 @@ begin
     n := (a mod m);
     Result := (Result + 1);
     m := (m * 10);
-  until (n = a);
+  until ((Result = 10) or (n = a));
 end;
 
 {==============================================================================]
  <Int32_Digitz>
  @action: Converts Int32 value (x) to digits of it.
           Example: 1234 => 1,2,3,4, -999 => 9,9,9
- @note: If x is negative value, the negative sign is ignored. 
+ @note: If x is negative value, the negative sign is ignored.
+        Works with -2147483648 - 2147483647! 
 [==============================================================================}
 function Int32_Digitz(const x: Int32): TIntegerArray; cdecl;
 var
@@ -74,14 +76,14 @@ var
 begin
   a := Abs(x);
   r := 0;
-  SetLength(Result, 20);
+  SetLength(Result, 10);
   m := 10;
   repeat
     n := (a mod m);
     Result[r] := (n div (m div 10));
     r := (r + 1);
     m := (m * 10);
-  until (n = a);
+  until ((r = 10) or (n = a));
   SetLength(Result, r);
   for i := 0 to ((r div 2) - 1) do
     Swap(Result[i], Result[((r - i) - 1)]);
@@ -91,7 +93,8 @@ end;
  <Int32_Digits>
  @action: Converts Int32 value (x) to digits of it.
           Example: 1234 => 1,2,3,4, -999 => 9,9,9
- @note: If x is negative value, the negative sign is ignored. 
+ @note: If x is negative value, the negative sign is ignored.
+        Works with -2147483648 - 2147483647! 
 [==============================================================================}
 function Int32_Digits(const x: Int32): TIntegerArray; cdecl;
 var
@@ -221,4 +224,16 @@ begin
     Result := 1
   else
     Result := -1;
+end;
+
+{==============================================================================]
+ <Int32_Random>
+ @action: Random() with support for negative Range.
+ @note: None
+[==============================================================================}
+function Int32_Random(const range: Int32): Int32; cdecl;
+begin
+  Result := Random(Abs(range));
+  if (range < 0) then
+    Result := (Result * -1);
 end;

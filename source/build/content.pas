@@ -102,6 +102,8 @@ begin
   AddFunction(@String_TrimRight, 'function String_TrimRight(const str: string; const t: Char = #32): string;');
   AddFunction(@String_Trim, 'function String_Trim(const str: string; const t: Char = #32): string;');
 
+  AddFunction(@Boolean_Random, 'function Boolean_Random: Boolean;');
+
   AddFunction(@T_AllEqual_TIntegerArray, 'function T_AllEqual_TIntegerArray(const arr: TIntegerArray): Boolean;');
   AddFunction(@T_AllEqual_TDoubleArray, 'function T_AllEqual_TDoubleArray(const arr: TDoubleArray): Boolean;');
   AddFunction(@T_AllEqual_TStringArray, 'function T_AllEqual_TStringArray(const arr: TStringArray): Boolean;');

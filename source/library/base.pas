@@ -112,7 +112,13 @@ end;
 {$I types\Int32.pas}
 {$I types\Int64.pas}
 {$I types\String.pas}
+{$I types\Boolean.pas}
+{$I types\TPoint.pas}
 
+{$I generic\TArray_Copy.pas}
+{$I generic\TArray_Get.pas}
+{$I generic\TArray_Set.pas}
+{$I generic\TArray_Clone.pas}
 {$I generic\TArray_AllEqual.pas}
 {$I generic\TArray_AllSame.pas}
 {$I generic\TArray_AllUnique.pas}
