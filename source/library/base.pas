@@ -147,3 +147,8 @@ end;
 {$I generic\TArray_Unique.pas}
 {$I generic\TArray_Uniques.pas}
 {$I generic\TArray_Pick.pas}
+{$I generic\TArray_Move.pas}
+{$I generic\TArray_Group.pas}
+{$I generic\TArray_Partition.pas}
+{$I generic\TArray_Distribute.pas}
+{$I generic\TArray_Randomize.pas}

@@ -1,5 +1,5 @@
 {==============================================================================]
- <TArray_Copy
+ <TArray_Clone>
  @action: Returns copy of an array arr.
  @note: Contains support for starting index and count. -1 count uses Length(arr)!
 [==============================================================================}
