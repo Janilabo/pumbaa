@@ -126,6 +126,11 @@ end;
 {$I generic\TArray_Create.pas}
 {$I generic\TArray_Build.pas}
 {$I generic\TArray_Contains.pas}
+{$I generic\TArray_Position.pas}
+{$I generic\TArray_Positions.pas}
+{$I generic\TArray_Pos.pas}
+{$I generic\TArray_PosLast.pas}
+{$I generic\TArray_PosLasts.pas}
 {$I generic\TArray_Delete.pas}
 {$I generic\TArray_Remove.pas}
 {$I generic\TArray_Filter.pas}
@@ -141,3 +146,4 @@ end;
 {$I generic\TArray_Trade.pas}
 {$I generic\TArray_Unique.pas}
 {$I generic\TArray_Uniques.pas}
+{$I generic\TArray_Pick.pas}
