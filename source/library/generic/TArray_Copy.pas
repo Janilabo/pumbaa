@@ -1,5 +1,5 @@
 {==============================================================================]
- <TArray_Copy
+ <TArray_Copy>
  @action: Returns copy of an array arr.
  @note: Contains support for starting index and count. -1 count uses Length(arr)!
 [==============================================================================}
@@ -77,7 +77,7 @@ begin
 end;
 
 {==============================================================================]
- <TArray_Copy
+ <TArray_Copy>
  @action: Outputs array of items from arr by indexes (IDs).
  @note: Ignores invalid ID's (doesn't include those to result, they will be left out).
 [==============================================================================}

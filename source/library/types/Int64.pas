@@ -1,4 +1,24 @@
 {==============================================================================]
+ <Int64_Even>
+ @action: Returns true if Int64 value x is an even number.
+ @note: None
+[==============================================================================}
+function Int64_Even(const x: Int64): Boolean; cdecl; inline;
+begin
+  Result := ((x mod 2) = 0);
+end;
+
+{==============================================================================]
+ <Int64_Odd>
+ @action: Returns true if Int64 value x is an odd number.
+ @note: None
+[==============================================================================}
+function Int64_Odd(const x: Int64): Boolean; cdecl; inline;
+begin
+  Result := ((x mod 2) <> 0);
+end;
+
+{==============================================================================]
  <Int64_Inc>
  @action: Increases the Int64 value x by N.
  @note: Returns the increased x!

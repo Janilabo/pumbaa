@@ -241,3 +241,80 @@ begin
   else
     Result := -1;
 end;
+
+{==============================================================================]
+ <Double_FixDegrees>
+ @action: 365 => 5 | 722 => 2 | 359.9 => 359.9 | 360 => 0
+ @note: None
+[==============================================================================}
+function Double_FixDegrees(const dgrs: Double): Double; cdecl;
+var
+  t: Int32;
+begin
+  t := -1;
+  if (dgrs > -1) then
+    t := Abs(t);
+  Result := Abs(dgrs);
+  Result := ((Floor(Result) mod 360 + Frac(Result)) * t);
+  if (Result < 0) then
+    Result := (Result + 360.0);
+end;
+
+{==============================================================================]
+ <Double_Degrees>
+ @action: Converts Radians to Degrees.
+ @note: None
+[==============================================================================} 
+function Double_Degrees(const rdns: Double): Double; cdecl;
+begin
+  Result := Double_FixDegrees(rdns * (180.0 / Pi));
+end;
+
+{==============================================================================]
+ <Double_FixRadians>
+ @action: 365 => 5 | 722 => 2 | 359.9 => 359.9 | 360 => 0
+ @note: None
+[==============================================================================}
+function Double_FixRadians(const rdns: Double): Double; cdecl;
+begin
+  Result := (Double_FixDegrees((rdns * (180.0 / Pi))) * (Pi / 180.0));
+end;
+
+{==============================================================================]
+ <Double_Radians>
+ @action: Converts Degrees or Compass (degrees) to Radians.
+ @note: Supports compass.
+[==============================================================================}
+function Double_Radians(const dgrs: Double; const compass: Boolean = False): Double; cdecl;
+begin
+  if not compass then
+    Result := Double_FixRadians(dgrs * (Pi / 180.0))
+  else
+    Result := Double_FixRadians((dgrs - 90.0) * (Pi / 180.0));
+end;
+
+{==============================================================================]
+ <Double_Percent>
+ @action: Returns percent (%) from source by position.
+ @note: Value-to-Percent conversion!
+[==============================================================================}
+function Double_Percent(const source, position: Double): Double; cdecl; inline;
+begin
+  if (position <> 0) then
+    Result := ((position / source) * 100.0)
+  else
+    Result := 0.0;
+end;
+
+{==============================================================================]
+ <Double_Percentage>
+ @action: Returns value from source by percent.
+ @note: Percent-to-Value conversion!
+[==============================================================================}
+function Double_Percentage(const source, percent: Double): Double; cdecl; inline;
+begin
+  if (percent <> 0) then
+    Result := ((percent / 100.0) * source)
+  else
+    Result := 0.0;
+end;

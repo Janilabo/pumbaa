@@ -12,9 +12,6 @@ end;
 
 procedure AddFunctions;
 begin
-  AddFunction(@Math_Percent, 'function Math_Percent(const source, position: Double): Double;');
-  AddFunction(@Math_Percentage, 'function Math_Percentage(const source, percent: Double): Double;');
-
   AddFunction(@Double_Inc, 'function Double_Inc(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Dec, 'function Double_Dec(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Increase, 'function Double_Increase(var x: Double; const N: Double = 1): Double;');
@@ -33,6 +30,8 @@ begin
   AddFunction(@Double_Difference, 'function Double_Difference(const x, T: Double): Double;');
   AddFunction(@Double_Opposite, 'function Double_Opposite(const x: Double): Double;');
   AddFunction(@Double_Sign, 'function Double_Sign(const x: Double): Int32;');
+  AddFunction(@Double_Percent, 'function Double_Percent(const source, position: Double): Double;');
+  AddFunction(@Double_Percentage, 'function Double_Percentage(const source, percent: Double): Double;');
 
   AddFunction(@Int32_Inc, 'function Int32_Inc(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_Dec, 'function Int32_Dec(var x: Int32; const N: Int32 = 1): Int32;');

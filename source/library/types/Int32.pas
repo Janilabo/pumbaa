@@ -1,4 +1,24 @@
 {==============================================================================]
+ <Int32_Even>
+ @action: Returns true if Int32 value x is an even number.
+ @note: None
+[==============================================================================}
+function Int32_Even(const x: Int32): Boolean; cdecl; inline;
+begin
+  Result := ((x mod 2) = 0);
+end;
+
+{==============================================================================]
+ <Int32_Odd>
+ @action: Returns true if Int32 value x is an odd number.
+ @note: None
+[==============================================================================}
+function Int32_Odd(const x: Int32): Boolean; cdecl; inline;
+begin
+  Result := ((x mod 2) <> 0);
+end;
+
+{==============================================================================]
  <Int32_Inc>
  @action: Increases the x value by N.
  @note: Returns the increased x!

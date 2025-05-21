@@ -106,14 +106,13 @@ begin
   B := T;
 end;
 
-{$I core\math.pas}
-
 {$I types\Double.pas}
 {$I types\Int32.pas}
 {$I types\Int64.pas}
 {$I types\String.pas}
 {$I types\Boolean.pas}
 {$I types\TPoint.pas}
+{$I types\TRange.pas}
 
 {$I generic\TArray_Copy.pas}
 {$I generic\TArray_Get.pas}
@@ -127,8 +126,18 @@ end;
 {$I generic\TArray_Create.pas}
 {$I generic\TArray_Build.pas}
 {$I generic\TArray_Contains.pas}
+{$I generic\TArray_Delete.pas}
+{$I generic\TArray_Remove.pas}
 {$I generic\TArray_Filter.pas}
 {$I generic\TArray_Extract.pas}
 {$I generic\TArray_FilterEvery.pas}
 {$I generic\TArray_ExtractEvery.pas}
-{$I generic\TArray_Reverse.pas} 
+{$I generic\TArray_Reverse.pas}
+{$I generic\TArray_Reversed.pas}
+{$I generic\TArray_Fill.pas} 
+{$I generic\TArray_Holds.pas}
+{$I generic\TArray_Dupe.pas}
+{$I generic\TArray_Swap.pas}
+{$I generic\TArray_Trade.pas}
+{$I generic\TArray_Unique.pas}
+{$I generic\TArray_Uniques.pas}
