@@ -130,6 +130,7 @@ end;
 {$I generic\TArray_BuiltWith.pas}
 {$I generic\TArray_BuiltWithout.pas}
 {$I generic\TArray_Contains.pas}
+{$I generic\TArray_Includes.pas}
 {$I generic\TArray_Position.pas}
 {$I generic\TArray_Positions.pas}
 {$I generic\TArray_Pos.pas}
@@ -150,6 +151,7 @@ end;
 {$I generic\TArray_Swap.pas}
 {$I generic\TArray_Trade.pas}
 {$I generic\TArray_Unique.pas}
+{$I generic\TArray_Uniqued.pas}
 {$I generic\TArray_Uniques.pas}
 {$I generic\TArray_Pick.pas}
 {$I generic\TArray_Move.pas}
