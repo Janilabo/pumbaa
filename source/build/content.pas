@@ -102,6 +102,18 @@ begin
   AddFunction(@String_Trim, 'function String_Trim(const str: string; const t: Char = #32): string;');
 
   AddFunction(@Boolean_Random, 'function Boolean_Random: Boolean;');
+  
+  AddFunction(@TRange_Create, 'function TRange_Create(const start: Int32 = 0; const stop: Int32 = 0): TRange;');
+  AddFunction(@TRange_Build, 'function TRange_Build(const start: Int32 = 0; const stop: Int32 = 0): TRange;');
+  AddFunction(@TRange_Grab, 'function TRange_Grab(const range: TRange): TRange;');
+  AddFunction(@TRange_Size, 'function TRange_Size(const r: TRange): Int32;');
+  AddFunction(@TRange_Digits, 'function TRange_Digits(const r: TRange): TIntegerArray;');
+  AddFunction(@TRange_Ints, 'function TRange_Ints(const r: TRange): TIntegerArray;');
+  AddFunction(@TRange_Normalize, 'function TRange_Normalize(const r: TRange): TRange;');
+  AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const source, target: TRange): Boolean;');
+  AddFunction(@TRange_Overlap, 'function TRange_Overlap(const source, target: TRange): Boolean;');
+  AddFunction(@TRange_Intersection, 'function TRange_Intersection(const source, target: TRange; const null: TRange): TRange;');
+  AddFunction(@TRange_Intersect, 'function TRange_Intersect(const source, target: TRange; var intersection: TRange): Boolean;');
 
   AddFunction(@T_AllEqual_TIntegerArray, 'function T_AllEqual_TIntegerArray(const arr: TIntegerArray): Boolean;');
   AddFunction(@T_AllEqual_TDoubleArray, 'function T_AllEqual_TDoubleArray(const arr: TDoubleArray): Boolean;');
