@@ -118,6 +118,8 @@ end;
 {$I generic\TArray_Get.pas}
 {$I generic\TArray_Set.pas}
 {$I generic\TArray_Clone.pas}
+{$I generic\TArray_Differ.pas}
+{$I generic\TArray_Equal.pas}
 {$I generic\TArray_AllEqual.pas}
 {$I generic\TArray_AllSame.pas}
 {$I generic\TArray_AllUnique.pas}
@@ -125,6 +127,8 @@ end;
 {$I generic\TArray_Add.pas}
 {$I generic\TArray_Create.pas}
 {$I generic\TArray_Build.pas}
+{$I generic\TArray_BuiltWith.pas}
+{$I generic\TArray_BuiltWithout.pas}
 {$I generic\TArray_Contains.pas}
 {$I generic\TArray_Position.pas}
 {$I generic\TArray_Positions.pas}
@@ -139,6 +143,7 @@ end;
 {$I generic\TArray_ExtractEvery.pas}
 {$I generic\TArray_Reverse.pas}
 {$I generic\TArray_Reversed.pas}
+{$I generic\TArray_Flip.pas}
 {$I generic\TArray_Fill.pas} 
 {$I generic\TArray_Holds.pas}
 {$I generic\TArray_Dupe.pas}
