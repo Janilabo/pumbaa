@@ -263,7 +263,7 @@ end;
   @action: Returns range clamped inside zone range.
   @note: Makes sure Result is range fitted in zone bounds.
 [==============================================================================}
-function TRange_Clamp(const range, zone: TRange): TRange; overload; cdecl;
+function TRange_Clamp(const range, zone: TRange): TRange; cdecl;
 var
   z: TRange;
 begin
@@ -288,7 +288,7 @@ end;
   @action: Returns range with start and stop with maximum value.
   @note: Makes sure neither start or stop is higher than maximum.
 [==============================================================================}
-function TRange_ClampMax(const range: TRange; const maximum: Int32): TRange; overload;
+function TRange_ClampMax(const range: TRange; const maximum: Int32): TRange; cdecl;
 begin
   if (range.start > maximum) then
     Result.start := maximum
@@ -305,7 +305,7 @@ end;
   @action: Returns range with start and stop with minimum value.
   @note: Makes sure neither start or stop is lower than minimum.
 [==============================================================================}
-function TRange_ClampMin(const range: TRange; const minimum: Int32): TRange; overload;
+function TRange_ClampMin(const range: TRange; const minimum: Int32): TRange; cdecl;
 begin
   if (range.start < minimum) then
     Result.start := minimum
@@ -315,4 +315,140 @@ begin
     Result.stop := minimum
   else
     Result.stop := range.stop;
-end;  
+end;
+
+{==============================================================================]
+  <TRange_Restrict>
+  @action: Ensures range start and stop stays within zone.
+  @note: Returns true if restriction was performed for start or/and stop.
+[==============================================================================}
+function TRange_Restrict(var range: TRange; const zone: TRange): Boolean; cdecl;
+var
+  e: TRange;
+begin
+  e := TRange_Clamp(range, zone);
+  Result := not TRange_Equals(e, range);
+  if Result then
+    range := e;
+end;
+
+{==============================================================================]
+  <TRange_RestrictMin>
+  @action: Ensures range start and stop stays within minimum.
+  @note: Returns true if restriction was performed for start or/and stop.
+[==============================================================================}
+function TRange_RestrictMin(var range: TRange; const minimum: Int32): Boolean; cdecl;
+var
+  e: TRange;
+begin
+  e := TRange_ClampMin(range, minimum);
+  Result := not TRange_Equals(e, range);
+  if Result then
+    range := e;
+end;
+
+{==============================================================================]
+  <TRange_RestrictMax>
+  @action: Ensures range start and stop stays within maximum.
+  @note: Returns true if restriction was performed for start or/and stop.
+[==============================================================================}
+function TRange_RestrictMax(var range: TRange; const maximum: Int32): Boolean; cdecl;
+var
+  e: TRange;
+begin
+  e := TRange_ClampMax(range, maximum);
+  Result := not TRange_Equals(e, range);
+  if Result then
+    range := e;
+end;
+
+{==============================================================================]
+  <TRange_Distribute>
+  @action: Distributes range to TRangeArray by amount of parts
+  @note: None.
+[==============================================================================}
+function TRange_Distribute(const range: TRange; const parts: Int32): TRangeArray; cdecl;
+var
+  i, s, e, a, b, p: Int32;
+  r: TRange;
+begin
+  if (parts > 0) then
+  begin
+    r := TRange_Normalize(range);
+    s := TRange_Size(r);
+    p := Min(s, parts);
+    e := (s mod p);
+    a := r.start;
+    SetLength(Result, p);
+    for i := 0 to (p - 1) do
+    begin
+      b := (a + ((s div p) - 1));
+      if (i < e) then
+        Inc(b);
+      if (range.start > range.stop) then
+        Result[i] := TRange_Create(b, a)
+      else
+        Result[i] := TRange_Create(a, b);
+      a := (b + 1);
+    end;
+  end else
+    SetLength(Result, 0);
+end;
+
+{==============================================================================]
+  <TRange_Partition>
+  @action: Partitions range to TRangeArray by size of parts
+  @note: None.
+[==============================================================================}
+function TRange_Partition(const range: TRange; const size: Int32): TRangeArray; cdecl;
+var
+  a, b, l: Int32;
+  r: TRange;
+begin
+  l := 0;
+  if (size > 0) then
+  begin
+    r := TRange_Normalize(range);
+    SetLength(Result, TRange_Size(r));
+    a := r.start;
+    while (a <= r.stop) do
+    begin
+      b := Min(((a + size) - 1), r.stop);
+      if (range.start > range.stop) then
+        Result[l] := TRange_Create(b, a)
+      else
+        Result[l] := TRange_Create(a, b);
+      l := (l + 1);
+      a := (b + 1);
+    end;
+  end;
+  SetLength(Result, l);
+end;
+
+{==============================================================================]
+  <TRange_Divide>
+  @action: Partitions range to TRangeArray by size of parts
+  @note: Alternative for TRange_Partition.
+[==============================================================================}
+function TRange_Divide(const range: TRange; const size: Int32): TRangeArray; cdecl;
+var
+  a, b, i: Int32;
+  r: TRange;
+begin
+  if (size > 0) then
+  begin
+    r := TRange_Normalize(range);
+    SetLength(Result, (((TRange_Size(r) + size) - 1) div size));
+    a := r.start;
+    for i := 0 to High(Result) do
+    begin
+      b := Min(((a + size) - 1), r.stop);
+      if (range.start > range.stop) then
+        Result[i] := TRange_Create(b, a)
+      else
+        Result[i] := TRange_Create(a, b);
+      a := (b + 1);
+    end;
+  end else
+    SetLength(Result, 0);
+end;

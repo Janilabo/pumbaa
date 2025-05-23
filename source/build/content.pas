@@ -126,6 +126,12 @@ begin
   AddFunction(@TRange_Clamp, 'function TRange_Clamp(const range, zone: TRange): TRange;');
   AddFunction(@TRange_ClampMax, 'function TRange_ClampMax(const range: TRange; const maximum: Int32): TRange;');
   AddFunction(@TRange_ClampMin, 'function TRange_ClampMin(const range: TRange; const minimum: Int32): TRange;');
+  AddFunction(@TRange_Restrict, 'function TRange_Restrict(var range: TRange; const zone: TRange): Boolean;');
+  AddFunction(@TRange_RestrictMin, 'function TRange_RestrictMin(var range: TRange; const minimum: Int32): Boolean;');
+  AddFunction(@TRange_RestrictMax, 'function TRange_RestrictMax(var range: TRange; const maximum: Int32): Boolean;');
+  AddFunction(@TRange_Distribute, 'function TRange_Distribute(const range: TRange; const parts: Int32): TRangeArray;');
+  AddFunction(@TRange_Partition, 'function TRange_Partition(const range: TRange; const size: Int32): TRangeArray;');
+  AddFunction(@TRange_Divide, 'function TRange_Divide(const range: TRange; const size: Int32): TRangeArray;');
 
   AddFunction(@T_AllEqual_TIntegerArray, 'function T_AllEqual_TIntegerArray(const arr: TIntegerArray): Boolean;');
   AddFunction(@T_AllEqual_TDoubleArray, 'function T_AllEqual_TDoubleArray(const arr: TDoubleArray): Boolean;');
