@@ -103,17 +103,29 @@ begin
 
   AddFunction(@Boolean_Random, 'function Boolean_Random: Boolean;');
   
+  AddFunction(@TRange_Neutral, 'function TRange_Neutral(const range: TRange): Boolean;');
+  AddFunction(@TRange_Increasing, 'function TRange_Increasing(const range: TRange): Boolean;');
+  AddFunction(@TRange_Decreasing, 'function TRange_Decreasing(const range: TRange): Boolean;');
   AddFunction(@TRange_Create, 'function TRange_Create(const start: Int32 = 0; const stop: Int32 = 0): TRange;');
   AddFunction(@TRange_Build, 'function TRange_Build(const start: Int32 = 0; const stop: Int32 = 0): TRange;');
   AddFunction(@TRange_Grab, 'function TRange_Grab(const range: TRange): TRange;');
-  AddFunction(@TRange_Size, 'function TRange_Size(const r: TRange): Int32;');
-  AddFunction(@TRange_Digits, 'function TRange_Digits(const r: TRange): TIntegerArray;');
-  AddFunction(@TRange_Ints, 'function TRange_Ints(const r: TRange): TIntegerArray;');
-  AddFunction(@TRange_Normalize, 'function TRange_Normalize(const r: TRange): TRange;');
-  AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const source, target: TRange): Boolean;');
-  AddFunction(@TRange_Overlap, 'function TRange_Overlap(const source, target: TRange): Boolean;');
-  AddFunction(@TRange_Intersection, 'function TRange_Intersection(const source, target: TRange; const null: TRange): TRange;');
-  AddFunction(@TRange_Intersect, 'function TRange_Intersect(const source, target: TRange; var intersection: TRange): Boolean;');
+  AddFunction(@TRange_Size, 'function TRange_Size(const range: TRange): Int32;');
+  AddFunction(@TRange_Digits, 'function TRange_Digits(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Ints, 'function TRange_Ints(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
+  AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const a, b: TRange): Boolean;');
+  AddFunction(@TRange_Overlap, 'function TRange_Overlap(const a, b: TRange): Boolean;');
+  AddFunction(@TRange_Intersection, 'function TRange_Intersection(const a, b: TRange; const null: TRange): TRange;');
+  AddFunction(@TRange_Intersect, 'function TRange_Intersect(const a, b: TRange; var intersection: TRange): Boolean;');
+  AddFunction(@TRange_Union, 'function TRange_Union(const a, b: TRange): TRange;');
+  AddFunction(@TRange_Shift, 'function TRange_Shift(const range: TRange; const delta: Int32): TRange;');
+  AddFunction(@TRange_Contains, 'function TRange_Contains(const range, x: TRange): Boolean;');
+  AddFunction(@TRange_Reversed, 'function TRange_Reversed(const range: TRange): TRange;');
+  AddFunction(@TRange_Reverse, 'function TRange_Reverse(var range: TRange): Boolean;');
+  AddFunction(@TRange_Equals, 'function TRange_Equals(const a, b: TRange): Boolean;');
+  AddFunction(@TRange_Clamp, 'function TRange_Clamp(const range, zone: TRange): TRange;');
+  AddFunction(@TRange_ClampMax, 'function TRange_ClampMax(const range: TRange; const maximum: Int32): TRange;');
+  AddFunction(@TRange_ClampMin, 'function TRange_ClampMin(const range: TRange; const minimum: Int32): TRange;');
 
   AddFunction(@T_AllEqual_TIntegerArray, 'function T_AllEqual_TIntegerArray(const arr: TIntegerArray): Boolean;');
   AddFunction(@T_AllEqual_TDoubleArray, 'function T_AllEqual_TDoubleArray(const arr: TDoubleArray): Boolean;');

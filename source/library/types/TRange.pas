@@ -1,4 +1,34 @@
 {==============================================================================]
+  <TRange_Neutral>
+  @action: Returns true if range start equals stop
+  @note: None.
+[==============================================================================}
+function TRange_Neutral(const range: TRange): Boolean; cdecl;
+begin
+  Result := (range.start = range.stop);
+end;
+
+{==============================================================================]
+  <TRange_Increasing>
+  @action: Returns true if range start is lower than stop
+  @note: None.
+[==============================================================================}
+function TRange_Increasing(const range: TRange): Boolean; cdecl;
+begin
+  Result := (range.start < range.stop);
+end;
+
+{==============================================================================]
+  <TRange_Decreasing>
+  @action: Returns true if range start is higher than stop
+  @note: None.
+[==============================================================================}
+function TRange_Decreasing(const range: TRange): Boolean; cdecl;
+begin
+  Result := (range.start > range.stop);
+end;
+
+{==============================================================================]
   <TRange_Create>
   @action: Create a TRange with start and stop
   @note: None.
@@ -35,47 +65,47 @@ end;
 
 {==============================================================================]
   <TRange_Size>
-  @action: Returns size of the given range r.
+  @action: Returns size of the given range.
   @note: None.
 [==============================================================================}
-function TRange_Size(const r: TRange): Int32; cdecl;
+function TRange_Size(const range: TRange): Int32; cdecl;
 begin
-  Result := (Abs(r.stop - r.start) + 1);
+  Result := (Abs(range.stop - range.start) + 1);
 end; 
 
 {==============================================================================]
   <TRange_Digits>
-  @action: Returns digits of the given range r.
+  @action: Returns digits of the given range.
   @note: None.
 [==============================================================================}
-function TRange_Digits(const r: TRange): TIntegerArray; cdecl;
+function TRange_Digits(const range: TRange): TIntegerArray; cdecl;
 var
   i, s: Int32;
 begin
-  s := Sign(r.stop - r.start);
-  SetLength(Result, (Abs(r.stop - r.start) + 1));
+  s := Sign(range.stop - range.start);
+  SetLength(Result, (Abs(range.stop - range.start) + 1));
   for i := 0 to High(Result) do
-    Result[i] := (r.start + (i * s));
+    Result[i] := (range.start + (i * s));
 end;
 
 {==============================================================================]
   <TRange_Ints>
-  @action: Returns digits of the given range r.
+  @action: Returns digits of the given range.
   @note: None.
 [==============================================================================}
-function TRange_Ints(const r: TRange): TIntegerArray; cdecl;
+function TRange_Ints(const range: TRange): TIntegerArray; cdecl;
 var
   i, l: Int32;
 begin
-  l := (Abs(r.stop - r.start) + 1);
+  l := (Abs(range.stop - range.start) + 1);
   SetLength(Result, l);
-  case (r.start > r.stop) of
+  case (range.start > range.stop) of
     True:
     for i := 0 to High(Result) do
-      Result[((l - i) - 1)] := (i + r.stop);
+      Result[((l - i) - 1)] := (i + range.stop);
     False:
     for i := 0 to High(Result) do
-      Result[i] := (i + r.start);
+      Result[i] := (i + range.start);
   end;
 end;
 
@@ -84,47 +114,205 @@ end;
   @action: Using Min-Maxing this function returns "normal" range.
   @note: None.
 [==============================================================================}
-function TRange_Normalize(const r: TRange): TRange; cdecl;
+function TRange_Normalize(const range: TRange): TRange; cdecl;
 begin
-  Result.start := Min(r.start, r.stop);
-  Result.stop := Max(r.start, r.stop);
+  Result.start := Min(range.start, range.stop);
+  Result.stop := Max(range.start, range.stop);
 end;
 
-function TRange_Overlapping(const source, target: TRange): Boolean; cdecl;
+{==============================================================================]
+  <TRange_Overlapping>
+  @action: Checks if a and b overlap eachother.
+  @note: Returns true if overlap is found.
+[==============================================================================}
+function TRange_Overlapping(const a, b: TRange): Boolean; cdecl;
 begin
-  Result := (Min(source.start, source.stop) <= Max(target.start, target.stop)) and (Min(target.start, target.stop) <= Max(source.start, source.stop));
+  Result := (Min(a.start, a.stop) <= Max(b.start, b.stop)) and (Min(b.start, b.stop) <= Max(a.start, a.stop));
 end;
 
-function TRange_Overlap(const source, target: TRange): Boolean; cdecl;
+{==============================================================================]
+  <TRange_Overlap>
+  @action: Checks if a and b overlap eachother.
+  @note: Returns true if overlap is found.
+[==============================================================================}
+function TRange_Overlap(const a, b: TRange): Boolean; cdecl;
 begin
-  Result := not (Min(source.start, source.stop) > Max(target.start, target.stop)) or (Min(target.start, target.stop) > Max(source.start, source.stop));
+  Result := not (Min(a.start, a.stop) > Max(b.start, b.stop)) or (Min(b.start, b.stop) > Max(a.start, a.stop));
 end;
 
-function TRange_Intersection(const source, target: TRange; const null: TRange): TRange; cdecl;
+{==============================================================================]
+  <TRange_Intersection>
+  @action: Returns intersection of a and b.
+  @note: Returns null if there is no intersection for a and b.
+[==============================================================================}
+function TRange_Intersection(const a, b: TRange; const null: TRange): TRange; cdecl;
 var
   s, t: TRange;
-  a, b: Int32;
+  x, y: Int32;
 begin
-  s := TRange_Normalize(source);
-  t := TRange_Normalize(target);
-  a := Max(s.start, t.start);
-  b := Min(s.stop, t.stop);
-  if a <= b then
-    Result := TRange_Create(a, b)
+  s := TRange_Normalize(a);
+  t := TRange_Normalize(b);
+  x := Max(s.start, t.start);
+  y := Min(s.stop, t.stop);
+  if (x <= y) then
+    Result := TRange_Create(x, y)
   else
     Result := null;
 end;
 
-function TRange_Intersect(const source, target: TRange; var intersection: TRange): Boolean; cdecl;
+{==============================================================================]
+  <TRange_Intersection>
+  @action: Returns true if of a and b contains intersection.
+  @note: Stores intersection to variable, if Result is True.
+[==============================================================================}
+function TRange_Intersect(const a, b: TRange; var intersection: TRange): Boolean; cdecl;
 var
   s, t: TRange;
-  a, b: Int32;
+  x, y: Int32;
 begin
-  s := TRange_Normalize(source);
-  t := TRange_Normalize(target);
-  a := Max(s.start, t.start);
-  b := Min(s.stop, t.stop);
-  Result := (a <= b);
+  s := TRange_Normalize(a);
+  t := TRange_Normalize(b);
+  x := Max(s.start, t.start);
+  y := Min(s.stop, t.stop);
+  Result := (x <= y);
   if Result then
-    intersection := TRange_Create(a, b);
+    intersection := TRange_Create(x, y);
 end;
+
+{==============================================================================]
+  <TRange_Union>
+  @action: Returns union of ranges a and b.
+  @note: None.
+[==============================================================================}
+function TRange_Union(const a, b: TRange): TRange; cdecl;
+begin
+  Result.start := Min(Min(a.start, a.stop), Min(b.start, b.stop));
+  Result.stop  := Max(Max(a.start, a.stop), Max(b.start, b.stop));
+end;
+
+{==============================================================================]
+  <TRange_Shift>
+  @action: Returns shift of range r by delta.
+  @note: None.
+[==============================================================================}
+function TRange_Shift(const range: TRange; const delta: Int32): TRange; cdecl;
+begin
+  Result := TRange_Create((range.start + delta), (range.stop + delta));
+end;
+
+{==============================================================================]
+  <TRange_Contains>
+  @action: Returns True if range contains x-value.
+  @note: None.
+[==============================================================================}
+function TRange_Contains(const range: TRange; const x: Int32): Boolean; overload; cdecl;
+begin
+  Result := ((x >= Min(range.start, range.stop)) and (x <= Max(range.stop, range.start)));
+end;
+
+{==============================================================================]
+  <TRange_Contains>
+  @action: Returns True if range contains x.
+  @note: Meaning x is completely part of range.
+[==============================================================================}
+function TRange_Contains(const range, x: TRange): Boolean; overload; cdecl;
+begin
+  Result := ((Min(x.start, x.stop) >= Min(range.start, range.stop)) and (Max(x.start, x.stop) <= Max(range.start, range.stop)));
+end;
+
+{==============================================================================]
+  <TRange_Reversed>
+  @action: Returns reversed range.
+  @note: None.
+[==============================================================================}
+function TRange_Reversed(const range: TRange): TRange; cdecl;
+begin
+  Result.start := range.stop;
+  Result.stop := range.start;
+end;
+
+{==============================================================================]
+  <TRange_Reverse>
+  @action: Reverses range, returns True if range was reversed.
+  @note: None.
+[==============================================================================}
+function TRange_Reverse(var range: TRange): Boolean; cdecl;
+var
+  s: Int32;
+begin
+  Result := (range.start <> range.stop);
+  if not Result then
+    Exit;
+  s := range.start;
+  range.start := range.stop;
+  range.stop := s;
+end;
+
+{==============================================================================]
+  <TRange_Equals>
+  @action: Checks if a matches b.
+  @note: 0..3 and 3..0 will be treated as match.
+[==============================================================================}
+function TRange_Equals(const a, b: TRange): Boolean; cdecl;
+begin
+  Result := ((Min(a.start, a.stop) = Min(b.start, b.stop)) and (Max(a.start, a.stop) = Max(b.start, b.stop)));
+end;
+
+{==============================================================================]
+  <TRange_Clamp>
+  @action: Returns range clamped inside zone range.
+  @note: Makes sure Result is range fitted in zone bounds.
+[==============================================================================}
+function TRange_Clamp(const range, zone: TRange): TRange; overload; cdecl;
+var
+  z: TRange;
+begin
+  Result := TRange_Normalize(range);
+  z := TRange_Normalize(zone);
+  if (Result.start < z.start) then
+    Result.start := z.start
+  else
+    if (Result.start > z.stop) then
+      Result.start := z.stop;
+  if (Result.stop > z.stop) then
+    Result.stop := z.stop
+  else
+    if (Result.stop < z.start) then
+      Result.stop := z.start;
+  if (range.start > range.stop) then
+    TRange_Reverse(Result);
+end;
+
+{==============================================================================]
+  <TRange_ClampMax>
+  @action: Returns range with start and stop with maximum value.
+  @note: Makes sure neither start or stop is higher than maximum.
+[==============================================================================}
+function TRange_ClampMax(const range: TRange; const maximum: Int32): TRange; overload;
+begin
+  if (range.start > maximum) then
+    Result.start := maximum
+  else
+    Result.start := range.start;
+  if (range.stop > maximum) then
+    Result.stop := maximum
+  else
+    Result.stop := range.stop;
+end;
+
+{==============================================================================]
+  <TRange_ClampMin>
+  @action: Returns range with start and stop with minimum value.
+  @note: Makes sure neither start or stop is lower than minimum.
+[==============================================================================}
+function TRange_ClampMin(const range: TRange; const minimum: Int32): TRange; overload;
+begin
+  if (range.start < minimum) then
+    Result.start := minimum
+  else
+    Result.start := range.start;
+  if (range.stop < minimum) then
+    Result.stop := minimum
+  else
+    Result.stop := range.stop;
+end;  
