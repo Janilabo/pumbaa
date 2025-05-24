@@ -128,6 +128,17 @@ begin
   AddFunction(@TBox_H, 'function TBox_H(var bx: TBox; const height: Int32): Int32; overload;');
   AddFunction(@TBox_Height, 'function TBox_Height(const bx: TBox): Int32; overload;');
   AddFunction(@TBox_Height, 'function TBox_Height(var bx: TBox; const height: Int32): Int32; overload;');
+  AddFunction(@TBox_Resize, 'function TBox_Resize(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeVertically, 'function TBox_ResizeVertically(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeHorizontally, 'function TBox_ResizeHorizontally(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeTop, 'function TBox_ResizeTop(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeBottom, 'function TBox_ResizeBottom(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeLeft, 'function TBox_ResizeLeft(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeRight, 'function TBox_ResizeRight(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeTopLeft, 'function TBox_ResizeTopLeft(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeTopRight, 'function TBox_ResizeTopRight(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeBottomRight, 'function TBox_ResizeBottomRight(const bx: TBox; const change: Int32): TBox;');
+  AddFunction(@TBox_ResizeBottomLeft, 'function TBox_ResizeBottomLeft(const bx: TBox; const change: Int32): TBox;');
   AddFunction(@TBox_Equal, 'function TBox_Equal(a, b: TBox): Boolean;');
   AddFunction(@TBox_Contains, 'function TBox_Contains(const bx: TBox; const pt: TPoint): Boolean; overload;');
   AddFunction(@TBox_Contains, 'function TBox_Contains(const bx, x: TBox): Boolean; overload;');
@@ -135,14 +146,14 @@ begin
   AddFunction(@TBox_In, 'function TBox_In(const bx: TBox; const areas: TBoxArray): Boolean; overload;');
   AddFunction(@TBox_Inside, 'function TBox_Inside(const bx, area: TBox): Boolean; overload;');
   AddFunction(@TBox_Inside, 'function TBox_Inside(const bx: TBox; const areas: TBoxArray): Boolean; overload;');
-  AddFunction(@TBox_Size, 'function TBox_Size(const bx: TBox): Int32;');
+  AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Int32;');
   AddFunction(@TBox_Center, 'function TBox_Center(const bx: TBox): TPoint;');
   AddFunction(@TBox_Envelope, 'function TBox_Envelope(const a, b: TBox): TBox;');
   AddFunction(@TBox_Overlap, 'function TBox_Overlap(const a, b: TBox): Boolean;');
   AddFunction(@TBox_Intersection, 'function TBox_Intersection(const a, b: TBox): TBox;');
   AddFunction(@TBox_Intersect, 'function TBox_Intersect(const a, b: TBox; var intersection: TBox): Boolean;');
   AddFunction(@TBox_Union, 'function TBox_Union(const a, b: TBox): TBox;');
-  AddFunction(@TBox_Dimensions, 'function TBox_Dimensions(const bx: TBox; var width, height: Int32): Int32;');
+  AddFunction(@TBox_Size, 'function TBox_Dimensions(const bx: TBox; var width, height: Int32): Int32;');
   AddFunction(@TBox_Valid, 'function TBox_Valid(const bx: TBox): Boolean; cdecl;');
   AddFunction(@TBox_Invalid, 'function TBox_Invalid(const bx: TBox): Boolean;');
   AddFunction(@TBox_Similar, 'function TBox_Similar(const a, b: TBox; const maxWDiff, maxHDiff: Int32): Boolean; overload;');
@@ -153,6 +164,8 @@ begin
   AddFunction(@TBox_Restrict, 'function TBox_Restrict(var bx: TBox; const area: TBox): Boolean;');
   AddFunction(@TBox_Clamp, 'function TBox_Clamp(const bx, area: TBox): TBox;');
   AddFunction(@TBox_Points, 'function TBox_Points(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_TPointArray, 'function TBox_TPointArray(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Screen, 'function TBox_Screen(const bx: TBox): Double;');
   
   AddFunction(@TRange_Neutral, 'function TRange_Neutral(const range: TRange): Boolean;');
   AddFunction(@TRange_Increasing, 'function TRange_Increasing(const range: TRange): Boolean;');

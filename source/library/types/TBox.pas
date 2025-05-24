@@ -79,6 +79,39 @@ begin
 end;
 
 {==============================================================================]
+  <TBox_Dimensions>
+  @action: Stores dimensions from TBox (bx) to width and height variables
+  @note: Returns bx area.
+[==============================================================================}
+function TBox_Size(const bx: TBox; var width, height: Int32): Int32; cdecl; inline;
+begin
+  width := ((bx.X2 - bx.X1) + 1);
+  height := ((bx.Y2 - bx.Y1) + 1);
+  Result := (width * height);
+end;
+
+{==============================================================================]
+  <TBox_Area>
+  @action: Calculates the amount of pixels in TBox (bx).
+           Returns -1 with invalid TBox.
+  @note: None
+[==============================================================================}
+function TBox_Area(const bx: TBox): Int32; cdecl; inline;
+begin
+  Result := (((bx.X2 - bx.X1) + 1) * ((bx.Y2 - bx.Y1) + 1));
+end;
+
+{==============================================================================]
+  <TBox_Screen>
+  @action: Returns diagonal size of bx.
+  @note: None.
+[==============================================================================}
+function TBox_Screen(const bx: TBox): Double; cdecl;
+begin
+  Result := Sqrt(Sqr((bx.X2 - bx.X1) + 1) + Sqr((bx.Y2 - bx.Y1) + 1));
+end;
+
+{==============================================================================]
   <TBox_W>
   @action: Returns bx width.
   @note: Fast, works with only valid TBoxes.
@@ -163,6 +196,149 @@ begin
 end;
 
 {==============================================================================]
+  <TBox_Resize>
+  @action: Returns bx that has been resized fully by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_Resize(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := (bx.X1 - change);
+  Result.Y1 := (bx.Y1 - change);
+  Result.X2 := (bx.X2 + change);
+  Result.Y2 := (bx.Y2 + change);
+end;
+
+{==============================================================================]
+  <TBox_ResizeVertically>
+  @action: Returns bx that has been resized vertically by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeVertically(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := bx.X1;
+  Result.Y1 := (bx.Y1 - change);
+  Result.X2 := bx.X2;
+  Result.Y2 := (bx.Y2 + change);
+end;
+
+{==============================================================================]
+  <TBox_ResizeHorizontally>
+  @action: Returns bx that has been resized horizontally by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeHorizontally(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := (bx.X1 - change);
+  Result.Y1 := bx.Y1;
+  Result.X2 := (bx.X2 + change);
+  Result.Y2 := bx.Y2;
+end;
+
+{==============================================================================]
+  <TBox_ResizeTop>
+  @action: Returns bx that has been resized horizontally by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeTop(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := bx.X1;
+  Result.Y1 := (bx.Y1 - change);
+  Result.X2 := bx.X2;
+  Result.Y2 := bx.Y2;
+end;
+
+{==============================================================================]
+  <TBox_ResizeBottom>
+  @action: Returns bx that has been resized from bottom by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeBottom(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := bx.X1;
+  Result.Y1 := bx.Y1;
+  Result.X2 := bx.X2;
+  Result.Y2 := (bx.Y2 + change);
+end;
+
+{==============================================================================]
+  <TBox_ResizeLeft>
+  @action: Returns bx that has been resized from left-side by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeLeft(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := (bx.X1 - change);
+  Result.Y1 := bx.Y1;
+  Result.X2 := bx.X2;
+  Result.Y2 := bx.Y2;
+end;
+
+{==============================================================================]
+  <TBox_ResizeRight>
+  @action: Returns bx that has been resized from right-side by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeRight(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := bx.X1;
+  Result.Y1 := bx.Y1;
+  Result.X2 := (bx.X2 + change);
+  Result.Y2 := bx.Y2;
+end;
+
+{==============================================================================]
+  <TBox_ResizeTopLeft>
+  @action: Returns bx that has been resized from top-left by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeTopLeft(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := (bx.X1 - change);
+  Result.Y1 := (bx.Y1 - change);
+  Result.X2 := bx.X2;
+  Result.Y2 := bx.Y2;
+end;
+
+{==============================================================================]
+  <TBox_ResizeTopRight>
+  @action: Returns bx that has been resized from top-right by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeTopRight(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := bx.X1;
+  Result.Y1 := (bx.Y1 - change);
+  Result.X2 := (bx.X2 + change);
+  Result.Y2 := bx.Y2;
+end;
+
+{==============================================================================]
+  <TBox_ResizeBottomRight>
+  @action: Returns bx that has been resized from bottom-right by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeBottomRight(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := bx.X1;
+  Result.Y1 := bx.Y1;
+  Result.X2 := (bx.X2 + change);
+  Result.Y2 := (bx.Y2 + change);
+end;
+
+{==============================================================================]
+  <TBox_ResizeBottomLeft>
+  @action: Returns bx that has been resized from bottom-left by change.
+  @note: Change value can be also negative - so be careful with it! :)
+[==============================================================================}
+function TBox_ResizeBottomLeft(const bx: TBox; const change: Int32): TBox; cdecl;
+begin
+  Result.X1 := (bx.X1 - change);
+  Result.Y1 := bx.Y1;
+  Result.X2 := bx.X2;
+  Result.Y2 := (bx.Y2 + change);
+end;
+
+{==============================================================================]
   <TBox_Equal>
   @action: Returns true if bx1 and bx2 are identical.
   @note: None
@@ -243,17 +419,6 @@ begin
 end; 
 
 {==============================================================================]
-  <TBox_Size>
-  @action: Calculates the amount of pixels in TBox (bx).
-           Returns -1 with invalid TBox.
-  @note: None
-[==============================================================================}
-function TBox_Size(const bx: TBox): Int32; cdecl; inline;
-begin
-  Result := (((bx.X2 - bx.X1) + 1) * ((bx.Y2 - bx.Y1) + 1));
-end;
-
-{==============================================================================]
   <TBox_Center>
   @action: Returns Center point from bx.
   @note: None.
@@ -322,18 +487,6 @@ begin
   Result.Y1 := Min(a.Y1, b.Y1);
   Result.X2 := Max(a.X2, b.X2);
   Result.Y2 := Max(a.Y2, b.Y2);
-end;
-
-{==============================================================================]
-  <TBox_Dimensions>
-  @action: Stores dimensions from TBox (bx) to width and height variables
-  @note: Returns box size.
-[==============================================================================}
-function TBox_Dimensions(const bx: TBox; var width, height: Int32): Int32; cdecl; inline;
-begin
-  width := ((bx.X2 - bx.X1) + 1);
-  height := ((bx.Y2 - bx.Y1) + 1);
-  Result := (width * height);
 end;
 
 {==============================================================================]
@@ -526,4 +679,23 @@ begin
       Result[r].Y := y;
       r := (r + 1);
     end;
+end;
+
+{==============================================================================]
+  <TBox_TPointArray>
+  Explanation: Returns TBox points as TPointArray.
+  Example: None.
+[==============================================================================}
+function TBox_TPointArray(const bx: TBox): TPointArray; cdecl;
+var
+  i, w, h, x, y: Int32;
+begin
+  w := ((bx.X2 - bx.X1) + 1);
+  h := ((bx.Y2 - bx.Y1) + 1);
+  SetLength(Result, (w * h));
+  for i := 0 to ((w * h) - 1) do
+  begin
+    Result[i].X := (bx.X1 + (i mod w));
+    Result[i].Y := (bx.Y1 + (i div w));
+  end;
 end;
