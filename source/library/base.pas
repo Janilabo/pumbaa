@@ -112,6 +112,7 @@ end;
 {$I types\String.pas}
 {$I types\Boolean.pas}
 {$I types\TPoint.pas}
+{$I types\TBox.pas}
 {$I types\TRange.pas}
 
 {$I generic\TArray_Copy.pas}

@@ -259,6 +259,36 @@ begin
 end;
 
 {==============================================================================]
+  <TRange_Differs>
+  @action: Checks if a unmatches b.
+  @note: 0..3 and 3..0 will be treated as match.
+[==============================================================================}
+function TRange_Differs(const a, b: TRange): Boolean; cdecl;
+begin
+  Result := ((Min(a.start, a.stop) <> Min(b.start, b.stop)) or (Max(a.start, a.stop) <> Max(b.start, b.stop)));
+end;
+
+{==============================================================================]
+  <TRange_Equal>
+  @action: Checks if a matches b exactly.
+  @note: 0..3 and 3..0 will NOT be treated as match.
+[==============================================================================}
+function TRange_Equal(const a, b: TRange): Boolean; cdecl;
+begin
+  Result := ((a.start = b.start) and (a.stop = b.stop));
+end;
+
+{==============================================================================]
+  <TRange_Differ>
+  @action: Checks if a unmatches b exactly.
+  @note: 0..3 and 3..0 will NOT be treated as match.
+[==============================================================================}
+function TRange_Differ(const a, b: TRange): Boolean; cdecl;
+begin
+  Result := ((a.start <> b.start) or (a.stop <> b.stop));
+end;
+
+{==============================================================================]
   <TRange_Clamp>
   @action: Returns range clamped inside zone range.
   @note: Makes sure Result is range fitted in zone bounds.
@@ -363,6 +393,39 @@ begin
 end;
 
 {==============================================================================]
+  <TRange_Clip>
+  @action: Ensures range start and stop stays within zone.
+  @note: Alternative for TRange_Clamp.
+[==============================================================================}
+function TRange_Clip(const range, zone: TRange): TRange;
+begin
+  Result.start := Max(zone.start, Min(range.start, zone.stop));
+  Result.stop := Min(zone.stop, Max(range.stop, zone.start));
+end;
+
+{==============================================================================]
+  <TRange_ClipMin>
+  @action: Ensures range start and stop stays within minimum.
+  @note: Alternative for TRange_ClampMin.
+[==============================================================================}
+function TRange_ClipMin(const range: TRange; minimum: Int32): TRange;
+begin
+  Result.start := Max(range.start, minimum);
+  Result.stop := Max(range.stop, minimum);
+end;
+
+{==============================================================================]
+  <TRange_ClipMax>
+  @action: Ensures range start and stop stays within maximum.
+  @note: Alternative for TRange_ClampMax.
+[==============================================================================}
+function TRange_ClipMax(const range: TRange; maximum: Int32): TRange;
+begin
+  Result.start := Min(range.start, maximum);
+  Result.stop := Min(range.stop, maximum);
+end;
+
+{==============================================================================]
   <TRange_Distribute>
   @action: Distributes range to TRangeArray by amount of parts
   @note: None.
@@ -451,4 +514,62 @@ begin
     end;
   end else
     SetLength(Result, 0);
+end;
+
+{==============================================================================]
+  <TRange_Touch>
+  @action: Returns true if 2 TRanges are right next to eachother.
+  @note: (Distance is exactly 1 between em).
+[==============================================================================}
+function TRange_Touch(const a, b: TRange): Boolean; cdecl;
+begin
+  Result := (((Max(a.start, a.stop) + 1) = Min(b.start, b.stop)) or ((Max(b.start, b.stop) + 1) = Min(a.start, a.stop)));
+end;
+
+{==============================================================================]
+  <TRange_Touches>
+  @action: Returns true if 2 TRanges are right next to eachother.
+  @note: (Distance is exactly 1 between em).
+[==============================================================================}
+function TRange_Touches(const a, b: TRange): Boolean; cdecl;
+var
+  i, j: TRange;
+begin
+  i := TRange_Normalize(a);
+  j := TRange_Normalize(b);
+  Result := ((i.stop + 1) = j.start) or ((j.stop + 1) = i.start);
+end;
+
+{==============================================================================]
+  <TRange_Distance>
+  @action: Returns minimum distance between ranges a and b.
+  @note: If ranges overlap, distance is 0.
+[==============================================================================}
+function TRange_Distance(const a, b: TRange): Int32; cdecl;
+var
+  r1, r2: TRange;
+begin
+  r1 := TRange_Normalize(a);
+  r2 := TRange_Normalize(b);
+  if (r1.stop < r2.start) then
+    Result := (r2.start - r1.stop)
+  else
+    if (r2.stop < r1.start) then
+      Result := (r1.start - r2.stop)
+    else
+      Result := 0;
+end;
+
+{==============================================================================]
+  <TRange_DistHausdorff>
+  @action: Returns Hausdorff-based distance between ranges a and b.
+  @note: None.
+[==============================================================================}
+function TRange_DistHausdorff(const a, b: TRange): Int32; cdecl;
+var
+  i, j: TRange;
+begin
+  i := TRange_Normalize(a);
+  j := TRange_Normalize(b);
+  Result := Max(Abs(i.start - j.stop), Abs(i.stop - j.start));
 end;

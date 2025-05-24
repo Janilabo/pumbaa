@@ -5,7 +5,7 @@
 [==============================================================================}
 function TPoint_InBox(const pt: TPoint; const bx: TBox): Boolean; cdecl; inline;
 begin
-  Result := ((pt.X >= bx.X1) and (pt.Y >= bx.Y1) and (pt.X <= bx.X2) and (pt.Y >= bx.Y2));
+  Result := ((pt.X >= bx.X1) and (pt.Y >= bx.Y1) and (pt.X <= bx.X2) and (pt.Y <= bx.Y2));
 end;
 
 {==============================================================================]
@@ -54,51 +54,51 @@ begin
 end;
 
 {==============================================================================]
- <TPoint_DistanceEuclidean>
+ <TPoint_DistEuclidean>
  @action: Calculates the distance from source to target.
  @note: Euclidean.
 [==============================================================================}
-function TPoint_DistanceEuclidean(const source, target: TPoint): Double; cdecl;
+function TPoint_DistEuclidean(const source, target: TPoint): Double; cdecl;
 begin
   Result := Sqrt(Power((source.x - target.x), 2) + Power((source.y - target.y), 2));
 end;
 
 {==============================================================================]
- <TPoint_DistanceEuclidean2>
+ <TPoint_DistEuclidean2>
  @action: Calculates the distance from source to target.
  @note: Euclidean v2
 [==============================================================================}
-function TPoint_DistanceEuclidean2(const source, target: TPoint): Double; cdecl;
+function TPoint_DistEuclidean2(const source, target: TPoint): Double; cdecl;
 begin
   Result := Sqrt(Sqr(source.X - target.X) + Sqr(source.Y - target.Y));
 end;
 
 {==============================================================================]
- <TPoint_DistanceSquaredEuclidean>
+ <TPoint_DistSquaredEuclidean>
  @action: Calculates the distance from source to target.
  @note: Squared Euclidean
 [==============================================================================}
-function TPoint_DistanceSquaredEuclidean(const source, target: TPoint): Double; cdecl;
+function TPoint_DistSquaredEuclidean(const source, target: TPoint): Double; cdecl;
 begin
   Result := (((source.X - target.X) * (source.X - target.X)) + ((source.Y - target.Y) * (source.Y - target.Y)));
 end;
 
 {==============================================================================]
- <TPoint_DistanceManhattan>
+ <TPoint_DistManhattan>
  @action: Calculates the distance from source to target.
  @note: Manhattan
 [==============================================================================}
-function TPoint_DistanceManhattan(const source, target: TPoint): Double; cdecl;
+function TPoint_DistManhattan(const source, target: TPoint): Double; cdecl;
 begin
   Result := (Abs(source.x - target.x) + Abs(source.y - target.y));
 end;
 
 {==============================================================================]
- <TPoint_DistanceChebyshev>
+ <TPoint_DistChebyshev>
  @action: Calculates the distance from source to target.
  @note: Chebyshev
 [==============================================================================}
-function TPoint_DistanceChebyshev(const source, target: TPoint): Double; cdecl;
+function TPoint_DistChebyshev(const source, target: TPoint): Double; cdecl;
 begin
   Result := Max(Abs(source.x - target.x), Abs(source.y - target.y));
 end;
