@@ -102,3 +102,78 @@ function TPoint_DistChebyshev(const source, target: TPoint): Double; cdecl;
 begin
   Result := Max(Abs(source.x - target.x), Abs(source.y - target.y));
 end;
+
+{==============================================================================]
+ <TPoint_Grid>
+ @action: Outputs/builds grid of points with parameters;
+          pt = starting point, used for starting coordinates.
+          rows, columns = count of rows and columns
+          spaceHorizontal = space between columns
+          spaceVertical = space between rows
+ @note: None.
+[==============================================================================}
+function TPoint_Grid(const pt: TPoint; const rows, columns: Int32; const spaceVertical: Int32 = 0; const spaceHorizontal: Int32 = 0): TPointArray; cdecl;
+var
+  r, c, i, x, y: Integer;
+begin
+  if (((rows > -1) and (columns > -1)) and ((rows * columns) > 0)) then
+  begin
+    SetLength(Result, (rows * columns));
+    for r := 0 to (rows - 1) do
+    begin
+      y := (pt.Y + (r * (spaceVertical + 1)));
+      for c := 0 to (columns - 1) do
+      begin
+        i := ((r * columns) + c);
+        x := (pt.X + (c * (spaceHorizontal + 1)));
+        Result[i].X := x;
+        Result[i].Y := y;
+      end;
+    end;
+  end else
+    SetLength(Result, 0);
+end;
+
+{==============================================================================]
+ <TPoint_Row>
+ @action: Outputs column of points. Starting from pt,
+          where space is the amount of space between each cell.
+ @note: None
+[==============================================================================}
+function TPoint_Row(const pt: TPoint; const cells: Int32; const space: Int32 = 0): TPointArray; cdecl;
+var
+  i: Int32;
+begin
+  if (cells > 0) then
+  begin
+    SetLength(Result, cells);
+    for i := 0 to (cells - 1) do
+    begin
+      Result[i].X := (pt.X + (i * (space + 1)));
+      Result[i].Y := pt.Y;
+    end;
+  end else
+    SetLength(Result, 0);
+end;
+
+{==============================================================================]
+ <TPoint_Column>
+ @action: Outputs column of points. Starting from pt,
+          where space is the amount of space between each cell.
+ @note: None
+[==============================================================================}
+function TPoint_Column(const pt: TPoint; const cells: Int32; const space: Int32 = 0): TPointArray; cdecl;
+var
+  i: Int32;
+begin
+  if (cells > 0) then
+  begin
+    SetLength(Result, cells);
+    for i := 0 to (cells - 1) do
+    begin
+      Result[i].X := pt.X;
+      Result[i].Y := (pt.Y + (i * (space + 1)));
+    end;
+  end else
+    SetLength(Result, 0);
+end;

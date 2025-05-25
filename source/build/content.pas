@@ -113,13 +113,18 @@ begin
   AddFunction(@TPoint_DistSquaredEuclidean, 'function TPoint_DistSquaredEuclidean(const source, target: TPoint): Double;');
   AddFunction(@TPoint_DistManhattan, 'function TPoint_DistManhattan(const source, target: TPoint): Double;');
   AddFunction(@TPoint_DistChebyshev, 'function TPoint_DistChebyshev(const source, target: TPoint): Double;');
+  AddFunction(@TPoint_Grid, 'function TPoint_Grid(const pt: TPoint; const rows, columns: Int32; const spaceVertical: Int32 = 0; const spaceHorizontal: Int32 = 0): TPointArray;');
+  AddFunction(@TPoint_Row, 'function TPoint_Row(const pt: TPoint; const cells: Int32; const space: Int32 = 0): TPointArray;');
+  AddFunction(@TPoint_Column, 'function TPoint_Column(const pt: TPoint; const cells: Int32; const space: Int32 = 0): TPointArray;');
   
   AddFunction(@TBox_Build, 'function TBox_Build(const X1, Y1, X2, Y2: Int32): TBox; overload;');
   AddFunction(@TBox_Build, 'function TBox_Build(const a, b: TPoint): TBox; overload;');
   AddFunction(@TBox_Create, 'function TBox_Create(const X1, Y1, X2, Y2: Int32): TBox; overload;');
   AddFunction(@TBox_Create, 'function TBox_Create(const a, b: TPoint): TBox; overload;');
-  AddFunction(@TBox_From, 'function TBox_From(const pt: TPoint; const wRadius, hRadius: Int32): TBox;');
-  AddFunction(@TBox_With, 'function TBox_With(const pt: TPoint; const width, height: Int32): TBox;');
+  AddFunction(@TBox_At, 'function TBox_At(const pt: TPoint; const wRadius, hRadius: Int32): TBox; overload;');
+  AddFunction(@TBox_At, 'function TBox_At(const pt: TPoint; const radius: Int32): TBox; overload;');
+  AddFunction(@TBox_To, 'function TBox_To(const pt: TPoint; const width, height: Int32): TBox; overload;');
+  AddFunction(@TBox_To, 'function TBox_To(const pt: TPoint; const size: Int32): TBox; overload;');
   AddFunction(@TBox_W, 'function TBox_W(const bx: TBox): Int32; overload;');
   AddFunction(@TBox_W, 'function TBox_W(var bx: TBox; const width: Int32): Int32; overload;');
   AddFunction(@TBox_Width, 'function TBox_Width(const bx: TBox): Int32; overload;');
@@ -153,7 +158,7 @@ begin
   AddFunction(@TBox_Intersection, 'function TBox_Intersection(const a, b: TBox): TBox;');
   AddFunction(@TBox_Intersect, 'function TBox_Intersect(const a, b: TBox; var intersection: TBox): Boolean;');
   AddFunction(@TBox_Union, 'function TBox_Union(const a, b: TBox): TBox;');
-  AddFunction(@TBox_Size, 'function TBox_Dimensions(const bx: TBox; var width, height: Int32): Int32;');
+  AddFunction(@TBox_Size, 'function TBox_Size(const bx: TBox; var width, height: Int32): Int32;');
   AddFunction(@TBox_Valid, 'function TBox_Valid(const bx: TBox): Boolean; cdecl;');
   AddFunction(@TBox_Invalid, 'function TBox_Invalid(const bx: TBox): Boolean;');
   AddFunction(@TBox_Similar, 'function TBox_Similar(const a, b: TBox; const maxWDiff, maxHDiff: Int32): Boolean; overload;');
@@ -165,7 +170,10 @@ begin
   AddFunction(@TBox_Clamp, 'function TBox_Clamp(const bx, area: TBox): TBox;');
   AddFunction(@TBox_Points, 'function TBox_Points(const bx: TBox): TPointArray;');
   AddFunction(@TBox_TPointArray, 'function TBox_TPointArray(const bx: TBox): TPointArray;');
-  AddFunction(@TBox_Screen, 'function TBox_Screen(const bx: TBox): Double;');
+  AddFunction(@TBox_Diagonal, 'function TBox_Diagonal(const bx: TBox): Double;');
+  AddFunction(@TBox_Grid, 'function TBox_Grid(const bx: TBox; const rows, columns: Int32; const spaceVertical: Int32 = 0; const spaceHorizontal: Int32 = 0): TBoxArray;');
+  AddFunction(@TBox_Row, 'function TBox_Row(const bx: TBox; const cells: Int32; const space: Int32 = 0): TBoxArray;');
+  AddFunction(@TBox_Column, 'function TBox_Column(const bx: TBox; const cells: Int32; const space: Int32 = 0): TBoxArray;');
   
   AddFunction(@TRange_Neutral, 'function TRange_Neutral(const range: TRange): Boolean;');
   AddFunction(@TRange_Increasing, 'function TRange_Increasing(const range: TRange): Boolean;');

@@ -51,11 +51,11 @@ begin
 end;
 
 {==============================================================================]
-  <TBox_From>
+  <TBox_At>
   @action: Creates TBox from pt by radius used for width and height.
   @note: None.
 [==============================================================================}
-function TBox_From(const pt: TPoint; const wRadius, hRadius: Int32): TBox; cdecl;
+function TBox_At(const pt: TPoint; const wRadius, hRadius: Int32): TBox; overload; cdecl;
 begin
   Result.X1 := (pt.X - wRadius);
   Result.Y1 := (pt.Y - hRadius);
@@ -64,11 +64,24 @@ begin
 end;
 
 {==============================================================================]
-  <TBox_With>
+  <TBox_At>
+  @action: Creates TBox from pt by radius used for width and height.
+  @note: None.
+[==============================================================================}
+function TBox_At(const pt: TPoint; const radius: Int32): TBox; overload; cdecl;
+begin
+  Result.X1 := (pt.X - radius);
+  Result.Y1 := (pt.Y - radius);
+  Result.X2 := (pt.X + radius);
+  Result.Y2 := (pt.Y + radius);
+end;
+
+{==============================================================================]
+  <TBox_To>
   @action: Creates box to point, with width and height.
   @note: None.
 [==============================================================================}
-function TBox_With(const pt: TPoint; const width, height: Int32): TBox; cdecl;
+function TBox_To(const pt: TPoint; const width, height: Int32): TBox; overload; cdecl;
 var
   o: TPoint;
 begin
@@ -76,6 +89,21 @@ begin
   Result.Y1 := pt.Y;
   Result.X2 := (pt.X + (width - 1));
   Result.Y2 := (pt.Y + (height - 1));
+end;
+
+{==============================================================================]
+  <TBox_To>
+  @action: Creates box to point, with size for width and height.
+  @note: None.
+[==============================================================================}
+function TBox_To(const pt: TPoint; const size: Int32): TBox; overload; cdecl;
+var
+  o: TPoint;
+begin
+  Result.X1 := pt.X;
+  Result.Y1 := pt.Y;
+  Result.X2 := (pt.X + (size - 1));
+  Result.Y2 := (pt.Y + (size - 1));
 end;
 
 {==============================================================================]
@@ -102,11 +130,11 @@ begin
 end;
 
 {==============================================================================]
-  <TBox_Screen>
+  <TBox_Diagonal>
   @action: Returns diagonal size of bx.
   @note: None.
 [==============================================================================}
-function TBox_Screen(const bx: TBox): Double; cdecl;
+function TBox_Diagonal(const bx: TBox): Double; cdecl;
 begin
   Result := Sqrt(Sqr((bx.X2 - bx.X1) + 1) + Sqr((bx.Y2 - bx.Y1) + 1));
 end;
@@ -343,7 +371,7 @@ end;
   @action: Returns true if bx1 and bx2 are identical.
   @note: None
 [==============================================================================}
-function TBox_Equal(a, b: TBox): Boolean; cdecl; inline;
+function TBox_Equal(const a, b: TBox): Boolean; cdecl; inline;
 begin
   Result := ((a.X1 = b.X1) and (a.Y1 = b.Y1) and (a.X2 = b.X2) and (a.Y2 = b.Y2));
 end;  
@@ -698,4 +726,90 @@ begin
     Result[i].X := (bx.X1 + (i mod w));
     Result[i].Y := (bx.Y1 + (i div w));
   end;
+end;
+
+{==============================================================================]
+ <TBox_Grid>
+ @action: Outputs/builds grid of boxes with parameters;
+          bx = starting box, used for starting coordinates and also for dimensions (width & height) of the boxes.
+          rows, columns = count of rows and columns
+          spaceHorizontal = space between columns
+          spaceVertical = space between rows
+ @note: None.
+[==============================================================================}
+function TBox_Grid(const bx: TBox; const rows, columns: Int32; const spaceVertical: Int32 = 0; const spaceHorizontal: Int32 = 0): TBoxArray; cdecl;
+var
+  w, h, r, c, i, x, y: Integer;
+begin
+  if (((rows > -1) and (columns > -1)) and ((rows * columns) > 0)) then
+  begin
+    TBox_Size(bx, w, h);
+    SetLength(Result, (rows * columns));
+    for r := 0 to (rows - 1) do
+    begin
+      y := (bx.Y1 + (r * (h + spaceVertical)));
+      for c := 0 to (columns - 1) do
+      begin
+        i := ((r * columns) + c);
+        x := (bx.X1 + (c * (w + spaceHorizontal)));
+        Result[i].X1 := x;
+        Result[i].Y1 := y;
+        Result[i].X2 := (x + (w - 1));
+        Result[i].Y2 := (y + (h - 1));
+      end;
+    end;
+  end else
+    SetLength(Result, 0);
+end;
+
+{==============================================================================]
+ <TBox_Row>
+ @action: Outputs row of boxes. Starting from bx,
+          where space is the amount of space between each cell.
+ @note: None
+[==============================================================================}
+function TBox_Row(const bx: TBox; const cells: Int32; const space: Int32 = 0): TBoxArray; cdecl;
+var
+  w, h, i, z: Int32;
+begin
+  if (cells > 0) then
+  begin
+    TBox_Size(bx, w, h);
+    SetLength(Result, cells);
+    for i := 0 to (cells - 1) do
+    begin
+      z := (bx.X1 + (i * (w + space)));
+      Result[i].X1 := z;
+      Result[i].Y1 := bx.Y1;
+      Result[i].X2 := (z + (w - 1));
+      Result[i].Y2 := bx.Y2;
+    end;
+  end else
+    SetLength(Result, 0);
+end;
+
+{==============================================================================]
+ <TBox_Column>
+ @action: Outputs column of boxes. Starting from bx,
+          where space is the amount of space between each cell.
+ @note: None
+[==============================================================================}
+function TBox_Column(const bx: TBox; const cells: Int32; const space: Int32 = 0): TBoxArray; cdecl;
+var
+  w, h, i, z: Int32;
+begin
+  if (cells > 0) then
+  begin
+    TBox_Size(bx, w, h);
+    SetLength(Result, cells);
+    for i := 0 to (cells - 1) do
+    begin
+      z := (bx.Y1 + (i * (h + space)));
+      Result[i].X1 := bx.X1;
+      Result[i].Y1 := z;
+      Result[i].X2 := bx.X2;
+      Result[i].Y2 := (z + (h - 1));
+    end;
+  end else
+    SetLength(Result, 0);
 end;
