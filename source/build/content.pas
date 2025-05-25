@@ -103,6 +103,8 @@ begin
 
   AddFunction(@Boolean_Random, 'function Boolean_Random: Boolean;');
   
+  AddFunction(@TPoint_To, 'function TPoint_To(const X, Y: Int32): TPoint;');
+  AddFunction(@TPoint_At, 'function TPoint_At(const X, Y: Int32): TPoint;');
   AddFunction(@TPoint_InBox, 'function TPoint_InBox(const pt: TPoint; const bx: TBox): Boolean;');
   AddFunction(@TPoint_InCircle, 'function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean;');
   AddFunction(@TPoint_InEllipse, 'function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean;');
@@ -159,7 +161,7 @@ begin
   AddFunction(@TBox_Intersect, 'function TBox_Intersect(const a, b: TBox; var intersection: TBox): Boolean;');
   AddFunction(@TBox_Union, 'function TBox_Union(const a, b: TBox): TBox;');
   AddFunction(@TBox_Size, 'function TBox_Size(const bx: TBox; var width, height: Int32): Int32;');
-  AddFunction(@TBox_Valid, 'function TBox_Valid(const bx: TBox): Boolean; cdecl;');
+  AddFunction(@TBox_Valid, 'function TBox_Valid(const bx: TBox): Boolean;');
   AddFunction(@TBox_Invalid, 'function TBox_Invalid(const bx: TBox): Boolean;');
   AddFunction(@TBox_Similar, 'function TBox_Similar(const a, b: TBox; const maxWDiff, maxHDiff: Int32): Boolean; overload;');
   AddFunction(@TBox_Similar, 'function TBox_Similar(const a, b: TBox; const diff: Int32): Boolean; overload;');
@@ -174,7 +176,14 @@ begin
   AddFunction(@TBox_Grid, 'function TBox_Grid(const bx: TBox; const rows, columns: Int32; const spaceVertical: Int32 = 0; const spaceHorizontal: Int32 = 0): TBoxArray;');
   AddFunction(@TBox_Row, 'function TBox_Row(const bx: TBox; const cells: Int32; const space: Int32 = 0): TBoxArray;');
   AddFunction(@TBox_Column, 'function TBox_Column(const bx: TBox; const cells: Int32; const space: Int32 = 0): TBoxArray;');
-  
+  AddFunction(@TBox_CornerPoints, 'function TBox_CornerPoints(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Corners, 'function TBox_Corners(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_SimilarSize, 'function TBox_SimilarSize(const a, b: TBox; const widthDifferency, heightDifferency: Int32): Boolean; overload;');
+  AddFunction(@TBox_SimilarSize, 'function TBox_SimilarSize(const a, b: TBox; const differency: Integer): Boolean; overload;');
+  AddFunction(@TBox_Centered, 'function TBox_Centered(const bx, area: TBox): TBox;');
+  AddFunction(@TBox_CenterVertically, 'function TBox_CenterVertically(const bx, area: TBox): TBox;');
+  AddFunction(@TBox_CenterHorizontally, 'function TBox_CenterHorizontally(const bx, area: TBox): TBox;');
+
   AddFunction(@TRange_Neutral, 'function TRange_Neutral(const range: TRange): Boolean;');
   AddFunction(@TRange_Increasing, 'function TRange_Increasing(const range: TRange): Boolean;');
   AddFunction(@TRange_Decreasing, 'function TRange_Decreasing(const range: TRange): Boolean;');
@@ -182,6 +191,11 @@ begin
   AddFunction(@TRange_Build, 'function TRange_Build(const start: Int32 = 0; const stop: Int32 = 0): TRange;');
   AddFunction(@TRange_Grab, 'function TRange_Grab(const range: TRange): TRange;');
   AddFunction(@TRange_Size, 'function TRange_Size(const range: TRange): Int32;');
+  AddFunction(@TRange_Length, 'function TRange_Length(const range: TRange): Int32;');
+  AddFunction(@TRange_Min, 'function TRange_Min(const range: TRange): Int32;');
+  AddFunction(@TRange_Minimum, 'function TRange_Minimum(const range: TRange): Int32;');
+  AddFunction(@TRange_Max, 'function TRange_Max(const range: TRange): Int32;');
+  AddFunction(@TRange_Maximum, 'function TRange_Maximum(const range: TRange): Int32;');
   AddFunction(@TRange_Digits, 'function TRange_Digits(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Ints, 'function TRange_Ints(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');

@@ -71,7 +71,66 @@ end;
 function TRange_Size(const range: TRange): Int32; cdecl;
 begin
   Result := (Abs(range.stop - range.start) + 1);
-end; 
+end;
+
+{==============================================================================]
+  <TRange_Length>
+  @action: Returns length of the given range.
+  @note: None.
+[==============================================================================}
+function TRange_Length(const range: TRange): Int32; cdecl;
+begin
+  if (range.start > range.stop) then
+    Result := ((range.start - range.stop) + 1)
+  else
+    Result := ((range.stop - range.start) + 1);
+end;
+
+{==============================================================================]
+  <TRange_Min>
+  @action: Returns minimum value of the given range.
+  @note: None.
+[==============================================================================}
+function TRange_Min(const range: TRange): Int32; cdecl;
+begin
+  Result := Min(range.start, range.stop);
+end;
+
+{==============================================================================]
+  <TRange_Minimum>
+  @action: Returns minimum value of the given range.
+  @note: None.
+[==============================================================================}
+function TRange_Minimum(const range: TRange): Int32; cdecl;
+begin
+  if (range.stop > range.start) then
+    Result := range.start
+  else
+    Result := range.stop;
+end;
+
+{==============================================================================]
+  <TRange_Max>
+  @action: Returns maximum value of the given range.
+  @note: None.
+[==============================================================================}
+function TRange_Max(const range: TRange): Int32; cdecl;
+begin
+  Result := Max(range.stop, range.start);
+end;
+
+{==============================================================================]
+  <TRange_Maximum>
+  @action: Returns maximum value of the given range.
+  @note: None.
+[==============================================================================}
+function TRange_Maximum(const range: TRange): Int32; cdecl;
+begin
+  if (range.start < range.stop) then
+    Result := range.stop
+  else
+    Result := range.start;
+end;
 
 {==============================================================================]
   <TRange_Digits>

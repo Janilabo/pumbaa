@@ -813,3 +813,107 @@ begin
   end else
     SetLength(Result, 0);
 end;
+
+{==============================================================================]
+ <TBox_CornerPoints>
+ @action: Returns all 4 corner points of bx.
+ @note: None
+[==============================================================================}
+function TBox_CornerPoints(const bx: TBox): TPointArray; cdecl;
+begin
+  SetLength(Result, 4);
+  Result[0].X := bx.X1;
+  Result[0].Y := bx.Y1;
+  Result[1].X := bx.X2;
+  Result[1].Y := bx.Y1;
+  Result[2].X := bx.X2;
+  Result[2].Y := bx.Y2;
+  Result[3].X := bx.X1;
+  Result[3].Y := bx.Y2;
+end;
+
+{==============================================================================]
+ <TBox_CornerPoints>
+ @action: Returns corner points of bx.
+ @note: Outputs only unique TPoints.
+[==============================================================================}
+function TBox_Corners(const bx: TBox): TPointArray; cdecl;
+begin
+  SetLength(Result, 0);
+  case ((Ord(Boolean(bx.X1 = bx.X2)) shl 1) or Ord(Boolean(bx.Y1 = bx.Y2))) of
+    0: Result := [TPoint_At(bx.X1, bx.Y1), TPoint_At(bx.X2, bx.Y1), TPoint_At(bx.X2, bx.Y2), TPoint_At(bx.X1, bx.Y2)];
+    1: Result := [TPoint_At(bx.X1, bx.Y1), TPoint_At(bx.X2, bx.Y1)];
+    2: Result := [TPoint_At(bx.X1, bx.Y1), TPoint_At(bx.X1, bx.Y2)];
+    3: Result := [TPoint_At(bx.X1, bx.Y1)];
+  end;
+end;
+
+{==============================================================================]
+  <TBox_SimilarSize>
+  @action: Returns true if the size from boxes a and b
+           are within widthDifferency and heightDifferency.
+  @note: None.
+[==============================================================================}
+function TBox_SimilarSize(const a, b: TBox; const widthDifferency, heightDifferency: Int32): Boolean; overload; cdecl;
+begin
+  Result := ((Abs(((b.X2 - b.X1) + 1) - ((a.X2 - a.X1) + 1)) <= widthDifferency) and (Abs(((b.Y2 - b.Y1) + 1) - ((a.Y2 - a.Y1) + 1)) <= heightDifferency));
+end;
+
+{==============================================================================]
+  <TBox_SimilarSize>
+  Explanation: Returns true if the size from boxes a and b
+               are within differency.
+  @note: None.
+[==============================================================================}
+function TBox_SimilarSize(const a, b: TBox; const differency: Integer): Boolean; overload; cdecl;
+begin
+  Result := ((Abs(((b.X2 - b.X1) + 1) - ((a.X2 - a.X1) + 1)) <= differency) and (Abs(((b.Y2 - b.Y1) + 1) - ((a.Y2 - a.Y1) + 1)) <= differency));
+end;
+
+{==============================================================================]
+  <TBox_Centered>
+  Explanation: Returns bx (by the dimensions) centered to area.
+  @note: None.
+[==============================================================================}
+function TBox_Centered(const bx, area: TBox): TBox; cdecl;
+var
+  w, h: Int32;
+begin
+  TBox_Size(bx, w, h);
+  Result.X1 := (area.X1 + ((TBox_Width(area) - w) div 2));
+  Result.Y1 := (area.Y1 + ((TBox_Height(area) - h) div 2));
+  Result.X2 := (Result.X1 + (w - 1));
+  Result.Y2 := (Result.Y1 + (h - 1));
+end;
+
+{==============================================================================]
+  <TBox_CenterVertically>
+  Explanation: Returns bx centered vertically to area.
+  @note: None.
+[==============================================================================}
+function TBox_CenterVertically(const bx, area: TBox): TBox; cdecl;
+var
+  h: Int32;
+begin
+  h := TBox_H(bx);
+  Result.X1 := bx.X1;
+  Result.Y1 := (area.Y1 + ((TBox_H(area) - h) div 2));
+  Result.X2 := bx.X2;
+  Result.Y2 := (Result.Y1 + (h - 1));
+end;
+
+{==============================================================================]
+  <TBox_CenterHorizontally>
+  Explanation: Returns bx centered horizontally to area.
+  @note: None.
+[==============================================================================}
+function TBox_CenterHorizontally(const bx, area: TBox): TBox; cdecl;
+var
+  w: Int32;
+begin
+  w := TBox_W(bx);
+  Result.X1 := (area.X1 + ((TBox_W(area) - w) div 2));
+  Result.X2 := (Result.X1 + (w - 1));
+  Result.Y1 := bx.Y1;
+  Result.Y2 := bx.Y2;
+end;

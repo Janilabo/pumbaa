@@ -1,4 +1,26 @@
 {==============================================================================]
+  <TPoint_To>
+  @action: Returns TPoint with X and Y.
+  @note: None.
+[==============================================================================}
+function TPoint_To(const X, Y: Int32): TPoint; cdecl; inline;
+begin
+  Result.X := X;
+  Result.Y := Y;
+end;
+
+{==============================================================================]
+  <TPoint_At>
+  @action: Returns TPoint with X and Y.
+  @note: None.
+[==============================================================================}
+function TPoint_At(const X, Y: Int32): TPoint; cdecl; inline;
+begin
+  Result.X := X;
+  Result.Y := Y;
+end;
+
+{==============================================================================]
   <TPoint_InBox>
   @action: Returns true if pt is inside the given box (bx).
   @note: None.
