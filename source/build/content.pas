@@ -139,6 +139,8 @@ begin
   AddFunction(@TBox_H, 'function TBox_H(var bx: TBox; const height: Int32): Int32; overload;');
   AddFunction(@TBox_Height, 'function TBox_Height(const bx: TBox): Int32; overload;');
   AddFunction(@TBox_Height, 'function TBox_Height(var bx: TBox; const height: Int32): Int32; overload;');
+  AddFunction(@TBox_Expand, 'function TBox_Expand(const bx: TBox; const change: Int32 = 1): TBox;');
+  AddFunction(@TBox_Shrink, 'function TBox_Shrink(const bx: TBox; const change: Int32 = 1): TBox;');
   AddFunction(@TBox_Resize, 'function TBox_Resize(const bx: TBox; const change: Int32): TBox;');
   AddFunction(@TBox_ResizeVertically, 'function TBox_ResizeVertically(const bx: TBox; const change: Int32): TBox;');
   AddFunction(@TBox_ResizeHorizontally, 'function TBox_ResizeHorizontally(const bx: TBox; const change: Int32): TBox;');
@@ -238,6 +240,9 @@ begin
   AddFunction(@TPointArray_Unique, 'function TPointArray_Unique(var arr: TPointArray): Int32;');
   AddFunction(@TPointArray_Uniqued, 'function TPointArray_Uniqued(const arr: TPointArray): TPointArray;');
   AddFunction(@TPointArray_Invert, 'function TPointArray_Invert(const arr: TPointArray): TPointArray;');
+  AddFunction(@TPointArray_Edge, 'function TPointArray_Edge(const arr: TPointArray; const scan8Ways: Boolean = False): TPointArray;');
+  AddFunction(@TPointArray_FloodFill, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload;');
+  AddFunction(@TPointArray_FloodFill, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload;');
 
   AddFunction(@T_AllEqual_TIntegerArray, 'function T_AllEqual_TIntegerArray(const arr: TIntegerArray): Boolean;');
   AddFunction(@T_AllEqual_TDoubleArray, 'function T_AllEqual_TDoubleArray(const arr: TDoubleArray): Boolean;');

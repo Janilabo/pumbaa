@@ -114,7 +114,6 @@ end;
 {$I types\TPoint.pas}
 {$I types\TBox.pas}
 {$I types\TRange.pas}
-{$I types\TPointArray.pas}
 
 {$I generic\TArray_Copy.pas}
 {$I generic\TArray_Get.pas}
@@ -161,3 +160,7 @@ end;
 {$I generic\TArray_Partition.pas}
 {$I generic\TArray_Distribute.pas}
 {$I generic\TArray_Randomize.pas}
+
+{$I generic\T2DArray_Create.pas}
+
+{$I types\TPointArray.pas}

@@ -246,6 +246,36 @@ begin
 end;
 
 {==============================================================================]
+  <TBox_Expand>
+  @action: Returns bx that has been expanded fully by change.
+  @note: Works with positive values only.
+[==============================================================================}
+function TBox_Expand(const bx: TBox; const change: Int32 = 1): TBox; cdecl;
+begin
+  if (change < 1) then
+    Exit(bx);
+  Result.X1 := (bx.X1 - change);
+  Result.Y1 := (bx.Y1 - change);
+  Result.X2 := (bx.X2 + change);
+  Result.Y2 := (bx.Y2 + change);
+end;
+
+{==============================================================================]
+  <TBox_Shrink>
+  @action: Returns bx that has been shrinked fully by change.
+  @note: Works with positive values only. UNSAFE method, no checks!
+[==============================================================================}
+function TBox_Shrink(const bx: TBox; const change: Int32 = 1): TBox; cdecl;
+begin
+  if (change < 1) then
+    Exit(bx);
+  Result.X1 := (bx.X1 + change);
+  Result.Y1 := (bx.Y1 + change);
+  Result.X2 := (bx.X2 - change);
+  Result.Y2 := (bx.Y2 - change);
+end;
+
+{==============================================================================]
   <TBox_Resize>
   @action: Returns bx that has been resized fully by change.
   @note: Change value can be also negative - so be careful with it! :)

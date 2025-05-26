@@ -101,7 +101,7 @@ begin
   if (h > 0) then
   begin
     b := TPointArray_Bounds(arr);
-    SetLength(m, ((b.X2 - b.X1) + 1), ((b.Y2 - b.Y1) + 1));
+	m := T2DArray_Create(((b.X2 - b.X1) + 1), ((b.Y2 - b.Y1) + 1), False);
     x := 0;
     for i := 0 to h do
       if not m[(arr[i].X - b.X1)][(arr[i].Y - b.Y1)] then
@@ -122,4 +122,154 @@ begin
     SetLength(m, 0);
   end;
   SetLength(Result, r);
+end;
+
+{==============================================================================]
+ <TPointArray_Edge>
+ @action: Returns with all the edge-points from arr.
+          Supports both, 4-way and 8-way direction scanning styles.
+ @note: Edge-points are points that are on the edge of the TPointArray, not completely surrounded by other points.
+[==============================================================================}
+function TPointArray_Edge(const arr: TPointArray; const scan8W: Boolean = False): TPointArray; cdecl;
+var
+  i, l, x, y, w, h, r: Integer;
+  m: T2DBooleanArray;
+  b: TBox;
+begin
+  l := Length(arr);
+  if (l > 4) then
+  begin
+    b := TBox_Expand(TPointArray_Bounds(arr));
+    TBox_Size(b, w, h);
+    m := T2DArray_Create(w, h, False);
+    for i := 0 to (l - 1) do
+      if not m[(arr[i].X - b.X1)][(arr[i].Y - b.Y1)] then
+        m[(arr[i].X - b.X1)][(arr[i].Y - b.Y1)] := True;
+    SetLength(Result, (w * h));
+    w := (w - 2);
+    h := (h - 2);
+    r := 0;
+    case scan8W of
+      False:
+      for y := 1 to h do
+        for x := 1 to w do
+          if (m[x][y] and not (m[(x - 1)][y] and m[x][(y - 1)] and m[(x + 1)][y] and m[x][(y + 1)])) then
+          begin
+            Result[r].X := (x + b.X1);
+            Result[r].Y := (y + b.Y1);
+            Inc(r);
+          end;
+      True:
+      for y := 1 to h do
+        for x := 1 to w do
+          if (m[x][y] and not (m[(x - 1)][y] and m[x][(y - 1)] and m[(x + 1)][y] and m[x][(y + 1)] and m[(x - 1)][(y - 1)] and m[(x - 1)][(y + 1)] and m[(x + 1)][(y - 1)] and m[(x + 1)][(y + 1)])) then
+          begin
+            Result[r].X := (x + b.X1);
+            Result[r].Y := (y + b.Y1);
+            Inc(r);
+          end;
+    end;
+    SetLength(Result, r);
+    SetLength(m, 0);
+  end else
+    Result := Copy(arr, 0, Length(arr));
+end;
+
+{==============================================================================]
+  <TPointArray_FloodFill
+  @action:: Outputs Flood Filled points from TPointArray or non-TPointArray points inside an area,
+            starting from start, based on FloodFill() action.
+            Supports custom area by area as TBox.
+  note: Make sure start is inside your area. Doesn't pay attention to ANYTHING outside area. :)
+[==============================================================================}
+function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload; cdecl;
+  procedure GetAdjacent(var adj: TPointArray; const n: TPoint; const FF8W: Boolean);
+  begin
+    adj[0] := TPoint_To(n.x, (n.y - 1));
+    adj[3] := TPoint_To(n.x, (n.y + 1));
+    adj[1] := TPoint_To((n.x + 1), n.y);
+    adj[2] := TPoint_To((n.x - 1), n.y);
+    if FF8W then
+    begin
+      adj[4] := TPoint_To((n.x - 1), (n.y - 1));
+      adj[5] := TPoint_To((n.x + 1), (n.y - 1));
+      adj[6] := TPoint_To((n.x - 1), (n.y + 1));
+      adj[7] := TPoint_To((n.x + 1), (n.y + 1));
+    end;
+  end;
+var
+  l, i, w, h, x, y, f, t, r: Integer;
+  q, a: TPointArray;
+  p: TPoint;
+  c, z: T2DBooleanArray;
+  o, s: Boolean;
+begin
+  r := 0;
+  l := Length(arr);
+  if ((l > 0) and ((start.X >= area.X1) and (start.Y >= area.Y1) and (start.X <= area.X2) and (start.Y <= area.Y2))) then
+  begin
+    o := False;
+    TBox_Size(area, W, H);
+	c := T2DArray_Create(W, H, False);
+    for i := 0 to (l - 1) do
+    begin
+      if not o then
+        o := ((start.X = arr[i].X) and (start.Y = arr[i].Y));
+      if (((arr[i].X - area.X1) > -1) and ((arr[i].Y - area.Y1) > -1) and ((arr[i].Y - area.Y1) < H) and ((arr[i].X - area.X1) < W)) then
+        c[(arr[i].X - area.X1)][(arr[i].Y - area.Y1)] := True;
+    end;
+    s := not o;
+    if scan8W then
+      f := 7
+    else
+      f := 3;
+    SetLength(a, (f + 1));
+    SetLength(q, (W * H));
+	z := T2DArray_Create(W, H, False);
+    q[0] := start;
+    l := 0;
+    while (l > -1) do
+    begin
+      GetAdjacent(a, q[l], scan8W);
+      for i := 0 to f do
+      begin
+        p := a[i];
+        x := (p.X - area.X1);
+        y := (p.Y - area.Y1);
+        if ((x > -1) and (y > -1) and (x < W) and (y < H) and (c[x][y] = not s)) then
+        begin
+          c[x][y] := s;
+          z[x][y] := True;
+          q[l] := p;
+          Inc(l);
+        end;
+      end;
+      l := (l - 1);
+    end;
+    SetLength(c, 0);
+    SetLength(q, 0);
+    SetLength(a, 0);
+    SetLength(Result, (W * H));
+    for Y := 0 to (H - 1) do
+      for X := 0 to (W - 1) do
+        if z[X][Y] then
+        begin
+          Result[r] := TPoint_To((X + area.X1), (Y + area.Y1));
+          Inc(r);
+        end;
+    SetLength(z, 0);
+  end;
+  SetLength(Result, r);
+end;
+
+{==============================================================================]
+ <TPointArray_FloodFill
+ @action: Outputs Flood Filled points from TPointArray or non-TPointArray points inside arr Bounds,
+          starting from start, based on FloodFill() action.
+ @note: Make sure start is inside TPA Bounds.
+        Doesn't pay attention to ANYTHING outside those boundaries. :)
+[==============================================================================}
+function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload; cdecl;
+begin
+  Result := TPointArray_FloodFill(arr, start, TPointArray_Bounds(arr), scan8W);
 end;
