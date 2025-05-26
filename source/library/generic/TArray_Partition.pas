@@ -5,7 +5,7 @@
 [==============================================================================}
 
 // TIntegerArray
-function TArray_Partition(const arr: TIntegerArray; const size: Int32): TIntegerMatrix; overload; cdecl;
+function TArray_Partition(const arr: TIntegerArray; const size: Int32): T2DIntegerArray; overload; cdecl;
 var
   p, i, j, s, r, l: Int32;
 begin
@@ -30,7 +30,7 @@ begin
 end;
 
 // TDoubleArray
-function TArray_Partition(const arr: TDoubleArray; const size: Int32): TDoubleMatrix; overload; cdecl;
+function TArray_Partition(const arr: TDoubleArray; const size: Int32): T2DDoubleArray; overload; cdecl;
 var
   p, i, j, s, r, l: Int32;
 begin
@@ -105,7 +105,7 @@ begin
 end;
 
 // TBooleanArray
-function TArray_Partition(const arr: TBooleanArray; const size: Int32): TBooleanMatrix; overload; cdecl;
+function TArray_Partition(const arr: TBooleanArray; const size: Int32): T2DBooleanArray; overload; cdecl;
 var
   p, i, j, s, r, l: Int32;
 begin

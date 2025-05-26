@@ -5,7 +5,7 @@
 [==============================================================================}
 
 // TIntegerArray
-function TArray_Distribute(const arr: TIntegerArray; const parts: Int32): TIntegerMatrix; overload; cdecl;
+function TArray_Distribute(const arr: TIntegerArray; const parts: Int32): T2DIntegerArray; overload; cdecl;
 var
   l, p, b, r, i, j, s, c: Int32;
 begin
@@ -34,7 +34,7 @@ begin
 end;
 
 // TDoubleArray
-function TArray_Distribute(const arr: TDoubleArray; const parts: Int32): TDoubleMatrix; overload; cdecl;
+function TArray_Distribute(const arr: TDoubleArray; const parts: Int32): T2DDoubleArray; overload; cdecl;
 var
   l, p, b, r, i, j, s, c: Int32;
 begin
@@ -121,7 +121,7 @@ begin
 end;
 
 // TBooleanArray
-function TArray_Distribute(const arr: TBooleanArray; const parts: Int32): TBooleanMatrix; overload; cdecl;
+function TArray_Distribute(const arr: TBooleanArray; const parts: Int32): T2DBooleanArray; overload; cdecl;
 var
   l, p, b, r, i, j, s, c: Int32;
 begin

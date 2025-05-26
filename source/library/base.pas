@@ -1,10 +1,10 @@
 type
   TIntegerArray = array of Int32;
-  TIntegerMatrix = array of TIntegerArray;
+  T2DIntegerArray = array of TIntegerArray;
   TDoubleArray = array of Double;
-  TDoubleMatrix = array of TDoubleArray;
+  T2DDoubleArray = array of TDoubleArray;
   TBooleanArray = array of Boolean;
-  TBooleanMatrix = array of TBooleanArray;
+  T2DBooleanArray = array of TBooleanArray;
   TCharArray = array of Char;
   T2DCharArray = array of TCharArray;
   TStringArray = array of string;
@@ -114,6 +114,7 @@ end;
 {$I types\TPoint.pas}
 {$I types\TBox.pas}
 {$I types\TRange.pas}
+{$I types\TPointArray.pas}
 
 {$I generic\TArray_Copy.pas}
 {$I generic\TArray_Get.pas}

@@ -2,9 +2,11 @@
 
 procedure AddTypes;
 begin
+  AddType('T2DBooleanArray', 'TBooleanMatrix;');
+  AddType('T2DDoubleArray', 'TDoubleMatrix;');
   AddType('TCharArray', 'array of Char;');
   AddType('T2DCharArray', 'array of TCharArray;');
-  AddType('T2DBoxArray', 'array of TBoxArray');
+  AddType('T2DBoxArray', 'array of TBoxArray;');
   AddType('TRange', 'record start, stop: Integer; end;');
   AddType('TRangeArray', 'array of TRange;');
   AddType('T2DRangeArray', 'array of TRangeArray;');
@@ -123,10 +125,12 @@ begin
   AddFunction(@TBox_Build, 'function TBox_Build(const a, b: TPoint): TBox; overload;');
   AddFunction(@TBox_Create, 'function TBox_Create(const X1, Y1, X2, Y2: Int32): TBox; overload;');
   AddFunction(@TBox_Create, 'function TBox_Create(const a, b: TPoint): TBox; overload;');
+  AddFunction(@TBox_Form, 'function TBox_Form(const XY: Int32 = 0): TBox; overload;');
+  AddFunction(@TBox_Form, 'function TBox_Form(const XY: TPoint): TBox; overload;');
+  AddFunction(@TBox_At, 'function TBox_At(const pt: TPoint; const radius: Int32 = 0): TBox; overload;');
   AddFunction(@TBox_At, 'function TBox_At(const pt: TPoint; const wRadius, hRadius: Int32): TBox; overload;');
-  AddFunction(@TBox_At, 'function TBox_At(const pt: TPoint; const radius: Int32): TBox; overload;');
+  AddFunction(@TBox_To, 'function TBox_To(const pt: TPoint; const size: Int32 = 1): TBox; overload;');
   AddFunction(@TBox_To, 'function TBox_To(const pt: TPoint; const width, height: Int32): TBox; overload;');
-  AddFunction(@TBox_To, 'function TBox_To(const pt: TPoint; const size: Int32): TBox; overload;');
   AddFunction(@TBox_W, 'function TBox_W(const bx: TBox): Int32; overload;');
   AddFunction(@TBox_W, 'function TBox_W(var bx: TBox; const width: Int32): Int32; overload;');
   AddFunction(@TBox_Width, 'function TBox_Width(const bx: TBox): Int32; overload;');
@@ -198,6 +202,7 @@ begin
   AddFunction(@TRange_Maximum, 'function TRange_Maximum(const range: TRange): Int32;');
   AddFunction(@TRange_Digits, 'function TRange_Digits(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Ints, 'function TRange_Ints(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_TIntegerArray, 'function TRange_TIntegerArray(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const a, b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const a, b: TRange): Boolean;');
@@ -228,6 +233,11 @@ begin
   AddFunction(@TRange_Touches, 'function TRange_Touches(const a, b: TRange): Boolean;');
   AddFunction(@TRange_Distance, 'function TRange_Distance(const a, b: TRange): Int32;');
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const a, b: TRange): Int32;');
+  
+  AddFunction(@TPointArray_Bounds, 'function TPointArray_Bounds(const arr: TPointArray): TBox;');
+  AddFunction(@TPointArray_Unique, 'function TPointArray_Unique(var arr: TPointArray): Int32;');
+  AddFunction(@TPointArray_Uniqued, 'function TPointArray_Uniqued(const arr: TPointArray): TPointArray;');
+  AddFunction(@TPointArray_Invert, 'function TPointArray_Invert(const arr: TPointArray): TPointArray;');
 
   AddFunction(@T_AllEqual_TIntegerArray, 'function T_AllEqual_TIntegerArray(const arr: TIntegerArray): Boolean;');
   AddFunction(@T_AllEqual_TDoubleArray, 'function T_AllEqual_TDoubleArray(const arr: TDoubleArray): Boolean;');

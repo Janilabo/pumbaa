@@ -51,6 +51,45 @@ begin
 end;
 
 {==============================================================================]
+  <TBox_Form>
+  @action: Forms TBox using XY for all X1, Y1, X2, Y2.
+  @note: Unsafe, fast.
+[==============================================================================}
+function TBox_Form(const XY: Int32 = 0): TBox; overload; cdecl;
+begin
+  Result.X1 := XY;
+  Result.Y1 := XY;
+  Result.X2 := XY;
+  Result.Y2 := XY;
+end;
+
+{==============================================================================]
+  <TBox_Form>
+  @action: Forms TBox using XY for all X1, Y1, X2, Y2.
+  @note: Unsafe, fast.
+[==============================================================================}
+function TBox_Form(const XY: TPoint): TBox; overload; cdecl;
+begin
+  Result.X1 := XY.X;
+  Result.Y1 := XY.Y;
+  Result.X2 := XY.X;
+  Result.Y2 := XY.Y;
+end;
+
+{==============================================================================]
+  <TBox_At>
+  @action: Creates TBox from pt by radius used for width and height.
+  @note: None.
+[==============================================================================}
+function TBox_At(const pt: TPoint; const radius: Int32 = 0): TBox; overload; cdecl;
+begin
+  Result.X1 := (pt.X - radius);
+  Result.Y1 := (pt.Y - radius);
+  Result.X2 := (pt.X + radius);
+  Result.Y2 := (pt.Y + radius);
+end;
+
+{==============================================================================]
   <TBox_At>
   @action: Creates TBox from pt by radius used for width and height.
   @note: None.
@@ -64,16 +103,16 @@ begin
 end;
 
 {==============================================================================]
-  <TBox_At>
-  @action: Creates TBox from pt by radius used for width and height.
+  <TBox_To>
+  @action: Creates box to point, with size for width and height.
   @note: None.
 [==============================================================================}
-function TBox_At(const pt: TPoint; const radius: Int32): TBox; overload; cdecl;
+function TBox_To(const pt: TPoint; const size: Int32 = 1): TBox; overload; cdecl;
 begin
-  Result.X1 := (pt.X - radius);
-  Result.Y1 := (pt.Y - radius);
-  Result.X2 := (pt.X + radius);
-  Result.Y2 := (pt.Y + radius);
+  Result.X1 := pt.X;
+  Result.Y1 := pt.Y;
+  Result.X2 := (pt.X + (size - 1));
+  Result.Y2 := (pt.Y + (size - 1));
 end;
 
 {==============================================================================]
@@ -82,28 +121,11 @@ end;
   @note: None.
 [==============================================================================}
 function TBox_To(const pt: TPoint; const width, height: Int32): TBox; overload; cdecl;
-var
-  o: TPoint;
 begin
   Result.X1 := pt.X;
   Result.Y1 := pt.Y;
   Result.X2 := (pt.X + (width - 1));
   Result.Y2 := (pt.Y + (height - 1));
-end;
-
-{==============================================================================]
-  <TBox_To>
-  @action: Creates box to point, with size for width and height.
-  @note: None.
-[==============================================================================}
-function TBox_To(const pt: TPoint; const size: Int32): TBox; overload; cdecl;
-var
-  o: TPoint;
-begin
-  Result.X1 := pt.X;
-  Result.Y1 := pt.Y;
-  Result.X2 := (pt.X + (size - 1));
-  Result.Y2 := (pt.Y + (size - 1));
 end;
 
 {==============================================================================]

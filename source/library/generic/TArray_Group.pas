@@ -5,7 +5,7 @@
 [==============================================================================}
 
 // TIntegerArray
-function TArray_Group(const arr: TIntegerArray): TIntegerMatrix; overload; cdecl;
+function TArray_Group(const arr: TIntegerArray): T2DIntegerArray; overload; cdecl;
 var
   a, h, i, r, g, l: Int32;
   f: Boolean;
@@ -40,7 +40,7 @@ begin
 end;
 
 // TDoubleArray
-function TArray_Group(const arr: TDoubleArray): TDoubleMatrix; overload; cdecl;
+function TArray_Group(const arr: TDoubleArray): T2DDoubleArray; overload; cdecl;
 var
   a, h, i, r, g, l: Int32;
   f: Boolean;
@@ -145,7 +145,7 @@ begin
 end;
 
 // TBooleanArray
-function TArray_Group(const arr: TBooleanArray): TBooleanMatrix; overload; cdecl;
+function TArray_Group(const arr: TBooleanArray): T2DBooleanArray; overload; cdecl;
 var
   a, h, i, r, g, l: Int32;
   f: Boolean;

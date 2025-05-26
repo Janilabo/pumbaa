@@ -169,6 +169,29 @@ begin
 end;
 
 {==============================================================================]
+  <TRange_TIntegerArray>
+  @action: Returns digits of the given range.
+  @note: None.
+[==============================================================================}
+function TRange_TIntegerArray(const range: TRange): TIntegerArray; cdecl;
+var
+  i, l, d: Int32;
+begin
+  l := TRange_Length(range);
+  SetLength(Result, l);
+  if (range.start <> range.stop) then
+  begin
+    d := Sign(range.stop - range.start);
+    for i := 0 to ((l - 1) div 2) do
+    begin
+      Result[i] := (range.start + (i * d));
+      Result[((l - 1) - i)] := (range.stop - (i * d));
+    end;
+  end else
+    Result[0] := range.start;
+end;
+
+{==============================================================================]
   <TRange_Normalize>
   @action: Using Min-Maxing this function returns "normal" range.
   @note: None.
