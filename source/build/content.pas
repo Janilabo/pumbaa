@@ -72,7 +72,7 @@ begin
   AddFunction(@String_PosLast, 'function String_PosLast(const str, s: string; const offset: Int32 = -1): Int32;');
   AddFunction(@String_Position, 'function String_Position(const str, s: string; const offset: Int32 = 0): Int32;');
   AddFunction(@String_Between, 'function String_Between(const str, s1, s2: string; const offset: Int32 = 0): string;');
-  AddFunction(@String_Count, 'function String_Count(const str, s: string; const overlap: Boolean = True): Int32;'); 
+  AddFunction(@String_Count, 'function String_Count(const str, s: string; const overlap: Boolean = True): Int32;');
   AddFunction(@String_FromLeft, 'function String_FromLeft(const str: string; const x: Int32): string;');
   AddFunction(@String_FromRight, 'function String_FromRight(const str: string; const x: Int32): string;');
   AddFunction(@String_Explode, 'function String_Explode(const str, d: string; const limit: Int32 = -1): TStringArray;');
@@ -104,7 +104,7 @@ begin
   AddFunction(@String_Trim, 'function String_Trim(const str: string; const t: Char = #32): string;');
 
   AddFunction(@Boolean_Random, 'function Boolean_Random: Boolean;');
-  
+
   AddFunction(@TPoint_To, 'function TPoint_To(const X, Y: Int32): TPoint;');
   AddFunction(@TPoint_At, 'function TPoint_At(const X, Y: Int32): TPoint;');
   AddFunction(@TPoint_InBox, 'function TPoint_InBox(const pt: TPoint; const bx: TBox): Boolean;');
@@ -120,7 +120,7 @@ begin
   AddFunction(@TPoint_Grid, 'function TPoint_Grid(const pt: TPoint; const rows, columns: Int32; const spaceVertical: Int32 = 0; const spaceHorizontal: Int32 = 0): TPointArray;');
   AddFunction(@TPoint_Row, 'function TPoint_Row(const pt: TPoint; const cells: Int32; const space: Int32 = 0): TPointArray;');
   AddFunction(@TPoint_Column, 'function TPoint_Column(const pt: TPoint; const cells: Int32; const space: Int32 = 0): TPointArray;');
-  
+
   AddFunction(@TBox_Build, 'function TBox_Build(const X1, Y1, X2, Y2: Int32): TBox; overload;');
   AddFunction(@TBox_Build, 'function TBox_Build(const a, b: TPoint): TBox; overload;');
   AddFunction(@TBox_Create, 'function TBox_Create(const X1, Y1, X2, Y2: Int32): TBox; overload;');
@@ -235,7 +235,7 @@ begin
   AddFunction(@TRange_Touches, 'function TRange_Touches(const a, b: TRange): Boolean;');
   AddFunction(@TRange_Distance, 'function TRange_Distance(const a, b: TRange): Int32;');
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const a, b: TRange): Int32;');
-  
+
   AddFunction(@TPointArray_Bounds, 'function TPointArray_Bounds(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Unique, 'function TPointArray_Unique(var arr: TPointArray): Int32;');
   AddFunction(@TPointArray_Uniqued, 'function TPointArray_Uniqued(const arr: TPointArray): TPointArray;');
@@ -243,97 +243,4 @@ begin
   AddFunction(@TPointArray_Edge, 'function TPointArray_Edge(const arr: TPointArray; const scan8Ways: Boolean = False): TPointArray;');
   AddFunction(@TPointArray_FloodFill, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload;');
   AddFunction(@TPointArray_FloodFill, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload;');
-
-  AddFunction(@T_AllEqual_TIntegerArray, 'function T_AllEqual_TIntegerArray(const arr: TIntegerArray): Boolean;');
-  AddFunction(@T_AllEqual_TDoubleArray, 'function T_AllEqual_TDoubleArray(const arr: TDoubleArray): Boolean;');
-  AddFunction(@T_AllEqual_TStringArray, 'function T_AllEqual_TStringArray(const arr: TStringArray): Boolean;');
-  AddFunction(@T_AllEqual_TCharArray, 'function T_AllEqual_TCharArray(const arr: TCharArray): Boolean;');
-  AddFunction(@T_AllEqual_TBooleanArray, 'function T_AllEqual_TBooleanArray(const arr: TBooleanArray): Boolean;');
-  AddFunction(@T_AllEqual_TPointArray, 'function T_AllEqual_TPointArray(const arr: TPointArray): Boolean;');
-  AddFunction(@T_AllEqual_TBoxArray, 'function T_AllEqual_TBoxArray(const arr: TBoxArray): Boolean;');
-  AddFunction(@T_AllEqual_TRangeArray, 'function T_AllEqual_TRangeArray(const arr: TRangeArray): Boolean;');
-
-  AddFunction(@T_AllSame_TIntegerArray, 'function T_AllSame_TIntegerArray(const arr: TIntegerArray): Boolean;');
-  AddFunction(@T_AllSame_TDoubleArray, 'function T_AllSame_TDoubleArray(const arr: TDoubleArray): Boolean;');
-  AddFunction(@T_AllSame_TStringArray, 'function T_AllSame_TStringArray(const arr: TStringArray): Boolean;');
-  AddFunction(@T_AllSame_TCharArray, 'function T_AllSame_TCharArray(const arr: TCharArray): Boolean;');
-  AddFunction(@T_AllSame_TBooleanArray, 'function T_AllSame_TBooleanArray(const arr: TBooleanArray): Boolean;');
-  AddFunction(@T_AllSame_TPointArray, 'function T_AllSame_TPointArray(const arr: TPointArray): Boolean;');
-  AddFunction(@T_AllSame_TBoxArray, 'function T_AllSame_TBoxArray(const arr: TBoxArray): Boolean;');
-  AddFunction(@T_AllSame_TRangeArray, 'function T_AllSame_TRangeArray(const arr: TRangeArray): Boolean;');
-  
-  AddFunction(@T_AllUnique_TIntegerArray, 'function T_AllUnique_TIntegerArray(const arr: TIntegerArray): Boolean;');
-  AddFunction(@T_AllUnique_TDoubleArray, 'function T_AllUnique_TDoubleArray(const arr: TDoubleArray): Boolean;');
-  AddFunction(@T_AllUnique_TStringArray, 'function T_AllUnique_TStringArray(const arr: TStringArray): Boolean;');
-  AddFunction(@T_AllUnique_TCharArray, 'function T_AllUnique_TCharArray(const arr: TCharArray): Boolean;');
-  AddFunction(@T_AllUnique_TBooleanArray, 'function T_AllUnique_TBooleanArray(const arr: TBooleanArray): Boolean;');
-  AddFunction(@T_AllUnique_TPointArray, 'function T_AllUnique_TPointArray(const arr: TPointArray): Boolean;');
-  AddFunction(@T_AllUnique_TBoxArray, 'function T_AllUnique_TBoxArray(const arr: TBoxArray): Boolean;');
-  AddFunction(@T_AllUnique_TRangeArray, 'function T_AllUnique_TRangeArray(const arr: TRangeArray): Boolean;');
-
-  AddFunction(@T_Append_TIntegerArray, 'function T_Append_TIntegerArray(var arr: TIntegerArray; const item: Int32): Int32;');
-  AddFunction(@T_Append_TDoubleArray, 'function T_Append_TDoubleArray(var arr: TDoubleArray; const item: Double): Int32;');
-  AddFunction(@T_Append_TStringArray, 'function T_Append_TStringArray(var arr: TStringArray; const item: string): Int32;');
-  AddFunction(@T_Append_TCharArray, 'function T_Append_TCharArray(var arr: TCharArray; const item: Char): Int32;');
-  AddFunction(@T_Append_TBooleanArray, 'function T_Append_TBooleanArray(var arr: TBooleanArray; const item: Boolean): Int32;');
-  AddFunction(@T_Append_TPointArray, 'function T_Append_TPointArray(var arr: TPointArray; const item: TPoint): Int32;');
-  AddFunction(@T_Append_TBoxArray, 'function T_Append_TBoxArray(var arr: TBoxArray; const item: TBox): Int32;');
-  AddFunction(@T_Append_TRangeArray, 'function T_Append_TRangeArray(var arr: TRangeArray; const item: TRange): Int32;');
-  
-  AddFunction(@T_AppendEx_TIntegerArray, 'function T_AppendEx_TIntegerArray(var arr: TIntegerArray; const items: TIntegerArray): Int32;');
-  AddFunction(@T_AppendEx_TDoubleArray, 'function T_AppendEx_TDoubleArray(var arr: TDoubleArray; const items: TDoubleArray): Int32;');
-  AddFunction(@T_AppendEx_TStringArray, 'function T_AppendEx_TStringArray(var arr: TStringArray; const items: TStringArray): Int32;');
-  AddFunction(@T_AppendEx_TCharArray, 'function T_AppendEx_TCharArray(var arr: TCharArray; const items: TCharArray): Int32;');
-  AddFunction(@T_AppendEx_TBooleanArray, 'function T_AppendEx_TBooleanArray(var arr: TBooleanArray; const items: TBooleanArray): Int32;');
-  AddFunction(@T_AppendEx_TPointArray, 'function T_AppendEx_TPointArray(var arr: TPointArray; const items: TPointArray): Int32;');
-  AddFunction(@T_AppendEx_TBoxArray, 'function T_AppendEx_TBoxArray(var arr: TBoxArray; const items: TBoxArray): Int32;');
-  AddFunction(@T_AppendEx_TRangeArray, 'function T_AppendEx_TRangeArray(var arr: TRangeArray; const items: TRangeArray): Int32;');
-  
-  AddFunction(@T_Add_TIntegerArray, 'function T_Add_TIntegerArray(const arr: TIntegerArray; const item: Int32): TIntegerArray;');
-  AddFunction(@T_Add_TDoubleArray, 'function T_Add_TDoubleArray(const arr: TDoubleArray; const item: Double): TDoubleArray;');
-  AddFunction(@T_Add_TStringArray, 'function T_Add_TStringArray(const arr: TStringArray; const item: string): TStringArray;');
-  AddFunction(@T_Add_TCharArray, 'function T_Add_TCharArray(const arr: TCharArray; const item: Char): TCharArray;');
-  AddFunction(@T_Add_TBooleanArray, 'function T_Add_TBooleanArray(const arr: TBooleanArray; const item: Boolean): TBooleanArray;');
-  AddFunction(@T_Add_TPointArray, 'function T_Add_TPointArray(const arr: TPointArray; const item: TPoint): TPointArray;');
-  AddFunction(@T_Add_TBoxArray, 'function T_Add_TBoxArray(const arr: TBoxArray; const item: TBox): TBoxArray;');
-  AddFunction(@T_Add_TRangeArray, 'function T_Add_TRangeArray(const arr: TRangeArray; const item: TRange): TRangeArray;');
-  
-  AddFunction(@T_AddEx_TIntegerArray, 'function T_AddEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray): TIntegerArray;');
-  AddFunction(@T_AddEx_TDoubleArray, 'function T_AddEx_TDoubleArray(const arr: TDoubleArray; const items: TDoubleArray): TDoubleArray;');
-  AddFunction(@T_AddEx_TStringArray, 'function T_AddEx_TStringArray(const arr: TStringArray; const items: TStringArray): TStringArray;');
-  AddFunction(@T_AddEx_TCharArray, 'function T_AddEx_TCharArray(const arr: TCharArray; const items: TCharArray): TCharArray;');
-  AddFunction(@T_AddEx_TBooleanArray, 'function T_AddEx_TBooleanArray(const arr: TBooleanArray; const items: TBooleanArray): TBooleanArray;');
-  AddFunction(@T_AddEx_TPointArray, 'function T_AddEx_TPointArray(const arr: TPointArray; const items: TPointArray): TPointArray;');
-  AddFunction(@T_AddEx_TBoxArray, 'function T_AddEx_TBoxArray(const arr: TBoxArray; const items: TBoxArray): TBoxArray;');
-  AddFunction(@T_AddEx_TRangeArray, 'function T_AddEx_TRangeArray(const arr: TRangeArray; const items: TRangeArray): TRangeArray;');
-
-  AddFunction(@T_Create_TIntegerArray, 'function T_Create_TIntegerArray(const size: Int32; const item: Int32): TIntegerArray;');
-  AddFunction(@T_Create_TDoubleArray, 'function T_Create_TDoubleArray(const size: Int32; const item: Double): TDoubleArray;');
-  AddFunction(@T_Create_TStringArray, 'function T_Create_TStringArray(const size: Int32; const item: string): TStringArray;');
-  AddFunction(@T_Create_TCharArray, 'function T_Create_TCharArray(const size: Int32; const item: Char): TCharArray;');
-  AddFunction(@T_Create_TBooleanArray, 'function T_Create_TBooleanArray(const size: Int32; const item: Boolean): TBooleanArray;');
-  AddFunction(@T_Create_TPointArray, 'function T_Create_TPointArray(const size: Int32; const item: TPoint): TPointArray;');
-  AddFunction(@T_Create_TBoxArray, 'function T_Create_TBoxArray(const size: Int32; const item: TBox): TBoxArray;');
-  AddFunction(@T_Create_TRangeArray, 'function T_Create_TRangeArray(const size: Int32; const item: TRange): TRangeArray;');
-  
-  AddFunction(@T_Build_TIntegerArray, 'function T_Build_TIntegerArray(const item: Int32; const size: Int32 = 1): TIntegerArray;');
-  AddFunction(@T_Build_TDoubleArray, 'function T_Build_TDoubleArray(const item: Double; const size: Int32 = 1): TDoubleArray;');
-  AddFunction(@T_Build_TStringArray, 'function T_Build_TStringArray(const item: string; const size: Int32 = 1): TStringArray;');
-  AddFunction(@T_Build_TCharArray, 'function T_Build_TCharArray(const item: Char; const size: Int32 = 1): TCharArray;');
-  AddFunction(@T_Build_TBooleanArray, 'function T_Build_TBooleanArray(const item: Boolean; const size: Int32 = 1): TBooleanArray;');
-  AddFunction(@T_Build_TPointArray, 'function T_Build_TPointArray(const item: TPoint; const size: Int32 = 1): TPointArray;');
-  AddFunction(@T_Build_TBoxArray, 'function T_Build_TBoxArray(const item: TBox; const size: Int32 = 1): TBoxArray;');
-  AddFunction(@T_Build_TRangeArray, 'function T_Build_TRangeArray(const item: TRange; const size: Int32 = 1): TRangeArray;');
-
-  AddFunction(@T_Contains_TIntegerArray, 'function T_Contains_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Boolean;');
-
-  AddFunction(@T_Extract_TIntegerArray, 'function T_Extract_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray;');
-  AddFunction(@T_ExtractEx_TIntegerArray, 'function T_ExtractEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): TIntegerArray;');
-  AddFunction(@T_Filter_TIntegerArray, 'function T_Filter_TIntegerArray(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray;');
-  AddFunction(@T_FilterEx_TIntegerArray, 'function T_FilterEx_TIntegerArray(const arr: TIntegerArray; const items: TIntegerArray; const start: Int32 = 0): TIntegerArray;');
-  
-  AddFunction(@T_FilterEvery_TIntegerArray, 'function T_FilterEvery_TIntegerArray(const arr: TIntegerArray; const X: Int32 = 1; const start: Int32 = 0): TIntegerArray;');
-  AddFunction(@T_ExtractEvery_TIntegerArray, 'function T_ExtractEvery_TIntegerArray(const arr: TIntegerArray; const X: Int32 = 1; const start: Int32 = 0): TIntegerArray;');
-
-  AddFunction(@T_Reverse_TIntegerArray, 'function T_Reverse_TIntegerArray(var arr: TIntegerArray): Boolean;');
 end;

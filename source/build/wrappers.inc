@@ -1,3 +1,4 @@
+{
 function T_AllEqual_TIntegerArray(const arr: TIntegerArray): Boolean; cdecl; begin Result := TArray_AllEqual(arr); end;
 function T_AllEqual_TDoubleArray(const arr: TDoubleArray): Boolean; cdecl; begin Result := TArray_AllEqual(arr); end;
 function T_AllEqual_TStringArray(const arr: TStringArray): Boolean; cdecl; begin Result := TArray_AllEqual(arr); end;
@@ -90,3 +91,4 @@ function T_FilterEvery_TIntegerArray(const arr: TIntegerArray; const X: Int32 = 
 function T_ExtractEvery_TIntegerArray(const arr: TIntegerArray; const X: Int32 = 1; const start: Int32 = 0): TIntegerArray; cdecl; begin Result := TArray_ExtractEvery(arr, X, start); end;
 
 function T_Reverse_TIntegerArray(var arr: TIntegerArray): Boolean; cdecl; begin Result := TArray_Reverse(arr); end;
+}

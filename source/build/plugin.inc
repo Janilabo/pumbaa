@@ -21,7 +21,7 @@ begin
   with Plugin do
   begin
     SetLength(Functions, (Length(Functions) + 1));
-	h := High(Functions);
+    h := High(Functions);
     Functions[h].Header := header;
     Functions[h].Method := method;
   end;

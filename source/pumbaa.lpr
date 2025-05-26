@@ -7,12 +7,10 @@ library pumbaa;
 {$modeswitch arrayoperators}
 
 uses
-  classes, sysutils, math;
+  classes, sysutils, math, MiMU;
 
-{$I library\base.pas}
-
-{$I build\plugin.inc}
-{$I build\content.pas}
+{$I build/plugin.inc}
+{$I build/content.pas}
 
 initialization
   Randomize();
