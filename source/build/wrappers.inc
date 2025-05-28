@@ -474,6 +474,14 @@ function TArray_Push_Boolean(var arr: TBooleanArray; const item: Boolean): Int32
 function TArray_Push_TPoint(var arr: TPointArray; const item: TPoint): Int32; overload; cdecl; begin Result := TArray_Push(arr, item); end;
 function TArray_Push_TBox(var arr: TBoxArray; const item: TBox): Int32; overload; cdecl; begin Result := TArray_Push(arr, item); end;
 function TArray_Push_TRange(var arr: TRangeArray; const item: TRange): Int32; overload; cdecl; begin Result := TArray_Push(arr, item); end;
+function TArray_Push_Int32_1(var arr: TIntegerArray; const items: TIntegerArray): Int32; overload; cdecl; begin Result := TArray_Push(arr, items); end;
+function TArray_Push_Double_1(var arr: TDoubleArray; const items: TDoubleArray): Int32; overload; cdecl; begin Result := TArray_Push(arr, items); end;
+function TArray_Push_String_1(var arr: TStringArray; const items: TStringArray): Int32; overload; cdecl; begin Result := TArray_Push(arr, items); end;
+function TArray_Push_Char_1(var arr: TCharArray; const items: TCharArray): Int32; overload; cdecl; begin Result := TArray_Push(arr, items); end;
+function TArray_Push_Boolean_1(var arr: TBooleanArray; const items: TBooleanArray): Int32; overload; cdecl; begin Result := TArray_Push(arr, items); end;
+function TArray_Push_TPoint_1(var arr: TPointArray; const items: TPointArray): Int32; overload; cdecl; begin Result := TArray_Push(arr, items); end;
+function TArray_Push_TBox_1(var arr: TBoxArray; const items: TBoxArray): Int32; overload; cdecl; begin Result := TArray_Push(arr, items); end;
+function TArray_Push_TRange_1(var arr: TRangeArray; const items: TRangeArray): Int32; overload; cdecl; begin Result := TArray_Push(arr, items); end;
 
 function TArray_Randomize_Int32(var arr: TIntegerArray; const shuffles: Int32 = 1): Boolean; overload; cdecl; begin Result := TArray_Randomize(arr, shuffles); end;
 function TArray_Randomize_Double(var arr: TDoubleArray; const shuffles: Int32 = 1): Boolean; overload; cdecl; begin Result := TArray_Randomize(arr, shuffles); end;
@@ -604,6 +612,23 @@ function TArray_Uniques_Boolean(const arr: TBooleanArray): TIntegerArray; overlo
 function TArray_Uniques_TPoint(const arr: TPointArray): TIntegerArray; overload; cdecl; begin Result := TArray_Uniques(arr); end;
 function TArray_Uniques_TBox(const arr: TBoxArray): TIntegerArray; overload; cdecl; begin Result := TArray_Uniques(arr); end;
 function TArray_Uniques_TRange(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := TArray_Uniques(arr); end;
+
+function TArray_Unshift_Int32(var arr: TIntegerArray; const item: Int32): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, item); end;
+function TArray_Unshift_Double(var arr: TDoubleArray; const item: Double): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, item); end;
+function TArray_Unshift_String(var arr: TStringArray; const item: string): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, item); end;
+function TArray_Unshift_Char(var arr: TCharArray; const item: Char): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, item); end;
+function TArray_Unshift_Boolean(var arr: TBooleanArray; const item: Boolean): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, item); end;
+function TArray_Unshift_TPoint(var arr: TPointArray; const item: TPoint): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, item); end;
+function TArray_Unshift_TBox(var arr: TBoxArray; const item: TBox): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, item); end;
+function TArray_Unshift_TRange(var arr: TRangeArray; const item: TRange): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, item); end;
+function TArray_Unshift_Int32_1(var arr: TIntegerArray; const items: TIntegerArray): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, items); end;
+function TArray_Unshift_Double_1(var arr: TDoubleArray; const items: TDoubleArray): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, items); end;
+function TArray_Unshift_String_1(var arr: TStringArray; const items: TStringArray): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, items); end;
+function TArray_Unshift_Char_1(var arr: TCharArray; const items: TCharArray): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, items); end;
+function TArray_Unshift_Boolean_1(var arr: TBooleanArray; const items: TBooleanArray): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, items); end;
+function TArray_Unshift_TPoint_1(var arr: TPointArray; const items: TPointArray): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, items); end;
+function TArray_Unshift_TBox_1(var arr: TBoxArray; const items: TBoxArray): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, items); end;
+function TArray_Unshift_TRange_1(var arr: TRangeArray; const items: TRangeArray): Int32; overload; cdecl; begin Result := TArray_Unshift(arr, items); end;
 
 function T2DArray_Create_Int32(const size1D, size2D: Int32; const item: Int32): T2DIntegerArray; overload; cdecl; begin Result := T2DArray_Create(size1D, size2D, item); end;
 function T2DArray_Create_Double(const size1D, size2D: Int32; const item: Double): T2DDoubleArray; overload; cdecl; begin Result := T2DArray_Create(size1D, size2D, item); end;
