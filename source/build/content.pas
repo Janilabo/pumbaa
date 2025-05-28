@@ -341,6 +341,15 @@ begin
   AddFunction(@TArray_Clone_TBox, 'function TArray_Clone(const arr: TBoxArray; const startIndex: Int32 = 0; const count: Int32 = 2147483647): TBoxArray; overload;');
   AddFunction(@TArray_Clone_TRange, 'function TArray_Clone(const arr: TRangeArray; const startIndex: Int32 = 0; const count: Int32 = 2147483647): TRangeArray; overload;');
 
+  AddFunction(@TArray_Combine_Int32, 'function TArray_Combine(const a, b: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Combine_Double, 'function TArray_Combine(const a, b: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Combine_String, 'function TArray_Combine(const a, b: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Combine_Char, 'function TArray_Combine(const a, b: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Combine_Boolean, 'function TArray_Combine(const a, b: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Combine_TPoint, 'function TArray_Combine(const a, b: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Combine_TBox, 'function TArray_Combine(const a, b: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Combine_TRange, 'function TArray_Combine(const a, b: TRangeArray): TRangeArray; overload;');
+
   AddFunction(@TArray_Contains_Int32, 'function TArray_Contains(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): Boolean; overload;');
   AddFunction(@TArray_Contains_Double, 'function TArray_Contains(const arr: TDoubleArray; const item: Double; const start: Int32 = 0): Boolean; overload;');
   AddFunction(@TArray_Contains_String, 'function TArray_Contains(const arr: TStringArray; const item: string; const start: Int32 = 0): Boolean; overload;');
@@ -420,6 +429,15 @@ begin
   AddFunction(@TArray_Dupe_TBox, 'function TArray_Dupe(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Dupe_TRange, 'function TArray_Dupe(const arr: TRangeArray): TRangeArray; overload;');
 
+  AddFunction(@TArray_Empty_Int32, 'function TArray_Empty(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Empty_Double, 'function TArray_Empty(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Empty_String, 'function TArray_Empty(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Empty_Char, 'function TArray_Empty(const arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_Empty_Boolean, 'function TArray_Empty(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_Empty_TPoint, 'function TArray_Empty(const arr: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_Empty_TBox, 'function TArray_Empty(const arr: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_Empty_TRange, 'function TArray_Empty(const arr: TRangeArray): Boolean; overload;');
+
   AddFunction(@TArray_Equal_Int32, 'function TArray_Equal(const arr, target: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Equal_Double, 'function TArray_Equal(const arr, target: TDoubleArray): Boolean; overload;');
   AddFunction(@TArray_Equal_String, 'function TArray_Equal(const arr, target: TStringArray): Boolean; overload;');
@@ -428,6 +446,23 @@ begin
   AddFunction(@TArray_Equal_TPoint, 'function TArray_Equal(const arr, target: TPointArray): Boolean; overload;');
   AddFunction(@TArray_Equal_TBox, 'function TArray_Equal(const arr, target: TBoxArray): Boolean; overload;');
   AddFunction(@TArray_Equal_TRange, 'function TArray_Equal(const arr, target: TRangeArray): Boolean; overload;');
+
+  AddFunction(@TArray_Extend_Int32, 'function TArray_Extend(const arr: TIntegerArray; const item: Int32): TIntegerArray; overload;');
+  AddFunction(@TArray_Extend_Double, 'function TArray_Extend(const arr: TDoubleArray; const item: Double): TDoubleArray; overload;');
+  AddFunction(@TArray_Extend_String, 'function TArray_Extend(const arr: TStringArray; const item: string): TStringArray; overload;');
+  AddFunction(@TArray_Extend_Char, 'function TArray_Extend(const arr: TCharArray; const item: Char): TCharArray; overload;');
+  AddFunction(@TArray_Extend_Boolean, 'function TArray_Extend(const arr: TBooleanArray; const item: Boolean): TBooleanArray; overload;');
+  AddFunction(@TArray_Extend_TPoint, 'function TArray_Extend(const arr: TPointArray; const item: TPoint): TPointArray; overload;');
+  AddFunction(@TArray_Extend_TBox, 'function TArray_Extend(const arr: TBoxArray; const item: TBox): TBoxArray; overload;');
+  AddFunction(@TArray_Extend_TRange, 'function TArray_Extend(const arr: TRangeArray; const item: TRange): TRangeArray; overload;');
+  AddFunction(@TArray_Extend_Int32_1, 'function TArray_Extend(const arr: TIntegerArray; const items: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Extend_Double_1, 'function TArray_Extend(const arr: TDoubleArray; const items: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Extend_String_1, 'function TArray_Extend(const arr: TStringArray; const items: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Extend_Char_1, 'function TArray_Extend(const arr: TCharArray; const items: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Extend_Boolean_1, 'function TArray_Extend(const arr: TBooleanArray; const items: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Extend_TPoint_1, 'function TArray_Extend(const arr: TPointArray; const items: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Extend_TBox_1, 'function TArray_Extend(const arr: TBoxArray; const items: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Extend_TRange_1, 'function TArray_Extend(const arr: TRangeArray; const items: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Extract_Int32, 'function TArray_Extract(const arr: TIntegerArray; const item: Int32; const start: Int32 = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Extract_Double, 'function TArray_Extract(const arr: TDoubleArray; const item: Double; const start: Int32 = 0): TDoubleArray; overload;');
@@ -844,6 +879,15 @@ begin
   AddFunction(@TArray_Unshift_TBox_1, 'function TArray_Unshift(var arr: TBoxArray; const items: TBoxArray): Int32; overload;');
   AddFunction(@TArray_Unshift_TRange_1, 'function TArray_Unshift(var arr: TRangeArray; const items: TRangeArray): Int32; overload;');
 
+  AddFunction(@T2DArray_Blank_Int32, 'function T2DArray_Blank(const arr: T2DIntegerArray): Boolean; overload;');
+  AddFunction(@T2DArray_Blank_Double, 'function T2DArray_Blank(const arr: T2DDoubleArray): Boolean; overload;');
+  AddFunction(@T2DArray_Blank_String, 'function T2DArray_Blank(const arr: T2DStringArray): Boolean; overload;');
+  AddFunction(@T2DArray_Blank_Char, 'function T2DArray_Blank(const arr: T2DCharArray): Boolean; overload;');
+  AddFunction(@T2DArray_Blank_Boolean, 'function T2DArray_Blank(const arr: T2DBooleanArray): Boolean; overload;');
+  AddFunction(@T2DArray_Blank_TPoint, 'function T2DArray_Blank(const arr: T2DPointArray): Boolean; overload;');
+  AddFunction(@T2DArray_Blank_TBox, 'function T2DArray_Blank(const arr: T2DBoxArray): Boolean; overload;');
+  AddFunction(@T2DArray_Blank_TRange, 'function T2DArray_Blank(const arr: T2DRangeArray): Boolean; overload;');
+
   AddFunction(@T2DArray_Create_Int32, 'function T2DArray_Create(const size1D, size2D: Int32; const item: Int32): T2DIntegerArray; overload;');
   AddFunction(@T2DArray_Create_Double, 'function T2DArray_Create(const size1D, size2D: Int32; const item: Double): T2DDoubleArray; overload;');
   AddFunction(@T2DArray_Create_String, 'function T2DArray_Create(const size1D, size2D: Int32; const item: string): T2DStringArray; overload;');
@@ -852,4 +896,22 @@ begin
   AddFunction(@T2DArray_Create_TPoint, 'function T2DArray_Create(const size1D, size2D: Int32; const item: TPoint): T2DPointArray; overload;');
   AddFunction(@T2DArray_Create_TBox, 'function T2DArray_Create(const size1D, size2D: Int32; const item: TBox): T2DBoxArray; overload;');
   AddFunction(@T2DArray_Create_TRange, 'function T2DArray_Create(const size1D, size2D: Int32; const item: TRange): T2DRangeArray; overload;');
+
+  AddFunction(@T2DArray_Empty_Int32, 'function T2DArray_Empty(const arr: T2DIntegerArray): Boolean; overload;');
+  AddFunction(@T2DArray_Empty_Double, 'function T2DArray_Empty(const arr: T2DDoubleArray): Boolean; overload;');
+  AddFunction(@T2DArray_Empty_String, 'function T2DArray_Empty(const arr: T2DStringArray): Boolean; overload;');
+  AddFunction(@T2DArray_Empty_Char, 'function T2DArray_Empty(const arr: T2DCharArray): Boolean; overload;');
+  AddFunction(@T2DArray_Empty_Boolean, 'function T2DArray_Empty(const arr: T2DBooleanArray): Boolean; overload;');
+  AddFunction(@T2DArray_Empty_TPoint, 'function T2DArray_Empty(const arr: T2DPointArray): Boolean; overload;');
+  AddFunction(@T2DArray_Empty_TBox, 'function T2DArray_Empty(const arr: T2DBoxArray): Boolean; overload;');
+  AddFunction(@T2DArray_Empty_TRange, 'function T2DArray_Empty(const arr: T2DRangeArray): Boolean; overload;');
+  
+  AddFunction(@T2DArray_Merge_Int32, 'function T2DArray_Merge(const arr: T2DIntegerArray): TIntegerArray; overload;');
+  AddFunction(@T2DArray_Merge_Double, 'function T2DArray_Merge(const arr: T2DDoubleArray): TDoubleArray; overload;');
+  AddFunction(@T2DArray_Merge_String, 'function T2DArray_Merge(const arr: T2DStringArray): TStringArray; overload;');
+  AddFunction(@T2DArray_Merge_Char, 'function T2DArray_Merge(const arr: T2DCharArray): TCharArray; overload;');
+  AddFunction(@T2DArray_Merge_Boolean, 'function T2DArray_Merge(const arr: T2DBooleanArray): TBooleanArray; overload;');
+  AddFunction(@T2DArray_Merge_TPoint, 'function T2DArray_Merge(const arr: T2DPointArray): TPointArray; overload;');
+  AddFunction(@T2DArray_Merge_TBox, 'function T2DArray_Merge(const arr: T2DBoxArray): TBoxArray; overload;');
+  AddFunction(@T2DArray_Merge_TRange, 'function T2DArray_Merge(const arr: T2DRangeArray): TRangeArray; overload;');
 end;
