@@ -1,3 +1,13 @@
+function Boolean_X1(const X: Boolean; const trueX, falseX: Boolean): Boolean; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+function Boolean_X2(const X: Boolean; const trueX, falseX: Int32): Int32; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+function Boolean_X3(const X: Boolean; const trueX, falseX: Int64): Int64; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+function Boolean_X4(const X: Boolean; const trueX, falseX: Double): Double; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+function Boolean_X5(const X: Boolean; const trueX, falseX: string): string; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+function Boolean_X6(const X: Boolean; const trueX, falseX: Char): Char; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+function Boolean_X7(const X: Boolean; const trueX, falseX: TPoint): TPoint; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+function Boolean_X8(const X: Boolean; const trueX, falseX: TBox): TBox; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+function Boolean_X9(const X: Boolean; const trueX, falseX: TRange): TRange; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
+
 function TBox_Build1(const X1, Y1, X2, Y2: Int32): TBox; overload; cdecl; begin Result := TBox_Build(X1, Y1, X2, Y2); end;
 function TBox_Build2(const a, b: TPoint): TBox; overload; cdecl; begin Result := TBox_Build(a, b); end;
 function TBox_Create1(const X1, Y1, X2, Y2: Int32): TBox; overload; cdecl; begin Result := TBox_Create(X1, Y1, X2, Y2); end;
@@ -371,6 +381,24 @@ function TArray_Includes_Boolean(const arr: TBooleanArray; const item: Boolean; 
 function TArray_Includes_TPoint(const arr: TPointArray; const item: TPoint; const start: Int32 = 2147483647): Boolean; overload; cdecl; begin Result := TArray_Includes(arr, item, start); end;
 function TArray_Includes_TBox(const arr: TBoxArray; const item: TBox; const start: Int32 = 2147483647): Boolean; overload; cdecl; begin Result := TArray_Includes(arr, item, start); end;
 function TArray_Includes_TRange(const arr: TRangeArray; const item: TRange; const start: Int32 = 2147483647): Boolean; overload; cdecl; begin Result := TArray_Includes(arr, item, start); end;
+
+function TArray_LeastFrequent_Int32(const arr: TIntegerArray): Int32; overload; cdecl; begin Result := TArray_LeastFrequent(arr); end;
+function TArray_LeastFrequent_Double(const arr: TDoubleArray): Double; overload; cdecl; begin Result := TArray_LeastFrequent(arr); end;
+function TArray_LeastFrequent_String(const arr: TStringArray): string; overload; cdecl; begin Result := TArray_LeastFrequent(arr); end;
+function TArray_LeastFrequent_Char(const arr: TCharArray): Char; overload; cdecl; begin Result := TArray_LeastFrequent(arr); end;
+function TArray_LeastFrequent_Boolean(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := TArray_LeastFrequent(arr); end;
+function TArray_LeastFrequent_TPoint(const arr: TPointArray): TPoint; overload; cdecl; begin Result := TArray_LeastFrequent(arr); end;
+function TArray_LeastFrequent_TBox(const arr: TBoxArray): TBox; overload; cdecl; begin Result := TArray_LeastFrequent(arr); end;
+function TArray_LeastFrequent_TRange(const arr: TRangeArray): TRange; overload; cdecl; begin Result := TArray_LeastFrequent(arr); end;
+
+function TArray_MostFrequent_Int32(const arr: TIntegerArray): Int32; overload; cdecl; begin Result := TArray_MostFrequent(arr); end;
+function TArray_MostFrequent_Double(const arr: TDoubleArray): Double; overload; cdecl; begin Result := TArray_MostFrequent(arr); end;
+function TArray_MostFrequent_String(const arr: TStringArray): string; overload; cdecl; begin Result := TArray_MostFrequent(arr); end;
+function TArray_MostFrequent_Char(const arr: TCharArray): Char; overload; cdecl; begin Result := TArray_MostFrequent(arr); end;
+function TArray_MostFrequent_Boolean(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := TArray_MostFrequent(arr); end;
+function TArray_MostFrequent_TPoint(const arr: TPointArray): TPoint; overload; cdecl; begin Result := TArray_MostFrequent(arr); end;
+function TArray_MostFrequent_TBox(const arr: TBoxArray): TBox; overload; cdecl; begin Result := TArray_MostFrequent(arr); end;
+function TArray_MostFrequent_TRange(const arr: TRangeArray): TRange; overload; cdecl; begin Result := TArray_MostFrequent(arr); end;
 
 function TArray_Move_Int32(var arr: TIntegerArray; oldIndex, newIndex: Int32): Boolean; overload; cdecl; begin Result := TArray_Move(arr, oldIndex, newIndex); end;
 function TArray_Move_Double(var arr: TDoubleArray; oldIndex, newIndex: Int32): Boolean; overload; cdecl; begin Result := TArray_Move(arr, oldIndex, newIndex); end;

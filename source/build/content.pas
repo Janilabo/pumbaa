@@ -110,6 +110,15 @@ begin
   AddFunction(@String_Trim, 'function String_Trim(const str: string; const t: Char = #32): string;');
 
   AddFunction(@Boolean_Random, 'function Boolean_Random: Boolean;');
+  AddFunction(@Boolean_X1, 'function Boolean_X(const X: Boolean; const trueX, falseX: Boolean): Boolean; overload;');
+  AddFunction(@Boolean_X2, 'function Boolean_X(const X: Boolean; const trueX, falseX: Int32): Int32; overload;');
+  AddFunction(@Boolean_X3, 'function Boolean_X(const X: Boolean; const trueX, falseX: Int64): Int64; overload;');
+  AddFunction(@Boolean_X4, 'function Boolean_X(const X: Boolean; const trueX, falseX: Double): Double; overload;');
+  AddFunction(@Boolean_X5, 'function Boolean_X(const X: Boolean; const trueX, falseX: string): string; overload;');
+  AddFunction(@Boolean_X6, 'function Boolean_X(const X: Boolean; const trueX, falseX: Char): Char; overload;');
+  AddFunction(@Boolean_X7, 'function Boolean_X(const X: Boolean; const trueX, falseX: TPoint): TPoint; overload;');
+  AddFunction(@Boolean_X8, 'function Boolean_X(const X: Boolean; const trueX, falseX: TBox): TBox; overload;');
+  AddFunction(@Boolean_X9, 'function Boolean_X(const X: Boolean; const trueX, falseX: TRange): TRange; overload;');
 
   AddFunction(@TPoint_To, 'function TPoint_To(const X, Y: Int32): TPoint;');
   AddFunction(@TPoint_At, 'function TPoint_At(const X, Y: Int32): TPoint;');
@@ -244,6 +253,19 @@ begin
   AddFunction(@TRange_Digit, 'function TRange_Digit(const range: TRange; const x: Int32): Boolean;');
   AddFunction(@TRange_Value, 'function TRange_Value(const range: TRange; const x: Int32): Boolean;');
 
+  AddFunction(@TIntegerArray_Descending, 'function TIntegerArray_Descending(const arr: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_Ascending, 'function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_BubbleSort, 'function TIntegerArray_BubbleSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_BubbleSortOptimized, 'function TIntegerArray_BubbleSortOptimized(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_Bounds, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange;');
+  AddFunction(@TIntegerArray_Max, 'function TIntegerArray_Max(const arr: TIntegerArray): Int32;');
+  AddFunction(@TIntegerArray_Min, 'function TIntegerArray_Min(const arr: TIntegerArray): Int32;');
+  AddFunction(@TIntegerArray_Sum, 'function TIntegerArray_Sum(const arr: TIntegerArray): Int64;');
+  AddFunction(@TIntegerArray_Density, 'function TIntegerArray_Density(const arr: TIntegerArray): Double;');
+  AddFunction(@TIntegerArray_Mean, 'function TIntegerArray_Mean(const arr: TIntegerArray): Double;');
+  AddFunction(@TIntegerArray_MostFrequent, 'function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Int32 = -2147483648): Int32;');
+  AddFunction(@TIntegerArray_LeastFrequent, 'function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Int32 = -2147483648): Int32;');
+  
   AddFunction(@TPointArray_Bounds, 'function TPointArray_Bounds(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Unique, 'function TPointArray_Unique(var arr: TPointArray): Int32;');
   AddFunction(@TPointArray_Uniqued, 'function TPointArray_Uniqued(const arr: TPointArray): TPointArray;');
@@ -593,6 +615,24 @@ begin
   AddFunction(@TArray_Includes_TPoint, 'function TArray_Includes(const arr: TPointArray; const item: TPoint; const start: Int32 = 2147483647): Boolean; overload;');
   AddFunction(@TArray_Includes_TBox, 'function TArray_Includes(const arr: TBoxArray; const item: TBox; const start: Int32 = 2147483647): Boolean; overload;');
   AddFunction(@TArray_Includes_TRange, 'function TArray_Includes(const arr: TRangeArray; const item: TRange; const start: Int32 = 2147483647): Boolean; overload;');
+
+  AddFunction(@TArray_LeastFrequent_Int32, 'function TArray_LeastFrequent(const arr: TIntegerArray): Int32; overload;');
+  AddFunction(@TArray_LeastFrequent_Double, 'function TArray_LeastFrequent(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_LeastFrequent_String, 'function TArray_LeastFrequent(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_LeastFrequent_Char, 'function TArray_LeastFrequent(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_LeastFrequent_Boolean, 'function TArray_LeastFrequent(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_LeastFrequent_TPoint, 'function TArray_LeastFrequent(const arr: TPointArray): TPoint; overload;');
+  AddFunction(@TArray_LeastFrequent_TBox, 'function TArray_LeastFrequent(const arr: TBoxArray): TBox; overload;');
+  AddFunction(@TArray_LeastFrequent_TRange, 'function TArray_LeastFrequent(const arr: TRangeArray): TRange; overload;');
+  
+  AddFunction(@TArray_MostFrequent_Int32, 'function TArray_MostFrequent(const arr: TIntegerArray): Int32; overload;');
+  AddFunction(@TArray_MostFrequent_Double, 'function TArray_MostFrequent(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_MostFrequent_String, 'function TArray_MostFrequent(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_MostFrequent_Char, 'function TArray_MostFrequent(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_MostFrequent_Boolean, 'function TArray_MostFrequent(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_MostFrequent_TPoint, 'function TArray_MostFrequent(const arr: TPointArray): TPoint; overload;');
+  AddFunction(@TArray_MostFrequent_TBox, 'function TArray_MostFrequent(const arr: TBoxArray): TBox; overload;');
+  AddFunction(@TArray_MostFrequent_TRange, 'function TArray_MostFrequent(const arr: TRangeArray): TRange; overload;');
 
   AddFunction(@TArray_Move_Int32, 'function TArray_Move(var arr: TIntegerArray; oldIndex, newIndex: Int32): Boolean; overload;');
   AddFunction(@TArray_Move_Double, 'function TArray_Move(var arr: TDoubleArray; oldIndex, newIndex: Int32): Boolean; overload;');
