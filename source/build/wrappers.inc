@@ -381,6 +381,15 @@ function TArray_Move_TPoint(var arr: TPointArray; oldIndex, newIndex: Int32): Bo
 function TArray_Move_TBox(var arr: TBoxArray; oldIndex, newIndex: Int32): Boolean; overload; cdecl; begin Result := TArray_Move(arr, oldIndex, newIndex); end;
 function TArray_Move_TRange(var arr: TRangeArray; oldIndex, newIndex: Int32): Boolean; overload; cdecl; begin Result := TArray_Move(arr, oldIndex, newIndex); end;
 
+function TArray_Oversize_Int32(const arr: TIntegerArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Oversize(arr, limit); end;
+function TArray_Oversize_Double(const arr: TDoubleArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Oversize(arr, limit); end;
+function TArray_Oversize_String(const arr: TStringArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Oversize(arr, limit); end;
+function TArray_Oversize_Char(const arr: TCharArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Oversize(arr, limit); end;
+function TArray_Oversize_Boolean(const arr: TBooleanArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Oversize(arr, limit); end;
+function TArray_Oversize_TPoint(const arr: TPointArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Oversize(arr, limit); end;
+function TArray_Oversize_TBox(const arr: TBoxArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Oversize(arr, limit); end;
+function TArray_Oversize_TRange(const arr: TRangeArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Oversize(arr, limit); end;
+
 function TArray_Partition_Int32(const arr: TIntegerArray; const size: Int32): T2DIntegerArray; overload; cdecl; begin Result := TArray_Partition(arr, size); end;
 function TArray_Partition_Double(const arr: TDoubleArray; const size: Int32): T2DDoubleArray; overload; cdecl; begin Result := TArray_Partition(arr, size); end;
 function TArray_Partition_String(const arr: TStringArray; const size: Int32): T2DStringArray; overload; cdecl; begin Result := TArray_Partition(arr, size); end;
@@ -672,6 +681,15 @@ function TArray_Trade_Boolean(var a, b: TBooleanArray): Int32; overload; cdecl; 
 function TArray_Trade_TPoint(var a, b: TPointArray): Int32; overload; cdecl; begin Result := TArray_Trade(a, b); end;
 function TArray_Trade_TBox(var a, b: TBoxArray): Int32; overload; cdecl; begin Result := TArray_Trade(a, b); end;
 function TArray_Trade_TRange(var a, b: TRangeArray): Int32; overload; cdecl; begin Result := TArray_Trade(a, b); end;
+
+function TArray_Undersize_Int32(const arr: TIntegerArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Undersize(arr, limit); end;
+function TArray_Undersize_Double(const arr: TDoubleArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Undersize(arr, limit); end;
+function TArray_Undersize_String(const arr: TStringArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Undersize(arr, limit); end;
+function TArray_Undersize_Char(const arr: TCharArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Undersize(arr, limit); end;
+function TArray_Undersize_Boolean(const arr: TBooleanArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Undersize(arr, limit); end;
+function TArray_Undersize_TPoint(const arr: TPointArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Undersize(arr, limit); end;
+function TArray_Undersize_TBox(const arr: TBoxArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Undersize(arr, limit); end;
+function TArray_Undersize_TRange(const arr: TRangeArray; const limit: Int32): Boolean; overload; cdecl; begin Result := TArray_Undersize(arr, limit); end;
 
 function TArray_Unique_Int32(var arr: TIntegerArray): Int32; overload; cdecl; begin Result := TArray_Unique(arr); end;
 function TArray_Unique_Double(var arr: TDoubleArray): Int32; overload; cdecl; begin Result := TArray_Unique(arr); end;

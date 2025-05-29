@@ -34,6 +34,8 @@ begin
   AddFunction(@Double_Sign, 'function Double_Sign(const x: Double): Int32;');
   AddFunction(@Double_Percent, 'function Double_Percent(const source, position: Double): Double;');
   AddFunction(@Double_Percentage, 'function Double_Percentage(const source, percent: Double): Double;');
+  AddFunction(@Double_Oversize, 'function Double_Oversize(const x, limit: Double): Boolean;');
+  AddFunction(@Double_Undersize, 'function Double_Undersize(const x, limit: Double): Boolean;');
 
   AddFunction(@Int32_Inc, 'function Int32_Inc(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_Dec, 'function Int32_Dec(var x: Int32; const N: Int32 = 1): Int32;');
@@ -52,6 +54,8 @@ begin
   AddFunction(@Int32_Difference, 'function Int32_Difference(const x, T: Int32): Int32;');
   AddFunction(@Int32_Opposite, 'function Int32_Opposite(const x: Int32): Int32;');
   AddFunction(@Int32_Sign, 'function Int32_Sign(const x: Int32): Int32;');
+  AddFunction(@Int32_Oversize, 'function Int32_Oversize(const x, limit: Int64): Boolean;');
+  AddFunction(@Int32_Undersize, 'function Int32_Undersize(const x, limit: Int64): Boolean;');
 
   AddFunction(@Int64_Inc, 'function Int64_Inc(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Dec, 'function Int64_Dec(var x: Int64; const N: Int64 = 1): Int64;');
@@ -65,6 +69,8 @@ begin
   AddFunction(@Int64_Difference, 'function Int64_Difference(const x, T: Int64): Int64;');
   AddFunction(@Int64_Opposite, 'function Int64_Opposite(const x: Int64): Int64;');
   AddFunction(@Int64_Sign, 'function Int64_Sign(const x: Int64): Int32;');
+  AddFunction(@Int64_Oversize, 'function Int64_Oversize(const x, limit: Int64): Boolean;');
+  AddFunction(@Int64_Undersize, 'function Int64_Undersize(const x, limit: Int64): Boolean;');
 
   AddFunction(@String_At, 'function String_At(const str, s: string; const index: Int32 = 1): Boolean;');
   AddFunction(@String_Get, 'function String_Get(const str: string; const index, size: Int32): string;');
@@ -191,8 +197,8 @@ begin
   AddFunction(@TBox_CenterHorizontally, 'function TBox_CenterHorizontally(const bx, area: TBox): TBox;');
 
   AddFunction(@TRange_Neutral, 'function TRange_Neutral(const range: TRange): Boolean;');
-  AddFunction(@TRange_Increasing, 'function TRange_Increasing(const range: TRange): Boolean;');
-  AddFunction(@TRange_Decreasing, 'function TRange_Decreasing(const range: TRange): Boolean;');
+  AddFunction(@TRange_Ascending, 'function TRange_Ascending(const range: TRange): Boolean;');
+  AddFunction(@TRange_Descending, 'function TRange_Descending(const range: TRange): Boolean;');
   AddFunction(@TRange_Create, 'function TRange_Create(const start: Int32 = 0; const stop: Int32 = 0): TRange;');
   AddFunction(@TRange_Build, 'function TRange_Build(const start: Int32 = 0; const stop: Int32 = 0): TRange;');
   AddFunction(@TRange_Grab, 'function TRange_Grab(const range: TRange): TRange;');
@@ -235,6 +241,8 @@ begin
   AddFunction(@TRange_Touches, 'function TRange_Touches(const a, b: TRange): Boolean;');
   AddFunction(@TRange_Distance, 'function TRange_Distance(const a, b: TRange): Int32;');
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const a, b: TRange): Int32;');
+  AddFunction(@TRange_Digit, 'function TRange_Digit(const range: TRange; const x: Int32): Boolean;');
+  AddFunction(@TRange_Value, 'function TRange_Value(const range: TRange; const x: Int32): Boolean;');
 
   AddFunction(@TPointArray_Bounds, 'function TPointArray_Bounds(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Unique, 'function TPointArray_Unique(var arr: TPointArray): Int32;');
@@ -595,6 +603,15 @@ begin
   AddFunction(@TArray_Move_TBox, 'function TArray_Move(var arr: TBoxArray; oldIndex, newIndex: Int32): Boolean; overload;');
   AddFunction(@TArray_Move_TRange, 'function TArray_Move(var arr: TRangeArray; oldIndex, newIndex: Int32): Boolean; overload;');
 
+  AddFunction(@TArray_Oversize_Int32, 'function TArray_Oversize(const arr: TIntegerArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Oversize_Double, 'function TArray_Oversize(const arr: TDoubleArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Oversize_String, 'function TArray_Oversize(const arr: TStringArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Oversize_Char, 'function TArray_Oversize(const arr: TCharArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Oversize_Boolean, 'function TArray_Oversize(const arr: TBooleanArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Oversize_TPoint, 'function TArray_Oversize(const arr: TPointArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Oversize_TBox, 'function TArray_Oversize(const arr: TBoxArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Oversize_TRange, 'function TArray_Oversize(const arr: TRangeArray; const limit: Int32): Boolean; overload;');
+
   AddFunction(@TArray_Partition_Int32, 'function TArray_Partition(const arr: TIntegerArray; const size: Int32): T2DIntegerArray; overload;');
   AddFunction(@TArray_Partition_Double, 'function TArray_Partition(const arr: TDoubleArray; const size: Int32): T2DDoubleArray; overload;');
   AddFunction(@TArray_Partition_String, 'function TArray_Partition(const arr: TStringArray; const size: Int32): T2DStringArray; overload;');
@@ -886,6 +903,15 @@ begin
   AddFunction(@TArray_Trade_TPoint, 'function TArray_Trade(var a, b: TPointArray): Int32; overload;');
   AddFunction(@TArray_Trade_TBox, 'function TArray_Trade(var a, b: TBoxArray): Int32; overload;');
   AddFunction(@TArray_Trade_TRange, 'function TArray_Trade(var a, b: TRangeArray): Int32; overload;');
+
+  AddFunction(@TArray_Undersize_Int32, 'function TArray_Undersize(const arr: TIntegerArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Undersize_Double, 'function TArray_Undersize(const arr: TDoubleArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Undersize_String, 'function TArray_Undersize(const arr: TStringArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Undersize_Char, 'function TArray_Undersize(const arr: TCharArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Undersize_Boolean, 'function TArray_Undersize(const arr: TBooleanArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Undersize_TPoint, 'function TArray_Undersize(const arr: TPointArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Undersize_TBox, 'function TArray_Undersize(const arr: TBoxArray; const limit: Int32): Boolean; overload;');
+  AddFunction(@TArray_Undersize_TRange, 'function TArray_Undersize(const arr: TRangeArray; const limit: Int32): Boolean; overload;');
 
   AddFunction(@TArray_Unique_Int32, 'function TArray_Unique(var arr: TIntegerArray): Int32; overload;');
   AddFunction(@TArray_Unique_Double, 'function TArray_Unique(var arr: TDoubleArray): Int32; overload;');
