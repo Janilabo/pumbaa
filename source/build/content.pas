@@ -817,6 +817,58 @@ begin
   AddFunction(@TArray_Set_TBox_2, 'function TArray_Set(const arr: TBoxArray; const start: Int32; const items: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Set_TRange_2, 'function TArray_Set(const arr: TRangeArray; const start: Int32; const items: TRangeArray): TRangeArray; overload;');
 
+  AddFunction(@TArray_Size_Int32, 'function TArray_Size(var arr: TIntegerArray; const size: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_Double, 'function TArray_Size(var arr: TDoubleArray; const size: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_String, 'function TArray_Size(var arr: TStringArray; const size: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_Char, 'function TArray_Size(var arr: TCharArray; const size: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_Boolean, 'function TArray_Size(var arr: TBooleanArray; const size: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_TPoint, 'function TArray_Size(var arr: TPointArray; const size: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_TBox, 'function TArray_Size(var arr: TBoxArray; const size: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_TRange, 'function TArray_Size(var arr: TRangeArray; const size: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_Int32_1, 'function TArray_Size(var arr: TIntegerArray; const size: Int32; const null: Int32): Int32; overload;');
+  AddFunction(@TArray_Size_Double_1, 'function TArray_Size(var arr: TDoubleArray; const size: Int32; const null: Double): Int32; overload;');
+  AddFunction(@TArray_Size_String_1, 'function TArray_Size(var arr: TStringArray; const size: Int32; const null: string): Int32; overload;');
+  AddFunction(@TArray_Size_Char_1, 'function TArray_Size(var arr: TCharArray; const size: Int32; const null: Char): Int32; overload;');
+  AddFunction(@TArray_Size_Boolean_1, 'function TArray_Size(var arr: TBooleanArray; const size: Int32; const null: Boolean): Int32; overload;');
+  AddFunction(@TArray_Size_TPoint_1, 'function TArray_Size(var arr: TPointArray; const size: Int32; const null: TPoint): Int32; overload;');
+  AddFunction(@TArray_Size_TBox_1, 'function TArray_Size(var arr: TBoxArray; const size: Int32; const null: TBox): Int32; overload;');
+  AddFunction(@TArray_Size_TRange_1, 'function TArray_Size(var arr: TRangeArray; const size: Int32; const null: TRange): Int32; overload;');
+  AddFunction(@TArray_Size_Int32_2, 'function TArray_Size(const arr: TIntegerArray): Int32; overload;');
+  AddFunction(@TArray_Size_Double_2, 'function TArray_Size(const arr: TDoubleArray): Int32; overload;');
+  AddFunction(@TArray_Size_String_2, 'function TArray_Size(const arr: TStringArray): Int32; overload;');
+  AddFunction(@TArray_Size_Char_2, 'function TArray_Size(const arr: TCharArray): Int32; overload;');
+  AddFunction(@TArray_Size_Boolean_2, 'function TArray_Size(const arr: TBooleanArray): Int32; overload;');
+  AddFunction(@TArray_Size_TPoint_2, 'function TArray_Size(const arr: TPointArray): Int32; overload;');
+  AddFunction(@TArray_Size_TBox_2, 'function TArray_Size(const arr: TBoxArray): Int32; overload;');
+  AddFunction(@TArray_Size_TRange_2, 'function TArray_Size(const arr: TRangeArray): Int32; overload;');
+  
+  AddFunction(@TArray_SizeBetween_Int32, 'function TArray_SizeBetween(const arr: TIntegerArray; const x, y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeBetween_Double, 'function TArray_SizeBetween(const arr: TDoubleArray; const x, y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeBetween_String, 'function TArray_SizeBetween(const arr: TStringArray; const x, y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeBetween_Char, 'function TArray_SizeBetween(const arr: TCharArray; const x, y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeBetween_Boolean, 'function TArray_SizeBetween(const arr: TBooleanArray; const x, y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeBetween_TPoint, 'function TArray_SizeBetween(const arr: TPointArray; const x, y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeBetween_TBox, 'function TArray_SizeBetween(const arr: TBoxArray; const x, y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeBetween_TRange, 'function TArray_SizeBetween(const arr: TRangeArray; const x, y: Int32): Boolean; overload;');
+
+  AddFunction(@TArray_SizeMax_Int32, 'function TArray_SizeMax(const arr: TIntegerArray; const y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMax_Double, 'function TArray_SizeMax(const arr: TDoubleArray; const y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMax_String, 'function TArray_SizeMax(const arr: TStringArray; const y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMax_Char, 'function TArray_SizeMax(const arr: TCharArray; const y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMax_Boolean, 'function TArray_SizeMax(const arr: TBooleanArray; const y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMax_TPoint, 'function TArray_SizeMax(const arr: TPointArray; const y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMax_TBox, 'function TArray_SizeMax(const arr: TBoxArray; const y: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMax_TRange, 'function TArray_SizeMax(const arr: TRangeArray; const y: Int32): Boolean; overload;');
+
+  AddFunction(@TArray_SizeMin_Int32, 'function TArray_SizeMin(const arr: TIntegerArray; const x: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMin_Double, 'function TArray_SizeMin(const arr: TDoubleArray; const x: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMin_String, 'function TArray_SizeMin(const arr: TStringArray; const x: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMin_Char, 'function TArray_SizeMin(const arr: TCharArray; const x: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMin_Boolean, 'function TArray_SizeMin(const arr: TBooleanArray; const x: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMin_TPoint, 'function TArray_SizeMin(const arr: TPointArray; const x: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMin_TBox, 'function TArray_SizeMin(const arr: TBoxArray; const x: Int32): Boolean; overload;');
+  AddFunction(@TArray_SizeMin_TRange, 'function TArray_SizeMin(const arr: TRangeArray; const x: Int32): Boolean; overload;');
+
   AddFunction(@TArray_Swap_Int32, 'function TArray_Swap(var a, b: TIntegerArray): Int32; overload;');
   AddFunction(@TArray_Swap_Double, 'function TArray_Swap(var a, b: TDoubleArray): Int32; overload;');
   AddFunction(@TArray_Swap_String, 'function TArray_Swap(var a, b: TStringArray): Int32; overload;');
@@ -905,6 +957,23 @@ begin
   AddFunction(@T2DArray_Empty_TPoint, 'function T2DArray_Empty(const arr: T2DPointArray): Boolean; overload;');
   AddFunction(@T2DArray_Empty_TBox, 'function T2DArray_Empty(const arr: T2DBoxArray): Boolean; overload;');
   AddFunction(@T2DArray_Empty_TRange, 'function T2DArray_Empty(const arr: T2DRangeArray): Boolean; overload;');
+
+  AddFunction(@T2DArray_Length_Int32, 'function T2DArray_Length(const arr: T2DIntegerArray; var lengths: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_Double, 'function T2DArray_Length(const arr: T2DDoubleArray; var lengths: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_String, 'function T2DArray_Length(const arr: T2DStringArray; var lengths: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_Char, 'function T2DArray_Length(const arr: T2DCharArray; var lengths: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_Boolean, 'function T2DArray_Length(const arr: T2DBooleanArray; var lengths: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_TPoint, 'function T2DArray_Length(const arr: T2DPointArray; var lengths: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_TBox, 'function T2DArray_Length(const arr: T2DBoxArray; var lengths: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_TRange, 'function T2DArray_Length(const arr: T2DRangeArray; var lengths: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_Int32_1, 'function T2DArray_Length(const arr: T2DIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_Double_1, 'function T2DArray_Length(const arr: T2DDoubleArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_String_1, 'function T2DArray_Length(const arr: T2DStringArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_Char_1, 'function T2DArray_Length(const arr: T2DCharArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_Boolean_1, 'function T2DArray_Length(const arr: T2DBooleanArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_TPoint_1, 'function T2DArray_Length(const arr: T2DPointArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_TBox_1, 'function T2DArray_Length(const arr: T2DBoxArray): Int64; overload;');
+  AddFunction(@T2DArray_Length_TRange_1, 'function T2DArray_Length(const arr: T2DRangeArray): Int64; overload;');
   
   AddFunction(@T2DArray_Merge_Int32, 'function T2DArray_Merge(const arr: T2DIntegerArray): TIntegerArray; overload;');
   AddFunction(@T2DArray_Merge_Double, 'function T2DArray_Merge(const arr: T2DDoubleArray): TDoubleArray; overload;');
