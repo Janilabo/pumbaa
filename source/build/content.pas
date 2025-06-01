@@ -252,6 +252,8 @@ begin
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const a, b: TRange): Int32;');
   AddFunction(@TRange_Digit, 'function TRange_Digit(const range: TRange; const x: Int32): Boolean;');
   AddFunction(@TRange_Value, 'function TRange_Value(const range: TRange; const x: Int32): Boolean;');
+  AddFunction(@TRange_Middle, 'function TRange_Middle(const range: TRange): Double;');
+  AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Int32;');
 
   AddFunction(@TIntegerArray_Descending, 'function TIntegerArray_Descending(const arr: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_Ascending, 'function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean;');
@@ -260,11 +262,24 @@ begin
   AddFunction(@TIntegerArray_Bounds, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Max, 'function TIntegerArray_Max(const arr: TIntegerArray): Int32;');
   AddFunction(@TIntegerArray_Min, 'function TIntegerArray_Min(const arr: TIntegerArray): Int32;');
+  AddFunction(@TIntegerArray_Maxi1, 'function TIntegerArray_Maxi(const arr: TIntegerArray; const ascending: Boolean = True; const start: Int32 = -1): Int32; overload;');
+  AddFunction(@TIntegerArray_Maxi2, 'function TIntegerArray_Maxi(const arr: TIntegerArray; const start: Int32; const ascending: Boolean = True): Int32; overload;');
+  AddFunction(@TIntegerArray_Mini1, 'function TIntegerArray_Mini(const arr: TIntegerArray; const ascending: Boolean = True; const start: Int32 = -1): Int32; overload;');
+  AddFunction(@TIntegerArray_Mini2, 'function TIntegerArray_Mini(const arr: TIntegerArray; const start: Int32; const ascending: Boolean = True): Int32; overload;');
   AddFunction(@TIntegerArray_Sum, 'function TIntegerArray_Sum(const arr: TIntegerArray): Int64;');
   AddFunction(@TIntegerArray_Density, 'function TIntegerArray_Density(const arr: TIntegerArray): Double;');
   AddFunction(@TIntegerArray_Mean, 'function TIntegerArray_Mean(const arr: TIntegerArray): Double;');
+  AddFunction(@TIntegerArray_Mode, 'function TIntegerArray_Mode(const arr: TIntegerArray): Int32;');
+  AddFunction(@TIntegerArray_Median, 'function TIntegerArray_Median(const arr: TIntegerArray): Double;');
+  AddFunction(@TIntegerArray_Middle, 'function TIntegerArray_Middle(const arr: TIntegerArray): Double;');
+  AddFunction(@TIntegerArray_Center, 'function TIntegerArray_Center(const arr: TIntegerArray): Int32;');
   AddFunction(@TIntegerArray_MostFrequent, 'function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Int32 = -2147483648): Int32;');
   AddFunction(@TIntegerArray_LeastFrequent, 'function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Int32 = -2147483648): Int32;');
+  AddFunction(@TIntegerArray_BinarySearch, 'function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Int32): Int32;');
+  AddFunction(@TIntegerArray_BinaryAppend, 'function TIntegerArray_BinaryAppend(var arr: TIntegerArray; const x: Int32): Int32;');
+  AddFunction(@TIntegerArray_BinaryAdd, 'function TIntegerArray_BinaryAdd(const arr: TIntegerArray; const x: Int32): TIntegerArray;');
+  AddFunction(@TIntegerArray_BinarySearchF, 'function TIntegerArray_BinarySearchF(const arr: TIntegerArray; const x: TRange): Int32;');
+  AddFunction(@TIntegerArray_BinarySearchL, 'function TIntegerArray_BinarySearchL(const arr: TIntegerArray; const x: TRange): Int32;');
   
   AddFunction(@TPointArray_Bounds, 'function TPointArray_Bounds(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Unique, 'function TPointArray_Unique(var arr: TPointArray): Int32;');

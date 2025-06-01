@@ -37,6 +37,11 @@ function TBox_Similar2(const a, b: TBox; const diff: Int32): Boolean; overload; 
 function TBox_SimilarSize1(const a, b: TBox; const widthDifferency, heightDifferency: Int32): Boolean; overload; cdecl; begin Result := TBox_SimilarSize(a, b, widthDifferency, heightDifferency); end;
 function TBox_SimilarSize1(const a, b: TBox; const differency: Integer): Boolean; overload; cdecl; begin Result := TBox_SimilarSize(a, b, differency); end;
 
+function TIntegerArray_Maxi1(const arr: TIntegerArray; const ascending: Boolean = True; const start: Int32 = -1): Int32; overload; cdecl; begin Result := TIntegerArray_Maxi(arr, ascending, start); end;
+function TIntegerArray_Maxi2(const arr: TIntegerArray; const start: Int32; const ascending: Boolean = True): Int32; overload; cdecl; begin Result := TIntegerArray_Maxi(arr, start, ascending); end;
+function TIntegerArray_Mini1(const arr: TIntegerArray; const ascending: Boolean = True; const start: Int32 = -1): Int32; overload; cdecl; begin Result := TIntegerArray_Mini(arr, ascending, start); end;
+function TIntegerArray_Mini2(const arr: TIntegerArray; const start: Int32; const ascending: Boolean = True): Int32; overload; cdecl; begin Result := TIntegerArray_Mini(arr, start, ascending); end;
+
 function TPointArray_FloodFill1(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := TPointArray_FloodFill(arr, start, scan8W); end;
 function TPointArray_FloodFill2(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := TPointArray_FloodFill(arr, start, scan8W); end;
 
