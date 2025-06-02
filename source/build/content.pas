@@ -259,7 +259,17 @@ begin
   AddFunction(@TIntegerArray_Ascending, 'function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_BubbleSort, 'function TIntegerArray_BubbleSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
   AddFunction(@TIntegerArray_BubbleSortOptimized, 'function TIntegerArray_BubbleSortOptimized(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
-  AddFunction(@TIntegerArray_Bounds, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange;');
+  AddFunction(@TIntegerArray_QuickSort, 'function TIntegerArray_QuickSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_QSort, 'function TIntegerArray_QSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_CoctailSort, 'function TIntegerArray_CoctailSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_CoctailSort2, 'function TIntegerArray_CoctailSort2(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_CombSort, 'function TIntegerArray_CombSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_GnomeSort, 'function TIntegerArray_GnomeSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_HeapSort, 'function TIntegerArray_HeapSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_InsertionSort, 'function TIntegerArray_InsertionSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_MergeSort, 'function TIntegerArray_MergeSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_MergeSortBU, 'function TIntegerArray_MergeSortBU(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_ShellSort, 'function TIntegerArray_ShellSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
   AddFunction(@TIntegerArray_Max, 'function TIntegerArray_Max(const arr: TIntegerArray): Int32;');
   AddFunction(@TIntegerArray_Min, 'function TIntegerArray_Min(const arr: TIntegerArray): Int32;');
   AddFunction(@TIntegerArray_Maxi1, 'function TIntegerArray_Maxi(const arr: TIntegerArray; const ascending: Boolean = True; const start: Int32 = -1): Int32; overload;');
@@ -275,6 +285,8 @@ begin
   AddFunction(@TIntegerArray_Center, 'function TIntegerArray_Center(const arr: TIntegerArray): Int32;');
   AddFunction(@TIntegerArray_MostFrequent, 'function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Int32 = -2147483648): Int32;');
   AddFunction(@TIntegerArray_LeastFrequent, 'function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Int32 = -2147483648): Int32;');
+  AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_BinarySorted, 'function TIntegerArray_BinarySorted(const arr: TIntegerArray; const ascending: Boolean = True): TIntegerArray;;');
   AddFunction(@TIntegerArray_BinarySearch, 'function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Int32): Int32;');
   AddFunction(@TIntegerArray_BinaryAppend, 'function TIntegerArray_BinaryAppend(var arr: TIntegerArray; const x: Int32): Int32;');
   AddFunction(@TIntegerArray_BinaryAdd, 'function TIntegerArray_BinaryAdd(const arr: TIntegerArray; const x: Int32): TIntegerArray;');
