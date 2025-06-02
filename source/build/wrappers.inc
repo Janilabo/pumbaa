@@ -8,6 +8,9 @@ function Boolean_X7(const X: Boolean; const trueX, falseX: TPoint): TPoint; over
 function Boolean_X8(const X: Boolean; const trueX, falseX: TBox): TBox; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
 function Boolean_X9(const X: Boolean; const trueX, falseX: TRange): TRange; overload; cdecl; begin Result := Boolean_X(X, trueX, falseX); end;
 
+function String_Explode1(const str, d: string; const limit: Int32 = -1): TStringArray; overload; cdecl; begin Result := String_Explode(str, d, limit); end;
+function String_Explode2(const str: string; const d: TStringArray; const limit: Int32 = -1): TStringArray; overload; cdecl; begin Result := String_Explode(str, d, limit); end;
+
 function TBox_Build1(const X1, Y1, X2, Y2: Int32): TBox; overload; cdecl; begin Result := TBox_Build(X1, Y1, X2, Y2); end;
 function TBox_Build2(const a, b: TPoint): TBox; overload; cdecl; begin Result := TBox_Build(a, b); end;
 function TBox_Create1(const X1, Y1, X2, Y2: Int32): TBox; overload; cdecl; begin Result := TBox_Create(X1, Y1, X2, Y2); end;

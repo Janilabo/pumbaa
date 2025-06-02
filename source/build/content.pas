@@ -81,8 +81,8 @@ begin
   AddFunction(@String_Count, 'function String_Count(const str, s: string; const overlap: Boolean = True): Int32;');
   AddFunction(@String_FromLeft, 'function String_FromLeft(const str: string; const x: Int32): string;');
   AddFunction(@String_FromRight, 'function String_FromRight(const str: string; const x: Int32): string;');
-  AddFunction(@String_Explode, 'function String_Explode(const str, d: string; const limit: Int32 = -1): TStringArray;');
-  AddFunction(@String_Exploded, 'function String_Exploded(const str: string; const d: TStringArray; const limit: Int32 = -1): TStringArray;');
+  AddFunction(@String_Explode1, 'function String_Explode(const str, d: string; const limit: Int32 = -1): TStringArray; overload;');
+  AddFunction(@String_Explode2, 'function String_Explode(const str: string; const d: TStringArray; const limit: Int32 = -1): TStringArray; overload;');
   AddFunction(@String_Slice, 'function String_Slice(const str: string; const a, b: Int32): string;');
   AddFunction(@String_Chunk, 'function String_Chunk(const str: string; const a, b: Int32): string;');
   AddFunction(@String_Reverse, 'function String_Reverse(var str: string): Boolean;');
