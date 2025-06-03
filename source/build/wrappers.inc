@@ -648,6 +648,23 @@ function TArray_Set_TPoint_2(const arr: TPointArray; const start: Int32; const i
 function TArray_Set_TBox_2(const arr: TBoxArray; const start: Int32; const items: TBoxArray): TBoxArray; overload; cdecl; begin Result := TArray_Set(arr, start, items); end;
 function TArray_Set_TRange_2(const arr: TRangeArray; const start: Int32; const items: TRangeArray): TRangeArray; overload; cdecl; begin Result := TArray_Set(arr, start, items); end;
 
+function TArray_Shift_Int32(var arr: TIntegerArray): Int32; overload; cdecl; begin Result := TArray_Shift(arr); end;
+function TArray_Shift_Double(var arr: TDoubleArray): Double; overload; cdecl; begin Result := TArray_Shift(arr); end;
+function TArray_Shift_String(var arr: TStringArray): string; overload; cdecl; begin Result := TArray_Shift(arr); end;
+function TArray_Shift_Char(var arr: TCharArray): Char; overload; cdecl; begin Result := TArray_Shift(arr); end;
+function TArray_Shift_Boolean(var arr: TBooleanArray): Boolean; overload; cdecl; begin Result := TArray_Shift(arr); end;
+function TArray_Shift_TPoint(var arr: TPointArray): TPoint; overload; cdecl; begin Result := TArray_Shift(arr); end;
+function TArray_Shift_TBox(var arr: TBoxArray): TBox; overload; cdecl; begin Result := TArray_Shift(arr); end;
+function TArray_Shift_TRange(var arr: TRangeArray): TRange; overload; cdecl; begin Result := TArray_Shift(arr); end;
+function TArray_Shift_Int32_1(var arr: TIntegerArray; const shift: Int32): TIntegerArray; overload; cdecl; begin Result := TArray_Shift(arr, shift); end;
+function TArray_Shift_Double_1(var arr: TDoubleArray; const shift: Int32): TDoubleArray; overload; cdecl; begin Result := TArray_Shift(arr, shift); end;
+function TArray_Shift_String_1(var arr: TStringArray; const shift: Int32): TStringArray; overload; cdecl; begin Result := TArray_Shift(arr, shift); end;
+function TArray_Shift_Char_1(var arr: TCharArray; const shift: Int32): TCharArray; overload; cdecl; begin Result := TArray_Shift(arr, shift); end;
+function TArray_Shift_Boolean_1(var arr: TBooleanArray; const shift: Int32): TBooleanArray; overload; cdecl; begin Result := TArray_Shift(arr, shift); end;
+function TArray_Shift_TPoint_1(var arr: TPointArray; const shift: Int32): TPointArray; overload; cdecl; begin Result := TArray_Shift(arr, shift); end;
+function TArray_Shift_TBox_1(var arr: TBoxArray; const shift: Int32): TBoxArray; overload; cdecl; begin Result := TArray_Shift(arr, shift); end;
+function TArray_Shift_TRange_1(var arr: TRangeArray; const shift: Int32): TRangeArray; overload; cdecl; begin Result := TArray_Shift(arr, shift); end;
+
 function TArray_Size_Int32(var arr: TIntegerArray; const size: Int32): Int32; overload; cdecl; begin Result := TArray_Size(arr, size); end;
 function TArray_Size_Double(var arr: TDoubleArray; const size: Int32): Int32; overload; cdecl; begin Result := TArray_Size(arr, size); end;
 function TArray_Size_String(var arr: TStringArray; const size: Int32): Int32; overload; cdecl; begin Result := TArray_Size(arr, size); end;
