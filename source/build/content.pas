@@ -295,9 +295,14 @@ begin
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const ascending: Boolean = True): Int32;');
   AddFunction(@TIntegerArray_BinarySorted, 'function TIntegerArray_BinarySorted(const arr: TIntegerArray; const ascending: Boolean = True): TIntegerArray;');
-  AddFunction(@TIntegerArray_BinaryBoundLower, 'function TIntegerArray_BinaryBoundLower(const arr: TIntegerArray; const target: Int32; const ascending: Boolean = True): Int32;');
-  AddFunction(@TIntegerArray_BinaryBoundUpper, 'function TIntegerArray_BinaryBoundUpper(const arr: TIntegerArray; const target: Int32; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_BinaryBoundL, 'function TIntegerArray_BinaryBoundL(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_BinaryBoundR, 'function TIntegerArray_BinaryBoundR(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_BinaryPosL, 'function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_BinaryPosR, 'function TIntegerArray_BinaryPosR(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_BinaryLocate, 'function TIntegerArray_BinaryLocate(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): TRange;');
   AddFunction(@TIntegerArray_BinarySearch, 'function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_BinaryContains, 'function TIntegerArray_BinaryContains(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): Boolean;');
+  AddFunction(@TIntegerArray_BinaryLocation, 'function TIntegerArray_BinaryLocation(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): TRange;');
   AddFunction(@TIntegerArray_BinaryAppend, 'function TIntegerArray_BinaryAppend(var arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): Int32;');
   AddFunction(@TIntegerArray_BinaryAdd, 'function TIntegerArray_BinaryAdd(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): TIntegerArray;');
   AddFunction(@TIntegerArray_BinarySearchF, 'function TIntegerArray_BinarySearchF(const arr: TIntegerArray; const x: TRange; const ascending: Boolean = True): Int32;');
