@@ -180,14 +180,22 @@ function TArray_Copy_TPoint_1(const arr: TPointArray; const IDs: TIntegerArray):
 function TArray_Copy_TBox_1(const arr: TBoxArray; const IDs: TIntegerArray): TBoxArray; overload; cdecl; begin Result := TArray_Copy(arr, IDs); end;
 function TArray_Copy_TRange_1(const arr: TRangeArray; const IDs: TIntegerArray): TRangeArray; overload; cdecl; begin Result := TArray_Copy(arr, IDs); end;
 
-function TArray_Create_Int32(const size: Int32; const item: Int32): TIntegerArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
-function TArray_Create_Double(const size: Int32; const item: Double): TDoubleArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
-function TArray_Create_String(const size: Int32; const item: string): TStringArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
-function TArray_Create_Char(const size: Int32; const item: Char): TCharArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
-function TArray_Create_Boolean(const size: Int32; const item: Boolean): TBooleanArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
-function TArray_Create_TPoint(const size: Int32; const item: TPoint): TPointArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
-function TArray_Create_TBox(const size: Int32; const item: TBox): TBoxArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
-function TArray_Create_TRange(const size: Int32; const item: TRange): TRangeArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
+function TArray_Create_Int32(const item: Int32): TIntegerArray; overload; cdecl; begin Result := TArray_Create(item); end;
+function TArray_Create_Double(const item: Double): TDoubleArray; overload; cdecl; begin Result := TArray_Create(item); end;
+function TArray_Create_String(const item: string): TStringArray; overload; cdecl; begin Result := TArray_Create(item); end;
+function TArray_Create_Char(const item: Char): TCharArray; overload; cdecl; begin Result := TArray_Create(item); end;
+function TArray_Create_Boolean(const item: Boolean): TBooleanArray; overload; cdecl; begin Result := TArray_Create(item); end;
+function TArray_Create_TPoint(const item: TPoint): TPointArray; overload; cdecl; begin Result := TArray_Create(item); end;
+function TArray_Create_TBox(const item: TBox): TBoxArray; overload; cdecl; begin Result := TArray_Create(item); end;
+function TArray_Create_TRange(const item: TRange): TRangeArray; overload; cdecl; begin Result := TArray_Create(item); end;
+function TArray_Create_Int32_1(const size: Int32; const item: Int32): TIntegerArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
+function TArray_Create_Double_1(const size: Int32; const item: Double): TDoubleArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
+function TArray_Create_String_1(const size: Int32; const item: string): TStringArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
+function TArray_Create_Char_1(const size: Int32; const item: Char): TCharArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
+function TArray_Create_Boolean_1(const size: Int32; const item: Boolean): TBooleanArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
+function TArray_Create_TPoint_1(const size: Int32; const item: TPoint): TPointArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
+function TArray_Create_TBox_1(const size: Int32; const item: TBox): TBoxArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
+function TArray_Create_TRange_1(const size: Int32; const item: TRange): TRangeArray; overload; cdecl; begin Result := TArray_Create(size, item); end;
 
 function TArray_Delete_Int32(var arr: TIntegerArray; const index: Int32 = 0): Boolean; overload; cdecl; begin Result := TArray_Delete(arr, index); end;
 function TArray_Delete_Double(var arr: TDoubleArray; const index: Int32 = 0): Boolean; overload; cdecl; begin Result := TArray_Delete(arr, index); end;
