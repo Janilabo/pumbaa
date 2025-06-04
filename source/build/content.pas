@@ -312,6 +312,15 @@ begin
   AddFunction(@TIntegerArray_BinaryAdd, 'function TIntegerArray_BinaryAdd(const arr: TIntegerArray; const x: Int32; const ascending: Boolean = True): TIntegerArray;');
   AddFunction(@TIntegerArray_BinarySearchF, 'function TIntegerArray_BinarySearchF(const arr: TIntegerArray; const x: TRange; const ascending: Boolean = True): Int32;');
   AddFunction(@TIntegerArray_BinarySearchL, 'function TIntegerArray_BinarySearchL(const arr: TIntegerArray; const x: TRange; const ascending: Boolean = True): Int32;');
+  AddFunction(@TIntegerArray_Split1, 'function TIntegerArray_Split(const arr: TIntegerArray; const minDiff, maxDiff: Int32): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Split2, 'function TIntegerArray_Split(const arr: TIntegerArray; const diff: Int32): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Sblit1, 'function TIntegerArray_Sblit(const arr: TIntegerArray; const minDiff, maxDiff: Int32): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Sblit2, 'function TIntegerArray_Sblit(const arr: TIntegerArray; const diff: Int32): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Group1, 'function TIntegerArray_Group(const arr: TIntegerArray; const minDiff, maxDiff: Int32): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Group2, 'function TIntegerArray_Group(const arr: TIntegerArray; const diff: Int32): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Groub1, 'function TIntegerArray_Groub(const arr: TIntegerArray; const minDiff, maxDiff: Int32): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Groub2, 'function TIntegerArray_Groub(const arr: TIntegerArray; const diff: Int32): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   
   AddFunction(@TPointArray_Bounds, 'function TPointArray_Bounds(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Unique, 'function TPointArray_Unique(var arr: TPointArray): Int32;');

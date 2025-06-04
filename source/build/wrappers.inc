@@ -44,6 +44,14 @@ function TIntegerArray_Maxi1(const arr: TIntegerArray; const ascending: Boolean 
 function TIntegerArray_Maxi2(const arr: TIntegerArray; const start: Int32; const ascending: Boolean = True): Int32; overload; cdecl; begin Result := TIntegerArray_Maxi(arr, start, ascending); end;
 function TIntegerArray_Mini1(const arr: TIntegerArray; const ascending: Boolean = True; const start: Int32 = -1): Int32; overload; cdecl; begin Result := TIntegerArray_Mini(arr, ascending, start); end;
 function TIntegerArray_Mini2(const arr: TIntegerArray; const start: Int32; const ascending: Boolean = True): Int32; overload; cdecl; begin Result := TIntegerArray_Mini(arr, start, ascending); end;
+function TIntegerArray_Split1(const arr: TIntegerArray; const minDiff, maxDiff: Int32): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Split(arr, minDiff, maxDiff); end;
+function TIntegerArray_Split2(const arr: TIntegerArray; const diff: Int32): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Split(arr, diff); end;
+function TIntegerArray_Sblit1(const arr: TIntegerArray; const minDiff, maxDiff: Int32): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Sblit(arr, minDiff, maxDiff); end;
+function TIntegerArray_Sblit2(const arr: TIntegerArray; const diff: Int32): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Sblit(arr, diff); end;
+function TIntegerArray_Group1(const arr: TIntegerArray; const minDiff, maxDiff: Int32): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Group(arr, minDiff, maxDiff); end;
+function TIntegerArray_Group2(const arr: TIntegerArray; const diff: Int32): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Group(arr, diff); end;
+function TIntegerArray_Groub1(const arr: TIntegerArray; const minDiff, maxDiff: Int32): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Groub(arr, minDiff, maxDiff); end;
+function TIntegerArray_Groub2(const arr: TIntegerArray; const diff: Int32): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Groub(arr, diff); end;
 
 function TPointArray_FloodFill1(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := TPointArray_FloodFill(arr, start, scan8W); end;
 function TPointArray_FloodFill2(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := TPointArray_FloodFill(arr, start, scan8W); end;
