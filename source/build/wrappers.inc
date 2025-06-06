@@ -171,14 +171,14 @@ function TArray_Contains_TPoint(const arr: TPointArray; const item: TPoint; cons
 function TArray_Contains_TBox(const arr: TBoxArray; const item: TBox; const start: Int32 = 0): Boolean; overload; cdecl; begin Result := TArray_Contains(arr, item, start); end;
 function TArray_Contains_TRange(const arr: TRangeArray; const item: TRange; const start: Int32 = 0): Boolean; overload; cdecl; begin Result := TArray_Contains(arr, item, start); end;
 
-function TArray_Copy_Int32(const arr: TIntegerArray; const index: Int32 = 0; const count: Int32 = -1): TIntegerArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
-function TArray_Copy_Double(const arr: TDoubleArray; const index: Int32 = 0; const count: Int32 = -1): TDoubleArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
-function TArray_Copy_String(const arr: TStringArray; const index: Int32 = 0; const count: Int32 = -1): TStringArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
-function TArray_Copy_Char(const arr: TCharArray; const index: Int32 = 0; const count: Int32 = -1): TCharArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
-function TArray_Copy_Boolean(const arr: TBooleanArray; const index: Int32 = 0; const count: Int32 = -1): TBooleanArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
-function TArray_Copy_TPoint(const arr: TPointArray; const index: Int32 = 0; const count: Int32 = -1): TPointArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
-function TArray_Copy_TBox(const arr: TBoxArray; const index: Int32 = 0; const count: Int32 = -1): TBoxArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
-function TArray_Copy_TRange(const arr: TRangeArray; const index: Int32 = 0; const count: Int32 = -1): TRangeArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
+function TArray_Copy_Int32(const arr: TIntegerArray; const index: Int32 = 0; const count: Int32 = 2147483647): TIntegerArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
+function TArray_Copy_Double(const arr: TDoubleArray; const index: Int32 = 0; const count: Int32 = 2147483647): TDoubleArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
+function TArray_Copy_String(const arr: TStringArray; const index: Int32 = 0; const count: Int32 = 2147483647): TStringArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
+function TArray_Copy_Char(const arr: TCharArray; const index: Int32 = 0; const count: Int32 = 2147483647): TCharArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
+function TArray_Copy_Boolean(const arr: TBooleanArray; const index: Int32 = 0; const count: Int32 = 2147483647): TBooleanArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
+function TArray_Copy_TPoint(const arr: TPointArray; const index: Int32 = 0; const count: Int32 = 2147483647): TPointArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
+function TArray_Copy_TBox(const arr: TBoxArray; const index: Int32 = 0; const count: Int32 = 2147483647): TBoxArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
+function TArray_Copy_TRange(const arr: TRangeArray; const index: Int32 = 0; const count: Int32 = 2147483647): TRangeArray; overload; cdecl; begin Result := TArray_Copy(arr, index, count); end;
 function TArray_Copy_Int32_1(const arr: TIntegerArray; const IDs: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := TArray_Copy(arr, IDs); end;
 function TArray_Copy_Double_1(const arr: TDoubleArray; const IDs: TIntegerArray): TDoubleArray; overload; cdecl; begin Result := TArray_Copy(arr, IDs); end;
 function TArray_Copy_String_1(const arr: TStringArray; const IDs: TIntegerArray): TStringArray; overload; cdecl; begin Result := TArray_Copy(arr, IDs); end;
