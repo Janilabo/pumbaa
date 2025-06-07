@@ -18,6 +18,10 @@ begin
   AddFunction(@Double_Dec, 'function Double_Dec(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Increase, 'function Double_Increase(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Decrease, 'function Double_Decrease(var x: Double; const N: Double = 1): Double;');
+  AddFunction(@Double_Increment, 'function Double_Increment(var x: Double; const N: Double = 1): Double;');
+  AddFunction(@Double_Decrement, 'function Double_Decrement(var x: Double; const N: Double = 1): Double;');
+  AddFunction(@Double_Incr, 'function Double_Incr(var x: Double; const N: Double = 1): Double;');
+  AddFunction(@Double_Decr, 'function Double_Decr(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Digits, 'function Double_Digits(const x: Double): TIntegerArray;');
   AddFunction(@Double_NegA, 'function Double_NegA(const x: Double): Double;');
   AddFunction(@Double_Neg, 'function Double_Neg(const x: Double): Double;');
@@ -41,6 +45,10 @@ begin
   AddFunction(@Int32_Dec, 'function Int32_Dec(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_Increase, 'function Int32_Increase(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_Decrease, 'function Int32_Decrease(var x: Int32; const N: Int32 = 1): Int32;');
+  AddFunction(@Int32_Increment, 'function Int32_Increment(var x: Int32; const N: Int32 = 1): Int32;');
+  AddFunction(@Int32_Decrement, 'function Int32_Decrement(var x: Int32; const N: Int32 = 1): Int32;');
+  AddFunction(@Int32_Incr, 'function Int32_Incr(var x: Int32; const N: Int32 = 1): Int32;');
+  AddFunction(@Int32_Decr, 'function Int32_Decr(var x: Int32; const N: Int32 = 1): Int32;');
   AddFunction(@Int32_DigitCount, 'function Int32_DigitCount(const x: Int32): Int32;');
   AddFunction(@Int32_Digitz, 'function Int32_Digitz(const x: Int32): TIntegerArray;');
   AddFunction(@Int32_Digits, 'function Int32_Digits(const x: Int32): TIntegerArray;');
@@ -61,6 +69,10 @@ begin
   AddFunction(@Int64_Dec, 'function Int64_Dec(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Increase, 'function Int64_Increase(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_Decrease, 'function Int64_Decrease(var x: Int64; const N: Int64 = 1): Int64;');
+  AddFunction(@Int64_Increment, 'function Int64_Increment(var x: Int64; const N: Int64 = 1): Int64;');
+  AddFunction(@Int64_Decrement, 'function Int64_Decrement(var x: Int64; const N: Int64 = 1): Int64;');
+  AddFunction(@Int64_Incr, 'function Int64_Incr(var x: Int64; const N: Int64 = 1): Int64;');
+  AddFunction(@Int64_Decr, 'function Int64_Decr(var x: Int64; const N: Int64 = 1): Int64;');
   AddFunction(@Int64_DigitCount, 'function Int64_DigitCount(const x: Int64): Int32;');
   AddFunction(@Int64_Digitz, 'function Int64_Digitz(const x: Int64): TIntegerArray;');
   AddFunction(@Int64_Digits, 'function Int64_Digits(const x: Int64): TIntegerArray;');
@@ -72,6 +84,7 @@ begin
   AddFunction(@Int64_Oversize, 'function Int64_Oversize(const x, limit: Int64): Boolean;');
   AddFunction(@Int64_Undersize, 'function Int64_Undersize(const x, limit: Int64): Boolean;');
 
+  AddFunction(@String_Chars, 'function String_Chars(const str: string): TCharArray;');
   AddFunction(@String_At, 'function String_At(const str, s: string; const index: Int32 = 1): Boolean;');
   AddFunction(@String_Get, 'function String_Get(const str: string; const index, count: Int32): string;');
   AddFunction(@String_Pick, 'function String_Pick(const str: string; const index: Int32; const count: Int32 = 2147483647): string;');
@@ -115,7 +128,10 @@ begin
   AddFunction(@String_TrimRight, 'function String_TrimRight(const str: string; const t: Char = #32): string;');
   AddFunction(@String_Trim, 'function String_Trim(const str: string; const t: Char = #32): string;');
   AddFunction(@String_TRange, 'function String_TRange(const str: string): TRange;');
-  AddFunction(@String_IDs, 'function String_IDs(const str: string): TIntegerArray;');
+  AddFunction(@String_IDs1, 'function String_IDs(const str: string): TIntegerArray; overload;');
+  AddFunction(@String_IDs2, 'function String_IDs(const str: string; const IDs: TIntegerArray): TCharArray; overload;');
+  AddFunction(@String_IDs3, 'function String_IDs(const str: string; const IDs: TIntegerArray; const item: Char): TCharArray; overload;');
+  AddFunction(@String_IDs4, 'function String_IDs(const str: string; const IDs: TIntegerArray; const items: TCharArray): TCharArray; overload;');
 
   AddFunction(@Boolean_Random, 'function Boolean_Random: Boolean;');
   AddFunction(@Boolean_X1, 'function Boolean_X(const X: Boolean; const trueX, falseX: Boolean): Boolean; overload;');
@@ -227,6 +243,7 @@ begin
   AddFunction(@TRange_Maximum, 'function TRange_Maximum(const range: TRange): Int32;');
   AddFunction(@TRange_Digits, 'function TRange_Digits(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Ints, 'function TRange_Ints(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Values, 'function TRange_Values(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_TIntegerArray, 'function TRange_TIntegerArray(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const a, b: TRange): Boolean;');
@@ -337,6 +354,8 @@ begin
   AddFunction(@TPointArray_Edge, 'function TPointArray_Edge(const arr: TPointArray; const scan8Ways: Boolean = False): TPointArray;');
   AddFunction(@TPointArray_FloodFill1, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload;');
   AddFunction(@TPointArray_FloodFill2, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload;');
+  
+  AddFunction(@TRangeArray_TIntegerArray, 'function TRangeArray_TIntegerArray(const arr: TRangeArray): TIntegerArray;');
   
   AddFunction(@TArray_Add_Int32, 'function TArray_Add(const arr: TIntegerArray; const item: Int32): TIntegerArray; overload;');
   AddFunction(@TArray_Add_Double, 'function TArray_Add(const arr: TDoubleArray; const item: Double): TDoubleArray; overload;');

@@ -10,6 +10,10 @@ function Boolean_X9(const X: Boolean; const trueX, falseX: TRange): TRange; over
 
 function String_Explode1(const str, d: string; const limit: Int32 = -1): TStringArray; overload; cdecl; begin Result := String_Explode(str, d, limit); end;
 function String_Explode2(const str: string; const d: TStringArray; const limit: Int32 = -1): TStringArray; overload; cdecl; begin Result := String_Explode(str, d, limit); end;
+function String_IDs1(const str: string): TIntegerArray; overload; cdecl; begin Result := String_IDs(str); end;
+function String_IDs2(const str: string; const IDs: TIntegerArray): TCharArray; overload; cdecl; begin Result := String_IDs(str, IDs); end;
+function String_IDs3(const str: string; const IDs: TIntegerArray; const item: Char): TCharArray; overload; cdecl; begin Result := String_IDs(str, IDs, item); end;
+function String_IDs4(const str: string; const IDs: TIntegerArray; const items: TCharArray): TCharArray; overload; cdecl; begin Result := String_IDs(str, IDs, items); end;
 
 function TBox_Build1(const X1, Y1, X2, Y2: Int32): TBox; overload; cdecl; begin Result := TBox_Build(X1, Y1, X2, Y2); end;
 function TBox_Build2(const a, b: TPoint): TBox; overload; cdecl; begin Result := TBox_Build(a, b); end;
