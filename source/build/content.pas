@@ -14,6 +14,8 @@ end;
 
 procedure AddFunctions;
 begin
+  AddFunction(@MiMU_Version, 'function MiMU_Version: Double;');
+
   AddFunction(@Double_Inc, 'function Double_Inc(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Dec, 'function Double_Dec(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Increase, 'function Double_Increase(var x: Double; const N: Double = 1): Double;');
@@ -664,6 +666,39 @@ begin
   AddFunction(@TArray_FilterEvery_TBox, 'function TArray_FilterEvery(const arr: TBoxArray; const X: Integer = 1; const index: Integer = 0): TBoxArray; overload;');
   AddFunction(@TArray_FilterEvery_TRange, 'function TArray_FilterEvery(const arr: TRangeArray; const X: Integer = 1; const index: Integer = 0): TRangeArray; overload;');
 
+  AddFunction(@TArray_Find_Integer, 'function TArray_Find(const arr: TIntegerArray; const IDs: TRange; const item: Integer): Integer; overload;');
+  AddFunction(@TArray_Find_Double, 'function TArray_Find(const arr: TDoubleArray; const IDs: TRange; const item: Double): Integer; overload;');
+  AddFunction(@TArray_Find_String, 'function TArray_Find(const arr: TStringArray; const IDs: TRange; const item: string): Integer; overload;');
+  AddFunction(@TArray_Find_Char, 'function TArray_Find(const arr: TCharArray; const IDs: TRange; const item: Char): Integer; overload;');
+  AddFunction(@TArray_Find_Boolean, 'function TArray_Find(const arr: TBooleanArray; const IDs: TRange; const item: Boolean): Integer; overload;');
+  AddFunction(@TArray_Find_TPoint, 'function TArray_Find(const arr: TPointArray; const IDs: TRange; const item: TPoint): Integer; overload;');
+  AddFunction(@TArray_Find_TBox, 'function TArray_Find(const arr: TBoxArray; const IDs: TRange; const item: TBox): Integer; overload;');
+  AddFunction(@TArray_Find_TRange, 'function TArray_Find(const arr: TRangeArray; const IDs: TRange; const item: TRange): Integer; overload;');
+  AddFunction(@TArray_Find_Integer_1, 'function TArray_Find(const arr: TIntegerArray; const IDs: TIntegerArray; const item: Integer): Integer; overload;');
+  AddFunction(@TArray_Find_Double_1, 'function TArray_Find(const arr: TDoubleArray; const IDs: TIntegerArray; const item: Double): Integer; overload;');
+  AddFunction(@TArray_Find_String_1, 'function TArray_Find(const arr: TStringArray; const IDs: TIntegerArray; const item: string): Integer; overload;');
+  AddFunction(@TArray_Find_Char_1, 'function TArray_Find(const arr: TCharArray; const IDs: TIntegerArray; const item: Char): Integer; overload;');
+  AddFunction(@TArray_Find_Boolean_1, 'function TArray_Find(const arr: TBooleanArray; const IDs: TIntegerArray; const item: Boolean): Integer; overload;');
+  AddFunction(@TArray_Find_TPoint_1, 'function TArray_Find(const arr: TPointArray; const IDs: TIntegerArray; const item: TPoint): Integer; overload;');
+  AddFunction(@TArray_Find_TBox_1, 'function TArray_Find(const arr: TBoxArray; const IDs: TIntegerArray; const item: TBox): Integer; overload;');
+  AddFunction(@TArray_Find_TRange_1, 'function TArray_Find(const arr: TRangeArray; const IDs: TIntegerArray; const item: TRange): Integer; overload;');
+  AddFunction(@TArray_Find_Integer_2, 'function TArray_Find(const arr: TIntegerArray; const IDs: TRange; const items: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Find_Double_2, 'function TArray_Find(const arr: TDoubleArray; const IDs: TRange; const items: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Find_String_2, 'function TArray_Find(const arr: TStringArray; const IDs: TRange; const items: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Find_Char_2, 'function TArray_Find(const arr: TCharArray; const IDs: TRange; const items: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Find_Boolean_2, 'function TArray_Find(const arr: TBooleanArray; const IDs: TRange; const items: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Find_TPoint_2, 'function TArray_Find(const arr: TPointArray; const IDs: TRange; const items: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Find_TBox_2, 'function TArray_Find(const arr: TBoxArray; const IDs: TRange; const items: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Find_TRange_2, 'function TArray_Find(const arr: TRangeArray; const IDs: TRange; const items: TRangeArray): Integer; overload;');
+  AddFunction(@TArray_Find_Integer_3, 'function TArray_Find(const arr: TIntegerArray; const IDs: TIntegerArray; const items: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Find_Double_3, 'function TArray_Find(const arr: TDoubleArray; const IDs: TIntegerArray; const items: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Find_String_3, 'function TArray_Find(const arr: TStringArray; const IDs: TIntegerArray; const items: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Find_Char_3, 'function TArray_Find(const arr: TCharArray; const IDs: TIntegerArray; const items: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Find_Boolean_3, 'function TArray_Find(const arr: TBooleanArray; const IDs: TIntegerArray; const items: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Find_TPoint_3, 'function TArray_Find(const arr: TPointArray; const IDs: TIntegerArray; const items: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Find_TBox_3, 'function TArray_Find(const arr: TBoxArray; const IDs: TIntegerArray; const items: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Find_TRange_3, 'function TArray_Find(const arr: TRangeArray; const IDs: TIntegerArray; const items: TRangeArray): Integer; overload;');
+
   AddFunction(@TArray_Flip_Integer, 'function TArray_Flip(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Flip_Double, 'function TArray_Flip(var arr: TDoubleArray): Boolean; overload;');
   AddFunction(@TArray_Flip_String, 'function TArray_Flip(var arr: TStringArray): Boolean; overload;');
@@ -991,6 +1026,39 @@ begin
   AddFunction(@TArray_Reversed_TPoint, 'function TArray_Reversed(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Reversed_TBox, 'function TArray_Reversed(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Reversed_TRange, 'function TArray_Reversed(const arr: TRangeArray): TRangeArray; overload;');
+
+  AddFunction(@TArray_Scan_Integer, 'function TArray_Scan(const arr: TIntegerArray; const IDs: TRange; const item: Integer; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Double, 'function TArray_Scan(const arr: TDoubleArray; const IDs: TRange; const item: Double; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_String, 'function TArray_Scan(const arr: TStringArray; const IDs: TRange; const item: string; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Char, 'function TArray_Scan(const arr: TCharArray; const IDs: TRange; const item: Char; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Boolean, 'function TArray_Scan(const arr: TBooleanArray; const IDs: TRange; const item: Boolean; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TPoint, 'function TArray_Scan(const arr: TPointArray; const IDs: TRange; const item: TPoint; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TBox, 'function TArray_Scan(const arr: TBoxArray; const IDs: TRange; const item: TBox; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TRange, 'function TArray_Scan(const arr: TRangeArray; const IDs: TRange; const item: TRange; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Integer_1, 'function TArray_Scan(const arr: TIntegerArray; const IDs: TIntegerArray; const item: Integer; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Double_1, 'function TArray_Scan(const arr: TDoubleArray; const IDs: TIntegerArray; const item: Double; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_String_1, 'function TArray_Scan(const arr: TStringArray; const IDs: TIntegerArray; const item: string; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Char_1, 'function TArray_Scan(const arr: TCharArray; const IDs: TIntegerArray; const item: Char; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Boolean_1, 'function TArray_Scan(const arr: TBooleanArray; const IDs: TIntegerArray; const item: Boolean; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TPoint_1, 'function TArray_Scan(const arr: TPointArray; const IDs: TIntegerArray; const item: TPoint; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TBox_1, 'function TArray_Scan(const arr: TBoxArray; const IDs: TIntegerArray; const item: TBox; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TRange_1, 'function TArray_Scan(const arr: TRangeArray; const IDs: TIntegerArray; const item: TRange; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Integer_2, 'function TArray_Scan(const arr: TIntegerArray; const IDs: TRange; const items: TIntegerArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Double_2, 'function TArray_Scan(const arr: TDoubleArray; const IDs: TRange; const items: TDoubleArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_String_2, 'function TArray_Scan(const arr: TStringArray; const IDs: TRange; const items: TStringArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Char_2, 'function TArray_Scan(const arr: TCharArray; const IDs: TRange; const items: TCharArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Boolean_2, 'function TArray_Scan(const arr: TBooleanArray; const IDs: TRange; const items: TBooleanArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TPoint_2, 'function TArray_Scan(const arr: TPointArray; const IDs: TRange; const items: TPointArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TBox_2, 'function TArray_Scan(const arr: TBoxArray; const IDs: TRange; const items: TBoxArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TRange_2, 'function TArray_Scan(const arr: TRangeArray; const IDs: TRange; const items: TRangeArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Integer_3, 'function TArray_Scan(const arr: TIntegerArray; const IDs: TIntegerArray; const items: TIntegerArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Double_3, 'function TArray_Scan(const arr: TDoubleArray; const IDs: TIntegerArray; const items: TDoubleArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_String_3, 'function TArray_Scan(const arr: TStringArray; const IDs: TIntegerArray; const items: TStringArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Char_3, 'function TArray_Scan(const arr: TCharArray; const IDs: TIntegerArray; const items: TCharArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_Boolean_3, 'function TArray_Scan(const arr: TBooleanArray; const IDs: TIntegerArray; const items: TBooleanArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TPoint_3, 'function TArray_Scan(const arr: TPointArray; const IDs: TIntegerArray; const items: TPointArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TBox_3, 'function TArray_Scan(const arr: TBoxArray; const IDs: TIntegerArray; const items: TBoxArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Scan_TRange_3, 'function TArray_Scan(const arr: TRangeArray; const IDs: TIntegerArray; const items: TRangeArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
 
   AddFunction(@TArray_Set_Integer, 'function TArray_Set(const arr: TIntegerArray; const IDs: TIntegerArray; const item: Integer): TIntegerArray; overload;');
   AddFunction(@TArray_Set_Double, 'function TArray_Set(const arr: TDoubleArray; const IDs: TIntegerArray; const item: Double): TDoubleArray; overload;');
