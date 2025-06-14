@@ -145,6 +145,14 @@ begin
   AddFunction(@Boolean_X7, 'function Boolean_X(const X: Boolean; const trueX, falseX: TPoint): TPoint; overload;');
   AddFunction(@Boolean_X8, 'function Boolean_X(const X: Boolean; const trueX, falseX: TBox): TBox; overload;');
   AddFunction(@Boolean_X9, 'function Boolean_X(const X: Boolean; const trueX, falseX: TRange): TRange; overload;');
+  AddFunction(@Boolean_Opposite, 'function Boolean_Opposite(const x: Boolean): Boolean;');
+  AddFunction(@Boolean_Toggle, 'function Boolean_Toggle(var x: Boolean): Boolean;');
+  AddFunction(@Boolean_Set, 'function Boolean_Set(var x: Boolean; const state: Boolean): Boolean;');
+  AddFunction(@Boolean_Unset, 'function Boolean_Unset(var x: Boolean; const state: Boolean): Boolean;');
+  AddFunction(@Boolean_Check, 'function Boolean_Check(var x: Boolean): Boolean;');
+  AddFunction(@Boolean_Uncheck, 'function Boolean_Uncheck(var x: Boolean): Boolean;');
+  AddFunction(@Boolean_Enable, 'function Boolean_Enable(var x: Boolean): Boolean;');
+  AddFunction(@Boolean_Disable, 'function Boolean_Disable(var x: Boolean): Boolean;');
 
   AddFunction(@TPoint_To, 'function TPoint_To(const X, Y: Integer): TPoint;');
   AddFunction(@TPoint_At, 'function TPoint_At(const X, Y: Integer): TPoint;');

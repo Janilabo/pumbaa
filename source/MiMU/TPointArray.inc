@@ -46,8 +46,7 @@ begin
       if not m[(arr[i].X - b.X1)][(arr[i].Y - b.Y1)] then
       begin
         m[(arr[i].X - b.X1)][(arr[i].Y - b.Y1)] := True;
-        arr[r] := arr[i];
-        Inc(r);
+        arr[Integer_Inc(r)] := arr[i];
       end;
     SetLength(arr, r);
     SetLength(m, 0);

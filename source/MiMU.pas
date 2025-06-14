@@ -44,7 +44,7 @@ uses
   classes, sysutils, math;
 
 const
-  MiMU_VERSION_NUMBER = 0.34;
+  MiMU_VERSION_NUMBER = 0.35;
 
 type
   TIntegerArray = array of Integer;
@@ -240,6 +240,14 @@ function Boolean_X(const X: Boolean; const trueX, falseX: Char): Char; overload;
 function Boolean_X(const X: Boolean; const trueX, falseX: TPoint): TPoint; overload; cdecl;
 function Boolean_X(const X: Boolean; const trueX, falseX: TBox): TBox; overload; cdecl;
 function Boolean_X(const X: Boolean; const trueX, falseX: TRange): TRange; overload; cdecl;
+function Boolean_Opposite(const x: Boolean): Boolean; cdecl;
+function Boolean_Toggle(var x: Boolean): Boolean; cdecl;
+function Boolean_Set(var x: Boolean; const state: Boolean): Boolean; cdecl;
+function Boolean_Unset(var x: Boolean; const state: Boolean): Boolean; cdecl;
+function Boolean_Check(var x: Boolean): Boolean; cdecl;
+function Boolean_Uncheck(var x: Boolean): Boolean; cdecl;
+function Boolean_Enable(var x: Boolean): Boolean; cdecl;
+function Boolean_Disable(var x: Boolean): Boolean; cdecl;
 
 function TPoint_To(const X, Y: Integer): TPoint; cdecl; inline;
 function TPoint_At(const X, Y: Integer): TPoint; cdecl; inline;
