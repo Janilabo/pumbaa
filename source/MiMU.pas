@@ -389,7 +389,8 @@ function TRange_String(const range: TRange): string; cdecl;
 
 function TIntegerArray_Descending(const arr: TIntegerArray): Boolean; cdecl;
 function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean; cdecl;
-function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; cdecl;
+function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; overload; cdecl;
+function TIntegerArray_Bounds(const arr: TIntegerArray; var size: Integer): TRange; overload; cdecl;
 function TIntegerArray_TRange(const arr: TIntegerArray): TRange; cdecl;
 function TIntegerArray_Unique(var arr: TIntegerArray): Integer; cdecl;
 function TIntegerArray_Uniqued(const arr: TIntegerArray): TIntegerArray; cdecl;
@@ -456,7 +457,8 @@ function TIntegerArray_Groub(const arr: TIntegerArray; const minDiff, maxDiff: I
 function TIntegerArray_Groub(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl;
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl;
 
-function TPointArray_Bounds(const arr: TPointArray): TBox; cdecl;
+function TPointArray_Bounds(const arr: TPointArray): TBox; overload; cdecl;
+function TPointArray_Bounds(const arr: TPointArray; var width, height: Integer): TBox; overload; cdecl;
 function TPointArray_Unique(var arr: TPointArray): Integer; cdecl;
 function TPointArray_Uniqued(const arr: TPointArray): TPointArray; cdecl;
 function TPointArray_Invert(const arr: TPointArray): TPointArray; cdecl;

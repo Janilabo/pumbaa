@@ -44,6 +44,8 @@ function TBox_Similar2(const a, b: TBox; const diff: Integer): Boolean; overload
 function TBox_SimilarSize1(const a, b: TBox; const widthDifferency, heightDifferency: Integer): Boolean; overload; cdecl; begin Result := TBox_SimilarSize(a, b, widthDifferency, heightDifferency); end;
 function TBox_SimilarSize1(const a, b: TBox; const differency: Integer): Boolean; overload; cdecl; begin Result := TBox_SimilarSize(a, b, differency); end;
 
+function TIntegerArray_Bounds1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := TIntegerArray_Bounds(arr); end;
+function TIntegerArray_Bounds2(const arr: TIntegerArray; var size: Integer): TRange; overload; cdecl; begin Result := TIntegerArray_Bounds(arr, size); end;
 function TIntegerArray_Maxi1(const arr: TIntegerArray; const ascending: Boolean = True; const start: Integer = -1): Integer; overload; cdecl; begin Result := TIntegerArray_Maxi(arr, ascending, start); end;
 function TIntegerArray_Maxi2(const arr: TIntegerArray; const start: Integer; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := TIntegerArray_Maxi(arr, start, ascending); end;
 function TIntegerArray_Mini1(const arr: TIntegerArray; const ascending: Boolean = True; const start: Integer = -1): Integer; overload; cdecl; begin Result := TIntegerArray_Mini(arr, ascending, start); end;
@@ -57,6 +59,8 @@ function TIntegerArray_Group2(const arr: TIntegerArray; const diff: Integer): T2
 function TIntegerArray_Groub1(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Groub(arr, minDiff, maxDiff); end;
 function TIntegerArray_Groub2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := TIntegerArray_Groub(arr, diff); end;
 
+function TPointArray_Bounds1(const arr: TPointArray): TBox; overload; cdecl; begin Result := TPointArray_Bounds(arr); end;
+function TPointArray_Bounds2(const arr: TPointArray; var width, height: Integer): TBox; overload; cdecl; begin Result := TPointArray_Bounds(arr, width, height); end;
 function TPointArray_FloodFill1(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := TPointArray_FloodFill(arr, start, scan8W); end;
 function TPointArray_FloodFill2(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := TPointArray_FloodFill(arr, start, scan8W); end;
 

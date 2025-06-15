@@ -293,7 +293,8 @@ begin
 
   AddFunction(@TIntegerArray_Descending, 'function TIntegerArray_Descending(const arr: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_Ascending, 'function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean;');
-  AddFunction(@TIntegerArray_Bounds, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange;');
+  AddFunction(@TIntegerArray_Bounds1, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; overload;');
+  AddFunction(@TIntegerArray_Bounds2, 'function TIntegerArray_Bounds(const arr: TIntegerArray; var size: Integer): TRange; overload;');
   AddFunction(@TIntegerArray_TRange, 'function TIntegerArray_TRange(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Unique, 'function TIntegerArray_Unique(var arr: TIntegerArray): Integer;');
   AddFunction(@TIntegerArray_Uniqued, 'function TIntegerArray_Uniqued(const arr: TIntegerArray): TIntegerArray;');
@@ -360,7 +361,8 @@ begin
   AddFunction(@TIntegerArray_Groub2, 'function TIntegerArray_Groub(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   
-  AddFunction(@TPointArray_Bounds, 'function TPointArray_Bounds(const arr: TPointArray): TBox;');
+  AddFunction(@TPointArray_Bounds1, 'function TPointArray_Bounds(const arr: TPointArray): TBox; overload;');
+  AddFunction(@TPointArray_Bounds2, 'function TPointArray_Bounds(const arr: TPointArray; var width, height: Integer): TBox; overload;');
   AddFunction(@TPointArray_Unique, 'function TPointArray_Unique(var arr: TPointArray): Integer;');
   AddFunction(@TPointArray_Uniqued, 'function TPointArray_Uniqued(const arr: TPointArray): TPointArray;');
   AddFunction(@TPointArray_Invert, 'function TPointArray_Invert(const arr: TPointArray): TPointArray;');
