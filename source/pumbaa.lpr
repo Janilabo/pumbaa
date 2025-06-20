@@ -1,10 +1,12 @@
 library pumbaa;
 
-{$mode objfpc}{$H+}
+{$mode objfpc}
 {$macro on}
 {$inline on}
 {$modeswitch advancedrecords}
 {$modeswitch arrayoperators}
+{$modeswitch typehelpers}
+{$H+}
 
 uses
   classes, sysutils, math, MiMU;

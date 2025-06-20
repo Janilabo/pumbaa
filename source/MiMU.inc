@@ -1,14 +1,14 @@
-{$I MiMU\Double.inc}
-{$I MiMU\Integer.inc}
-{$I MiMU\Int64.inc}
-{$I MiMU\String.inc}
-{$I MiMU\Boolean.inc}
-{$I MiMU\TPoint.inc}
-{$I MiMU\TBox.inc}
-{$I MiMU\TRange.inc}
-{$I MiMU\TIntegerArray.inc}
-{$I MiMU\TPointArray.inc}
-{$I MiMU\TRangeArray.inc}
+{$I MiMU\TIntegerHelper.inc}
+{$I MiMU\TInt64Helper.inc}
+{$I MiMU\TDoubleHelper.inc}
+{$I MiMU\TStringHelper.inc}
+{$I MiMU\TBooleanHelper.inc}
+{$I MiMU\TPointHelper.inc}
+{$I MiMU\TBoxHelper.inc}
+{$I MiMU\TRangeHelper.inc}
+{$I MiMU\TIntegerArrayHelper.inc}
+{$I MiMU\TPointArrayHelper.inc}
+{$I MiMU\TRangeArrayHelper.inc}
 
 {$DEFINE TArray_Add1}
 function TArray_Add(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload; cdecl; {$I MIMU\TArray.inc}
