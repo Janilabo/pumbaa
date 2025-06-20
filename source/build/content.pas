@@ -304,6 +304,9 @@ begin
   AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Integer;');
   AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange): string;');
 
+  AddFunction(@TIntegerArray_Contains, 'function TIntegerArray_Contains(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Boolean;');
+  AddFunction(@TIntegerArray_Includes, 'function TIntegerArray_Includes(const arr: TIntegerArray; const item: Integer; const index: Integer = 2147483647): Boolean;');
+  AddFunction(@TIntegerArray_Clear, 'function TIntegerArray_Clear(var arr: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_Descending, 'function TIntegerArray_Descending(const arr: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_Ascending, 'function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_Bounds1, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; overload;');
@@ -596,6 +599,14 @@ begin
   AddFunction(@TArray_Empty_TPoint, 'function TArray_Empty(const arr: TPointArray): Boolean; overload;');
   AddFunction(@TArray_Empty_TBox, 'function TArray_Empty(const arr: TBoxArray): Boolean; overload;');
   AddFunction(@TArray_Empty_TRange, 'function TArray_Empty(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TArray_Empty_Integer_1, 'function TArray_Empty(const arr: Integer): TIntegerArray; overload;');
+  AddFunction(@TArray_Empty_Double_1, 'function TArray_Empty(const arr: Double): TDoubleArray; overload;');
+  AddFunction(@TArray_Empty_String_1, 'function TArray_Empty(const arr: string): TStringArray; overload;');
+  AddFunction(@TArray_Empty_Char_1, 'function TArray_Empty(const arr: Char): TCharArray; overload;');
+  AddFunction(@TArray_Empty_Boolean_1, 'function TArray_Empty(const arr: Boolean): TBooleanArray; overload;');
+  AddFunction(@TArray_Empty_TPoint_1, 'function TArray_Empty(const arr: TPoint): TPointArray; overload;');
+  AddFunction(@TArray_Empty_TBox_1, 'function TArray_Empty(const arr: TBox): TBoxArray; overload;');
+  AddFunction(@TArray_Empty_TRange_1, 'function TArray_Empty(const arr: TRange): TRangeArray; overload;');
 
   AddFunction(@TArray_Equal_Integer, 'function TArray_Equal(const arr, target: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Equal_Double, 'function TArray_Equal(const arr, target: TDoubleArray): Boolean; overload;');

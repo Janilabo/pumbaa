@@ -40,13 +40,6 @@ begin
   end;
 end;
 
-{
-procedure AddCode(const code: TStringArray); cdecl;
-begin
-  Plugin.Code := (Plugin.Code + string.Join(LineEnding, code));
-end;
-}
-
 // Exports
 
 function GetTypeCount(): Int32; cdecl;

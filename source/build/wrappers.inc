@@ -286,6 +286,9 @@ function TRange_Middle(const range: TRange): Double; cdecl; begin Result := rang
 function TRange_Center(const range: TRange): Integer; cdecl; begin Result := range.Center; end;
 function TRange_Str(const range: TRange): string; cdecl; begin Result := range.Str; end;
 
+function TIntegerArray_Contains(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Boolean; cdecl; begin Result := arr.Contains(item, index); end;
+function TIntegerArray_Includes(const arr: TIntegerArray; const item: Integer; const index: Integer = 2147483647): Boolean; cdecl; begin Result := arr.Includes(item, index); end;
+function TIntegerArray_Clear(var arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Clear; end;
 function TIntegerArray_Descending(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Descending; end;
 function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Ascending; end;
 function TIntegerArray_Bounds1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Bounds; end;
@@ -578,6 +581,14 @@ function TArray_Empty_Boolean(const arr: TBooleanArray): Boolean; overload; cdec
 function TArray_Empty_TPoint(const arr: TPointArray): Boolean; overload; cdecl; begin Result := TArray_Empty(arr); end;
 function TArray_Empty_TBox(const arr: TBoxArray): Boolean; overload; cdecl; begin Result := TArray_Empty(arr); end;
 function TArray_Empty_TRange(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := TArray_Empty(arr); end;
+function TArray_Empty_Integer_1(const arr: Integer): TIntegerArray; overload; cdecl; begin Result := TArray_Empty(arr); end;
+function TArray_Empty_Double_1(const arr: Double): TDoubleArray; overload; cdecl; begin Result := TArray_Empty(arr); end;
+function TArray_Empty_String_1(const arr: string): TStringArray; overload; cdecl; begin Result := TArray_Empty(arr); end;
+function TArray_Empty_Char_1(const arr: Char): TCharArray; overload; cdecl; begin Result := TArray_Empty(arr); end;
+function TArray_Empty_Boolean_1(const arr: Boolean): TBooleanArray; overload; cdecl; begin Result := TArray_Empty(arr); end;
+function TArray_Empty_TPoint_1(const arr: TPoint): TPointArray; overload; cdecl; begin Result := TArray_Empty(arr); end;
+function TArray_Empty_TBox_1(const arr: TBox): TBoxArray; overload; cdecl; begin Result := TArray_Empty(arr); end;
+function TArray_Empty_TRange_1(const arr: TRange): TRangeArray; overload; cdecl; begin Result := TArray_Empty(arr); end;
 
 function TArray_Equal_Integer(const arr, target: TIntegerArray): Boolean; overload; cdecl; begin Result := TArray_Equal(arr, target); end;
 function TArray_Equal_Double(const arr, target: TDoubleArray): Boolean; overload; cdecl; begin Result := TArray_Equal(arr, target); end;
