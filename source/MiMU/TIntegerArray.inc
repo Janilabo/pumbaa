@@ -1,45 +1,4 @@
 {==============================================================================]
-  <TIntegerArrayHelper.Contains>
-  @action: Returns true if arr contains item.
-  @note: None.
-[==============================================================================}
-function TIntegerArrayHelper.Contains(const item: Integer; const index: Integer = 0): Boolean; cdecl;
-var
-  i: Integer;
-begin
-  for i := Max(0, index) to High(Self) do
-    if (item = Self[i]) then
-      Exit(True);
-  Result := False;
-end;
-
-{==============================================================================]
-  <TIntegerArrayHelper.Includes>
-  @action: SetLength(arr, 0) and returns true if items existed before doing it.
-  @note: None.
-[==============================================================================}
-function TIntegerArrayHelper.Includes(const item: Integer; const index: Integer = 2147483647): Boolean; cdecl;
-var
-  i: Integer;
-begin
-  for i := Min(High(Self), index) downto 0 do
-    if (item = Self[i]) then
-      Exit(True);
-  Result := False;
-end;
-
-{==============================================================================]
-  <TIntegerArrayHelper.Clear>
-  @action: SetLength(arr, 0) and returns true if items existed before doing it.
-  @note: None.
-[==============================================================================}
-function TIntegerArrayHelper.Clear: Boolean; cdecl;
-begin
-  Result := (Length(Self) > 0);
-  SetLength(Self, 0);
-end;
-
-{==============================================================================]
   <TIntegerArrayHelper.Descending>
   @action: Returns true if array arr is in descending order.
   @note: CAUTION! Does not work with arrays that contain only unique values.
@@ -133,11 +92,11 @@ begin
 end;
 
 {==============================================================================]
-  <TIntegerArray_Unique>
+  <TIntegerArray.Undupe>
   @action: Removes duplicates from array arr and returns the count of deleted items.
   @note: Not recommended with very large arrays
 [==============================================================================}
-function TIntegerArrayHelper.Unique: Integer; cdecl;
+function TIntegerArrayHelper.Undupe: Integer; cdecl;
 var
   x, y, z: Integer;
   r: TRange;
@@ -148,7 +107,7 @@ begin
   begin
     z := 0;
     r := Self.Bounds;
-    b := TArray_Create(r.Size, False);
+    b.Create(r.Size, False);
     for x := 0 to y do
       if b[Self[x] - r.start].Enable then
         Self[z.Increase] := Self[x];
@@ -160,11 +119,11 @@ begin
 end;
 
 {==============================================================================]
-  <TIntegerArrayHelper.Uniqued>
+  <TIntegerArrayHelper.Unduped>
   @action: Removes duplicates from array arr and returns it.
   @note: Not recommended with very large arrays
 [==============================================================================}
-function TIntegerArrayHelper.Uniqued: TIntegerArray; cdecl;
+function TIntegerArrayHelper.Unduped: TIntegerArray; cdecl;
 var
   x, y, z: Integer;
   r: TRange;
@@ -176,7 +135,7 @@ begin
   begin
     SetLength(Result, (y + 1));
     r := Self.Bounds;
-	b := TArray_Create(r.Size, False);
+	b.Create(r.Size, False);
     for x := 0 to y do
       if b[Self[x] - r.start].Enable then
         Result[z.Increase] := Self[x];
@@ -212,9 +171,9 @@ begin
         for i := r.start to r.stop do
           Result[i - r.start] := i;
       end else
-        Result := TArray_Create(r.start);
+        Result.Create(r.start);
     end;
-    0: Result := TArray_Create(Self[0]);
+    0: Result.Create(Self[0]);
     -1: SetLength(Result, 0);
   end;
 end;
@@ -415,8 +374,8 @@ begin
         end;
         if (l = -1) then
         begin
-          TArray_Append(a, Self[i]);
-          TArray_Append(c, 1);
+          a.Append(Self[i]);
+          c.Append(1);
         end else
           Inc(c[l]);
       end;
@@ -442,20 +401,20 @@ begin
   n := Length(Self);
   if (n = 0) then
     Exit(-2147483648);
-  a := Copy(Self, 0, n);
+  a := Self.Copy;
   for i := 0 to (n - 2) do
     if (a[i] > a[i + 1]) then
     begin
       for j := 0 to (n - 2) do
         for s := 0 to ((n - j) - 2) do
           if (a[s] > a[s + 1]) then
-		    Swap(a[s], a[s + 1]);
+            Swap(a[s], a[s + 1]);
       Break;
     end;
   if ((n mod 2) = 1) then
     Result := a[n div 2]
   else
-    Result := ((a[n div 2 - 1] + a[n div 2]) / 2);
+    Result := ((a[(n div 2) - 1] + a[n div 2]) / 2);
 end;
 
 {==============================================================================]
@@ -489,12 +448,12 @@ begin
 end;
 
 {==============================================================================]
- <TIntegerArrayHelper.MostFrequent>
+ <TIntegerArrayHelper.MFrequent>
  @action: Returns the most frequent/common value from arr.
  @note: Be careful with values! Try to avoid using too low or high values!
         Such as: -200,000,000 or +200,000,000. Heavy memory-usage could possibly cause crashing.
 [==============================================================================}
-function TIntegerArrayHelper.MostFrequent(const null: Integer = -2147483648): Integer; cdecl;
+function TIntegerArrayHelper.MFrequent(const null: Integer = -2147483648): Integer; cdecl;
 var
   h, x, t: Integer;
   b: TIntegerArray;
@@ -505,7 +464,7 @@ begin
     1:
     begin
       r := Self.Bounds;
-      b := TArray_Create(r.Size, Integer(0));
+      b.Create(r.Size, 0);
       for x := 0 to High(Self) do
         Inc(b[(Self[x] - r.start)]);
       t := 0;
@@ -521,12 +480,12 @@ begin
 end;
 
 {==============================================================================]
- <TIntegerArrayHelper.LeastFrequent>
+ <TIntegerArrayHelper.LFrequent>
  @action: Returns the least frequent/common value from TIA.
  @note: Be careful with values! Try to avoid using too low or high values!
         Such as: -200,000,000 or +200,000,000. Heavy memory-usage could possibly cause crashing.
 [==============================================================================}
-function TIntegerArrayHelper.LeastFrequent(const null: Integer = -2147483648): Integer; cdecl;
+function TIntegerArrayHelper.LFrequent(const null: Integer = -2147483648): Integer; cdecl;
 var
   h, x, t: Integer;
   b: TIntegerArray;
@@ -537,7 +496,7 @@ begin
     1:
     begin
       r := Self.Bounds;
-      b := TArray_Create(r.Size, Integer(0));
+      b.Create(r.Size, 0);
       for x := 0 to High(Self) do
         Inc(b[(Self[x] - r.start)]);
       t := 0;
@@ -627,14 +586,14 @@ var
   t, p, o: Integer;
   s: TRangeArray;
   x, r: TRange;
-  procedure Push(const start, stop: Integer);
+  procedure qsPush(const start, stop: Integer);
   begin
     Inc(t);
     SetLength(s, (t + 1));
     s[t].start := start;
     s[t].stop := stop;
   end;
-  function Pop(out start, stop: Integer): Boolean;
+  function qsPop(out start, stop: Integer): Boolean;
   begin
     if (t < 0) then
     begin
@@ -652,9 +611,9 @@ begin
   begin
     o := ascending.Select(-1, 1);
     t := -1;
-    Push(0, High(Self));
+    qsPush(0, High(Self));
     r.Create(0, High(Self));
-    while Pop(r.start, r.stop) do
+    while qsPop(r.start, r.stop) do
     begin
       while (r.start < r.stop) do
       begin
@@ -676,15 +635,15 @@ begin
         if ((x.stop - r.start) < (r.stop - x.start)) then
         begin
           if (x.start < r.stop) then
-            Push(x.start, r.stop);
+            qsPush(x.start, r.stop);
           r.stop := x.stop;
         end else
         begin
           if (r.start < x.stop) then
-            Push(r.start, x.stop);
+            qsPush(r.start, x.stop);
           r.start := x.start;
         end;
-	  end;
+      end;
     end;
   end;
 end;
@@ -1970,7 +1929,7 @@ begin
     begin
       c := 0;
       l := a.Size;
-      b := TArray_Create(l, False);
+      b.Create(l, False);
       for x := 0 to y do
         if b[Self[x] - a.start].Enable then
           Inc(c);

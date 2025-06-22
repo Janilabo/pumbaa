@@ -1,5 +1,20 @@
 {==============================================================================]
- <TArray_Add(const arr: TArray; item: VarType; duplicates: Boolean): TArray>
+ <var.TArray(aSize: Integer): TArray>
+ @action: Creates TArray with Self.
+ @note: aSize will be Length of the created array.
+[==============================================================================}
+{$IFDEF var_TArray}
+var
+  i: Integer;
+begin
+  SetLength(Result, aSize);
+  for i := 0 to High(Result) do
+    Result[i] := Self;
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Add(item: VarType; duplicates: Boolean): TArray>
  @action: Appends arr with item. Returns the array with added item.
  @note: Adds item to the right side of the array.
 [==============================================================================}
@@ -7,11 +22,11 @@
 var
   i, l: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, (l + 1));
   for i := 0 to (l - 1) do
-    Result[i] := arr[i];
-  if ((not duplicates) and TArray_Contains(arr, item)) then
+    Result[i] := Self[i];
+  if ((not duplicates) and Self.Contains(item)) then
     SetLength(Result, l)
   else
     Result[l] := item;
@@ -19,7 +34,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Add(const arr: TArray; items: TArray; duplicates: Boolean): TArray>
+ <arr.Add(items: TArray; duplicates: Boolean): TArray>
  @action: Appends arr with items. Returns the array with added items.
  @note: Adds item to the right side of the array.
 [==============================================================================}
@@ -28,18 +43,18 @@ var
   a, h, i, l: Integer;
 begin
   h := High(items);
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, (l + (h + 1)));
   if ((h = -1) and (l = 0)) then
     Exit;
   for i := 0 to (l - 1) do
-    Result[i] := arr[i];
+    Result[i] := Self[i];
   case duplicates of
     False:
 	begin
 	  a := 0;
 	  for i := 0 to h do
-	    if not TArray_Contains(Result, items[i]) then
+	    if not Result.Contains(items[i]) then
         Result[l + a.Increase] := items[i];
       SetLength(Result, (l + a));
     end;
@@ -51,41 +66,41 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_AllEqual(arr: TArray): Boolean>
+ <arr.AllEqual: Boolean>
  @action: Returns true if all values in arr are equal (arr contains only equal values).
- @note: None
+ @note: Returns FALSE with empty array!
 [==============================================================================}
 {$IFDEF TArray_AllEqual}
 var
   h, i, l: Integer;
 begin
-  l := Low(arr);
-  h := High(arr);
+  l := Low(Self);
+  h := High(Self);
   for i := (l + 1) to h do
-    if (arr[l] <> arr[i]) then
+    if (Self[l] <> Self[i]) then
       Exit(False);
-  Result := (Length(arr) > 0);
+  Result := (Length(Self) > 0);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_AllSame(arr: TArray): Boolean>
+ <arr.AllSame: Boolean>
  @action: Returns true if all values in arr are the same (arr contains only equal values).
- @note: None
+ @note: Returns FALSE with empty array!
 [==============================================================================}
 {$IFDEF TArray_AllSame}
 var
   i: Integer;
 begin
-  for i := 1 to High(arr) do
-    if (arr[0] <> arr[i]) then
+  for i := 1 to High(Self) do
+    if (Self[0] <> Self[i]) then
       Exit(False);
-  Result := (Length(arr)  > 0);
+  Result := (Length(Self) > 0);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_AllUnique(arr: TArray): Boolean>
+ <arr.AllUnique: Boolean>
  @action: Returns true if all values in arr are unique (arr contains ONLY unique values).
  @note: None
 [==============================================================================}
@@ -93,32 +108,32 @@ end;
 var
   h, a, b: Integer;
 begin
-  h := High(arr);
+  h := High(Self);
   for a := 0 to (h - 1) do
     for b := (a + 1) to h do
-      if (arr[a] = arr[b]) then
+      if (Self[a] = Self[b]) then
         Exit(False);
   Result := (h > -1);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Append(arr: TArray; item: VarType; duplicates: Boolean): Integer>
+ <arr.Append(item: VarType; duplicates: Boolean): Integer>
  @action: Appends arr with item. Returns the index of added item.
  @note: Adds item to the right side of the array.
 [==============================================================================}
 {$IFDEF TArray_Append1}
 begin
-  if ((not duplicates) and TArray_Contains(arr, item)) then
-    Exit(High(arr));
-  Result := Length(arr);
-  SetLength(arr, (Result + 1));
-  arr[Result] := item;
+  if ((not duplicates) and Self.Contains(item)) then
+    Exit(High(Self));
+  Result := Length(Self);
+  SetLength(Self, (Result + 1));
+  Self[Result] := item;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Append(arr: TArray; items: TArray; duplicates; Boolean): Integer>
+ <arr.Append(items: TArray; duplicates; Boolean): Integer>
  @action: Adds all items items to arr.
  @note: Returns the highest index in the end.
 [==============================================================================}
@@ -127,38 +142,38 @@ var
   h, i: Integer;
 begin
   h := High(items);
-  Result := High(arr);
+  Result := High(Self);
   if (h = -1) then
     Exit;
-  SetLength(arr, ((Result + h) + 2));
+  SetLength(Self, ((Result + h) + 2));
   case duplicates of
     False:
-	  begin
-	    for i := 0 to h do
-	      if not TArray_Contains(arr, items[i]) then
-          arr[(Result.Increment)] := items[i];
-      SetLength(arr, (Result + 1));
+    begin
+      for i := 0 to h do
+        if not Self.Contains(items[i]) then
+          Self[(Result.Increment)] := items[i];
+      SetLength(Self, (Result + 1));
     end;
     True:
-  	for i := 0 to h do
-      arr[Result.Increment] := items[i];
+    for i := 0 to h do
+      Self[Result.Increment] := items[i];
   end;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Build(item: VarType; size: Integer): TArray> 
+ <arr.Build(item: VarType; size: Integer): TArray> 
  @action: Creates array with item where size is length of the array.
  @note: item is placed on every index in result.
 [==============================================================================}
 {$IFDEF TArray_Build}
 begin
-  Result := TArray_Create(size, item);
+  Result := Self.Create(size, item);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_BuiltWith(arr, allowed: TArray): Boolean> 
+ <arr.BuiltWith(allowed: TArray): Boolean> 
  @action: Checks if array arr contains only allowed items.
  @note: None.
 [==============================================================================}
@@ -167,13 +182,13 @@ var
   i, x, y: Integer;
 begin
   y := Length(allowed);
-  i := High(arr);
+  i := High(Self);
   if ((i < 0) or (y < 1)) then
     Exit(False);
   repeat
      x := 0;
      repeat
-       Result := (arr[i] = allowed[x]);
+       Result := (Self[i] = allowed[x]);
        x := (x + 1);
      until (Result or (x = y));
      i := (i - 1);
@@ -182,7 +197,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_BuiltWithout(arr, forbidden: TArray): Boolean> 
+ <arr.BuiltWithout(forbidden: TArray): Boolean> 
  @action: Checks if array arr does not have any forbidden items.
  @note: None.
 [==============================================================================}
@@ -190,16 +205,16 @@ end;
 var
   i, x, y: Integer;
 begin
-  if (Length(arr) < 1) then
+  if (Length(Self) < 1) then
     Exit(False);
   y := Length(forbidden);
   if not (y < 1) then
   begin
-    i := High(arr);
+    i := High(Self);
     repeat
        x := 0;
        repeat
-         Result := not (arr[i] = forbidden[x]);
+         Result := not (Self[i] = forbidden[x]);
          x := (x + 1);
        until ((x = y) or (not Result));
        i := (i - 1);
@@ -210,11 +225,23 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Clone(arr: TArray; index: Integer; count: Integer): TArray>
+  <arr.Clear: Boolean>
+  @action: SetLength(arr, 0) and returns true if items existed before doing it.
+  @note: None.
+[==============================================================================}
+{$IFDEF TArray_Clear}
+begin
+  Result := (Length(Self) > 0);
+  SetLength(Self, 0);
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Clone(index: Integer; count: Integer): TArray>
  @action: Returns copy of an array arr.
  @note: Contains support for starting index and count. -1 count uses Length(arr)!
 [==============================================================================}
-{$IFDEF TArray_Clone}
+{$IFDEF TArray_Clone1}
 var
   i, s, c: Integer;
 begin
@@ -223,31 +250,55 @@ begin
     if (index < 0) then
       c := (index + count)
     else
-      c := Min(count, (Length(arr) - index));
+      c := Min(count, (Length(Self) - index));
     s := Max(0, index);
     SetLength(Result, c);
     for i := s to ((s + c) - 1) do
-      Result[i - s] := arr[i];
+      Result[i - s] := Self[i];
   end else
     SetLength(Result, 0);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Combine(a, b: TArray): TArray>
- @action: Combines arrays a and b together as single array.
+ <arr.Clone(ID: TIntegerArray): TArray>
+ @action: Outputs array of items from arr by indexes (ID).
+ @note: Ignores invalid ID's (doesn't include those to result, they will be left out).
+[====================
+==========================================================}
+{$IFDEF TArray_Clone2}
+var
+  i, h, l, r: Integer;
+begin
+  r := 0;
+  h := High(Self);
+  l := Length(ID);
+  if ((l > 0) and (h > -1)) then
+  begin
+    SetLength(Result, l);
+    for i := 0 to (l - 1) do
+      if ((ID[i] <= h) and (ID[i] > -1)) then
+        Result[r.Increase] := Self[ID[i]];
+  end;
+  SetLength(Result, r);
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Combine(b: TArray): TArray>
+ @action: Combines arrays arr and b together as single array.
  @note: This is an alternative method. :)
 [==============================================================================}
 {$IFDEF TArray_Combine}
 begin
   SetLength(Result, 0);
-  Insert(a, Result, 0);
-  Insert(b, Result, Length(a));
+  Insert(Self, Result, 0);
+  Insert(b, Result, Length(Self));
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Contains(arr: TArray; item: VarType; index: Integer): Boolean>
+ <arr.Contains(item: VarType; index: Integer): Boolean>
  @action: Looks array for item starting from start index. If found, Result will be True.
  @note: None.
 [==============================================================================}
@@ -255,77 +306,68 @@ end;
 var
   i: Integer;
 begin
-  for i := index to High(arr) do
-    if (item = arr[i]) then
+  for i := index to High(Self) do
+    if (item = Self[i]) then
       Exit(True);
   Result := False;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Copy(arr: TArray; index: Integer; count: Integer): TArray>
+ <arr.Copy(index: Integer; count: Integer): TArray>
  @action: Returns copy of an array arr.
  @note: Contains support for starting index and count. -1 count uses Length(arr)!
 [==============================================================================}
-{$IFDEF TArray_Copy1}
-begin
-  Result := Copy(arr, index, count);  
-end;
-{$ENDIF}
-
-{==============================================================================]
- <TArray_Copy(arr: TArray; IDs: TIntegerArray): TArray>
- @action: Outputs array of items from arr by indexes (IDs).
- @note: Ignores invalid ID's (doesn't include those to result, they will be left out).
-[====================
-==========================================================}
-{$IFDEF TArray_Copy2}
+{$IFDEF TArray_Copy}
 var
-  i, h, l, r: Integer;
+  i, c, l: Integer;
 begin
-  r := 0;
-  h := High(arr);
-  l := Length(IDs);
-  if ((l > 0) and (h > -1)) then
+  l := Length(Self);
+  if (index < l) then
   begin
-    SetLength(Result, l);
-    for i := 0 to (l - 1) do
-      if ((IDs[i] <= h) and (IDs[i] > -1)) then
-        Result[r.Increase] := arr[IDs[i]];
-  end;
-  SetLength(Result, r);
+    i := Max(index, 0);
+    c := count;
+    if ((i + c) > l) then
+      c := (l - i);
+    SetLength(Result, c);
+    for l := 0 to (c - 1) do
+      Result[l] := Self[l + i];
+  end else
+    SetLength(Result, 0);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Create(item: VarType): TArray> 
- @action: Creates array with item, size as 1.
+ <arr.Create(item: VarType): TArray> 
+ @action: Creates array with item, size as 1. Returns old Self.
  @note: [item]
 [==============================================================================}
 {$IFDEF TArray_Create1}
 begin
-  SetLength(Result, 1);
-  Result[0] := item;
+  Result := self.Clone;
+  SetLength(Self, 1);
+  Self[0] := item;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Create(size: Integer; item: VarType): TArray> 
- @action: Creates array with item where size is length of the array.
+ <arr.Create(size: Integer; item: VarType): TArray> 
+ @action: Creates array with item where size is length of the array. Returns old Self.
  @note: item is placed on every index in result.
 [==============================================================================}
 {$IFDEF TArray_Create2}
 var
   i: Integer;
 begin
-  SetLength(Result, Max(0, size));
-  for i := 0 to High(Result) do
-    Result[i] := item;
+  Result := self.Clone;
+  SetLength(Self, Max(0, size));
+  for i := 0 to High(Self) do
+    Self[i] := item;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Delete(arr: TArray; index: Integer): Boolean>
+ <arr.Delete(index: Integer): Boolean>
  @action: Deletes array item from arr by index.
  @note: Returns true with success (index existed in arr).
 [==============================================================================}
@@ -333,38 +375,38 @@ end;
 var
   i, h: Integer;
 begin
-  h := High(arr);
+  h := High(Self);
   Result := ((index <= h) and (index > -1));
   if not Result then
     Exit;
   for i := index to (h - 1) do
-    arr[i] := arr[i + 1];
-  SetLength(arr, h);
+    Self[i] := Self[i + 1];
+  SetLength(Self, h);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Delete(arr: TArray; IDs: TIntegerArray): Integer>
- @action: Deletes array items from arr by indexes (IDs).
- @note: Returns amount of items that were deleted succesfully by IDs.
+ <arr.Delete(ID: TIntegerArray): Integer>
+ @action: Deletes array items from arr by indexes (ID).
+ @note: Returns amount of items that were deleted succesfully by ID's.
 [==============================================================================}
 {$IFDEF TArray_Delete2}
 var
   i, l: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   Result := 0;
   for i := 0 to (l - 1) do
-    if not TArray_Contains(IDs, i) then
-      arr[i - Result] := arr[i]
+    if not ID.Contains(i) then
+      Self[i - Result] := Self[i]
     else
       Result := (Result + 1);
-  SetLength(arr, (l - Result));
+  SetLength(Self, (l - Result));
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Differ(arr, target: TArray): Boolean>
+ <arr.Differ(target: TArray): Boolean>
  @action: Returns true if arr differs from target.
  @note: None
 [==============================================================================}
@@ -372,16 +414,16 @@ end;
 var
   i: Integer;
 begin
-  Result := (Length(arr) <> Length(target));
+  Result := (Length(Self) <> Length(target));
   if not Result then
-  for i := High(arr) downto 0 do
-    if (arr[i] <> target[i]) then
+  for i := High(Self) downto 0 do
+    if (Self[i] <> target[i]) then
       Exit(True);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Distribute(arr: TArray; parts: Integer): T2DArray>
+ <arr.Distribute(parts: Integer): T2DArray>
  @action: Distributes array arr to 2D array by number of parts.
  @note: ([1,2,3,4,5,6,7], 3) => [1,2,3][4,5][6,7]
  [==============================================================================}
@@ -389,7 +431,7 @@ end;
 var
   l, p, b, r, i, j, s, c: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   if ((parts > 0) and (l > 0)) then
   begin
     p := Min(parts, l);
@@ -404,7 +446,7 @@ begin
         Inc(c);
       SetLength(Result[i], c);
       for j := 0 to (c - 1) do
-        Result[i][j] := arr[s.Increase];
+        Result[i][j] := Self[s.Increase];
     end;
   end else
     SetLength(Result, 0);
@@ -412,7 +454,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Dump(arr: TArray; items: TArray; index: Integer): Integer>
+ <TArray_Dump(items: TArray; index: Integer): Integer>
  @action: Deletes items from array, keeps others. Returns array length (after action).
  @note: Supports custom start index!
 [==============================================================================}
@@ -420,22 +462,22 @@ end;
 var
   i, l: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   Result := 0;
   if (High(items) > -1) then
   for i := Max(0, index) to (l - 1) do
-    if not TArray_Contains(items, arr[i]) then
-      arr[i - Result] := arr[i]
+    if not items.Contains(Self[i]) then
+      Self[i - Result] := Self[i]
     else
       Inc(Result);
   Result := (l - Result);
   if (Result < l) then
-    SetLength(arr, Result);
+    SetLength(Self, Result);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Dupe(arr: TArray): TArray>
+ <arr.Dupe: TArray>
  @action: Returns copy of an array arr.
  @note: None.
 [==============================================================================}
@@ -443,51 +485,40 @@ end;
 var
   i, l, j: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, l);
   if (l > 0) then
   begin
     if ((l mod 2) <> 0) then
     begin
       j := (l div 2);
-      Result[j] := arr[j];
+      Result[j] := Self[j];
     end;
     if (l = 1) then
 	  Exit;
     for i := 0 to ((l div 2) - 1) do
     begin
       j := ((l - i) - 1);
-      Result[i] := arr[i];
-      Result[j] := arr[j];
+      Result[i] := Self[i];
+      Result[j] := Self[j];
     end;
   end;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Empty(arr: TArray): Boolean>
+ <arr.Empty: Boolean>
  @action: Returns true if array is empty (Length = 0).
  @note: None.
 [==============================================================================}
 {$IFDEF TArray_Empty1}
 begin
-  Result := (Length(arr) = 0);
+  Result := (Length(Self) = 0);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Empty(arr: VarType): TArray>
- @action: Returns empty array based on given variable type.
- @note: None.
-[==============================================================================}
-{$IFDEF TArray_Empty2}
-begin
-  SetLength(Result, 0);
-end;
-{$ENDIF}
-
-{==============================================================================]
- <TArray_Equal(arr, target: TArray): Boolean>
+ <arr.Equal(target: TArray): Boolean>
  @action: Returns true if arr equals target (identical arrays)
  @note: None
 [==============================================================================}
@@ -495,16 +526,16 @@ end;
 var
   i: Integer;
 begin
-  Result := (Length(arr) = Length(target));
+  Result := (Length(Self) = Length(target));
   if Result then
-  for i := High(arr) downto 0 do
-    if (arr[i] <> target[i]) then
+  for i := High(Self) downto 0 do
+    if (Self[i] <> target[i]) then
       Exit(False);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Extend(arr: TArray; item: VarType): TArray>
+ <arr.Extend(item: VarType): TArray>
  @action: Extends arr with item. Returns it.
  @note: Places item to the left side of the array.
 [==============================================================================}
@@ -512,16 +543,16 @@ end;
 var
   i, h: Integer;
 begin
-  h := High(arr);
+  h := High(Self);
   SetLength(Result, (h + 2));
   for i := 0 to h do
-    Result[i + 1] := arr[i];
+    Result[i + 1] := Self[i];
   Result[0] := item;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Extend(arr, items: TArray): TArray>
+ <arr.Extend(items: TArray): TArray>
  @action: Extends arr with items. Returns it.
  @note: Places items to the left side of the array.
 [==============================================================================}
@@ -529,18 +560,18 @@ end;
 var
   i, h, l: Integer;
 begin
-  h := High(arr);
+  h := High(Self);
   l := Length(items);
   SetLength(Result, ((h + 1) + l));
   for i := 0 to h do
-    Result[i + l] := arr[i];
+    Result[i + l] := Self[i];
   for i := 0 to (l - 1) do
     Result[i] := items[i];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Extract(arr: TArray; item: VarType; index: Integer): TArray>
+ <arr.Extract(item: VarType; index: Integer): TArray>
  @action: Keeps (extracts) all values in arr that are item. Starts scan from start index.
  @note: Returns the items.
 [==============================================================================} 
@@ -548,18 +579,18 @@ end;
 var
   i, l, r: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, (l - index));
   r := 0;
   for i := index to (l - 1) do
-    if (arr[i] = item) then
-      Result[r.Increase] := arr[i];
+    if (Self[i] = item) then
+      Result[r.Increase] := Self[i];
   SetLength(Result, r);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Extract(arr, items: TArray; index: Integer): TArray>
+ <arr.Extract(items: TArray; index: Integer): TArray>
  @action: Keeps (extracts) all values in arr that are in items. Starts scan from start index.
  @note: Returns the items.
 [==============================================================================}
@@ -570,18 +601,18 @@ begin
   r := 0;
   if (Length(items) > 0) then
   begin
-    l := Length(arr);
+    l := Length(Self);
     SetLength(Result, (l - index));
     for i := index to (l - 1) do
-      if TArray_Contains(items, arr[i]) then
-        Result[r.Increase] := arr[i];
+      if items.Contains(Self[i]) then
+        Result[r.Increase] := Self[i];
   end;
   SetLength(Result, r);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_ExtractEvery(arr: TArray; X: Integer; index: Integer): TArray>
+ <arr.ExtractEvery(X: Integer; index: Integer): TArray>
  @action: Keeps (extracts) all X values from array. Starts scan from start index.
  @note: Returns the items.
 [==============================================================================} 
@@ -589,42 +620,42 @@ end;
 var
   i, h, l: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, (l - index));
   if ((l - index) < 1) then
     Exit;
   h := 0;
   for i := index to (l - 1) do
     if (((i - index) mod X) = 0) then
-      Result[h.Increase] := arr[i];
+      Result[h.Increase] := Self[i];
   SetLength(Result, h);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Fill(arr: TArray; item: VarType; index: Integer; count: Integer): TArray>
+ <arr.Fill(item: VarType; index: Integer; count: Integer): TArray>
  @action: Fills whole arr with item.
- @note: None
+ @note: Returns the filled array.
 [==============================================================================}
 {$IFDEF TArray_Fill1}
 var
   h, i, s, t: Integer;
 begin
   s := Max(0, index);
-  h := High(arr);
+  h := High(Self);
   SetLength(Result, (h + 1));
   for i := 0 to (s - 1) do
-    Result[i] := arr[i];
+    Result[i] := Self[i];
   t := Min(h, (s + (count - 1)));
   for i := s to t do
     Result[i] := item;
   for i := (t + 1) to h do
-    Result[i] := arr[i];
+    Result[i] := Self[i];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Fill(arr, items: TArray; index: Integer; count: Integer): TArray>
+ <arr.Fill(items: TArray; index: Integer; count: Integer): TArray>
  @action: Fills whole arr with items.
  @note: None
 [==============================================================================}
@@ -632,26 +663,26 @@ end;
 var
   h, i, s, t, l: Integer;
 begin
-  h := High(arr);
+  h := High(Self);
   l := Length(items);
   case l of
-    0: Exit(Copy(arr, 0, (h + 1)));
-    1: Exit(TArray_Fill(arr, items[0], index, count));
+    0: Exit(Self.Copy);
+    1: Exit(Self.Fill(items[0], index, count));
   end;
   s := Max(0, index);
   SetLength(Result, (h + 1));
   for i := 0 to (s - 1) do
-    Result[i] := arr[i];
+    Result[i] := Self[i];
   t := Min(h, (s + (count - 1)));
   for i := s to t do
     Result[i] := items[(index + i) mod (l - 1)];
   for i := (t + 1) to h do
-    Result[i] := arr[i];
+    Result[i] := Self[i];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Filter(arr: TArray; item: VarType; index: Integer): TArray>
+ <arr.Filter(item: VarType; index: Integer): TArray>
  @action: Removes all values from arr that are found in items.
  @note: None
 [==============================================================================}
@@ -659,18 +690,18 @@ end;
 var
   i, l, r: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, (l - index));
   r := 0;
   for i := index to (l - 1) do
-    if (arr[i] <> item) then
-      Result[r.Increase] := arr[i];
+    if (Self[i] <> item) then
+      Result[r.Increase] := Self[i];
   SetLength(Result, r);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Filter(arr, items: TArray; index: Integer): TArray>
+ <arr.Filter(items: TArray; index: Integer): TArray>
  @action: Removes all values from arr that are found in items.
  @note: None
 [==============================================================================}
@@ -678,20 +709,20 @@ end;
 var
   i, l, r: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   if (Length(items) = 0) then
-    Exit(Copy(arr, index, (l - index)));
+    Exit(Self.Copy(index, (l - index)));
   r := 0;
   SetLength(Result, (l - index));
   for i := index to (l - 1) do
-    if not TArray_Contains(items, arr[i]) then
-      Result[r.Increase] := arr[i];
+    if not items.Contains(Self[i]) then
+      Result[r.Increase] := Self[i];
   SetLength(Result, r);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_FilterEvery(arr: TArray; X: Integer; index: Integer): TArray>
+ <arr.FilterEvery(X: Integer; index: Integer): TArray>
  @action: Filters every/each X item from arr.
  @note: Custom index
 [==============================================================================}
@@ -699,34 +730,34 @@ end;
 var
   i, h, l: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, (l - index));
   if ((l - index) < 1) then
     Exit;
   h := 0;
   for i := index to (l - 1) do
     if not (((i - index) mod X) = 0) then
-      Result[h.Increase] := arr[i];
+      Result[h.Increase] := Self[i];
   SetLength(Result, h);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Find(arr: TArray; item: VarType; IDs: TRange): Integer>
+ <arr.Find(item: VarType; ID: TRange): Integer>
  @action: Scans array for item by IDs. Returns position if found.
  @note: Unsafe method! No safety checking.
 [==============================================================================}
 {$IFDEF TArray_Find1}
 begin
-  if (High(arr) > -1) then
-  case IDs.Ascending of
+  if (High(Self) > -1) then
+  case ID.Ascending of
     True:
-    for Result := IDs.start to IDs.stop do
-      if (arr[Result] = item) then
+    for Result := ID.start to ID.stop do
+      if (Self[Result] = item) then
         Exit;
     False:
-    for Result := IDs.start downto IDs.stop do
-      if (arr[Result] = item) then
+    for Result := ID.start downto ID.stop do
+      if (Self[Result] = item) then
         Exit;
   end;
   Result := -1;
@@ -734,7 +765,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Find(arr: TArray; item: VarType; IDs: TIntegerArray): Integer>
+ <arr.Find(item: VarType; ID: TIntegerArray): Integer>
  @action: Scans array for item by IDs. Returns position if found.
  @note: Unsafe method! No safety checking.
 [==============================================================================}
@@ -742,30 +773,30 @@ end;
 var
   i: Integer;
 begin
-  if (High(arr) > -1) then
-  for i := 0 to High(IDs) do
-    if (arr[IDs[i]] = item) then
-      Exit(IDs[i]);
+  if (High(Self) > -1) then
+  for i := 0 to High(ID) do
+    if (Self[ID[i]] = item) then
+      Exit(ID[i]);
   Result := -1;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Find(arr: TArray; items: TArray; IDs: TRange): Integer>
+ <arr.Find(items: TArray; ID: TRange): Integer>
  @action: Scans array for items by IDs. Returns position if found.
  @note: Unsafe method! No safety checking.
 [==============================================================================}
 {$IFDEF TArray_Find3}
 begin
-  if ((High(arr) > -1) and (High(items) > -1)) then
-  case IDs.Ascending of
+  if ((High(Self) > -1) and (High(items) > -1)) then
+  case ID.Ascending of
     True:
-    for Result := IDs.start to IDs.stop do
-      if TArray_Contains(items, arr[Result]) then
+    for Result := ID.start to ID.stop do
+      if items.Contains(Self[Result]) then
         Exit;
     False:
-    for Result := IDs.start downto IDs.stop do
-      if TArray_Contains(items, arr[Result]) then
+    for Result := ID.start downto ID.stop do
+      if items.Contains(Self[Result]) then
         Exit;
   end;
   Result := -1;
@@ -773,7 +804,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Find(arr: TArray; items: TArray; IDs: TIntegerArray): Integer>
+ <arr.Find(items: TArray; ID: TIntegerArray): Integer>
  @action: Scans array for items by IDs. Returns position if found.
  @note: Unsafe method! No safety checking.
 [==============================================================================}
@@ -781,16 +812,16 @@ end;
 var
   i: Integer;
 begin
-  if ((High(arr) > -1) and (High(items) > -1)) then
-  for i := 0 to High(IDs) do
-    if TArray_Contains(items, arr[IDs[i]]) then
-      Exit(IDs[i]);
+  if ((High(Self) > -1) and (High(items) > -1)) then
+  for i := 0 to High(ID) do
+    if items.Contains(Self[ID[i]]) then
+      Exit(ID[i]);
   Result := -1;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Flip(arr: TArray): Boolean>
+ <arr.Flip: Boolean>
  @action: Reverses array arr.
  @note: Alternative for TArray_Reverse
 [==============================================================================}
@@ -799,15 +830,15 @@ var
   i, l: Integer;
 begin
   i := 0;
-  l := (Length(arr) - 1);
+  l := (Length(Self) - 1);
   Result := (l > 0);
   while (i < l) do
-    Swap(arr[i.Increase], arr[l.Decrease]);
+    Swap(i.Increase, l.Decrease);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Get(arr: TArray): TArray>
+ <arr.Get: TArray>
  @action: Copy of an array arr.
  @note: Just an alternative.
 [==============================================================================}
@@ -815,14 +846,15 @@ end;
 var
   i: Integer;
 begin
-  SetLength(Result, Length(arr));
-  for i := 0 to High(arr) do
-    Result[i] := arr[i];
-end;
+  SetLength(Result, Length(Self));
+  i := 0;
+  for a in Self do
+    Result[i.Increase] := a;
+ end;  
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Get>
+ <arr.Get(ID: TIntegerArray): TArray>
  @action: Outputs array of items from arr by indexes (IDs).
  @note: Unsafe method! No safety checking.
 [==============================================================================}
@@ -830,14 +862,36 @@ end;
 var
   i: Integer;
 begin
-  SetLength(Result, Length(IDs));
-  for i := 0 to High(IDs) do
-    Result[i] := arr[IDs[i]];
+  SetLength(Result, Length(ID));
+  for i := 0 to High(ID) do
+    Result[i] := Self[ID[i]];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Group(arr: TArray): T2DArray>
+ <arr.Get(ID: TRange): TArray>
+ @action: Outputs array of items from arr by indexes (IDs).
+ @note: Unsafe method! No safety checking.
+[==============================================================================}
+{$IFDEF TArray_Get3}
+var
+  i, a: Integer;
+begin
+  SetLength(Result, ID.Size);
+  a := 0;
+  case ID.Ascending of
+    True:
+    for i := ID.start to ID.stop do
+      Result[a.Increase] := Self[i];
+	False:
+    for i := ID.start downto ID.stop do
+      Result[a.Increase] := Self[i];
+  end;
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Group: T2DArray>
  @action: Groups array arr to 2D array by items.
  @note: ([1,2,1,2,3,1,2,3,4]) => [1,1,1][2,2,2][3,3][4]
 [==============================================================================}
@@ -846,7 +900,7 @@ var
   a, h, i, r, g, l: Integer;
   f: Boolean;
 begin
-  h := High(arr);
+  h := High(Self);
   SetLength(Result, (h + 1));
   if (h = -1) then
     Exit;
@@ -856,19 +910,19 @@ begin
     f := False;
     for r := 0 to g do
     begin
-      f := (arr[i] = Result[r][0]);
+      f := (Self[i] = Result[r][0]);
       if f then
       begin
         l := Length(Result[r]);
         SetLength(Result[r], (l + 1));
-        Result[r][l] := arr[i];
+        Result[r][l] := Self[i];
         Break;
       end;
     end;
     if not f then
     begin
       SetLength(Result[g.Increment], 1);
-      Result[g][0] := arr[i];
+      Result[g][0] := Self[i];
     end;
   end;
   SetLength(Result, (g + 1));
@@ -876,7 +930,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Holds(arr, chain: TArray): Boolean>
+ <arr.Holds(chain: TArray): Boolean>
  @action: Returns true if arr contains (holds) WHOLE chain of items in it.
  @note: Starting from any index and ending to any index!
 [==============================================================================}
@@ -885,7 +939,7 @@ var
   a, b, x, y, z: Integer;
   n: Boolean;
 begin
-  z := High(arr);
+  z := High(Self);
   y := High(chain);
   if ((z < y) or (y = -1)) then
     Exit(False);
@@ -895,7 +949,7 @@ begin
     a := (a + 1);
     for x := 0 to y do
     begin
-      n := (arr[(a + x)] <> chain[x]);
+      n := (Self[(a + x)] <> chain[x]);
       if n then
         Break;
     end;
@@ -905,22 +959,29 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_IDs(arr: TArray): TIntegerArray>
+ <arr.IDs(ascending: Boolean): TIntegerArray>
  @action: Returns IDs of arr as TIntegerArray.
  @note: None.
 [==============================================================================}
 {$IFDEF TArray_IDs1}
 var
-  i: Integer;
+  h, i: Integer;
 begin
-  SetLength(Result, Length(arr));
-  for i := 0 to High(arr) do
-    Result[i] := i;
+  SetLength(Result, Length(Self));
+  h := High(Self);
+  case ascending of
+    True:
+    for i := 0 to h do
+      Result[i] := i;
+    False:
+    for i := h downto 0 do
+      Result[(h - i)] := i;
+  end;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_IDs(arr: TArray; IDs: TIntegerArray): TArray>
+ <arr.IDs(IDs: TIntegerArray): TArray>
  @action: Returns items from arr by IDs.
  @note: UNSAFE! No failsafes, so make sure you use correct indexes in IDs array.
 [==============================================================================}
@@ -928,14 +989,14 @@ end;
 var
   i: Integer;
 begin
-  SetLength(Result, Length(IDs));
+  SetLength(Result, Length(ID));
   for i := 0 to High(Result) do
-    Result[i] := arr[IDs[i]];
+    Result[i] := Self[ID[i]];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_IDs(arr: TArray; IDs: TIntegerArray; item: VarType): TArray>
+ <arr.IDs(IDs: TIntegerArray; item: VarType): TArray>
  @action: Returns arr with IDs replaced as item.
  @note: UNSAFE! No failsafes, so make sure you use correct indexes in IDs array.
 [==============================================================================}
@@ -943,14 +1004,14 @@ end;
 var
   i: Integer;
 begin
-  Result := TArray_Get(arr);
-  for i := 0 to High(IDs) do
-    Result[IDs[i]] := item;
+  Result := Self.Copy;
+  for i := 0 to High(ID) do
+    Result[ID[i]] := item;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_IDs(arr: TArray; IDs: TIntegerArray; items: TArray): TArray>
+ <arr.IDs(IDs: TIntegerArray; items: TArray): TArray>
  @action: Returns arr with IDs replaced as items.
  @note: UNSAFE! No failsafes, so make sure you use correct indexes in IDs array and ALSO item[s].
 [==============================================================================}
@@ -958,15 +1019,15 @@ end;
 var
   i, l: Integer;
 begin
-  Result := TArray_Get(arr);
+  Result := Self.Copy;
   l := Length(items);
-  for i := 0 to High(IDs) do
-    Result[IDs[i]] := items[i mod l];
+  for i := 0 to High(ID) do
+    Result[ID[i]] := items[i mod l];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Includes(arr: TArray; item: VarType; index: Integer): Boolean>
+ <arr.Includes(item: VarType; index: Integer): Boolean>
  @action: Looks array for item starting from start index down to index 0. If found, Result will be True.
  @note: Alternative to TArray_Contains, but this scans in opposite direction.
 [==============================================================================}
@@ -974,15 +1035,15 @@ end;
 var
   i: Integer;
 begin
-  for i := Min(High(arr), index) downto 0 do
-    if (item = arr[i]) then
+  for i := Min(High(Self), index) downto 0 do
+    if (item = Self[i]) then
       Exit(True);
   Result := False;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Keep(arr, items: TArray; index: Integer): Integer>
+ <arr.Keep(items: TArray; index: Integer): Integer>
  @action: Keeps items in array, removes others. Returns array length (after action).
  @note: Supports custom start index!
 [==============================================================================}
@@ -990,14 +1051,14 @@ end;
 var
   i, l: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   case (High(items) > -1) of
     True:
     begin
       Result := 0;
       for i := Max(0, index) to (l - 1) do
-        if TArray_Contains(items, arr[i]) then
-          arr[i - Result] := arr[i]
+        if items.Contains(Self[i]) then
+          Self[i - Result] := Self[i]
         else
           Inc(Result);
     end;
@@ -1005,12 +1066,12 @@ begin
   end;
   Result := (l - Result);
   if (Result < l) then
-    SetLength(arr, Result);
+    SetLength(Self, Result);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_LeastFrequent(arr: TArray): VarType> 
+ <arr.LeastFrequent: VarType> 
  @action: Returns the least frequent arr item.
  @note: None.
 [==============================================================================}
@@ -1019,15 +1080,15 @@ var
   i, j, c, m: Integer;
   f: Boolean;
 begin
-  if (Length(arr) = 0) then
+  if (Length(Self) = 0) then
     Exit;
   m := 2147483647;
-  Result := arr[0];
-  for i := 0 to High(arr) do
+  Result := Self[0];
+  for i := 0 to High(Self) do
   begin
     f := False;
     for j := 0 to (i - 1) do
-      if (arr[j] = arr[i]) then
+      if (Self[j] = Self[i]) then
       begin
         f := True;
         Break;
@@ -1035,43 +1096,162 @@ begin
     if f then
       Continue;
     c := 1;
-    for j := (i + 1) to High(arr) do
-      if (arr[j] = arr[i]) then
+    for j := (i + 1) to High(Self) do
+      if (Self[j] = Self[i]) then
         Inc(c);
     if (c < m) then
     begin
       m := c;
-      Result := arr[i];
+      Result := Self[i];
     end;
   end;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Length(arr: TArray, size: Integer): Integer> 
- @action: Returns size and sets it as size of arr.
+ <arr.Len: Integer>
+ @action: Simply Result := Length(arr);
  @note: None.
 [==============================================================================}
-{$IFDEF TArray_Length1}
+{$IFDEF TArray_Len1}
 begin
-  Result := size;
-  SetLength(arr, size);
+  Result := Length(Self);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Length(arr: TArray: TArray): Integer> 
- @action: Returns array length.
- @note: Simply Result := Length(arr);
+ <arr.Len(aSize: Integer): Integer>
+ @action: Set's arr length to aSize.
+ @note: aSize > Length(arr) => Result will give how many elements were added
+        aSize < Length(arr) => Result will give how many elements got deleted (it will be negative value!)
+		aSize = Length(arr) => Returns 0.
 [==============================================================================}
-{$IFDEF TArray_Length2}
+{$IFDEF TArray_Len2}
+var
+  l: Integer;
 begin
-  Result := Length(arr);
+  l := Length(Self);
+  SetLength(Self, aSize);
+  Result := (Length(Self) - l);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_MostFrequent(arr: TArray): VarType> 
+ <arr.Len(arr: TArray; aSize: Integer; null: VarType): Integer>
+ @action: Set's arr length to size.
+ @note: Uses null for created indexes.
+[==============================================================================}
+{$IFDEF TArray_Len3}
+var
+  i, l: Integer;
+begin
+  l := Length(Self);
+  SetLength(Self, aSize);
+  Result := (Length(Self) - l);
+  for i := 0 to (Result - 1) do
+    Self[l + i] := null;
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Location(item: VarType; index: Integer): Integer>
+ @action: Returns last index position from arr which matched with item.
+ @note: Returns -1 if any of arr items doesnt match with item!
+[==============================================================================}
+{$IFDEF TArray_Location1}
+begin
+  for Result := Min(High(Self), index) downto 0 do
+    if (Self[Result] = item) then
+      Exit;
+  Result := -1;
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Pos(items: TArray; index: Integer): Integer>
+ @action: Returns index position from arr which matches with items.
+ @note: Returns -1 if any of arr items doesnt match with items!
+[==============================================================================}
+{$IFDEF TArray_Location2}
+var
+  h, i: Integer;
+begin
+  h := High(items);
+  for Result := Min(High(Self), index) downto 0 do
+    for i := 0 to h do
+      if (Self[Result] = items[i]) then
+        Exit;
+  Result := -1;
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Locations(item: VarType; index: Integer): TIntegerArray>
+ @action: Returns last index positions from arr which matched with item.
+ @note: None.
+[==============================================================================}
+{$IFDEF TArray_Locations1}
+var
+  i, r, h, s: Integer;
+begin
+  r := 0;
+  h := High(Self);
+  s := Min(index, h);
+  if ((h > -1) and (s > -1)) then
+  begin
+    SetLength(Result, (s + 1));
+    for i := s downto 0 do
+      if (Self[i] = item) then
+        Result[r.Increase] := i;
+  end;
+  SetLength(Result, r);
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Locations(items: TArray; index: Integer): TIntegerArray>
+ @action: Returns last index positions from arr which matches with items.
+ @note: None.
+[==============================================================================}
+{$IFDEF TArray_Locations2}
+var
+  i, r, h, s: Integer;
+begin
+  r := 0;
+  h := High(Self);
+  s := Min(index, h);
+  if ((h > -1) and (s > -1) and (Length(items) > 0)) then
+  begin
+    SetLength(Result, (s + 1));
+    for i := s downto 0 do
+      if items.Contains(Self[i]) then
+        Result[r.Increase] := i;
+  end;
+  SetLength(Result, r);
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Mix(shuffles: Integer): Boolean>
+ @action: Ramdomizes array with custom shuffles.
+ @note: None.
+[==============================================================================}
+{$IFDEF TArray_Mix}
+var
+  l, i, s: Integer;
+begin
+  l := Length(Self);
+  Result := ((l > 1) and (shuffles > 0));
+  if not Result then
+    Exit;
+  for s := 1 to shuffles do
+    for i := 0 to (l - 1) do
+      Swap(Random(l), Random(l));
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.MostFrequent: VarType> 
  @action: Returns the most frequent arr item.
  @note: None.
 [==============================================================================}
@@ -1079,27 +1259,27 @@ end;
 var
   i, j, c, m: Integer;
 begin
-  if (High(arr) = -1) then
+  if (High(Self) = -1) then
     Exit;
   m := 0;
-  Result := arr[0];
-  for i := 0 to High(arr) do
+  Result := Self[0];
+  for i := 0 to High(Self) do
   begin
     c := 1;
-    for j := (i + 1) to High(arr) do
-      if (arr[j] = arr[i]) then
+    for j := (i + 1) to High(Self) do
+      if (Self[j] = Self[i]) then
         Inc(c);
     if (c > m) then
     begin
       m := c;
-      Result := arr[i];
+      Result := Self[i];
     end;
   end;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Move(arr: TArray; oldIndex, newIndex: Integer): Boolean>
+ <arr.Move(oldIndex, newIndex: Integer): Boolean>
  @action: Moves item from oldIndex to newIndex in array arr.
  @note: Returns true with success.
 [==============================================================================}
@@ -1107,37 +1287,37 @@ end;
 var
   h, i: Integer;
 begin
-  h := High(arr);
+  h := High(Self);
   Result := ((h > 0) and (oldIndex <> newIndex) and InRange(oldIndex, 0, h) and InRange(newIndex, 0, h));
   if Result then
   begin
-    t := arr[oldIndex];
+    t := Self[oldIndex];
     case (oldIndex > newIndex) of
       True:
       for i := oldIndex downto (newIndex + 1) do
-        arr[i] := arr[(i - 1)];
+        Self[i] := Self[(i - 1)];
       False:
       for i := oldIndex to (newIndex - 1) do
-        arr[i] := arr[(i + 1)];
+        Self[i] := Self[(i + 1)];
     end;
-    arr[newIndex] := t;
+    Self[newIndex] := t;
   end;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Oversize(arr: TArray; limit: Integer): Boolean>
+ <arr.Oversize(limit: Integer): Boolean>
  @action: Returns true if size of arr is OVER the limit.
  @note: None.	
 [==============================================================================}
 {$IFDEF TArray_Oversize}
 begin
-  Result := (Length(arr) > limit);
+  Result := (Length(Self) > limit);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Partition(arr: TArray; size: Integer): T2DArray>
+ <arr.Partition(pSize: Integer): T2DArray>
  @action: Partitions array arr to 2D array by size of parts.
  @note: ([1,2,3,4,5,6,7], 3) => [1,2,3][4,5,6][7]
 [==============================================================================}
@@ -1145,21 +1325,21 @@ end;
 var
   p, i, j, s, r, l: Integer;
 begin
-  l := Length(arr);
-  if ((size > 0) and (l > 0)) then
+  l := Length(Self);
+  if ((pSize > 0) and (l > 0)) then
   begin
-    p := ((l + (size - 1)) div size);
+    p := ((l + (pSize - 1)) div pSize);
     SetLength(Result, p);
     for i := 0 to (p - 1) do
     begin
-      s := (i * size);
-      if ((s + size) > l) then
+      s := (i * pSize);
+      if ((s + pSize) > l) then
         r := (l - s)
       else
-        r := size;
+        r := pSize;
       SetLength(Result[i], r);
       for j := 0 to (r - 1) do
-        Result[i][j] := arr[s + j];
+        Result[i][j] := Self[s + j];
     end;
   end else
     SetLength(Result, 0);
@@ -1167,8 +1347,8 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Pick(arr: TArray; IDs: TIntegerArray): TArray>
- @action: Outputs items with indexes (IDs) from arr and deletes while picking em.
+ <arr.Pick(ID: TIntegerArray): TArray>
+ @action: Outputs items with indexes (ID) from arr and deletes while picking em.
  @note: Ignores invalid ID's (doesn't include those to output, they will be left out).
         DYNAMIC - you might need to set indexes in reversed order, in order to get em correctly!
 [==============================================================================}
@@ -1176,8 +1356,8 @@ end;
 var
   l, h, t, i, r: Integer;
 begin
-  h := High(arr);
-  l := Length(IDs);
+  h := High(Self);
+  l := Length(ID);
   r := 0;
   if ((h > -1) and (l > 0)) then
   begin
@@ -1185,21 +1365,21 @@ begin
     i := -1;
     repeat
       i := (i + 1);
-      if ((IDs[i] > h) or (IDs[i] < 0)) then
+      if ((ID[i] > h) or (ID[i] < 0)) then
         Continue;
-      Result[r.Increase] := arr[IDs[i]];
-      for t := IDs[i] to (h - 1) do
-        arr[t] := arr[t + 1];
+      Result[r.Increase] := Self[ID[i]];
+      for t := ID[i] to (h - 1) do
+        Self[t] := Self[t + 1];
       Dec(h);
     until ((i = (l - 1)) or (h < 0));
-    SetLength(arr, (h + 1));
+    SetLength(Self, (h + 1));
   end;
   SetLength(Result, r);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Pop(arr: TArray): VarType>
+ <arr.Pop: VarType>
  @action: Returns and removes item from highest array index from arr.
  @note: UNSAFE! Make sure array has enough items..
 [==============================================================================}
@@ -1207,16 +1387,16 @@ end;
 var
   h: Integer;
 begin
-  h := High(arr);
+  h := High(Self);
   if (h = -1) then
     Exit;
-  Result := arr[h];
-  SetLength(arr, h);
+  Result := Self[h];
+  SetLength(Self, h);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Pop(arr: TArray; null: VarType): VarType>
+ <arr.Pop(null: VarType): VarType>
  @action: Returns and removes item from highest array index from arr.
  @note: Returns null if array contains no items.
 [==============================================================================}
@@ -1224,11 +1404,11 @@ end;
 var
   h: Integer;
 begin
-  h := High(arr);
+  h := High(Self);
   if (h = -1) then
     Exit(null);
-  Result := arr[h];
-  SetLength(arr, h);
+  Result := Self[h];
+  SetLength(Self, h);
 end;
 {$ENDIF}
 
@@ -1265,21 +1445,21 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Position(arr: TArray; item: VarType; index: Integer): Integer>
+ <arr.Position(item: VarType; index: Integer): Integer>
  @action: Returns index position from arr which matched with item.
  @note: Returns -1 if any of arr items doesnt match with item!
 [==============================================================================}
 {$IFDEF TArray_Position1}
 begin
-  for Result := Max(0, index) to High(arr) do
-    if (arr[Result] = item) then
+  for Result := Max(0, index) to High(Self) do
+    if (Self[Result] = item) then
       Exit;
   Result := -1;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Position(arr: TArray; items: TArray; index: Integer): Integer>
+ <arr.Position(items: TArray; index: Integer): Integer>
  @action: Returns index position from arr which matches with items.
  @note: Returns -1 if any of arr items doesnt match with items!
 [==============================================================================}
@@ -1288,16 +1468,16 @@ var
   i: Integer;
 begin
   if (High(items) > -1) then
-  for Result := Max(0, index) to High(arr) do
+  for Result := Max(0, index) to High(Self) do
     for i := 0 to High(items) do
-      if (arr[Result] = items[i]) then
+      if (Self[Result] = items[i]) then
         Exit;
   Result := -1;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Positions(arr: TArray; item: VarType; index: Integer): TIntegerArray>
+ <arr.Positions(item: VarType; index: Integer): TIntegerArray>
  @action: Returns index positions from arr which matched with item.
  @note: None.
 [==============================================================================}
@@ -1306,13 +1486,13 @@ var
   i, r, h, s: Integer;
 begin
   r := 0;
-  h := High(arr);
+  h := High(Self);
   s := Max(0, index);
   if ((h > -1) and (s <= h)) then
   begin
     SetLength(Result, ((h + 1) - s));
     for i := s to h do
-      if (arr[i] = item) then
+      if (Self[i] = item) then
         Result[r.Increase] := i;
   end;
   SetLength(Result, r);
@@ -1320,7 +1500,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Positions(arr: TArray; items: TArray; index: Integer): TIntegerArray>
+ <arr.Positions(items: TArray; index: Integer): TIntegerArray>
  @action: Returns index positions from arr which matches with items.
  @note: None.
 [==============================================================================}
@@ -1329,13 +1509,13 @@ var
   i, r, h, s: Integer;
 begin
   r := 0;
-  h := High(arr);
+  h := High(Self);
   s := Max(0, index);
   if ((h > -1) and (s <= h) and (Length(items) > 0)) then
   begin
     SetLength(Result, ((h + 1) - s));
     for i := s to h do
-      if TArray_Contains(items, arr[i]) then
+      if items.Contains(Self[i]) then
         Result[r.Increase] := i;
   end;
   SetLength(Result, r);
@@ -1343,98 +1523,72 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_PosLast(arr: TArray; item: VarType; index: Integer): Integer>
- @action: Returns last index position from arr which matched with item.
- @note: Returns -1 if any of arr items doesnt match with item!
+ <arr.Put(ID: TIntegerArray; item: VarType): TArray>
+ @action: Returns array arr filled with item to indexes (ID).
+ @note: Unsafe method! No safety checking.
 [==============================================================================}
-{$IFDEF TArray_PosLast1}
-begin
-  for Result := Min(High(arr), index) downto 0 do
-    if (arr[Result] = item) then
-      Exit;
-  Result := -1;
-end;
-{$ENDIF}
-
-{==============================================================================]
- <TArray_Pos(arr: TArray; items: TArray; index: Integer): Integer>
- @action: Returns index position from arr which matches with items.
- @note: Returns -1 if any of arr items doesnt match with items!
-[==============================================================================}
-{$IFDEF TArray_PosLast2}
+{$IFDEF TArray_Put1}
 var
-  h, i: Integer;
+  i: Integer;
 begin
-  h := High(items);
-  for Result := Min(High(arr), index) downto 0 do
-    for i := 0 to h do
-      if (arr[Result] = items[i]) then
-        Exit;
-  Result := -1;
+  SetLength(Result, Length(Self));
+  for i := 0 to High(Self) do
+    Result[i] := Self[i];
+  for i := 0 to High(ID) do
+    Result[ID[i]] := item;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_PosLasts(arr: TArray; item: VarType; index: Integer): TIntegerArray>
- @action: Returns last index positions from arr which matched with item.
- @note: None.
+ <arr.Put(ID: TIntegerArray; items: TArray): TArray>
+ @action: Returns array arr filled with items to indexes (ID).
+ @note: Unsafe method! No safety checking.
 [==============================================================================}
-{$IFDEF TArray_PosLasts1}
+{$IFDEF TArray_Put2}
 var
-  i, r, h, s: Integer;
+  i, l: Integer;
 begin
-  r := 0;
-  h := High(arr);
-  s := Min(index, h);
-  if ((h > -1) and (s > -1)) then
-  begin
-    SetLength(Result, (s + 1));
-    for i := s downto 0 do
-      if (arr[i] = item) then
-        Result[r.Increase] := i;
-  end;
-  SetLength(Result, r);
+  SetLength(Result, Length(Self));
+  l := Length(items);
+  for i := 0 to High(Self) do
+    Result[i] := Self[i];
+  for i := 0 to High(ID) do
+    Result[ID[i]] := items[i mod l];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_PosLasts(arr: TArray; items: TArray; index: Integer): TIntegerArray>
- @action: Returns last index positions from arr which matches with items.
- @note: None.
+ <arr.Put(index: Integer; items: TArray): TArray>
+ @action: Returns array arr filled with items to starting from custom start index.
+ @note: Unsafe method! No safety checking.
 [==============================================================================}
-{$IFDEF TArray_PosLasts2}
+{$IFDEF TArray_Put3}
 var
-  i, r, h, s: Integer;
+  i: Integer;
 begin
-  r := 0;
-  h := High(arr);
-  s := Min(index, h);
-  if ((h > -1) and (s > -1) and (Length(items) > 0)) then
-  begin
-    SetLength(Result, (s + 1));
-    for i := s downto 0 do
-      if TArray_Contains(items, arr[i]) then
-        Result[r.Increase] := i;
-  end;
-  SetLength(Result, r);
+  SetLength(Result, Length(Self));
+  for i := 0 to High(Self) do
+    Result[i] := Self[i];
+  for i := 0 to High(items) do
+    Result[index + i] := items[i];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Push(arr: TArray; item: VarType): Integer>
+ <arr.Push(item: VarType): Integer>
  @action: Places item in array with arr.
  @note: Returns array (arr+item) length.
 [==============================================================================}
 {$IFDEF TArray_Push1}
 begin
-  Result := (Length(arr) + 1);
-  SetLength(arr, Result);
-  arr[Result - 1] := item;
+  Result := (Length(Self) + 1);
+  SetLength(Self, Result);
+  Self[Result - 1] := item;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Push(arr: TArray; items: TArray): Integer>
+ <arr.Push(items: TArray): Integer>
  @action: Places items in array with arr.
  @note: Returns array (arr+item) length.
 [==============================================================================}
@@ -1443,41 +1597,18 @@ var
   h, i, l: Integer;
 begin
   h := High(items);
-  l := Length(arr);
+  l := Length(Self);
   Result := (l + (h + 1));
   if (h < 0) then
     Exit;
-  SetLength(arr, Result);
+  SetLength(Self, Result);
   for i := 0 to h do
-    arr[l + i] := items[i];
+    Self[l + i] := items[i];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Randomize(arr: TArray): Boolean>
- @action: Ramdomizes array with custom shuffles.
- @note: None.
-[==============================================================================}
-{$IFDEF TArray_Randomize}
-var
-  l, i, s, x, y: Integer;
-begin
-  l := Length(arr);
-  Result := ((l > 1) and (shuffles > 0));
-  if not Result then
-    Exit;
-  for s := 1 to shuffles do
-    for i := 0 to (l - 1) do
-    begin
-      x := Random(l);
-      y := Random(l);
-	  Swap(arr[x], arr[y]);
-    end;
-end;
-{$ENDIF}
-
-{==============================================================================]
- <TArray_Remove(arr: TArray; item: VarType; index: Integer; all: Boolean): Integer>
+ <arr.Remove(item: VarType; index: Integer; all: Boolean): Integer>
  @action: Deletes item(s) from array arr. Only 1 if all is set as False.
  @note: Returns amount of items that were removed. Supports start index position.
 [==============================================================================}
@@ -1486,35 +1617,35 @@ var
   l, i, r, m: Integer;
   s: Boolean;
 begin
-  l := Length(arr);
+  l := Length(Self);
   if ((l = 0) or (index >= l)) then
     Exit(0);
   m := Max(0, index);
   s := False;
   r := 0;
   for i := m to (l - 1) do
-    if (s or (arr[i] <> item)) then
-      arr[r.Increase + m] := arr[i]
+    if (s or (Self[i] <> item)) then
+      Self[r.Increase + m] := Self[i]
     else
       s := not all;
-  SetLength(arr, (r + m));
-  Result := (l - Length(arr));
+  SetLength(Self, (r + m));
+  Result := (l - Length(Self));
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Remove(arr: TArray; item: VarType; all: Boolean): Integer>
+ <arr.Remove(item: VarType; all: Boolean): Integer>
  @action: Deletes item(s) from array arr. Only 1 if all is set as False.
  @note: Returns amount of items that were removed.
 [==============================================================================}
 {$IFDEF TArray_Remove2}
 begin
-  Result := TArray_Remove(arr, item, 0, all);
+  Result := Self.Remove(item, 0, all);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Remove(arr: TArray; items: TArray; index: Integer; all: Boolean): Integer>
+ <arr.Remove(items: TArray; index: Integer; all: Boolean): Integer>
  @action: Deletes item(s) from array arr. Only 1 if all is set as False.
  @note: Returns amount of items that were removed. Supports start index position.
 [==============================================================================}
@@ -1523,7 +1654,7 @@ var
   a, b, l, i, r, m: Integer;
   d, s: Boolean;
 begin
-  l := Length(arr);
+  l := Length(Self);
   b := High(items);
   if ((l = 0) or (index >= l) or (b = -1)) then
     Exit(0);
@@ -1535,7 +1666,7 @@ begin
     if not s then
     for a := 0 to b do
     begin
-      d := (arr[i] = items[a]);
+      d := (Self[i] = items[a]);
       if d then
       begin
         s := not all;
@@ -1543,28 +1674,65 @@ begin
       end;
     end;
     if not d then
-      arr[(r.Increase + m)] := arr[i]
+      Self[(r.Increase + m)] := Self[i]
     else
       d := not s;
   end;
-  SetLength(arr, (r + m));
-  Result := (l - Length(arr));
+  SetLength(Self, (r + m));
+  Result := (l - Length(Self));
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Remove(arr: TArray; items: TArray; all: Boolean): Integer>
+ <arr.Remove(items: TArray; all: Boolean): Integer>
  @action: Deletes item(s) from array arr. Only 1 if all is set as False.
  @note: Returns amount of items that were removed.
 [==============================================================================}
 {$IFDEF TArray_Remove4}
 begin
-  Result := TArray_Remove(arr, items, 0, all);
+  Result := Self.Remove(items, 0, all);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Reverse(arr: TArray): Boolean>
+ <arr.Resize(aChange: Integer): Integer>
+ @action: Updates's arr length with aChange.
+ @note: aChange > 0 => Result will give how many elements were added
+        aChange < 0 => Result will give how many elements got deleted (it will be negative value!)
+		aChange = 0 => Returns 0.
+[==============================================================================}
+{$IFDEF TArray_Resize1}
+var
+  l: Integer;
+begin
+  l := Length(Self);
+  SetLength(Self, (l + aChange));
+  Result := (Length(Self) - l);
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Resize(aChange: Integer; null: VarType): Integer>
+ @action: Updates's arr length with aChange.
+ @note: aChange > 0 => Result will give how many elements were added
+        aChange < 0 => Result will give how many elements got deleted (it will be negative value!)
+		aChange = 0 => Returns 0.
+		Supports null for filling created indexes.
+[==============================================================================}
+{$IFDEF TArray_Resize2}
+var
+  i, l: Integer;
+begin
+  l := Length(Self);
+  SetLength(Self, aChange);
+  Result := (Length(Self) - l);
+  for i := 0 to (Result - 1) do
+    Self[l + i] := null;
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Reverse: Boolean>
  @action: Reverses items in array.
  @note: Returns true with success (array contains 2 or more items)
 [==============================================================================}
@@ -1572,16 +1740,16 @@ end;
 var
   i, l: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   Result := (l > 1);
   if Result then
   for i := 0 to ((l div 2) - 1) do
-    Swap(arr[i], arr[(l - i) - 1]);
+    Swap(i, (l - i) - 1);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Reversed(arr: TArray): TArray>
+ <arr.Reversed: TArray>
  @action: Returns reversed version of array arr.
  @note: None.
 [==============================================================================}
@@ -1589,16 +1757,16 @@ end;
 var
   i, l: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, l);
   for i := 0 to (l - 1) do
-    Result[i] := arr[(l - i) - 1];
+    Result[i] := Self[(l - i) - 1];
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Scan(arr: TArray; item: VarType; IDs: TRange; limit: Integer): TIntegerArray>
- @action: Scans array for item by IDs. Returns all the positions.
+ <arr.Scan(item: VarType; ID: TRange; limit: Integer): TIntegerArray>
+ @action: Scans array for item by ID. Returns all the positions.
  @note: Unsafe method! No safety checking.
 [==============================================================================}
 {$IFDEF TArray_Scan1}
@@ -1606,23 +1774,23 @@ var
   i, r: Integer;
 begin
   r := 0;
-  if (High(arr) > -1) then
+  if (High(Self) > -1) then
   begin
-    SetLength(Result, IDs.Size);
-    case IDs.Ascending of
+    SetLength(Result, ID.Size);
+    case ID.Ascending of
       True:
-      for i := IDs.start to IDs.stop do
+      for i := ID.start to ID.stop do
 	    if (r >= limit) then
 		  Break
 		else
-          if (arr[i] = item) then
+          if (Self[i] = item) then
             Result[r.Increase] := i;
       False:
-      for i := IDs.start downto IDs.stop do
+      for i := ID.start downto ID.stop do
 	    if (r >= limit) then
 		  Break
 		else
-          if (arr[i] = item) then
+          if (Self[i] = item) then
 		    Result[r.Increase] := i;
     end;
   end;
@@ -1631,8 +1799,8 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Scan(arr: TArray; item: VarType; IDs: TIntegerArray): TIntegerArray>
- @action: Scans array for item by IDs. Returns all the positions.
+ <arr.Scan(item: VarType; ID: TIntegerArray): TIntegerArray>
+ @action: Scans array for item by ID. Returns all the positions.
  @note: Unsafe method! No safety checking.
 [==============================================================================}
 {$IFDEF TArray_Scan2}
@@ -1640,23 +1808,23 @@ var
   i, r: Integer;
 begin
   r := 0;
-  if (High(arr) > -1) then
+  if (High(Self) > -1) then
   begin
-    SetLength(Result, Length(IDs));
-    for i := 0 to High(IDs) do
+    SetLength(Result, Length(ID));
+    for i := 0 to High(ID) do
 	  if (r >= limit) then
 	    Break
 	  else
-        if (arr[IDs[i]] = item) then
-	      Result[r.Increase] := IDs[i];
+        if (Self[ID[i]] = item) then
+	      Result[r.Increase] := ID[i];
   end;
   SetLength(Result, r);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Scan(arr: TArray; items: TArray; IDs: TRange; limit: Integer): TIntegerArray>
- @action: Scans array for items by IDs. Returns all the positions.
+ <arr.Scan(items: TArray; ID: TRange; limit: Integer): TIntegerArray>
+ @action: Scans array for items by ID. Returns all the positions.
  @note: Unsafe method! No safety checking.
 [==============================================================================}
 {$IFDEF TArray_Scan3}
@@ -1664,23 +1832,23 @@ var
   i, r: Integer;
 begin
   r := 0;
-  if ((High(arr) > -1) and (High(items) > -1)) then
+  if ((High(Self) > -1) and (High(items) > -1)) then
   begin
-    SetLength(Result, IDs.Size);
-    case IDs.Ascending of
+    SetLength(Result, ID.Size);
+    case ID.Ascending of
       True:
-      for i := IDs.start to IDs.stop do
+      for i := ID.start to ID.stop do
         if (r >= limit) then
           Break
         else
-          if TArray_Contains(items, arr[i]) then
+          if items.Contains(Self[i]) then
             Result[r.Increase] := i;
       False:
-      for i := IDs.start downto IDs.stop do
+      for i := ID.start downto ID.stop do
         if (r >= limit) then
           Break
         else
-          if TArray_Contains(items, arr[i]) then
+          if items.Contains(Self[i]) then
             Result[r.Increase] := i;
     end;
   end;
@@ -1689,8 +1857,8 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Scan(arr: TArray; item: VarType; IDs: TIntegerArray): TIntegerArray>
- @action: Scans array for items by IDs. Returns all the positions.
+ <arr.Scan(item: VarType; ID: TIntegerArray): TIntegerArray>
+ @action: Scans array for items by ID. Returns all the positions.
  @note: Unsafe method! No safety checking.
 [==============================================================================}
 {$IFDEF TArray_Scan4}
@@ -1698,74 +1866,22 @@ var
   i, r: Integer;
 begin
   r := 0;
-  if ((High(arr) > -1) and (High(items) > -1)) then
+  if ((High(Self) > -1) and (High(items) > -1)) then
   begin
-    SetLength(Result, Length(IDs));
-    for i := 0 to High(IDs) do
-	  if (r >= limit) then
-	    Break
-	  else
-        if TArray_Contains(items, arr[IDs[i]]) then
-	      Result[r.Increase] := IDs[i];
+    SetLength(Result, Length(ID));
+    for i := 0 to High(ID) do
+      if (r >= limit) then
+        Break
+      else
+        if items.Contains(Self[ID[i]]) then
+	  Result[r.Increase] := ID[i];
   end;
   SetLength(Result, r);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Set(arr: TArray; IDs: TIntegerArray; item: VarType): TArray>
- @action: Returns array arr filled with item to indexes (IDs).
- @note: Unsafe method! No safety checking.
-[==============================================================================}
-{$IFDEF TArray_Set1}
-var
-  i: Integer;
-begin
-  SetLength(Result, Length(arr));
-  for i := 0 to High(arr) do
-    Result[i] := arr[i];
-  for i := 0 to High(IDs) do
-    Result[IDs[i]] := item;
-end;
-{$ENDIF}
-
-{==============================================================================]
- <TArray_Set(arr: TArray; IDs: TIntegerArray; items: TArray): TArray>
- @action: Returns array arr filled with items to indexes (IDs).
- @note: Unsafe method! No safety checking.
-[==============================================================================}
-{$IFDEF TArray_Set2}
-var
-  i, l: Integer;
-begin
-  SetLength(Result, Length(arr));
-  l := Length(items);
-  for i := 0 to High(arr) do
-    Result[i] := arr[i];
-  for i := 0 to High(IDs) do
-    Result[IDs[i]] := items[i mod l];
-end;
-{$ENDIF}
-
-{==============================================================================]
- <TArray_Set(arr: TArray; index: Integer; items: TArray): TArray>
- @action: Returns array arr filled with items to starting from custom start index.
- @note: Unsafe method! No safety checking.
-[==============================================================================}
-{$IFDEF TArray_Set3}
-var
-  i: Integer;
-begin
-  SetLength(Result, Length(arr));
-  for i := 0 to High(arr) do
-    Result[i] := arr[i];
-  for i := 0 to High(items) do
-    Result[index + i] := items[i];
-end;
-{$ENDIF}
-
-{==============================================================================]
- <TArray_Shift(arr: TArray): VarType>
+ <arr.Shift: VarType>
  @action: Shortens the array with first element.
  @note: Returns the removed arr[0].
 [==============================================================================}
@@ -1773,168 +1889,162 @@ end;
 var
   i, l: Integer;
 begin
-  l := (Length(arr) - 1);
+  l := (Length(Self) - 1);
   if (l < 0) then
     Exit;
-  Result := arr[0];
+  Result := Self[0];
   for i := 0 to (l - 1) do
-    arr[i] := arr[i + 1];
-  SetLength(arr, l);
+    Self[i] := Self[i + 1];
+  SetLength(Self, l);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Shift(arr: TArray; shift: Integer): TArray>
- @action: Shortens the array with first SHIFT element(s).
+ <arr.Shift(sCount: Integer): TArray>
+ @action: Shortens the array with first SCOUNT element(s).
  @note: Returns the removed arr[x]s.
 [==============================================================================}
 {$IFDEF TArray_Shift2}
 var
   i, l, s: Integer;
 begin
-  l := Length(arr);
-  s := Max(0, Min(shift, l));
+  l := Length(Self);
+  s := Max(0, Min(sCount, l));
   SetLength(Result, s);
   if (l = 0) then
     Exit;
   for i := 0 to (s - 1) do
-    Result[i] := arr[i];
-  for i := s to High(arr) do
-    arr[i - s] := arr[i];
-  SetLength(arr, (Length(arr) - s));
+    Result[i] := Self[i];
+  for i := s to High(Self) do
+    Self[i - s] := Self[i];
+  SetLength(Self, (Length(Self) - s));
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Size(arr: TArray; size: Integer): Integer>
- @action: Set's arr length to size.
- @note: size > Length(arr) => Result will give how many elements were added
-        size < Length(arr) => Result will give how many elements got deleted (it will be negative value!)
-		size = Length(arr) => Returns 0.
+ <arr.Size(aSize: Integer): Integer> 
+ @action: Sets array size as aSize and then returns the size using Length call.
+ @note: None.
 [==============================================================================}
 {$IFDEF TArray_Size1}
-var
-  l: Integer;
 begin
-  l := Length(arr);
-  SetLength(arr, size);
-  Result := (Length(arr) - l);
+  SetLength(Self, aSize);
+  Result := Length(Self);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Size(arr: TArray; size: Integer; null: VarType): Integer>
- @action: Set's arr length to size.
- @note: Uses null for created indexes.
+ <arr.Size: Integer> 
+ @action: Returns array length.
+ @note: Simply Result := Length(arr);
 [==============================================================================}
 {$IFDEF TArray_Size2}
-var
-  i, l: Integer;
 begin
-  l := Length(arr);
-  SetLength(arr, size);
-  Result := (Length(arr) - l);
-  for i := 0 to (Result - 1) do
-    arr[l + i] := null;
+  Result := Length(Self);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Size(arr: TArray): Integer>
- @action: Returns array length.
- @note: Just normal Length() for this last one, with single parameter.		
-[==============================================================================}
-{$IFDEF TArray_Size3}
-begin
-  Result := Length(arr);
-end; 
-{$ENDIF}
-
-{==============================================================================]
- <TArray_SizeBetween(arr: TArray; x, y: Integer): Boolean>
- @action: Returns true if size is at equal/greater than x and equal/lesser than y.
+ <arr.SizeBetween(arr: TArray; sMin, sMax: Integer): Boolean>
+ @action: Returns true if size is at equal/greater than sMin and equal/lesser than sMax.
  @note: 	
 [==============================================================================}
 {$IFDEF TArray_SizeBetween}
 begin
-  Result := ((Length(arr) >= x) and (Length(arr) <= y));
+  Result := InRange(Length(Self), sMin, sMax);
 end;      
 {$ENDIF}
 
 {==============================================================================]
- <TArray_SizeMax(arr: TArray; y: Integer): Boolean>
- @action: Returns true if size is at equal/lesser than y.
+ <arr.SizeMax(target: Integer): Boolean>
+ @action: Returns true if size is at equal/lesser than target.
  @note: 	
 [==============================================================================}
 {$IFDEF TArray_SizeMax}
 begin
-  Result := (Length(arr) <= y);
+  Result := (Length(Self) <= target);
 end;    
 {$ENDIF}
 
 {==============================================================================]
- <TArray_SizeMin(arr: TArray; x: Integer): Boolean>
- @action: Returns true if size is at equal/greater than x.
+ <arr.SizeMin(target: Integer): Boolean>
+ @action: Returns true if size is at equal/greater than target.
  @note: 	
 [==============================================================================}
 {$IFDEF TArray_SizeMin}
 begin
-  Result := (Length(arr) >= x);
+  Result := (Length(Self) >= target);
 end;   
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Swap(a, b: TArray): Integer> 
- @action: Swaps array a and array b.
- @note: a will be b and b will be a.
+ <arr.Swap(aIndex, bIndex: Integer): Boolean>
+ @action: Swap items aIndex and bIndex in array arr.
+ @note: Returns true with success.
 [==============================================================================}
-{$IFDEF TArray_Swap}
-begin
-  Result := (Length(a) + Length(b));
-  if (Result = 0) then
-    Exit;
-  c := TArray_Dupe(a);
-  a := TArray_Dupe(b);
-  b := TArray_Dupe(c);
-  SetLength(c, 0);
-end; 
-{$ENDIF}
-
-{==============================================================================]
- <TArray_Trade(a, b: TArray): Integer> 
- @action: Swaps array a and array b.
- @note: a will be b and b will be a.
-[==============================================================================}
-{$IFDEF TArray_Trade}
+{$IFDEF TArray_Swap1}
 var
-  x, y: Integer;
+  h: Integer;
 begin
-  x := Length(a);
-  y := Length(b);
-  Result := (x + y);
-  if (Result > 0) then
+  h := High(Self);
+  Result := ((h > 0) and (aIndex <> bIndex) and InRange(aIndex, 0, h) and InRange(bIndex, 0, h));
+  if Result then
   begin
-    c := Copy(a, 0, x);
-    a := Copy(b, 0, y);
-    b := Copy(c, 0, x);
-    SetLength(c, 0);
+    c := Self[aIndex];
+    Self[aIndex] := Self[bIndex];
+    Self[bIndex] := c;
   end;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Undersize(arr: TArray; limit: Integer): Boolean>
+ <arr.Swap(b: TArray): Integer> 
+ @action: Swaps array arr and array b.
+ @note: arr will be b and b will be arr.
+[==============================================================================}
+{$IFDEF TArray_Swap2}
+begin
+  Result := (Length(Self) + Length(b));
+  if (Result = 0) then
+    Exit;
+  a := Self.Dupe;
+  Self := b.Dupe;
+  b := a.Dupe;
+  SetLength(a, 0);
+end; 
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Trade(b: TArray): Integer> 
+ @action: Swaps array arr and array b.
+ @note: arr will be b and b will be arr.
+[==============================================================================}
+{$IFDEF TArray_Trade}
+begin
+  Result := (Length(Self) + Length(b));
+  if (Result > 0) then
+  begin
+    a := Self.Copy;
+    Self := b.Copy;
+    b := a.Copy;
+    SetLength(a, 0);
+  end;
+end;
+{$ENDIF}
+
+{==============================================================================]
+ <arr.Undersize(limit: Integer): Boolean>
  @action: Returns true if size of arr is UNDER the limit.
  @note: None.	
 [==============================================================================} 
 {$IFDEF TArray_Undersize}
 begin
-  Result := (Length(arr) < limit);
+  Result := (Length(Self) < limit);
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Unique(arr: TArray): Integer>
+ <arr.Unique: Integer>
  @action: Removes all duplicates from arr.
  @note: Returns the number of items that were removed.
 [==============================================================================}
@@ -1943,7 +2053,7 @@ var
   a, l, i, j: Integer;
   m: Boolean;
 begin
-  l := Length(arr);
+  l := Length(Self);
   if (l < 2) then
     Exit(0);
   a := 0;
@@ -1951,22 +2061,22 @@ begin
   begin
     for j := 0 to a do
     begin
-      m := (arr[i] = arr[j]);
+      m := (Self[i] = Self[j]);
       if m then
         Break;
     end;
     if m then
       Continue;
-    arr[a.Increment] := arr[i];
+    Self[a.Increment] := Self[i];
   end;
   Result := (l - (a + 1));
   if (Result > 0) then
-    SetLength(arr, (a + 1));
+    SetLength(Self, (a + 1));
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Uniqued(arr: TArray): TArray>
+ <arr.Uniqued: TArray>
  @action: Removes all duplicates from arr.
  @note: Returns the unique version of arr.
 [==============================================================================}
@@ -1974,7 +2084,7 @@ end;
 var
   i, j, l, c: Integer;
 begin
-  l := Length(arr);
+  l := Length(Self);
   SetLength(Result, l);
   if (l > 0) then
   begin
@@ -1983,13 +2093,13 @@ begin
     begin
       j := 0;
       repeat
-        if (arr[i] <> Result[j]) then
+        if (Self[i] <> Result[j]) then
           j := (j + 1)
         else
           j := 0;
       until ((j = 0) or (j > c));
       if (j > 0) then
-        Result[c.Increase] := arr[i];
+        Result[c.Increase] := Self[i];
     end;
     SetLength(Result, c);
   end;
@@ -1997,7 +2107,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Uniques(arr: TArray): TIntegerArray>
+ <arr.Uniques: TIntegerArray>
  @action: Returns the indexes of unique array (arr) items.
  @note: None.
 [==============================================================================}
@@ -2006,7 +2116,7 @@ var
   h, r, x, y: Integer;
   m: Boolean;
 begin
-  h := High(arr);
+  h := High(Self);
   SetLength(Result, (h + 1));
   if (h > 0) then
   begin
@@ -2015,7 +2125,7 @@ begin
     begin
       for y := 0 to h do
       begin
-        m := ((y <> x) and (arr[x] = arr[y]));
+        m := ((y <> x) and (Self[x] = Self[y]));
         if m then
           Break;
       end;
@@ -2030,7 +2140,7 @@ end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Unshift(arr: TArray; item: VarType): Integer>
+ <arr.Unshift(item: VarType): Integer>
  @action: Grows arr with item. Returns the index of added item.
  @note: Adds item to the left side of the array. (Opposite to TArray_Append!
 [==============================================================================}
@@ -2038,16 +2148,16 @@ end;
 var
   i: Integer;
 begin
-  Result := Length(arr);
-  SetLength(arr, (Result + 1));
+  Result := Length(Self);
+  SetLength(Self, (Result + 1));
   for i := Result downto 1 do
-    arr[i] := arr[i - 1];
-  arr[0] := item;
+    Self[i] := Self[i - 1];
+  Self[0] := item;
 end;
 {$ENDIF}
 
 {==============================================================================]
- <TArray_Unshift(arr: TArray; items: TArray): Integer>
+ <arr.Unshift(items: TArray): Integer>
  @action: Grows arr with items. Returns the index of last added item.
  @note: Adds item to the left side of the array. (Opposite to TArray_Append!
 [==============================================================================}
@@ -2057,13 +2167,13 @@ var
 begin
   h := High(items);
   if (h = -1) then
-    Exit(High(arr));
-  l := Length(arr);
+    Exit(High(Self));
+  l := Length(Self);
   Result := (l + h);
-  SetLength(arr, (Result + 1));
+  SetLength(Self, (Result + 1));
   for i := Result downto (h + 1) do
-    arr[i] := arr[i - (h + 1)];
+    Self[i] := Self[i - (h + 1)];
   for i := 0 to h do
-    arr[i] := items[i];
+    Self[i] := items[i];
 end;
 {$ENDIF}
