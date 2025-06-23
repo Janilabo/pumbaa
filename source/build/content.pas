@@ -304,10 +304,10 @@ begin
   AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Integer;');
   AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange): string;');
 
-  AddFunction(@TIntegerArray_Descending, 'function TIntegerArray_Descending(const arr: TIntegerArray): Boolean;');
-  AddFunction(@TIntegerArray_Ascending, 'function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_Descend, 'function TIntegerArray_Descend(const arr: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_Ascend, 'function TIntegerArray_Ascend(const arr: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_Bounds1, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; overload;');
-  AddFunction(@TIntegerArray_Bounds2, 'function TIntegerArray_Bounds(const arr: TIntegerArray; var size: Integer): TRange; overload;');
+  AddFunction(@TIntegerArray_Bounds2, 'function TIntegerArray_Bounds(const arr: TIntegerArray; var aSize: Integer): TRange; overload;');
   AddFunction(@TIntegerArray_Range, 'function TIntegerArray_Range(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Undupe, 'function TIntegerArray_Undupe(var arr: TIntegerArray): Integer;');
   AddFunction(@TIntegerArray_Unduped, 'function TIntegerArray_Unduped(const arr: TIntegerArray): TIntegerArray;');
