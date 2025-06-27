@@ -355,6 +355,7 @@ function TIntegerArray_Group2(const arr: TIntegerArray; const diff: Integer): T2
 function TIntegerArray_Groub1(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Groub(minDiff, maxDiff); end;
 function TIntegerArray_Groub2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Groub(diff); end;
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
+function TIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := T1D.Init(arr); end;
 
 function TPointArray_Bounds1(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Bounds; end;
 function TPointArray_Bounds2(const arr: TPointArray; var width, height: Integer): TBox; overload; cdecl; begin Result := arr.Bounds(width, height); end;
@@ -596,6 +597,24 @@ function TArray_Equal5(const arr, target: TBooleanArray): Boolean; overload; cde
 function TArray_Equal6(const arr, target: TPointArray): Boolean; overload; cdecl; begin Result := arr.Equal(target); end;
 function TArray_Equal7(const arr, target: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Equal(target); end;
 function TArray_Equal8(const arr, target: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Equal(target); end;
+
+function TArray_Exch1(var arr: TIntegerArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
+function TArray_Exch2(var arr: TDoubleArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
+function TArray_Exch3(var arr: TStringArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
+function TArray_Exch4(var arr: TCharArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
+function TArray_Exch5(var arr: TBooleanArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
+function TArray_Exch6(var arr: TPointArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
+function TArray_Exch7(var arr: TBoxArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
+function TArray_Exch8(var arr: TRangeArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
+
+function TArray_Exchange1(var arr: TIntegerArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exchange(aIndex, bIndex); end;
+function TArray_Exchange2(var arr: TDoubleArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exchange(aIndex, bIndex); end;
+function TArray_Exchange3(var arr: TStringArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exchange(aIndex, bIndex); end;
+function TArray_Exchange4(var arr: TCharArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exchange(aIndex, bIndex); end;
+function TArray_Exchange5(var arr: TBooleanArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exchange(aIndex, bIndex); end;
+function TArray_Exchange6(var arr: TPointArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exchange(aIndex, bIndex); end;
+function TArray_Exchange7(var arr: TBoxArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exchange(aIndex, bIndex); end;
+function TArray_Exchange8(var arr: TRangeArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exchange(aIndex, bIndex); end;
 
 function TArray_Extend1(const arr: TIntegerArray; const item: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Extend(item); end;
 function TArray_Extend2(const arr: TDoubleArray; const item: Double): TDoubleArray; overload; cdecl; begin Result := arr.Extend(item); end;
@@ -1213,22 +1232,14 @@ function TArray_SizeMin6(const arr: TPointArray; const target: Integer): Boolean
 function TArray_SizeMin7(const arr: TBoxArray; const target: Integer): Boolean; overload; cdecl; begin Result := arr.SizeMin(target); end;
 function TArray_SizeMin8(const arr: TRangeArray; const target: Integer): Boolean; overload; cdecl; begin Result := arr.SizeMin(target); end;
 
-function TArray_Swap1(var arr: TIntegerArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Swap(aIndex, bIndex); end;
-function TArray_Swap2(var arr: TDoubleArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Swap(aIndex, bIndex); end;
-function TArray_Swap3(var arr: TStringArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Swap(aIndex, bIndex); end;
-function TArray_Swap4(var arr: TCharArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Swap(aIndex, bIndex); end;
-function TArray_Swap5(var arr: TBooleanArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Swap(aIndex, bIndex); end;
-function TArray_Swap6(var arr: TPointArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Swap(aIndex, bIndex); end;
-function TArray_Swap7(var arr: TBoxArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Swap(aIndex, bIndex); end;
-function TArray_Swap8(var arr: TRangeArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Swap(aIndex, bIndex); end;
-function TArray_Swap9(var arr, b: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
-function TArray_Swap10(var arr, b: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
-function TArray_Swap11(var arr, b: TStringArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
-function TArray_Swap12(var arr, b: TCharArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
-function TArray_Swap13(var arr, b: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
-function TArray_Swap14(var arr, b: TPointArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
-function TArray_Swap15(var arr, b: TBoxArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
-function TArray_Swap16(var arr, b: TRangeArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
+function TArray_Swap1(var arr, b: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
+function TArray_Swap2(var arr, b: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
+function TArray_Swap3(var arr, b: TStringArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
+function TArray_Swap4(var arr, b: TCharArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
+function TArray_Swap5(var arr, b: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
+function TArray_Swap6(var arr, b: TPointArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
+function TArray_Swap7(var arr, b: TBoxArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
+function TArray_Swap8(var arr, b: TRangeArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
 
 function TArray_Trade1(var arr, b: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Trade(b); end;
 function TArray_Trade2(var arr, b: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Trade(b); end;
