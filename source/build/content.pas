@@ -117,14 +117,14 @@ begin
   AddFunction(@Boolean_SwitchOn, 'function Boolean_SwitchOn(var x: Boolean; const state: Boolean): Boolean;');
   AddFunction(@Boolean_SwitchOff, 'function Boolean_SwitchOff(var x: Boolean; const state: Boolean): Boolean;');
 
-  AddFunction(@String_Chars, 'function String_Chars(const str: string): TCharArray;');
   AddFunction(@String_At, 'function String_At(const str: string; const s: string; const index: Integer = 1): Boolean;');
+  AddFunction(@String_Chars, 'function String_Chars(const str: string): TCharArray;');
   AddFunction(@String_Get, 'function String_Get(const str: string; const index: Integer; const count: Integer): string;');
   AddFunction(@String_Pick, 'function String_Pick(const str: string; const index: Integer; const count: Integer = 2147483647): string;');
-  AddFunction(@String_PosL, 'function String_PosL(const str: string; const s: string; const index: Integer = 1): Integer;');
-  AddFunction(@String_PosR, 'function String_PosR(const str: string; const s: string; const index: Integer = 2147483647): Integer;');
+  AddFunction(@String_Pos, 'function String_Pos(const str: string; const s: string; const index: Integer = 1): Integer;');
+  AddFunction(@String_Loc, 'function String_Loc(const str: string; const s: string; const index: Integer = 2147483647): Integer;');
   AddFunction(@String_Find, 'function String_Find(const str: string; const s: string; const index: Integer = 1): Integer;');
-  AddFunction(@String_PosLast, 'function String_PosLast(const str: string; const s: string; const index: Integer = 2147483647): Integer;');
+  AddFunction(@String_Location, 'function String_Location(const str: string; const s: string; const index: Integer = 2147483647): Integer;');
   AddFunction(@String_Position, 'function String_Position(const str: string; const s: string; const index: Integer = 1): Integer;');
   AddFunction(@String_Contains, 'function String_Contains(const str: string; const s: string; const index: Integer = 1): Boolean;');
   AddFunction(@String_Includes, 'function String_Includes(const str: string; const s: string; const index: Integer = 2147483647): Boolean;');
@@ -165,6 +165,8 @@ begin
   AddFunction(@String_IDs2, 'function String_IDs(const str: string; const ID: TIntegerArray): TCharArray; overload;');
   AddFunction(@String_IDs3, 'function String_IDs(const str: string; const ID: TIntegerArray; const item: Char): TCharArray; overload;');
   AddFunction(@String_IDs4, 'function String_IDs(const str: string; const ID: TIntegerArray; const items: TCharArray): TCharArray; overload;');
+  AddFunction(@String_Exch, 'function String_Exch(var str: string; const aIndex, bIndex: Integer): Boolean;');
+  AddFunction(@String_Exchange, 'function String_Exchange(var str: string; const aIndex, bIndex: Integer): Boolean;');
 
   AddFunction(@TPoint_Create, 'function TPoint_Create(const X, Y: Integer): TPoint;');
   AddFunction(@TPoint_Build, 'function TPoint_Build(const X, Y: Integer): TPoint;');

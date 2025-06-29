@@ -103,10 +103,10 @@ function String_Chars(const str: string): TCharArray; cdecl; begin Result := str
 function String_At(const str: string; const s: string; const index: Integer = 1): Boolean; cdecl; inline; begin Result := str.At(s, index); end;
 function String_Get(const str: string; const index: Integer; const count: Integer): string; cdecl; inline; begin Result := str.Get(index, count); end;
 function String_Pick(const str: string; const index: Integer; const count: Integer = 2147483647): string; cdecl; begin Result := str.Pick(index, count); end;
-function String_PosL(const str: string; const s: string; const index: Integer = 1): Integer; cdecl; begin Result := str.PosL(s, index); end;
-function String_PosR(const str: string; const s: string; const index: Integer = 2147483647): Integer; cdecl; begin Result := str.PosR(s, index); end;
+function String_Pos(const str: string; const s: string; const index: Integer = 1): Integer; cdecl; begin Result := str.Pos(s, index); end;
+function String_Loc(const str: string; const s: string; const index: Integer = 2147483647): Integer; cdecl; begin Result := str.Loc(s, index); end;
 function String_Find(const str: string; const s: string; const index: Integer = 1): Integer; cdecl; begin Result := str.Find(s, index); end;
-function String_PosLast(const str: string; const s: string; const index: Integer = 2147483647): Integer; cdecl; begin Result := str.PosLast(s, index); end;
+function String_Location(const str: string; const s: string; const index: Integer = 2147483647): Integer; cdecl; begin Result := str.Location(s, index); end;
 function String_Position(const str: string; const s: string; const index: Integer = 1): Integer; cdecl; begin Result := str.Position(s, index); end;
 function String_Contains(const str: string; const s: string; const index: Integer = 1): Boolean; cdecl; begin Result := str.Contains(s, index); end;
 function String_Includes(const str: string; const s: string; const index: Integer = 2147483647): Boolean; cdecl; begin Result := str.Includes(s, index); end;
@@ -147,6 +147,8 @@ function String_IDs1(const str: string): TIntegerArray; overload; cdecl; begin R
 function String_IDs2(const str: string; const ID: TIntegerArray): TCharArray; overload; cdecl; begin Result := str.IDs(ID); end;
 function String_IDs3(const str: string; const ID: TIntegerArray; const item: Char): TCharArray; overload; cdecl; begin Result := str.IDs(ID, item); end;
 function String_IDs4(const str: string; const ID: TIntegerArray; const items: TCharArray): TCharArray; overload; cdecl; begin Result := str.IDs(ID, items); end; 
+function String_Exch(var str: string; const aIndex, bIndex: Integer): Boolean; cdecl; begin Result := str.Exch(aIndex, bIndex); end;
+function String_Exchange(var str: string; const aIndex, bIndex: Integer): Boolean; cdecl; begin Result := str.Exchange(aIndex, bIndex); end;
 
 function TPoint_Create(const X, Y: Integer): TPoint; cdecl; inline; var pt: TPoint; begin Result := pt.Create(X, Y); end;
 function TPoint_Build(const X, Y: Integer): TPoint; cdecl; inline; var pt: TPoint; begin Result := pt.Build(X, Y); end;
