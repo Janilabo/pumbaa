@@ -144,12 +144,14 @@ begin
   AddFunction(@String_EndsWith, 'function String_EndsWith(const str: string; const s: string): Boolean;');
   AddFunction(@String_StartWith, 'function String_StartWith(var str: string; const s: string; const index: Integer = 1): Boolean;');
   AddFunction(@String_EndWith, 'function String_EndWith(var str: string; const s: string; const index: Integer = 2147483647): Boolean;');
-  AddFunction(@String_Behind, 'function String_Behind(const str: string; const index, count: Integer): string;');
-  AddFunction(@String_Ahead, 'function String_Ahead(const str: string; const index, count: Integer): string;');
-  AddFunction(@String_After, 'function String_After(const str: string; const s: string; const index: Integer = 1): string;');
-  AddFunction(@String_Before, 'function String_Before(const str: string; const s: string; const index: Integer = 1): string;');
-  AddFunction(@String_AfterLast, 'function String_AfterLast(const str: string; const s: string; const index: Integer = 2147483647): string;');
-  AddFunction(@String_BeforeLast, 'function String_BeforeLast(const str: string; const s: string; const index: Integer = 2147483647): string;');
+  AddFunction(@String_After1, 'function String_After(const str: string; const s: string; const index: Integer = 1): string; overload;');
+  AddFunction(@String_After2, 'function String_After(const str: string; const index: Integer; const count: Integer = 2147483647): string; overload;');
+  AddFunction(@String_Ahead1, 'function String_Ahead(const str: string; const s: string; const index: Integer = 2147483647): string; overload;');
+  AddFunction(@String_Ahead2, 'function String_Ahead(const str: string; const index: Integer; const count: Integer = 2147483647): string; overload;');
+  AddFunction(@String_Before1, 'function String_Before(const str: string; const s: string; const index: Integer = 1): string; overload;');
+  AddFunction(@String_Before2, 'function String_Before(const str: string; const index: Integer; const count: Integer = 2147483647): string; overload;');
+  AddFunction(@String_Behind1, 'function String_Behind(const str: string; const s: string; const index: Integer = 2147483647): string; overload;');
+  AddFunction(@String_Behind2, 'function String_Behind(const str: string; const index: Integer; const count: Integer = 2147483647): string; overload;');
   AddFunction(@String_Center, 'function String_Center(const str: string; const size: Integer; const fill: Char = #32): string;');
   AddFunction(@String_Stuff, 'function String_Stuff(const str: string; const s: string; const iFrom, iCount: Integer): string;');
   AddFunction(@String_Duplicate, 'function String_Duplicate(const str: string; const x: Integer = 2): string;');
@@ -773,6 +775,24 @@ begin
   AddFunction(@TArray_Flip7, 'function TArray_Flip(var arr: TBoxArray): Boolean; overload;');
   AddFunction(@TArray_Flip8, 'function TArray_Flip(var arr: TRangeArray): Boolean; overload;');
 
+  AddFunction(@TArray_FromLeft1, 'function TArray_FromLeft(const arr: TIntegerArray; const count: Integer; const index: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_FromLeft2, 'function TArray_FromLeft(const arr: TDoubleArray; const count: Integer; const index: Integer = 2147483647): TDoubleArray; overload;');
+  AddFunction(@TArray_FromLeft3, 'function TArray_FromLeft(const arr: TStringArray; const count: Integer; const index: Integer = 2147483647): TStringArray; overload;');
+  AddFunction(@TArray_FromLeft4, 'function TArray_FromLeft(const arr: TCharArray; const count: Integer; const index: Integer = 2147483647): TCharArray; overload;');
+  AddFunction(@TArray_FromLeft5, 'function TArray_FromLeft(const arr: TBooleanArray; const count: Integer; const index: Integer = 2147483647): TBooleanArray; overload;');
+  AddFunction(@TArray_FromLeft6, 'function TArray_FromLeft(const arr: TPointArray; const count: Integer; const index: Integer = 2147483647): TPointArray; overload;');
+  AddFunction(@TArray_FromLeft7, 'function TArray_FromLeft(const arr: TBoxArray; const count: Integer; const index: Integer = 2147483647): TBoxArray; overload;');
+  AddFunction(@TArray_FromLeft8, 'function TArray_FromLeft(const arr: TRangeArray; const count: Integer; const index: Integer = 2147483647): TRangeArray; overload;');
+
+  AddFunction(@TArray_FromRight1, 'function TArray_FromRight(const arr: TIntegerArray; const count: Integer; const index: Integer = 0): TIntegerArray; overload;');
+  AddFunction(@TArray_FromRight2, 'function TArray_FromRight(const arr: TDoubleArray; const count: Integer; const index: Integer = 0): TDoubleArray; overload;');
+  AddFunction(@TArray_FromRight3, 'function TArray_FromRight(const arr: TStringArray; const count: Integer; const index: Integer = 0): TStringArray; overload;');
+  AddFunction(@TArray_FromRight4, 'function TArray_FromRight(const arr: TCharArray; const count: Integer; const index: Integer = 0): TCharArray; overload;');
+  AddFunction(@TArray_FromRight5, 'function TArray_FromRight(const arr: TBooleanArray; const count: Integer; const index: Integer = 0): TBooleanArray; overload;');
+  AddFunction(@TArray_FromRight6, 'function TArray_FromRight(const arr: TPointArray; const count: Integer; const index: Integer = 0): TPointArray; overload;');
+  AddFunction(@TArray_FromRight7, 'function TArray_FromRight(const arr: TBoxArray; const count: Integer; const index: Integer = 0): TBoxArray; overload;');
+  AddFunction(@TArray_FromRight8, 'function TArray_FromRight(const arr: TRangeArray; const count: Integer; const index: Integer = 0): TRangeArray; overload;');
+
   AddFunction(@TArray_Get1, 'function TArray_Get(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Get2, 'function TArray_Get(const arr: TDoubleArray): TDoubleArray; overload;');
   AddFunction(@TArray_Get3, 'function TArray_Get(const arr: TStringArray): TStringArray; overload;');
@@ -978,6 +998,15 @@ begin
   AddFunction(@TArray_Move6, 'function TArray_Move(var arr: TPointArray; oldIndex, newIndex: Integer): Boolean; overload;');
   AddFunction(@TArray_Move7, 'function TArray_Move(var arr: TBoxArray; oldIndex, newIndex: Integer): Boolean; overload;');
   AddFunction(@TArray_Move8, 'function TArray_Move(var arr: TRangeArray; oldIndex, newIndex: Integer): Boolean; overload;');
+  
+  AddFunction(@TArray_Next1, 'function TArray_Next(const arr: TIntegerArray; const index: Integer; const count: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Next2, 'function TArray_Next(const arr: TDoubleArray; const index: Integer; const count: Integer = 2147483647): TDoubleArray; overload;');
+  AddFunction(@TArray_Next3, 'function TArray_Next(const arr: TStringArray; const index: Integer; const count: Integer = 2147483647): TStringArray; overload;');
+  AddFunction(@TArray_Next4, 'function TArray_Next(const arr: TCharArray; const index: Integer; const count: Integer = 2147483647): TCharArray; overload;');
+  AddFunction(@TArray_Next5, 'function TArray_Next(const arr: TBooleanArray; const index: Integer; const count: Integer = 2147483647): TBooleanArray; overload;');
+  AddFunction(@TArray_Next6, 'function TArray_Next(const arr: TPointArray; const index: Integer; const count: Integer = 2147483647): TPointArray; overload;');
+  AddFunction(@TArray_Next7, 'function TArray_Next(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload;');
+  AddFunction(@TArray_Next8, 'function TArray_Next(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload;');
 
   AddFunction(@TArray_Oversize1, 'function TArray_Oversize(const arr: TIntegerArray; const limit: Integer): Boolean; overload;');
   AddFunction(@TArray_Oversize2, 'function TArray_Oversize(const arr: TDoubleArray; const limit: Integer): Boolean; overload;');
@@ -1073,6 +1102,15 @@ begin
   AddFunction(@TArray_Positions14, 'function TArray_Positions(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Positions15, 'function TArray_Positions(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Positions16, 'function TArray_Positions(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TIntegerArray; overload;');
+
+  AddFunction(@TArray_Previous1, 'function TArray_Previous(const arr: TIntegerArray; const index: Integer; const count: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Previous2, 'function TArray_Previous(const arr: TDoubleArray; const index: Integer; const count: Integer = 2147483647): TDoubleArray; overload;');
+  AddFunction(@TArray_Previous3, 'function TArray_Previous(const arr: TStringArray; const index: Integer; const count: Integer = 2147483647): TStringArray; overload;');
+  AddFunction(@TArray_Previous4, 'function TArray_Previous(const arr: TCharArray; const index: Integer; const count: Integer = 2147483647): TCharArray; overload;');
+  AddFunction(@TArray_Previous5, 'function TArray_Previous(const arr: TBooleanArray; const index: Integer; const count: Integer = 2147483647): TBooleanArray; overload;');
+  AddFunction(@TArray_Previous6, 'function TArray_Previous(const arr: TPointArray; const index: Integer; const count: Integer = 2147483647): TPointArray; overload;');
+  AddFunction(@TArray_Previous7, 'function TArray_Previous(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload;');
+  AddFunction(@TArray_Previous8, 'function TArray_Previous(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload;');
 
   AddFunction(@TArray_Put1, 'function TArray_Put(const arr: TIntegerArray; const ID: TIntegerArray; const item: Integer): TIntegerArray; overload;');
   AddFunction(@TArray_Put2, 'function TArray_Put(const arr: TDoubleArray; const ID: TIntegerArray; const item: Double): TDoubleArray; overload;');

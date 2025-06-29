@@ -126,12 +126,14 @@ function String_StartsWith(const str: string; const s: string): Boolean; cdecl; 
 function String_EndsWith(const str: string; const s: string): Boolean; cdecl; begin Result := str.EndsWith(s); end;
 function String_StartWith(var str: string; const s: string; const index: Integer = 1): Boolean; cdecl; begin Result := str.StartWith(s, index); end;
 function String_EndWith(var str: string; const s: string; const index: Integer = 2147483647): Boolean; cdecl; begin Result := str.EndWith(s, index); end;
-function String_Behind(const str: string; const index, count: Integer): string; cdecl; begin Result := str.Behind(index, count); end;
-function String_Ahead(const str: string; const index, count: Integer): string; cdecl; begin Result := str.Ahead(index, count); end;
-function String_After(const str: string; const s: string; const index: Integer = 1): string; cdecl; begin Result := str.After(s, index); end;
-function String_Before(const str: string; const s: string; const index: Integer = 1): string; cdecl; begin Result := str.Before(s, index); end;
-function String_AfterLast(const str: string; const s: string; const index: Integer = 2147483647): string; cdecl; begin Result := str.AfterLast(s, index); end;
-function String_BeforeLast(const str: string; const s: string; const index: Integer = 2147483647): string; cdecl; begin Result := str.BeforeLast(s, index); end;
+function String_After1(const str: string; const s: string; const index: Integer = 1): string; overload; cdecl; begin Result := str.After(s, index); end;
+function String_After2(const str: string; const index: Integer; const count: Integer = 2147483647): string; overload; cdecl; begin Result := str.After(index, count); end;
+function String_Ahead1(const str: string; const s: string; const index: Integer = 2147483647): string; overload; cdecl; begin Result := str.Ahead(s, index); end;
+function String_Ahead2(const str: string; const index: Integer; const count: Integer = 2147483647): string; overload; cdecl; begin Result := str.Ahead(index, count); end;
+function String_Before1(const str: string; const s: string; const index: Integer = 1): string; overload; cdecl; begin Result := str.Before(s, index); end;
+function String_Before2(const str: string; const index: Integer; const count: Integer = 2147483647): string; overload; cdecl; begin Result := str.Before(index, count); end;
+function String_Behind1(const str: string; const s: string; const index: Integer = 2147483647): string; overload; cdecl; begin Result := str.Behind(s, index); end;
+function String_Behind2(const str: string; const index: Integer; const count: Integer = 2147483647): string; overload; cdecl; begin Result := str.Behind(index, count); end;
 function String_Center(const str: string; const size: Integer; const fill: Char = #32): string; cdecl; begin Result := str.Center(size, fill); end;
 function String_Stuff(const str: string; const s: string; const iFrom, iCount: Integer): string; cdecl; begin Result := str.Stuff(s, iFrom, iCount); end;
 function String_Duplicate(const str: string; const x: Integer = 2): string; cdecl; begin Result := str.Duplicate(x); end;
@@ -755,6 +757,24 @@ function TArray_Flip6(var arr: TPointArray): Boolean; overload; cdecl; begin Res
 function TArray_Flip7(var arr: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Flip; end;
 function TArray_Flip8(var arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Flip; end;
 
+function TArray_FromLeft1(const arr: TIntegerArray; const count: Integer; const index: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.FromLeft(count, index); end;
+function TArray_FromLeft2(const arr: TDoubleArray; const count: Integer; const index: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.FromLeft(count, index); end;
+function TArray_FromLeft3(const arr: TStringArray; const count: Integer; const index: Integer = 2147483647): TStringArray; overload; cdecl; begin Result := arr.FromLeft(count, index); end;
+function TArray_FromLeft4(const arr: TCharArray; const count: Integer; const index: Integer = 2147483647): TCharArray; overload; cdecl; begin Result := arr.FromLeft(count, index); end;
+function TArray_FromLeft5(const arr: TBooleanArray; const count: Integer; const index: Integer = 2147483647): TBooleanArray; overload; cdecl; begin Result := arr.FromLeft(count, index); end;
+function TArray_FromLeft6(const arr: TPointArray; const count: Integer; const index: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.FromLeft(count, index); end;
+function TArray_FromLeft7(const arr: TBoxArray; const count: Integer; const index: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.FromLeft(count, index); end;
+function TArray_FromLeft8(const arr: TRangeArray; const count: Integer; const index: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.FromLeft(count, index); end;
+
+function TArray_FromRight1(const arr: TIntegerArray; const count: Integer; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.FromRight(count, index); end;
+function TArray_FromRight2(const arr: TDoubleArray; const count: Integer; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.FromRight(count, index); end;
+function TArray_FromRight3(const arr: TStringArray; const count: Integer; const index: Integer = 0): TStringArray; overload; cdecl; begin Result := arr.FromRight(count, index); end;
+function TArray_FromRight4(const arr: TCharArray; const count: Integer; const index: Integer = 0): TCharArray; overload; cdecl; begin Result := arr.FromRight(count, index); end;
+function TArray_FromRight5(const arr: TBooleanArray; const count: Integer; const index: Integer = 0): TBooleanArray; overload; cdecl; begin Result := arr.FromRight(count, index); end;
+function TArray_FromRight6(const arr: TPointArray; const count: Integer; const index: Integer = 0): TPointArray; overload; cdecl; begin Result := arr.FromRight(count, index); end;
+function TArray_FromRight7(const arr: TBoxArray; const count: Integer; const index: Integer = 0): TBoxArray; overload; cdecl; begin Result := arr.FromRight(count, index); end;
+function TArray_FromRight8(const arr: TRangeArray; const count: Integer; const index: Integer = 0): TRangeArray; overload; cdecl; begin Result := arr.FromRight(count, index); end;
+
 function TArray_Get1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Get; end;
 function TArray_Get2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Get; end;
 function TArray_Get3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Get; end;
@@ -961,6 +981,15 @@ function TArray_Move6(var arr: TPointArray; oldIndex, newIndex: Integer): Boolea
 function TArray_Move7(var arr: TBoxArray; oldIndex, newIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Move(oldIndex, newIndex); end;
 function TArray_Move8(var arr: TRangeArray; oldIndex, newIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Move(oldIndex, newIndex); end;
 
+function TArray_Next1(const arr: TIntegerArray; const index: Integer; const count: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+function TArray_Next2(const arr: TDoubleArray; const index: Integer; const count: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+function TArray_Next3(const arr: TStringArray; const index: Integer; const count: Integer = 2147483647): TStringArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+function TArray_Next4(const arr: TCharArray; const index: Integer; const count: Integer = 2147483647): TCharArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+function TArray_Next5(const arr: TBooleanArray; const index: Integer; const count: Integer = 2147483647): TBooleanArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+function TArray_Next6(const arr: TPointArray; const index: Integer; const count: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+function TArray_Next7(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+function TArray_Next8(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+
 function TArray_Oversize1(const arr: TIntegerArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Oversize(limit); end;
 function TArray_Oversize2(const arr: TDoubleArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Oversize(limit); end;
 function TArray_Oversize3(const arr: TStringArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Oversize(limit); end;
@@ -1055,6 +1084,15 @@ function TArray_Positions13(const arr: TBooleanArray; const items: TBooleanArray
 function TArray_Positions14(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Positions(items, index); end;
 function TArray_Positions15(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Positions(items, index); end;
 function TArray_Positions16(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Positions(items, index); end;
+
+function TArray_Previous1(const arr: TIntegerArray; const index: Integer; const count: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
+function TArray_Previous2(const arr: TDoubleArray; const index: Integer; const count: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
+function TArray_Previous3(const arr: TStringArray; const index: Integer; const count: Integer = 2147483647): TStringArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
+function TArray_Previous4(const arr: TCharArray; const index: Integer; const count: Integer = 2147483647): TCharArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
+function TArray_Previous5(const arr: TBooleanArray; const index: Integer; const count: Integer = 2147483647): TBooleanArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
+function TArray_Previous6(const arr: TPointArray; const index: Integer; const count: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
+function TArray_Previous7(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
+function TArray_Previous8(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
 
 function TArray_Put1(const arr: TIntegerArray; const ID: TIntegerArray; const item: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Put(ID, item); end;
 function TArray_Put2(const arr: TDoubleArray; const ID: TIntegerArray; const item: Double): TDoubleArray; overload; cdecl; begin Result := arr.Put(ID, item); end;
