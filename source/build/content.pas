@@ -899,6 +899,23 @@ begin
   AddFunction(@TArray_Len23, 'function TArray_Len(var arr: TBoxArray; const aSize: Integer; const null: TBox): Integer; overload;');
   AddFunction(@TArray_Len24, 'function TArray_Len(var arr: TRangeArray; const aSize: Integer; const null: TRange): Integer; overload;');
 
+  AddFunction(@TArray_Loc1, 'function TArray_Loc(const arr: TIntegerArray; const item: Integer; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc2, 'function TArray_Loc(const arr: TDoubleArray; const item: Double; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc3, 'function TArray_Loc(const arr: TStringArray; const item: string; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc4, 'function TArray_Loc(const arr: TCharArray; const item: Char; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc5, 'function TArray_Loc(const arr: TBooleanArray; const item: Boolean; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc6, 'function TArray_Loc(const arr: TPointArray; const item: TPoint; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc7, 'function TArray_Loc(const arr: TBoxArray; const item: TBox; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc8, 'function TArray_Loc(const arr: TRangeArray; const item: TRange; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc9, 'function TArray_Loc(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc10, 'function TArray_Loc(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc11, 'function TArray_Loc(const arr: TStringArray; const items: TStringArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc12, 'function TArray_Loc(const arr: TCharArray; const items: TCharArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc13, 'function TArray_Loc(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc14, 'function TArray_Loc(const arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc15, 'function TArray_Loc(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Loc16, 'function TArray_Loc(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647): Integer; overload;');
+
   AddFunction(@TArray_Location1, 'function TArray_Location(const arr: TIntegerArray; const item: Integer; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TArray_Location2, 'function TArray_Location(const arr: TDoubleArray; const item: Double; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TArray_Location3, 'function TArray_Location(const arr: TStringArray; const item: string; const index: Integer = 2147483647): Integer; overload;');
@@ -1004,22 +1021,22 @@ begin
   AddFunction(@TArray_Pop15, 'function TArray_Pop(var arr: TBoxArray; const null: TBox): TBox; overload;');
   AddFunction(@TArray_Pop16, 'function TArray_Pop(var arr: TRangeArray; const null: TRange): TRange; overload;');
 
-  AddFunction(@TArray_Pos_Integer, 'function TArray_Pos(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_Double, 'function TArray_Pos(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_String, 'function TArray_Pos(const arr: TStringArray; const item: string; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_Char, 'function TArray_Pos(const arr: TCharArray; const item: Char; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_Boolean, 'function TArray_Pos(const arr: TBooleanArray; const item: Boolean; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_TPoint, 'function TArray_Pos(const arr: TPointArray; const item: TPoint; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_TBox, 'function TArray_Pos(const arr: TBoxArray; const item: TBox; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_TRange, 'function TArray_Pos(const arr: TRangeArray; const item: TRange; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_Integer_1, 'function TArray_Pos(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_Double_1, 'function TArray_Pos(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_String_1, 'function TArray_Pos(const arr: TStringArray; const items: TStringArray; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_Char_1, 'function TArray_Pos(const arr: TCharArray; const items: TCharArray; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_Boolean_1, 'function TArray_Pos(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_TPoint_1, 'function TArray_Pos(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_TBox_1, 'function TArray_Pos(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): Integer; overload;');
-  AddFunction(@TArray_Pos_TRange_1, 'function TArray_Pos(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos1, 'function TArray_Pos(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos2, 'function TArray_Pos(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos3, 'function TArray_Pos(const arr: TStringArray; const item: string; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos4, 'function TArray_Pos(const arr: TCharArray; const item: Char; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos5, 'function TArray_Pos(const arr: TBooleanArray; const item: Boolean; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos6, 'function TArray_Pos(const arr: TPointArray; const item: TPoint; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos7, 'function TArray_Pos(const arr: TBoxArray; const item: TBox; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos8, 'function TArray_Pos(const arr: TRangeArray; const item: TRange; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos9, 'function TArray_Pos(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos10, 'function TArray_Pos(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos11, 'function TArray_Pos(const arr: TStringArray; const items: TStringArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos12, 'function TArray_Pos(const arr: TCharArray; const items: TCharArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos13, 'function TArray_Pos(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos14, 'function TArray_Pos(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos15, 'function TArray_Pos(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Pos16, 'function TArray_Pos(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): Integer; overload;');
 
   AddFunction(@TArray_Position1, 'function TArray_Position(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload;');
   AddFunction(@TArray_Position2, 'function TArray_Position(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload;');

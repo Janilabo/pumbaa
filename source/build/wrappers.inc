@@ -881,6 +881,23 @@ function TArray_Len22(var arr: TPointArray; const aSize: Integer; const null: TP
 function TArray_Len23(var arr: TBoxArray; const aSize: Integer; const null: TBox): Integer; overload; cdecl; begin Result := arr.Len(aSize, null); end;
 function TArray_Len24(var arr: TRangeArray; const aSize: Integer; const null: TRange): Integer; overload; cdecl; begin Result := arr.Len(aSize, null); end;
 
+function TArray_Loc1(const arr: TIntegerArray; const item: Integer; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
+function TArray_Loc2(const arr: TDoubleArray; const item: Double; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
+function TArray_Loc3(const arr: TStringArray; const item: string; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
+function TArray_Loc4(const arr: TCharArray; const item: Char; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
+function TArray_Loc5(const arr: TBooleanArray; const item: Boolean; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
+function TArray_Loc6(const arr: TPointArray; const item: TPoint; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
+function TArray_Loc7(const arr: TBoxArray; const item: TBox; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
+function TArray_Loc8(const arr: TRangeArray; const item: TRange; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
+function TArray_Loc9(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(items, index); end;
+function TArray_Loc10(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(items, index); end;
+function TArray_Loc11(const arr: TStringArray; const items: TStringArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(items, index); end;
+function TArray_Loc12(const arr: TCharArray; const items: TCharArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(items, index); end;
+function TArray_Loc13(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(items, index); end;
+function TArray_Loc14(const arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(items, index); end;
+function TArray_Loc15(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(items, index); end;
+function TArray_Loc16(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(items, index); end;
+
 function TArray_Location1(const arr: TIntegerArray; const item: Integer; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Location(item, index); end;
 function TArray_Location2(const arr: TDoubleArray; const item: Double; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Location(item, index); end;
 function TArray_Location3(const arr: TStringArray; const item: string; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Location(item, index); end;
@@ -986,22 +1003,22 @@ function TArray_Pop14(var arr: TPointArray; const null: TPoint): TPoint; overloa
 function TArray_Pop15(var arr: TBoxArray; const null: TBox): TBox; overload; cdecl; begin Result := arr.Pop(null); end;
 function TArray_Pop16(var arr: TRangeArray; const null: TRange): TRange; overload; cdecl; begin Result := arr.Pop(null); end;
 
-function TArray_Pos_Integer(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, item, index); end;
-function TArray_Pos_Double(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, item, index); end;
-function TArray_Pos_String(const arr: TStringArray; const item: string; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, item, index); end;
-function TArray_Pos_Char(const arr: TCharArray; const item: Char; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, item, index); end;
-function TArray_Pos_Boolean(const arr: TBooleanArray; const item: Boolean; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, item, index); end;
-function TArray_Pos_TPoint(const arr: TPointArray; const item: TPoint; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, item, index); end;
-function TArray_Pos_TBox(const arr: TBoxArray; const item: TBox; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, item, index); end;
-function TArray_Pos_TRange(const arr: TRangeArray; const item: TRange; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, item, index); end;
-function TArray_Pos_Integer_1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, items, index); end;
-function TArray_Pos_Double_1(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, items, index); end;
-function TArray_Pos_String_1(const arr: TStringArray; const items: TStringArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, items, index); end;
-function TArray_Pos_Char_1(const arr: TCharArray; const items: TCharArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, items, index); end;
-function TArray_Pos_Boolean_1(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, items, index); end;
-function TArray_Pos_TPoint_1(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, items, index); end;
-function TArray_Pos_TBox_1(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, items, index); end;
-function TArray_Pos_TRange_1(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := TArray_Pos(arr, items, index); end;
+function TArray_Pos1(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
+function TArray_Pos2(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
+function TArray_Pos3(const arr: TStringArray; const item: string; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
+function TArray_Pos4(const arr: TCharArray; const item: Char; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
+function TArray_Pos5(const arr: TBooleanArray; const item: Boolean; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
+function TArray_Pos6(const arr: TPointArray; const item: TPoint; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
+function TArray_Pos7(const arr: TBoxArray; const item: TBox; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
+function TArray_Pos8(const arr: TRangeArray; const item: TRange; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
+function TArray_Pos9(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(items, index); end;
+function TArray_Pos10(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(items, index); end;
+function TArray_Pos11(const arr: TStringArray; const items: TStringArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(items, index); end;
+function TArray_Pos12(const arr: TCharArray; const items: TCharArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(items, index); end;
+function TArray_Pos13(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(items, index); end;
+function TArray_Pos14(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(items, index); end;
+function TArray_Pos15(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(items, index); end;
+function TArray_Pos16(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(items, index); end;
 
 function TArray_Position1(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Position(item, index); end;
 function TArray_Position2(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Position(item, index); end;
