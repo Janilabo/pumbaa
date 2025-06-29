@@ -598,6 +598,15 @@ begin
   AddFunction(@TArray_Dupe7, 'function TArray_Dupe(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Dupe8, 'function TArray_Dupe(const arr: TRangeArray): TRangeArray; overload;');
 
+  AddFunction(@TArray_Duplicate1, 'function TArray_Duplicate(const arr: TIntegerArray; const xTimes: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TArray_Duplicate2, 'function TArray_Duplicate(const arr: TDoubleArray; const xTimes: Integer = 1): TDoubleArray; overload;');
+  AddFunction(@TArray_Duplicate3, 'function TArray_Duplicate(const arr: TStringArray; const xTimes: Integer = 1): TStringArray; overload;');
+  AddFunction(@TArray_Duplicate4, 'function TArray_Duplicate(const arr: TCharArray; const xTimes: Integer = 1): TCharArray; overload;');
+  AddFunction(@TArray_Duplicate5, 'function TArray_Duplicate(const arr: TBooleanArray; const xTimes: Integer = 1): TBooleanArray; overload;');
+  AddFunction(@TArray_Duplicate6, 'function TArray_Duplicate(const arr: TPointArray; const xTimes: Integer = 1): TPointArray; overload;');
+  AddFunction(@TArray_Duplicate7, 'function TArray_Duplicate(const arr: TBoxArray; const xTimes: Integer = 1): TBoxArray; overload;');
+  AddFunction(@TArray_Duplicate8, 'function TArray_Duplicate(const arr: TRangeArray; const xTimes: Integer = 1): TRangeArray; overload;');
+
   AddFunction(@TArray_Empty1, 'function TArray_Empty(const arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Empty2, 'function TArray_Empty(const arr: TDoubleArray): Boolean; overload;');
   AddFunction(@TArray_Empty3, 'function TArray_Empty(const arr: TStringArray): Boolean; overload;');
@@ -1249,6 +1258,42 @@ begin
   AddFunction(@TArray_SizeMin6, 'function TArray_SizeMin(const arr: TPointArray; const target: Integer): Boolean; overload;');
   AddFunction(@TArray_SizeMin7, 'function TArray_SizeMin(const arr: TBoxArray; const target: Integer): Boolean; overload;');
   AddFunction(@TArray_SizeMin8, 'function TArray_SizeMin(const arr: TRangeArray; const target: Integer): Boolean; overload;');
+
+  AddFunction(@TArray_SubarrayLocation1, 'function TArray_SubarrayLocation(const arr: TIntegerArray; const pattern: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayLocation2, 'function TArray_SubarrayLocation(const arr: TDoubleArray; const pattern: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayLocation3, 'function TArray_SubarrayLocation(const arr: TStringArray; const pattern: TStringArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayLocation4, 'function TArray_SubarrayLocation(const arr: TCharArray; const pattern: TCharArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayLocation5, 'function TArray_SubarrayLocation(const arr: TBooleanArray; const pattern: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayLocation6, 'function TArray_SubarrayLocation(const arr: TPointArray; const pattern: TPointArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayLocation7, 'function TArray_SubarrayLocation(const arr: TBoxArray; const pattern: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayLocation8, 'function TArray_SubarrayLocation(const arr: TRangeArray; const pattern: TRangeArray): Integer; overload;');
+  
+  AddFunction(@TArray_SubarrayLocations1, 'function TArray_SubarrayLocations(const arr: TIntegerArray; const pattern: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayLocations2, 'function TArray_SubarrayLocations(const arr: TDoubleArray; const pattern: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayLocations3, 'function TArray_SubarrayLocations(const arr: TStringArray; const pattern: TStringArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayLocations4, 'function TArray_SubarrayLocations(const arr: TCharArray; const pattern: TCharArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayLocations5, 'function TArray_SubarrayLocations(const arr: TBooleanArray; const pattern: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayLocations6, 'function TArray_SubarrayLocations(const arr: TPointArray; const pattern: TPointArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayLocations7, 'function TArray_SubarrayLocations(const arr: TBoxArray; const pattern: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayLocations8, 'function TArray_SubarrayLocations(const arr: TRangeArray; const pattern: TRangeArray): TIntegerArray; overload;');
+
+  AddFunction(@TArray_SubarrayPosition1, 'function TArray_SubarrayPosition(const arr: TIntegerArray; const pattern: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayPosition2, 'function TArray_SubarrayPosition(const arr: TDoubleArray; const pattern: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayPosition3, 'function TArray_SubarrayPosition(const arr: TStringArray; const pattern: TStringArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayPosition4, 'function TArray_SubarrayPosition(const arr: TCharArray; const pattern: TCharArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayPosition5, 'function TArray_SubarrayPosition(const arr: TBooleanArray; const pattern: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayPosition6, 'function TArray_SubarrayPosition(const arr: TPointArray; const pattern: TPointArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayPosition7, 'function TArray_SubarrayPosition(const arr: TBoxArray; const pattern: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_SubarrayPosition8, 'function TArray_SubarrayPosition(const arr: TRangeArray; const pattern: TRangeArray): Integer; overload;');
+
+  AddFunction(@TArray_SubarrayPositions1, 'function TArray_SubarrayPositions(const arr: TIntegerArray; const pattern: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayPositions2, 'function TArray_SubarrayPositions(const arr: TDoubleArray; const pattern: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayPositions3, 'function TArray_SubarrayPositions(const arr: TStringArray; const pattern: TStringArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayPositions4, 'function TArray_SubarrayPositions(const arr: TCharArray; const pattern: TCharArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayPositions5, 'function TArray_SubarrayPositions(const arr: TBooleanArray; const pattern: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayPositions6, 'function TArray_SubarrayPositions(const arr: TPointArray; const pattern: TPointArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayPositions7, 'function TArray_SubarrayPositions(const arr: TBoxArray; const pattern: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SubarrayPositions8, 'function TArray_SubarrayPositions(const arr: TRangeArray; const pattern: TRangeArray): TIntegerArray; overload;');
 
   AddFunction(@TArray_Swap1, 'function TArray_Swap(var arr, b: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Swap2, 'function TArray_Swap(var arr, b: TDoubleArray): Integer; overload;');

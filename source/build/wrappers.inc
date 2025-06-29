@@ -307,8 +307,8 @@ function TIntegerArray_Mode(const arr: TIntegerArray): Integer; cdecl; begin Res
 function TIntegerArray_Median(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Median; end;
 function TIntegerArray_Middle(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Middle; end;
 function TIntegerArray_Center(const arr: TIntegerArray): Integer; cdecl; begin Result := arr.Center; end;
-function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.MFrequent(null); end;
-function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.LFrequent(null); end;
+function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.MostFreq(null); end;
+function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.LeastFreq(null); end;
 function TIntegerArray_BubbleSort(var arr: TIntegerArray; const ascending: Boolean = True): Integer; cdecl; begin Result := arr.BubbleSort(ascending); end;
 function TIntegerArray_BubbleSort2(var arr: TIntegerArray; const ascending: Boolean = True): Integer; cdecl; begin Result := arr.BubbleSort2(ascending); end;
 function TIntegerArray_BubbleSortOptimized(var arr: TIntegerArray; const ascending: Boolean = True): Integer; cdecl; begin Result := arr.BubbleSortOptimized(ascending); end;
@@ -579,6 +579,15 @@ function TArray_Dupe5(const arr: TBooleanArray): TBooleanArray; overload; cdecl;
 function TArray_Dupe6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Dupe; end;
 function TArray_Dupe7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Dupe; end;
 function TArray_Dupe8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Dupe; end;
+
+function TArray_Duplicate1(const arr: TIntegerArray; const xTimes: Integer = 1): TIntegerArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
+function TArray_Duplicate2(const arr: TDoubleArray; const xTimes: Integer = 1): TDoubleArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
+function TArray_Duplicate3(const arr: TStringArray; const xTimes: Integer = 1): TStringArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
+function TArray_Duplicate4(const arr: TCharArray; const xTimes: Integer = 1): TCharArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
+function TArray_Duplicate5(const arr: TBooleanArray; const xTimes: Integer = 1): TBooleanArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
+function TArray_Duplicate6(const arr: TPointArray; const xTimes: Integer = 1): TPointArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
+function TArray_Duplicate7(const arr: TBoxArray; const xTimes: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
+function TArray_Duplicate8(const arr: TRangeArray; const xTimes: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
 
 function TArray_Empty1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Empty; end;
 function TArray_Empty2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Empty; end;
@@ -1231,6 +1240,42 @@ function TArray_SizeMin5(const arr: TBooleanArray; const target: Integer): Boole
 function TArray_SizeMin6(const arr: TPointArray; const target: Integer): Boolean; overload; cdecl; begin Result := arr.SizeMin(target); end;
 function TArray_SizeMin7(const arr: TBoxArray; const target: Integer): Boolean; overload; cdecl; begin Result := arr.SizeMin(target); end;
 function TArray_SizeMin8(const arr: TRangeArray; const target: Integer): Boolean; overload; cdecl; begin Result := arr.SizeMin(target); end;
+
+function TArray_SubarrayLocation1(const arr: TIntegerArray; const pattern: TIntegerArray): Integer; overload; cdecl; begin Result := arr.SubarrayLocation(pattern); end;
+function TArray_SubarrayLocation2(const arr: TDoubleArray; const pattern: TDoubleArray): Integer; overload; cdecl; begin Result := arr.SubarrayLocation(pattern); end;
+function TArray_SubarrayLocation3(const arr: TStringArray; const pattern: TStringArray): Integer; overload; cdecl; begin Result := arr.SubarrayLocation(pattern); end;
+function TArray_SubarrayLocation4(const arr: TCharArray; const pattern: TCharArray): Integer; overload; cdecl; begin Result := arr.SubarrayLocation(pattern); end;
+function TArray_SubarrayLocation5(const arr: TBooleanArray; const pattern: TBooleanArray): Integer; overload; cdecl; begin Result := arr.SubarrayLocation(pattern); end;
+function TArray_SubarrayLocation6(const arr: TPointArray; const pattern: TPointArray): Integer; overload; cdecl; begin Result := arr.SubarrayLocation(pattern); end;
+function TArray_SubarrayLocation7(const arr: TBoxArray; const pattern: TBoxArray): Integer; overload; cdecl; begin Result := arr.SubarrayLocation(pattern); end;
+function TArray_SubarrayLocation8(const arr: TRangeArray; const pattern: TRangeArray): Integer; overload; cdecl; begin Result := arr.SubarrayLocation(pattern); end;
+
+function TArray_SubarrayLocations1(const arr: TIntegerArray; const pattern: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayLocations(pattern); end;
+function TArray_SubarrayLocations2(const arr: TDoubleArray; const pattern: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayLocations(pattern); end;
+function TArray_SubarrayLocations3(const arr: TStringArray; const pattern: TStringArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayLocations(pattern); end;
+function TArray_SubarrayLocations4(const arr: TCharArray; const pattern: TCharArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayLocations(pattern); end;
+function TArray_SubarrayLocations5(const arr: TBooleanArray; const pattern: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayLocations(pattern); end;
+function TArray_SubarrayLocations6(const arr: TPointArray; const pattern: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayLocations(pattern); end;
+function TArray_SubarrayLocations7(const arr: TBoxArray; const pattern: TBoxArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayLocations(pattern); end;
+function TArray_SubarrayLocations8(const arr: TRangeArray; const pattern: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayLocations(pattern); end;
+
+function TArray_SubarrayPosition1(const arr: TIntegerArray; const pattern: TIntegerArray): Integer; overload; cdecl; begin Result := arr.SubarrayPosition(pattern); end;
+function TArray_SubarrayPosition2(const arr: TDoubleArray; const pattern: TDoubleArray): Integer; overload; cdecl; begin Result := arr.SubarrayPosition(pattern); end;
+function TArray_SubarrayPosition3(const arr: TStringArray; const pattern: TStringArray): Integer; overload; cdecl; begin Result := arr.SubarrayPosition(pattern); end;
+function TArray_SubarrayPosition4(const arr: TCharArray; const pattern: TCharArray): Integer; overload; cdecl; begin Result := arr.SubarrayPosition(pattern); end;
+function TArray_SubarrayPosition5(const arr: TBooleanArray; const pattern: TBooleanArray): Integer; overload; cdecl; begin Result := arr.SubarrayPosition(pattern); end;
+function TArray_SubarrayPosition6(const arr: TPointArray; const pattern: TPointArray): Integer; overload; cdecl; begin Result := arr.SubarrayPosition(pattern); end;
+function TArray_SubarrayPosition7(const arr: TBoxArray; const pattern: TBoxArray): Integer; overload; cdecl; begin Result := arr.SubarrayPosition(pattern); end;
+function TArray_SubarrayPosition8(const arr: TRangeArray; const pattern: TRangeArray): Integer; overload; cdecl; begin Result := arr.SubarrayPosition(pattern); end;
+
+function TArray_SubarrayPositions1(const arr: TIntegerArray; const pattern: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayPositions(pattern); end;
+function TArray_SubarrayPositions2(const arr: TDoubleArray; const pattern: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayPositions(pattern); end;
+function TArray_SubarrayPositions3(const arr: TStringArray; const pattern: TStringArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayPositions(pattern); end;
+function TArray_SubarrayPositions4(const arr: TCharArray; const pattern: TCharArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayPositions(pattern); end;
+function TArray_SubarrayPositions5(const arr: TBooleanArray; const pattern: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayPositions(pattern); end;
+function TArray_SubarrayPositions6(const arr: TPointArray; const pattern: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayPositions(pattern); end;
+function TArray_SubarrayPositions7(const arr: TBoxArray; const pattern: TBoxArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayPositions(pattern); end;
+function TArray_SubarrayPositions8(const arr: TRangeArray; const pattern: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.SubarrayPositions(pattern); end;
 
 function TArray_Swap1(var arr, b: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
 function TArray_Swap2(var arr, b: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Swap(b); end;
