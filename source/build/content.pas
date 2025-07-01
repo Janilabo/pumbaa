@@ -203,12 +203,8 @@ begin
   AddFunction(@TBox_Size, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer;');
   AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Integer;');
   AddFunction(@TBox_Diagonal, 'function TBox_Diagonal(const bx: TBox): Double;');
-  AddFunction(@TBox_W1, 'function TBox_W(const bx: TBox): Integer; overload;');
-  AddFunction(@TBox_W2, 'function TBox_W(var bx: TBox; const width: Integer): Integer; overload;');
   AddFunction(@TBox_Width1, 'function TBox_Width(const bx: TBox): Integer; overload;');
   AddFunction(@TBox_Width2, 'function TBox_Width(var bx: TBox; const w: Integer): Integer; overload;');
-  AddFunction(@TBox_H1, 'function TBox_H(const bx: TBox): Integer; overload;');
-  AddFunction(@TBox_H2, 'function TBox_H(var bx: TBox; const height: Integer): Integer; overload;');
   AddFunction(@TBox_Height1, 'function TBox_Height(const bx: TBox): Integer; overload;');
   AddFunction(@TBox_Height2, 'function TBox_Height(var bx: TBox; const h: Integer): Integer; overload;');
   AddFunction(@TBox_Expand, 'function TBox_Expand(const bx: TBox; const change: Integer = 1): TBox;');
@@ -234,8 +230,8 @@ begin
   AddFunction(@TBox_Center, 'function TBox_Center(const bx: TBox): TPoint;');
   AddFunction(@TBox_Envelope, 'function TBox_Envelope(const bx: TBox; const b: TBox): TBox;');
   AddFunction(@TBox_Overlap, 'function TBox_Overlap(const bx: TBox; const b: TBox): Boolean;');
-  AddFunction(@TBox_Intersection, 'function TBox_Intersection(const bx: TBox; const b: TBox): TBox;');
-  AddFunction(@TBox_Intersect, 'function TBox_Intersect(const bx: TBox; const b: TBox; var intersection: TBox): Boolean;');
+  AddFunction(@TBox_Intersect1, 'function TBox_Intersect(const bx: TBox; const b: TBox): TBox; overload;');
+  AddFunction(@TBox_Intersect2, 'function TBox_Intersect(const bx: TBox; const b: TBox; var iArea: TBox): Boolean; overload;');
   AddFunction(@TBox_Union, 'function TBox_Union(const bx: TBox; const b: TBox): TBox;');
   AddFunction(@TBox_Valid, 'function TBox_Valid(const bx: TBox): Boolean;');
   AddFunction(@TBox_Invalid, 'function TBox_Invalid(const bx: TBox): Boolean;');

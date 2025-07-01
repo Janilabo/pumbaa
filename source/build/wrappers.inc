@@ -185,12 +185,8 @@ function TBox_Form2(const pt: TPoint; const width, height: Integer): TBox; overl
 function TBox_Size(const bx: TBox; var width, height: Integer): Integer; cdecl; inline; begin Result := bx.Size(width, height); end;
 function TBox_Area(const bx: TBox): Integer; cdecl; inline; begin Result := bx.Area; end;
 function TBox_Diagonal(const bx: TBox): Double; cdecl; begin Result := bx.Diagonal; end;
-function TBox_W1(const bx: TBox): Integer; overload; cdecl; begin Result := bx.W; end;
-function TBox_W2(var bx: TBox; const width: Integer): Integer; overload; cdecl; begin Result := bx.Width(width); end;
 function TBox_Width1(const bx: TBox): Integer; overload; cdecl; begin Result := bx.Width; end;
 function TBox_Width2(var bx: TBox; const w: Integer): Integer; overload; cdecl; begin Result := bx.Width(w); end;
-function TBox_H1(const bx: TBox): Integer; overload; cdecl; begin Result := bx.H; end;
-function TBox_H2(var bx: TBox; const height: Integer): Integer; overload; cdecl; begin Result := bx.H(height); end;
 function TBox_Height1(const bx: TBox): Integer; overload; cdecl; begin Result := bx.Height; end;
 function TBox_Height2(var bx: TBox; const h: Integer): Integer; overload; cdecl; begin Result := bx.Height(h); end;
 function TBox_Expand(const bx: TBox; const change: Integer = 1): TBox; cdecl; begin Result := bx.Expand(change); end;
@@ -216,8 +212,8 @@ function TBox_Inside2(const bx: TBox; const areas: TBoxArray): Boolean; overload
 function TBox_Center(const bx: TBox): TPoint; cdecl; begin Result := bx.Center; end;
 function TBox_Envelope(const bx: TBox; const b: TBox): TBox; cdecl; begin Result := bx.Envelope(b); end;
 function TBox_Overlap(const bx: TBox; const b: TBox): Boolean; cdecl; inline; begin Result := bx.Overlap(b); end;
-function TBox_Intersection(const bx: TBox; const b: TBox): TBox; cdecl; begin Result := b.Intersection(b); end;
-function TBox_Intersect(const bx: TBox; const b: TBox; var intersection: TBox): Boolean; cdecl; begin Result := bx.Intersect(b, intersection); end;
+function TBox_Intersect1(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := b.Intersect(b); end;
+function TBox_Intersect2(const bx: TBox; const b: TBox; var iArea: TBox): Boolean; overload; cdecl; begin Result := bx.Intersect(b, iArea); end;
 function TBox_Union(const bx: TBox; const b: TBox): TBox; cdecl; begin Result := bx.Union(b); end;
 function TBox_Valid(const bx: TBox): Boolean; cdecl; inline; begin Result := bx.Valid; end;
 function TBox_Invalid(const bx: TBox): Boolean; cdecl; begin Result := bx.Invalid; end;
