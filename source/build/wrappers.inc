@@ -168,16 +168,20 @@ function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const space
 function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Row(cells, space); end;
 function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Column(cells, space); end;
 
-function TBox_Build1(const X1, Y1, X2, Y2: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Build(X1, Y1, X2, Y2); end;
-function TBox_Build2(const a, b: TPoint): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Build(a, b); end;
-function TBox_Create1(const X1, Y1, X2, Y2: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Create(X1, Y1, X2, Y2); end;
-function TBox_Create2(const a, b: TPoint): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Create(a, b); end;
-function TBox_Form1(const XY: Integer = 0): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(XY); end;
-function TBox_Form2(const XY: TPoint): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(XY); end;
+function TBox_Create1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; var bx: TBox; begin Result.Create(minX, minY, maxX, maxY); end;
+function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; var bx: TBox; begin Result.Create(top, bottom); end;
+function TBox_Create3(const XValue, YValue: Integer): TBox; overload; cdecl; var bx: TBox; begin Result.Create(XValue, YValue); end;
+function TBox_Create4(const target: TPoint): TBox; overload; cdecl; begin Result.Create(target); end;
+function TBox_Create5(const value: Integer = 0): TBox; overload; cdecl; begin Result.Create(value); end; 
+function TBox_Build1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Build(minX, minY, maxX, maxY); end;
+function TBox_Build2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Build(top, bottom); end;
+function TBox_Build3(const valueX, valueY: Integer): TBox; overload; cdecl; begin Result.Build(valueX, valueY); end;
+function TBox_Build4(const target: TPoint): TBox; overload; cdecl; begin Result.Build(target); end;
+function TBox_Build5(const value: Integer = 0): TBox; overload; cdecl; begin Result.Build(value); end;
 function TBox_Make1(const pt: TPoint; const radius: Integer = 0): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Make(pt, radius); end;
 function TBox_Make2(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Make(pt, wRadius, hRadius); end;
-function TBox_Yield1(const pt: TPoint; const size: Integer = 1): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Yield(pt, size); end;
-function TBox_Yield2(const pt: TPoint; const width, height: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Yield(pt, width, height); end;
+function TBox_Form1(const pt: TPoint; const size: Integer = 1): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, size); end;
+function TBox_Form2(const pt: TPoint; const width, height: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, width, height); end;
 function TBox_Size(const bx: TBox; var width, height: Integer): Integer; cdecl; inline; begin Result := bx.Size(width, height); end;
 function TBox_Area(const bx: TBox): Integer; cdecl; inline; begin Result := bx.Area; end;
 function TBox_Diagonal(const bx: TBox): Double; cdecl; begin Result := bx.Diagonal; end;

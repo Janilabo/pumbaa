@@ -186,16 +186,20 @@ begin
   AddFunction(@TPoint_Row, 'function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray;');
   AddFunction(@TPoint_Column, 'function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray;');
 
-  AddFunction(@TBox_Build1, 'function TBox_Build(const X1, Y1, X2, Y2: Integer): TBox; overload;');
-  AddFunction(@TBox_Build2, 'function TBox_Build(const a, b: TPoint): TBox; overload;');
-  AddFunction(@TBox_Create1, 'function TBox_Create(const X1, Y1, X2, Y2: Integer): TBox; overload;');
-  AddFunction(@TBox_Create2, 'function TBox_Create(const a, b: TPoint): TBox; overload;');
-  AddFunction(@TBox_Form1, 'function TBox_Form(const XY: Integer = 0): TBox; overload;');
-  AddFunction(@TBox_Form2, 'function TBox_Form(const XY: TPoint): TBox; overload;');
+  AddFunction(@TBox_Build1, 'function TBox_Build(const minX, minY, maxX, maxY: Integer): TBox; overload;');
+  AddFunction(@TBox_Build2, 'function TBox_Build(const top, bottom: TPoint): TBox; overload;');
+  AddFunction(@TBox_Build3, 'function TBox_Build(const valueX, valueY: Integer): TBox; overload;');
+  AddFunction(@TBox_Build4, 'function TBox_Build(const target: TPoint): TBox; overload;');
+  AddFunction(@TBox_Build5, 'function TBox_Build(const value: Integer = 0): TBox; overload;');
+  AddFunction(@TBox_Create1, 'function TBox_Create(const minX, minY, maxX, maxY: Integer): TBox; overload;');
+  AddFunction(@TBox_Create2, 'function TBox_Create(const top, bottom: TPoint): TBox; overload;');
+  AddFunction(@TBox_Create3, 'function TBox_Create(const valueX, valueY: Integer): TBox; overload;');
+  AddFunction(@TBox_Create4, 'function TBox_Create(const target: TPoint): TBox; overload;');
+  AddFunction(@TBox_Create5, 'function TBox_Create(const value: Integer = 0): TBox; overload;');
   AddFunction(@TBox_Make1, 'function TBox_Make(const pt: TPoint; const radius: Integer = 0): TBox; overload;');
   AddFunction(@TBox_Make2, 'function TBox_Make(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload;');
-  AddFunction(@TBox_Yield1, 'function TBox_Yield(const pt: TPoint; const size: Integer = 1): TBox; overload;');
-  AddFunction(@TBox_Yield2, 'function TBox_Yield(const pt: TPoint; const width, height: Integer): TBox; overload;');
+  AddFunction(@TBox_Form1, 'function TBox_Form(const pt: TPoint; const size: Integer = 1): TBox; overload;');
+  AddFunction(@TBox_Form2, 'function TBox_Form(const pt: TPoint; const width, height: Integer): TBox; overload;');
   AddFunction(@TBox_Size, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer;');
   AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Integer;');
   AddFunction(@TBox_Diagonal, 'function TBox_Diagonal(const bx: TBox): Double;');
