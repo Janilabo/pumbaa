@@ -631,6 +631,15 @@ begin
   AddFunction(@TArray_Equal7, 'function TArray_Equal(const arr, target: TBoxArray): Boolean; overload;');
   AddFunction(@TArray_Equal8, 'function TArray_Equal(const arr, target: TRangeArray): Boolean; overload;');
   
+  AddFunction(@TArray_Excessive1, 'function TArray_Excessive(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Excessive2, 'function TArray_Excessive(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Excessive3, 'function TArray_Excessive(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Excessive4, 'function TArray_Excessive(const arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_Excessive5, 'function TArray_Excessive(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_Excessive6, 'function TArray_Excessive(const arr: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_Excessive7, 'function TArray_Excessive(const arr: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_Excessive8, 'function TArray_Excessive(const arr: TRangeArray): Boolean; overload;');
+  
   AddFunction(@TArray_Exch1, 'function TArray_Exch(var arr: TIntegerArray; const aIndex, bIndex: Integer): Boolean; overload;');
   AddFunction(@TArray_Exch2, 'function TArray_Exch(var arr: TDoubleArray; const aIndex, bIndex: Integer): Boolean; overload;');
   AddFunction(@TArray_Exch3, 'function TArray_Exch(var arr: TStringArray; const aIndex, bIndex: Integer): Boolean; overload;');
@@ -1468,6 +1477,22 @@ begin
   AddFunction(@T2DArray_Size14, 'function T2DArray_Size(const arr: T2DPointArray): Int64; overload;');
   AddFunction(@T2DArray_Size15, 'function T2DArray_Size(const arr: T2DBoxArray): Int64; overload;');
   AddFunction(@T2DArray_Size16, 'function T2DArray_Size(const arr: T2DRangeArray): Int64; overload;');
+  AddFunction(@T2DArray_Size17, 'function T2DArray_Size(var arr: T2DIntegerArray; const aSize: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size18, 'function T2DArray_Size(var arr: T2DDoubleArray; const aSize: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size19, 'function T2DArray_Size(var arr: T2DStringArray; const aSize: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size20, 'function T2DArray_Size(var arr: T2DCharArray; const aSize: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size21, 'function T2DArray_Size(var arr: T2DBooleanArray; const aSize: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size22, 'function T2DArray_Size(var arr: T2DPointArray; const aSize: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size23, 'function T2DArray_Size(var arr: T2DBoxArray; const aSize: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size24, 'function T2DArray_Size(var arr: T2DRangeArray; const aSize: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size25, 'function T2DArray_Size(var arr: T2DIntegerArray; const size1D, size2D: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size26, 'function T2DArray_Size(var arr: T2DDoubleArray; const size1D, size2D: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size27, 'function T2DArray_Size(var arr: T2DStringArray; const size1D, size2D: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size28, 'function T2DArray_Size(var arr: T2DCharArray; const size1D, size2D: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size29, 'function T2DArray_Size(var arr: T2DBooleanArray; const size1D, size2D: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size30, 'function T2DArray_Size(var arr: T2DPointArray; const size1D, size2D: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size31, 'function T2DArray_Size(var arr: T2DBoxArray; const size1D, size2D: Integer): Int64; overload;');
+  AddFunction(@T2DArray_Size32, 'function T2DArray_Size(var arr: T2DRangeArray; const size1D, size2D: Integer): Int64; overload;');
   
   AddFunction(@T2DArray_Merge1, 'function T2DArray_Merge(const arr: T2DIntegerArray): TIntegerArray; overload;');
   AddFunction(@T2DArray_Merge2, 'function T2DArray_Merge(const arr: T2DDoubleArray): TDoubleArray; overload;');

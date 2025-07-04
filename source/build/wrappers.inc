@@ -613,6 +613,15 @@ function TArray_Equal6(const arr, target: TPointArray): Boolean; overload; cdecl
 function TArray_Equal7(const arr, target: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Equal(target); end;
 function TArray_Equal8(const arr, target: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Equal(target); end;
 
+function TArray_Excessive1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
+function TArray_Excessive2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
+function TArray_Excessive3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
+function TArray_Excessive4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
+function TArray_Excessive5(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
+function TArray_Excessive6(const arr: TPointArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
+function TArray_Excessive7(const arr: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
+function TArray_Excessive8(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
+
 function TArray_Exch1(var arr: TIntegerArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
 function TArray_Exch2(var arr: TDoubleArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
 function TArray_Exch3(var arr: TStringArray; const aIndex, bIndex: Integer): Boolean; overload; cdecl; begin Result := arr.Exch(aIndex, bIndex); end;
@@ -1450,6 +1459,22 @@ function T2DArray_Size13(const arr: T2DBooleanArray): Int64; overload; cdecl; be
 function T2DArray_Size14(const arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Size; end;
 function T2DArray_Size15(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Size; end;
 function T2DArray_Size16(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Size; end;
+function T2DArray_Size17(var arr: T2DIntegerArray; const aSize: Integer): Int64; overload; cdecl; begin Result := arr.Size(aSize); end;
+function T2DArray_Size18(var arr: T2DDoubleArray; const aSize: Integer): Int64; overload; cdecl; begin Result := arr.Size(aSize); end;
+function T2DArray_Size19(var arr: T2DStringArray; const aSize: Integer): Int64; overload; cdecl; begin Result := arr.Size(aSize); end;
+function T2DArray_Size20(var arr: T2DCharArray; const aSize: Integer): Int64; overload; cdecl; begin Result := arr.Size(aSize); end;
+function T2DArray_Size21(var arr: T2DBooleanArray; const aSize: Integer): Int64; overload; cdecl; begin Result := arr.Size(aSize); end;
+function T2DArray_Size22(var arr: T2DPointArray; const aSize: Integer): Int64; overload; cdecl; begin Result := arr.Size(aSize); end;
+function T2DArray_Size23(var arr: T2DBoxArray; const aSize: Integer): Int64; overload; cdecl; begin Result := arr.Size(aSize); end;
+function T2DArray_Size24(var arr: T2DRangeArray; const aSize: Integer): Int64; overload; cdecl; begin Result := arr.Size(aSize); end;
+function T2DArray_Size25(var arr: T2DIntegerArray; const size1D, size2D: Integer): Int64; overload; cdecl; begin Result := arr.Size(size1D, size2D); end;
+function T2DArray_Size26(var arr: T2DDoubleArray; const size1D, size2D: Integer): Int64; overload; cdecl; begin Result := arr.Size(size1D, size2D); end;
+function T2DArray_Size27(var arr: T2DStringArray; const size1D, size2D: Integer): Int64; overload; cdecl; begin Result := arr.Size(size1D, size2D); end;
+function T2DArray_Size28(var arr: T2DCharArray; const size1D, size2D: Integer): Int64; overload; cdecl; begin Result := arr.Size(size1D, size2D); end;
+function T2DArray_Size29(var arr: T2DBooleanArray; const size1D, size2D: Integer): Int64; overload; cdecl; begin Result := arr.Size(size1D, size2D); end;
+function T2DArray_Size30(var arr: T2DPointArray; const size1D, size2D: Integer): Int64; overload; cdecl; begin Result := arr.Size(size1D, size2D); end;
+function T2DArray_Size31(var arr: T2DBoxArray; const size1D, size2D: Integer): Int64; overload; cdecl; begin Result := arr.Size(size1D, size2D); end;
+function T2DArray_Size32(var arr: T2DRangeArray; const size1D, size2D: Integer): Int64; overload; cdecl; begin Result := arr.Size(size1D, size2D); end;
 
 function T2DArray_Merge1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Merge; end;
 function T2DArray_Merge2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Merge; end;
