@@ -296,8 +296,13 @@ function TRange_Middle(const range: TRange): Double; cdecl; begin Result := rang
 function TRange_Center(const range: TRange): Integer; cdecl; begin Result := range.Center; end;
 function TRange_Str(const range: TRange): string; cdecl; begin Result := range.Str; end;
 
-function TIntegerArray_Descending(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Descending; end;
+function TIntegerArray_InOrder(const arr: TIntegerArray; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.InOrder(aAscending); end;
+function TIntegerArray_Ascend(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Ascend; end;
+function TIntegerArray_Descend(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Descend; end;
 function TIntegerArray_Ascending(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Ascending; end;
+function TIntegerArray_Descending(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Descending; end;
+function TIntegerArray_Decreasing(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Decreasing; end;
+function TIntegerArray_Increasing(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Increasing; end;
 function TIntegerArray_Bounds1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Bounds; end;
 function TIntegerArray_Bounds2(const arr: TIntegerArray; var aSize: Integer): TRange; overload; cdecl; begin Result := arr.Bounds(aSize); end;
 function TIntegerArray_Range(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Range; end;

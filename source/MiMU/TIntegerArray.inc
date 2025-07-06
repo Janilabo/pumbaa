@@ -1,8 +1,56 @@
 {==============================================================================]
+  <TIntegerArrayHelper.InOrder>
+  @action: Returns true if array arr is in ascending/descending order by aAscending.
+  @note: By default checking for ascending order.
+[==============================================================================}
+function TIntegerArrayHelper.InOrder(const aAscending: Boolean = True): Boolean; cdecl;
+var
+  i, l: Integer;
+begin
+  i := -1;
+  l := Length(Self);
+  Result := (l > 0);
+  if (l > 1) then
+  case aAscending of
+    True:
+    while (i.Increment < l.Decrement) do
+      if ((Self[i] > Self[i + 1]) or (Self[l - 1] > Self[l])) then
+        Exit(False);
+    False:
+    while (i.Increment < l.Decrement) do
+      if ((Self[i] < Self[i + 1]) or (Self[l - 1] < Self[l])) then
+        Exit(False);
+  end;
+end;
+
+{==============================================================================]
+  <TIntegerArrayHelper.Descend>
+  @action: Returns true if array arr is in descending order.
+  @note: None.
+[==============================================================================}
+function TIntegerArrayHelper.Descend: TIntegerArray; cdecl;
+begin
+  Result := Self.Copy;
+  if (Length(Result) > 1) then
+    Result.QuickSort(False);
+end;
+
+{==============================================================================]
+  <TIntegerArrayHelper.Ascend>
+  @action: Returns array arr sorted to ascending order.
+  @note: None.
+[==============================================================================}
+function TIntegerArrayHelper.Ascend: TIntegerArray; cdecl;
+begin
+  Result := Self.Copy;
+  if (Length(Result) > 1) then
+    Result.QuickSort;
+end;
+
+{==============================================================================]
   <TIntegerArrayHelper.Descending>
   @action: Returns true if array arr is in descending order.
-  @note: CAUTION! Does not work with arrays that contain only unique values.
-         [0,1] = False | [0,0] = False | [1,0] = True |
+  @note: [0,1] = False | [0,0] = False | [1,0] = True |
 [==============================================================================}
 function TIntegerArrayHelper.Descending: Boolean; cdecl;
 var
@@ -19,8 +67,7 @@ end;
 {==============================================================================]
   <TIntegerArrayHelper.Ascending>
   @action: Returns true if array arr is in asscending order.
-  @note: CAUTION! Does not work with arrays that contain only unique values.
-         [0,1] = True | [0,0] = False | [1,0] = False |
+  @note: [0,1] = True | [0,0] = False | [1,0] = False |
 [==============================================================================}
 function TIntegerArrayHelper.Ascending: Boolean; cdecl;
 var
@@ -32,6 +79,40 @@ begin
       Exit(False)
     else
       Result := (Result or (Self[i] > Self[i - 1]));
+end;
+
+{==============================================================================]
+  <TIntegerArrayHelper.Decreasing>
+  @action: Returns true if array arr is in descending order.
+  @note: [0,1] = False | [0,0] = True | [1,0] = True |
+[==============================================================================}
+function TIntegerArrayHelper.Decreasing: Boolean; cdecl;
+var
+  i: Integer;
+begin
+  Result := False;
+  for i := High(Self) to 1 do
+    if (Self[i] > Self[i - 1]) then
+      Exit(False)
+    else
+      Result := (Result or (Self[i] <= Self[i - 1]));
+end;
+
+{==============================================================================]
+  <TIntegerArrayHelper.Increasing>
+  @action: Returns true if array arr is in asscending order.
+  @note: [0,1] = True | [0,0] = True | [1,0] = False |
+[==============================================================================}
+function TIntegerArrayHelper.Increasing: Boolean; cdecl;
+var
+  i: Integer;
+begin
+  Result := False;
+  for i := High(Self) downto 1 do
+    if (Self[i] < Self[i - 1]) then
+      Exit(False)
+    else
+      Result := (Result or (Self[i] >= Self[i - 1]));
 end;
 
 {==============================================================================]
