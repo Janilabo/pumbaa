@@ -533,6 +533,15 @@ function TArray_Create14(const aSize: Integer; const item: TPoint): TPointArray;
 function TArray_Create15(const aSize: Integer; const item: TBox): TBoxArray; overload; cdecl; begin Result.Create(aSize, item); end;
 function TArray_Create16(const aSize: Integer; const item: TRange): TRangeArray; overload; cdecl; begin Result.Create(aSize, item); end;
 
+function TArray_Deduplicate1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
+function TArray_Deduplicate2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
+function TArray_Deduplicate3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
+function TArray_Deduplicate4(var arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
+function TArray_Deduplicate5(var arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
+function TArray_Deduplicate6(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
+function TArray_Deduplicate7(var arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
+function TArray_Deduplicate8(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
+
 function TArray_Delete1(var arr: TIntegerArray; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Delete(index); end;
 function TArray_Delete2(var arr: TDoubleArray; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Delete(index); end;
 function TArray_Delete3(var arr: TStringArray; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Delete(index); end;
@@ -612,6 +621,39 @@ function TArray_Equal5(const arr, target: TBooleanArray): Boolean; overload; cde
 function TArray_Equal6(const arr, target: TPointArray): Boolean; overload; cdecl; begin Result := arr.Equal(target); end;
 function TArray_Equal7(const arr, target: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Equal(target); end;
 function TArray_Equal8(const arr, target: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Equal(target); end;
+
+function TArray_Erase1(var arr: TIntegerArray; const item: Integer; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(item, index, all); end;
+function TArray_Erase2(var arr: TDoubleArray; const item: Double; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(item, index, all); end;
+function TArray_Erase3(var arr: TStringArray; const item: string; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(item, index, all); end;
+function TArray_Erase4(var arr: TCharArray; const item: Char; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(item, index, all); end;
+function TArray_Erase5(var arr: TBooleanArray; const item: Boolean; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(item, index, all); end;
+function TArray_Erase6(var arr: TPointArray; const item: TPoint; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(item, index, all); end;
+function TArray_Erase7(var arr: TBoxArray; const item: TBox; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(item, index, all); end;
+function TArray_Erase8(var arr: TRangeArray; const item: TRange; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(item, index, all); end;
+function TArray_Erase9(var arr: TIntegerArray; const item: Integer; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(item, all); end;
+function TArray_Erase10(var arr: TDoubleArray; const item: Double; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(item, all); end;
+function TArray_Erase11(var arr: TStringArray; const item: string; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(item, all); end;
+function TArray_Erase12(var arr: TCharArray; const item: Char; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(item, all); end;
+function TArray_Erase13(var arr: TBooleanArray; const item: Boolean; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(item, all); end;
+function TArray_Erase14(var arr: TPointArray; const item: TPoint; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(item, all); end;
+function TArray_Erase15(var arr: TBoxArray; const item: TBox; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(item, all); end;
+function TArray_Erase16(var arr: TRangeArray; const item: TRange; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(item, all); end;
+function TArray_Erase17(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(items, index, all); end;
+function TArray_Erase18(var arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(items, index, all); end;
+function TArray_Erase19(var arr: TStringArray; const items: TStringArray; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(items, index, all); end;
+function TArray_Erase20(var arr: TCharArray; const items: TCharArray; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(items, index, all); end;
+function TArray_Erase21(var arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(items, index, all); end;
+function TArray_Erase22(var arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(items, index, all); end;
+function TArray_Erase23(var arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(items, index, all); end;
+function TArray_Erase24(var arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.Erase(items, index, all); end;
+function TArray_Erase25(var arr: TIntegerArray; const items: TIntegerArray; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(items, all); end;
+function TArray_Erase26(var arr: TDoubleArray; const items: TDoubleArray; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(items, all); end;
+function TArray_Erase27(var arr: TStringArray; const items: TStringArray; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(items, all); end;
+function TArray_Erase28(var arr: TCharArray; const items: TCharArray; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(items, all); end;
+function TArray_Erase29(var arr: TBooleanArray; const items: TBooleanArray; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(items, all); end;
+function TArray_Erase30(var arr: TPointArray; const items: TPointArray; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(items, all); end;
+function TArray_Erase31(var arr: TBoxArray; const items: TBoxArray; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(items, all); end;
+function TArray_Erase32(var arr: TRangeArray; const items: TRangeArray; const all: Boolean): Integer; overload; cdecl; begin Result := arr.Erase(items, all); end;
 
 function TArray_Excessive1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
 function TArray_Excessive2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Excessive; end;
@@ -1044,6 +1086,23 @@ function TArray_Pop13(var arr: TBooleanArray; const null: Boolean): Boolean; ove
 function TArray_Pop14(var arr: TPointArray; const null: TPoint): TPoint; overload; cdecl; begin Result := arr.Pop(null); end;
 function TArray_Pop15(var arr: TBoxArray; const null: TBox): TBox; overload; cdecl; begin Result := arr.Pop(null); end;
 function TArray_Pop16(var arr: TRangeArray; const null: TRange): TRange; overload; cdecl; begin Result := arr.Pop(null); end;
+
+function TArray_Populate1(var arr: TIntegerArray; const items: TIntegerArray; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(items, times); end;
+function TArray_Populate2(var arr: TDoubleArray; const items: TDoubleArray; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(items, times); end;
+function TArray_Populate3(var arr: TStringArray; const items: TStringArray; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(items, times); end;
+function TArray_Populate4(var arr: TCharArray; const items: TCharArray; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(items, times); end;
+function TArray_Populate5(var arr: TBooleanArray; const items: TBooleanArray; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(items, times); end;
+function TArray_Populate6(var arr: TPointArray; const items: TPointArray; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(items, times); end;
+function TArray_Populate7(var arr: TBoxArray; const items: TBoxArray; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(items, times); end;
+function TArray_Populate8(var arr: TRangeArray; const items: TRangeArray; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(items, times); end;
+function TArray_Populate9(var arr: TIntegerArray; const item: Integer; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
+function TArray_Populate10(var arr: TDoubleArray; const item: Double; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
+function TArray_Populate11(var arr: TStringArray; const item: string; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
+function TArray_Populate12(var arr: TCharArray; const item: Char; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
+function TArray_Populate13(var arr: TBooleanArray; const item: Boolean; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
+function TArray_Populate14(var arr: TPointArray; const item: TPoint; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
+function TArray_Populate15(var arr: TBoxArray; const item: TBox; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
+function TArray_Populate16(var arr: TRangeArray; const item: TRange; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
 
 function TArray_Pos1(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
 function TArray_Pos2(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;

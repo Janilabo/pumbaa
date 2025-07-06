@@ -276,6 +276,7 @@
       function Copy(const index: Integer = 0; const count: Integer = 2147483647): XArr; overload; cdecl;
       function Create(const item: XVar): XArr; overload; cdecl;
       function Create(const aSize: Integer; const item: XVar): XArr; overload; cdecl;
+	  function Deduplicate: Integer; overload; cdecl;
       function Delete(const index: Integer = 0): Boolean; overload; cdecl;
       function Delete(const ID: TIntegerArray): Integer; overload; cdecl;
       function Differ(const target: XArr): Boolean; overload; cdecl;
@@ -285,6 +286,10 @@
       function Duplicate(const xTimes: Integer = 1): XArr; overload; cdecl;
       function Empty: Boolean; overload; cdecl;
       function Equal(const target: XArr): Boolean; overload; cdecl;
+      function Erase(const item: XVar; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl;
+      function Erase(const item: XVar; const all: Boolean): Integer; overload; cdecl;
+      function Erase(const items: XArr; const index: Integer = 2147483647; const all: Boolean = True): Integer; overload; cdecl;
+      function Erase(const items: XArr; const all: Boolean): Integer; overload; cdecl;
       function Excessive: Boolean; overload; cdecl; 
       function Exch(const aIndex, bIndex: Integer): Boolean; overload; cdecl;
       function Exchange(const aIndex, bIndex: Integer): Boolean; overload; cdecl;
@@ -335,6 +340,8 @@
       function Pick(const ID: TIntegerArray): XArr; overload; cdecl;
       function Pop: XVar; overload; cdecl;
       function Pop(const null: XVar): XVar; overload; cdecl;
+      function Populate(const items: XArr; const times: Integer = 1): Boolean; overload; cdecl;
+      function Populate(const item: XVar; const times: Integer = 1): Boolean; overload; cdecl;
       function Pos(const item: XVar; const index: Integer = 0): Integer; overload; cdecl;
       function Pos(const items: XArr; const index: Integer = 0): Integer; overload; cdecl;
       function Position(const item: XVar; const index: Integer = 0): Integer; overload; cdecl;
