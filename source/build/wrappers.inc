@@ -542,15 +542,6 @@ function TArray_Create14(const aSize: Integer; const item: TPoint): TPointArray;
 function TArray_Create15(const aSize: Integer; const item: TBox): TBoxArray; overload; cdecl; begin Result.Create(aSize, item); end;
 function TArray_Create16(const aSize: Integer; const item: TRange): TRangeArray; overload; cdecl; begin Result.Create(aSize, item); end;
 
-function TArray_Deduplicate1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
-function TArray_Deduplicate2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
-function TArray_Deduplicate3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
-function TArray_Deduplicate4(var arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
-function TArray_Deduplicate5(var arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
-function TArray_Deduplicate6(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
-function TArray_Deduplicate7(var arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
-function TArray_Deduplicate8(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Deduplicate; end;
-
 function TArray_Delete1(var arr: TIntegerArray; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Delete(index); end;
 function TArray_Delete2(var arr: TDoubleArray; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Delete(index); end;
 function TArray_Delete3(var arr: TStringArray; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Delete(index); end;
@@ -1440,6 +1431,15 @@ function TArray_Undersize6(const arr: TPointArray; const limit: Integer): Boolea
 function TArray_Undersize7(const arr: TBoxArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Undersize(limit); end;
 function TArray_Undersize8(const arr: TRangeArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Undersize(limit); end;
 
+function TArray_Unduplicate1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+function TArray_Unduplicate2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+function TArray_Unduplicate3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+function TArray_Unduplicate4(var arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+function TArray_Unduplicate5(var arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+function TArray_Unduplicate6(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+function TArray_Unduplicate7(var arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+function TArray_Unduplicate8(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+
 function TArray_Unique1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Unique; end;
 function TArray_Unique2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Unique; end;
 function TArray_Unique3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Unique; end;
@@ -1483,6 +1483,15 @@ function TArray_Unshift13(var arr: TBooleanArray; const items: TBooleanArray): I
 function TArray_Unshift14(var arr: TPointArray; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.Unshift(items); end;
 function TArray_Unshift15(var arr: TBoxArray; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.Unshift(items); end;
 function TArray_Unshift16(var arr: TRangeArray; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.Unshift(items); end;
+
+function TArray_Waste1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
+function TArray_Waste2(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
+function TArray_Waste3(const arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
+function TArray_Waste4(const arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
+function TArray_Waste5(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
+function TArray_Waste6(const arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
+function TArray_Waste7(const arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
+function TArray_Waste8(const arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
 
 function T2DArray_Blank1(const arr: T2DIntegerArray): Boolean; overload; cdecl; begin Result := arr.Blank; end;
 function T2DArray_Blank2(const arr: T2DDoubleArray): Boolean; overload; cdecl; begin Result := arr.Blank; end;
