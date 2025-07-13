@@ -1487,6 +1487,11 @@ function TArray_InOrder2(const arr: TDoubleArray; const aAscending: Boolean = Tr
 function TArray_InOrder3(const arr: TStringArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.InOrder(aAscending); end;
 function TArray_InOrder4(const arr: TCharArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.InOrder(aAscending); end;
 
+function TArray_Orderly1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Orderly; end;
+function TArray_Orderly2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Orderly; end;
+function TArray_Orderly3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Orderly; end;
+function TArray_Orderly4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Orderly; end;
+
 function TArray_Ascend1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Ascend; end;
 function TArray_Ascend2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Ascend; end;
 function TArray_Ascend3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Ascend; end;
@@ -1516,6 +1521,16 @@ function TArray_Increasing1(const arr: TIntegerArray): Boolean; overload; cdecl;
 function TArray_Increasing2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Increasing; end;
 function TArray_Increasing3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Increasing; end;
 function TArray_Increasing4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Increasing; end;
+
+function TArray_Downward1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Downward; end;
+function TArray_Downward2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Downward; end;
+function TArray_Downward3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Downward; end;
+function TArray_Downward4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Downward; end;
+
+function TArray_Upward1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Upward; end;
+function TArray_Upward2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Upward; end;
+function TArray_Upward3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Upward; end;
+function TArray_Upward4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Upward; end;
 
 function TArray_Lowest1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Lowest; end;
 function TArray_Lowest2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.Lowest; end;
@@ -1628,3 +1643,21 @@ function T2DArray_Merge5(const arr: T2DBooleanArray): TBooleanArray; overload; c
 function T2DArray_Merge6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.Merge; end;
 function T2DArray_Merge7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Merge; end;
 function T2DArray_Merge8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Merge; end;
+
+function T2DArray_TArray1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.TArray; end;
+function T2DArray_TArray2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.TArray; end;
+function T2DArray_TArray3(const arr: T2DStringArray): TStringArray; overload; cdecl; begin Result := arr.TArray; end;
+function T2DArray_TArray4(const arr: T2DCharArray): TCharArray; overload; cdecl; begin Result := arr.TArray; end;
+function T2DArray_TArray5(const arr: T2DBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.TArray; end;
+function T2DArray_TArray6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.TArray; end;
+function T2DArray_TArray7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.TArray; end;
+function T2DArray_TArray8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.TArray; end;
+
+function T2DArray_Flat1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat3(const arr: T2DStringArray): TStringArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat4(const arr: T2DCharArray): TCharArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat5(const arr: T2DBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Flat; end;
