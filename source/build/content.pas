@@ -1047,14 +1047,14 @@ begin
   AddFunction(@TArray_Partition7, 'function TArray_Partition(const arr: TBoxArray; const pSize: Integer): T2DBoxArray; overload;');
   AddFunction(@TArray_Partition8, 'function TArray_Partition(const arr: TRangeArray; const pSize: Integer): T2DRangeArray; overload;');
 
-  AddFunction(@TArray_Pick1, 'function TArray_Pick(var arr: TIntegerArray; const ID: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TArray_Pick2, 'function TArray_Pick(var arr: TDoubleArray; const ID: TIntegerArray): TDoubleArray; overload;');
-  AddFunction(@TArray_Pick3, 'function TArray_Pick(var arr: TStringArray; const ID: TIntegerArray): TStringArray; overload;');
-  AddFunction(@TArray_Pick4, 'function TArray_Pick(var arr: TCharArray; const ID: TIntegerArray): TCharArray; overload;');
-  AddFunction(@TArray_Pick5, 'function TArray_Pick(var arr: TBooleanArray; const ID: TIntegerArray): TBooleanArray; overload;');
-  AddFunction(@TArray_Pick6, 'function TArray_Pick(var arr: TPointArray; const ID: TIntegerArray): TPointArray; overload;');
-  AddFunction(@TArray_Pick7, 'function TArray_Pick(var arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload;');
-  AddFunction(@TArray_Pick8, 'function TArray_Pick(var arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TArray_Pick1, 'function TArray_Pick(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload;');
+  AddFunction(@TArray_Pick2, 'function TArray_Pick(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload;');
+  AddFunction(@TArray_Pick3, 'function TArray_Pick(const arr: TStringArray; const items: TStringArray; const index: Integer = 0): TStringArray; overload;');
+  AddFunction(@TArray_Pick4, 'function TArray_Pick(const arr: TCharArray; const items: TCharArray; const index: Integer = 0): TCharArray; overload;');
+  AddFunction(@TArray_Pick5, 'function TArray_Pick(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): TBooleanArray; overload;');
+  AddFunction(@TArray_Pick6, 'function TArray_Pick(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): TPointArray; overload;');
+  AddFunction(@TArray_Pick7, 'function TArray_Pick(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TBoxArray; overload;');
+  AddFunction(@TArray_Pick8, 'function TArray_Pick(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TRangeArray; overload;');
 
   AddFunction(@TArray_Pop1, 'function TArray_Pop(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Pop2, 'function TArray_Pop(var arr: TDoubleArray): Double; overload;');

@@ -1029,14 +1029,14 @@ function TArray_Partition6(const arr: TPointArray; const pSize: Integer): T2DPoi
 function TArray_Partition7(const arr: TBoxArray; const pSize: Integer): T2DBoxArray; overload; cdecl; begin Result := arr.Partition(pSize); end;
 function TArray_Partition8(const arr: TRangeArray; const pSize: Integer): T2DRangeArray; overload; cdecl; begin Result := arr.Partition(pSize); end;
 
-function TArray_Pick1(var arr: TIntegerArray; const ID: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Pick(ID); end;
-function TArray_Pick2(var arr: TDoubleArray; const ID: TIntegerArray): TDoubleArray; overload; cdecl; begin Result := arr.Pick(ID); end;
-function TArray_Pick3(var arr: TStringArray; const ID: TIntegerArray): TStringArray; overload; cdecl; begin Result := arr.Pick(ID); end;
-function TArray_Pick4(var arr: TCharArray; const ID: TIntegerArray): TCharArray; overload; cdecl; begin Result := arr.Pick(ID); end;
-function TArray_Pick5(var arr: TBooleanArray; const ID: TIntegerArray): TBooleanArray; overload; cdecl; begin Result := arr.Pick(ID); end;
-function TArray_Pick6(var arr: TPointArray; const ID: TIntegerArray): TPointArray; overload; cdecl; begin Result := arr.Pick(ID); end;
-function TArray_Pick7(var arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.Pick(ID); end;
-function TArray_Pick8(var arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Pick(ID); end;
+function TArray_Pick1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
+function TArray_Pick2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
+function TArray_Pick3(const arr: TStringArray; const items: TStringArray; const index: Integer = 0): TStringArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
+function TArray_Pick4(const arr: TCharArray; const items: TCharArray; const index: Integer = 0): TCharArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
+function TArray_Pick5(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): TBooleanArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
+function TArray_Pick6(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): TPointArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
+function TArray_Pick7(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TBoxArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
+function TArray_Pick8(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TRangeArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
 
 function TArray_Pop1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Pop; end;
 function TArray_Pop2(var arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.Pop; end;
