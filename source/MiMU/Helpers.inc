@@ -203,6 +203,7 @@ type
     function Excessive: Boolean; overload; cdecl; 
     function Exch(const aIndex, bIndex: Integer): Boolean; overload; cdecl;
     function Exchange(const aIndex, bIndex: Integer): Boolean; overload; cdecl;
+	function Exclude(const items: XArr; const index: Integer = 2147483647): XArr; overload; cdecl;
     function Extend(const item: XVar): XArr; overload; cdecl;
     function Extend(const items: XArr): XArr; overload; cdecl;
     function Extract(const item: XVar; const index: Integer = 0): XArr; overload; cdecl;
@@ -257,11 +258,12 @@ type
     function Positions(const item: XVar; const index: Integer = 0): TIntegerArray; overload; cdecl;
     function Positions(const items: XArr; const index: Integer = 0): TIntegerArray; overload; cdecl;
     function Previous(const index: Integer; const count: Integer = 2147483647): XArr; overload; cdecl;
-    function Push(const item: XVar): Integer; overload; cdecl;
-    function Push(const items: XArr): Integer; overload; cdecl;
+    function Push(const item: XVar): XArr; overload; cdecl;
+    function Push(const items: XArr): XArr; overload; cdecl;
     function Put(const ID: TIntegerArray; const item: XVar): XArr; overload; cdecl;
     function Put(const ID: TIntegerArray; const items: XArr): XArr; overload; cdecl;
     function Put(const index: Integer; const items: XArr): XArr; overload; cdecl;
+	function Reject(const items: XArr; const index: Integer = 2147483647): XArr; overload; cdecl;
     function Remove(const item: XVar; const index: Integer = 0; const all: Boolean = True): Integer; overload; cdecl;
     function Remove(const item: XVar; const all: Boolean): Integer; overload; cdecl;
     function Remove(const items: XArr; const index: Integer = 0; const all: Boolean = True): Integer; overload; cdecl;
@@ -289,12 +291,12 @@ type
     function Swap(var b: XArr): Integer; overload; cdecl;
     function Trade(var b: XArr): Integer; overload; cdecl;
     function Undersize(const limit: Integer): Boolean; overload; cdecl;
-    function Unduplicate: Integer; overload; cdecl;
-    function Unique: Integer; overload; cdecl;
+    function Unduplicate: XArr; overload; cdecl;
+    function Unique: XArr; overload; cdecl;
     function Uniqued: XArr; overload; cdecl;
     function Uniques: TIntegerArray; overload; cdecl;
-    function Unshift(const item: XVar): Integer; overload; cdecl;
-    function Unshift(const items: XArr): Integer; overload; cdecl;
+    function Unshift(const item: XVar): XArr; overload; cdecl;
+    function Unshift(const items: XArr): XArr; overload; cdecl;
     function Waste: Integer; overload; cdecl;
     {$IFDEF Sortable}
       function Sorted(const aAscending: Boolean = True): Boolean; overload; cdecl;
@@ -404,8 +406,6 @@ type
     function Empty: Boolean; overload; cdecl;
     function Size(var lengths: TIntegerArray): Int64; overload; cdecl;
     function Size: Int64; overload; cdecl;
-    function Size(const aSize: Integer): Int64; overload; cdecl;
-    function Size(const size1D, size2D: Integer): Int64; overload; cdecl;
     function Merge: XArr; overload; cdecl;
     function TArray: XArr; overload; cdecl;
 	function Flat: XArr; overload; cdecl;
