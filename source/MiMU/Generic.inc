@@ -1914,48 +1914,49 @@ begin
     Result[c.Increase] := Self[i];
 end;
 
-
 {==============================================================================]
- <arr.Remove(item: VarType; index: Integer; all: Boolean): Integer>
+ <arr.Remove(item: VarType; index: Integer; all: Boolean): TArray>
  @action: Deletes item(s) from array arr. Only 1 if all is set as False.
  @note: Returns amount of items that were removed. Supports start index position.
 [==============================================================================}
-function XArrHelp.Remove(const item: XVar; const index: Integer = 0; const all: Boolean = True): Integer; overload; cdecl;
+function XArrHelp.Remove(const item: XVar; const index: Integer = 0; const all: Boolean = True): XArr; overload; cdecl;
 var
   l, i, r, m: Integer;
   s: Boolean;
 begin
   l := Length(Self);
   if ((l = 0) or (index >= l)) then
-    Exit(0);
+    Exit(Self.Copy);
   m := Max(0, index);
   s := False;
   r := 0;
+  SetLength(Result, l);
+  for i := 0 to (m - 1) do
+    Result[i] := Self[i];
   for i := m to (l - 1) do
     if (s or (Self[i] <> item)) then
-      Self[r.Increase + m] := Self[i]
+      Result[r.Increase + m] := Self[i]
     else
       s := not all;
-  SetLength(Self, (r + m));
-  Result := (l - Length(Self));
+  SetLength(Result, (r + m));
 end;
 
 {==============================================================================]
- <arr.Remove(item: VarType; all: Boolean): Integer>
+ <arr.Remove(item: VarType; all: Boolean): TArray>
  @action: Deletes item(s) from array arr. Only 1 if all is set as False.
  @note: Returns amount of items that were removed.
 [==============================================================================}
-function XArrHelp.Remove(const item: XVar; const all: Boolean): Integer; overload; cdecl;
+function XArrHelp.Remove(const item: XVar; const all: Boolean): XArr; overload; cdecl;
 begin
   Result := Self.Remove(item, 0, all);
 end;
 
 {==============================================================================]
- <arr.Remove(items: TArray; index: Integer; all: Boolean): Integer>
+ <arr.Remove(items: TArray; index: Integer; all: Boolean): TArray>
  @action: Deletes item(s) from array arr. Only 1 if all is set as False.
  @note: Returns amount of items that were removed. Supports start index position.
 [==============================================================================}
-function XArrHelp.Remove(const items: XArr; const index: Integer = 0; const all: Boolean = True): Integer; overload; cdecl;
+function XArrHelp.Remove(const items: XArr; const index: Integer = 0; const all: Boolean = True): XArr; overload; cdecl;
 var
   a, b, l, i, r, m: Integer;
   d, s: Boolean;
@@ -1963,10 +1964,13 @@ begin
   l := Length(Self);
   b := High(items);
   if ((l = 0) or (index >= l) or (b = -1)) then
-    Exit(0);
+    Exit(Self.Copy);
   m := Max(0, index);
   r := 0;
   s := False;
+  SetLength(Result, l);
+  for i := 0 to (m - 1) do
+    Result[i] := Self[i];
   for i := m to (l - 1) do
   begin
     if not s then
@@ -1980,57 +1984,21 @@ begin
       end;
     end;
     if not d then
-      Self[r.Increase + m] := Self[i]
+      Result[r.Increase + m] := Self[i]
     else
       d := not s;
   end;
-  SetLength(Self, (r + m));
-  Result := (l - Length(Self));
+  SetLength(Result, (r + m));
 end;
 
 {==============================================================================]
- <arr.Remove(items: TArray; all: Boolean): Integer>
+ <arr.Remove(items: TArray; all: Boolean): TArray>
  @action: Deletes item(s) from array arr. Only 1 if all is set as False.
  @note: Returns amount of items that were removed.
 [==============================================================================}
-function XArrHelp.Remove(const items: XArr; const all: Boolean): Integer; overload; cdecl;
+function XArrHelp.Remove(const items: XArr; const all: Boolean): XArr; overload; cdecl;
 begin
   Result := Self.Remove(items, 0, all);
-end;
-
-{==============================================================================]
- <arr.Resize(aChange: Integer): Integer>
- @action: Updates's arr length with aChange.
- @note: aChange > 0 => Result will give how many elements were added
-        aChange < 0 => Result will give how many elements got deleted (it will be negative value!)
-		aChange = 0 => Returns 0.
-[==============================================================================}
-function XArrHelp.Resize(const aChange: Integer): Integer; overload; cdecl;
-var
-  l: Integer;
-begin
-  l := Length(Self);
-  SetLength(Self, (l + aChange));
-  Result := (Length(Self) - l);
-end;
-
-{==============================================================================]
- <arr.Resize(aChange: Integer; null: VarType): Integer>
- @action: Updates's arr length with aChange.
- @note: aChange > 0 => Result will give how many elements were added
-        aChange < 0 => Result will give how many elements got deleted (it will be negative value!)
-		aChange = 0 => Returns 0.
-		Supports null for filling created indexes.
-[==============================================================================}
-function XArrHelp.Resize(const aChange: Integer; const null: XVar): Integer; overload; cdecl;
-var
-  i, l: Integer;
-begin
-  l := Length(Self);
-  SetLength(Self, aChange);
-  Result := (Length(Self) - l);
-  for i := 0 to (Result - 1) do
-    Self[l + i] := null;
 end;
 
 {==============================================================================]
@@ -2766,4 +2734,39 @@ begin
   SetLength(Result, 0);
   for i := 0 to High(Self) do
     Result := Concat(Result, Self[i]);
+end;
+
+{==============================================================================]
+ <T1D.Resize(arr: TArray; aChange: Integer): Integer>
+ @action: Updates's arr length with aChange.
+ @note: aChange > 0 => Result will give how many elements were added
+        aChange < 0 => Result will give how many elements got deleted (it will be negative value!)
+		aChange = 0 => Returns 0.
+[==============================================================================}
+class function T1D.Resize(var arr: XArr; const aChange: Integer): Integer; overload; cdecl;
+var
+  l: Integer;
+begin
+  l := Length(arr);
+  SetLength(arr, (l + aChange));
+  Result := (Length(arr) - l);
+end;
+
+{==============================================================================]
+ <T1D.Resize(arr: TArray; aChange: Integer; null: VarType): Integer>
+ @action: Updates's arr length with aChange.
+ @note: aChange > 0 => Result will give how many elements were added
+        aChange < 0 => Result will give how many elements got deleted (it will be negative value!)
+		aChange = 0 => Returns 0.
+		Supports null for filling created indexes.
+[==============================================================================}
+class function T1D.Resize(var arr: XArr; const aChange: Integer; const null: XVar): Integer; overload; cdecl;
+var
+  i, l: Integer;
+begin
+  l := Length(arr);
+  SetLength(arr, aChange);
+  Result := (Length(arr) - l);
+  for i := 0 to (Result - 1) do
+    arr[l + i] := null;
 end;
