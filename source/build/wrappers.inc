@@ -310,7 +310,6 @@ function TIntegerArray_Middle(const arr: TIntegerArray): Double; cdecl; begin Re
 function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.MostFreq(null); end;
 function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.LeastFreq(null); end;
 function TIntegerArray_BubbleSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BubbleSort2(aAscending); end;
-function TIntegerArray_BubbleSortOptimized(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BubbleSortOptimized(aAscending); end;
 function TIntegerArray_QuickSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSort(aAscending); end;
 function TIntegerArray_QuickSort3W(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSort3W(aAscending); end;
 function TIntegerArray_QSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QSort(aAscending); end;
@@ -1225,6 +1224,23 @@ function TArray_Remove30(const arr: TPointArray; const items: TPointArray; const
 function TArray_Remove31(const arr: TBoxArray; const items: TBoxArray; const all: Boolean): TBoxArray; overload; cdecl; begin Result := arr.Remove(items, all); end;
 function TArray_Remove32(const arr: TRangeArray; const items: TRangeArray; const all: Boolean): TRangeArray; overload; cdecl; begin Result := arr.Remove(items, all); end;
 
+function TArray_Resize1(var arr: TIntegerArray; const aChange: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange); end;
+function TArray_Resize2(var arr: TDoubleArray; const aChange: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange); end;
+function TArray_Resize3(var arr: TStringArray; const aChange: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange); end;
+function TArray_Resize4(var arr: TCharArray; const aChange: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange); end;
+function TArray_Resize5(var arr: TBooleanArray; const aChange: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange); end;
+function TArray_Resize6(var arr: TPointArray; const aChange: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange); end;
+function TArray_Resize7(var arr: TBoxArray; const aChange: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange); end;
+function TArray_Resize8(var arr: TRangeArray; const aChange: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange); end;
+function TArray_Resize9(var arr: TIntegerArray; const aChange: Integer; const null: Integer): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
+function TArray_Resize10(var arr: TDoubleArray; const aChange: Integer; const null: Double): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
+function TArray_Resize11(var arr: TStringArray; const aChange: Integer; const null: string): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
+function TArray_Resize12(var arr: TCharArray; const aChange: Integer; const null: Char): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
+function TArray_Resize13(var arr: TBooleanArray; const aChange: Integer; const null: Boolean): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
+function TArray_Resize14(var arr: TPointArray; const aChange: Integer; const null: TPoint): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
+function TArray_Resize15(var arr: TBoxArray; const aChange: Integer; const null: TBox): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
+function TArray_Resize16(var arr: TRangeArray; const aChange: Integer; const null: TRange): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
+
 function TArray_Reverse1(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
 function TArray_Reverse2(var arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
 function TArray_Reverse3(var arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
@@ -1568,32 +1584,28 @@ function TArray_BubbleSort2(var arr: TDoubleArray; const aAscending: Boolean = T
 function TArray_BubbleSort3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BubbleSort(aAscending); end;
 function TArray_BubbleSort4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BubbleSort(aAscending); end;
 
-function T1D_Resize1(var arr: TIntegerArray; const aChange: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange); end;
-function T1D_Resize2(var arr: TDoubleArray; const aChange: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange); end;
-function T1D_Resize3(var arr: TStringArray; const aChange: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange); end;
-function T1D_Resize4(var arr: TCharArray; const aChange: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange); end;
-function T1D_Resize5(var arr: TBooleanArray; const aChange: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange); end;
-function T1D_Resize6(var arr: TPointArray; const aChange: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange); end;
-function T1D_Resize7(var arr: TBoxArray; const aChange: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange); end;
-function T1D_Resize8(var arr: TRangeArray; const aChange: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange); end;
-function T1D_Resize9(var arr: TIntegerArray; const aChange: Integer; const null: Integer): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange, null); end;
-function T1D_Resize10(var arr: TDoubleArray; const aChange: Integer; const null: Double): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange, null); end;
-function T1D_Resize11(var arr: TStringArray; const aChange: Integer; const null: string): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange, null); end;
-function T1D_Resize12(var arr: TCharArray; const aChange: Integer; const null: Char): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange, null); end;
-function T1D_Resize13(var arr: TBooleanArray; const aChange: Integer; const null: Boolean): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange, null); end;
-function T1D_Resize14(var arr: TPointArray; const aChange: Integer; const null: TPoint): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange, null); end;
-function T1D_Resize15(var arr: TBoxArray; const aChange: Integer; const null: TBox): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange, null); end;
-function T1D_Resize16(var arr: TRangeArray; const aChange: Integer; const null: TRange): Integer; overload; cdecl; begin Result := T1D.Resize(arr, aChange, null); end;
+function TArray_BubbleSortOptimized1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BubbleSortOptimized(aAscending); end;
+function TArray_BubbleSortOptimized2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BubbleSortOptimized(aAscending); end;
+function TArray_BubbleSortOptimized3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BubbleSortOptimized(aAscending); end;
+function TArray_BubbleSortOptimized4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BubbleSortOptimized(aAscending); end;
 
-function T2D_Create1(const size1D, size2D: Integer; const item: Integer): T2DIntegerArray; overload; cdecl; begin Result := T2D.Create(size1D, size2D, item); end;
-function T2D_Create2(const size1D, size2D: Integer; const item: Double): T2DDoubleArray; overload; cdecl; begin Result := T2D.Create(size1D, size2D, item); end;
-function T2D_Create3(const size1D, size2D: Integer; const item: string): T2DStringArray; overload; cdecl; begin Result := T2D.Create(size1D, size2D, item); end;
-function T2D_Create4(const size1D, size2D: Integer; const item: Char): T2DCharArray; overload; cdecl; begin Result := T2D.Create(size1D, size2D, item); end;
-function T2D_Create5(const size1D, size2D: Integer; const item: Boolean): T2DBooleanArray; overload; cdecl; begin Result := T2D.Create(size1D, size2D, item); end;
-function T2D_Create6(const size1D, size2D: Integer; const item: TPoint): T2DPointArray; overload; cdecl; begin Result := T2D.Create(size1D, size2D, item); end;
-function T2D_Create7(const size1D, size2D: Integer; const item: TBox): T2DBoxArray; overload; cdecl; begin Result := T2D.Create(size1D, size2D, item); end;
-function T2D_Create8(const size1D, size2D: Integer; const item: TRange): T2DRangeArray; overload; cdecl; begin Result := T2D.Create(size1D, size2D, item); end;
+function T1D_Create1(const item: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
+function T1D_Create2(const item: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
+function T1D_Create3(const item: string; const aSize: Integer = 1): TStringArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
+function T1D_Create4(const item: Char; const aSize: Integer = 1): TCharArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
+function T1D_Create5(const item: Boolean; const aSize: Integer = 1): TBooleanArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
+function T1D_Create6(const item: TPoint; const aSize: Integer = 1): TPointArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
+function T1D_Create7(const item: TBox; const aSize: Integer = 1): TBoxArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
+function T1D_Create8(const item: TRange; const aSize: Integer = 1): TRangeArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
 
+function T2D_Create1(const item: Integer; const size1D: Integer = 1; const size2D: Integer = 1): T2DIntegerArray; overload; cdecl; begin Result := T2D.Create(item, size1D, size2D); end;
+function T2D_Create2(const item: Double; const size1D: Integer = 1; const size2D: Integer = 1): T2DDoubleArray; overload; cdecl; begin Result := T2D.Create(item, size1D, size2D); end;
+function T2D_Create3(const item: string; const size1D: Integer = 1; const size2D: Integer = 1): T2DStringArray; overload; cdecl; begin Result := T2D.Create(item, size1D, size2D); end;
+function T2D_Create4(const item: Char; const size1D: Integer = 1; const size2D: Integer = 1): T2DCharArray; overload; cdecl; begin Result := T2D.Create(item, size1D, size2D); end;
+function T2D_Create5(const item: Boolean; const size1D: Integer = 1; const size2D: Integer = 1): T2DBooleanArray; overload; cdecl; begin Result := T2D.Create(item, size1D, size2D); end;
+function T2D_Create6(const item: TPoint; const size1D: Integer = 1; const size2D: Integer = 1): T2DPointArray; overload; cdecl; begin Result := T2D.Create(item, size1D, size2D); end;
+function T2D_Create7(const item: TBox; const size1D: Integer = 1; const size2D: Integer = 1): T2DBoxArray; overload; cdecl; begin Result := T2D.Create(item, size1D, size2D); end;
+function T2D_Create8(const item: TRange; const size1D: Integer = 1; const size2D: Integer = 1): T2DRangeArray; overload; cdecl; begin Result := T2D.Create(item, size1D, size2D); end;
 
 function T2DArray_Blank1(const arr: T2DIntegerArray): Boolean; overload; cdecl; begin Result := arr.Blank; end;
 function T2DArray_Blank2(const arr: T2DDoubleArray): Boolean; overload; cdecl; begin Result := arr.Blank; end;
