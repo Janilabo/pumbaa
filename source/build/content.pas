@@ -682,6 +682,14 @@ begin
   AddFunction(@TArray_Exchange6, 'function TArray_Exchange(var arr: TPointArray; const aIndex, bIndex: Integer): Boolean; overload;');
   AddFunction(@TArray_Exchange7, 'function TArray_Exchange(var arr: TBoxArray; const aIndex, bIndex: Integer): Boolean; overload;');
   AddFunction(@TArray_Exchange8, 'function TArray_Exchange(var arr: TRangeArray; const aIndex, bIndex: Integer): Boolean; overload;');
+  AddFunction(@TArray_Exchange9, 'function TArray_Exchange(var arr, b: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Exchange10, 'function TArray_Exchange(var arr, b: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Exchange11, 'function TArray_Exchange(var arr, b: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Exchange12, 'function TArray_Exchange(var arr, b: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Exchange13, 'function TArray_Exchange(var arr, b: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Exchange14, 'function TArray_Exchange(var arr, b: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Exchange15, 'function TArray_Exchange(var arr, b: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Exchange16, 'function TArray_Exchange(var arr, b: TRangeArray): Integer; overload;');
 
   AddFunction(@TArray_Exclude1, 'function TArray_Exclude(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Exclude2, 'function TArray_Exclude(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): TDoubleArray; overload;');
@@ -881,6 +889,15 @@ begin
   AddFunction(@TArray_Holds7, 'function TArray_Holds(const arr, chain: TBoxArray): Boolean; overload;');
   AddFunction(@TArray_Holds8, 'function TArray_Holds(const arr, chain: TRangeArray): Boolean; overload;');
 
+  AddFunction(@TArray_ID1, 'function TArray_ID(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_ID2, 'function TArray_ID(const arr: TDoubleArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_ID3, 'function TArray_ID(const arr: TStringArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_ID4, 'function TArray_ID(const arr: TCharArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_ID5, 'function TArray_ID(const arr: TBooleanArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_ID6, 'function TArray_ID(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_ID7, 'function TArray_ID(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_ID8, 'function TArray_ID(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+
   AddFunction(@TArray_IDs1, 'function TArray_IDs(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_IDs2, 'function TArray_IDs(const arr: TDoubleArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_IDs3, 'function TArray_IDs(const arr: TStringArray; const aAscending: Boolean = True): TIntegerArray; overload;');
@@ -922,6 +939,24 @@ begin
   AddFunction(@TArray_Includes6, 'function TArray_Includes(const arr: TPointArray; const item: TPoint; const index: Integer = 2147483647): Boolean; overload;');
   AddFunction(@TArray_Includes7, 'function TArray_Includes(const arr: TBoxArray; const item: TBox; const index: Integer = 2147483647): Boolean; overload;');
   AddFunction(@TArray_Includes8, 'function TArray_Includes(const arr: TRangeArray; const item: TRange; const index: Integer = 2147483647): Boolean; overload;');
+
+  AddFunction(@TArray_Indexed1, 'function TArray_Indexed(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexed2, 'function TArray_Indexed(const arr: TDoubleArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexed3, 'function TArray_Indexed(const arr: TStringArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexed4, 'function TArray_Indexed(const arr: TCharArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexed5, 'function TArray_Indexed(const arr: TBooleanArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexed6, 'function TArray_Indexed(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexed7, 'function TArray_Indexed(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexed8, 'function TArray_Indexed(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  
+  AddFunction(@TArray_Indexes1, 'function TArray_Indexes(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexes2, 'function TArray_Indexes(const arr: TDoubleArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexes3, 'function TArray_Indexes(const arr: TStringArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexes4, 'function TArray_Indexes(const arr: TCharArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexes5, 'function TArray_Indexes(const arr: TBooleanArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexes6, 'function TArray_Indexes(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexes7, 'function TArray_Indexes(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Indexes8, 'function TArray_Indexes(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload;');  
 
   AddFunction(@TArray_Keep1, 'function TArray_Keep(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Keep2, 'function TArray_Keep(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload;');
@@ -1000,6 +1035,14 @@ begin
   AddFunction(@TArray_Locations14, 'function TArray_Locations(const arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Locations15, 'function TArray_Locations(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Locations16, 'function TArray_Locations(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647): TIntegerArray; overload;');
+  AddFunction(@TArray_Locations17, 'function TArray_Locations(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Locations18, 'function TArray_Locations(const arr: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Locations19, 'function TArray_Locations(const arr: TStringArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Locations20, 'function TArray_Locations(const arr: TCharArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Locations21, 'function TArray_Locations(const arr: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Locations22, 'function TArray_Locations(const arr: TPointArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Locations23, 'function TArray_Locations(const arr: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Locations24, 'function TArray_Locations(const arr: TRangeArray): TIntegerArray; overload;');
 
   AddFunction(@TArray_Mix1, 'function TArray_Mix(var arr: TIntegerArray; const shuffles: Integer = 1): Boolean; overload;');
   AddFunction(@TArray_Mix2, 'function TArray_Mix(var arr: TDoubleArray; const shuffles: Integer = 1): Boolean; overload;');
@@ -1148,6 +1191,14 @@ begin
   AddFunction(@TArray_Positions14, 'function TArray_Positions(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Positions15, 'function TArray_Positions(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Positions16, 'function TArray_Positions(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TIntegerArray; overload;');
+  AddFunction(@TArray_Positions17, 'function TArray_Positions(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Positions18, 'function TArray_Positions(const arr: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Positions19, 'function TArray_Positions(const arr: TStringArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Positions20, 'function TArray_Positions(const arr: TCharArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Positions21, 'function TArray_Positions(const arr: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Positions22, 'function TArray_Positions(const arr: TPointArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Positions23, 'function TArray_Positions(const arr: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Positions24, 'function TArray_Positions(const arr: TRangeArray): TIntegerArray; overload;');
 
   AddFunction(@TArray_Previous1, 'function TArray_Previous(const arr: TIntegerArray; const index: Integer; const count: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Previous2, 'function TArray_Previous(const arr: TDoubleArray; const index: Integer; const count: Integer = 2147483647): TDoubleArray; overload;');
@@ -1415,15 +1466,6 @@ begin
   AddFunction(@TArray_SubarrayPositions7, 'function TArray_SubarrayPositions(const arr: TBoxArray; const pattern: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TArray_SubarrayPositions8, 'function TArray_SubarrayPositions(const arr: TRangeArray; const pattern: TRangeArray): TIntegerArray; overload;');
 
-  AddFunction(@TArray_Swap1, 'function TArray_Swap(var arr, b: TIntegerArray): Integer; overload;');
-  AddFunction(@TArray_Swap2, 'function TArray_Swap(var arr, b: TDoubleArray): Integer; overload;');
-  AddFunction(@TArray_Swap3, 'function TArray_Swap(var arr, b: TStringArray): Integer; overload;');
-  AddFunction(@TArray_Swap4, 'function TArray_Swap(var arr, b: TCharArray): Integer; overload;');
-  AddFunction(@TArray_Swap5, 'function TArray_Swap(var arr, b: TBooleanArray): Integer; overload;');
-  AddFunction(@TArray_Swap6, 'function TArray_Swap(var arr, b: TPointArray): Integer; overload;');
-  AddFunction(@TArray_Swap7, 'function TArray_Swap(var arr, b: TBoxArray): Integer; overload;');
-  AddFunction(@TArray_Swap8, 'function TArray_Swap(var arr, b: TRangeArray): Integer; overload;');
-
   AddFunction(@TArray_Trade1, 'function TArray_Trade(var arr, b: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Trade2, 'function TArray_Trade(var arr, b: TDoubleArray): Integer; overload;');
   AddFunction(@TArray_Trade3, 'function TArray_Trade(var arr, b: TStringArray): Integer; overload;');
@@ -1607,6 +1649,19 @@ begin
   AddFunction(@TArray_BubbleSortOptimized3, 'function TArray_BubbleSortOptimized(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BubbleSortOptimized4, 'function TArray_BubbleSortOptimized(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
 
+  AddFunction(@TArray_QuickSorted1, 'function TArray_QuickSorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_QuickSorted2, 'function TArray_QuickSorted(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TArray_QuickSorted3, 'function TArray_QuickSorted(const arr: TStringArray; const aAscending: Boolean = True): TStringArray; overload;');
+  AddFunction(@TArray_QuickSorted4, 'function TArray_QuickSorted(const arr: TCharArray; const aAscending: Boolean = True): TCharArray; overload;');
+  AddFunction(@TArray_QuickSorted5, 'function TArray_QuickSorted(const arr: TIntegerArray; const weight: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_QuickSorted6, 'function TArray_QuickSorted(const arr: TDoubleArray; const weight: TIntegerArray; const aAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TArray_QuickSorted7, 'function TArray_QuickSorted(const arr: TStringArray; const weight: TIntegerArray; const aAscending: Boolean = True): TStringArray; overload;');
+  AddFunction(@TArray_QuickSorted8, 'function TArray_QuickSorted(const arr: TCharArray; const weight: TIntegerArray; const aAscending: Boolean = True): TCharArray; overload;');
+  AddFunction(@TArray_QuickSorted9, 'function TArray_QuickSorted(const arr: TIntegerArray; const weight: TDoubleArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_QuickSorted10, 'function TArray_QuickSorted(const arr: TDoubleArray; const weight: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TArray_QuickSorted11, 'function TArray_QuickSorted(const arr: TStringArray; const weight: TDoubleArray; const aAscending: Boolean = True): TStringArray; overload;');
+  AddFunction(@TArray_QuickSorted12, 'function TArray_QuickSorted(const arr: TCharArray; const weight: TDoubleArray; const aAscending: Boolean = True): TCharArray; overload;');
+ 
   AddFunction(@T2DArray_Blank1, 'function T2DArray_Blank(const arr: T2DIntegerArray): Boolean; overload;');
   AddFunction(@T2DArray_Blank2, 'function T2DArray_Blank(const arr: T2DDoubleArray): Boolean; overload;');
   AddFunction(@T2DArray_Blank3, 'function T2DArray_Blank(const arr: T2DStringArray): Boolean; overload;');
