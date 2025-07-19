@@ -1699,6 +1699,51 @@ function T2DArray_Empty6(const arr: T2DPointArray): Boolean; overload; cdecl; be
 function T2DArray_Empty7(const arr: T2DBoxArray): Boolean; overload; cdecl; begin Result := arr.Empty; end;
 function T2DArray_Empty8(const arr: T2DRangeArray): Boolean; overload; cdecl; begin Result := arr.Empty; end;
 
+function T2DArray_Flat1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat3(const arr: T2DStringArray): TStringArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat4(const arr: T2DCharArray): TCharArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat5(const arr: T2DBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Flat; end;
+function T2DArray_Flat8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Flat; end;
+
+function T2DArray_Flatten1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Flatten; end;
+function T2DArray_Flatten2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Flatten; end;
+function T2DArray_Flatten3(const arr: T2DStringArray): TStringArray; overload; cdecl; begin Result := arr.Flatten; end;
+function T2DArray_Flatten4(const arr: T2DCharArray): TCharArray; overload; cdecl; begin Result := arr.Flatten; end;
+function T2DArray_Flatten5(const arr: T2DBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Flatten; end;
+function T2DArray_Flatten6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.Flatten; end;
+function T2DArray_Flatten7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Flatten; end;
+function T2DArray_Flatten8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Flatten; end;
+
+function T2DArray_Jagged1(const arr: T2DIntegerArray): Boolean; overload; cdecl; begin Result := arr.Jagged; end;
+function T2DArray_Jagged2(const arr: T2DDoubleArray): Boolean; overload; cdecl; begin Result := arr.Jagged; end;
+function T2DArray_Jagged3(const arr: T2DStringArray): Boolean; overload; cdecl; begin Result := arr.Jagged; end;
+function T2DArray_Jagged4(const arr: T2DCharArray): Boolean; overload; cdecl; begin Result := arr.Jagged; end;
+function T2DArray_Jagged5(const arr: T2DBooleanArray): Boolean; overload; cdecl; begin Result := arr.Jagged; end;
+function T2DArray_Jagged6(const arr: T2DPointArray): Boolean; overload; cdecl; begin Result := arr.Jagged; end;
+function T2DArray_Jagged7(const arr: T2DBoxArray): Boolean; overload; cdecl; begin Result := arr.Jagged; end;
+function T2DArray_Jagged8(const arr: T2DRangeArray): Boolean; overload; cdecl; begin Result := arr.Jagged; end;
+
+function T2DArray_Merge1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Merge; end;
+function T2DArray_Merge2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Merge; end;
+function T2DArray_Merge3(const arr: T2DStringArray): TStringArray; overload; cdecl; begin Result := arr.Merge; end;
+function T2DArray_Merge4(const arr: T2DCharArray): TCharArray; overload; cdecl; begin Result := arr.Merge; end;
+function T2DArray_Merge5(const arr: T2DBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Merge; end;
+function T2DArray_Merge6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.Merge; end;
+function T2DArray_Merge7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Merge; end;
+function T2DArray_Merge8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Merge; end;
+
+function T2DArray_Ragged1(const arr: T2DIntegerArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+function T2DArray_Ragged2(const arr: T2DDoubleArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+function T2DArray_Ragged3(const arr: T2DStringArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+function T2DArray_Ragged4(const arr: T2DCharArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+function T2DArray_Ragged5(const arr: T2DBooleanArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+function T2DArray_Ragged6(const arr: T2DPointArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+function T2DArray_Ragged7(const arr: T2DBoxArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+function T2DArray_Ragged8(const arr: T2DRangeArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+
 function T2DArray_Size1(const arr: T2DIntegerArray; var lengths: TIntegerArray): Int64; overload; cdecl; begin Result := arr.Size(lengths); end;
 function T2DArray_Size2(const arr: T2DDoubleArray; var lengths: TIntegerArray): Int64; overload; cdecl; begin Result := arr.Size(lengths); end;
 function T2DArray_Size3(const arr: T2DStringArray; var lengths: TIntegerArray): Int64; overload; cdecl; begin Result := arr.Size(lengths); end;
@@ -1716,15 +1761,6 @@ function T2DArray_Size14(const arr: T2DPointArray): Int64; overload; cdecl; begi
 function T2DArray_Size15(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Size; end;
 function T2DArray_Size16(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Size; end;
 
-function T2DArray_Merge1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Merge; end;
-function T2DArray_Merge2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Merge; end;
-function T2DArray_Merge3(const arr: T2DStringArray): TStringArray; overload; cdecl; begin Result := arr.Merge; end;
-function T2DArray_Merge4(const arr: T2DCharArray): TCharArray; overload; cdecl; begin Result := arr.Merge; end;
-function T2DArray_Merge5(const arr: T2DBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Merge; end;
-function T2DArray_Merge6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.Merge; end;
-function T2DArray_Merge7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Merge; end;
-function T2DArray_Merge8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Merge; end;
-
 function T2DArray_TArray1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.TArray; end;
 function T2DArray_TArray2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.TArray; end;
 function T2DArray_TArray3(const arr: T2DStringArray): TStringArray; overload; cdecl; begin Result := arr.TArray; end;
@@ -1733,12 +1769,3 @@ function T2DArray_TArray5(const arr: T2DBooleanArray): TBooleanArray; overload; 
 function T2DArray_TArray6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.TArray; end;
 function T2DArray_TArray7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.TArray; end;
 function T2DArray_TArray8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.TArray; end;
-
-function T2DArray_Flat1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Flat; end;
-function T2DArray_Flat2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Flat; end;
-function T2DArray_Flat3(const arr: T2DStringArray): TStringArray; overload; cdecl; begin Result := arr.Flat; end;
-function T2DArray_Flat4(const arr: T2DCharArray): TCharArray; overload; cdecl; begin Result := arr.Flat; end;
-function T2DArray_Flat5(const arr: T2DBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Flat; end;
-function T2DArray_Flat6(const arr: T2DPointArray): TPointArray; overload; cdecl; begin Result := arr.Flat; end;
-function T2DArray_Flat7(const arr: T2DBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Flat; end;
-function T2DArray_Flat8(const arr: T2DRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Flat; end;
