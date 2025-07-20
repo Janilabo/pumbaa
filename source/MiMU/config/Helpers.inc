@@ -387,6 +387,10 @@ type
       function Group(const diff: Integer): T2DIntegerArray; overload; cdecl;
       function Groub(const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl;
       function Groub(const diff: Integer): T2DIntegerArray; overload; cdecl;
+	  function Clique(const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl;
+      function Clique(const diff: Integer): T2DIntegerArray; overload; cdecl;
+	  function Knit(const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl;
+      function Knit(const diff: Integer): T2DIntegerArray; overload; cdecl;
       function Invert: TIntegerArray; cdecl;
     {$ENDIF}
     {$IFDEF Double}
@@ -404,10 +408,20 @@ type
       function Edge(const scan8W: Boolean = False): TPointArray; cdecl;
       function FloodFill(const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload; cdecl;
       function FloodFill(const start: TPoint; const scan8W: Boolean = False): TPointArray; overload; cdecl;
+	  function Xs: TIntegerArray; overload; cdecl;
+	  function Ys: TIntegerArray; overload; cdecl;
+	  function Vertical: TRange; overload; cdecl;
+	  function Horizontal: TRange; overload; cdecl;
+    {$ENDIF}
+    {$IFDEF TBox}
     {$ENDIF}	
     {$IFDEF TRange}
+	  function Bounds: TRange; overload; cdecl;
+	  function Range: TRange; overload; cdecl;
       function TIA: TIntegerArray; cdecl;
       function T2DIA: T2DIntegerArray; cdecl;
+	  function Starting: TIntegerArray; overload; cdecl;
+	  function Stopping: TIntegerArray; overload; cdecl;
     {$ENDIF}	
     end;
   X2DArrHelp = type helper for X2DArr
@@ -415,6 +429,7 @@ type
     function Empty: Boolean; overload; cdecl;
 	function Flat: XArr; overload; cdecl;
 	function Flatten: XArr; overload; cdecl;
+	function Irregular: Boolean; overload; cdecl;
 	function Jagged: Boolean; overload; cdecl;
     function Merge: XArr; overload; cdecl;
 	function Ragged: Boolean; overload; cdecl;

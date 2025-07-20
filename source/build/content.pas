@@ -209,6 +209,8 @@ begin
   AddFunction(@TBox_Width2, 'function TBox_Width(var bx: TBox; const w: Integer): Integer; overload;');
   AddFunction(@TBox_Height1, 'function TBox_Height(const bx: TBox): Integer; overload;');
   AddFunction(@TBox_Height2, 'function TBox_Height(var bx: TBox; const h: Integer): Integer; overload;');
+  AddFunction(@TBox_Horizontal, 'function TBox_Horizontal(const bx: TBox): TRange; overload;');
+  AddFunction(@TBox_Vertical, 'function TBox_Vertical(const bx: TBox): TRange; overload;');
   AddFunction(@TBox_Expand, 'function TBox_Expand(const bx: TBox; const change: Integer = 1): TBox;');
   AddFunction(@TBox_Shrink, 'function TBox_Shrink(const bx: TBox; const change: Integer = 1): TBox;');
   AddFunction(@TBox_Resize, 'function TBox_Resize(const bx: TBox; const change: Integer): TBox;');
@@ -370,6 +372,10 @@ begin
   AddFunction(@TIntegerArray_Group2, 'function TIntegerArray_Group(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Groub1, 'function TIntegerArray_Groub(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Groub2, 'function TIntegerArray_Groub(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Clique1, 'function TIntegerArray_Clique(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Clique2, 'function TIntegerArray_Clique(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Knit1, 'function TIntegerArray_Knit(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Knit2, 'function TIntegerArray_Knit(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Init, 'function TIntegerArray_Init(var arr: TIntegerArray): Boolean');
 
@@ -381,7 +387,15 @@ begin
   AddFunction(@TPointArray_Edge, 'function TPointArray_Edge(const arr: TPointArray; const scan8W: Boolean = False): TPointArray;');
   AddFunction(@TPointArray_FloodFill1, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload;');
   AddFunction(@TPointArray_FloodFill2, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload;');
+  AddFunction(@TPointArray_Xs, 'function TPointArray_Xs(const arr: TPointArray): TIntegerArray;');
+  AddFunction(@TPointArray_Ys, 'function TPointArray_Ys(const arr: TPointArray): TIntegerArray;');
+  AddFunction(@TPointArray_Horizontal, 'function TPointArray_Horizontal(const arr: TPointArray): TRange;');
+  AddFunction(@TPointArray_Vertical, 'function TPointArray_Vertical(const arr: TPointArray): TRange;');
 
+  AddFunction(@TRangeArray_Bounds, 'function TRangeArray_Bounds(const arr: TRangeArray): TRange;');
+  AddFunction(@TRangeArray_Range, 'function TRangeArray_Range(const arr: TRangeArray): TRange;');
+  AddFunction(@TRangeArray_Starting, 'function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray;');
+  AddFunction(@TRangeArray_Stopping, 'function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_TIA, 'function TRangeArray_TIA(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_T2DIA, 'function TRangeArray_T2DIA(const arr: TRangeArray): T2DIntegerArray;');
   
@@ -1734,6 +1748,15 @@ begin
   AddFunction(@T2DArray_Flatten6, 'function T2DArray_Flatten(const arr: T2DPointArray): TPointArray; overload;');
   AddFunction(@T2DArray_Flatten7, 'function T2DArray_Flatten(const arr: T2DBoxArray): TBoxArray; overload;');
   AddFunction(@T2DArray_Flatten8, 'function T2DArray_Flatten(const arr: T2DRangeArray): TRangeArray; overload;');
+  
+  AddFunction(@T2DArray_Irregular1, 'function T2DArray_Irregular(const arr: T2DIntegerArray): Boolean; overload;');
+  AddFunction(@T2DArray_Irregular2, 'function T2DArray_Irregular(const arr: T2DDoubleArray): Boolean; overload;');
+  AddFunction(@T2DArray_Irregular3, 'function T2DArray_Irregular(const arr: T2DStringArray): Boolean; overload;');
+  AddFunction(@T2DArray_Irregular4, 'function T2DArray_Irregular(const arr: T2DCharArray): Boolean; overload;');
+  AddFunction(@T2DArray_Irregular5, 'function T2DArray_Irregular(const arr: T2DBooleanArray): Boolean; overload;');
+  AddFunction(@T2DArray_Irregular6, 'function T2DArray_Irregular(const arr: T2DPointArray): Boolean; overload;');
+  AddFunction(@T2DArray_Irregular7, 'function T2DArray_Irregular(const arr: T2DBoxArray): Boolean; overload;');
+  AddFunction(@T2DArray_Irregular8, 'function T2DArray_Irregular(const arr: T2DRangeArray): Boolean; overload;');
   
   AddFunction(@T2DArray_Jagged1, 'function T2DArray_Jagged(const arr: T2DIntegerArray): Boolean; overload;');
   AddFunction(@T2DArray_Jagged2, 'function T2DArray_Jagged(const arr: T2DDoubleArray): Boolean; overload;');
