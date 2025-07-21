@@ -155,6 +155,7 @@ function String_Exchange(var str: string; const aIndex, bIndex: Integer): Boolea
 function TPoint_Create1(const X, Y: Integer): TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create(X, Y); end;
 function TPoint_Create2(const value: Integer): TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create(value); end;
 function TPoint_Create3: TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create; end;
+function TPoint_Construct(const pX, pY: Integer): TPoint; overload; cdecl; begin Result := TPoint.Construct(pX, pY); end;
 function TPoint_Build(const X, Y: Integer): TPoint; cdecl; inline; var pt: TPoint; begin Result := pt.Build(X, Y); end;
 function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean; cdecl; inline; begin Result := pt.Inside(bx); end;
 function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean; cdecl; inline; begin Result := pt.InCircle(center, radius); end;
@@ -175,6 +176,7 @@ function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; var bx:
 function TBox_Create3(const XValue, YValue: Integer): TBox; overload; cdecl; var bx: TBox; begin Result.Create(XValue, YValue); end;
 function TBox_Create4(const target: TPoint): TBox; overload; cdecl; begin Result.Create(target); end;
 function TBox_Create5(const value: Integer = 0): TBox; overload; cdecl; begin Result.Create(value); end; 
+function TBox_Construct(const XS, YS, XE, YE: Integer): TBox; overload; cdecl; begin Result := TBox.Construct(XS, YS, XE, YE); end;
 function TBox_Build1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Build(minX, minY, maxX, maxY); end;
 function TBox_Build2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Build(top, bottom); end;
 function TBox_Build3(const valueX, valueY: Integer): TBox; overload; cdecl; begin Result.Build(valueX, valueY); end;
@@ -249,6 +251,7 @@ function TRange_Decreasing(const range: TRange): Boolean; cdecl; begin Result :=
 function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
 function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
 function TRange_Create3: TRange; overload; cdecl; var range: TRange; begin Result := range.Create; end;
+function TRange_Construct(const rStart, rStop: Integer): TRange; overload; cdecl; begin Result := TRange.Construct(rStart, rStop); end;
 function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer; cdecl; var range: TRange; begin Result := range.Build(rStart, rStop); end;
 function TRange_Grab(const range: TRange): TRange; cdecl; begin Result := range.Grab; end;
 function TRange_Size(const range: TRange): Integer; cdecl; begin Result := range.Size; end;
@@ -371,10 +374,13 @@ function TPointArray_FloodFill1(const arr: TPointArray; const start: TPoint; con
 function TPointArray_FloodFill2(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := arr.FloodFill(start, scan8W); end;
 function TPointArray_Xs(const arr: TPointArray): TIntegerArray; cdecl; begin Result := arr.Xs; end;
 function TPointArray_Ys(const arr: TPointArray): TIntegerArray; cdecl; begin Result := arr.Ys; end;
+function TPointArray_XValues(const arr: TPointArray): TIntegerArray; cdecl; begin Result := arr.XValues; end;
+function TPointArray_YValues(const arr: TPointArray): TIntegerArray; cdecl; begin Result := arr.YValues; end;
 function TPointArray_Horizontal(const arr: TPointArray): TRange; cdecl; begin Result := arr.Horizontal; end;
 function TPointArray_Vertical(const arr: TPointArray): TRange; cdecl; begin Result := arr.Vertical; end;
 
 function TRangeArray_Bounds(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Bounds; end;
+function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray; cdecl; begin Result := arr.Normalized; end;
 function TRangeArray_Range(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Range; end;
 function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Starting; end;
 function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Stopping; end;

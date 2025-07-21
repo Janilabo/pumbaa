@@ -173,6 +173,7 @@ begin
   AddFunction(@TPoint_Create1, 'function TPoint_Create(const X, Y: Integer): TPoint; overload;');
   AddFunction(@TPoint_Create2, 'function TPoint_Create(const value: Integer): TPoint; overload;');
   AddFunction(@TPoint_Create3, 'function TPoint_Create: TPoint; overload;');
+  AddFunction(@TPoint_Construct, 'function TPoint_Construct(const pX, pY: Integer): TPoint; overload;');
   AddFunction(@TPoint_Build, 'function TPoint_Build(const X, Y: Integer): TPoint;');
   AddFunction(@TPoint_Inside, 'function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean;');
   AddFunction(@TPoint_InCircle, 'function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean;');
@@ -198,6 +199,7 @@ begin
   AddFunction(@TBox_Create3, 'function TBox_Create(const valueX, valueY: Integer): TBox; overload;');
   AddFunction(@TBox_Create4, 'function TBox_Create(const target: TPoint): TBox; overload;');
   AddFunction(@TBox_Create5, 'function TBox_Create(const value: Integer = 0): TBox; overload;');
+  AddFunction(@TBox_Construct, 'function TBox_Construct(const XS, YS, XE, YE: Integer): TBox; overload');
   AddFunction(@TBox_Make1, 'function TBox_Make(const pt: TPoint; const radius: Integer = 0): TBox; overload;');
   AddFunction(@TBox_Make2, 'function TBox_Make(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload;');
   AddFunction(@TBox_Form1, 'function TBox_Form(const pt: TPoint; const size: Integer = 1): TBox; overload;');
@@ -267,6 +269,7 @@ begin
   AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
   AddFunction(@TRange_Create3, 'function TRange_Create: TRange; overload;');
+  AddFunction(@TRange_Construct, 'function TRange_Construct(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Build, 'function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer;');
   AddFunction(@TRange_Grab, 'function TRange_Grab(const range: TRange): TRange;');
   AddFunction(@TRange_Size, 'function TRange_Size(const range: TRange): Integer;');
@@ -389,10 +392,13 @@ begin
   AddFunction(@TPointArray_FloodFill2, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload;');
   AddFunction(@TPointArray_Xs, 'function TPointArray_Xs(const arr: TPointArray): TIntegerArray;');
   AddFunction(@TPointArray_Ys, 'function TPointArray_Ys(const arr: TPointArray): TIntegerArray;');
+  AddFunction(@TPointArray_XValues, 'function TPointArray_XValues(const arr: TPointArray): TIntegerArray;');
+  AddFunction(@TPointArray_YValues, 'function TPointArray_YValues(const arr: TPointArray): TIntegerArray;');
   AddFunction(@TPointArray_Horizontal, 'function TPointArray_Horizontal(const arr: TPointArray): TRange;');
   AddFunction(@TPointArray_Vertical, 'function TPointArray_Vertical(const arr: TPointArray): TRange;');
 
   AddFunction(@TRangeArray_Bounds, 'function TRangeArray_Bounds(const arr: TRangeArray): TRange;');
+  AddFunction(@TRangeArray_Normalized, 'function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray;');
   AddFunction(@TRangeArray_Range, 'function TRangeArray_Range(const arr: TRangeArray): TRange;');
   AddFunction(@TRangeArray_Starting, 'function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_Stopping, 'function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray;');
