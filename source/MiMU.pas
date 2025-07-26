@@ -205,7 +205,7 @@ type
   end;
   TBoxArray = array of TBox;
   T2DBoxArray = array of TBoxArray;
-  
+
 function MiMU_Version: Double; cdecl;
 
 operator+(const a, b: TPoint): TPoint;
@@ -339,7 +339,9 @@ type
     class function Create(const rStart, rStop: Integer): TRange; overload; cdecl;
     class function Create(const value: Integer = 0): TRange; overload; cdecl;
   end;
-  
+
+{$DEFINE IMPLEMENT}{$INCLUDE MiMU\config\Templates\D.inc}{$UNDEF IMPLEMENT} 
+ 
 implementation
 
 function MiMU_Version: Double; cdecl;

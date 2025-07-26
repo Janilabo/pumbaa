@@ -382,6 +382,12 @@ begin
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Init, 'function TIntegerArray_Init(var arr: TIntegerArray): Boolean');
 
+  AddFunction(@TPointArray_X1, 'function TPointArray_X(const arr: TPointArray): TIntegerArray; overload;');
+  AddFunction(@TPointArray_X2, 'function TPointArray_X(const arr: TPointArray; const val: Integer): TIntegerArray; overload;');
+  AddFunction(@TPointArray_X3, 'function TPointArray_X(const arr: TPointArray; const vals: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TPointArray_Y1, 'function TPointArray_Y(const arr: TPointArray): TIntegerArray; overload;');
+  AddFunction(@TPointArray_Y2, 'function TPointArray_Y(const arr: TPointArray; const val: Integer): TIntegerArray; overload;');
+  AddFunction(@TPointArray_Y3, 'function TPointArray_Y(const arr: TPointArray; const vals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TPointArray_Bounds1, 'function TPointArray_Bounds(const arr: TPointArray): TBox; overload;');
   AddFunction(@TPointArray_Bounds2, 'function TPointArray_Bounds(const arr: TPointArray; var width, height: Integer): TBox; overload;');
   AddFunction(@TPointArray_Undupe, 'function TPointArray_Undupe(const arr: TPointArray): TPointArray;');
@@ -397,6 +403,25 @@ begin
   AddFunction(@TPointArray_Horizontal, 'function TPointArray_Horizontal(const arr: TPointArray): TRange;');
   AddFunction(@TPointArray_Vertical, 'function TPointArray_Vertical(const arr: TPointArray): TRange;');
 
+  AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_X1_3, 'function TBoxArray_X1(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_Y1_1, 'function TBoxArray_Y1(const arr: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_Y1_2, 'function TBoxArray_Y1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_Y1_3, 'function TBoxArray_Y1(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_X2_1, 'function TBoxArray_X2(const arr: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_X2_2, 'function TBoxArray_X2(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_X2_3, 'function TBoxArray_X2(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_Y2_1, 'function TBoxArray_Y2(const arr: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_Y2_2, 'function TBoxArray_Y2(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_Y2_3, 'function TBoxArray_Y2(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
+
+  AddFunction(@TRangeArray_Start1, 'function TRangeArray_Start(const arr: TRangeArray): TIntegerArray;');
+  AddFunction(@TRangeArray_Start2, 'function TRangeArray_Start(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Start3, 'function TRangeArray_Start(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Stop1, 'function TRangeArray_Stop(const arr: TRangeArray): TIntegerArray;');
+  AddFunction(@TRangeArray_Stop2, 'function TRangeArray_Stop(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Stop3, 'function TRangeArray_Stop(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TRangeArray_Bounds, 'function TRangeArray_Bounds(const arr: TRangeArray): TRange;');
   AddFunction(@TRangeArray_Normalized, 'function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray;');
   AddFunction(@TRangeArray_Range, 'function TRangeArray_Range(const arr: TRangeArray): TRange;');

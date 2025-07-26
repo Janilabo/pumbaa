@@ -364,6 +364,12 @@ function TIntegerArray_Knit2(const arr: TIntegerArray; const diff: Integer): T2D
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
 function TIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 
+function TPointArray_X1(const arr: TPointArray): TIntegerArray; cdecl; begin Result := X(arr); end;
+function TPointArray_X2(const arr: TPointArray; const val: Integer): TIntegerArray; cdecl; begin Result := X(arr, val); end;
+function TPointArray_X3(const arr: TPointArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := X(arr, vals); end;
+function TPointArray_Y1(const arr: TPointArray): TIntegerArray; cdecl; begin Result := Y(arr); end;
+function TPointArray_Y2(const arr: TPointArray; const val: Integer): TIntegerArray; cdecl; begin Result := Y(arr, val); end;
+function TPointArray_Y3(const arr: TPointArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Y(arr, vals); end;
 function TPointArray_Bounds1(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Bounds; end;
 function TPointArray_Bounds2(const arr: TPointArray; var width, height: Integer): TBox; overload; cdecl; begin Result := arr.Bounds(width, height); end;
 function TPointArray_Undupe(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Undupe; end;
@@ -379,6 +385,26 @@ function TPointArray_YValues(const arr: TPointArray): TIntegerArray; cdecl; begi
 function TPointArray_Horizontal(const arr: TPointArray): TRange; cdecl; begin Result := arr.Horizontal; end;
 function TPointArray_Vertical(const arr: TPointArray): TRange; cdecl; begin Result := arr.Vertical; end;
 
+function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
+function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
+function TBoxArray_X1_3(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := X1(arr, vals); end;
+function TBoxArray_Y1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := Y1(arr); end;
+function TBoxArray_Y1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := Y1(arr, val); end;
+function TBoxArray_Y1_3(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Y1(arr, vals); end;
+function TBoxArray_X2_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X2(arr); end;
+function TBoxArray_X2_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X2(arr, val); end;
+function TBoxArray_X2_3(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := X2(arr, vals); end;
+function TBoxArray_Y2_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := Y2(arr); end;
+function TBoxArray_Y2_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := Y2(arr, val); end;
+function TBoxArray_Y2_3(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Y2(arr, vals); end;
+
+
+function TRangeArray_Start1(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := Start(arr); end;
+function TRangeArray_Start2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := Start(arr, val); end;
+function TRangeArray_Start3(const arr: TRangeArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Start(arr, vals); end;
+function TRangeArray_Stop1(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := Stop(arr); end;
+function TRangeArray_Stop2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := Stop(arr, val); end;
+function TRangeArray_Stop3(const arr: TRangeArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Stop(arr, vals); end;
 function TRangeArray_Bounds(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Bounds; end;
 function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray; cdecl; begin Result := arr.Normalized; end;
 function TRangeArray_Range(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Range; end;
