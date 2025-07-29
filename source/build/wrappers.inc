@@ -733,6 +733,15 @@ function TArray_Exclude6(const arr: TPointArray; const items: TPointArray; const
 function TArray_Exclude7(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Exclude(items, index); end;
 function TArray_Exclude8(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Exclude(items, index); end;
 
+function TArray_Exists1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Exists; end;
+function TArray_Exists2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Exists; end;
+function TArray_Exists3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Exists; end;
+function TArray_Exists4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Exists; end;
+function TArray_Exists5(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Exists; end;
+function TArray_Exists6(const arr: TPointArray): Boolean; overload; cdecl; begin Result := arr.Exists; end;
+function TArray_Exists7(const arr: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Exists; end;
+function TArray_Exists8(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Exists; end;
+
 function TArray_Extend1(const arr: TIntegerArray; const item: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Extend(item); end;
 function TArray_Extend2(const arr: TDoubleArray; const item: Double): TDoubleArray; overload; cdecl; begin Result := arr.Extend(item); end;
 function TArray_Extend3(const arr: TStringArray; const item: string): TStringArray; overload; cdecl; begin Result := arr.Extend(item); end;
@@ -1139,6 +1148,15 @@ function TArray_Next6(const arr: TPointArray; const index: Integer; const count:
 function TArray_Next7(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Next(index, count); end;
 function TArray_Next8(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Next(index, count); end;
 
+function TArray_Occurs1(const arr: TIntegerArray; const Item: Integer; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+function TArray_Occurs2(const arr: TDoubleArray; const Item: Double; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+function TArray_Occurs3(const arr: TStringArray; const Item: string; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+function TArray_Occurs4(const arr: TCharArray; const Item: Char; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+function TArray_Occurs5(const arr: TBooleanArray; const Item: Boolean; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+function TArray_Occurs6(const arr: TPointArray; const Item: TPoint; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+function TArray_Occurs7(const arr: TBoxArray; const Item: TBox; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+function TArray_Occurs8(const arr: TRangeArray; const Item: TRange; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+
 function TArray_Oversize1(const arr: TIntegerArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Oversize(limit); end;
 function TArray_Oversize2(const arr: TDoubleArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Oversize(limit); end;
 function TArray_Oversize3(const arr: TStringArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Oversize(limit); end;
@@ -1275,6 +1293,15 @@ function TArray_Positions21(const arr: TBooleanArray): TIntegerArray; overload; 
 function TArray_Positions22(const arr: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.Positions; end;
 function TArray_Positions23(const arr: TBoxArray): TIntegerArray; overload; cdecl; begin Result := arr.Positions; end;
 function TArray_Positions24(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Positions; end;
+
+function TArray_Presence1(const arr: TIntegerArray; const Item: Integer; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Presence(item, occurrence); end;
+function TArray_Presence2(const arr: TDoubleArray; const Item: Double; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Presence(item, occurrence); end;
+function TArray_Presence3(const arr: TStringArray; const Item: string; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Presence(item, occurrence); end;
+function TArray_Presence4(const arr: TCharArray; const Item: Char; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Presence(item, occurrence); end;
+function TArray_Presence5(const arr: TBooleanArray; const Item: Boolean; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Presence(item, occurrence); end;
+function TArray_Presence6(const arr: TPointArray; const Item: TPoint; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Presence(item, occurrence); end;
+function TArray_Presence7(const arr: TBoxArray; const Item: TBox; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Presence(item, occurrence); end;
+function TArray_Presence8(const arr: TRangeArray; const Item: TRange; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Presence(item, occurrence); end;
 
 function TArray_Previous1(const arr: TIntegerArray; const index: Integer; const count: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
 function TArray_Previous2(const arr: TDoubleArray; const index: Integer; const count: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
