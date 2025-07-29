@@ -18,6 +18,8 @@ function Integer_Difference(const x, T: Integer): Integer; cdecl; inline; begin 
 function Integer_Opposite(const x: Integer): Integer; cdecl; inline; begin Result := x.Opposite; end;
 function Integer_Sign(const x: Integer): Integer; cdecl; inline; begin Result := x.Sign; end;
 function Integer_Shuffle(const x: Integer): Integer; cdecl; begin Result := x.Shuffle; end;
+function Integer_Over(const x, target: Integer): Boolean; cdecl; inline; begin Result := x.Over(target); end;
+function Integer_Under(const x, target: Integer): Boolean; cdecl; inline; begin Result := x.Under(target); end;
 function Integer_Oversize(const x, limit: Integer): Boolean; cdecl; inline; begin Result := x.Oversize(limit); end;
 function Integer_Undersize(const x, limit: Integer): Boolean; cdecl; inline; begin Result := x.Undersize(limit); end;
 
@@ -36,6 +38,8 @@ function Int64_Difference(const x, T: Int64): Int64; cdecl; inline; begin Result
 function Int64_Opposite(const x: Int64): Int64; cdecl; inline; begin Result := x.Opposite; end;
 function Int64_Sign(const x: Int64): Integer; cdecl; inline; begin Result := x.Sign; end;
 function Int64_Shuffle(const x: Int64): Int64; cdecl; begin Result := x.Shuffle; end;
+function Int64_Over(const x, target: Int64): Boolean; cdecl; inline; begin Result := x.Over(target); end;
+function Int64_Under(const x, target: Int64): Boolean; cdecl; inline; begin Result := x.Under(target); end;
 function Int64_Oversize(const x, limit: Int64): Boolean; cdecl; inline; begin Result := x.Oversize(limit); end;
 function Int64_Undersize(const x, limit: Int64): Boolean; cdecl; inline; begin Result := x.Undersize(limit); end;
 
@@ -63,6 +67,8 @@ function Double_FixRadians(const x: Double): Double; cdecl; begin Result := x.Fi
 function Double_Radians(const x: Double; const compass: Boolean = False): Double; cdecl; begin Result := x.Radians(compass); end;
 function Double_Percent(const x, position: Double): Double; cdecl; inline; begin Result := x.Percent(position); end;
 function Double_Percentage(const x, percent: Double): Double; cdecl; inline; begin Result := x.Percentage(percent); end;
+function Double_Over(const x, target: Double): Boolean; cdecl; begin Result := x.Over(target); end;
+function Double_Under(const x, target: Double): Boolean; cdecl; begin Result := x.Under(target); end;
 function Double_Oversize(const x, limit: Double): Boolean; cdecl; begin Result := x.Oversize(limit); end;
 function Double_Undersize(const x, limit: Double): Boolean; cdecl; begin Result := x.Undersize(limit); end;
 
@@ -398,13 +404,12 @@ function TBoxArray_Y2_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Resul
 function TBoxArray_Y2_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := Y2(arr, val); end;
 function TBoxArray_Y2_3(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Y2(arr, vals); end;
 
-
-function TRangeArray_Start1(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := Start(arr); end;
-function TRangeArray_Start2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := Start(arr, val); end;
-function TRangeArray_Start3(const arr: TRangeArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Start(arr, vals); end;
-function TRangeArray_Stop1(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := Stop(arr); end;
-function TRangeArray_Stop2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := Stop(arr, val); end;
-function TRangeArray_Stop3(const arr: TRangeArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Stop(arr, vals); end;
+function TRangeArray_Start1(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := start(arr); end;
+function TRangeArray_Start2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := start(arr, val); end;
+function TRangeArray_Start3(const arr: TRangeArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := start(arr, vals); end;
+function TRangeArray_Stop1(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := stop(arr); end;
+function TRangeArray_Stop2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := stop(arr, val); end;
+function TRangeArray_Stop3(const arr: TRangeArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := stop(arr, vals); end;
 function TRangeArray_Bounds(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Bounds; end;
 function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray; cdecl; begin Result := arr.Normalized; end;
 function TRangeArray_Range(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Range; end;
@@ -847,6 +852,23 @@ function TArray_Find30(const arr: TPointArray; const ID: TIntegerArray; const it
 function TArray_Find31(const arr: TBoxArray; const ID: TIntegerArray; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.Find(ID, items); end;
 function TArray_Find32(const arr: TRangeArray; const ID: TIntegerArray; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.Find(ID, items); end;
 
+function TArray_Fits1(const arr: TIntegerArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
+function TArray_Fits2(const arr: TDoubleArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
+function TArray_Fits3(const arr: TStringArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
+function TArray_Fits4(const arr: TCharArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
+function TArray_Fits5(const arr: TBooleanArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
+function TArray_Fits6(const arr: TPointArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
+function TArray_Fits7(const arr: TBoxArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
+function TArray_Fits8(const arr: TRangeArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
+function TArray_Fits9(const arr: TIntegerArray; const target: TRange): Boolean; overload; cdecl; begin Result := arr.Fits(target); end;
+function TArray_Fits10(const arr: TDoubleArray; const target: TRange): Boolean; overload; cdecl; begin Result := arr.Fits(target); end;
+function TArray_Fits11(const arr: TStringArray; const target: TRange): Boolean; overload; cdecl; begin Result := arr.Fits(target); end;
+function TArray_Fits12(const arr: TCharArray; const target: TRange): Boolean; overload; cdecl; begin Result := arr.Fits(target); end;
+function TArray_Fits13(const arr: TBooleanArray; const target: TRange): Boolean; overload; cdecl; begin Result := arr.Fits(target); end;
+function TArray_Fits14(const arr: TPointArray; const target: TRange): Boolean; overload; cdecl; begin Result := arr.Fits(target); end;
+function TArray_Fits15(const arr: TBoxArray; const target: TRange): Boolean; overload; cdecl; begin Result := arr.Fits(target); end;
+function TArray_Fits16(const arr: TRangeArray; const target: TRange): Boolean; overload; cdecl; begin Result := arr.Fits(target); end;
+
 function TArray_Flip1(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Flip; end;
 function TArray_Flip2(var arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Flip; end;
 function TArray_Flip3(var arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Flip; end;
@@ -1177,6 +1199,23 @@ function TArray_Populate13(var arr: TBooleanArray; const item: Boolean; const ti
 function TArray_Populate14(var arr: TPointArray; const item: TPoint; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
 function TArray_Populate15(var arr: TBoxArray; const item: TBox; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
 function TArray_Populate16(var arr: TRangeArray; const item: TRange; const times: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Populate(item, times); end;
+
+function TArray_Populated1(const arr: TIntegerArray; const population: TRange): Boolean; overload; cdecl; begin Result := arr.Populated(population); end;
+function TArray_Populated2(const arr: TDoubleArray; const population: TRange): Boolean; overload; cdecl; begin Result := arr.Populated(population); end;
+function TArray_Populated3(const arr: TStringArray; const population: TRange): Boolean; overload; cdecl; begin Result := arr.Populated(population); end;
+function TArray_Populated4(const arr: TCharArray; const population: TRange): Boolean; overload; cdecl; begin Result := arr.Populated(population); end;
+function TArray_Populated5(const arr: TBooleanArray; const population: TRange): Boolean; overload; cdecl; begin Result := arr.Populated(population); end;
+function TArray_Populated6(const arr: TPointArray; const population: TRange): Boolean; overload; cdecl; begin Result := arr.Populated(population); end;
+function TArray_Populated7(const arr: TBoxArray; const population: TRange): Boolean; overload; cdecl; begin Result := arr.Populated(population); end;
+function TArray_Populated8(const arr: TRangeArray; const population: TRange): Boolean; overload; cdecl; begin Result := arr.Populated(population); end;
+function TArray_Populated9(const arr: TIntegerArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload; cdecl; begin Result := arr.Populated(populationMin, populationMax); end;
+function TArray_Populated10(const arr: TDoubleArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload; cdecl; begin Result := arr.Populated(populationMin, populationMax); end;
+function TArray_Populated11(const arr: TStringArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload; cdecl; begin Result := arr.Populated(populationMin, populationMax); end;
+function TArray_Populated12(const arr: TCharArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload; cdecl; begin Result := arr.Populated(populationMin, populationMax); end;
+function TArray_Populated13(const arr: TBooleanArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload; cdecl; begin Result := arr.Populated(populationMin, populationMax); end;
+function TArray_Populated14(const arr: TPointArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload; cdecl; begin Result := arr.Populated(populationMin, populationMax); end;
+function TArray_Populated15(const arr: TBoxArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload; cdecl; begin Result := arr.Populated(populationMin, populationMax); end;
+function TArray_Populated16(const arr: TRangeArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload; cdecl; begin Result := arr.Populated(populationMin, populationMax); end;
 
 function TArray_Pos1(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;
 function TArray_Pos2(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Pos(item, index); end;

@@ -40,6 +40,8 @@ begin
   AddFunction(@Double_Radians, 'function Double_Radians(const x: Double; const compass: Boolean = False): Double;');
   AddFunction(@Double_Percent, 'function Double_Percent(const x, position: Double): Double;');
   AddFunction(@Double_Percentage, 'function Double_Percentage(const x, percent: Double): Double;');
+  AddFunction(@Double_Over, 'function Double_Over(const x, target: Double): Boolean;');
+  AddFunction(@Double_Under, 'function Double_Under(const x, target: Double): Boolean;');
   AddFunction(@Double_Oversize, 'function Double_Oversize(const x, limit: Double): Boolean;');
   AddFunction(@Double_Undersize, 'function Double_Undersize(const x, limit: Double): Boolean;');
 
@@ -63,6 +65,8 @@ begin
   AddFunction(@Integer_Opposite, 'function Integer_Opposite(const x: Integer): Integer;');
   AddFunction(@Integer_Sign, 'function Integer_Sign(const x: Integer): Integer;');
   AddFunction(@Integer_Shuffle, 'function Integer_Shuffle(const x: Integer): Integer;');
+  AddFunction(@Integer_Over, 'function Integer_Over(const x, target: Integer): Boolean;');
+  AddFunction(@Integer_Under, 'function Integer_Under(const x, target: Integer): Boolean;');
   AddFunction(@Integer_Oversize, 'function Integer_Oversize(const x, limit: Integer): Boolean;');
   AddFunction(@Integer_Undersize, 'function Integer_Undersize(const x, limit: Integer): Boolean;');
 
@@ -81,6 +85,8 @@ begin
   AddFunction(@Int64_Opposite, 'function Int64_Opposite(const x: Int64): Int64;');
   AddFunction(@Int64_Sign, 'function Int64_Sign(const x: Int64): Integer;');
   AddFunction(@Int64_Shuffle, 'function Int64_Shuffle(const x: Int64): Int64;');
+  AddFunction(@Int64_Over, 'function Int64_Over(const x, target: Int64): Boolean;');
+  AddFunction(@Int64_Under, 'function Int64_Under(const x, target: Int64): Boolean;');
   AddFunction(@Int64_Oversize, 'function Int64_Oversize(const x, limit: Int64): Boolean;');
   AddFunction(@Int64_Undersize, 'function Int64_Undersize(const x, limit: Int64): Boolean;');
 
@@ -864,6 +870,23 @@ begin
   AddFunction(@TArray_Find31, 'function TArray_Find(const arr: TBoxArray; const IDs: TIntegerArray; const items: TBoxArray): Integer; overload;');
   AddFunction(@TArray_Find32, 'function TArray_Find(const arr: TRangeArray; const IDs: TIntegerArray; const items: TRangeArray): Integer; overload;');
 
+  AddFunction(@TArray_Fits1, 'function TArray_Fits(const arr: TIntegerArray; const maxValue: Integer): Boolean; overload;');
+  AddFunction(@TArray_Fits2, 'function TArray_Fits(const arr: TDoubleArray; const maxValue: Integer): Boolean; overload;');
+  AddFunction(@TArray_Fits3, 'function TArray_Fits(const arr: TStringArray; const maxValue: Integer): Boolean; overload;');
+  AddFunction(@TArray_Fits4, 'function TArray_Fits(const arr: TCharArray; const maxValue: Integer): Boolean; overload;');
+  AddFunction(@TArray_Fits5, 'function TArray_Fits(const arr: TBooleanArray; const maxValue: Integer): Boolean; overload;');
+  AddFunction(@TArray_Fits6, 'function TArray_Fits(const arr: TPointArray; const maxValue: Integer): Boolean; overload;');
+  AddFunction(@TArray_Fits7, 'function TArray_Fits(const arr: TBoxArray; const maxValue: Integer): Boolean; overload;');
+  AddFunction(@TArray_Fits8, 'function TArray_Fits(const arr: TRangeArray; const maxValue: Integer): Boolean; overload;');
+  AddFunction(@TArray_Fits9, 'function TArray_Fits(const arr: TIntegerArray; const target: TRange): Boolean; overload;');
+  AddFunction(@TArray_Fits10, 'function TArray_Fits(const arr: TDoubleArray; const target: TRange): Boolean; overload;');
+  AddFunction(@TArray_Fits11, 'function TArray_Fits(const arr: TStringArray; const target: TRange): Boolean; overload;');
+  AddFunction(@TArray_Fits12, 'function TArray_Fits(const arr: TCharArray; const target: TRange): Boolean; overload;');
+  AddFunction(@TArray_Fits13, 'function TArray_Fits(const arr: TBooleanArray; const target: TRange): Boolean; overload;');
+  AddFunction(@TArray_Fits14, 'function TArray_Fits(const arr: TPointArray; const target: TRange): Boolean; overload;');
+  AddFunction(@TArray_Fits15, 'function TArray_Fits(const arr: TBoxArray; const target: TRange): Boolean; overload;');
+  AddFunction(@TArray_Fits16, 'function TArray_Fits(const arr: TRangeArray; const target: TRange): Boolean; overload;');
+
   AddFunction(@TArray_Flip1, 'function TArray_Flip(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Flip2, 'function TArray_Flip(var arr: TDoubleArray): Boolean; overload;');
   AddFunction(@TArray_Flip3, 'function TArray_Flip(var arr: TStringArray): Boolean; overload;');
@@ -1194,6 +1217,23 @@ begin
   AddFunction(@TArray_Populate14, 'function TArray_Populate(var arr: TPointArray; const item: TPoint; const times: Integer = 1): Boolean; overload;');
   AddFunction(@TArray_Populate15, 'function TArray_Populate(var arr: TBoxArray; const item: TBox; const times: Integer = 1): Boolean; overload;');
   AddFunction(@TArray_Populate16, 'function TArray_Populate(var arr: TRangeArray; const item: TRange; const times: Integer = 1): Boolean; overload;');
+
+  AddFunction(@TArray_Populated1, 'function TArray_Populated(const arr: TIntegerArray; const population: TRange): Boolean; overload;');
+  AddFunction(@TArray_Populated2, 'function TArray_Populated(const arr: TDoubleArray; const population: TRange): Boolean; overload;');
+  AddFunction(@TArray_Populated3, 'function TArray_Populated(const arr: TStringArray; const population: TRange): Boolean; overload;');
+  AddFunction(@TArray_Populated4, 'function TArray_Populated(const arr: TCharArray; const population: TRange): Boolean; overload;');
+  AddFunction(@TArray_Populated5, 'function TArray_Populated(const arr: TBooleanArray; const population: TRange): Boolean; overload;');
+  AddFunction(@TArray_Populated6, 'function TArray_Populated(const arr: TPointArray; const population: TRange): Boolean; overload;');
+  AddFunction(@TArray_Populated7, 'function TArray_Populated(const arr: TBoxArray; const population: TRange): Boolean; overload;');
+  AddFunction(@TArray_Populated8, 'function TArray_Populated(const arr: TRangeArray; const population: TRange): Boolean; overload;');
+  AddFunction(@TArray_Populated9, 'function TArray_Populated(const arr: TIntegerArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload;');
+  AddFunction(@TArray_Populated10, 'function TArray_Populated(const arr: TDoubleArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload;');
+  AddFunction(@TArray_Populated11, 'function TArray_Populated(const arr: TStringArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload;');
+  AddFunction(@TArray_Populated12, 'function TArray_Populated(const arr: TCharArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload;');
+  AddFunction(@TArray_Populated13, 'function TArray_Populated(const arr: TBooleanArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload;');
+  AddFunction(@TArray_Populated14, 'function TArray_Populated(const arr: TPointArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload;');
+  AddFunction(@TArray_Populated15, 'function TArray_Populated(const arr: TBoxArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload;');
+  AddFunction(@TArray_Populated16, 'function TArray_Populated(const arr: TRangeArray; const populationMin: Integer = 1; const populationMax: Integer = 2147483647): Boolean; overload;');
 
   AddFunction(@TArray_Pos1, 'function TArray_Pos(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload;');
   AddFunction(@TArray_Pos2, 'function TArray_Pos(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload;');
