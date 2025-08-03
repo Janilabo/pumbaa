@@ -324,6 +324,9 @@ begin
   AddFunction(@TRange_Middle, 'function TRange_Middle(const range: TRange): Double;');
   AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Integer;');
   AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange): string;');
+  AddFunction(@TRange_Sum, 'function TRange_Sum(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Extract, 'function TRange_Extract(const range: TRange): TIntegerArray; overload;');
+
 
   AddFunction(@TIntegerArray_Bounds1, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; overload;');
   AddFunction(@TIntegerArray_Bounds2, 'function TIntegerArray_Bounds(const arr: TIntegerArray; var aSize: Integer): TRange; overload;');
@@ -435,6 +438,7 @@ begin
   AddFunction(@TRangeArray_Stopping, 'function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_TIA, 'function TRangeArray_TIA(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_T2DIA, 'function TRangeArray_T2DIA(const arr: TRangeArray): T2DIntegerArray;');
+  AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
   
   AddFunction(@TArray_Add1, 'function TArray_Add(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_Add2, 'function TArray_Add(const arr: TDoubleArray; const item: Double; const duplicates: Boolean = True): TDoubleArray; overload;');

@@ -799,6 +799,38 @@ begin
 end;
 
 {==============================================================================]
+ <TRange.Sum>
+ @action: Returns the sum of all TRange values (start..stop)
+ @note: None
+[==============================================================================}
+function TRange.Sum: Int64; cdecl;
+var
+  a, b: Int64;
+begin
+  a := Min(Self.start, Self.stop);
+  b := Max(Self.start, Self.stop);
+  Result := ((((b - a) + 1) * (a + b)) div 2);
+end;
+
+{==============================================================================]
+  <TRange.Extract>
+  @action: Extracts TRange as TIntegerArray. 
+  @note: None.
+[==============================================================================}
+function TRange.Extract: TIntegerArray; overload; cdecl;
+var
+  i, c, s: Integer;
+begin
+  if (Self.start = Self.stop) then
+    Exit([Self.start]);
+  s := IfThen((Self.stop > Self.start), 1, -1);
+  c := (Abs(Self.stop - Self.start) + 1);
+  SetLength(Result, c);
+  for i := 0 to (c - 1) do
+    Result[i] := (Self.start + (i * s));
+end;
+
+{==============================================================================]
   <_TRange.Create>
   @action: Creates TPoint using pX, pY 
   @note: function version

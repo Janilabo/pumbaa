@@ -306,6 +306,8 @@ function TRange_Value(const range: TRange; const x: Integer): Boolean; cdecl; in
 function TRange_Middle(const range: TRange): Double; cdecl; begin Result := range.Middle; end;
 function TRange_Center(const range: TRange): Integer; cdecl; begin Result := range.Center; end;
 function TRange_Str(const range: TRange): string; cdecl; begin Result := range.Str; end;
+function TRange_Sum(const range: TRange): Int64; cdecl; begin Result := range.Sum; end;
+function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
 
 function TIntegerArray_Bounds1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Bounds; end;
 function TIntegerArray_Bounds2(const arr: TIntegerArray; var aSize: Integer): TRange; overload; cdecl; begin Result := arr.Bounds(aSize); end;
@@ -417,6 +419,7 @@ function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray; cdecl; beg
 function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Stopping; end;
 function TRangeArray_TIA(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.TIA; end;
 function TRangeArray_T2DIA(const arr: TRangeArray): T2DIntegerArray; cdecl; begin Result := arr.T2DIA; end;
+function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gaps; end;
 
 function TArray_Add1(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
 function TArray_Add2(const arr: TDoubleArray; const item: Double; const duplicates: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
