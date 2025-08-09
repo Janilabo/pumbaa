@@ -501,6 +501,15 @@ begin
   AddFunction(@TArray_Append15, 'function TArray_Append(const arr: TBoxArray; const items: TBoxArray; const duplicates: Boolean = True): TBoxArray; overload;');
   AddFunction(@TArray_Append16, 'function TArray_Append(const arr: TRangeArray; const items: TRangeArray; const duplicates: Boolean = True): TRangeArray; overload;');
 
+  AddFunction(@TArray_Backwards1, 'function TArray_Backwards(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Backwards2, 'function TArray_Backwards(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Backwards3, 'function TArray_Backwards(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Backwards4, 'function TArray_Backwards(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Backwards5, 'function TArray_Backwards(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Backwards6, 'function TArray_Backwards(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Backwards7, 'function TArray_Backwards(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Backwards8, 'function TArray_Backwards(const arr: TRangeArray): TRangeArray; overload;');
+
   AddFunction(@TArray_Build1, 'function TArray_Build(const item: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TArray_Build2, 'function TArray_Build(const item: Double; const aSize: Integer = 1): TDoubleArray; overload;');
   AddFunction(@TArray_Build3, 'function TArray_Build(const item: string; const aSize: Integer = 1): TStringArray; overload;');
@@ -1590,6 +1599,15 @@ begin
   AddFunction(@TArray_SubarrayPositions6, 'function TArray_SubarrayPositions(const arr: TPointArray; const pattern: TPointArray): TIntegerArray; overload;');
   AddFunction(@TArray_SubarrayPositions7, 'function TArray_SubarrayPositions(const arr: TBoxArray; const pattern: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TArray_SubarrayPositions8, 'function TArray_SubarrayPositions(const arr: TRangeArray; const pattern: TRangeArray): TIntegerArray; overload;');
+
+  AddFunction(@TArray_Subset1, 'function TArray_Subset(const arr, items: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Subset2, 'function TArray_Subset(const arr, items: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Subset3, 'function TArray_Subset(const arr, items: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Subset4, 'function TArray_Subset(const arr, items: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_Subset5, 'function TArray_Subset(const arr, items: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_Subset6, 'function TArray_Subset(const arr, items: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_Subset7, 'function TArray_Subset(const arr, items: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_Subset8, 'function TArray_Subset(const arr, items: TRangeArray): Boolean; overload;');
 
   AddFunction(@TArray_Trade1, 'function TArray_Trade(var arr, b: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Trade2, 'function TArray_Trade(var arr, b: TDoubleArray): Integer; overload;');
