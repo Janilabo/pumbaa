@@ -391,6 +391,8 @@ begin
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Init, 'function TIntegerArray_Init(var arr: TIntegerArray): Boolean');
 
+  AddFunction(@TBooleanArray_Invert, 'function TBooleanArray_Invert(const arr: TBooleanArray): TBooleanArray; overload;');
+
   AddFunction(@TPointArray_X1, 'function TPointArray_X(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TPointArray_X2, 'function TPointArray_X(const arr: TPointArray; const val: Integer): TIntegerArray; overload;');
   AddFunction(@TPointArray_X3, 'function TPointArray_X(const arr: TPointArray; const vals: TIntegerArray): TIntegerArray; overload;');
@@ -571,6 +573,15 @@ begin
   AddFunction(@TArray_Combine6, 'function TArray_Combine(const arr, b: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Combine7, 'function TArray_Combine(const arr, b: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Combine8, 'function TArray_Combine(const arr, b: TRangeArray): TRangeArray; overload;');
+
+  AddFunction(@TArray_Consists1, 'function TArray_Consists(const arr, items: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Consists2, 'function TArray_Consists(const arr, items: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Consists3, 'function TArray_Consists(const arr, items: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Consists4, 'function TArray_Consists(const arr, items: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_Consists5, 'function TArray_Consists(const arr, items: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_Consists6, 'function TArray_Consists(const arr, items: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_Consists7, 'function TArray_Consists(const arr, items: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_Consists8, 'function TArray_Consists(const arr, items: TRangeArray): Boolean; overload;');
 
   AddFunction(@TArray_Contains1, 'function TArray_Contains(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Boolean; overload;');
   AddFunction(@TArray_Contains2, 'function TArray_Contains(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Boolean; overload;');
@@ -1635,6 +1646,23 @@ begin
   AddFunction(@TArray_Unduplicate6, 'function TArray_Unduplicate(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Unduplicate7, 'function TArray_Unduplicate(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Unduplicate8, 'function TArray_Unduplicate(const arr: TRangeArray): TRangeArray; overload;');
+
+  AddFunction(@TArray_Uniform1, 'function TArray_Uniform(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Uniform2, 'function TArray_Uniform(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Uniform3, 'function TArray_Uniform(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Uniform4, 'function TArray_Uniform(const arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_Uniform5, 'function TArray_Uniform(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_Uniform6, 'function TArray_Uniform(const arr: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_Uniform7, 'function TArray_Uniform(const arr: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_Uniform8, 'function TArray_Uniform(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TArray_Uniform9, 'function TArray_Uniform(const arr: TIntegerArray; const item: Integer): Boolean; overload;');
+  AddFunction(@TArray_Uniform10, 'function TArray_Uniform(const arr: TDoubleArray; const item: Double): Boolean; overload;');
+  AddFunction(@TArray_Uniform11, 'function TArray_Uniform(const arr: TStringArray; const item: string): Boolean; overload;');
+  AddFunction(@TArray_Uniform12, 'function TArray_Uniform(const arr: TCharArray; const item: Char): Boolean; overload;');
+  AddFunction(@TArray_Uniform13, 'function TArray_Uniform(const arr: TBooleanArray; const item: Boolean): Boolean; overload;');
+  AddFunction(@TArray_Uniform14, 'function TArray_Uniform(const arr: TPointArray; const item: TPoint): Boolean; overload;');
+  AddFunction(@TArray_Uniform15, 'function TArray_Uniform(const arr: TBoxArray; const item: TBox): Boolean; overload;');
+  AddFunction(@TArray_Uniform16, 'function TArray_Uniform(const arr: TRangeArray; const item: TRange): Boolean; overload;');
 
   AddFunction(@TArray_Unique1, 'function TArray_Unique(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Unique2, 'function TArray_Unique(const arr: TDoubleArray): TDoubleArray; overload;');
