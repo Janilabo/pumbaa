@@ -372,9 +372,26 @@ function TIntegerArray_Knit2(const arr: TIntegerArray; const diff: Integer): T2D
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
 function TIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 
+function TBooleanArray_Falsed(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Falsed; end;
+function TBooleanArray_Falseless1(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Falseless; end;
+function TBooleanArray_Falseless2(const arr: TBooleanArray; const maxFalse: Integer): Boolean; overload; cdecl; begin Result := arr.Falseless(maxFalse); end;
+function TBooleanArray_Falseness(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Falseness; end;
 function TBooleanArray_Falses(const arr: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := arr.Falses; end;
+function TBooleanArray_Falsesome1(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Falsesome; end;
+function TBooleanArray_Falsesome2(const arr: TBooleanArray; const minFalse: Integer): Boolean; overload; cdecl; begin Result := arr.Falsesome(minFalse); end;
+function TBooleanArray_Str1(const arr: TBooleanArray; const separator: string; const strTrue: string = 'True'; strFalse: string = 'False'): string; overload; cdecl; begin Result := arr.Str(separator, strTrue, strFalse); end;
+function TBooleanArray_Str2(const arr: TBooleanArray): string; overload; cdecl; begin Result := arr.Str; end;
+function TBooleanArray_Text1(const arr: TBooleanArray; const strTrue, strFalse, separator: string): string; overload; cdecl; begin Result := arr.Text(strTrue, strFalse, separator); end;
+function TBooleanArray_Text2(const arr: TBooleanArray; const strTrue: string = 'True'; strFalse: string = 'False'): string; overload; cdecl; begin Result := arr.Text(strTrue, strFalse); end;
+function TBooleanArray_TIA(const arr: TBooleanArray; const valTrue: Integer = 1; valFalse: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.TIA(valTrue, valFalse); end;
 function TBooleanArray_Toggle(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Toggle; end;
+function TBooleanArray_Trued(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Trued; end;
+function TBooleanArray_Trueless1(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Trueless; end;
+function TBooleanArray_Trueless2(const arr: TBooleanArray; const maxTrue: Integer): Boolean; overload; cdecl; begin Result := arr.Trueless(maxTrue); end;
+function TBooleanArray_Trueness(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Trueness; end;
 function TBooleanArray_Trues(const arr: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := arr.Trues; end;
+function TBooleanArray_Truesome1(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Truesome; end;
+function TBooleanArray_Truesome2(const arr: TBooleanArray; const minTrue: Integer): Boolean; overload; cdecl; begin Result := arr.Truesome(minTrue); end;
 function TBooleanArray_Opposite(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Opposite; end;
 
 function TPointArray_X1(const arr: TPointArray): TIntegerArray; cdecl; begin Result := X(arr); end;

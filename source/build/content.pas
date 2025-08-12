@@ -391,9 +391,26 @@ begin
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Init, 'function TIntegerArray_Init(var arr: TIntegerArray): Boolean');
 
+  AddFunction(@TBooleanArray_Falsed, 'function TBooleanArray_Falsed(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TBooleanArray_Falseless1, 'function TBooleanArray_Falseless(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TBooleanArray_Falseless2, 'function TBooleanArray_Falseless(const arr: TBooleanArray; const maxFalse: Integer): Boolean; overload;');
+  AddFunction(@TBooleanArray_Falseness, 'function TBooleanArray_Falseness(const arr: TBooleanArray): Integer; overload;');
   AddFunction(@TBooleanArray_Falses, 'function TBooleanArray_Falses(const arr: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@TBooleanArray_Falsesome1, 'function TBooleanArray_Falsesome(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TBooleanArray_Falsesome2, 'function TBooleanArray_Falsesome(const arr: TBooleanArray; const minFalse: Integer): Boolean; overload;');
+  AddFunction(@TBooleanArray_Str1, 'function TBooleanArray_Str(const arr: TBooleanArray; const separator: string; const strTrue: string = ''True''; strFalse: string = ''False''): string; overload;');
+  AddFunction(@TBooleanArray_Str2, 'function TBooleanArray_Str(const arr: TBooleanArray): string; overload;');
+  AddFunction(@TBooleanArray_Text1, 'function TBooleanArray_Text(const arr: TBooleanArray; const strTrue, strFalse, separator: string): string; overload;');
+  AddFunction(@TBooleanArray_Text2, 'function TBooleanArray_Text(const arr: TBooleanArray; const strTrue: string = ''True''; strFalse: string = ''False''): string; overload;');
+  AddFunction(@TBooleanArray_TIA, 'function TBooleanArray_TIA(const arr: TBooleanArray; const valTrue: Integer = 1; valFalse: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TBooleanArray_Toggle, 'function TBooleanArray_Toggle(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TBooleanArray_Trued, 'function TBooleanArray_Trued(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TBooleanArray_Trueless1, 'function TBooleanArray_Trueless(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TBooleanArray_Trueless2, 'function TBooleanArray_Trueless(const arr: TBooleanArray; const maxTrue: Integer): Boolean; overload;');
+  AddFunction(@TBooleanArray_Trueness, 'function TBooleanArray_Trueness(const arr: TBooleanArray): Integer; overload;');
   AddFunction(@TBooleanArray_Trues, 'function TBooleanArray_Trues(const arr: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@TBooleanArray_Truesome1, 'function TBooleanArray_Truesome(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TBooleanArray_Truesome2, 'function TBooleanArray_Truesome(const arr: TBooleanArray; const minTrue: Integer): Boolean; overload;');
   AddFunction(@TBooleanArray_Opposite, 'function TBooleanArray_Opposite(const arr: TBooleanArray): TBooleanArray; overload;');
 
   AddFunction(@TPointArray_X1, 'function TPointArray_X(const arr: TPointArray): TIntegerArray; overload;');
