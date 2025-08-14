@@ -372,6 +372,7 @@ function TIntegerArray_Knit2(const arr: TIntegerArray; const diff: Integer): T2D
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
 function TIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 
+function TBooleanArray_Digits(const arr: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := arr.Digits; end;
 function TBooleanArray_Falsed(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Falsed; end;
 function TBooleanArray_Falseless1(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Falseless; end;
 function TBooleanArray_Falseless2(const arr: TBooleanArray; const maxFalse: Integer): Boolean; overload; cdecl; begin Result := arr.Falseless(maxFalse); end;

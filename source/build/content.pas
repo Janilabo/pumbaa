@@ -391,6 +391,7 @@ begin
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Init, 'function TIntegerArray_Init(var arr: TIntegerArray): Boolean');
 
+  AddFunction(@TBooleanArray_Digits, 'function TBooleanArray_Digits(const arr: TBooleanArray): TIntegerArray; overload');
   AddFunction(@TBooleanArray_Falsed, 'function TBooleanArray_Falsed(const arr: TBooleanArray): Boolean; overload;');
   AddFunction(@TBooleanArray_Falseless1, 'function TBooleanArray_Falseless(const arr: TBooleanArray): Boolean; overload;');
   AddFunction(@TBooleanArray_Falseless2, 'function TBooleanArray_Falseless(const arr: TBooleanArray; const maxFalse: Integer): Boolean; overload;');
