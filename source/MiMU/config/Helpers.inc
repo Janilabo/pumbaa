@@ -103,6 +103,7 @@ type
       function Pick(const index: Integer; const count: Integer = 2147483647): string; cdecl;
       function Pos(const s: string; const index: Integer = 1): Integer; cdecl;
       function Position(const s: string; const index: Integer = 1): Integer; cdecl;
+	  function Search(const s: string; const index: Integer = 1): Integer; cdecl;
       function PregQuote(const regex: string = '.\+*?[^]$(){}=!<>|:-'): string; cdecl;
       function Quotatation: string; cdecl;
 	  function Reverse: Boolean; cdecl;  
@@ -233,6 +234,8 @@ type
     function Find(const ID: TRange; const items: XArr): Integer; overload; cdecl;
     function Find(const ID: TIntegerArray; const items: XArr): Integer; overload; cdecl;
 	function First: Integer; overload; cdecl;
+	function First(const item: XVar): Integer; overload; cdecl;
+	function First(const items: XArr): Integer; overload; cdecl;
     function Fits(const maxValue: Integer): Boolean; overload; cdecl;
     function Fits(const target: TRange): Boolean; overload; cdecl;
     function Flip: Boolean; overload; cdecl;
@@ -256,6 +259,8 @@ type
 	function Indices(const aAscending: Boolean = True): TIntegerArray; overload; cdecl;
     function Keep(const items: XArr; const index: Integer = 0): XArr; overload; cdecl;
 	function Last: Integer; overload; cdecl;
+	function Last(const item: XVar): Integer; overload; cdecl;
+	function Last(const items: XArr): Integer; overload; cdecl;
     function LeastFrequent: XVar; overload; cdecl;
     function Len: Integer; overload; cdecl;
     function Loc(const item: XVar; const index: Integer = 2147483647): Integer; overload; cdecl;
