@@ -18,7 +18,16 @@ begin
 
   AddFunction(@Double_ClampMin, 'function Double_ClampMin(const item: Double; const limit: Double): Double;');
   AddFunction(@Double_ClampMax, 'function Double_ClampMax(const item: Double; const limit: Double): Double;');
-  AddFunction(@Double_Clamp, 'function Double_Clamp(const item: Double; const minimum, maximum: Double): Double; overload;');
+  AddFunction(@Double_Clamp, 'function Double_Clamp(const item: Double; const minimum, maximum: Double): Double; overload;');  
+  AddFunction(@Double_BoundMin, 'function Double_BoundMin(const item: Double; const limit: Double): Double;');
+  AddFunction(@Double_BoundMax, 'function Double_BoundMax(const item: Double; const limit: Double): Double;');
+  AddFunction(@Double_Bound, 'function Double_Bound(const item: Double; const minimum, maximum: Double): Double;');
+  AddFunction(@Double_RestrictMin, 'function Double_RestrictMin(const item: Double; const limit: Double): Double;');
+  AddFunction(@Double_RestrictMax, 'function Double_RestrictMax(const item: Double; const limit: Double): Double;');
+  AddFunction(@Double_Restrict, 'function Double_Restrict(const item: Double; const minimum, maximum: Double): Double;');
+  AddFunction(@Double_LimitMin, 'function Double_LimitMin(const item: Double; const limit: Double): Double;');
+  AddFunction(@Double_LimitMax, 'function Double_LimitMax(const item: Double; const limit: Double): Double;');
+  AddFunction(@Double_Limit, 'function Double_Limit(const item: Double; const minimum, maximum: Double): Double;');
   AddFunction(@Double_ConstraintMin, 'function Double_ConstraintMin(var item: Double; const limit: Double): Boolean;');
   AddFunction(@Double_ConstraintMax, 'function Double_ConstraintMax(var item: Double; const limit: Double): Boolean;');
   AddFunction(@Double_Constraint, 'function Double_Constraint(var item: Double; const minimum, maximum: Double): Boolean; overload;');
@@ -55,6 +64,15 @@ begin
   AddFunction(@Integer_ClampMax, 'function Integer_ClampMax(const item: Integer; const limit: Integer): Integer;');
   AddFunction(@Integer_Clamp1, 'function Integer_Clamp(const item: Integer; const minimum, maximum: Integer): Integer; overload;');
   AddFunction(@Integer_Clamp2, 'function Integer_Clamp(const item: Integer; const range: TRange): Integer; overload;');
+  AddFunction(@Integer_BoundMin, 'function Integer_BoundMin(const item: Integer; const limit: Integer): Integer;');
+  AddFunction(@Integer_BoundMax, 'function Integer_BoundMax(const item: Integer; const limit: Integer): Integer;');
+  AddFunction(@Integer_Bound, 'function Integer_Bound(const item: Integer; const minimum, maximum: Integer): Integer;');
+  AddFunction(@Integer_RestrictMin, 'function Integer_RestrictMin(const item: Integer; const limit: Integer): Integer;');
+  AddFunction(@Integer_RestrictMax, 'function Integer_RestrictMax(const item: Integer; const limit: Integer): Integer;');
+  AddFunction(@Integer_Restrict, 'function Integer_Restrict(const item: Integer; const minimum, maximum: Integer): Integer;');
+  AddFunction(@Integer_LimitMin, 'function Integer_LimitMin(const item: Integer; const limit: Integer): Integer;');
+  AddFunction(@Integer_LimitMax, 'function Integer_LimitMax(const item: Integer; const limit: Integer): Integer;');
+  AddFunction(@Integer_Limit, 'function Integer_Limit(const item: Integer; const minimum, maximum: Integer): Integer;');
   AddFunction(@Integer_ConstraintMin, 'function Integer_ConstraintMin(var item: Integer; const limit: Integer): Boolean;');
   AddFunction(@Integer_ConstraintMax, 'function Integer_ConstraintMax(var item: Integer; const limit: Integer): Boolean;');
   AddFunction(@Integer_Constraint1, 'function Integer_Constraint(var item: Integer; const minimum, maximum: Integer): Boolean; overload;');
