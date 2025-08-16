@@ -16,6 +16,12 @@ procedure AddFunctions;
 begin
   AddFunction(@MiMU_Version, 'function MiMU_Version: Double;');
 
+  AddFunction(@Double_ClampMin, 'function Double_ClampMin(const item: Double; const limit: Double): Double;');
+  AddFunction(@Double_ClampMax, 'function Double_ClampMax(const item: Double; const limit: Double): Double;');
+  AddFunction(@Double_Clamp, 'function Double_Clamp(const item: Double; const minimum, maximum: Double): Double; overload;');
+  AddFunction(@Double_ConstraintMin, 'function Double_ConstraintMin(var item: Double; const limit: Double): Boolean;');
+  AddFunction(@Double_ConstraintMax, 'function Double_ConstraintMax(var item: Double; const limit: Double): Boolean;');
+  AddFunction(@Double_Constraint, 'function Double_Constraint(var item: Double; const minimum, maximum: Double): Boolean; overload;');
   AddFunction(@Double_Increase, 'function Double_Increase(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Decrease, 'function Double_Decrease(var x: Double; const N: Double = 1): Double;');
   AddFunction(@Double_Increment, 'function Double_Increment(var x: Double; const N: Double = 1): Double;');
@@ -45,6 +51,14 @@ begin
   AddFunction(@Double_Oversize, 'function Double_Oversize(const x, limit: Double): Boolean;');
   AddFunction(@Double_Undersize, 'function Double_Undersize(const x, limit: Double): Boolean;');
 
+  AddFunction(@Integer_ClampMin, 'function Integer_ClampMin(const item: Integer; const limit: Integer): Integer;');
+  AddFunction(@Integer_ClampMax, 'function Integer_ClampMax(const item: Integer; const limit: Integer): Integer;');
+  AddFunction(@Integer_Clamp1, 'function Integer_Clamp(const item: Integer; const minimum, maximum: Integer): Integer; overload;');
+  AddFunction(@Integer_Clamp2, 'function Integer_Clamp(const item: Integer; const range: TRange): Integer; overload;');
+  AddFunction(@Integer_ConstraintMin, 'function Integer_ConstraintMin(var item: Integer; const limit: Integer): Boolean;');
+  AddFunction(@Integer_ConstraintMax, 'function Integer_ConstraintMax(var item: Integer; const limit: Integer): Boolean;');
+  AddFunction(@Integer_Constraint1, 'function Integer_Constraint(var item: Integer; const minimum, maximum: Integer): Boolean; overload;');
+  AddFunction(@Integer_Constraint2, 'function Integer_Constraint(var item: Integer; const range: TRange): Boolean; overload;');
   AddFunction(@Integer_Even, 'function Integer_Even(const x: Integer): Boolean;');
   AddFunction(@Integer_Odd, 'function Integer_Odd(const x: Integer): Boolean;');
   AddFunction(@Integer_Increase, 'function Integer_Increase(var x: Integer; const N: Integer = 1): Integer;');
@@ -395,6 +409,13 @@ begin
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Init, 'function TIntegerArray_Init(var arr: TIntegerArray): Boolean');
 
+  AddFunction(@TCharArray_Str, 'function TCharArray_Str(const arr: TCharArray): string;');
+  AddFunction(@TCharArray_ToStr, 'function TCharArray_ToStr(const arr: TCharArray): string;');
+  AddFunction(@TCharArray_Join1, 'function TCharArray_Join(const arr: TCharArray): string; overload;');
+  AddFunction(@TCharArray_Join2, 'function TCharArray_Join(const arr: TCharArray; const glue: string): string; overload;');
+  AddFunction(@TCharArray_Stringify1, 'function TCharArray_Stringify(const arr: TCharArray): string; overload;');
+  AddFunction(@TCharArray_Stringify2, 'function TCharArray_Stringify(const arr: TCharArray; const glue: string): string; overload;');
+
   AddFunction(@TBooleanArray_Digits, 'function TBooleanArray_Digits(const arr: TBooleanArray): TIntegerArray; overload');
   AddFunction(@TBooleanArray_Falsed, 'function TBooleanArray_Falsed(const arr: TBooleanArray): Boolean; overload;');
   AddFunction(@TBooleanArray_Falseless1, 'function TBooleanArray_Falseless(const arr: TBooleanArray): Boolean; overload;');
@@ -730,6 +751,15 @@ begin
   AddFunction(@TArray_Duplicate6, 'function TArray_Duplicate(const arr: TPointArray; const xTimes: Integer = 1): TPointArray; overload;');
   AddFunction(@TArray_Duplicate7, 'function TArray_Duplicate(const arr: TBoxArray; const xTimes: Integer = 1): TBoxArray; overload;');
   AddFunction(@TArray_Duplicate8, 'function TArray_Duplicate(const arr: TRangeArray; const xTimes: Integer = 1): TRangeArray; overload;');
+
+  AddFunction(@TArray_Emplace1, 'function TArray_Emplace(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Emplace2, 'function TArray_Emplace(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Emplace3, 'function TArray_Emplace(const arr: TStringArray; const item: string; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Emplace4, 'function TArray_Emplace(const arr: TCharArray; const item: Char; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Emplace5, 'function TArray_Emplace(const arr: TBooleanArray; const item: Boolean; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Emplace6, 'function TArray_Emplace(const arr: TPointArray; const item: TPoint; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Emplace7, 'function TArray_Emplace(const arr: TBoxArray; const item: TBox; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Emplace8, 'function TArray_Emplace(const arr: TRangeArray; const item: TRange; const index: Integer = 0): Integer; overload;');
 
   AddFunction(@TArray_Empty1, 'function TArray_Empty(const arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Empty2, 'function TArray_Empty(const arr: TDoubleArray): Boolean; overload;');
@@ -1289,15 +1319,6 @@ begin
   AddFunction(@TArray_MostFrequent6, 'function TArray_MostFrequent(const arr: TPointArray): TPoint; overload;');
   AddFunction(@TArray_MostFrequent7, 'function TArray_MostFrequent(const arr: TBoxArray): TBox; overload;');
   AddFunction(@TArray_MostFrequent8, 'function TArray_MostFrequent(const arr: TRangeArray): TRange; overload;');
-
-  AddFunction(@TArray_Move1, 'function TArray_Move(var arr: TIntegerArray; oldIndex, newIndex: Integer): Boolean; overload;');
-  AddFunction(@TArray_Move2, 'function TArray_Move(var arr: TDoubleArray; oldIndex, newIndex: Integer): Boolean; overload;');
-  AddFunction(@TArray_Move3, 'function TArray_Move(var arr: TStringArray; oldIndex, newIndex: Integer): Boolean; overload;');
-  AddFunction(@TArray_Move4, 'function TArray_Move(var arr: TCharArray; oldIndex, newIndex: Integer): Boolean; overload;');
-  AddFunction(@TArray_Move5, 'function TArray_Move(var arr: TBooleanArray; oldIndex, newIndex: Integer): Boolean; overload;');
-  AddFunction(@TArray_Move6, 'function TArray_Move(var arr: TPointArray; oldIndex, newIndex: Integer): Boolean; overload;');
-  AddFunction(@TArray_Move7, 'function TArray_Move(var arr: TBoxArray; oldIndex, newIndex: Integer): Boolean; overload;');
-  AddFunction(@TArray_Move8, 'function TArray_Move(var arr: TRangeArray; oldIndex, newIndex: Integer): Boolean; overload;');
   
   AddFunction(@TArray_Next1, 'function TArray_Next(const arr: TIntegerArray; const index: Integer; const count: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Next2, 'function TArray_Next(const arr: TDoubleArray; const index: Integer; const count: Integer = 2147483647): TDoubleArray; overload;');
@@ -1555,6 +1576,15 @@ begin
   AddFunction(@TArray_Remove30, 'function TArray_Remove(const arr: TPointArray; const items: TPointArray; const all: Boolean): TPointArray; overload;');
   AddFunction(@TArray_Remove31, 'function TArray_Remove(const arr: TBoxArray; const items: TBoxArray; const all: Boolean): TBoxArray; overload;');
   AddFunction(@TArray_Remove32, 'function TArray_Remove(const arr: TRangeArray; const items: TRangeArray; const all: Boolean): TRangeArray; overload;');
+
+  AddFunction(@TArray_Reposition1, 'function TArray_Reposition(var arr: TIntegerArray; oldIndex, newIndex: Integer): Boolean; overload;');
+  AddFunction(@TArray_Reposition2, 'function TArray_Reposition(var arr: TDoubleArray; oldIndex, newIndex: Integer): Boolean; overload;');
+  AddFunction(@TArray_Reposition3, 'function TArray_Reposition(var arr: TStringArray; oldIndex, newIndex: Integer): Boolean; overload;');
+  AddFunction(@TArray_Reposition4, 'function TArray_Reposition(var arr: TCharArray; oldIndex, newIndex: Integer): Boolean; overload;');
+  AddFunction(@TArray_Reposition5, 'function TArray_Reposition(var arr: TBooleanArray; oldIndex, newIndex: Integer): Boolean; overload;');
+  AddFunction(@TArray_Reposition6, 'function TArray_Reposition(var arr: TPointArray; oldIndex, newIndex: Integer): Boolean; overload;');
+  AddFunction(@TArray_Reposition7, 'function TArray_Reposition(var arr: TBoxArray; oldIndex, newIndex: Integer): Boolean; overload;');
+  AddFunction(@TArray_Reposition8, 'function TArray_Reposition(var arr: TRangeArray; oldIndex, newIndex: Integer): Boolean; overload;');
 
   AddFunction(@TArray_Resize1, 'function TArray_Resize(var arr: TIntegerArray; const aChange: Integer): Integer; overload;');
   AddFunction(@TArray_Resize2, 'function TArray_Resize(var arr: TDoubleArray; const aChange: Integer): Integer; overload;');
