@@ -291,6 +291,10 @@ begin
   AddFunction(@TBox_Clamp, 'function TBox_Clamp(const bx: TBox; const area: TBox): TBox;');
   AddFunction(@TBox_Points, 'function TBox_Points(const bx: TBox): TPointArray;');
   AddFunction(@TBox_TPA, 'function TBox_TPA(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Contents, 'function TBox_Contents(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Extract, 'function TBox_Extract(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Enumerate, 'function TBox_Enumerate(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Elements, 'function TBox_Elements(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Grid, 'function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray;');
   AddFunction(@TBox_Row, 'function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
   AddFunction(@TBox_Column, 'function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
@@ -325,6 +329,9 @@ begin
   AddFunction(@TRange_Ints, 'function TRange_Ints(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Values, 'function TRange_Values(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_TIA, 'function TRange_TIA(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Enumerate, 'function TRange_Enumerate(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Elements, 'function TRange_Elements(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Numbers, 'function TRange_Numbers(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');

@@ -273,6 +273,10 @@ function TBox_Restrict(var bx: TBox; const area: TBox): Boolean; cdecl; begin Re
 function TBox_Clamp(const bx: TBox; const area: TBox): TBox; cdecl; begin Result := bx.Clamp(area); end;
 function TBox_Points(const bx: TBox): TPointArray; cdecl; begin Result := bx.Points; end;
 function TBox_TPA(const bx: TBox): TPointArray; cdecl; begin Result := bx.TPA; end;
+function TBox_Contents(const bx: TBox): TPointArray; cdecl; begin Result := bx.Contents; end;
+function TBox_Extract(const bx: TBox): TPointArray; cdecl; begin Result := bx.Extract; end;
+function TBox_Enumerate(const bx: TBox): TPointArray; cdecl; begin Result := bx.Enumerate; end;
+function TBox_Elements(const bx: TBox): TPointArray; cdecl; begin Result := bx.Elements; end;
 function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray; cdecl; begin Result := bx.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Row(cells, space); end;
 function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Column(cells, space); end;
@@ -307,6 +311,9 @@ function TRange_Digits(const range: TRange): TIntegerArray; cdecl; begin Result 
 function TRange_Ints(const range: TRange): TIntegerArray; cdecl; begin Result := range.Ints; end;
 function TRange_Values(const range: TRange): TIntegerArray; cdecl; begin Result := range.Values; end;
 function TRange_TIA(const range: TRange): TIntegerArray; cdecl; begin Result := range.TIA; end;
+function TRange_Enumerate(const range: TRange): TIntegerArray; cdecl; begin Result := range.Enumerate; end;
+function TRange_Elements(const range: TRange): TIntegerArray; cdecl; begin Result := range.Elements; end;
+function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbers; end;
 function TRange_Normalize(const range: TRange): TRange; cdecl; begin Result := range.Normalize; end;
 function TRange_Overlapping(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlapping(b); end;
 function TRange_Overlap(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlap(b); end;
