@@ -333,6 +333,8 @@ begin
   AddFunction(@TRange_Minimum, 'function TRange_Minimum(const range: TRange): Integer;');
   AddFunction(@TRange_Highest, 'function TRange_Highest(const range: TRange): Integer;');
   AddFunction(@TRange_Maximum, 'function TRange_Maximum(const range: TRange): Integer;');
+  AddFunction(@TRange_Exceeds, 'function TRange_Exceeds(const range: TRange; const maxElements: Integer): Boolean;');
+  AddFunction(@TRange_Insufficient, 'function Insufficient(const range: TRange; const minElements: Integer): Boolean;');
   AddFunction(@TRange_Digits, 'function TRange_Digits(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Ints, 'function TRange_Ints(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Values, 'function TRange_Values(const range: TRange): TIntegerArray;');
@@ -350,6 +352,10 @@ begin
   AddFunction(@TRange_Shift, 'function TRange_Shift(const range: TRange; const delta: Integer): TRange;');
   AddFunction(@TRange_Contains1, 'function TRange_Contains(const range: TRange; const x: Integer): Boolean; overload;');
   AddFunction(@TRange_Contains2, 'function TRange_Contains(const range: TRange; const x: TRange): Boolean; overload;');
+  AddFunction(@TRange_Above1, 'function TRange_Above(const range: TRange; const target: Integer): Boolean; overload;');
+  AddFunction(@TRange_Above2, 'function TRange_Above(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Below1, 'function TRange_Below(const range: TRange; const target: Integer): Boolean; overload;');
+  AddFunction(@TRange_Below2, 'function TRange_Below(const range: TRange; const target: TRange): Boolean; overload;');
   AddFunction(@TRange_Reversed, 'function TRange_Reversed(const range: TRange): TRange;');
   AddFunction(@TRange_Reverse, 'function TRange_Reverse(var range: TRange): Boolean;');
   AddFunction(@TRange_Equals, 'function TRange_Equals(const range: TRange; const b: TRange): Boolean;');
