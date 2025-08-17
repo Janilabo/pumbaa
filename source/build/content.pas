@@ -368,8 +368,11 @@ begin
   AddFunction(@TRange_Distribute, 'function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray;');
   AddFunction(@TRange_Partition, 'function TRange_Partition(const range: TRange; const size: Integer): TRangeArray;');
   AddFunction(@TRange_Divide, 'function TRange_Divide(const range: TRange; const size: Integer): TRangeArray;');
+  AddFunction(@TRange_Neighbor, 'function TRange_Neighbor(const range: TRange; const b: TRange): Boolean;');
+  AddFunction(@TRange_Neighbour, 'function TRange_Neighbour(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Touch, 'function TRange_Touch(const range: TRange; const b: TRange): Boolean;');
-  AddFunction(@TRange_Touches, 'function TRange_Touches(const range: TRange; const b: TRange): Boolean;');
+  AddFunction(@TRange_Touches, 'function TRange_Touches(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean;');
+  AddFunction(@TRange_Touching, 'function TRange_Touching(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean;');
   AddFunction(@TRange_Distance, 'function TRange_Distance(const range: TRange; const b: TRange): Integer;');
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer;');
   AddFunction(@TRange_Digit, 'function TRange_Digit(const range: TRange; const x: Integer): Boolean;');

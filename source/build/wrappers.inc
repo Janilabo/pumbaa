@@ -350,8 +350,11 @@ function TRange_ClipMax(const range: TRange; const maxValue: Integer): TRange; c
 function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray; cdecl; begin Result := range.Distribute(parts); end;
 function TRange_Partition(const range: TRange; const size: Integer): TRangeArray; cdecl; begin Result := range.Partition(size); end;
 function TRange_Divide(const range: TRange; const size: Integer): TRangeArray; cdecl; begin Result := range.Divide(size); end;
+function TRange_Neighbor(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Neighbor(b); end;
+function TRange_Neighbour(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Neighbour(b); end;
 function TRange_Touch(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Touch(b); end;
-function TRange_Touches(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Touches(b); end;
+function TRange_Touches(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean; cdecl; begin Result := range.Touches(b, maxTouch, minTouch); end;
+function TRange_Touching(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean; cdecl; begin Result := range.Touching(b, maxTouch, minTouch); end;
 function TRange_Distance(const range: TRange; const b: TRange): Integer; cdecl; begin Result := range.Distance(b); end;
 function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer; cdecl; begin Result := range.DistHausdorff(b); end;
 function TRange_Digit(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Digit(x); end;
