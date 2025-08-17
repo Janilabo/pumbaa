@@ -247,6 +247,11 @@ begin
   AddFunction(@TBox_Make2, 'function TBox_Make(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload;');
   AddFunction(@TBox_Form1, 'function TBox_Form(const pt: TPoint; const size: Integer = 1): TBox; overload;');
   AddFunction(@TBox_Form2, 'function TBox_Form(const pt: TPoint; const width, height: Integer): TBox; overload;');
+  AddFunction(@TBox_Singular, 'function TBox_Singular(const bx: TBox): Boolean;');
+  AddFunction(@TBox_Plural, 'function TBox_Plural(const bx: TBox): Boolean;');
+  AddFunction(@TBox_Rectangular, 'function TBox_Rectangular(const bx: TBox): Boolean;');
+  AddFunction(@TBox_Equilateral, 'function TBox_Equilateral(const bx: TBox): Boolean;');
+  AddFunction(@TBox_Square, 'function TBox_Square(const bx: TBox): Boolean;');
   AddFunction(@TBox_Size, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer;');
   AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Integer;');
   AddFunction(@TBox_Diagonal, 'function TBox_Diagonal(const bx: TBox): Double;');
@@ -306,7 +311,10 @@ begin
   AddFunction(@TBox_CenterVertically, 'function TBox_CenterVertically(const bx: TBox; const area: TBox): TBox;');
   AddFunction(@TBox_CenterHorizontally, 'function TBox_CenterHorizontally(const bx: TBox; const area: TBox): TBox;');
 
-  AddFunction(@TRange_Neutral, 'function TRange_Neutral(const range: TRange): Boolean;');
+  AddFunction(@TRange_Singular, 'function TRange_Singular(const range: TRange): Boolean;');
+  AddFunction(@TRange_Atomic, 'function TRange_Atomic(const range: TRange): Boolean;');
+  AddFunction(@TRange_Plural, 'function TRange_Plural(const range: TRange): Boolean;');
+  AddFunction(@TRange_Composite, 'function TRange_Composite(const range: TRange): Boolean;');
   AddFunction(@TRange_Ascend, 'function TRange_Ascend(const range: TRange): TRange;');
   AddFunction(@TRange_Ascending, 'function TRange_Ascending(const range: TRange): Boolean;');
   AddFunction(@TRange_Descend, 'function TRange_Descend(const range: TRange): TRange;');
@@ -332,6 +340,7 @@ begin
   AddFunction(@TRange_Enumerate, 'function TRange_Enumerate(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Elements, 'function TRange_Elements(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Numbers, 'function TRange_Numbers(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');

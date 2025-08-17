@@ -229,6 +229,11 @@ function TBox_Make1(const pt: TPoint; const radius: Integer = 0): TBox; overload
 function TBox_Make2(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Make(pt, wRadius, hRadius); end;
 function TBox_Form1(const pt: TPoint; const size: Integer = 1): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, size); end;
 function TBox_Form2(const pt: TPoint; const width, height: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, width, height); end;
+function TBox_Singular(const bx: TBox): Boolean; cdecl; begin Result := bx.Singular; end;
+function TBox_Plural(const bx: TBox): Boolean; cdecl; begin Result := bx.Plural; end;
+function TBox_Rectangular(const bx: TBox): Boolean; cdecl; begin Result := bx.Rectangular; end;
+function TBox_Equilateral(const bx: TBox): Boolean; cdecl; begin Result := bx.Equilateral; end;
+function TBox_Square(const bx: TBox): Boolean; cdecl; begin Result := bx.Square; end;
 function TBox_Size(const bx: TBox; var width, height: Integer): Integer; cdecl; inline; begin Result := bx.Size(width, height); end;
 function TBox_Area(const bx: TBox): Integer; cdecl; inline; begin Result := bx.Area; end;
 function TBox_Diagonal(const bx: TBox): Double; cdecl; begin Result := bx.Diagonal; end;
@@ -288,7 +293,10 @@ function TBox_Centered(const bx: TBox; const area: TBox): TBox; cdecl; begin Res
 function TBox_CenterVertically(const bx: TBox; const area: TBox): TBox; cdecl; begin Result := bx.CenterVertically(area); end;
 function TBox_CenterHorizontally(const bx: TBox; const area: TBox): TBox; cdecl; begin Result := bx.CenterHorizontally(area); end;
 
-function TRange_Neutral(const range: TRange): Boolean; cdecl; begin Result := range.Neutral; end;
+function TRange_Singular(const range: TRange): Boolean; cdecl; begin Result := range.Singular; end;
+function TRange_Atomic(const range: TRange): Boolean; cdecl; begin Result := range.Atomic; end;
+function TRange_Plural(const range: TRange): Boolean; cdecl; begin Result := range.Plural; end;
+function TRange_Composite(const range: TRange): Boolean; cdecl; begin Result := range.Composite; end;
 function TRange_Ascend(const range: TRange): TRange; cdecl; begin Result := range.Ascend; end;
 function TRange_Ascending(const range: TRange): Boolean; cdecl; begin Result := range.Ascending; end;
 function TRange_Descend(const range: TRange): TRange; cdecl; begin Result := range.Descend; end;
@@ -314,6 +322,7 @@ function TRange_TIA(const range: TRange): TIntegerArray; cdecl; begin Result := 
 function TRange_Enumerate(const range: TRange): TIntegerArray; cdecl; begin Result := range.Enumerate; end;
 function TRange_Elements(const range: TRange): TIntegerArray; cdecl; begin Result := range.Elements; end;
 function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbers; end;
+function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
 function TRange_Normalize(const range: TRange): TRange; cdecl; begin Result := range.Normalize; end;
 function TRange_Overlapping(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlapping(b); end;
 function TRange_Overlap(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlap(b); end;

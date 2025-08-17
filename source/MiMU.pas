@@ -83,7 +83,10 @@ type
     constructor Create(const rStart, rStop: Integer); overload;
     constructor Create(const value: Integer); overload;
     class function Construct(const rStart, rStop: Integer): TRange; overload; cdecl; static;
-    function Neutral: Boolean; cdecl;
+    function Singular: Boolean; cdecl;
+    function Atomic: Boolean; cdecl;
+    function Plural: Boolean; cdecl;
+    function Composite: Boolean; cdecl;
     function Ascend: TRange; cdecl;
     function Ascending: Boolean; cdecl;
     function Descend: TRange; cdecl;
@@ -105,6 +108,7 @@ type
 	function Enumerate: TIntegerArray; cdecl;
 	function Elements: TIntegerArray; cdecl;
 	function Numbers: TIntegerArray; cdecl;
+	function Items: TIntegerArray; cdecl;
     function Normalize: TRange; cdecl;
     function Overlapping(const b: TRange): Boolean; cdecl;
     function Overlap(const b: TRange): Boolean; cdecl;
@@ -158,6 +162,11 @@ type
     function Form(const pt: TPoint; const width, height: Integer): TBox; overload; cdecl;
     function Make(const pt: TPoint; const radius: Integer = 0): TBox; overload; cdecl;
     function Make(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload; cdecl;
+    function Singular: Boolean; cdecl;
+    function Plural: Boolean; cdecl;
+	function Rectangular: Boolean; cdecl;
+	function Equilateral: Boolean; cdecl;
+    function Square: Boolean; cdecl;
     function Size(var width, height: Integer): Integer; cdecl; inline;
     function Area: Integer; cdecl; inline;
     function Diagonal: Double; cdecl;
