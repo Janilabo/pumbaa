@@ -220,6 +220,7 @@ begin
   AddFunction(@TPoint_Inside, 'function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean;');
   AddFunction(@TPoint_InCircle, 'function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean;');
   AddFunction(@TPoint_InEllipse, 'function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean;');
+  AddFunction(@TPoint_Clamp, 'function TPoint_Clamp(const pt: TPoint; const area: TBox): TPoint;');
   AddFunction(@TPoint_AngleDegrees, 'function TPoint_AngleDegrees(const pt, target: TPoint; const compass: Boolean = False): Double;');
   AddFunction(@TPoint_AngleRadians, 'function TPoint_AngleRadians(const pt, target: TPoint): Double;');
   AddFunction(@TPoint_DistEuclidean, 'function TPoint_DistEuclidean(const pt, target: TPoint): Double;');
@@ -395,6 +396,7 @@ begin
   AddFunction(@TIntegerArray_MergeSort, 'function TIntegerArray_MergeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_MergeSortBU, 'function TIntegerArray_MergeSortBU(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_ShellSort, 'function TIntegerArray_ShellSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_RadixSort, 'function TIntegerArray_RadixSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySorted, 'function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');

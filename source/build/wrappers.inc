@@ -202,6 +202,7 @@ function TPoint_Build(const X, Y: Integer): TPoint; cdecl; inline; var pt: TPoin
 function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean; cdecl; inline; begin Result := pt.Inside(bx); end;
 function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean; cdecl; inline; begin Result := pt.InCircle(center, radius); end;
 function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean; cdecl; inline; begin Result := pt.InEllipse(center, XRadius, YRadius); end;
+function TPoint_Clamp(const pt: TPoint; const area: TBox): TPoint; cdecl; begin Result := pt.Clamp(area); end;
 function TPoint_AngleDegrees(const pt, target: TPoint; const compass: Boolean = False): Double; cdecl; begin Result := pt.AngleDegrees(target); end;
 function TPoint_AngleRadians(const pt, target: TPoint): Double; cdecl; begin Result := pt.AngleRadians(target); end;
 function TPoint_DistEuclidean(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistEuclidean(target); end;
@@ -376,6 +377,7 @@ function TIntegerArray_PancakeSort(var arr: TIntegerArray; const aAscending: Boo
 function TIntegerArray_MergeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.MergeSort(aAscending); end;
 function TIntegerArray_MergeSortBU(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.MergeSortBU(aAscending); end;
 function TIntegerArray_ShellSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.ShellSort(aAscending); end;
+function TIntegerArray_RadixSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.RadixSort(aAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
