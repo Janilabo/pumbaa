@@ -383,9 +383,12 @@ begin
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer;');
   AddFunction(@TRange_Digit, 'function TRange_Digit(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Value, 'function TRange_Value(const range: TRange; const x: Integer): Boolean;');
+  AddFunction(@TRange_Item, 'function TRange_Item(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Middle, 'function TRange_Middle(const range: TRange): Double;');
   AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Integer;');
-  AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange): string;');
+  AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange; const openRange: string = ''[''; const closeRange: string = '']''; const glueRange: string = ''..''): string;');  
+  AddFunction(@TRange_ToStr, 'function TRange_ToStr(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string;');
+  AddFunction(@TRange_Stringify, 'function TRange_Stringify(const range: TRange; const openRange: string = ''[''; const glueRange: string = ''..''; const closeRange: string = '']''): string;');
   AddFunction(@TRange_Sum, 'function TRange_Sum(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Extract, 'function TRange_Extract(const range: TRange): TIntegerArray; overload;');
 

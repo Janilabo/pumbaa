@@ -365,9 +365,12 @@ function TRange_Distance(const range: TRange; const b: TRange): Integer; cdecl; 
 function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer; cdecl; begin Result := range.DistHausdorff(b); end;
 function TRange_Digit(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Digit(x); end;
 function TRange_Value(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Value(x); end;
+function TRange_Item(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Item(x); end;
 function TRange_Middle(const range: TRange): Double; cdecl; begin Result := range.Middle; end;
 function TRange_Center(const range: TRange): Integer; cdecl; begin Result := range.Center; end;
-function TRange_Str(const range: TRange): string; cdecl; begin Result := range.Str; end;
+function TRange_Str(const range: TRange; const openRange: string = '['; const closeRange: string = ']'; const glueRange: string = '..'): string; cdecl; begin Result := range.Str(openRange, closeRange, glueRange); end;  
+function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl; begin Result := range.ToStr(glueRange, openRange, closeRange); end;
+function TRange_Stringify(const range: TRange; const openRange: string = '['; const glueRange: string = '..'; const closeRange: string = ']'): string; cdecl; begin Result := range.Str(openRange, glueRange, closeRange); end;
 function TRange_Sum(const range: TRange): Int64; cdecl; begin Result := range.Sum; end;
 function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
 
