@@ -204,13 +204,14 @@ begin
   AddFunction(@String_TrimLeft, 'function String_TrimLeft(const str: string; const t: Char = #32): string;');
   AddFunction(@String_TrimRight, 'function String_TrimRight(const str: string; const t: Char = #32): string;');
   AddFunction(@String_Trim, 'function String_Trim(const str: string; const t: Char = #32): string;');
-  AddFunction(@String_ToTRange, 'function String_ToTRange(const str: string): TRange;');
+  AddFunction(@String_AsTRange, 'function String_AsTRange(const str: string): TRange;');
   AddFunction(@String_IDs1, 'function String_IDs(const str: string): TIntegerArray; overload;');
   AddFunction(@String_IDs2, 'function String_IDs(const str: string; const ID: TIntegerArray): TCharArray; overload;');
   AddFunction(@String_IDs3, 'function String_IDs(const str: string; const ID: TIntegerArray; const item: Char): TCharArray; overload;');
   AddFunction(@String_IDs4, 'function String_IDs(const str: string; const ID: TIntegerArray; const items: TCharArray): TCharArray; overload;');
   AddFunction(@String_Exch, 'function String_Exch(var str: string; const aIndex, bIndex: Integer): Boolean;');
   AddFunction(@String_Exchange, 'function String_Exchange(var str: string; const aIndex, bIndex: Integer): Boolean;');
+  AddFunction(@String_ToTRange, 'function String_ToTRange(const str: string; const glueRange: string = ''..''; const openRange: Char = ''[''; const closeRange: Char = '']''): TRange;');
 
   AddFunction(@TPoint_Create1, 'function TPoint_Create(const X, Y: Integer): TPoint; overload;');
   AddFunction(@TPoint_Create2, 'function TPoint_Create(const value: Integer): TPoint; overload;');

@@ -186,13 +186,14 @@ function String_PregQuote(const str: string; const regex: string = '.\+*?[^]$(){
 function String_TrimLeft(const str: string; const t: Char = #32): string; cdecl; begin Result := str.TrimLeft(t); end;
 function String_TrimRight(const str: string; const t: Char = #32): string; cdecl; begin Result := str.TrimRight(t); end;
 function String_Trim(const str: string; const t: Char = #32): string; cdecl; begin Result := str.Trim(t); end;
-function String_ToTRange(const str: string): TRange; cdecl; begin Result := str.ToTRange; end;
+function String_AsTRange(const str: string): TRange; cdecl; begin Result := str.AsTRange; end;
 function String_IDs1(const str: string): TIntegerArray; overload; cdecl; begin Result := str.IDs; end;
 function String_IDs2(const str: string; const ID: TIntegerArray): TCharArray; overload; cdecl; begin Result := str.IDs(ID); end;
 function String_IDs3(const str: string; const ID: TIntegerArray; const item: Char): TCharArray; overload; cdecl; begin Result := str.IDs(ID, item); end;
 function String_IDs4(const str: string; const ID: TIntegerArray; const items: TCharArray): TCharArray; overload; cdecl; begin Result := str.IDs(ID, items); end; 
 function String_Exch(var str: string; const aIndex, bIndex: Integer): Boolean; cdecl; begin Result := str.Exch(aIndex, bIndex); end;
 function String_Exchange(var str: string; const aIndex, bIndex: Integer): Boolean; cdecl; begin Result := str.Exchange(aIndex, bIndex); end;
+function String_ToTRange(const str: string; const glueRange: string = '..'; const openRange: Char = '['; const closeRange: Char = ']'): TRange; cdecl; begin Result := str.ToTRange(glueRange, openRange, closeRange); end;
 
 function TPoint_Create1(const X, Y: Integer): TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create(X, Y); end;
 function TPoint_Create2(const value: Integer): TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create(value); end;
@@ -370,7 +371,7 @@ function TRange_Middle(const range: TRange): Double; cdecl; begin Result := rang
 function TRange_Center(const range: TRange): Integer; cdecl; begin Result := range.Center; end;
 function TRange_Str(const range: TRange; const openRange: string = '['; const closeRange: string = ']'; const glueRange: string = '..'): string; cdecl; begin Result := range.Str(openRange, closeRange, glueRange); end;  
 function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl; begin Result := range.ToStr(glueRange, openRange, closeRange); end;
-function TRange_Stringify(const range: TRange; const openRange: string = '['; const glueRange: string = '..'; const closeRange: string = ']'): string; cdecl; begin Result := range.Str(openRange, glueRange, closeRange); end;
+function TRange_Stringify(const range: TRange; const openRange: string = '['; const glueRange: string = '..'; const closeRange: string = ']'): string; cdecl; begin Result := range.Stringify(openRange, glueRange, closeRange); end;
 function TRange_Sum(const range: TRange): Int64; cdecl; begin Result := range.Sum; end;
 function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
 
