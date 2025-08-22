@@ -440,6 +440,10 @@ function TIntegerArray_Knit1(const arr: TIntegerArray; const minDiff, maxDiff: I
 function TIntegerArray_Knit2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Knit(diff); end;
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
 function TIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
+function TIntegerArray_Minimum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Minimum(index); end;
+function TIntegerArray_Minimum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Minimum; end;
+function TIntegerArray_Maximum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Maximum(index); end;
+function TIntegerArray_Maximum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Maximum; end;
 
 function TCharArray_Str(const arr: TCharArray): string; cdecl; begin Result := arr.Str; end;
 function TCharArray_ToStr(const arr: TCharArray): string; cdecl; begin Result := arr.ToStr; end;
@@ -479,6 +483,8 @@ function TPointArray_Y2(const arr: TPointArray; const val: Integer): TIntegerArr
 function TPointArray_Y3(const arr: TPointArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Y(arr, vals); end;
 function TPointArray_Bounds1(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Bounds; end;
 function TPointArray_Bounds2(const arr: TPointArray; var width, height: Integer): TBox; overload; cdecl; begin Result := arr.Bounds(width, height); end;
+function TPointArray_BoundingBox(const arr: TPointArray): TBox; cdecl; begin Result := arr.BoundingBox; end;
+function TPointArray_Box(const arr: TPointArray): TBox; cdecl; begin Result := arr.Box; end;
 function TPointArray_Undupe(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Undupe; end;
 function TPointArray_Unduped(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Unduped; end;
 function TPointArray_Invert(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Invert; end;
