@@ -296,6 +296,7 @@ begin
   AddFunction(@TBox_Restrict, 'function TBox_Restrict(var bx: TBox; const area: TBox): Boolean;');
   AddFunction(@TBox_Clamp, 'function TBox_Clamp(const bx: TBox; const area: TBox): TBox;');
   AddFunction(@TBox_Points, 'function TBox_Points(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Pixels, 'function TBox_Pixels(const bx: TBox): TPointArray;');
   AddFunction(@TBox_TPA, 'function TBox_TPA(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Contents, 'function TBox_Contents(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Extract, 'function TBox_Extract(const bx: TBox): TPointArray;');
@@ -304,6 +305,7 @@ begin
   AddFunction(@TBox_Grid, 'function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray;');
   AddFunction(@TBox_Row, 'function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
   AddFunction(@TBox_Column, 'function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
+  AddFunction(@TBox_Border, 'function TBox_Border(const bx: TBox): TPointArray;');
   AddFunction(@TBox_CornerPoints, 'function TBox_CornerPoints(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Corners, 'function TBox_Corners(const bx: TBox): TPointArray;');
   AddFunction(@TBox_SimilarSize1, 'function TBox_SimilarSize(const bx: TBox; const b: TBox; const widthDifferency, heightDifferency: Integer): Boolean; overload;');

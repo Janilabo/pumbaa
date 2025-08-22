@@ -278,11 +278,13 @@ function TBox_Clip(const bx: TBox; const area: TBox): TBox; cdecl; begin Result 
 function TBox_Restrict(var bx: TBox; const area: TBox): Boolean; cdecl; begin Result := bx.Restrict(area); end;
 function TBox_Clamp(const bx: TBox; const area: TBox): TBox; cdecl; begin Result := bx.Clamp(area); end;
 function TBox_Points(const bx: TBox): TPointArray; cdecl; begin Result := bx.Points; end;
+function TBox_Pixels(const bx: TBox): TPointArray; cdecl; begin Result := bx.Pixels; end;
 function TBox_TPA(const bx: TBox): TPointArray; cdecl; begin Result := bx.TPA; end;
 function TBox_Contents(const bx: TBox): TPointArray; cdecl; begin Result := bx.Contents; end;
 function TBox_Extract(const bx: TBox): TPointArray; cdecl; begin Result := bx.Extract; end;
 function TBox_Enumerate(const bx: TBox): TPointArray; cdecl; begin Result := bx.Enumerate; end;
 function TBox_Elements(const bx: TBox): TPointArray; cdecl; begin Result := bx.Elements; end;
+function TBox_Border(const bx: TBox): TPointArray; cdecl; begin Result := bx.Border; end;
 function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray; cdecl; begin Result := bx.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Row(cells, space); end;
 function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Column(cells, space); end;
