@@ -460,13 +460,18 @@ begin
   AddFunction(@TIntegerArray_Knit1, 'function TIntegerArray_Knit(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Knit2, 'function TIntegerArray_Knit(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
-  AddFunction(@TIntegerArray_Init, 'function TIntegerArray_Init(var arr: TIntegerArray): Boolean');
+  AddFunction(@TIntegerArray_Mirror, 'function TIntegerArray_Mirror(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TIntegerArray_MinVal, 'function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_MaxVal, 'function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_Minimum1, 'function TIntegerArray_Minimum(const arr: TIntegerArray; var index: Integer): Integer; overload;');
   AddFunction(@TIntegerArray_Minimum2, 'function TIntegerArray_Minimum(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_Maximum1, 'function TIntegerArray_Maximum(const arr: TIntegerArray; var index: Integer): Integer; overload;');
   AddFunction(@TIntegerArray_Maximum2, 'function TIntegerArray_Maximum(const arr: TIntegerArray): Integer; overload;');
+  
+  AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TIA_Reverse, 'function TIA_Reverse(var arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TIA_Reversed, 'function TIA_Reversed(const arr: TIntegerArray): TIntegerArray; overload;');
 
   AddFunction(@TCharArray_Str, 'function TCharArray_Str(const arr: TCharArray): string;');
   AddFunction(@TCharArray_ToStr, 'function TCharArray_ToStr(const arr: TCharArray): string;');

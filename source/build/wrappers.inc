@@ -441,13 +441,18 @@ function TIntegerArray_Clique2(const arr: TIntegerArray; const diff: Integer): T
 function TIntegerArray_Knit1(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Knit(minDiff, maxDiff); end;
 function TIntegerArray_Knit2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Knit(diff); end;
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
-function TIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
+function TIntegerArray_Mirror(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Mirror; end;
 function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MinVal; end;
 function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MaxVal; end;
 function TIntegerArray_Minimum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Minimum(index); end;
 function TIntegerArray_Minimum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Minimum; end;
 function TIntegerArray_Maximum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Maximum(index); end;
 function TIntegerArray_Maximum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Maximum; end;
+
+function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
+function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
+function TIA_Reverse(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := TIA.Reverse(arr); end;
+function TIA_Reversed(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := TIA.Reversed(arr); end;
 
 function TCharArray_Str(const arr: TCharArray): string; cdecl; begin Result := arr.Str; end;
 function TCharArray_ToStr(const arr: TCharArray): string; cdecl; begin Result := arr.ToStr; end;
