@@ -379,7 +379,9 @@ function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; be
 
 function TIntegerArray_Bounds1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Bounds; end;
 function TIntegerArray_Bounds2(const arr: TIntegerArray; var aSize: Integer): TRange; overload; cdecl; begin Result := arr.Bounds(aSize); end;
+function TIntegerArray_BoundingRange(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.BoundingRange; end;
 function TIntegerArray_Range(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Range; end;
+function TIntegerArray_Ranged(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Ranged; end;
 function TIntegerArray_Undupe(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Undupe; end;
 function TIntegerArray_Unduped(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Unduped; end;
 function TIntegerArray_Numberline(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Numberline; end;
@@ -440,6 +442,8 @@ function TIntegerArray_Knit1(const arr: TIntegerArray; const minDiff, maxDiff: I
 function TIntegerArray_Knit2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Knit(diff); end;
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
 function TIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
+function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MinVal; end;
+function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MaxVal; end;
 function TIntegerArray_Minimum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Minimum(index); end;
 function TIntegerArray_Minimum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Minimum; end;
 function TIntegerArray_Maximum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Maximum(index); end;
@@ -485,6 +489,7 @@ function TPointArray_Bounds1(const arr: TPointArray): TBox; overload; cdecl; beg
 function TPointArray_Bounds2(const arr: TPointArray; var width, height: Integer): TBox; overload; cdecl; begin Result := arr.Bounds(width, height); end;
 function TPointArray_BoundingBox(const arr: TPointArray): TBox; cdecl; begin Result := arr.BoundingBox; end;
 function TPointArray_Box(const arr: TPointArray): TBox; cdecl; begin Result := arr.Box; end;
+function TPointArray_Boxed(const arr: TPointArray): TBox; cdecl; begin Result := arr.Boxed; end;
 function TPointArray_Undupe(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Undupe; end;
 function TPointArray_Unduped(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Unduped; end;
 function TPointArray_Invert(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Invert; end;
