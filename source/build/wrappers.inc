@@ -137,6 +137,9 @@ function Boolean_SetTrue(var x: Boolean): Integer; cdecl; begin Result := x.SetT
 function Boolean_SwitchOn(var x: Boolean; const state: Boolean): Boolean; cdecl; begin Result := x.SwitchOn(state); end;
 function Boolean_SwitchOff(var x: Boolean; const state: Boolean): Boolean; cdecl; begin Result := x.SwitchOff(state); end;
 
+function Char_Str(const c: Char; const size: Integer = 1): string; cdecl; begin Result := c.Str(size); end;
+function Char_ToStr(const c: Char; const size: Integer = 1): string; cdecl; begin Result := c.ToStr(size); end;
+
 function String_Empty(const str: string): Boolean; cdecl; begin Result := str.Empty; end;
 function String_Void(const str: string): Boolean; cdecl; begin Result := str.Void; end;
 function String_Blank(const str: string): Boolean; cdecl; begin Result := str.Blank; end;
@@ -382,6 +385,8 @@ function TIntegerArray_Bounds2(const arr: TIntegerArray; var aSize: Integer): TR
 function TIntegerArray_BoundingRange(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.BoundingRange; end;
 function TIntegerArray_Range(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Range; end;
 function TIntegerArray_Ranged(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Ranged; end;
+function TIntegerArray_MinMax(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.MinMax; end;
+function TIntegerArray_Extent(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Extent; end;
 function TIntegerArray_Undupe(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Undupe; end;
 function TIntegerArray_Unduped(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Unduped; end;
 function TIntegerArray_Numberline(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Numberline; end;
@@ -495,6 +500,7 @@ function TPointArray_Bounds2(const arr: TPointArray; var width, height: Integer)
 function TPointArray_BoundingBox(const arr: TPointArray): TBox; cdecl; begin Result := arr.BoundingBox; end;
 function TPointArray_Box(const arr: TPointArray): TBox; cdecl; begin Result := arr.Box; end;
 function TPointArray_Boxed(const arr: TPointArray): TBox; cdecl; begin Result := arr.Boxed; end;
+function TPointArray_MinMax(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.MinMax; end;
 function TPointArray_Undupe(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Undupe; end;
 function TPointArray_Unduped(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Unduped; end;
 function TPointArray_Invert(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Invert; end;
@@ -507,6 +513,9 @@ function TPointArray_XValues(const arr: TPointArray): TIntegerArray; cdecl; begi
 function TPointArray_YValues(const arr: TPointArray): TIntegerArray; cdecl; begin Result := arr.YValues; end;
 function TPointArray_Horizontal(const arr: TPointArray): TRange; cdecl; begin Result := arr.Horizontal; end;
 function TPointArray_Vertical(const arr: TPointArray): TRange; cdecl; begin Result := arr.Vertical; end;
+function TPointArray_Unzip(const arr: TPointArray; var xVals, yVals: TIntegerArray): Integer; cdecl; begin Result := arr.Unzip(xVals, yVals); end;
+function TPointArray_Zip(const xVals, yVals: TIntegerArray): TPointArray; cdecl; begin Result.Zip(xVals, yVals); end;
+function TPointArray_Extent(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Extent; end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
