@@ -513,8 +513,8 @@ function TPointArray_XValues(const arr: TPointArray): TIntegerArray; cdecl; begi
 function TPointArray_YValues(const arr: TPointArray): TIntegerArray; cdecl; begin Result := arr.YValues; end;
 function TPointArray_Horizontal(const arr: TPointArray): TRange; cdecl; begin Result := arr.Horizontal; end;
 function TPointArray_Vertical(const arr: TPointArray): TRange; cdecl; begin Result := arr.Vertical; end;
-function TPointArray_Unzip(const arr: TPointArray; var xVals, yVals: TIntegerArray): Integer; cdecl; begin Result := arr.Unzip(xVals, yVals); end;
-function TPointArray_Zip(const xVals, yVals: TIntegerArray): TPointArray; cdecl; begin Result.Zip(xVals, yVals); end;
+function TPointArray_Unzip(const arr: TPointArray; var xArr, yArr: TIntegerArray): Integer; cdecl; begin Result := arr.Unzip(xArr, yArr); end;
+function TPointArray_Zip(const xArr, yArr: TIntegerArray): TPointArray; cdecl; begin Result.Zip(xArr, yArr); end;
 function TPointArray_Extent(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Extent; end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
@@ -529,6 +529,16 @@ function TBoxArray_X2_3(const arr: TBoxArray; const vals: TIntegerArray): TInteg
 function TBoxArray_Y2_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := Y2(arr); end;
 function TBoxArray_Y2_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := Y2(arr, val); end;
 function TBoxArray_Y2_3(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := Y2(arr, vals); end;
+function TBoxArray_X1s(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.X1s; end;
+function TBoxArray_Y1s(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.Y1s; end;
+function TBoxArray_X2s(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.X2s; end;
+function TBoxArray_Y2s(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.Y2s; end;
+function TBoxArray_X1Values(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.X1Values; end;
+function TBoxArray_Y1Values(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.Y1Values; end;
+function TBoxArray_X2Values(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.X2Values; end;
+function TBoxArray_Y2Values(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.Y2Values; end;
+function TBoxArray_Unzip(const arr: TBoxArray; var x1Arr, y1Arr, x2Arr, y2Arr: TIntegerArray): Integer; cdecl; begin Result := arr.Unzip(x1Arr, y1Arr, x2Arr, y2Arr); end;
+function TBoxArray_Zip(const x1Arr, y1Arr, x2Arr, y2Arr: TIntegerArray): TBoxArray; cdecl; begin Result.Zip(x1Arr, y1Arr, x2Arr, y2Arr); end;
 
 function TRangeArray_Start1(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := start(arr); end;
 function TRangeArray_Start2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := start(arr, val); end;
@@ -543,6 +553,12 @@ function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray; cdecl; beg
 function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Stopping; end;
 function TRangeArray_TIA(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.TIA; end;
 function TRangeArray_T2DIA(const arr: TRangeArray): T2DIntegerArray; cdecl; begin Result := arr.T2DIA; end;
+function TRangeArray_Starts(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Starts; end;
+function TRangeArray_Stops(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Stops; end;
+function TRangeArray_StartValues(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.StartValues; end;
+function TRangeArray_StopValues(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.StopValues; end;
+function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TIntegerArray): Integer; cdecl; begin Result := arr.Unzip(startArr, stopArr); end;
+function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray; cdecl; begin Result.Zip(startArr, stopArr); end;
 function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gaps; end;
 
 function TArray_Add1(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;

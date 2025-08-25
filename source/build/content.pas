@@ -531,8 +531,8 @@ begin
   AddFunction(@TPointArray_YValues, 'function TPointArray_YValues(const arr: TPointArray): TIntegerArray;');
   AddFunction(@TPointArray_Horizontal, 'function TPointArray_Horizontal(const arr: TPointArray): TRange;');
   AddFunction(@TPointArray_Vertical, 'function TPointArray_Vertical(const arr: TPointArray): TRange;');
-  AddFunction(@TPointArray_Unzip, 'function TPointArray_Unzip(const arr: TPointArray; var xVals, yVals: TIntegerArray): Integer;');
-  AddFunction(@TPointArray_Zip, 'function TPointArray_Zip(const xVals, yVals: TIntegerArray): TPointArray;');
+  AddFunction(@TPointArray_Unzip, 'function TPointArray_Unzip(const arr: TPointArray; var xArr, yArr: TIntegerArray): Integer;');
+  AddFunction(@TPointArray_Zip, 'function TPointArray_Zip(const xArr, yArr: TIntegerArray): TPointArray;');
   AddFunction(@TPointArray_Extent, 'function TPointArray_Extent(const arr: TPointArray): TBox;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
@@ -547,6 +547,16 @@ begin
   AddFunction(@TBoxArray_Y2_1, 'function TBoxArray_Y2(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_Y2_2, 'function TBoxArray_Y2(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
   AddFunction(@TBoxArray_Y2_3, 'function TBoxArray_Y2(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TBoxArray_X1s, 'function TBoxArray_X1s(const arr: TBoxArray): TIntegerArray;');
+  AddFunction(@TBoxArray_Y1s, 'function TBoxArray_Y1s(const arr: TBoxArray): TIntegerArray;');
+  AddFunction(@TBoxArray_X2s, 'function TBoxArray_X2s(const arr: TBoxArray): TIntegerArray;');
+  AddFunction(@TBoxArray_Y2s, 'function TBoxArray_Y2s(const arr: TBoxArray): TIntegerArray;');
+  AddFunction(@TBoxArray_X1Values, 'function TBoxArray_X1Values(const arr: TBoxArray): TIntegerArray;');
+  AddFunction(@TBoxArray_Y1Values, 'function TBoxArray_Y1Values(const arr: TBoxArray): TIntegerArray;');
+  AddFunction(@TBoxArray_X2Values, 'function TBoxArray_X2Values(const arr: TBoxArray): TIntegerArray;');
+  AddFunction(@TBoxArray_Y2Values, 'function TBoxArray_Y2Values(const arr: TBoxArray): TIntegerArray;');
+  AddFunction(@TBoxArray_Unzip, 'function TBoxArray_Unzip(const arr: TBoxArray; var x1Arr, y1Arr, x2Arr, y2Arr: TIntegerArray): Integer;');
+  AddFunction(@TBoxArray_Zip, 'function TBoxArray_Zip(const x1Arr, y1Arr, x2Arr, y2Arr: TIntegerArray): TBoxArray;');
 
   AddFunction(@TRangeArray_Start1, 'function TRangeArray_Start(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_Start2, 'function TRangeArray_Start(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
@@ -561,6 +571,12 @@ begin
   AddFunction(@TRangeArray_Stopping, 'function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_TIA, 'function TRangeArray_TIA(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_T2DIA, 'function TRangeArray_T2DIA(const arr: TRangeArray): T2DIntegerArray;');
+  AddFunction(@TRangeArray_Starts, 'function TRangeArray_Starts(const arr: TRangeArray): TIntegerArray;');
+  AddFunction(@TRangeArray_Stops, 'function TRangeArray_Stops(const arr: TRangeArray): TIntegerArray;');
+  AddFunction(@TRangeArray_StartValues, 'function TRangeArray_StartValues(const arr: TRangeArray): TIntegerArray;');
+  AddFunction(@TRangeArray_StopValues, 'function TRangeArray_StopValues(const arr: TRangeArray): TIntegerArray;');
+  AddFunction(@TRangeArray_Unzip, 'function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TIntegerArray): Integer;');
+  AddFunction(@TRangeArray_Zip, 'function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray;');
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
   
   AddFunction(@TArray_Add1, 'function TArray_Add(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload;');
