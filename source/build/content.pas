@@ -7,9 +7,18 @@ begin
   AddType('TCharArray', 'array of Char;');
   AddType('T2DCharArray', 'array of TCharArray;');
   AddType('T2DBoxArray', 'array of TBoxArray;');
-  AddType('TRange', 'record start, stop: Integer; end;');
+  AddType('TRange', 'record ' + #13#10 + 
+                    '  start, stop: Integer;' + #13#10 +
+                    'end;');
   AddType('TRangeArray', 'array of TRange;');
-  AddType('T2DRangeArray', 'array of TRangeArray;');  
+  AddType('T2DRangeArray', 'array of TRangeArray;');
+  AddType('TSegment', 'record' + #13#10 +
+                      '  A, B: TPoint;' + #13#10 +
+					  'end;');
+  AddType('TCircle2', 'record' + #13#10 +
+                     '  center: TPoint;' + #13#10 +
+                     '  radius: Double;' + #13#10 +
+                     'end;');					 
 end;
 
 procedure AddFunctions;
@@ -397,6 +406,13 @@ begin
   AddFunction(@TRange_Stringify, 'function TRange_Stringify(const range: TRange; const openRange: string = ''[''; const glueRange: string = ''..''; const closeRange: string = '']''): string;');
   AddFunction(@TRange_Sum, 'function TRange_Sum(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Extract, 'function TRange_Extract(const range: TRange): TIntegerArray; overload;');
+  
+  AddFunction(@TSegment_Points, 'function TSegment_Points(const sg: TSegment; const steps: Integer = 2147483647): TPointArray;');
+  AddFunction(@TSegment_Pixels, 'function TSegment_Pixels(const sg: TSegment): TPointArray;');
+  
+  AddFunction(@TCircle_Points, 'function TCircle_Points(const ci: TCircle2): TPointArray;');
+  AddFunction(@TCircle_BorderPoints, 'function TCircle_BorderPoints(const ci: TCircle2; const count: Integer): TPointArray;');
+  AddFunction(@TCircle_Border, 'function TCircle_Border(const ci: TCircle2): TPointArray;');
 
   AddFunction(@TIntegerArray_Bounds1, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; overload;');
   AddFunction(@TIntegerArray_Bounds2, 'function TIntegerArray_Bounds(const arr: TIntegerArray; var aSize: Integer): TRange; overload;');

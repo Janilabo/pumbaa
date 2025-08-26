@@ -380,6 +380,13 @@ function TRange_Stringify(const range: TRange; const openRange: string = '['; co
 function TRange_Sum(const range: TRange): Int64; cdecl; begin Result := range.Sum; end;
 function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
 
+function TSegment_Points(const sg: TSegment; const steps: Integer = 2147483647): TPointArray; cdecl; begin Result := sg.Points(steps); end;
+function TSegment_Pixels(const sg: TSegment): TPointArray; cdecl; begin Result := sg.Pixels; end;
+
+function TCircle_Points(const ci: TCircle): TPointArray; cdecl; begin Result := ci.Points; end;
+function TCircle_BorderPoints(const ci: TCircle; const count: Integer): TPointArray; cdecl; begin Result := ci.BorderPoints(count); end;
+function TCircle_Border(const ci: TCircle): TPointArray; cdecl; begin Result := ci.Border; end;
+
 function TIntegerArray_Bounds1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Bounds; end;
 function TIntegerArray_Bounds2(const arr: TIntegerArray; var aSize: Integer): TRange; overload; cdecl; begin Result := arr.Bounds(aSize); end;
 function TIntegerArray_BoundingRange(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.BoundingRange; end;
