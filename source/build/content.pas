@@ -132,6 +132,8 @@ begin
   AddFunction(@Int64_Undersize, 'function Int64_Undersize(const x, limit: Int64): Boolean;');
 
   AddFunction(@Boolean_ToString, 'function Boolean_ToString(const x: Boolean): string;');
+  AddFunction(@Boolean_Bit, 'function Boolean_Bit(const x: Boolean): Integer;');
+  AddFunction(@Boolean_Bitify, 'function Boolean_Bitify(const x: Boolean): Integer;');
   AddFunction(@Boolean_ToInteger, 'function Boolean_ToInteger(const x: Boolean): Integer;');
   AddFunction(@Boolean_AsInteger, 'function Boolean_AsInteger(const x: Boolean): Integer;');
   AddFunction(@Boolean_Toggle, 'function Boolean_Toggle(const x: Boolean): Boolean;');
@@ -413,6 +415,7 @@ begin
   AddFunction(@TSegment_Construct2, 'function TSegment_Construct(const aX, aY, bX, bY: Integer): TSegment; overload;');
   AddFunction(@TSegment_Bounds, 'function TSegment_Bounds(const sg: TSegment): TBox;');
   AddFunction(@TSegment_Boundaries, 'function TSegment_Boundaries(const sg: TSegment): TBox;');
+  AddFunction(@TSegment_Envelope, 'function TSegment_Envelope(const sg: TSegment): TBox;');
   AddFunction(@TSegment_Points, 'function TSegment_Points(const sg: TSegment): TPointArray;');
   AddFunction(@TSegment_Pixels, 'function TSegment_Pixels(const sg: TSegment; const steps: Integer = 2147483647): TPointArray;');
   
@@ -424,6 +427,9 @@ begin
   AddFunction(@TCircle_Item, 'function TCircle_Item(const ci: TCircle2; const pt: TPoint): Boolean;');
   AddFunction(@TCircle_Pixel, 'function TCircle_Pixel(const ci: TCircle2; const pt: TPoint): Boolean;');
   AddFunction(@TCircle_Bounds, 'function TCircle_Bounds(const ci: TCircle2): TBox;');
+  AddFunction(@TCircle_Boundaries, 'function TCircle_Boundaries(const ci: TCircle2): TBox;');
+  AddFunction(@TCircle_BoundingBox, 'function TCircle_BoundingBox(const ci: TCircle2): TBox;');
+  AddFunction(@TCircle_Envelope, 'function TCircle_Envelope(const ci: TCircle2): TBox;');
   AddFunction(@TCircle_Points, 'function TCircle_Points(const ci: TCircle2): TPointArray;');
   AddFunction(@TCircle_TPA, 'function TCircle_TPA(const ci: TCircle2): TPointArray;');
   AddFunction(@TCircle_BorderPoints, 'function TCircle_BorderPoints(const ci: TCircle2; const count: Integer): TPointArray;');
@@ -515,6 +521,8 @@ begin
   AddFunction(@TCharArray_Stringify1, 'function TCharArray_Stringify(const arr: TCharArray): string; overload;');
   AddFunction(@TCharArray_Stringify2, 'function TCharArray_Stringify(const arr: TCharArray; const glue: string): string; overload;');
 
+  AddFunction(@TBooleanArray_Bits, 'function TBooleanArray_Bits(const arr: TBooleanArray): Integer; overload');
+  AddFunction(@TBooleanArray_Bitify, 'function TBooleanArray_Bitify(const arr: TBooleanArray): Integer; overload');
   AddFunction(@TBooleanArray_Digits, 'function TBooleanArray_Digits(const arr: TBooleanArray): TIntegerArray; overload');
   AddFunction(@TBooleanArray_Falsed, 'function TBooleanArray_Falsed(const arr: TBooleanArray): Boolean; overload;');
   AddFunction(@TBooleanArray_Falseless1, 'function TBooleanArray_Falseless(const arr: TBooleanArray): Boolean; overload;');

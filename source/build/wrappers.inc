@@ -105,6 +105,8 @@ function Double_Oversize(const x, limit: Double): Boolean; cdecl; begin Result :
 function Double_Undersize(const x, limit: Double): Boolean; cdecl; begin Result := x.Undersize(limit); end;
 
 function Boolean_ToString(const x: Boolean): string; cdecl; begin Result := x.ToString; end;
+function Boolean_Bit(const x: Boolean): Integer; cdecl; begin Result := x.Bit; end;
+function Boolean_Bitify(const x: Boolean): Integer; cdecl; begin Result := x.Bitify; end;
 function Boolean_ToInteger(const x: Boolean): Integer; cdecl; begin Result := x.ToInteger; end;
 function Boolean_AsInteger(const x: Boolean): Integer; cdecl; begin Result := x.AsInteger; end;
 function Boolean_Toggle(const x: Boolean): Boolean; cdecl; begin Result := x.Toggle; end;
@@ -386,6 +388,7 @@ function TSegment_Construct1(const sA, sB: TPoint): TSegment; overload; cdecl; b
 function TSegment_Construct2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; begin Result := TSegment.Construct(aX, aY, bX, bY); end;
 function TSegment_Bounds(const sg: TSegment): TBox; cdecl; begin Result := sg.Bounds; end;
 function TSegment_Boundaries(const sg: TSegment): TBox; cdecl; begin Result := sg.Boundaries; end;
+function TSegment_Envelope(const sg: TSegment): TBox; cdecl; begin Result := sg.Envelope; end;
 function TSegment_Points(const sg: TSegment): TPointArray; cdecl; begin Result := sg.Points; end;
 function TSegment_Pixels(const sg: TSegment; const steps: Integer = 2147483647): TPointArray; cdecl; begin Result := sg.Pixels(steps); end;
 
@@ -397,6 +400,9 @@ function TCircle_Contains(const ci: TCircle; const pt: TPoint): Boolean; cdecl; 
 function TCircle_Item(const ci: TCircle; const pt: TPoint): Boolean; cdecl; begin Result := ci.Item(pt); end;
 function TCircle_Pixel(const ci: TCircle; const pt: TPoint): Boolean; cdecl; begin Result := ci.Pixel(pt); end;
 function TCircle_Bounds(const ci: TCircle): TBox; cdecl; begin Result := ci.Bounds; end;
+function TCircle_Boundaries(const ci: TCircle): TBox; cdecl; begin Result := ci.Boundaries; end;
+function TCircle_BoundingBox(const ci: TCircle): TBox; cdecl; begin Result := ci.BoundingBox; end;
+function TCircle_Envelope(const ci: TCircle): TBox; cdecl; begin Result := ci.Envelope; end;
 function TCircle_Points(const ci: TCircle): TPointArray; cdecl; begin Result := ci.Points; end;
 function TCircle_TPA(const ci: TCircle): TPointArray; cdecl; begin Result := ci.TPA; end;
 function TCircle_BorderPoints(const ci: TCircle; const count: Integer): TPointArray; cdecl; begin Result := ci.BorderPoints(count); end;
@@ -488,6 +494,8 @@ function TCharArray_Join2(const arr: TCharArray; const glue: string): string; ov
 function TCharArray_Stringify1(const arr: TCharArray): string; overload; cdecl; begin Result := arr.Stringify; end;
 function TCharArray_Stringify2(const arr: TCharArray; const glue: string): string; overload; cdecl; begin Result := arr.Stringify(glue); end;
 
+function TBooleanArray_Bits(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Bits; end;
+function TBooleanArray_Bitify(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Bitify; end;
 function TBooleanArray_Digits(const arr: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := arr.Digits; end;
 function TBooleanArray_Falsed(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Falsed; end;
 function TBooleanArray_Falseless1(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Falseless; end;
