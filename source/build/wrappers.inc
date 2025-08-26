@@ -384,8 +384,10 @@ function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var 
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
 function TSegment_Construct1(const sA, sB: TPoint): TSegment; overload; cdecl; begin Result := TSegment.Construct(sA, sB); end;
 function TSegment_Construct2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; begin Result := TSegment.Construct(aX, aY, bX, bY); end;
-function TSegment_Points(const sg: TSegment; const steps: Integer = 2147483647): TPointArray; cdecl; begin Result := sg.Points(steps); end;
-function TSegment_Pixels(const sg: TSegment): TPointArray; cdecl; begin Result := sg.Pixels; end;
+function TSegment_Bounds(const sg: TSegment): TBox; cdecl; begin Result := sg.Bounds; end;
+function TSegment_Boundaries(const sg: TSegment): TBox; cdecl; begin Result := sg.Boundaries; end;
+function TSegment_Points(const sg: TSegment): TPointArray; cdecl; begin Result := sg.Points; end;
+function TSegment_Pixels(const sg: TSegment; const steps: Integer = 2147483647): TPointArray; cdecl; begin Result := sg.Pixels(steps); end;
 
 function TCircle_Create1(const cCenter: TPoint; const cRadius: Integer): TCircle; overload; cdecl; var cr: TCircle; begin Result := cr.Create(cCenter, cRadius); end;
 function TCircle_Create2(const centerX, centerY: Integer; const radius: Double): TCircle; overload; cdecl; var cr: TCircle; begin Result := cr.Create(centerX, centerY, radius); end;
@@ -395,8 +397,8 @@ function TCircle_Contains(const ci: TCircle; const pt: TPoint): Boolean; cdecl; 
 function TCircle_Item(const ci: TCircle; const pt: TPoint): Boolean; cdecl; begin Result := ci.Item(pt); end;
 function TCircle_Pixel(const ci: TCircle; const pt: TPoint): Boolean; cdecl; begin Result := ci.Pixel(pt); end;
 function TCircle_Bounds(const ci: TCircle): TBox; cdecl; begin Result := ci.Bounds; end;
-function TCircle_TPA(const ci: TCircle): TPointArray; cdecl; begin Result := ci.TPA; end;
 function TCircle_Points(const ci: TCircle): TPointArray; cdecl; begin Result := ci.Points; end;
+function TCircle_TPA(const ci: TCircle): TPointArray; cdecl; begin Result := ci.TPA; end;
 function TCircle_BorderPoints(const ci: TCircle; const count: Integer): TPointArray; cdecl; begin Result := ci.BorderPoints(count); end;
 function TCircle_Border(const ci: TCircle): TPointArray; cdecl; begin Result := ci.Border; end;
 

@@ -411,8 +411,10 @@ begin
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
   AddFunction(@TSegment_Construct1, 'function TSegment_Construct(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Construct2, 'function TSegment_Construct(const aX, aY, bX, bY: Integer): TSegment; overload;');
-  AddFunction(@TSegment_Points, 'function TSegment_Points(const sg: TSegment; const steps: Integer = 2147483647): TPointArray;');
-  AddFunction(@TSegment_Pixels, 'function TSegment_Pixels(const sg: TSegment): TPointArray;');
+  AddFunction(@TSegment_Bounds, 'function TSegment_Bounds(const sg: TSegment): TBox;');
+  AddFunction(@TSegment_Boundaries, 'function TSegment_Boundaries(const sg: TSegment): TBox;');
+  AddFunction(@TSegment_Points, 'function TSegment_Points(const sg: TSegment): TPointArray;');
+  AddFunction(@TSegment_Pixels, 'function TSegment_Pixels(const sg: TSegment; const steps: Integer = 2147483647): TPointArray;');
   
   AddFunction(@TCircle_Create1, 'function TCircle_Create(const cCenter: TPoint; const cRadius: Integer): TCircle2; overload;');
   AddFunction(@TCircle_Create2, 'function TCircle_Create(const centerX, centerY: Integer; const radius: Double): TCircle2; overload;');
@@ -422,8 +424,8 @@ begin
   AddFunction(@TCircle_Item, 'function TCircle_Item(const ci: TCircle2; const pt: TPoint): Boolean;');
   AddFunction(@TCircle_Pixel, 'function TCircle_Pixel(const ci: TCircle2; const pt: TPoint): Boolean;');
   AddFunction(@TCircle_Bounds, 'function TCircle_Bounds(const ci: TCircle2): TBox;');
-  AddFunction(@TCircle_TPA, 'function TCircle_TPA(const ci: TCircle2): TPointArray;');
   AddFunction(@TCircle_Points, 'function TCircle_Points(const ci: TCircle2): TPointArray;');
+  AddFunction(@TCircle_TPA, 'function TCircle_TPA(const ci: TCircle2): TPointArray;');
   AddFunction(@TCircle_BorderPoints, 'function TCircle_BorderPoints(const ci: TCircle2; const count: Integer): TPointArray;');
   AddFunction(@TCircle_Border, 'function TCircle_Border(const ci: TCircle2): TPointArray;');
 
