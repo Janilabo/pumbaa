@@ -110,6 +110,9 @@ begin
   AddFunction(@Integer_Under, 'function Integer_Under(const x, target: Integer): Boolean;');
   AddFunction(@Integer_Oversize, 'function Integer_Oversize(const x, limit: Integer): Boolean;');
   AddFunction(@Integer_Undersize, 'function Integer_Undersize(const x, limit: Integer): Boolean;');
+  AddFunction(@Integer_BitMax, 'function Integer_BitMax(const item: Integer): Integer;');
+  AddFunction(@Integer_Unbitify1, 'function Integer_Unbitify(const item: Integer): TBooleanArray; overload;');
+  AddFunction(@Integer_Unbitify2, 'function Integer_Unbitify(const item: Integer; const bCount: Integer): TBooleanArray; overload;');
 
   AddFunction(@Int64_Even, 'function Int64_Even(const x: Int64): Boolean;');
   AddFunction(@Int64_Odd, 'function Int64_Odd(const x: Int64): Boolean;');
@@ -226,6 +229,8 @@ begin
   AddFunction(@String_Exch, 'function String_Exch(var str: string; const aIndex, bIndex: Integer): Boolean;');
   AddFunction(@String_Exchange, 'function String_Exchange(var str: string; const aIndex, bIndex: Integer): Boolean;');
   AddFunction(@String_ToTRange, 'function String_ToTRange(const str: string; const glueRange: string = ''..''; const openRange: Char = ''[''; const closeRange: Char = '']''): TRange;');
+  AddFunction(@String_IsBinary, 'function String_IsBinary(const str: string; const emptyTrue: Boolean = True): Boolean;');
+  AddFunction(@String_BoolifyBinary, 'function String_BoolifyBinary(const str: string): TBooleanArray;');
 
   AddFunction(@TPoint_Create1, 'function TPoint_Create(const X, Y: Integer): TPoint; overload;');
   AddFunction(@TPoint_Create2, 'function TPoint_Create(const value: Integer): TPoint; overload;');
@@ -522,6 +527,7 @@ begin
   AddFunction(@TCharArray_Stringify2, 'function TCharArray_Stringify(const arr: TCharArray; const glue: string): string; overload;');
 
   AddFunction(@TBooleanArray_Bits, 'function TBooleanArray_Bits(const arr: TBooleanArray): Integer; overload');
+  AddFunction(@TBooleanArray_ToBits, 'function TBooleanArray_ToBits(const arr: TBooleanArray): Integer; overload');
   AddFunction(@TBooleanArray_Bitify, 'function TBooleanArray_Bitify(const arr: TBooleanArray): Integer; overload');
   AddFunction(@TBooleanArray_Digits, 'function TBooleanArray_Digits(const arr: TBooleanArray): TIntegerArray; overload');
   AddFunction(@TBooleanArray_Falsed, 'function TBooleanArray_Falsed(const arr: TBooleanArray): Boolean; overload;');
@@ -545,6 +551,7 @@ begin
   AddFunction(@TBooleanArray_Truesome1, 'function TBooleanArray_Truesome(const arr: TBooleanArray): Boolean; overload;');
   AddFunction(@TBooleanArray_Truesome2, 'function TBooleanArray_Truesome(const arr: TBooleanArray; const minTrue: Integer): Boolean; overload;');
   AddFunction(@TBooleanArray_Opposite, 'function TBooleanArray_Opposite(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TBooleanArray_BinaryStr, 'function TBooleanArray_BinaryStr(const arr: TBooleanArray): string;');
 
   AddFunction(@TPointArray_X1, 'function TPointArray_X(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TPointArray_X2, 'function TPointArray_X(const arr: TPointArray; const val: Integer): TIntegerArray; overload;');
