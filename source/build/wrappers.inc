@@ -108,6 +108,7 @@ function Double_Oversize(const x, limit: Double): Boolean; cdecl; begin Result :
 function Double_Undersize(const x, limit: Double): Boolean; cdecl; begin Result := x.Undersize(limit); end;
 
 function Boolean_ToString(const x: Boolean): string; cdecl; begin Result := x.ToString; end;
+function Boolean_Binary(const x: Boolean): Char; cdecl; begin Result := x.Binary; end;
 function Boolean_Bit(const x: Boolean): Integer; cdecl; begin Result := x.Bit; end;
 function Boolean_Bitify(const x: Boolean): Integer; cdecl; begin Result := x.Bitify; end;
 function Boolean_ToInteger(const x: Boolean): Integer; cdecl; begin Result := x.ToInteger; end;
@@ -204,6 +205,9 @@ function String_Exchange(var str: string; const aIndex, bIndex: Integer): Boolea
 function String_ToTRange(const str: string; const glueRange: string = '..'; const openRange: Char = '['; const closeRange: Char = ']'): TRange; cdecl; begin Result := str.ToTRange(glueRange, openRange, closeRange); end;
 function String_IsBinary(const str: string; const emptyTrue: Boolean = True): Boolean; cdecl; begin Result := str.IsBinary(emptyTrue); end;
 function String_BoolifyBinary(const str: string): TBooleanArray; cdecl; begin Result := str.BoolifyBinary; end;
+function String_BuiltWith(const str: string; const allowed: TCharArray): Boolean; cdecl; begin Result := str.BuiltWith(allowed); end;
+function String_BuiltWithout(const str: string; const forbidden: TCharArray): Boolean; cdecl; begin Result := str.BuiltWithout(forbidden); end;
+function String_Exists(const str: string): Boolean; cdecl; begin Result := str.Exists; end;
 
 function TPoint_Create1(const X, Y: Integer): TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create(X, Y); end;
 function TPoint_Create2(const value: Integer): TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create(value); end;
@@ -525,6 +529,7 @@ function TBooleanArray_Truesome1(const arr: TBooleanArray): Boolean; overload; c
 function TBooleanArray_Truesome2(const arr: TBooleanArray; const minTrue: Integer): Boolean; overload; cdecl; begin Result := arr.Truesome(minTrue); end;
 function TBooleanArray_Opposite(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Opposite; end;
 function TBooleanArray_BinaryStr(const arr: TBooleanArray): string; begin Result := arr.BinaryStr; end;
+function TBooleanArray_Binary(const arr: TBooleanArray): string; begin Result := arr.Binary; end;
 
 function TPointArray_X1(const arr: TPointArray): TIntegerArray; cdecl; begin Result := X(arr); end;
 function TPointArray_X2(const arr: TPointArray; const val: Integer): TIntegerArray; cdecl; begin Result := X(arr, val); end;

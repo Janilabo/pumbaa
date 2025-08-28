@@ -135,6 +135,7 @@ begin
   AddFunction(@Int64_Undersize, 'function Int64_Undersize(const x, limit: Int64): Boolean;');
 
   AddFunction(@Boolean_ToString, 'function Boolean_ToString(const x: Boolean): string;');
+  AddFunction(@Boolean_Binary, 'function Boolean_Binary(const x: Boolean): Char;');
   AddFunction(@Boolean_Bit, 'function Boolean_Bit(const x: Boolean): Integer;');
   AddFunction(@Boolean_Bitify, 'function Boolean_Bitify(const x: Boolean): Integer;');
   AddFunction(@Boolean_ToInteger, 'function Boolean_ToInteger(const x: Boolean): Integer;');
@@ -231,6 +232,9 @@ begin
   AddFunction(@String_ToTRange, 'function String_ToTRange(const str: string; const glueRange: string = ''..''; const openRange: Char = ''[''; const closeRange: Char = '']''): TRange;');
   AddFunction(@String_IsBinary, 'function String_IsBinary(const str: string; const emptyTrue: Boolean = True): Boolean;');
   AddFunction(@String_BoolifyBinary, 'function String_BoolifyBinary(const str: string): TBooleanArray;');
+  AddFunction(@String_BuiltWith, 'function String_BuiltWith(const str: string; const allowed: TCharArray): Boolean;');
+  AddFunction(@String_BuiltWithout, 'function String_BuiltWithout(const str: string; const forbidden: TCharArray): Boolean;');
+  AddFunction(@String_Exists, 'function String_Exists(const str: string): Boolean;');
 
   AddFunction(@TPoint_Create1, 'function TPoint_Create(const X, Y: Integer): TPoint; overload;');
   AddFunction(@TPoint_Create2, 'function TPoint_Create(const value: Integer): TPoint; overload;');
@@ -552,6 +556,7 @@ begin
   AddFunction(@TBooleanArray_Truesome2, 'function TBooleanArray_Truesome(const arr: TBooleanArray; const minTrue: Integer): Boolean; overload;');
   AddFunction(@TBooleanArray_Opposite, 'function TBooleanArray_Opposite(const arr: TBooleanArray): TBooleanArray; overload;');
   AddFunction(@TBooleanArray_BinaryStr, 'function TBooleanArray_BinaryStr(const arr: TBooleanArray): string;');
+  AddFunction(@TBooleanArray_Binary, 'function TBooleanArray_Binary(const arr: TBooleanArray): string;');
 
   AddFunction(@TPointArray_X1, 'function TPointArray_X(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TPointArray_X2, 'function TPointArray_X(const arr: TPointArray; const val: Integer): TIntegerArray; overload;');
