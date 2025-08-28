@@ -1077,11 +1077,11 @@ begin
 end;
 
 {==============================================================================]
-  <TStringHelper.BuiltWith>
-  @action: Returns true if str is built with only allowed characters.
+  <TStringHelper.MadeOf>
+  @action: Returns true if str is made with only allowed characters.
   @note: None.
 [==============================================================================}
-function TStringHelper.BuiltWith(const allowed: TCharArray): Boolean; cdecl;
+function TStringHelper.MadeOf(const allowed: TCharArray): Boolean; cdecl;
 var
   i: Integer;
 begin
@@ -1094,11 +1094,11 @@ begin
 end;
 
 {==============================================================================]
-  <TStringHelper.BuiltWithout>
+  <TStringHelper.FreeOf>
   @action: Returns true if str is built without forbidden characters.
   @note: None.
 [==============================================================================}
-function TStringHelper.BuiltWithout(const forbidden: TCharArray): Boolean; cdecl;
+function TStringHelper.FreeOf(const forbidden: TCharArray): Boolean; cdecl;
 var
   i: Integer;
 begin
@@ -1107,4 +1107,62 @@ begin
     if forbidden.Contains(Self[i]) then
       Exit(False);
   Result := Self.Exists;
+end;
+
+{==============================================================================]
+  <TStringHelper.Consists>
+  @action: Returns true if str is made with only allowed characters.
+  @note: None.
+[==============================================================================}
+function TStringHelper.Consists(const allowed: TCharArray): Boolean; cdecl;
+var
+  i: Integer;
+  m: TBooleanArray;
+begin
+  if (allowed.Empty or Self.Empty) then
+    Exit(False);
+  m.Create(256, False);
+  for i := 0 to High(allowed) do
+    m[Ord(allowed[i])] := True;
+  for i := 1 to Length(Self) do
+    if not m[Ord(Self[i])] then
+      Exit(False);
+  Result := True;
+end; 
+
+{==============================================================================]
+  <TStringHelper.Pure>
+  @action: Returns true if str is made with only allowed characters.
+  @note: None.
+[==============================================================================}
+function TStringHelper.Pure(const allowed: TCharArray): Boolean; cdecl;
+begin
+  Result := Self.Chars.Ordinals.Pure(allowed.Ordinals);
+end;
+
+{==============================================================================]
+  <TStringHelper.BuiltWith>
+  @action: Returns true is string is built with blocks.
+  @note: This function requires blocks array to be unique (no duplicates allowed for it).
+[==============================================================================}
+function TStringHelper.BuiltWith(const blocks: TCharArray): Boolean; cdecl;
+var
+  i, p: Integer;
+  u: TBooleanArray;
+  f: Boolean;
+begin
+  if (Self.Empty or blocks.Empty) then
+    Exit(False);
+  SetLength(u, Length(blocks));
+  for i := 1 to Length(Self) do
+  begin
+    p := blocks.Pos(Self[i]);
+    if (p = -1) then
+      Exit(False);
+    u[p] := True;
+  end;
+  for i := 0 to High(blocks) do
+    if not u[i] then
+      Exit(False);
+  Result := True;
 end;
