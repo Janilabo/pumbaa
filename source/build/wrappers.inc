@@ -109,6 +109,7 @@ function Double_Undersize(const x, limit: Double): Boolean; cdecl; begin Result 
 
 function Boolean_ToString(const x: Boolean): string; cdecl; begin Result := x.ToString; end;
 function Boolean_Binary(const x: Boolean): Char; cdecl; begin Result := x.Binary; end;
+function Boolean_BinaryDigit(const x: Boolean): Integer; cdecl; begin Result := x.BinaryDigit; end;
 function Boolean_Bit(const x: Boolean): Integer; cdecl; begin Result := x.Bit; end;
 function Boolean_Bitify(const x: Boolean): Integer; cdecl; begin Result := x.Bitify; end;
 function Boolean_ToInteger(const x: Boolean): Integer; cdecl; begin Result := x.ToInteger; end;
@@ -207,6 +208,7 @@ function String_IsBinary(const str: string; const emptyTrue: Boolean = True): Bo
 function String_BoolifyBinary(const str: string): TBooleanArray; cdecl; begin Result := str.BoolifyBinary; end;
 function String_MadeOf(const str: string; const allowed: TCharArray): Boolean; cdecl; begin Result := str.MadeOf(allowed); end;
 function String_FreeOf(const str: string; const forbidden: TCharArray): Boolean; cdecl; begin Result := str.FreeOf(forbidden); end;
+function String_BuiltWithout(const str: string; const forbidden: TCharArray): Boolean; cdecl; begin Result := str.BuiltWithout(forbidden); end;
 function String_Consists(const str: string; const allowed: TCharArray): Boolean; cdecl; begin Result := str.Consists(allowed); end;
 function String_Pure(const str: string; const allowed: TCharArray): Boolean; cdecl; begin Result := str.Pure(allowed); end;
 function String_BuiltWith(const str: string; const blocks: TCharArray): Boolean; cdecl; begin Result := str.BuiltWith(blocks); end;
@@ -494,6 +496,9 @@ function TIntegerArray_Minimum2(const arr: TIntegerArray): Integer; overload; cd
 function TIntegerArray_Maximum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Maximum(index); end;
 function TIntegerArray_Maximum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Maximum; end;
 function TIntegerArray_Pure(const arr: TIntegerArray; const allowed: TIntegerArray): Boolean; cdecl; begin Result := arr.Pure(allowed); end;
+function TIntegerArray_NoneOf(const arr: TIntegerArray; const forbidden: TIntegerArray): Boolean; cdecl; begin Result := arr.NoneOf(forbidden); end;
+function TIntegerArray_AnyOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean; cdecl; begin Result := arr.AnyOf(candidates); end;
+function TIntegerArray_AllOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean; cdecl; begin Result := arr.AllOf(candidates); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -535,6 +540,7 @@ function TBooleanArray_Truesome1(const arr: TBooleanArray): Boolean; overload; c
 function TBooleanArray_Truesome2(const arr: TBooleanArray; const minTrue: Integer): Boolean; overload; cdecl; begin Result := arr.Truesome(minTrue); end;
 function TBooleanArray_Opposite(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Opposite; end;
 function TBooleanArray_BinaryStr(const arr: TBooleanArray): string; begin Result := arr.BinaryStr; end;
+function TBooleanArray_BinaryDigits(const arr: TBooleanArray): TIntegerArray; begin Result := arr.BinaryDigits; end;
 function TBooleanArray_Binary(const arr: TBooleanArray): string; begin Result := arr.Binary; end;
 
 function TPointArray_X1(const arr: TPointArray): TIntegerArray; cdecl; begin Result := X(arr); end;
@@ -714,6 +720,15 @@ function TArray_FreeOf5(const arr, forbidden: TBooleanArray): Boolean; overload;
 function TArray_FreeOf6(const arr, forbidden: TPointArray): Boolean; overload; cdecl; begin Result := arr.FreeOf(forbidden); end;
 function TArray_FreeOf7(const arr, forbidden: TBoxArray): Boolean; overload; cdecl; begin Result := arr.FreeOf(forbidden); end;
 function TArray_FreeOf8(const arr, forbidden: TRangeArray): Boolean; overload; cdecl; begin Result := arr.FreeOf(forbidden); end;
+
+function TArray_BuiltWithout1(const arr, forbidden: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
+function TArray_BuiltWithout2(const arr, forbidden: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
+function TArray_BuiltWithout3(const arr, forbidden: TStringArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
+function TArray_BuiltWithout4(const arr, forbidden: TCharArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
+function TArray_BuiltWithout5(const arr, forbidden: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
+function TArray_BuiltWithout6(const arr, forbidden: TPointArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
+function TArray_BuiltWithout7(const arr, forbidden: TBoxArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
+function TArray_BuiltWithout8(const arr, forbidden: TRangeArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
 
 function TArray_Clear1(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Clear; end;
 function TArray_Clear2(var arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Clear; end;

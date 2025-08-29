@@ -136,6 +136,7 @@ begin
 
   AddFunction(@Boolean_ToString, 'function Boolean_ToString(const x: Boolean): string;');
   AddFunction(@Boolean_Binary, 'function Boolean_Binary(const x: Boolean): Char;');
+  AddFunction(@Boolean_BinaryDigit, 'function Boolean_BinaryDigit(const x: Boolean): Integer;');
   AddFunction(@Boolean_Bit, 'function Boolean_Bit(const x: Boolean): Integer;');
   AddFunction(@Boolean_Bitify, 'function Boolean_Bitify(const x: Boolean): Integer;');
   AddFunction(@Boolean_ToInteger, 'function Boolean_ToInteger(const x: Boolean): Integer;');
@@ -234,6 +235,7 @@ begin
   AddFunction(@String_BoolifyBinary, 'function String_BoolifyBinary(const str: string): TBooleanArray;');
   AddFunction(@String_MadeOf, 'function String_MadeOf(const str: string; const allowed: TCharArray): Boolean;');
   AddFunction(@String_FreeOf, 'function String_FreeOf(const str: string; const forbidden: TCharArray): Boolean;');
+  AddFunction(@String_BuiltWithout, 'function String_BuiltWithout(const str: string; const forbidden: TCharArray): Boolean;');
   AddFunction(@String_Consists, 'function String_Consists(const str: string; const allowed: TCharArray): Boolean;');
   AddFunction(@String_Pure, 'function String_Pure(const str: string; const allowed: TCharArray): Boolean;');
   AddFunction(@String_BuiltWith, 'function String_BuiltWith(const str: string; const blocks: TCharArray): Boolean');
@@ -521,6 +523,9 @@ begin
   AddFunction(@TIntegerArray_Maximum1, 'function TIntegerArray_Maximum(const arr: TIntegerArray; var index: Integer): Integer; overload;');
   AddFunction(@TIntegerArray_Maximum2, 'function TIntegerArray_Maximum(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_Pure, 'function TIntegerArray_Pure(const arr: TIntegerArray; const allowed: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_NoneOf, 'function TIntegerArray_NoneOf(const arr: TIntegerArray; const forbidden: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_AnyOf, 'function TIntegerArray_AnyOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_AllOf, 'function TIntegerArray_AllOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean;');
   
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -562,6 +567,7 @@ begin
   AddFunction(@TBooleanArray_Truesome2, 'function TBooleanArray_Truesome(const arr: TBooleanArray; const minTrue: Integer): Boolean; overload;');
   AddFunction(@TBooleanArray_Opposite, 'function TBooleanArray_Opposite(const arr: TBooleanArray): TBooleanArray; overload;');
   AddFunction(@TBooleanArray_BinaryStr, 'function TBooleanArray_BinaryStr(const arr: TBooleanArray): string;');
+  AddFunction(@TBooleanArray_BinaryDigits, 'function TBooleanArray_BinaryDigits(const arr: TBooleanArray): TIntegerArray;');
   AddFunction(@TBooleanArray_Binary, 'function TBooleanArray_Binary(const arr: TBooleanArray): string;');
 
   AddFunction(@TPointArray_X1, 'function TPointArray_X(const arr: TPointArray): TIntegerArray; overload;');
@@ -741,6 +747,15 @@ begin
   AddFunction(@TArray_FreeOf6, 'function TArray_FreeOf(const arr, forbidden: TPointArray): Boolean; overload;');
   AddFunction(@TArray_FreeOf7, 'function TArray_FreeOf(const arr, forbidden: TBoxArray): Boolean; overload;');
   AddFunction(@TArray_FreeOf8, 'function TArray_FreeOf(const arr, forbidden: TRangeArray): Boolean; overload;');
+
+  AddFunction(@TArray_BuiltWithout1, 'function TArray_BuiltWithout(const arr, forbidden: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_BuiltWithout2, 'function TArray_BuiltWithout(const arr, forbidden: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_BuiltWithout3, 'function TArray_BuiltWithout(const arr, forbidden: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_BuiltWithout4, 'function TArray_BuiltWithout(const arr, forbidden: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_BuiltWithout5, 'function TArray_BuiltWithout(const arr, forbidden: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_BuiltWithout6, 'function TArray_BuiltWithout(const arr, forbidden: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_BuiltWithout7, 'function TArray_BuiltWithout(const arr, forbidden: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_BuiltWithout8, 'function TArray_BuiltWithout(const arr, forbidden: TRangeArray): Boolean; overload;');
 
   AddFunction(@TArray_Clear1, 'function TArray_Clear(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Clear2, 'function TArray_Clear(var arr: TDoubleArray): Boolean; overload;');
