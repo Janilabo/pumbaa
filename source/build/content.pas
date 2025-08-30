@@ -179,6 +179,8 @@ begin
   AddFunction(@String_Blank, 'function String_Blank(const str: string): Boolean;');
   AddFunction(@String_At, 'function String_At(const str: string; const s: string; const index: Integer = 1): Boolean;');
   AddFunction(@String_Chars, 'function String_Chars(const str: string): TCharArray;');
+  AddFunction(@String_Charify, 'function String_Charify(const str: string): TCharArray;');
+  AddFunction(@String_Chop, 'function String_Chop(const str: string): TCharArray;');
   AddFunction(@String_Get, 'function String_Get(const str: string; const index: Integer; const count: Integer): string;');
   AddFunction(@String_Pick, 'function String_Pick(const str: string; const index: Integer; const count: Integer = 2147483647): string;');
   AddFunction(@String_Pos, 'function String_Pos(const str: string; const s: string; const index: Integer = 1): Integer;');
@@ -194,8 +196,9 @@ begin
   AddFunction(@String_Amount, 'function String_Amount(const str: string; const s: string; const overlap: Boolean = True; const index: Integer = 2147483647): Integer;');
   AddFunction(@String_FromLeft, 'function String_FromLeft(const str: string; const count: Integer; const index: Integer = 1): string;');
   AddFunction(@String_FromRight, 'function String_FromRight(const str: string; const count: Integer; const index: Integer = 2147483647): string;');
-  AddFunction(@String_Explode1, 'function String_Explode(const str: string; const d: string; const limit: Integer = -1): TStringArray; overload;');
-  AddFunction(@String_Explode2, 'function String_Explode(const str: string; const d: TStringArray; const limit: Integer = -1): TStringArray; overload;');
+  AddFunction(@String_Explode1, 'function String_Explode(const str: string): TCharArray; overload;');
+  AddFunction(@String_Explode2, 'function String_Explode(const str: string; const d: string; const limit: Integer = -1): TStringArray; overload;');
+  AddFunction(@String_Explode3, 'function String_Explode(const str: string; const d: TStringArray; const limit: Integer = -1): TStringArray; overload;');
   AddFunction(@String_Slice, 'function String_Slice(const str: string; const a, b: Integer): string;');
   AddFunction(@String_Chunk, 'function String_Chunk(const str: string; const a, b: Integer): string;');
   AddFunction(@String_Reverse, 'function String_Reverse(var str: string): Boolean;');
@@ -526,11 +529,20 @@ begin
   AddFunction(@TIntegerArray_NoneOf, 'function TIntegerArray_NoneOf(const arr: TIntegerArray; const forbidden: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_AnyOf, 'function TIntegerArray_AnyOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_AllOf, 'function TIntegerArray_AllOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_Charify1, 'function TIntegerArray_Charify(const arr: TIntegerArray): TCharArray; overload;');
+  AddFunction(@TIntegerArray_Charify2, 'function TIntegerArray_Charify(const arr: TIntegerArray; var str: string): TCharArray; overload;');
+  AddFunction(@TIntegerArray_Stringify1, 'function TIntegerArray_Stringify(const arr: TIntegerArray): string; overload;');
+  AddFunction(@TIntegerArray_Stringify2, 'function TIntegerArray_Stringify(const arr: TIntegerArray; var chars: TCharArray): string; overload;');
   
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Reverse, 'function TIA_Reverse(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TIA_Reversed, 'function TIA_Reversed(const arr: TIntegerArray): TIntegerArray; overload;');
+
+  AddFunction(@TStringArray_Span, 'function TStringArray_Span(const arr: TStringArray): Integer;');
+  AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
+  AddFunction(@TStringArray_Concatenate, 'function TStringArray_Concatenate(const arr: TStringArray): string;');
+  AddFunction(@TStringArray_Flatten, 'function TStringArray_Flatten(const arr: TStringArray): string;');
 
   AddFunction(@TCharArray_Str, 'function TCharArray_Str(const arr: TCharArray): string;');
   AddFunction(@TCharArray_ToStr, 'function TCharArray_ToStr(const arr: TCharArray): string;');
@@ -540,6 +552,7 @@ begin
   AddFunction(@TCharArray_Stringify2, 'function TCharArray_Stringify(const arr: TCharArray; const glue: string): string; overload;');
   AddFunction(@TCharArray_Ordinals, 'function TCharArray_Ordinals(const arr: TCharArray): TIntegerArray;');
   AddFunction(@TCharArray_Unduped, 'function TCharArray_Unduped(const arr: TCharArray): TCharArray;');
+  AddFunction(@TCharArray_TSA, 'function TCharArray_TSA(const arr: TCharArray): TStringArray;');
 
   AddFunction(@TBooleanArray_Bits, 'function TBooleanArray_Bits(const arr: TBooleanArray): Integer; overload');
   AddFunction(@TBooleanArray_ToBits, 'function TBooleanArray_ToBits(const arr: TBooleanArray): Integer; overload');

@@ -151,6 +151,8 @@ function String_Empty(const str: string): Boolean; cdecl; begin Result := str.Em
 function String_Void(const str: string): Boolean; cdecl; begin Result := str.Void; end;
 function String_Blank(const str: string): Boolean; cdecl; begin Result := str.Blank; end;
 function String_Chars(const str: string): TCharArray; cdecl; begin Result := str.Chars; end;
+function String_Charify(const str: string): TCharArray; cdecl; begin Result := str.Charify; end;
+function String_Chop(const str: string): TCharArray; cdecl; begin Result := str.Chop; end;
 function String_At(const str: string; const s: string; const index: Integer = 1): Boolean; cdecl; inline; begin Result := str.At(s, index); end;
 function String_Get(const str: string; const index: Integer; const count: Integer): string; cdecl; inline; begin Result := str.Get(index, count); end;
 function String_Pick(const str: string; const index: Integer; const count: Integer = 2147483647): string; cdecl; begin Result := str.Pick(index, count); end;
@@ -167,8 +169,9 @@ function String_Count(const str: string; const s: string; const overlap: Boolean
 function String_Amount(const str: string; const s: string; const overlap: Boolean = True; const index: Integer = 2147483647): Integer; cdecl; begin Result := str.Amount(s, overlap, index); end;
 function String_FromLeft(const str: string; const count: Integer; const index: Integer = 1): string; cdecl; begin Result := str.FromLeft(count, index); end;
 function String_FromRight(const str: string; const count: Integer; const index: Integer = 2147483647): string; cdecl; begin Result := str.FromRight(count, index); end;
-function String_Explode1(const str: string; const d: string; const limit: Integer = -1): TStringArray; overload; cdecl; begin Result := str.Explode(d, limit); end;
-function String_Explode2(const str: string; const d: TStringArray; const limit: Integer = -1): TStringArray; overload; cdecl; begin Result := str.Explode(d, limit); end;
+function String_Explode1(const str: string): TCharArray; overload; cdecl; begin Result := str.Explode; end;
+function String_Explode2(const str: string; const d: string; const limit: Integer = -1): TStringArray; overload; cdecl; begin Result := str.Explode(d, limit); end;
+function String_Explode3(const str: string; const d: TStringArray; const limit: Integer = -1): TStringArray; overload; cdecl; begin Result := str.Explode(d, limit); end;
 function String_Slice(const str: string; const a, b: Integer): string; cdecl; begin Result := str.Slice(a, b); end;
 function String_Chunk(const str: string; const a, b: Integer): string; cdecl; begin Result := str.Chunk(a, b); end;
 function String_Reverse(var str: string): Boolean; cdecl; begin Result := str.Reverse; end;
@@ -499,11 +502,20 @@ function TIntegerArray_Pure(const arr: TIntegerArray; const allowed: TIntegerArr
 function TIntegerArray_NoneOf(const arr: TIntegerArray; const forbidden: TIntegerArray): Boolean; cdecl; begin Result := arr.NoneOf(forbidden); end;
 function TIntegerArray_AnyOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean; cdecl; begin Result := arr.AnyOf(candidates); end;
 function TIntegerArray_AllOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean; cdecl; begin Result := arr.AllOf(candidates); end;
+function TIntegerArray_Charify1(const arr: TIntegerArray): TCharArray; overload; cdecl; begin Result := arr.Charify; end;
+function TIntegerArray_Charify2(const arr: TIntegerArray; var str: string): TCharArray; overload; cdecl; begin Result := arr.Charify(str); end;
+function TIntegerArray_Stringify1(const arr: TIntegerArray): string; overload; cdecl; begin Result := arr.Stringify; end;
+function TIntegerArray_Stringify2(const arr: TIntegerArray; var chars: TCharArray): string; overload; cdecl; begin Result := arr.Stringify(chars); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
 function TIA_Reverse(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := TIA.Reverse(arr); end;
 function TIA_Reversed(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := TIA.Reversed(arr); end;
+
+function TStringArray_Span(const arr: TStringArray): Integer; cdecl; begin Result := arr.Span; end;
+function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
+function TStringArray_Concatenate(const arr: TStringArray): string; cdecl; begin Result := arr.Concatenate; end;
+function TStringArray_Flatten(const arr: TStringArray): string; cdecl; begin Result := arr.Flatten; end;
 
 function TCharArray_Str(const arr: TCharArray): string; cdecl; begin Result := arr.Str; end;
 function TCharArray_ToStr(const arr: TCharArray): string; cdecl; begin Result := arr.ToStr; end;
@@ -513,6 +525,7 @@ function TCharArray_Stringify1(const arr: TCharArray): string; overload; cdecl; 
 function TCharArray_Stringify2(const arr: TCharArray; const glue: string): string; overload; cdecl; begin Result := arr.Stringify(glue); end;
 function TCharArray_Ordinals(const arr: TCharArray): TIntegerArray; cdecl; begin Result := arr.Ordinals; end;
 function TCharArray_Unduped(const arr: TCharArray): TCharArray; cdecl; begin Result := arr.Unduped; end;
+function TCharArray_TSA(const arr: TCharArray): TStringArray; cdecl; begin Result := arr.TSA; end;
 
 function TBooleanArray_Bits(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Bits; end;
 function TBooleanArray_Bitify(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Bitify; end;
