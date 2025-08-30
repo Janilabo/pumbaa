@@ -543,6 +543,7 @@ begin
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
   AddFunction(@TStringArray_Concatenate, 'function TStringArray_Concatenate(const arr: TStringArray): string;');
   AddFunction(@TStringArray_Flatten, 'function TStringArray_Flatten(const arr: TStringArray): string;');
+  AddFunction(@TStringArray_Glue, 'function TStringArray_Glue(const arr: TStringArray): string;');
 
   AddFunction(@TCharArray_Str, 'function TCharArray_Str(const arr: TCharArray): string;');
   AddFunction(@TCharArray_ToStr, 'function TCharArray_ToStr(const arr: TCharArray): string;');
@@ -2291,6 +2292,15 @@ begin
   AddFunction(@T2DArray_Size14, 'function T2DArray_Size(const arr: T2DPointArray): Int64; overload;');
   AddFunction(@T2DArray_Size15, 'function T2DArray_Size(const arr: T2DBoxArray): Int64; overload;');
   AddFunction(@T2DArray_Size16, 'function T2DArray_Size(const arr: T2DRangeArray): Int64; overload;');
+  
+  AddFunction(@T2DArray_Total1, 'function T2DArray_Total(const arr: T2DIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Total2, 'function T2DArray_Total(const arr: T2DDoubleArray): Int64; overload;');
+  AddFunction(@T2DArray_Total3, 'function T2DArray_Total(const arr: T2DStringArray): Int64; overload;');
+  AddFunction(@T2DArray_Total4, 'function T2DArray_Total(const arr: T2DCharArray): Int64; overload;');
+  AddFunction(@T2DArray_Total5, 'function T2DArray_Total(const arr: T2DBooleanArray): Int64; overload;');
+  AddFunction(@T2DArray_Total6, 'function T2DArray_Total(const arr: T2DPointArray): Int64; overload;');
+  AddFunction(@T2DArray_Total7, 'function T2DArray_Total(const arr: T2DBoxArray): Int64; overload;');
+  AddFunction(@T2DArray_Total8, 'function T2DArray_Total(const arr: T2DRangeArray): Int64; overload;');
   
   AddFunction(@T2DArray_TArray1, 'function T2DArray_TArray(const arr: T2DIntegerArray): TIntegerArray; overload;');
   AddFunction(@T2DArray_TArray2, 'function T2DArray_TArray(const arr: T2DDoubleArray): TDoubleArray; overload;');

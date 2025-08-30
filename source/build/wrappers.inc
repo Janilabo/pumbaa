@@ -516,6 +516,7 @@ function TStringArray_Span(const arr: TStringArray): Integer; cdecl; begin Resul
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
 function TStringArray_Concatenate(const arr: TStringArray): string; cdecl; begin Result := arr.Concatenate; end;
 function TStringArray_Flatten(const arr: TStringArray): string; cdecl; begin Result := arr.Flatten; end;
+function TStringArray_Glue(const arr: TStringArray): string; cdecl; begin Result := arr.Glue; end;
 
 function TCharArray_Str(const arr: TCharArray): string; cdecl; begin Result := arr.Str; end;
 function TCharArray_ToStr(const arr: TCharArray): string; cdecl; begin Result := arr.ToStr; end;
@@ -2265,6 +2266,15 @@ function T2DArray_Size13(const arr: T2DBooleanArray): Int64; overload; cdecl; be
 function T2DArray_Size14(const arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Size; end;
 function T2DArray_Size15(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Size; end;
 function T2DArray_Size16(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Size; end;
+
+function T2DArray_Total1(const arr: T2DIntegerArray): Int64; overload; cdecl; begin Result := arr.Total; end;
+function T2DArray_Total2(const arr: T2DDoubleArray): Int64; overload; cdecl; begin Result := arr.Total; end;
+function T2DArray_Total3(const arr: T2DStringArray): Int64; overload; cdecl; begin Result := arr.Total; end;
+function T2DArray_Total4(const arr: T2DCharArray): Int64; overload; cdecl; begin Result := arr.Total; end;
+function T2DArray_Total5(const arr: T2DBooleanArray): Int64; overload; cdecl; begin Result := arr.Total; end;
+function T2DArray_Total6(const arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Total; end;
+function T2DArray_Total7(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Total; end;
+function T2DArray_Total8(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Total; end;
 
 function T2DArray_TArray1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.TArray; end;
 function T2DArray_TArray2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.TArray; end;
