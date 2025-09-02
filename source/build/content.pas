@@ -520,6 +520,8 @@ begin
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Inverted1, 'function TIntegerArray_Inverted(const arr: TIntegerArray; const arrBounds: TRange): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_Inverted2, 'function TIntegerArray_Inverted(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Inverse1, 'function TIntegerArray_Inverse(const arr: TIntegerArray; const arrBounds: TRange): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Inverse2, 'function TIntegerArray_Inverse(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_Mirror, 'function TIntegerArray_Mirror(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TIntegerArray_MinVal, 'function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_MaxVal, 'function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload;');
@@ -601,6 +603,10 @@ begin
   AddFunction(@TPointArray_Undupe, 'function TPointArray_Undupe(const arr: TPointArray): TPointArray;');
   AddFunction(@TPointArray_Unduped, 'function TPointArray_Unduped(const arr: TPointArray): TPointArray;');
   AddFunction(@TPointArray_Invert, 'function TPointArray_Invert(const arr: TPointArray): TPointArray;');
+  AddFunction(@TPointArray_Inverted1, 'function TPointArray_Inverted(const arr: TPointArray; const arrBounds: TBox): TPointArray; overload;');
+  AddFunction(@TPointArray_Inverted2, 'function TPointArray_Inverted(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TPointArray_Inverse1, 'function TPointArray_Inverse(const arr: TPointArray; const arrBounds: TBox): TPointArray; overload;');
+  AddFunction(@TPointArray_Inverse2, 'function TPointArray_Inverse(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TPointArray_Edge, 'function TPointArray_Edge(const arr: TPointArray; const scan8W: Boolean = False): TPointArray;');
   AddFunction(@TPointArray_FloodFill1, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload;');
   AddFunction(@TPointArray_FloodFill2, 'function TPointArray_FloodFill(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload;');

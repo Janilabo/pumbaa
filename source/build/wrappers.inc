@@ -493,6 +493,8 @@ function TIntegerArray_Knit2(const arr: TIntegerArray; const diff: Integer): T2D
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
 function TIntegerArray_Inverted1(const arr: TIntegerArray; const arrBounds: TRange): TIntegerArray; overload; cdecl; begin Result := arr.Inverted(arrBounds); end;
 function TIntegerArray_Inverted2(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Inverted; end;
+function TIntegerArray_Inverse1(const arr: TIntegerArray; const arrBounds: TRange): TIntegerArray; overload; cdecl; begin Result := arr.Inverse(arrBounds); end;
+function TIntegerArray_Inverse2(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Inverse; end;
 function TIntegerArray_Mirror(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Mirror; end;
 function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MinVal; end;
 function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MaxVal; end;
@@ -574,6 +576,10 @@ function TPointArray_MinMax(const arr: TPointArray): TBox; overload; cdecl; begi
 function TPointArray_Undupe(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Undupe; end;
 function TPointArray_Unduped(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Unduped; end;
 function TPointArray_Invert(const arr: TPointArray): TPointArray; cdecl; begin Result := arr.Invert; end;
+function TPointArray_Inverted1(const arr: TPointArray; const arrBounds: TBox): TPointArray; overload; cdecl; begin Result := arr.Inverted(arrBounds); end;
+function TPointArray_Inverted2(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Inverted; end;
+function TPointArray_Inverse1(const arr: TPointArray; const arrBounds: TBox): TPointArray; overload; cdecl; begin Result := arr.Inverse(arrBounds); end;
+function TPointArray_Inverse2(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Inverse; end;
 function TPointArray_Edge(const arr: TPointArray; const scan8W: Boolean = False): TPointArray; cdecl; begin Result := arr.Edge(scan8W); end;
 function TPointArray_FloodFill1(const arr: TPointArray; const start: TPoint; const area: TBox; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := arr.FloodFill(start, area, scan8W); end;
 function TPointArray_FloodFill2(const arr: TPointArray; const start: TPoint; const scan8W: Boolean = False): TPointArray; overload; cdecl; begin Result := arr.FloodFill(start, scan8W); end;
