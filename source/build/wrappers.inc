@@ -289,7 +289,6 @@ function TBox_Envelope(const bx: TBox; const b: TBox): TBox; cdecl; begin Result
 function TBox_Overlap(const bx: TBox; const b: TBox): Boolean; cdecl; inline; begin Result := bx.Overlap(b); end;
 function TBox_Intersect1(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := b.Intersect(b); end;
 function TBox_Intersect2(const bx: TBox; const b: TBox; var iArea: TBox): Boolean; overload; cdecl; begin Result := bx.Intersect(b, iArea); end;
-function TBox_Union(const bx: TBox; const b: TBox): TBox; cdecl; begin Result := bx.Union(b); end;
 function TBox_Valid(const bx: TBox): Boolean; cdecl; inline; begin Result := bx.Valid; end;
 function TBox_Invalid(const bx: TBox): Boolean; cdecl; begin Result := bx.Invalid; end;
 function TBox_Similar1(const bx: TBox; const b: TBox; const maxWDiff, maxHDiff: Integer): Boolean; overload; cdecl; begin Result := bx.Similar(b, maxWDiff, maxHDiff); end;
@@ -317,6 +316,13 @@ function TBox_SimilarSize2(const bx: TBox; const b: TBox; const differency: Inte
 function TBox_Centered(const bx: TBox; const area: TBox): TBox; cdecl; begin Result := bx.Centered(area); end;
 function TBox_CenterVertically(const bx: TBox; const area: TBox): TBox; cdecl; begin Result := bx.CenterVertically(area); end;
 function TBox_CenterHorizontally(const bx: TBox; const area: TBox): TBox; cdecl; begin Result := bx.CenterHorizontally(area); end;
+function TBox_ExtendX(var bx: TBox; const xCoord: Integer): Boolean; cdecl; begin Result := bx.Extendx(xCoord); end;
+function TBox_ExtendY(var bx: TBox; const yCoord: Integer): Boolean; cdecl; begin Result := bx.ExtendY(yCoord); end;
+function TBox_Extend(var bx: TBox; const pt: TPoint): Boolean; cdecl; begin Result := bx.Extend(pt); end;
+function TBox_UnionX(const bx: TBox; const xCoord: Integer): TBox; cdecl; begin Result := bx.Unionx(xCoord); end;
+function TBox_UnionY(const bx: TBox; const yCoord: Integer): TBox; cdecl; begin Result := bx.UnionY(yCoord); end;
+function TBox_Union1(const bx: TBox; const pt: TPoint): TBox; overload; cdecl; begin Result := bx.Union(pt); end;
+function TBox_Union2(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := bx.Union(b); end;
 
 function TRange_Singular(const range: TRange): Boolean; cdecl; begin Result := range.Singular; end;
 function TRange_Atomic(const range: TRange): Boolean; cdecl; begin Result := range.Atomic; end;

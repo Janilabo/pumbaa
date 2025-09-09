@@ -316,7 +316,6 @@ begin
   AddFunction(@TBox_Overlap, 'function TBox_Overlap(const bx: TBox; const b: TBox): Boolean;');
   AddFunction(@TBox_Intersect1, 'function TBox_Intersect(const bx: TBox; const b: TBox): TBox; overload;');
   AddFunction(@TBox_Intersect2, 'function TBox_Intersect(const bx: TBox; const b: TBox; var iArea: TBox): Boolean; overload;');
-  AddFunction(@TBox_Union, 'function TBox_Union(const bx: TBox; const b: TBox): TBox;');
   AddFunction(@TBox_Valid, 'function TBox_Valid(const bx: TBox): Boolean;');
   AddFunction(@TBox_Invalid, 'function TBox_Invalid(const bx: TBox): Boolean;');
   AddFunction(@TBox_Similar1, 'function TBox_Similar(const bx: TBox; const b: TBox; const maxWDiff, maxHDiff: Integer): Boolean; overload;');
@@ -344,6 +343,13 @@ begin
   AddFunction(@TBox_Centered, 'function TBox_Centered(const bx: TBox; const area: TBox): TBox;');
   AddFunction(@TBox_CenterVertically, 'function TBox_CenterVertically(const bx: TBox; const area: TBox): TBox;');
   AddFunction(@TBox_CenterHorizontally, 'function TBox_CenterHorizontally(const bx: TBox; const area: TBox): TBox;');
+  AddFunction(@TBox_ExtendX, 'function TBox_ExtendX(var bx: TBox; const xCoord: Integer): Boolean;');
+  AddFunction(@TBox_ExtendY, 'function TBox_ExtendY(var bx: TBox; const yCoord: Integer): Boolean;');
+  AddFunction(@TBox_Extend, 'function TBox_Extend(var bx: TBox; const pt: TPoint): Boolean;');
+  AddFunction(@TBox_UnionX, 'function TBox_UnionX(const bx: TBox; const xCoord: Integer): TBox;');
+  AddFunction(@TBox_UnionY, 'function TBox_UnionY(const bx: TBox; const yCoord: Integer): TBox;');
+  AddFunction(@TBox_Union1, 'function TBox_Union(const bx: TBox; const pt: TPoint): TBox; overload;');
+  AddFunction(@TBox_Union2, 'function TBox_Union(const bx: TBox; const b: TBox): TBox; overload;');
 
   AddFunction(@TRange_Singular, 'function TRange_Singular(const range: TRange): Boolean;');
   AddFunction(@TRange_Atomic, 'function TRange_Atomic(const range: TRange): Boolean;');
