@@ -323,6 +323,8 @@ function TBox_UnionX(const bx: TBox; const xCoord: Integer): TBox; cdecl; begin 
 function TBox_UnionY(const bx: TBox; const yCoord: Integer): TBox; cdecl; begin Result := bx.UnionY(yCoord); end;
 function TBox_Union1(const bx: TBox; const pt: TPoint): TBox; overload; cdecl; begin Result := bx.Union(pt); end;
 function TBox_Union2(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := bx.Union(b); end;
+function TBox_Disjoint(const bx: TBox; const target: TBox): Boolean; overload; cdecl; begin Result := bx.Disjoint(target); end;
+function TBox_Lacks(const bx: TBox; const pt: TPoint): Boolean; overload; cdecl; begin Result := bx.Lacks(pt); end;
 
 function TRange_Singular(const range: TRange): Boolean; cdecl; begin Result := range.Singular; end;
 function TRange_Atomic(const range: TRange): Boolean; cdecl; begin Result := range.Atomic; end;
@@ -404,6 +406,8 @@ function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const
 function TRange_Stringify(const range: TRange; const openRange: string = '['; const glueRange: string = '..'; const closeRange: string = ']'): string; cdecl; begin Result := range.Stringify(openRange, glueRange, closeRange); end;
 function TRange_Sum(const range: TRange): Int64; cdecl; begin Result := range.Sum; end;
 function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
+function TRange_Lacks(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Lacks(x); end;
+function TRange_Outside(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Outside(x); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

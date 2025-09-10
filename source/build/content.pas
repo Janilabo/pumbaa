@@ -350,6 +350,8 @@ begin
   AddFunction(@TBox_UnionY, 'function TBox_UnionY(const bx: TBox; const yCoord: Integer): TBox;');
   AddFunction(@TBox_Union1, 'function TBox_Union(const bx: TBox; const pt: TPoint): TBox; overload;');
   AddFunction(@TBox_Union2, 'function TBox_Union(const bx: TBox; const b: TBox): TBox; overload;');
+  AddFunction(@TBox_Disjoint, 'function TBox_Disjoint(const bx: TBox; const target: TBox): Boolean; overload;');
+  AddFunction(@TBox_Lacks, 'function TBox_Lacks(const bx: TBox; const pt: TPoint): Boolean; overload;');
 
   AddFunction(@TRange_Singular, 'function TRange_Singular(const range: TRange): Boolean;');
   AddFunction(@TRange_Atomic, 'function TRange_Atomic(const range: TRange): Boolean;');
@@ -431,6 +433,8 @@ begin
   AddFunction(@TRange_Stringify, 'function TRange_Stringify(const range: TRange; const openRange: string = ''[''; const glueRange: string = ''..''; const closeRange: string = '']''): string;');
   AddFunction(@TRange_Sum, 'function TRange_Sum(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Extract, 'function TRange_Extract(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Lacks, 'function TRange_Lacks(const range: TRange; const x: Integer): Boolean;');
+  AddFunction(@TRange_Outside, 'function TRange_Outside(const range: TRange; const x: Integer): Boolean;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
