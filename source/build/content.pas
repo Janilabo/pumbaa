@@ -369,8 +369,12 @@ begin
   AddFunction(@TRange_Construct, 'function TRange_Construct(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Build, 'function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer;');
   AddFunction(@TRange_Grab, 'function TRange_Grab(const range: TRange): TRange;');
+  AddFunction(@TRange_Count, 'function TRange_Count(const range: TRange): Integer;');
+  AddFunction(@TRange_Area, 'function TRange_Area(const range: TRange): Integer;');
+  AddFunction(@TRange_Span, 'function TRange_Span(const range: TRange): Integer;');
   AddFunction(@TRange_Size, 'function TRange_Size(const range: TRange): Integer;');
   AddFunction(@TRange_Length, 'function TRange_Length(const range: TRange): Integer;');
+  AddFunction(@TRange_Delta, 'function TRange_Delta(const range: TRange): Integer;');
   AddFunction(@TRange_Lowest, 'function TRange_Lowest(const range: TRange): Integer;');
   AddFunction(@TRange_Minimum, 'function TRange_Minimum(const range: TRange): Integer;');
   AddFunction(@TRange_Highest, 'function TRange_Highest(const range: TRange): Integer;');
@@ -393,7 +397,7 @@ begin
   AddFunction(@TRange_Union1, 'function TRange_Union(const range: TRange; const b: TRange): TRange; overload;');
   AddFunction(@TRange_Union2, 'function TRange_Union(const range: TRange; const val: Integer): TRange; overload;');
   AddFunction(@TRange_Extend, 'function TRange_Extend(var range: TRange; const val: Integer): Boolean;');
-  AddFunction(@TRange_Shift, 'function TRange_Shift(const range: TRange; const delta: Integer): TRange;');
+  AddFunction(@TRange_Shift, 'function TRange_Shift(const range: TRange; const sDelta: Integer): TRange;');
   AddFunction(@TRange_Contains1, 'function TRange_Contains(const range: TRange; const x: Integer): Boolean; overload;');
   AddFunction(@TRange_Contains2, 'function TRange_Contains(const range: TRange; const x: TRange): Boolean; overload;');
   AddFunction(@TRange_Above1, 'function TRange_Above(const range: TRange; const target: Integer): Boolean; overload;');

@@ -342,8 +342,12 @@ function TRange_Create3: TRange; overload; cdecl; var range: TRange; begin Resul
 function TRange_Construct(const rStart, rStop: Integer): TRange; overload; cdecl; begin Result := TRange.Construct(rStart, rStop); end;
 function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer; cdecl; var range: TRange; begin Result := range.Build(rStart, rStop); end;
 function TRange_Grab(const range: TRange): TRange; cdecl; begin Result := range.Grab; end;
+function TRange_Count(const range: TRange): Integer; cdecl; begin Result := range.Count; end; 
+function TRange_Area(const range: TRange): Integer; cdecl; begin Result := range.Area; end;
+function TRange_Span(const range: TRange): Integer; cdecl; begin Result := range.Span; end;
 function TRange_Size(const range: TRange): Integer; cdecl; begin Result := range.Size; end;
 function TRange_Length(const range: TRange): Integer; cdecl; begin Result := range.Length; end;
+function TRange_Delta(const range: TRange): Integer; cdecl; begin Result := range.Delta; end;
 function TRange_Lowest(const range: TRange): Integer; cdecl; begin Result := range.Lowest; end;
 function TRange_Minimum(const range: TRange): Integer; cdecl; begin Result := range.Minimum; end;
 function TRange_Highest(const range: TRange): Integer; cdecl; begin Result := range.Highest; end;
@@ -366,7 +370,7 @@ function TRange_Intersect2(const range: TRange; const b: TRange; var iZone: TRan
 function TRange_Union1(const range: TRange; const b: TRange): TRange; overload; cdecl; begin Result := range.Union(b); end;
 function TRange_Union2(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Union(val); end;
 function TRange_Extend(var range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Extend(val); end;
-function TRange_Shift(const range: TRange; const delta: Integer): TRange; cdecl; begin Result := range.Shift(delta); end;
+function TRange_Shift(const range: TRange; const sDelta: Integer): TRange; cdecl; begin Result := range.Shift(sDelta); end;
 function TRange_Contains1(const range: TRange; const x: Integer): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
 function TRange_Contains2(const range: TRange; const x: TRange): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
 function TRange_Above1(const range: TRange; const target: Integer): Boolean; overload; cdecl; begin Result := range.Above(target); end;
