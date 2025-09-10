@@ -363,7 +363,9 @@ function TRange_Overlapping(const range: TRange; const b: TRange): Boolean; cdec
 function TRange_Overlap(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlap(b); end;
 function TRange_Intersect1(const range: TRange; const b: TRange): TRange; overload; cdecl; begin Result := range.Intersect(b); end;
 function TRange_Intersect2(const range: TRange; const b: TRange; var iZone: TRange): Boolean; overload; cdecl; begin range.Intersect(b, iZone); end;
-function TRange_Union(const range: TRange; const b: TRange): TRange; cdecl; begin Result := range.Union(b); end;
+function TRange_Union1(const range: TRange; const b: TRange): TRange; overload; cdecl; begin Result := range.Union(b); end;
+function TRange_Union2(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Union(val); end;
+function TRange_Extend(var range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Extend(val); end;
 function TRange_Shift(const range: TRange; const delta: Integer): TRange; cdecl; begin Result := range.Shift(delta); end;
 function TRange_Contains1(const range: TRange; const x: Integer): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
 function TRange_Contains2(const range: TRange; const x: TRange): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
@@ -438,6 +440,7 @@ function TCircle_Border(const ci: TCircle): TPointArray; cdecl; begin Result := 
 function TIntegerArray_Bounds1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Bounds; end;
 function TIntegerArray_Bounds2(const arr: TIntegerArray; var aSize: Integer): TRange; overload; cdecl; begin Result := arr.Bounds(aSize); end;
 function TIntegerArray_BoundingRange(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.BoundingRange; end;
+function TIntegerArray_Boundaries(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Boundaries; end;
 function TIntegerArray_Range(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Range; end;
 function TIntegerArray_Ranged(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Ranged; end;
 function TIntegerArray_MinMax(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.MinMax; end;
@@ -580,6 +583,7 @@ function TPointArray_Y3(const arr: TPointArray; const vals: TIntegerArray): TInt
 function TPointArray_Bounds1(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Bounds; end;
 function TPointArray_Bounds2(const arr: TPointArray; var width, height: Integer): TBox; overload; cdecl; begin Result := arr.Bounds(width, height); end;
 function TPointArray_BoundingBox(const arr: TPointArray): TBox; cdecl; begin Result := arr.BoundingBox; end;
+function TPointArray_Boundaries(const arr: TPointArray): TBox; cdecl; begin Result := arr.Boundaries; end;
 function TPointArray_Box(const arr: TPointArray): TBox; cdecl; begin Result := arr.Box; end;
 function TPointArray_Boxed(const arr: TPointArray): TBox; cdecl; begin Result := arr.Boxed; end;
 function TPointArray_MinMax(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.MinMax; end;

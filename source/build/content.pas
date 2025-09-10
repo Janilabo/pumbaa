@@ -390,7 +390,9 @@ begin
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Intersect1, 'function TRange_Intersection(const range: TRange; const b: TRange): TRange; overload;');
   AddFunction(@TRange_Intersect2, 'function TRange_Intersect(const range: TRange; const b: TRange; var iZone: TRange): Boolean; overload;');
-  AddFunction(@TRange_Union, 'function TRange_Union(const range: TRange; const b: TRange): TRange;');
+  AddFunction(@TRange_Union1, 'function TRange_Union(const range: TRange; const b: TRange): TRange; overload;');
+  AddFunction(@TRange_Union2, 'function TRange_Union(const range: TRange; const val: Integer): TRange; overload;');
+  AddFunction(@TRange_Extend, 'function TRange_Extend(var range: TRange; const val: Integer): Boolean;');
   AddFunction(@TRange_Shift, 'function TRange_Shift(const range: TRange; const delta: Integer): TRange;');
   AddFunction(@TRange_Contains1, 'function TRange_Contains(const range: TRange; const x: Integer): Boolean; overload;');
   AddFunction(@TRange_Contains2, 'function TRange_Contains(const range: TRange; const x: TRange): Boolean; overload;');
@@ -465,6 +467,7 @@ begin
   AddFunction(@TIntegerArray_Bounds1, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; overload;');
   AddFunction(@TIntegerArray_Bounds2, 'function TIntegerArray_Bounds(const arr: TIntegerArray; var aSize: Integer): TRange; overload;');
   AddFunction(@TIntegerArray_BoundingRange, 'function TIntegerArray_BoundingRange(const arr: TIntegerArray): TRange;');
+  AddFunction(@TIntegerArray_Boundaries, 'function TIntegerArray_Boundaries(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Range, 'function TIntegerArray_Range(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Ranged, 'function TIntegerArray_Ranged(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_MinMax, 'function TIntegerArray_MinMax(const arr: TIntegerArray): TRange;');
@@ -607,6 +610,7 @@ begin
   AddFunction(@TPointArray_Bounds1, 'function TPointArray_Bounds(const arr: TPointArray): TBox; overload;');
   AddFunction(@TPointArray_Bounds2, 'function TPointArray_Bounds(const arr: TPointArray; var width, height: Integer): TBox; overload;');
   AddFunction(@TPointArray_BoundingBox, 'function TPointArray_BoundingBox(const arr: TPointArray): TBox;');
+  AddFunction(@TPointArray_Boundaries, 'function TPointArray_Boundaries(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Box, 'function TPointArray_Box(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Boxed, 'function TPointArray_Boxed(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_MinMax, 'function TPointArray_MinMax(const arr: TPointArray): TBox;');
