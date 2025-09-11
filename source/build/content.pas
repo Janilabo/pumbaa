@@ -87,7 +87,9 @@ begin
   AddFunction(@Integer_Constraint1, 'function Integer_Constraint(var item: Integer; const minimum, maximum: Integer): Boolean; overload;');
   AddFunction(@Integer_Constraint2, 'function Integer_Constraint(var item: Integer; const range: TRange): Boolean; overload;');
   AddFunction(@Integer_Even, 'function Integer_Even(const x: Integer): Boolean;');
+  AddFunction(@Integer_IsEven, 'function Integer_IsEven(const x: Integer): Boolean;');
   AddFunction(@Integer_Odd, 'function Integer_Odd(const x: Integer): Boolean;');
+  AddFunction(@Integer_IsOdd, 'function Integer_IsOdd(const x: Integer): Boolean;');
   AddFunction(@Integer_Increase, 'function Integer_Increase(var x: Integer; const N: Integer = 1): Integer;');
   AddFunction(@Integer_Decrease, 'function Integer_Decrease(var x: Integer; const N: Integer = 1): Integer;');
   AddFunction(@Integer_Increment, 'function Integer_Increment(var x: Integer; const N: Integer = 1): Integer;');
@@ -438,6 +440,8 @@ begin
   AddFunction(@TRange_ToStr, 'function TRange_ToStr(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string;');
   AddFunction(@TRange_Stringify, 'function TRange_Stringify(const range: TRange; const openRange: string = ''[''; const glueRange: string = ''..''; const closeRange: string = '']''): string;');
   AddFunction(@TRange_Sum, 'function TRange_Sum(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Summation, 'function TRange_Summation(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Total, 'function TRange_Total(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Extract, 'function TRange_Extract(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Lacks, 'function TRange_Lacks(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Outside, 'function TRange_Outside(const range: TRange; const x: Integer): Boolean;');

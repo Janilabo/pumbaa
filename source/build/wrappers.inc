@@ -16,7 +16,9 @@ function Integer_ConstraintMax(var item: Integer; const limit: Integer): Boolean
 function Integer_Constraint1(var item: Integer; const minimum, maximum: Integer): Boolean; overload; cdecl; begin Result := item.Constraint(minimum, maximum); end;
 function Integer_Constraint2(var item: Integer; const range: TRange): Boolean; overload; cdecl; begin Result := item.Constraint(range); end;
 function Integer_Even(const x: Integer): Boolean; cdecl; inline; begin Result := x.Even; end;
+function Integer_IsEven(const x: Integer): Boolean; cdecl; inline; begin Result := x.IsEven; end;
 function Integer_Odd(const x: Integer): Boolean; cdecl; inline; begin Result := x.Odd; end;
+function Integer_IsOdd(const x: Integer): Boolean; cdecl; inline; begin Result := x.IsOdd; end;
 function Integer_Increase(var x: Integer; const N: Integer = 1): Integer; cdecl; begin Result := x.Increase(N); end;
 function Integer_Decrease(var x: Integer; const N: Integer = 1): Integer; cdecl; begin Result := x.Decrease(N); end;
 function Integer_Increment(var x: Integer; const N: Integer = 1): Integer; cdecl; begin Result := x.Increment(N); end;
@@ -411,6 +413,8 @@ function TRange_Str(const range: TRange; const openRange: string = '['; const cl
 function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl; begin Result := range.ToStr(glueRange, openRange, closeRange); end;
 function TRange_Stringify(const range: TRange; const openRange: string = '['; const glueRange: string = '..'; const closeRange: string = ']'): string; cdecl; begin Result := range.Stringify(openRange, glueRange, closeRange); end;
 function TRange_Sum(const range: TRange): Int64; cdecl; begin Result := range.Sum; end;
+function TRange_Summation(const range: TRange): Int64; cdecl; begin Result := range.Summation; end;
+function TRange_Total(const range: TRange): Int64; cdecl; begin Result := range.Total; end;
 function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
 function TRange_Lacks(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Lacks(x); end;
 function TRange_Outside(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Outside(x); end;
