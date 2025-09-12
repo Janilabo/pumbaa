@@ -553,6 +553,14 @@ function TCharArray_Ordinals(const arr: TCharArray): TIntegerArray; cdecl; begin
 function TCharArray_Unduped(const arr: TCharArray): TCharArray; cdecl; begin Result := arr.Unduped; end;
 function TCharArray_TSA(const arr: TCharArray): TStringArray; cdecl; begin Result := arr.TSA; end;
 
+function TBooleanArray_Select1(const arr: TBooleanArray; const sTrue, sFalse: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Select(sTrue, sFalse); end;
+function TBooleanArray_Select2(const arr: TBooleanArray; const sTrue, sFalse: Double): TDoubleArray; overload; cdecl; begin Result := arr.Select(sTrue, sFalse); end;
+function TBooleanArray_Select3(const arr: TBooleanArray; const sTrue, sFalse: string): TStringArray; overload; cdecl; begin Result := arr.Select(sTrue, sFalse); end;
+function TBooleanArray_Select4(const arr: TBooleanArray; const sTrue, sFalse: Char): TCharArray; overload; cdecl; begin Result := arr.Select(sTrue, sFalse); end;
+function TBooleanArray_Select5(const arr: TBooleanArray; const sTrue, sFalse: Boolean): TBooleanArray; overload; cdecl; begin Result := arr.Select(sTrue, sFalse); end;
+function TBooleanArray_Select6(const arr: TBooleanArray; const sTrue, sFalse: TPoint): TPointArray; overload; cdecl; begin Result := arr.Select(sTrue, sFalse); end;
+function TBooleanArray_Select7(const arr: TBooleanArray; const sTrue, sFalse: TBox): TBoxArray; overload; cdecl; begin Result := arr.Select(sTrue, sFalse); end;
+function TBooleanArray_Select8(const arr: TBooleanArray; const sTrue, sFalse: TRange): TRangeArray; overload; cdecl; begin Result := arr.Select(sTrue, sFalse); end;
 function TBooleanArray_Bits(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Bits; end;
 function TBooleanArray_Bitify(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Bitify; end;
 function TBooleanArray_ToBits(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.ToBits; end;

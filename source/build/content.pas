@@ -580,6 +580,14 @@ begin
   AddFunction(@TCharArray_Unduped, 'function TCharArray_Unduped(const arr: TCharArray): TCharArray;');
   AddFunction(@TCharArray_TSA, 'function TCharArray_TSA(const arr: TCharArray): TStringArray;');
 
+  AddFunction(@TBooleanArray_Select1, 'function TBooleanArray_Select(const arr: TBooleanArray; const sTrue, sFalse: Integer): TIntegerArray; overload;');
+  AddFunction(@TBooleanArray_Select2, 'function TBooleanArray_Select(const arr: TBooleanArray; const sTrue, sFalse: Double): TDoubleArray; overload;');
+  AddFunction(@TBooleanArray_Select3, 'function TBooleanArray_Select(const arr: TBooleanArray; const sTrue, sFalse: string): TStringArray; overload;');
+  AddFunction(@TBooleanArray_Select4, 'function TBooleanArray_Select(const arr: TBooleanArray; const sTrue, sFalse: Char): TCharArray; overload;');
+  AddFunction(@TBooleanArray_Select5, 'function TBooleanArray_Select(const arr: TBooleanArray; const sTrue, sFalse: Boolean): TBooleanArray; overload;');
+  AddFunction(@TBooleanArray_Select6, 'function TBooleanArray_Select(const arr: TBooleanArray; const sTrue, sFalse: TPoint): TPointArray; overload;');
+  AddFunction(@TBooleanArray_Select7, 'function TBooleanArray_Select(const arr: TBooleanArray; const sTrue, sFalse: TBox): TBoxArray; overload;');
+  AddFunction(@TBooleanArray_Select8, 'function TBooleanArray_Select(const arr: TBooleanArray; const sTrue, sFalse: TRange): TRangeArray; overload;');
   AddFunction(@TBooleanArray_Bits, 'function TBooleanArray_Bits(const arr: TBooleanArray): Integer; overload');
   AddFunction(@TBooleanArray_ToBits, 'function TBooleanArray_ToBits(const arr: TBooleanArray): Integer; overload');
   AddFunction(@TBooleanArray_Bitify, 'function TBooleanArray_Bitify(const arr: TBooleanArray): Integer; overload');
