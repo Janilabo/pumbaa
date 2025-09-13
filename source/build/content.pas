@@ -286,6 +286,9 @@ begin
   AddFunction(@TBox_IsHorizontalLine, 'function TBox_IsHorizontalLine(const bx: TBox): Boolean;');
   AddFunction(@TBox_IsVerticalLine, 'function TBox_IsVerticalLine(const bx: TBox): Boolean;');
   AddFunction(@TBox_IsLine, 'function TBox_IsLine(const bx: TBox): Boolean;');
+  AddFunction(@TBox_Linear, 'function TBox_Linear(const bx: TBox): Boolean;');
+  AddFunction(@TBox_Is2D, 'function TBox_Is2D(const bx: TBox): Boolean;');
+  AddFunction(@TBox_Collapsed, 'function TBox_Collapsed(const bx: TBox): Boolean;');
   AddFunction(@TBox_Boxy, 'function TBox_Boxy(const bx: TBox): Boolean;');
   AddFunction(@TBox_Plural, 'function TBox_Plural(const bx: TBox): Boolean;');
   AddFunction(@TBox_Rectangular, 'function TBox_Rectangular(const bx: TBox): Boolean;');
@@ -293,6 +296,7 @@ begin
   AddFunction(@TBox_Square, 'function TBox_Square(const bx: TBox): Boolean;');
   AddFunction(@TBox_Size, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer;');
   AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Integer;');
+  AddFunction(@TBox_Ratio, 'function TBox_Ratio(const bx: TBox): Double;');
   AddFunction(@TBox_Diagonal, 'function TBox_Diagonal(const bx: TBox): Double;');
   AddFunction(@TBox_Width1, 'function TBox_Width(const bx: TBox): Integer; overload;');
   AddFunction(@TBox_Width2, 'function TBox_Width(var bx: TBox; const w: Integer): Integer; overload;');
