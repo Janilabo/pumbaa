@@ -115,6 +115,7 @@ type
     function Elements: TIntegerArray; cdecl;
     function Numbers: TIntegerArray; cdecl;
     function Items: TIntegerArray; cdecl;
+    function ToArray: TIntegerArray; cdecl;
     function Normalize: TRange; cdecl;
     function Overlapping(const b: TRange): Boolean; cdecl;
     function Overlap(const b: TRange): Boolean; cdecl;
@@ -156,6 +157,9 @@ type
     function Value(const x: Integer): Boolean; cdecl; inline;
     function Item(const x: Integer): Boolean; cdecl; inline;
     function Middle: Double; cdecl;
+	function MidValue: Double; cdecl;
+	function MidVal: Double; cdecl;
+	function Average: Double; cdecl;
     function Center: Integer; cdecl;
     function Str(const openRange: string = '['; const closeRange: string = ']'; const glueRange: string = '..'): string; cdecl;
     function ToStr(const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl;
@@ -185,6 +189,11 @@ type
     function Make(const pt: TPoint; const radius: Integer = 0): TBox; overload; cdecl;
     function Make(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload; cdecl;
     function Singular: Boolean; cdecl;
+    function IsPoint: Boolean; cdecl;
+    function IsHorizontalLine: Boolean; cdecl;
+    function IsVerticalLine: Boolean; cdecl;
+    function IsLine: Boolean; cdecl;
+    function Boxy: Boolean; cdecl;
     function Plural: Boolean; cdecl;
     function Rectangular: Boolean; cdecl;
     function Equilateral: Boolean; cdecl;
@@ -236,6 +245,8 @@ type
     function Enumerate: TPointArray; cdecl;
     function Elements: TPointArray; cdecl;
     function Border: TPointArray; cdecl;
+    function Edge: TPointArray; cdecl;
+	function Outline: TPointArray; cdecl;
     function CornerPoints: TPointArray; cdecl;
     function Corners: TPointArray; cdecl;
     function SimilarSize(const b: TBox; const widthDifferency, heightDifferency: Integer): Boolean; overload; cdecl;

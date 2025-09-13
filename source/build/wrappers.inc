@@ -255,6 +255,11 @@ function TBox_Make2(const pt: TPoint; const wRadius, hRadius: Integer): TBox; ov
 function TBox_Form1(const pt: TPoint; const size: Integer = 1): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, size); end;
 function TBox_Form2(const pt: TPoint; const width, height: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, width, height); end;
 function TBox_Singular(const bx: TBox): Boolean; cdecl; begin Result := bx.Singular; end;
+function TBox_IsPoint(const bx: TBox): Boolean; cdecl; begin Result := bx.IsPoint; end;
+function TBox_IsHorizontalLine(const bx: TBox): Boolean; cdecl; begin Result := bx.IsHorizontalLine; end;
+function TBox_IsVerticalLine(const bx: TBox): Boolean; cdecl; begin Result := bx.IsVerticalLine; end;
+function TBox_IsLine(const bx: TBox): Boolean; cdecl; begin Result := bx.IsLine; end;
+function TBox_Boxy(const bx: TBox): Boolean; cdecl; begin Result := bx.Boxy; end;
 function TBox_Plural(const bx: TBox): Boolean; cdecl; begin Result := bx.Plural; end;
 function TBox_Rectangular(const bx: TBox): Boolean; cdecl; begin Result := bx.Rectangular; end;
 function TBox_Equilateral(const bx: TBox): Boolean; cdecl; begin Result := bx.Equilateral; end;
@@ -308,6 +313,8 @@ function TBox_Extract(const bx: TBox): TPointArray; cdecl; begin Result := bx.Ex
 function TBox_Enumerate(const bx: TBox): TPointArray; cdecl; begin Result := bx.Enumerate; end;
 function TBox_Elements(const bx: TBox): TPointArray; cdecl; begin Result := bx.Elements; end;
 function TBox_Border(const bx: TBox): TPointArray; cdecl; begin Result := bx.Border; end;
+function TBox_Edge(const bx: TBox): TPointArray; cdecl; begin Result := bx.Edge; end;
+function TBox_Outline(const bx: TBox): TPointArray; cdecl; begin Result := bx.Outline; end;
 function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray; cdecl; begin Result := bx.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Row(cells, space); end;
 function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Column(cells, space); end;
@@ -364,6 +371,7 @@ function TRange_Enumerate(const range: TRange): TIntegerArray; cdecl; begin Resu
 function TRange_Elements(const range: TRange): TIntegerArray; cdecl; begin Result := range.Elements; end;
 function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbers; end;
 function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
+function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
 function TRange_Normalize(const range: TRange): TRange; cdecl; begin Result := range.Normalize; end;
 function TRange_Overlapping(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlapping(b); end;
 function TRange_Overlap(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlap(b); end;
@@ -408,6 +416,9 @@ function TRange_Digit(const range: TRange; const x: Integer): Boolean; cdecl; in
 function TRange_Value(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Value(x); end;
 function TRange_Item(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Item(x); end;
 function TRange_Middle(const range: TRange): Double; cdecl; begin Result := range.Middle; end;
+function TRange_MidVal(const range: TRange): Double; cdecl; begin Result := range.MidVal; end;
+function TRange_MidValue(const range: TRange): Double; cdecl; begin Result := range.MidValue; end;
+function TRange_Average(const range: TRange): Double; cdecl; begin Result := range.Average; end;
 function TRange_Center(const range: TRange): Integer; cdecl; begin Result := range.Center; end;
 function TRange_Str(const range: TRange; const openRange: string = '['; const closeRange: string = ']'; const glueRange: string = '..'): string; cdecl; begin Result := range.Str(openRange, closeRange, glueRange); end;  
 function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl; begin Result := range.ToStr(glueRange, openRange, closeRange); end;

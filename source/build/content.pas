@@ -282,6 +282,11 @@ begin
   AddFunction(@TBox_Form1, 'function TBox_Form(const pt: TPoint; const size: Integer = 1): TBox; overload;');
   AddFunction(@TBox_Form2, 'function TBox_Form(const pt: TPoint; const width, height: Integer): TBox; overload;');
   AddFunction(@TBox_Singular, 'function TBox_Singular(const bx: TBox): Boolean;');
+  AddFunction(@TBox_IsPoint, 'function TBox_IsPoint(const bx: TBox): Boolean;');
+  AddFunction(@TBox_IsHorizontalLine, 'function TBox_IsHorizontalLine(const bx: TBox): Boolean;');
+  AddFunction(@TBox_IsVerticalLine, 'function TBox_IsVerticalLine(const bx: TBox): Boolean;');
+  AddFunction(@TBox_IsLine, 'function TBox_IsLine(const bx: TBox): Boolean;');
+  AddFunction(@TBox_Boxy, 'function TBox_Boxy(const bx: TBox): Boolean;');
   AddFunction(@TBox_Plural, 'function TBox_Plural(const bx: TBox): Boolean;');
   AddFunction(@TBox_Rectangular, 'function TBox_Rectangular(const bx: TBox): Boolean;');
   AddFunction(@TBox_Equilateral, 'function TBox_Equilateral(const bx: TBox): Boolean;');
@@ -338,6 +343,8 @@ begin
   AddFunction(@TBox_Row, 'function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
   AddFunction(@TBox_Column, 'function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
   AddFunction(@TBox_Border, 'function TBox_Border(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Edge, 'function TBox_Edge(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Outline, 'function TBox_Outline(const bx: TBox): TPointArray;');
   AddFunction(@TBox_CornerPoints, 'function TBox_CornerPoints(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Corners, 'function TBox_Corners(const bx: TBox): TPointArray;');
   AddFunction(@TBox_SimilarSize1, 'function TBox_SimilarSize(const bx: TBox; const b: TBox; const widthDifferency, heightDifferency: Integer): Boolean; overload;');
@@ -391,6 +398,7 @@ begin
   AddFunction(@TRange_Elements, 'function TRange_Elements(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Numbers, 'function TRange_Numbers(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
@@ -435,6 +443,9 @@ begin
   AddFunction(@TRange_Value, 'function TRange_Value(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Item, 'function TRange_Item(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Middle, 'function TRange_Middle(const range: TRange): Double;');
+  AddFunction(@TRange_MidVal, 'function TRange_MidVal(const range: TRange): Double;');
+  AddFunction(@TRange_MidValue, 'function TRange_MidValue(const range: TRange): Double;');
+  AddFunction(@TRange_Average, 'function TRange_Average(const range: TRange): Double;');
   AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Integer;');
   AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange; const openRange: string = ''[''; const closeRange: string = '']''; const glueRange: string = ''..''): string;');  
   AddFunction(@TRange_ToStr, 'function TRange_ToStr(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string;');
