@@ -346,6 +346,10 @@ begin
   AddFunction(@TBox_Extract, 'function TBox_Extract(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Enumerate, 'function TBox_Enumerate(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Elements, 'function TBox_Elements(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Rows, 'function TBox_Rows(const bx: TBox): T2DPointArray;');
+  AddFunction(@TBox_Columns, 'function TBox_Columns(const bx: TBox): T2DPointArray;');
+  AddFunction(@TBox_Rowwise, 'function TBox_Rowwise(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Columnwise, 'function TBox_Columnwise(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Grid, 'function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray;');
   AddFunction(@TBox_Row, 'function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
   AddFunction(@TBox_Column, 'function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
