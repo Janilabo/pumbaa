@@ -272,6 +272,7 @@ function TBox_Square(const bx: TBox): Boolean; cdecl; begin Result := bx.Square;
 function TBox_Size1(const bx: TBox; var width, height: Integer): Integer; overload; cdecl; inline; begin Result := bx.Size(width, height); end;
 function TBox_Size2(const bx: TBox): TPoint; overload; cdecl; begin Result := bx.Size; end;
 function TBox_Area(const bx: TBox): Integer; cdecl; inline; begin Result := bx.Area; end;
+function TBox_Perimeter(const bx: TBox): Integer; cdecl; inline; begin Result := bx.Perimeter; end;
 function TBox_Ratio(const bx: TBox): Double; cdecl; begin Result := bx.Ratio; end;
 function TBox_Diagonal(const bx: TBox): Double; cdecl; begin Result := bx.Diagonal; end;
 function TBox_Width1(const bx: TBox): Integer; overload; cdecl; begin Result := bx.Width; end;

@@ -299,6 +299,7 @@ begin
   AddFunction(@TBox_Size1, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer; overload;');
   AddFunction(@TBox_Size2, 'function TBox_Size: TPoint; overload;');
   AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Integer;');
+  AddFunction(@TBox_Perimeter, 'function TBox_Perimeter(const bx: TBox): Integer;');
   AddFunction(@TBox_Ratio, 'function TBox_Ratio(const bx: TBox): Double;');
   AddFunction(@TBox_Diagonal, 'function TBox_Diagonal(const bx: TBox): Double;');
   AddFunction(@TBox_Width1, 'function TBox_Width(const bx: TBox): Integer; overload;');
