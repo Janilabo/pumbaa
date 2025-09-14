@@ -417,10 +417,16 @@ begin
   AddFunction(@TRange_Values, 'function TRange_Values(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_TIA, 'function TRange_TIA(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Enumerate, 'function TRange_Enumerate(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Enumerated, 'function TRange_Enumerated(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Elements, 'function TRange_Elements(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Numbers, 'function TRange_Numbers(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Shuffle, 'function TRange_Shuffle(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Any, 'function TRange_Any(const range: TRange): Integer;');
+  AddFunction(@TRange_Something1, 'function TRange_Something(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Something2, 'function TRange_Something(const range: TRange; const amount: Integer): TIntegerArray; overload;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
