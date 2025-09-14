@@ -254,6 +254,8 @@ function TBox_Make1(const pt: TPoint; const radius: Integer = 0): TBox; overload
 function TBox_Make2(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Make(pt, wRadius, hRadius); end;
 function TBox_Form1(const pt: TPoint; const size: Integer = 1): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, size); end;
 function TBox_Form2(const pt: TPoint; const width, height: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, width, height); end;
+function TBox_Frame1(const bx: TBox; var width, height: Integer): TBox; overload; cdecl; begin Result := bx.Frame(width, height); end;
+function TBox_Frame2(const bx: TBox): TBox; overload; cdecl; begin Result := bx.Frame; end;
 function TBox_Singular(const bx: TBox): Boolean; cdecl; begin Result := bx.Singular; end;
 function TBox_IsPoint(const bx: TBox): Boolean; cdecl; begin Result := bx.IsPoint; end;
 function TBox_IsHorizontalLine(const bx: TBox): Boolean; cdecl; begin Result := bx.IsHorizontalLine; end;
@@ -267,7 +269,8 @@ function TBox_Plural(const bx: TBox): Boolean; cdecl; begin Result := bx.Plural;
 function TBox_Rectangular(const bx: TBox): Boolean; cdecl; begin Result := bx.Rectangular; end;
 function TBox_Equilateral(const bx: TBox): Boolean; cdecl; begin Result := bx.Equilateral; end;
 function TBox_Square(const bx: TBox): Boolean; cdecl; begin Result := bx.Square; end;
-function TBox_Size(const bx: TBox; var width, height: Integer): Integer; cdecl; inline; begin Result := bx.Size(width, height); end;
+function TBox_Size1(const bx: TBox; var width, height: Integer): Integer; overload; cdecl; inline; begin Result := bx.Size(width, height); end;
+function TBox_Size2(const bx: TBox): TPoint; overload; cdecl; begin Result := bx.Size; end;
 function TBox_Area(const bx: TBox): Integer; cdecl; inline; begin Result := bx.Area; end;
 function TBox_Ratio(const bx: TBox): Double; cdecl; begin Result := bx.Ratio; end;
 function TBox_Diagonal(const bx: TBox): Double; cdecl; begin Result := bx.Diagonal; end;
@@ -319,6 +322,8 @@ function TBox_Elements(const bx: TBox): TPointArray; cdecl; begin Result := bx.E
 function TBox_Border(const bx: TBox): TPointArray; cdecl; begin Result := bx.Border; end;
 function TBox_Edge(const bx: TBox): TPointArray; cdecl; begin Result := bx.Edge; end;
 function TBox_Outline(const bx: TBox): TPointArray; cdecl; begin Result := bx.Outline; end;
+function TBox_Spiral(const bx: TBox): TPointArray; cdecl; begin Result := bx.Spiral; end;
+function TBox_Traverse(const bx: TBox): TPointArray; cdecl; begin Result := bx.Traverse; end;
 function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray; cdecl; begin Result := bx.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Row(cells, space); end;
 function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Column(cells, space); end;

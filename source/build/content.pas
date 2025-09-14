@@ -281,6 +281,8 @@ begin
   AddFunction(@TBox_Make2, 'function TBox_Make(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload;');
   AddFunction(@TBox_Form1, 'function TBox_Form(const pt: TPoint; const size: Integer = 1): TBox; overload;');
   AddFunction(@TBox_Form2, 'function TBox_Form(const pt: TPoint; const width, height: Integer): TBox; overload;');
+  AddFunction(@TBox_Frame1, 'function TBox_Frame(const bx: TBox; var width, height: Integer): TBox; overload;');
+  AddFunction(@TBox_Frame2, 'function TBox_Frame(const bx: TBox): TBox; overload;');
   AddFunction(@TBox_Singular, 'function TBox_Singular(const bx: TBox): Boolean;');
   AddFunction(@TBox_IsPoint, 'function TBox_IsPoint(const bx: TBox): Boolean;');
   AddFunction(@TBox_IsHorizontalLine, 'function TBox_IsHorizontalLine(const bx: TBox): Boolean;');
@@ -294,7 +296,8 @@ begin
   AddFunction(@TBox_Rectangular, 'function TBox_Rectangular(const bx: TBox): Boolean;');
   AddFunction(@TBox_Equilateral, 'function TBox_Equilateral(const bx: TBox): Boolean;');
   AddFunction(@TBox_Square, 'function TBox_Square(const bx: TBox): Boolean;');
-  AddFunction(@TBox_Size, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer;');
+  AddFunction(@TBox_Size1, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer; overload;');
+  AddFunction(@TBox_Size2, 'function TBox_Size: TPoint; overload;');
   AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Integer;');
   AddFunction(@TBox_Ratio, 'function TBox_Ratio(const bx: TBox): Double;');
   AddFunction(@TBox_Diagonal, 'function TBox_Diagonal(const bx: TBox): Double;');
@@ -349,6 +352,8 @@ begin
   AddFunction(@TBox_Border, 'function TBox_Border(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Edge, 'function TBox_Edge(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Outline, 'function TBox_Outline(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Spiral, 'function TBox_Spiral(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Traverse, 'function TBox_Traverse(const bx: TBox): TPointArray;');
   AddFunction(@TBox_CornerPoints, 'function TBox_CornerPoints(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Corners, 'function TBox_Corners(const bx: TBox): TPointArray;');
   AddFunction(@TBox_SimilarSize1, 'function TBox_SimilarSize(const bx: TBox; const b: TBox; const widthDifferency, heightDifferency: Integer): Boolean; overload;');
