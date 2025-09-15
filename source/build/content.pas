@@ -365,9 +365,11 @@ begin
   AddFunction(@TBox_Outline1, 'function TBox_Outline(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Outline2, 'function TBox_Outline(const bx: TBox; const X, Y: Integer): Boolean; overload;');
   AddFunction(@TBox_Outline3, 'function TBox_Outline(const bx: TBox; const pt: TPoint): Boolean; overload;');
+  AddFunction(@TBox_Contour, 'function TBox_Contour(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Spiral, 'function TBox_Spiral(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Traverse, 'function TBox_Traverse(const bx: TBox): TPointArray;');
   AddFunction(@TBox_CornerPoints, 'function TBox_CornerPoints(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_CornerPts, 'function TBox_CornerPts(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Corners, 'function TBox_Corners(const bx: TBox): TPointArray;');
   AddFunction(@TBox_SimilarSize1, 'function TBox_SimilarSize(const bx: TBox; const b: TBox; const widthDifferency, heightDifferency: Integer): Boolean; overload;');
   AddFunction(@TBox_SimilarSize2, 'function TBox_SimilarSize(const bx: TBox; const b: TBox; const differency: Integer): Boolean; overload;');
@@ -812,6 +814,15 @@ begin
   AddFunction(@TArray_Backwards6, 'function TArray_Backwards(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Backwards7, 'function TArray_Backwards(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Backwards8, 'function TArray_Backwards(const arr: TRangeArray): TRangeArray; overload;');
+  
+  AddFunction(@TArray_Blit1, 'function TArray_Blit(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Blit2, 'function TArray_Blit(var arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Blit3, 'function TArray_Blit(var arr: TStringArray; const items: TStringArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Blit4, 'function TArray_Blit(var arr: TCharArray; const items: TCharArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Blit5, 'function TArray_Blit(var arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Blit6, 'function TArray_Blit(var arr: TPointArray; const items: TPointArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Blit7, 'function TArray_Blit(var arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Blit8, 'function TArray_Blit(var arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): Integer; overload;');
 
   AddFunction(@TArray_Build1, 'function TArray_Build(const item: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TArray_Build2, 'function TArray_Build(const item: Double; const aSize: Integer = 1): TDoubleArray; overload;');
@@ -1655,6 +1666,15 @@ begin
   AddFunction(@TArray_Partition6, 'function TArray_Partition(const arr: TPointArray; const pSize: Integer): T2DPointArray; overload;');
   AddFunction(@TArray_Partition7, 'function TArray_Partition(const arr: TBoxArray; const pSize: Integer): T2DBoxArray; overload;');
   AddFunction(@TArray_Partition8, 'function TArray_Partition(const arr: TRangeArray; const pSize: Integer): T2DRangeArray; overload;');
+  
+  AddFunction(@TArray_Patch1, 'function TArray_Patch(var arr: TIntegerArray; const index: Integer; const items: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Patch2, 'function TArray_Patch(var arr: TDoubleArray; const index: Integer; const items: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Patch3, 'function TArray_Patch(var arr: TStringArray; const index: Integer; const items: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Patch4, 'function TArray_Patch(var arr: TCharArray; const index: Integer; const items: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Patch5, 'function TArray_Patch(var arr: TBooleanArray; const index: Integer; const items: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Patch6, 'function TArray_Patch(var arr: TPointArray; const index: Integer; const items: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Patch7, 'function TArray_Patch(var arr: TBoxArray; const index: Integer; const items: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Patch8, 'function TArray_Patch(var arr: TRangeArray; const index: Integer; const items: TRangeArray): Integer; overload;');
 
   AddFunction(@TArray_Pick1, 'function TArray_Pick(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Pick2, 'function TArray_Pick(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload;');

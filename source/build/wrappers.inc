@@ -331,6 +331,7 @@ function TBox_Edge3(const bx: TBox; const pt: TPoint): Boolean; overload; cdecl;
 function TBox_Outline1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Outline; end;
 function TBox_Outline2(const bx: TBox; const X, Y: Integer): Boolean; overload; cdecl; begin Result := bx.Outline(X, Y); end;
 function TBox_Outline3(const bx: TBox; const pt: TPoint): Boolean; overload; cdecl; begin Result := bx.Outline(pt); end;
+function TBox_Contour(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Contour; end;
 function TBox_Spiral(const bx: TBox): TPointArray; cdecl; begin Result := bx.Spiral; end;
 function TBox_Traverse(const bx: TBox): TPointArray; cdecl; begin Result := bx.Traverse; end;
 function TBox_Rows(const bx: TBox): T2DPointArray; cdecl; begin Result := bx.Rows; end;
@@ -341,6 +342,7 @@ function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVert
 function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Row(cells, space); end;
 function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Column(cells, space); end;
 function TBox_CornerPoints(const bx: TBox): TPointArray; cdecl; begin Result := bx.CornerPoints; end;
+function TBox_CornerPts(const bx: TBox): TPointArray; cdecl; begin Result := bx.CornerPts; end;
 function TBox_Corners(const bx: TBox): TPointArray; cdecl; begin Result := bx.Corners; end;
 function TBox_SimilarSize1(const bx: TBox; const b: TBox; const widthDifferency, heightDifferency: Integer): Boolean; overload; cdecl; begin Result := bx.SimilarSize(b, widthDifferency, heightDifferency); end;
 function TBox_SimilarSize2(const bx: TBox; const b: TBox; const differency: Integer): Boolean; overload; cdecl; begin Result := bx.SimilarSize(b, differency); end;
@@ -785,6 +787,15 @@ function TArray_Backwards5(const arr: TBooleanArray): TBooleanArray; overload; c
 function TArray_Backwards6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Backwards; end;
 function TArray_Backwards7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Backwards; end;
 function TArray_Backwards8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Backwards; end;
+
+function TArray_Blit1(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
+function TArray_Blit2(var arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
+function TArray_Blit3(var arr: TStringArray; const items: TStringArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
+function TArray_Blit4(var arr: TCharArray; const items: TCharArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
+function TArray_Blit5(var arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
+function TArray_Blit6(var arr: TPointArray; const items: TPointArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
+function TArray_Blit7(var arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
+function TArray_Blit8(var arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
 
 function TArray_Build1(const item: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result.Build(item, aSize); end;
 function TArray_Build2(const item: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result.Build(item, aSize); end;
@@ -1629,6 +1640,15 @@ function TArray_Partition5(const arr: TBooleanArray; const pSize: Integer): T2DB
 function TArray_Partition6(const arr: TPointArray; const pSize: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Partition(pSize); end;
 function TArray_Partition7(const arr: TBoxArray; const pSize: Integer): T2DBoxArray; overload; cdecl; begin Result := arr.Partition(pSize); end;
 function TArray_Partition8(const arr: TRangeArray; const pSize: Integer): T2DRangeArray; overload; cdecl; begin Result := arr.Partition(pSize); end;
+
+function TArray_Patch1(var arr: TIntegerArray; const index: Integer; const items: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
+function TArray_Patch2(var arr: TDoubleArray; const index: Integer; const items: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
+function TArray_Patch3(var arr: TStringArray; const index: Integer; const items: TStringArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
+function TArray_Patch4(var arr: TCharArray; const index: Integer; const items: TCharArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
+function TArray_Patch5(var arr: TBooleanArray; const index: Integer; const items: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
+function TArray_Patch6(var arr: TPointArray; const index: Integer; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
+function TArray_Patch7(var arr: TBoxArray; const index: Integer; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
+function TArray_Patch8(var arr: TRangeArray; const index: Integer; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
 
 function TArray_Pick1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
 function TArray_Pick2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
