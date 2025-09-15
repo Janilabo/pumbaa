@@ -356,6 +356,10 @@ function TBox_Union1(const bx: TBox; const pt: TPoint): TBox; overload; cdecl; b
 function TBox_Union2(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := bx.Union(b); end;
 function TBox_Disjoint(const bx: TBox; const target: TBox): Boolean; overload; cdecl; begin Result := bx.Disjoint(target); end;
 function TBox_Lacks(const bx: TBox; const pt: TPoint): Boolean; overload; cdecl; begin Result := bx.Lacks(pt); end;
+function TBox_Shuffle(const bx: TBox): TPointArray; cdecl; begin Result := bx.Shuffle; end;
+function TBox_Any(const bx: TBox): TPoint; cdecl; begin Result := bx.Any; end;
+function TBox_Some1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Some; end;
+function TBox_Some2(const bx: TBox; const amount: Integer): TPointArray; overload; cdecl; begin Result := bx.Some(amount); end;
 
 function TRange_Singular(const range: TRange): Boolean; cdecl; begin Result := range.Singular; end;
 function TRange_Atomic(const range: TRange): Boolean; cdecl; begin Result := range.Atomic; end;
@@ -398,8 +402,8 @@ function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result
 function TRange_Materialize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Materialize; end;
 function TRange_Shuffle(const range: TRange): TIntegerArray; cdecl; begin Result := range.Shuffle; end;
 function TRange_Any(const range: TRange): Integer; cdecl; begin Result := range.Any; end;
-function TRange_Something1(const range: TRange): TIntegerArray; cdecl; begin Result := range.Something; end;
-function TRange_Something2(const range: TRange; const amount: Integer): TIntegerArray; cdecl; begin Result := range.Something(amount); end;
+function TRange_Some1(const range: TRange): TIntegerArray; cdecl; begin Result := range.Some; end;
+function TRange_Some2(const range: TRange; const amount: Integer): TIntegerArray; cdecl; begin Result := range.Some(amount); end;
 function TRange_Normalize(const range: TRange): TRange; cdecl; begin Result := range.Normalize; end;
 function TRange_Overlapping(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlapping(b); end;
 function TRange_Overlap(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlap(b); end;

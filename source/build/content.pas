@@ -383,6 +383,10 @@ begin
   AddFunction(@TBox_Union2, 'function TBox_Union(const bx: TBox; const b: TBox): TBox; overload;');
   AddFunction(@TBox_Disjoint, 'function TBox_Disjoint(const bx: TBox; const target: TBox): Boolean; overload;');
   AddFunction(@TBox_Lacks, 'function TBox_Lacks(const bx: TBox; const pt: TPoint): Boolean; overload;');
+  AddFunction(@TBox_Shuffle, 'function TBox_Shuffle(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Any, 'function TBox_Any(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Some1, 'function TBox_Some(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_Some2, 'function TBox_Some(const bx: TBox; const amount: Integer): TPointArray; overload;');
 
   AddFunction(@TRange_Singular, 'function TRange_Singular(const range: TRange): Boolean;');
   AddFunction(@TRange_Atomic, 'function TRange_Atomic(const range: TRange): Boolean;');
@@ -425,8 +429,8 @@ begin
   AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Shuffle, 'function TRange_Shuffle(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Any, 'function TRange_Any(const range: TRange): Integer;');
-  AddFunction(@TRange_Something1, 'function TRange_Something(const range: TRange): TIntegerArray; overload;');
-  AddFunction(@TRange_Something2, 'function TRange_Something(const range: TRange; const amount: Integer): TIntegerArray; overload;');
+  AddFunction(@TRange_Some1, 'function TRange_Some(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Some2, 'function TRange_Some(const range: TRange; const amount: Integer): TIntegerArray; overload;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
