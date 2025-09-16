@@ -788,6 +788,15 @@ function TArray_Backwards6(const arr: TPointArray): TPointArray; overload; cdecl
 function TArray_Backwards7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Backwards; end;
 function TArray_Backwards8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Backwards; end;
 
+function TArray_Blend1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Blend(items, index); end;
+function TArray_Blend2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Blend(items, index); end;
+function TArray_Blend3(const arr: TStringArray; const items: TStringArray; const index: Integer = 2147483647): TStringArray; overload; cdecl; begin Result := arr.Blend(items, index); end;
+function TArray_Blend4(const arr: TCharArray; const items: TCharArray; const index: Integer = 2147483647): TCharArray; overload; cdecl; begin Result := arr.Blend(items, index); end;
+function TArray_Blend5(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 2147483647): TBooleanArray; overload; cdecl; begin Result := arr.Blend(items, index); end;
+function TArray_Blend6(const arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.Blend(items, index); end;
+function TArray_Blend7(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Blend(items, index); end;
+function TArray_Blend8(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Blend(items, index); end;
+
 function TArray_Blit1(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
 function TArray_Blit2(var arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
 function TArray_Blit3(var arr: TStringArray; const items: TStringArray; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Blit(items, index); end;
@@ -1622,6 +1631,23 @@ function TArray_Occurs5(const arr: TBooleanArray; const Item: Boolean; const occ
 function TArray_Occurs6(const arr: TPointArray; const Item: TPoint; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
 function TArray_Occurs7(const arr: TBoxArray; const Item: TBox; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
 function TArray_Occurs8(const arr: TRangeArray; const Item: TRange; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
+
+function TArray_Overlay1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer; const init: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
+function TArray_Overlay2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer; const init: Double): TDoubleArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
+function TArray_Overlay3(const arr: TStringArray; const items: TStringArray; const index: Integer; const init: string): TStringArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
+function TArray_Overlay4(const arr: TCharArray; const items: TCharArray; const index: Integer; const init: Char): TCharArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
+function TArray_Overlay5(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer; const init: Boolean): TBooleanArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
+function TArray_Overlay6(const arr: TPointArray; const items: TPointArray; const index: Integer; const init: TPoint): TPointArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
+function TArray_Overlay7(const arr: TBoxArray; const items: TBoxArray; const index: Integer; const init: TBox): TBoxArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
+function TArray_Overlay8(const arr: TRangeArray; const items: TRangeArray; const index: Integer; const init: TRange): TRangeArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
+function TArray_Overlay9(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Overlay(items, index); end;
+function TArray_Overlay10(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.Overlay(items, index); end;
+function TArray_Overlay11(const arr: TStringArray; const items: TStringArray; const index: Integer = 0): TStringArray; overload; cdecl; begin Result := arr.Overlay(items, index); end;
+function TArray_Overlay12(const arr: TCharArray; const items: TCharArray; const index: Integer = 0): TCharArray; overload; cdecl; begin Result := arr.Overlay(items, index); end;
+function TArray_Overlay13(const arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): TBooleanArray; overload; cdecl; begin Result := arr.Overlay(items, index); end;
+function TArray_Overlay14(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): TPointArray; overload; cdecl; begin Result := arr.Overlay(items, index); end;
+function TArray_Overlay15(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TBoxArray; overload; cdecl; begin Result := arr.Overlay(items, index); end;
+function TArray_Overlay16(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TRangeArray; overload; cdecl; begin Result := arr.Overlay(items, index); end;
 
 function TArray_Oversize1(const arr: TIntegerArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Oversize(limit); end;
 function TArray_Oversize2(const arr: TDoubleArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Oversize(limit); end;
