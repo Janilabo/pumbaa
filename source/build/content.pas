@@ -389,6 +389,7 @@ begin
   AddFunction(@TBox_Union2, 'function TBox_Union(const bx: TBox; const b: TBox): TBox; overload;');
   AddFunction(@TBox_Disjoint, 'function TBox_Disjoint(const bx: TBox; const target: TBox): Boolean; overload;');
   AddFunction(@TBox_Lacks, 'function TBox_Lacks(const bx: TBox; const pt: TPoint): Boolean; overload;');
+  AddFunction(@TBox_Mixed, 'function TBox_Mixed(const bx: TBox; const mixings: Integer = 1): TPointArray;');
   AddFunction(@TBox_Shake, 'function TBox_Shake(const bx: TBox; const shakes: Integer = 1): TPointArray;');
   AddFunction(@TBox_Shuffle, 'function TBox_Shuffle(const bx: TBox; const shuffles: Integer = 1): TPointArray;');
   AddFunction(@TBox_Any, 'function TBox_Any(const bx: TBox): TPoint;');
@@ -434,6 +435,7 @@ begin
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Mixed, 'function TRange_Mixed(const range: TRange; const mixings: Integer = 1): TIntegerArray;');
   AddFunction(@TRange_Shake, 'function TRange_Shake(const range: TRange; const shakes: Integer = 1): TIntegerArray;');
   AddFunction(@TRange_Shuffle, 'function TRange_Shuffle(const range: TRange; const shuffles: Integer = 1): TIntegerArray;');
   AddFunction(@TRange_Any, 'function TRange_Any(const range: TRange): Integer;');
@@ -1649,14 +1651,23 @@ begin
   AddFunction(@TArray_Locations23, 'function TArray_Locations(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TArray_Locations24, 'function TArray_Locations(const arr: TRangeArray): TIntegerArray; overload;');
 
-  AddFunction(@TArray_Mix1, 'function TArray_Mix(var arr: TIntegerArray; const shuffles: Integer = 1): Boolean; overload;');
-  AddFunction(@TArray_Mix2, 'function TArray_Mix(var arr: TDoubleArray; const shuffles: Integer = 1): Boolean; overload;');
-  AddFunction(@TArray_Mix3, 'function TArray_Mix(var arr: TStringArray; const shuffles: Integer = 1): Boolean; overload;');
-  AddFunction(@TArray_Mix4, 'function TArray_Mix(var arr: TCharArray; const shuffles: Integer = 1): Boolean; overload;');
-  AddFunction(@TArray_Mix5, 'function TArray_Mix(var arr: TBooleanArray; const shuffles: Integer = 1): Boolean; overload;');
-  AddFunction(@TArray_Mix6, 'function TArray_Mix(var arr: TPointArray; const shuffles: Integer = 1): Boolean; overload;');
-  AddFunction(@TArray_Mix7, 'function TArray_Mix(var arr: TBoxArray; const shuffles: Integer = 1): Boolean; overload;');
-  AddFunction(@TArray_Mix8, 'function TArray_Mix(var arr: TRangeArray; const shuffles: Integer = 1): Boolean; overload;');
+  AddFunction(@TArray_Mix1, 'function TArray_Mix(var arr: TIntegerArray; const mixings: Integer = 1): Boolean; overload;');
+  AddFunction(@TArray_Mix2, 'function TArray_Mix(var arr: TDoubleArray; const mixings: Integer = 1): Boolean; overload;');
+  AddFunction(@TArray_Mix3, 'function TArray_Mix(var arr: TStringArray; const mixings: Integer = 1): Boolean; overload;');
+  AddFunction(@TArray_Mix4, 'function TArray_Mix(var arr: TCharArray; const mixings: Integer = 1): Boolean; overload;');
+  AddFunction(@TArray_Mix5, 'function TArray_Mix(var arr: TBooleanArray; const mixings: Integer = 1): Boolean; overload;');
+  AddFunction(@TArray_Mix6, 'function TArray_Mix(var arr: TPointArray; const mixings: Integer = 1): Boolean; overload;');
+  AddFunction(@TArray_Mix7, 'function TArray_Mix(var arr: TBoxArray; const mixings: Integer = 1): Boolean; overload;');
+  AddFunction(@TArray_Mix8, 'function TArray_Mix(var arr: TRangeArray; const mixings: Integer = 1): Boolean; overload;');
+  
+  AddFunction(@TArray_Mixed1, 'function TArray_Mixed(const arr: TIntegerArray; const mixings: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TArray_Mixed2, 'function TArray_Mixed(const arr: TDoubleArray; const mixings: Integer = 1): TDoubleArray; overload;');
+  AddFunction(@TArray_Mixed3, 'function TArray_Mixed(const arr: TStringArray; const mixings: Integer = 1): TStringArray; overload;');
+  AddFunction(@TArray_Mixed4, 'function TArray_Mixed(const arr: TCharArray; const mixings: Integer = 1): TCharArray; overload;');
+  AddFunction(@TArray_Mixed5, 'function TArray_Mixed(const arr: TBooleanArray; const mixings: Integer = 1): TBooleanArray; overload;');
+  AddFunction(@TArray_Mixed6, 'function TArray_Mixed(const arr: TPointArray; const mixings: Integer = 1): TPointArray; overload;');
+  AddFunction(@TArray_Mixed7, 'function TArray_Mixed(const arr: TBoxArray; const mixings: Integer = 1): TBoxArray; overload;');
+  AddFunction(@TArray_Mixed8, 'function TArray_Mixed(const arr: TRangeArray; const mixings: Integer = 1): TRangeArray; overload;');
 
   AddFunction(@TArray_MostFrequent1, 'function TArray_MostFrequent(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_MostFrequent2, 'function TArray_MostFrequent(const arr: TDoubleArray): Double; overload;');

@@ -362,6 +362,7 @@ function TBox_Union1(const bx: TBox; const pt: TPoint): TBox; overload; cdecl; b
 function TBox_Union2(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := bx.Union(b); end;
 function TBox_Disjoint(const bx: TBox; const target: TBox): Boolean; overload; cdecl; begin Result := bx.Disjoint(target); end;
 function TBox_Lacks(const bx: TBox; const pt: TPoint): Boolean; overload; cdecl; begin Result := bx.Lacks(pt); end;
+function TBox_Mixed(const bx: TBox; const mixings: Integer = 1): TPointArray; cdecl; begin Result := bx.Mixed(mixings); end;
 function TBox_Shake(const bx: TBox; const shakes: Integer = 1): TPointArray; cdecl; begin Result := bx.Shake(shakes); end;
 function TBox_Shuffle(const bx: TBox; const shuffles: Integer = 1): TPointArray; cdecl; begin Result := bx.Shuffle(shuffles); end;
 function TBox_Any(const bx: TBox): TPoint; cdecl; begin Result := bx.Any; end;
@@ -407,6 +408,7 @@ function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result
 function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
 function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
 function TRange_Materialize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Materialize; end;
+function TRange_Mixed(const range: TRange; const mixings: Integer = 1): TIntegerArray; cdecl; begin Result := range.Mixed(mixings); end;
 function TRange_Shake(const range: TRange; const shakes: Integer = 1): TIntegerArray; cdecl; begin Result := range.Shake(shakes); end;
 function TRange_Shuffle(const range: TRange; const shuffles: Integer = 1): TIntegerArray; cdecl; begin Result := range.Shuffle(shuffles); end;
 function TRange_Any(const range: TRange): Integer; cdecl; begin Result := range.Any; end;
@@ -1623,14 +1625,23 @@ function TArray_Locations22(const arr: TPointArray): TIntegerArray; overload; cd
 function TArray_Locations23(const arr: TBoxArray): TIntegerArray; overload; cdecl; begin Result := arr.Locations; end;
 function TArray_Locations24(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Locations; end;
 
-function TArray_Mix1(var arr: TIntegerArray; const shuffles: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(shuffles); end;
-function TArray_Mix2(var arr: TDoubleArray; const shuffles: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(shuffles); end;
-function TArray_Mix3(var arr: TStringArray; const shuffles: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(shuffles); end;
-function TArray_Mix4(var arr: TCharArray; const shuffles: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(shuffles); end;
-function TArray_Mix5(var arr: TBooleanArray; const shuffles: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(shuffles); end;
-function TArray_Mix6(var arr: TPointArray; const shuffles: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(shuffles); end;
-function TArray_Mix7(var arr: TBoxArray; const shuffles: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(shuffles); end;
-function TArray_Mix8(var arr: TRangeArray; const shuffles: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(shuffles); end;
+function TArray_Mix1(var arr: TIntegerArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
+function TArray_Mix2(var arr: TDoubleArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
+function TArray_Mix3(var arr: TStringArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
+function TArray_Mix4(var arr: TCharArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
+function TArray_Mix5(var arr: TBooleanArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
+function TArray_Mix6(var arr: TPointArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
+function TArray_Mix7(var arr: TBoxArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
+function TArray_Mix8(var arr: TRangeArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
+
+function TArray_Mixed1(const arr: TIntegerArray; const mixings: Integer = 1): TIntegerArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
+function TArray_Mixed2(const arr: TDoubleArray; const mixings: Integer = 1): TDoubleArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
+function TArray_Mixed3(const arr: TStringArray; const mixings: Integer = 1): TStringArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
+function TArray_Mixed4(const arr: TCharArray; const mixings: Integer = 1): TCharArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
+function TArray_Mixed5(const arr: TBooleanArray; const mixings: Integer = 1): TBooleanArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
+function TArray_Mixed6(const arr: TPointArray; const mixings: Integer = 1): TPointArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
+function TArray_Mixed7(const arr: TBoxArray; const mixings: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
+function TArray_Mixed8(const arr: TRangeArray; const mixings: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
 
 function TArray_MostFrequent1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MostFrequent; end;
 function TArray_MostFrequent2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.MostFrequent; end;
