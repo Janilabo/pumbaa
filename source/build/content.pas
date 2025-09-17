@@ -86,6 +86,7 @@ begin
   AddFunction(@Integer_ConstraintMax, 'function Integer_ConstraintMax(var item: Integer; const limit: Integer): Boolean;');
   AddFunction(@Integer_Constraint1, 'function Integer_Constraint(var item: Integer; const minimum, maximum: Integer): Boolean; overload;');
   AddFunction(@Integer_Constraint2, 'function Integer_Constraint(var item: Integer; const range: TRange): Boolean; overload;');
+  AddFunction(@Integer_Parity, 'function Integer_Parity(const x: Integer): Byte;');
   AddFunction(@Integer_Even, 'function Integer_Even(const x: Integer): Boolean;');
   AddFunction(@Integer_IsEven, 'function Integer_IsEven(const x: Integer): Boolean;');
   AddFunction(@Integer_Odd, 'function Integer_Odd(const x: Integer): Boolean;');
@@ -116,6 +117,8 @@ begin
   AddFunction(@Integer_Unbitify1, 'function Integer_Unbitify(const item: Integer): TBooleanArray; overload;');
   AddFunction(@Integer_Unbitify2, 'function Integer_Unbitify(const item: Integer; const bCount: Integer): TBooleanArray; overload;');
 
+  AddFunction(@Int64_Prime, 'function Int64_Prime(const x: Int64): Boolean;');
+  AddFunction(@Int64_Parity, 'function Int64_Parity(const x: Int64): Byte;');
   AddFunction(@Int64_Even, 'function Int64_Even(const x: Int64): Boolean;');
   AddFunction(@Int64_Odd, 'function Int64_Odd(const x: Int64): Boolean;');
   AddFunction(@Int64_Increase, 'function Int64_Increase(var x: Int64; const N: Int64 = 1): Int64;');
@@ -603,11 +606,15 @@ begin
   AddFunction(@TIntegerArray_Charify2, 'function TIntegerArray_Charify(const arr: TIntegerArray; var str: string): TCharArray; overload;');
   AddFunction(@TIntegerArray_Stringify1, 'function TIntegerArray_Stringify(const arr: TIntegerArray): string; overload;');
   AddFunction(@TIntegerArray_Stringify2, 'function TIntegerArray_Stringify(const arr: TIntegerArray; var chars: TCharArray): string; overload;');
+  AddFunction(@TIntegerArray_Special, 'function TIntegerArray_Special(const arr: TIntegerArray): Boolean;');
   
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Reverse, 'function TIA_Reverse(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TIA_Reversed, 'function TIA_Reversed(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TIA_Combine, 'function TIA_Combine(const A, B: TIntegerArray): TIntegerArray; overload;');
+  
+  AddFunction(@ATIA_Merge, 'function ATIA_Merge(const arr: T2DIntegerArray): TIntegerArray; overload;');
 
   AddFunction(@TStringArray_Span, 'function TStringArray_Span(const arr: TStringArray): Integer;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');

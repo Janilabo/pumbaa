@@ -15,6 +15,7 @@ function Integer_ConstraintMin(var item: Integer; const limit: Integer): Boolean
 function Integer_ConstraintMax(var item: Integer; const limit: Integer): Boolean; cdecl; begin Result := item.ConstraintMax(limit); end;
 function Integer_Constraint1(var item: Integer; const minimum, maximum: Integer): Boolean; overload; cdecl; begin Result := item.Constraint(minimum, maximum); end;
 function Integer_Constraint2(var item: Integer; const range: TRange): Boolean; overload; cdecl; begin Result := item.Constraint(range); end;
+function Integer_Parity(const x: Integer): Byte; cdecl; inline; begin Result := x.Parity; end;
 function Integer_Even(const x: Integer): Boolean; cdecl; inline; begin Result := x.Even; end;
 function Integer_IsEven(const x: Integer): Boolean; cdecl; inline; begin Result := x.IsEven; end;
 function Integer_Odd(const x: Integer): Boolean; cdecl; inline; begin Result := x.Odd; end;
@@ -45,6 +46,8 @@ function Integer_BitMax(const item: Integer): Integer; cdecl; begin Result := it
 function Integer_Unbitify1(const item: Integer): TBooleanArray; overload; cdecl; begin Result := item.Unbitify; end;
 function Integer_Unbitify2(const item: Integer; const bCount: Integer): TBooleanArray; cdecl; begin Result := item.Unbitify(bCount); end;
 
+function Int64_Prime(const x: Int64): Boolean; cdecl; inline; begin Result := x.Prime; end;
+function Int64_Parity(const x: Int64): Byte; cdecl; inline; begin Result := x.Parity; end;
 function Int64_Even(const x: Int64): Boolean; cdecl; inline; begin Result := x.Even; end;
 function Int64_Odd(const x: Int64): Boolean; cdecl; inline; begin Result := x.Odd; end;
 function Int64_Increase(var x: Int64; const N: Int64 = 1): Int64; cdecl; begin Result := x.Increase(N); end;
@@ -576,11 +579,15 @@ function TIntegerArray_Charify1(const arr: TIntegerArray): TCharArray; overload;
 function TIntegerArray_Charify2(const arr: TIntegerArray; var str: string): TCharArray; overload; cdecl; begin Result := arr.Charify(str); end;
 function TIntegerArray_Stringify1(const arr: TIntegerArray): string; overload; cdecl; begin Result := arr.Stringify; end;
 function TIntegerArray_Stringify2(const arr: TIntegerArray; var chars: TCharArray): string; overload; cdecl; begin Result := arr.Stringify(chars); end;
+function TIntegerArray_Special(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Special; end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
 function TIA_Reverse(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := TIA.Reverse(arr); end;
 function TIA_Reversed(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := TIA.Reversed(arr); end;
+function TIA_Combine(const A, B: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := TIA.Combine(A, B); end;
+
+function ATIA_Merge(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := ATIA.Merge(arr); end;
 
 function TStringArray_Span(const arr: TStringArray): Integer; cdecl; begin Result := arr.Span; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
