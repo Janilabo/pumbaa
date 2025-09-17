@@ -389,7 +389,8 @@ begin
   AddFunction(@TBox_Union2, 'function TBox_Union(const bx: TBox; const b: TBox): TBox; overload;');
   AddFunction(@TBox_Disjoint, 'function TBox_Disjoint(const bx: TBox; const target: TBox): Boolean; overload;');
   AddFunction(@TBox_Lacks, 'function TBox_Lacks(const bx: TBox; const pt: TPoint): Boolean; overload;');
-  AddFunction(@TBox_Shuffle, 'function TBox_Shuffle(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Shake, 'function TBox_Shake(const bx: TBox; const shakes: Integer = 1): TPointArray;');
+  AddFunction(@TBox_Shuffle, 'function TBox_Shuffle(const bx: TBox; const shuffles: Integer = 1): TPointArray;');
   AddFunction(@TBox_Any, 'function TBox_Any(const bx: TBox): TPoint;');
   AddFunction(@TBox_Some1, 'function TBox_Some(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Some2, 'function TBox_Some(const bx: TBox; const amount: Integer): TPointArray; overload;');
@@ -433,7 +434,8 @@ begin
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
-  AddFunction(@TRange_Shuffle, 'function TRange_Shuffle(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Shake, 'function TRange_Shake(const range: TRange; const shakes: Integer = 1): TIntegerArray;');
+  AddFunction(@TRange_Shuffle, 'function TRange_Shuffle(const range: TRange; const shuffles: Integer = 1): TIntegerArray;');
   AddFunction(@TRange_Any, 'function TRange_Any(const range: TRange): Integer;');
   AddFunction(@TRange_Some1, 'function TRange_Some(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Some2, 'function TRange_Some(const range: TRange; const amount: Integer): TIntegerArray; overload;');
@@ -2025,6 +2027,15 @@ begin
   AddFunction(@TArray_Scan31, 'function TArray_Scan(const arr: TBoxArray; const ID: TIntegerArray; const items: TBoxArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Scan32, 'function TArray_Scan(const arr: TRangeArray; const ID: TIntegerArray; const items: TRangeArray; const limit: Integer = 2147483647): TIntegerArray; overload;');
 
+  AddFunction(@TArray_Shake1, 'function TArray_Shake(const arr: TIntegerArray; const shakes: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TArray_Shake2, 'function TArray_Shake(const arr: TDoubleArray; const shakes: Integer = 1): TDoubleArray; overload;');
+  AddFunction(@TArray_Shake3, 'function TArray_Shake(const arr: TStringArray; const shakes: Integer = 1): TStringArray; overload;');
+  AddFunction(@TArray_Shake4, 'function TArray_Shake(const arr: TCharArray; const shakes: Integer = 1): TCharArray; overload;');
+  AddFunction(@TArray_Shake5, 'function TArray_Shake(const arr: TBooleanArray; const shakes: Integer = 1): TBooleanArray; overload;');
+  AddFunction(@TArray_Shake6, 'function TArray_Shake(const arr: TPointArray; const shakes: Integer = 1): TPointArray; overload;');
+  AddFunction(@TArray_Shake7, 'function TArray_Shake(const arr: TBoxArray; const shakes: Integer = 1): TBoxArray; overload;');
+  AddFunction(@TArray_Shake8, 'function TArray_Shake(const arr: TRangeArray; const shakes: Integer = 1): TRangeArray; overload;');
+
   AddFunction(@TArray_Shift1, 'function TArray_Shift(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Shift2, 'function TArray_Shift(var arr: TDoubleArray): Double; overload;');
   AddFunction(@TArray_Shift3, 'function TArray_Shift(var arr: TStringArray): string; overload;');
@@ -2042,14 +2053,14 @@ begin
   AddFunction(@TArray_Shift15, 'function TArray_Shift(var arr: TBoxArray; const sCount: Integer): TBoxArray; overload;');
   AddFunction(@TArray_Shift16, 'function TArray_Shift(var arr: TRangeArray; const sCount: Integer): TRangeArray; overload;');
   
-  AddFunction(@TArray_Shuffle1, 'function TArray_Shuffle(const arr: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TArray_Shuffle2, 'function TArray_Shuffle(const arr: TDoubleArray): TDoubleArray; overload;');
-  AddFunction(@TArray_Shuffle3, 'function TArray_Shuffle(const arr: TStringArray): TStringArray; overload;');
-  AddFunction(@TArray_Shuffle4, 'function TArray_Shuffle(const arr: TCharArray): TCharArray; overload;');
-  AddFunction(@TArray_Shuffle5, 'function TArray_Shuffle(const arr: TBooleanArray): TBooleanArray; overload;');
-  AddFunction(@TArray_Shuffle6, 'function TArray_Shuffle(const arr: TPointArray): TPointArray; overload;');
-  AddFunction(@TArray_Shuffle7, 'function TArray_Shuffle(const arr: TBoxArray): TBoxArray; overload;');
-  AddFunction(@TArray_Shuffle8, 'function TArray_Shuffle(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TArray_Shuffle1, 'function TArray_Shuffle(const arr: TIntegerArray; const shuffles: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TArray_Shuffle2, 'function TArray_Shuffle(const arr: TDoubleArray; const shuffles: Integer = 1): TDoubleArray; overload;');
+  AddFunction(@TArray_Shuffle3, 'function TArray_Shuffle(const arr: TStringArray; const shuffles: Integer = 1): TStringArray; overload;');
+  AddFunction(@TArray_Shuffle4, 'function TArray_Shuffle(const arr: TCharArray; const shuffles: Integer = 1): TCharArray; overload;');
+  AddFunction(@TArray_Shuffle5, 'function TArray_Shuffle(const arr: TBooleanArray; const shuffles: Integer = 1): TBooleanArray; overload;');
+  AddFunction(@TArray_Shuffle6, 'function TArray_Shuffle(const arr: TPointArray; const shuffles: Integer = 1): TPointArray; overload;');
+  AddFunction(@TArray_Shuffle7, 'function TArray_Shuffle(const arr: TBoxArray; const shuffles: Integer = 1): TBoxArray; overload;');
+  AddFunction(@TArray_Shuffle8, 'function TArray_Shuffle(const arr: TRangeArray; const shuffles: Integer = 1): TRangeArray; overload;');
 
   AddFunction(@TArray_Size1, 'function TArray_Size(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Size2, 'function TArray_Size(const arr: TDoubleArray): Integer; overload;');

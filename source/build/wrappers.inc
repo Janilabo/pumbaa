@@ -362,7 +362,8 @@ function TBox_Union1(const bx: TBox; const pt: TPoint): TBox; overload; cdecl; b
 function TBox_Union2(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := bx.Union(b); end;
 function TBox_Disjoint(const bx: TBox; const target: TBox): Boolean; overload; cdecl; begin Result := bx.Disjoint(target); end;
 function TBox_Lacks(const bx: TBox; const pt: TPoint): Boolean; overload; cdecl; begin Result := bx.Lacks(pt); end;
-function TBox_Shuffle(const bx: TBox): TPointArray; cdecl; begin Result := bx.Shuffle; end;
+function TBox_Shake(const bx: TBox; const shakes: Integer = 1): TPointArray; cdecl; begin Result := bx.Shake(shakes); end;
+function TBox_Shuffle(const bx: TBox; const shuffles: Integer = 1): TPointArray; cdecl; begin Result := bx.Shuffle(shuffles); end;
 function TBox_Any(const bx: TBox): TPoint; cdecl; begin Result := bx.Any; end;
 function TBox_Some1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Some; end;
 function TBox_Some2(const bx: TBox; const amount: Integer): TPointArray; overload; cdecl; begin Result := bx.Some(amount); end;
@@ -406,7 +407,8 @@ function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result
 function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
 function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
 function TRange_Materialize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Materialize; end;
-function TRange_Shuffle(const range: TRange): TIntegerArray; cdecl; begin Result := range.Shuffle; end;
+function TRange_Shake(const range: TRange; const shakes: Integer = 1): TIntegerArray; cdecl; begin Result := range.Shake(shakes); end;
+function TRange_Shuffle(const range: TRange; const shuffles: Integer = 1): TIntegerArray; cdecl; begin Result := range.Shuffle(shuffles); end;
 function TRange_Any(const range: TRange): Integer; cdecl; begin Result := range.Any; end;
 function TRange_Some1(const range: TRange): TIntegerArray; cdecl; begin Result := range.Some; end;
 function TRange_Some2(const range: TRange; const amount: Integer): TIntegerArray; cdecl; begin Result := range.Some(amount); end;
@@ -1999,6 +2001,15 @@ function TArray_Scan30(const arr: TPointArray; const ID: TIntegerArray; const it
 function TArray_Scan31(const arr: TBoxArray; const ID: TIntegerArray; const items: TBoxArray; const limit: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Scan(ID, items, limit); end;
 function TArray_Scan32(const arr: TRangeArray; const ID: TIntegerArray; const items: TRangeArray; const limit: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Scan(ID, items, limit); end;
 
+function TArray_Shake1(const arr: TIntegerArray; const shakes: Integer = 1): TIntegerArray; overload; cdecl; begin Result := arr.Shake(shakes); end;
+function TArray_Shake2(const arr: TDoubleArray; const shakes: Integer = 1): TDoubleArray; overload; cdecl; begin Result := arr.Shake(shakes); end;
+function TArray_Shake3(const arr: TStringArray; const shakes: Integer = 1): TStringArray; overload; cdecl; begin Result := arr.Shake(shakes); end;
+function TArray_Shake4(const arr: TCharArray; const shakes: Integer = 1): TCharArray; overload; cdecl; begin Result := arr.Shake(shakes); end;
+function TArray_Shake5(const arr: TBooleanArray; const shakes: Integer = 1): TBooleanArray; overload; cdecl; begin Result := arr.Shake(shakes); end;
+function TArray_Shake6(const arr: TPointArray; const shakes: Integer = 1): TPointArray; overload; cdecl; begin Result := arr.Shake(shakes); end;
+function TArray_Shake7(const arr: TBoxArray; const shakes: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Shake(shakes); end;
+function TArray_Shake8(const arr: TRangeArray; const shakes: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Shake(shakes); end;
+
 function TArray_Shift1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Shift; end;
 function TArray_Shift2(var arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.Shift; end;
 function TArray_Shift3(var arr: TStringArray): string; overload; cdecl; begin Result := arr.Shift; end;
@@ -2016,14 +2027,14 @@ function TArray_Shift14(var arr: TPointArray; const sCount: Integer): TPointArra
 function TArray_Shift15(var arr: TBoxArray; const sCount: Integer): TBoxArray; overload; cdecl; begin Result := arr.Shift(sCount); end;
 function TArray_Shift16(var arr: TRangeArray; const sCount: Integer): TRangeArray; overload; cdecl; begin Result := arr.Shift(sCount); end;
 
-function TArray_Shuffle1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Shuffle; end;
-function TArray_Shuffle2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Shuffle; end;
-function TArray_Shuffle3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Shuffle; end;
-function TArray_Shuffle4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Shuffle; end;
-function TArray_Shuffle5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Shuffle; end;
-function TArray_Shuffle6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Shuffle; end;
-function TArray_Shuffle7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Shuffle; end;
-function TArray_Shuffle8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Shuffle; end;
+function TArray_Shuffle1(const arr: TIntegerArray; const shuffles: Integer = 1): TIntegerArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
+function TArray_Shuffle2(const arr: TDoubleArray; const shuffles: Integer = 1): TDoubleArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
+function TArray_Shuffle3(const arr: TStringArray; const shuffles: Integer = 1): TStringArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
+function TArray_Shuffle4(const arr: TCharArray; const shuffles: Integer = 1): TCharArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
+function TArray_Shuffle5(const arr: TBooleanArray; const shuffles: Integer = 1): TBooleanArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
+function TArray_Shuffle6(const arr: TPointArray; const shuffles: Integer = 1): TPointArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
+function TArray_Shuffle7(const arr: TBoxArray; const shuffles: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
+function TArray_Shuffle8(const arr: TRangeArray; const shuffles: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
 
 function TArray_Size1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Size; end;
 function TArray_Size2(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Size; end;
