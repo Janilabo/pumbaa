@@ -1893,6 +1893,15 @@ function TArray_Push14(const arr: TPointArray; const items: TPointArray): TPoint
 function TArray_Push15(const arr: TBoxArray; const items: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Push(items); end;
 function TArray_Push16(const arr: TRangeArray; const items: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Push(items); end;
 
+function TArray_Randomized1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Randomized; end;
+function TArray_Randomized2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Randomized; end;
+function TArray_Randomized3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Randomized; end;
+function TArray_Randomized4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Randomized; end;
+function TArray_Randomized5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Randomized; end;
+function TArray_Randomized6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Randomized; end;
+function TArray_Randomized7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Randomized; end;
+function TArray_Randomized8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Randomized; end;
+
 function TArray_Reject1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Reject(items, index); end;
 function TArray_Reject2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Reject(items, index); end;
 function TArray_Reject3(const arr: TStringArray; const items: TStringArray; const index: Integer = 2147483647): TStringArray; overload; cdecl; begin Result := arr.Reject(items, index); end;

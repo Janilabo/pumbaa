@@ -1919,6 +1919,15 @@ begin
   AddFunction(@TArray_Push15, 'function TArray_Push(const arr: TBoxArray; const items: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Push16, 'function TArray_Push(const arr: TRangeArray; const items: TRangeArray): TRangeArray; overload;');
 
+  AddFunction(@TArray_Randomized1, 'function TArray_Randomized(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Randomized2, 'function TArray_Randomized(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Randomized3, 'function TArray_Randomized(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Randomized4, 'function TArray_Randomized(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Randomized5, 'function TArray_Randomized(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Randomized6, 'function TArray_Randomized(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Randomized7, 'function TArray_Randomized(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Randomized8, 'function TArray_Randomized(const arr: TRangeArray): TRangeArray; overload;');
+
   AddFunction(@TArray_Reject1, 'function TArray_Reject(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Reject2, 'function TArray_Reject(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): TDoubleArray; overload;');
   AddFunction(@TArray_Reject3, 'function TArray_Reject(const arr: TStringArray; const items: TStringArray; const index: Integer = 2147483647): TStringArray; overload;');
