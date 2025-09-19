@@ -554,6 +554,7 @@ function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Integer; co
 function TIntegerArray_BinaryPosR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosR(x, aAscending); end;
 function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearch(x, aAscending); end;
 function TIntegerArray_BinaryContains(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryContains(x, aAscending); end;
+function TIntegerArray_BinaryCount(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryCount(x, aAscending); end;
 function TIntegerArray_BinaryLocate(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryLocate(x, aAscending); end;
 function TIntegerArray_BinaryLocation(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryLocation(x, aAscending); end;
 function TIntegerArray_BinaryAppend(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryAppend(x, aAscending); end;
@@ -699,6 +700,8 @@ function TPointArray_Segment(const arr: TPointArray; const radius: Double): T2DP
 function TPointArray_Fragment(const arr: TPointArray; const radius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Fragment(radius); end;
 function TPointArray_Clusterize1(const arr: TPointArray; const radius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Clusterize(radius); end;
 function TPointArray_Clusterize2(const arr: TPointArray; const xRadius, yRadius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Clusterize(xRadius, yRadius); end;
+function TPointArray_XClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.XClassify(pSorted); end;
+function TPointArray_YClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.YClassify(pSorted); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
@@ -893,6 +896,56 @@ function TArray_BuiltWithout5(const arr, forbidden: TBooleanArray): Boolean; ove
 function TArray_BuiltWithout6(const arr, forbidden: TPointArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
 function TArray_BuiltWithout7(const arr, forbidden: TBoxArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
 function TArray_BuiltWithout8(const arr, forbidden: TRangeArray): Boolean; overload; cdecl; begin Result := arr.BuiltWithout(forbidden); end;
+
+function TArray_Classes1(const arr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Classes; end;
+function TArray_Classes2(const arr: TDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Classes; end;
+function TArray_Classes3(const arr: TStringArray): T2DStringArray; overload; cdecl; begin Result := arr.Classes; end;
+function TArray_Classes4(const arr: TCharArray): T2DCharArray; overload; cdecl; begin Result := arr.Classes; end;
+function TArray_Classes5(const arr: TBooleanArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Classes; end;
+function TArray_Classes6(const arr: TPointArray): T2DPointArray; overload; cdecl; begin Result := arr.Classes; end;
+function TArray_Classes7(const arr: TBoxArray): T2DBoxArray; overload; cdecl; begin Result := arr.Classes; end;
+function TArray_Classes8(const arr: TRangeArray): T2DRangeArray; overload; cdecl; begin Result := arr.Classes; end;
+function TArray_Classes9(const arr: TIntegerArray; const weight: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes10(const arr: TDoubleArray; const weight: TIntegerArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes11(const arr: TStringArray; const weight: TIntegerArray): T2DStringArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes12(const arr: TCharArray; const weight: TIntegerArray): T2DCharArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes13(const arr: TBooleanArray; const weight: TIntegerArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes14(const arr: TPointArray; const weight: TIntegerArray): T2DPointArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes15(const arr: TBoxArray; const weight: TIntegerArray): T2DBoxArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes16(const arr: TRangeArray; const weight: TIntegerArray): T2DRangeArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes17(const arr: TIntegerArray; const weight: TDoubleArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes18(const arr: TDoubleArray; const weight: TDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes19(const arr: TStringArray; const weight: TDoubleArray): T2DStringArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes20(const arr: TCharArray; const weight: TDoubleArray): T2DCharArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes21(const arr: TBooleanArray; const weight: TDoubleArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes22(const arr: TPointArray; const weight: TDoubleArray): T2DPointArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes23(const arr: TBoxArray; const weight: TDoubleArray): T2DBoxArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+function TArray_Classes24(const arr: TRangeArray; const weight: TDoubleArray): T2DRangeArray; overload; cdecl; begin Result := arr.Classes(weight); end;
+
+function TArray_Classify1(const arr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Classify; end;
+function TArray_Classify2(const arr: TDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Classify; end;
+function TArray_Classify3(const arr: TStringArray): T2DStringArray; overload; cdecl; begin Result := arr.Classify; end;
+function TArray_Classify4(const arr: TCharArray): T2DCharArray; overload; cdecl; begin Result := arr.Classify; end;
+function TArray_Classify5(const arr: TBooleanArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Classify; end;
+function TArray_Classify6(const arr: TPointArray): T2DPointArray; overload; cdecl; begin Result := arr.Classify; end;
+function TArray_Classify7(const arr: TBoxArray): T2DBoxArray; overload; cdecl; begin Result := arr.Classify; end;
+function TArray_Classify8(const arr: TRangeArray): T2DRangeArray; overload; cdecl; begin Result := arr.Classify; end;
+function TArray_Classify9(const arr: TIntegerArray; const weight: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify10(const arr: TDoubleArray; const weight: TIntegerArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify11(const arr: TStringArray; const weight: TIntegerArray): T2DStringArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify12(const arr: TCharArray; const weight: TIntegerArray): T2DCharArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify13(const arr: TBooleanArray; const weight: TIntegerArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify14(const arr: TPointArray; const weight: TIntegerArray): T2DPointArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify15(const arr: TBoxArray; const weight: TIntegerArray): T2DBoxArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify16(const arr: TRangeArray; const weight: TIntegerArray): T2DRangeArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify17(const arr: TIntegerArray; const weight: TDoubleArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify18(const arr: TDoubleArray; const weight: TDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify19(const arr: TStringArray; const weight: TDoubleArray): T2DStringArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify20(const arr: TCharArray; const weight: TDoubleArray): T2DCharArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify21(const arr: TBooleanArray; const weight: TDoubleArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify22(const arr: TPointArray; const weight: TDoubleArray): T2DPointArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify23(const arr: TBoxArray; const weight: TDoubleArray): T2DBoxArray; overload; cdecl; begin Result := arr.Classify(weight); end;
+function TArray_Classify24(const arr: TRangeArray; const weight: TDoubleArray): T2DRangeArray; overload; cdecl; begin Result := arr.Classify(weight); end;
 
 function TArray_Clear1(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Clear; end;
 function TArray_Clear2(var arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Clear; end;
