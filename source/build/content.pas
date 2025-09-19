@@ -1106,6 +1106,15 @@ begin
   AddFunction(@TArray_Duplicate7, 'function TArray_Duplicate(const arr: TBoxArray; const xTimes: Integer = 1): TBoxArray; overload;');
   AddFunction(@TArray_Duplicate8, 'function TArray_Duplicate(const arr: TRangeArray; const xTimes: Integer = 1): TRangeArray; overload;');
 
+  AddFunction(@TArray_Elements1, 'function TArray_Elements(const arr: TIntegerArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Elements2, 'function TArray_Elements(const arr: TDoubleArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TArray_Elements3, 'function TArray_Elements(const arr: TStringArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TStringArray; overload;');
+  AddFunction(@TArray_Elements4, 'function TArray_Elements(const arr: TCharArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TCharArray; overload;');
+  AddFunction(@TArray_Elements5, 'function TArray_Elements(const arr: TBooleanArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TBooleanArray; overload;');
+  AddFunction(@TArray_Elements6, 'function TArray_Elements(const arr: TPointArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TPointArray; overload;');
+  AddFunction(@TArray_Elements7, 'function TArray_Elements(const arr: TBoxArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TBoxArray; overload;');
+  AddFunction(@TArray_Elements8, 'function TArray_Elements(const arr: TRangeArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TRangeArray; overload;');
+
   AddFunction(@TArray_Emplace1, 'function TArray_Emplace(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload;');
   AddFunction(@TArray_Emplace2, 'function TArray_Emplace(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload;');
   AddFunction(@TArray_Emplace3, 'function TArray_Emplace(const arr: TStringArray; const item: string; const index: Integer = 0): Integer; overload;');
@@ -1633,6 +1642,15 @@ begin
   AddFunction(@TArray_Last23, 'function TArray_Last(const arr: TBoxArray; const items: TBoxArray): Integer; overload;');
   AddFunction(@TArray_Last24, 'function TArray_Last(const arr: TRangeArray; const items: TRangeArray): Integer; overload;');
 
+  AddFunction(@TArray_LeastCommon1, 'function TArray_LeastCommon(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LeastCommon2, 'function TArray_LeastCommon(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_LeastCommon3, 'function TArray_LeastCommon(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_LeastCommon4, 'function TArray_LeastCommon(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_LeastCommon5, 'function TArray_LeastCommon(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_LeastCommon6, 'function TArray_LeastCommon(const arr: TPointArray): TPoint; overload;');
+  AddFunction(@TArray_LeastCommon7, 'function TArray_LeastCommon(const arr: TBoxArray): TBox; overload;');
+  AddFunction(@TArray_LeastCommon8, 'function TArray_LeastCommon(const arr: TRangeArray): TRange; overload;');
+
   AddFunction(@TArray_LeastFrequent1, 'function TArray_LeastFrequent(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_LeastFrequent2, 'function TArray_LeastFrequent(const arr: TDoubleArray): Double; overload;');
   AddFunction(@TArray_LeastFrequent3, 'function TArray_LeastFrequent(const arr: TStringArray): string; overload;');
@@ -1727,6 +1745,15 @@ begin
   AddFunction(@TArray_Mixed6, 'function TArray_Mixed(const arr: TPointArray; const mixings: Integer = 1): TPointArray; overload;');
   AddFunction(@TArray_Mixed7, 'function TArray_Mixed(const arr: TBoxArray; const mixings: Integer = 1): TBoxArray; overload;');
   AddFunction(@TArray_Mixed8, 'function TArray_Mixed(const arr: TRangeArray; const mixings: Integer = 1): TRangeArray; overload;');
+
+  AddFunction(@TArray_MostCommon1, 'function TArray_MostCommon(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_MostCommon2, 'function TArray_MostCommon(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_MostCommon3, 'function TArray_MostCommon(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_MostCommon4, 'function TArray_MostCommon(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_MostCommon5, 'function TArray_MostCommon(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_MostCommon6, 'function TArray_MostCommon(const arr: TPointArray): TPoint; overload;');
+  AddFunction(@TArray_MostCommon7, 'function TArray_MostCommon(const arr: TBoxArray): TBox; overload;');
+  AddFunction(@TArray_MostCommon8, 'function TArray_MostCommon(const arr: TRangeArray): TRange; overload;');
 
   AddFunction(@TArray_MostFrequent1, 'function TArray_MostFrequent(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_MostFrequent2, 'function TArray_MostFrequent(const arr: TDoubleArray): Double; overload;');
@@ -2656,6 +2683,23 @@ begin
   AddFunction(@T2DArray_Census6, 'function T2DArray_Census(const arr: T2DPointArray): Int64; overload;');
   AddFunction(@T2DArray_Census7, 'function T2DArray_Census(const arr: T2DBoxArray): Int64; overload;');
   AddFunction(@T2DArray_Census8, 'function T2DArray_Census(const arr: T2DRangeArray): Int64; overload;');
+  
+  AddFunction(@T2DArray_Inventory1, 'function T2DArray_Inventory(const arr: T2DIntegerArray; var items: TIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory2, 'function T2DArray_Inventory(const arr: T2DDoubleArray; var items: TDoubleArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory3, 'function T2DArray_Inventory(const arr: T2DStringArray; var items: TStringArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory4, 'function T2DArray_Inventory(const arr: T2DCharArray; var items: TCharArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory5, 'function T2DArray_Inventory(const arr: T2DBooleanArray; var items: TBooleanArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory6, 'function T2DArray_Inventory(const arr: T2DPointArray; var items: TPointArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory7, 'function T2DArray_Inventory(const arr: T2DBoxArray; var items: TBoxArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory8, 'function T2DArray_Inventory(const arr: T2DRangeArray; var items: TRangeArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory9, 'function T2DArray_Inventory(const arr: T2DIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory10, 'function T2DArray_Inventory(const arr: T2DDoubleArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory11, 'function T2DArray_Inventory(const arr: T2DStringArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory12, 'function T2DArray_Inventory(const arr: T2DCharArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory13, 'function T2DArray_Inventory(const arr: T2DBooleanArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory14, 'function T2DArray_Inventory(const arr: T2DPointArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory15, 'function T2DArray_Inventory(const arr: T2DBoxArray): Int64; overload;');
+  AddFunction(@T2DArray_Inventory16, 'function T2DArray_Inventory(const arr: T2DRangeArray): Int64; overload;');
 
   AddFunction(@T2DArray_TArray1, 'function T2DArray_TArray(const arr: T2DIntegerArray): TIntegerArray; overload;');
   AddFunction(@T2DArray_TArray2, 'function T2DArray_TArray(const arr: T2DDoubleArray): TDoubleArray; overload;');

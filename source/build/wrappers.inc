@@ -1080,6 +1080,15 @@ function TArray_Duplicate6(const arr: TPointArray; const xTimes: Integer = 1): T
 function TArray_Duplicate7(const arr: TBoxArray; const xTimes: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
 function TArray_Duplicate8(const arr: TRangeArray; const xTimes: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Duplicate(xTimes); end;
 
+function TArray_Elements1(const arr: TIntegerArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Elements(returnIDs, returnSort); end;
+function TArray_Elements2(const arr: TDoubleArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Elements(returnIDs, returnSort); end;
+function TArray_Elements3(const arr: TStringArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Elements(returnIDs, returnSort); end;
+function TArray_Elements4(const arr: TCharArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.Elements(returnIDs, returnSort); end;
+function TArray_Elements5(const arr: TBooleanArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TBooleanArray; overload; cdecl; begin Result := arr.Elements(returnIDs, returnSort); end;
+function TArray_Elements6(const arr: TPointArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Elements(returnIDs, returnSort); end;
+function TArray_Elements7(const arr: TBoxArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TBoxArray; overload; cdecl; begin Result := arr.Elements(returnIDs, returnSort); end;
+function TArray_Elements8(const arr: TRangeArray; const returnIDs: TIntegerArray; const returnSort: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Elements(returnIDs, returnSort); end;
+
 function TArray_Emplace1(const arr: TIntegerArray; const item: Integer; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Emplace(item, index); end;
 function TArray_Emplace2(const arr: TDoubleArray; const item: Double; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Emplace(item, index); end;
 function TArray_Emplace3(const arr: TStringArray; const item: string; const index: Integer = 0): Integer; overload; cdecl; begin Result := arr.Emplace(item, index); end;
@@ -1607,6 +1616,15 @@ function TArray_Last22(const arr: TPointArray; const items: TPointArray): Intege
 function TArray_Last23(const arr: TBoxArray; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.Last(items); end;
 function TArray_Last24(const arr: TRangeArray; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.Last(items); end;
 
+function TArray_LeastCommon1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LeastCommon; end;
+function TArray_LeastCommon2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.LeastCommon; end;
+function TArray_LeastCommon3(const arr: TStringArray): string; overload; cdecl; begin Result := arr.LeastCommon; end;
+function TArray_LeastCommon4(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.LeastCommon; end;
+function TArray_LeastCommon5(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.LeastCommon; end;
+function TArray_LeastCommon6(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.LeastCommon; end;
+function TArray_LeastCommon7(const arr: TBoxArray): TBox; overload; cdecl; begin Result := arr.LeastCommon; end;
+function TArray_LeastCommon8(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.LeastCommon; end;
+
 function TArray_LeastFrequent1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LeastFrequent; end;
 function TArray_LeastFrequent2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.LeastFrequent; end;
 function TArray_LeastFrequent3(const arr: TStringArray): string; overload; cdecl; begin Result := arr.LeastFrequent; end;
@@ -1701,6 +1719,15 @@ function TArray_Mixed5(const arr: TBooleanArray; const mixings: Integer = 1): TB
 function TArray_Mixed6(const arr: TPointArray; const mixings: Integer = 1): TPointArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
 function TArray_Mixed7(const arr: TBoxArray; const mixings: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
 function TArray_Mixed8(const arr: TRangeArray; const mixings: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Mixed(mixings); end;
+
+function TArray_MostCommon1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MostCommon; end;
+function TArray_MostCommon2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.MostCommon; end;
+function TArray_MostCommon3(const arr: TStringArray): string; overload; cdecl; begin Result := arr.MostCommon; end;
+function TArray_MostCommon4(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.MostCommon; end;
+function TArray_MostCommon5(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.MostCommon; end;
+function TArray_MostCommon6(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.MostCommon; end;
+function TArray_MostCommon7(const arr: TBoxArray): TBox; overload; cdecl; begin Result := arr.MostCommon; end;
+function TArray_MostCommon8(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.MostCommon; end;
 
 function TArray_MostFrequent1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MostFrequent; end;
 function TArray_MostFrequent2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.MostFrequent; end;
@@ -2630,6 +2657,23 @@ function T2DArray_Census5(const arr: T2DBooleanArray): Int64; overload; cdecl; b
 function T2DArray_Census6(const arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Census; end;
 function T2DArray_Census7(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Census; end;
 function T2DArray_Census8(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Census; end;
+
+function T2DArray_Inventory1(const arr: T2DIntegerArray; var items: TIntegerArray): Int64; overload; cdecl; begin Result := arr.Inventory(items); end;
+function T2DArray_Inventory2(const arr: T2DDoubleArray; var items: TDoubleArray): Int64; overload; cdecl; begin Result := arr.Inventory(items); end;
+function T2DArray_Inventory3(const arr: T2DStringArray; var items: TStringArray): Int64; overload; cdecl; begin Result := arr.Inventory(items); end;
+function T2DArray_Inventory4(const arr: T2DCharArray; var items: TCharArray): Int64; overload; cdecl; begin Result := arr.Inventory(items); end;
+function T2DArray_Inventory5(const arr: T2DBooleanArray; var items: TBooleanArray): Int64; overload; cdecl; begin Result := arr.Inventory(items); end;
+function T2DArray_Inventory6(const arr: T2DPointArray; var items: TPointArray): Int64; overload; cdecl; begin Result := arr.Inventory(items); end;
+function T2DArray_Inventory7(const arr: T2DBoxArray; var items: TBoxArray): Int64; overload; cdecl; begin Result := arr.Inventory(items); end;
+function T2DArray_Inventory8(const arr: T2DRangeArray; var items: TRangeArray): Int64; overload; cdecl; begin Result := arr.Inventory(items); end;
+function T2DArray_Inventory9(const arr: T2DIntegerArray): Int64; overload; cdecl; begin Result := arr.Inventory; end;
+function T2DArray_Inventory10(const arr: T2DDoubleArray): Int64; overload; cdecl; begin Result := arr.Inventory; end;
+function T2DArray_Inventory11(const arr: T2DStringArray): Int64; overload; cdecl; begin Result := arr.Inventory; end;
+function T2DArray_Inventory12(const arr: T2DCharArray): Int64; overload; cdecl; begin Result := arr.Inventory; end;
+function T2DArray_Inventory13(const arr: T2DBooleanArray): Int64; overload; cdecl; begin Result := arr.Inventory; end;
+function T2DArray_Inventory14(const arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Inventory; end;
+function T2DArray_Inventory15(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Inventory; end;
+function T2DArray_Inventory16(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Inventory; end;
 
 function T2DArray_TArray1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.TArray; end;
 function T2DArray_TArray2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.TArray; end;

@@ -773,6 +773,42 @@ begin
 end;
 
 {==============================================================================]
+ <arr.Elements(returnIDs: Integer): TArray>
+ @action: Returns copy of an array arr.
+ @note: None.
+[==============================================================================}
+function HArr.Elements(const returnIDs: TIntegerArray; const returnSort: Boolean = True): TArr; overload; cdecl;
+var
+  h, i, j, l, c, s: Integer;
+  r: TIntegerArray;
+begin
+  if (Self.Empty or returnIDs.Empty) then
+    Exit([]);
+  if returnSort then
+    r := returnIDs.QuickSorted
+  else
+    r := returnIDs.Copy;
+  h := High(r);
+  s := High(Self);
+  SetLength(Result, Length(Self));
+  l := 0;
+  c := 0;
+  for i := 0 to s do
+  case ((c > h) or (r[c] > s)) of
+    False:
+    for j := c to h do
+      if not (r[j] = i) then
+      begin
+        c := (j + IfThen((r[j] < 0), 1, 0));
+        Break;
+      end else
+        Result[l.Increase] := Self[i];
+    True: Break;
+  end;
+  SetLength(Result, l);
+end;
+
+{==============================================================================]
  <arr.Emplace(item: VarType; index: Integer): Integer>
  @action: Inserts item to index in arr. Returns the index it was inserted to.
  @note: Alternative for Insert().
@@ -1901,6 +1937,38 @@ begin
 end;
 
 {==============================================================================]
+ <arr.LeastCommon>
+ @action: Returns the least common array item.
+ @note: None
+[==============================================================================}
+function HArr.LeastCommon: TVar; overload; cdecl;
+var
+  d: specialize TDictionary<TVar, Integer>;
+  c, m, i: Integer;
+begin
+  if Self.Empty then
+    Exit(Default(TVar));
+  Result := Self[0];
+  m := MaxInt;
+  d := specialize TDictionary<TVar, Integer>.Create;
+  try
+    for i := 0 to High(Self) do
+      if d.TryGetValue(Self[i], c) then
+        d[Self[i]] := (c + 1)
+      else
+        d.Add(Self[i], 1);
+    for i := 0 to High(Self) do
+      if (d[Self[i]] < m) then
+      begin
+        m := d[Self[i]];
+        Result := Self[i];
+      end;
+  finally
+    d.Free;
+  end;
+end;
+
+{==============================================================================]
  <arr.LeastFrequent: VarType> 
  @action: Returns the least frequent arr item.
  @note: None.
@@ -2110,6 +2178,38 @@ begin
   for m := 1 to mixings do
     for i := 0 to (l - 1) do
       Swap(Result[Random(l)], Result[Random(l)]);
+end;
+
+{==============================================================================]
+ <arr.MostCommon>
+ @action: Returns the most common array item.
+ @note: None
+[==============================================================================}
+function HArr.MostCommon: TVar; overload; cdecl;
+var
+  d: specialize TDictionary<TVar, Integer>;
+  c, m, i: Integer;
+begin
+  if Self.Empty then
+    Exit(Default(TVar));
+  Result := Self[0];
+  m := 0;
+  d := specialize TDictionary<TVar, Integer>.Create;
+  try
+    for i := 0 to High(Self) do
+      if d.TryGetValue(Self[i], c) then
+        d[Self[i]] := (c + 1)
+      else
+        d.Add(Self[i], 1);
+    for i := 0 to High(Self) do
+      if (d[Self[i]] > m) then
+      begin
+        m := d[Self[i]];
+        Result := Self[i];
+      end;
+  finally
+    d.Free;
+  end;
 end;
 
 {==============================================================================]
@@ -3836,6 +3936,41 @@ begin
     e := (s + Length(Self[i]));
     Result := (Result + (e - s));
   end;
+end;
+
+{==============================================================================]
+ <arr.Inventory(items: TArray): Int64>
+ @action: Returns actual Length for 2D array.
+ @note: For example [[1,2],[],[3,4,5],[],[],[6],[7,8],[],[9]] => 9.
+        Stores 2D array items as 1D to items.
+[==============================================================================}
+function H2DArr.Inventory(var items: TArr): Int64; overload; cdecl;
+var
+  i, j: Integer;
+begin
+  Result := 0;
+  for i := 0 to High(Self) do
+    Inc(Result, Length(Self[i]));
+  SetLength(items, Result);
+  if (Result > 0) then
+  for i := High(Self) downto 0 do
+    for j := High(Self[i]) downto 0 do
+      items[Result.Decrement] := Self[i][j];
+  Result := Length(items);
+end;
+
+{==============================================================================]
+ <arr.Inventory: Int64>
+ @action: Returns actual Length for 2D array.
+ @note: For example [[1,2],[],[3,4,5],[],[],[6],[7,8],[],[9]] => 9.
+[==============================================================================}
+function H2DArr.Inventory: Int64; overload; cdecl;
+var
+  i: Integer;
+begin
+  Result := 0;
+  for i := 0 to High(Self) do
+    Inc(Result, Length(Self[i]));
 end;
 
 {==============================================================================]
