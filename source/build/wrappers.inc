@@ -1236,6 +1236,24 @@ function TArray_ExtractEvery6(const arr: TPointArray; const X: Integer = 1; cons
 function TArray_ExtractEvery7(const arr: TBoxArray; const X: Integer = 1; const index: Integer = 0): TBoxArray; overload; cdecl; begin Result := arr.ExtractEvery(X, index); end;
 function TArray_ExtractEvery8(const arr: TRangeArray; const X: Integer = 1; const index: Integer = 0): TRangeArray; overload; cdecl; begin Result := arr.ExtractEvery(X, index); end;
 
+function TArray_ExtractIDs1(const arr: TIntegerArray; const allowed: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.ExtractIDs(allowed); end;
+function TArray_ExtractIDs2(const arr: TDoubleArray; const allowed: TIntegerArray): TDoubleArray; overload; cdecl; begin Result := arr.ExtractIDs(allowed); end;
+function TArray_ExtractIDs3(const arr: TStringArray; const allowed: TIntegerArray): TStringArray; overload; cdecl; begin Result := arr.ExtractIDs(allowed); end;
+function TArray_ExtractIDs4(const arr: TCharArray; const allowed: TIntegerArray): TCharArray; overload; cdecl; begin Result := arr.ExtractIDs(allowed); end;
+function TArray_ExtractIDs5(const arr: TBooleanArray; const allowed: TIntegerArray): TBooleanArray; overload; cdecl; begin Result := arr.ExtractIDs(allowed); end;
+function TArray_ExtractIDs6(const arr: TPointArray; const allowed: TIntegerArray): TPointArray; overload; cdecl; begin Result := arr.ExtractIDs(allowed); end;
+function TArray_ExtractIDs7(const arr: TBoxArray; const allowed: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.ExtractIDs(allowed); end;
+function TArray_ExtractIDs8(const arr: TRangeArray; const allowed: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.ExtractIDs(allowed); end;
+
+function TArray_ExtractIndexes1(const arr: TIntegerArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TIntegerArray; overload; cdecl; begin Result := arr.ExtractIndexes(allowed, aSorted); end;
+function TArray_ExtractIndexes2(const arr: TDoubleArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TDoubleArray; overload; cdecl; begin Result := arr.ExtractIndexes(allowed, aSorted); end;
+function TArray_ExtractIndexes3(const arr: TStringArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TStringArray; overload; cdecl; begin Result := arr.ExtractIndexes(allowed, aSorted); end;
+function TArray_ExtractIndexes4(const arr: TCharArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TCharArray; overload; cdecl; begin Result := arr.ExtractIndexes(allowed, aSorted); end;
+function TArray_ExtractIndexes5(const arr: TBooleanArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TBooleanArray; overload; cdecl; begin Result := arr.ExtractIndexes(allowed, aSorted); end;
+function TArray_ExtractIndexes6(const arr: TPointArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TPointArray; overload; cdecl; begin Result := arr.ExtractIndexes(allowed, aSorted); end;
+function TArray_ExtractIndexes7(const arr: TBoxArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TBoxArray; overload; cdecl; begin Result := arr.ExtractIndexes(allowed, aSorted); end;
+function TArray_ExtractIndexes8(const arr: TRangeArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TRangeArray; overload; cdecl; begin Result := arr.ExtractIndexes(allowed, aSorted); end;
+
 function TArray_Feed1(const arr: TIntegerArray; const item: Integer; const allowDuplicates: Boolean = False): Integer; overload; cdecl; begin Result := arr.Feed(item, allowDuplicates); end;
 function TArray_Feed2(const arr: TDoubleArray; const item: Double; const allowDuplicates: Boolean = False): Integer; overload; cdecl; begin Result := arr.Feed(item, allowDuplicates); end;
 function TArray_Feed3(const arr: TStringArray; const item: string; const allowDuplicates: Boolean = False): Integer; overload; cdecl; begin Result := arr.Feed(item, allowDuplicates); end;
@@ -1287,6 +1305,24 @@ function TArray_FilterEvery5(const arr: TBooleanArray; const X: Integer = 1; con
 function TArray_FilterEvery6(const arr: TPointArray; const X: Integer = 1; const index: Integer = 0): TPointArray; overload; cdecl; begin Result := arr.FilterEvery(X, index); end;
 function TArray_FilterEvery7(const arr: TBoxArray; const X: Integer = 1; const index: Integer = 0): TBoxArray; overload; cdecl; begin Result := arr.FilterEvery(X, index); end;
 function TArray_FilterEvery8(const arr: TRangeArray; const X: Integer = 1; const index: Integer = 0): TRangeArray; overload; cdecl; begin Result := arr.FilterEvery(X, index); end;
+
+function TArray_FilterIDs1(const arr: TIntegerArray; const forbidden: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterIDs(forbidden); end;
+function TArray_FilterIDs2(const arr: TDoubleArray; const forbidden: TIntegerArray): TDoubleArray; overload; cdecl; begin Result := arr.FilterIDs(forbidden); end;
+function TArray_FilterIDs3(const arr: TStringArray; const forbidden: TIntegerArray): TStringArray; overload; cdecl; begin Result := arr.FilterIDs(forbidden); end;
+function TArray_FilterIDs4(const arr: TCharArray; const forbidden: TIntegerArray): TCharArray; overload; cdecl; begin Result := arr.FilterIDs(forbidden); end;
+function TArray_FilterIDs5(const arr: TBooleanArray; const forbidden: TIntegerArray): TBooleanArray; overload; cdecl; begin Result := arr.FilterIDs(forbidden); end;
+function TArray_FilterIDs6(const arr: TPointArray; const forbidden: TIntegerArray): TPointArray; overload; cdecl; begin Result := arr.FilterIDs(forbidden); end;
+function TArray_FilterIDs7(const arr: TBoxArray; const forbidden: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.FilterIDs(forbidden); end;
+function TArray_FilterIDs8(const arr: TRangeArray; const forbidden: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.FilterIDs(forbidden); end;
+
+function TArray_FilterIndexes1(const arr: TIntegerArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TIntegerArray; overload; cdecl; begin Result := arr.FilterIndexes(forbidden, fSorted); end;
+function TArray_FilterIndexes2(const arr: TDoubleArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TDoubleArray; overload; cdecl; begin Result := arr.FilterIndexes(forbidden, fSorted); end;
+function TArray_FilterIndexes3(const arr: TStringArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TStringArray; overload; cdecl; begin Result := arr.FilterIndexes(forbidden, fSorted); end;
+function TArray_FilterIndexes4(const arr: TCharArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TCharArray; overload; cdecl; begin Result := arr.FilterIndexes(forbidden, fSorted); end;
+function TArray_FilterIndexes5(const arr: TBooleanArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TBooleanArray; overload; cdecl; begin Result := arr.FilterIndexes(forbidden, fSorted); end;
+function TArray_FilterIndexes6(const arr: TPointArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TPointArray; overload; cdecl; begin Result := arr.FilterIndexes(forbidden, fSorted); end;
+function TArray_FilterIndexes7(const arr: TBoxArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TBoxArray; overload; cdecl; begin Result := arr.FilterIndexes(forbidden, fSorted); end;
+function TArray_FilterIndexes8(const arr: TRangeArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TRangeArray; overload; cdecl; begin Result := arr.FilterIndexes(forbidden, fSorted); end;
 
 function TArray_Find1(const arr: TIntegerArray; const ID: TRange; const item: Integer): Integer; overload; cdecl; begin Result := arr.Find(ID, item); end;
 function TArray_Find2(const arr: TDoubleArray; const ID: TRange; const item: Double): Integer; overload; cdecl; begin Result := arr.Find(ID, item); end;

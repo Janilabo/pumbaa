@@ -1261,6 +1261,24 @@ begin
   AddFunction(@TArray_ExtractEvery6, 'function TArray_ExtractEvery(const arr: TPointArray; const X: Integer = 1; const index: Integer = 0): TPointArray; overload;');
   AddFunction(@TArray_ExtractEvery7, 'function TArray_ExtractEvery(const arr: TBoxArray; const X: Integer = 1; const index: Integer = 0): TBoxArray; overload;');
   AddFunction(@TArray_ExtractEvery8, 'function TArray_ExtractEvery(const arr: TRangeArray; const X: Integer = 1; const index: Integer = 0): TRangeArray; overload;');
+  
+  AddFunction(@TArray_ExtractIDs1, 'function TArray_ExtractIDs(const arr: TIntegerArray; const allowed: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_ExtractIDs2, 'function TArray_ExtractIDs(const arr: TDoubleArray; const allowed: TIntegerArray): TDoubleArray; overload;');
+  AddFunction(@TArray_ExtractIDs3, 'function TArray_ExtractIDs(const arr: TStringArray; const allowed: TIntegerArray): TStringArray; overload;');
+  AddFunction(@TArray_ExtractIDs4, 'function TArray_ExtractIDs(const arr: TCharArray; const allowed: TIntegerArray): TCharArray; overload;');
+  AddFunction(@TArray_ExtractIDs5, 'function TArray_ExtractIDs(const arr: TBooleanArray; const allowed: TIntegerArray): TBooleanArray; overload;');
+  AddFunction(@TArray_ExtractIDs6, 'function TArray_ExtractIDs(const arr: TPointArray; const allowed: TIntegerArray): TPointArray; overload;');
+  AddFunction(@TArray_ExtractIDs7, 'function TArray_ExtractIDs(const arr: TBoxArray; const allowed: TIntegerArray): TBoxArray; overload;');
+  AddFunction(@TArray_ExtractIDs8, 'function TArray_ExtractIDs(const arr: TRangeArray; const allowed: TIntegerArray): TRangeArray; overload;');
+
+  AddFunction(@TArray_ExtractIndexes1, 'function TArray_ExtractIndexes(const arr: TIntegerArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TIntegerArray; overload;');
+  AddFunction(@TArray_ExtractIndexes2, 'function TArray_ExtractIndexes(const arr: TDoubleArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TDoubleArray; overload;');
+  AddFunction(@TArray_ExtractIndexes3, 'function TArray_ExtractIndexes(const arr: TStringArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TStringArray; overload;');
+  AddFunction(@TArray_ExtractIndexes4, 'function TArray_ExtractIndexes(const arr: TCharArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TCharArray; overload;');
+  AddFunction(@TArray_ExtractIndexes5, 'function TArray_ExtractIndexes(const arr: TBooleanArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TBooleanArray; overload;');
+  AddFunction(@TArray_ExtractIndexes6, 'function TArray_ExtractIndexes(const arr: TPointArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TPointArray; overload;');
+  AddFunction(@TArray_ExtractIndexes7, 'function TArray_ExtractIndexes(const arr: TBoxArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TBoxArray; overload;');
+  AddFunction(@TArray_ExtractIndexes8, 'function TArray_ExtractIndexes(const arr: TRangeArray; const allowed: TIntegerArray; const aSorted: Boolean = False): TRangeArray; overload;');
 
   AddFunction(@TArray_Feed1, 'function TArray_Feed(const arr: TIntegerArray; const item: Integer; const allowDuplicates: Boolean = False): Integer; overload;');
   AddFunction(@TArray_Feed2, 'function TArray_Feed(const arr: TDoubleArray; const item: Double; const allowDuplicates: Boolean = False): Integer; overload;');
@@ -1313,6 +1331,24 @@ begin
   AddFunction(@TArray_FilterEvery6, 'function TArray_FilterEvery(const arr: TPointArray; const X: Integer = 1; const index: Integer = 0): TPointArray; overload;');
   AddFunction(@TArray_FilterEvery7, 'function TArray_FilterEvery(const arr: TBoxArray; const X: Integer = 1; const index: Integer = 0): TBoxArray; overload;');
   AddFunction(@TArray_FilterEvery8, 'function TArray_FilterEvery(const arr: TRangeArray; const X: Integer = 1; const index: Integer = 0): TRangeArray; overload;');
+
+  AddFunction(@TArray_FilterIDs1, 'function TArray_FilterIDs(const arr: TIntegerArray; const forbidden: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_FilterIDs2, 'function TArray_FilterIDs(const arr: TDoubleArray; const forbidden: TIntegerArray): TDoubleArray; overload;');
+  AddFunction(@TArray_FilterIDs3, 'function TArray_FilterIDs(const arr: TStringArray; const forbidden: TIntegerArray): TStringArray; overload;');
+  AddFunction(@TArray_FilterIDs4, 'function TArray_FilterIDs(const arr: TCharArray; const forbidden: TIntegerArray): TCharArray; overload;');
+  AddFunction(@TArray_FilterIDs5, 'function TArray_FilterIDs(const arr: TBooleanArray; const forbidden: TIntegerArray): TBooleanArray; overload;');
+  AddFunction(@TArray_FilterIDs6, 'function TArray_FilterIDs(const arr: TPointArray; const forbidden: TIntegerArray): TPointArray; overload;');
+  AddFunction(@TArray_FilterIDs7, 'function TArray_FilterIDs(const arr: TBoxArray; const forbidden: TIntegerArray): TBoxArray; overload;');
+  AddFunction(@TArray_FilterIDs8, 'function TArray_FilterIDs(const arr: TRangeArray; const forbidden: TIntegerArray): TRangeArray; overload;');
+  
+  AddFunction(@TArray_FilterIndexes1, 'function TArray_FilterIndexes(const arr: TIntegerArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TIntegerArray; overload;');
+  AddFunction(@TArray_FilterIndexes2, 'function TArray_FilterIndexes(const arr: TDoubleArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TDoubleArray; overload;');
+  AddFunction(@TArray_FilterIndexes3, 'function TArray_FilterIndexes(const arr: TStringArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TStringArray; overload;');
+  AddFunction(@TArray_FilterIndexes4, 'function TArray_FilterIndexes(const arr: TCharArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TCharArray; overload;');
+  AddFunction(@TArray_FilterIndexes5, 'function TArray_FilterIndexes(const arr: TBooleanArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TBooleanArray; overload;');
+  AddFunction(@TArray_FilterIndexes6, 'function TArray_FilterIndexes(const arr: TPointArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TPointArray; overload;');
+  AddFunction(@TArray_FilterIndexes7, 'function TArray_FilterIndexes(const arr: TBoxArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TBoxArray; overload;');
+  AddFunction(@TArray_FilterIndexes8, 'function TArray_FilterIndexes(const arr: TRangeArray; const forbidden: TIntegerArray; const fSorted: Boolean = False): TRangeArray; overload;');
 
   AddFunction(@TArray_Find1, 'function TArray_Find(const arr: TIntegerArray; const IDs: TRange; const item: Integer): Integer; overload;');
   AddFunction(@TArray_Find2, 'function TArray_Find(const arr: TDoubleArray; const IDs: TRange; const item: Double): Integer; overload;');
