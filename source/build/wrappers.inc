@@ -152,6 +152,16 @@ function Boolean_SwitchOff(var x: Boolean; const state: Boolean): Boolean; cdecl
 
 function Char_Str(const c: Char; const size: Integer = 1): string; cdecl; begin Result := c.Str(size); end;
 function Char_ToStr(const c: Char; const size: Integer = 1): string; cdecl; begin Result := c.ToStr(size); end;
+function Char_IsNumber(const c: Char): Boolean; cdecl; begin Result := c.IsNumber; end;
+function Char_IsNumeric(const c: Char): Boolean; cdecl; begin Result := c.IsNumeric; end;
+function Char_IsLower(const c: Char): Boolean; cdecl; begin Result := c.IsLower; end;
+function Char_IsUpper(const c: Char): Boolean; cdecl; begin Result := c.IsUpper; end;
+function Char_IsLowercase(const c: Char): Boolean; cdecl; begin Result := c.IsLowercase; end;
+function Char_IsUppercase(const c: Char): Boolean; cdecl; begin Result := c.IsUppercase; end;
+function Char_IsLetter(const c: Char): Boolean; cdecl; begin Result := c.IsLetter; end;
+function Char_Swapcase(const c: Char): Char; cdecl; begin Result := c.Swapcase; end;
+function Char_Upper(const c: Char): Char; cdecl; begin Result := c.Upper; end;
+ function Char_Lower(const c: Char): Char; cdecl; begin Result := c.Lower; end;
 
 function String_Empty(const str: string): Boolean; cdecl; begin Result := str.Empty; end;
 function String_Void(const str: string): Boolean; cdecl; begin Result := str.Void; end;

@@ -179,6 +179,16 @@ begin
 
   AddFunction(@Char_Str, 'function Char_Str(const c: Char; const size: Integer = 1): string;');
   AddFunction(@Char_ToStr, 'function Char_ToStr(const c: Char; const size: Integer = 1): string;');
+  AddFunction(@Char_IsNumber, 'function Char_IsNumber(const c: Char): Boolean;');
+  AddFunction(@Char_IsNumeric, 'function Char_IsNumeric(const c: Char): Boolean;');
+  AddFunction(@Char_IsLower, 'function Char_IsLower(const c: Char): Boolean;');
+  AddFunction(@Char_IsUpper, 'function Char_IsUpper(const c: Char): Boolean;');
+  AddFunction(@Char_IsLowercase, 'function Char_IsLowercase(const c: Char): Boolean;');
+  AddFunction(@Char_IsUppercase, 'function Char_IsUppercase(const c: Char): Boolean;');
+  AddFunction(@Char_IsLetter, 'function Char_IsLetter(const c: Char): Boolean;');
+  AddFunction(@Char_Swapcase, 'function Char_Swapcase(const c: Char): Char;');
+  AddFunction(@Char_Upper, 'function Char_Upper(const c: Char): Char;');
+  AddFunction(@Char_Lower, 'function Char_Lower(const c: Char): Char;');
 
   AddFunction(@String_Empty, 'function String_Empty(const str: string): Boolean;');
   AddFunction(@String_Void, 'function String_Void(const str: string): Boolean;');
