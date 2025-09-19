@@ -622,6 +622,10 @@ begin
   AddFunction(@TIntegerArray_Stringify1, 'function TIntegerArray_Stringify(const arr: TIntegerArray): string; overload;');
   AddFunction(@TIntegerArray_Stringify2, 'function TIntegerArray_Stringify(const arr: TIntegerArray; var chars: TCharArray): string; overload;');
   AddFunction(@TIntegerArray_Special, 'function TIntegerArray_Special(const arr: TIntegerArray): Boolean;');
+  AddFunction(@TIntegerArray_ExtractEven, 'function TIntegerArray_ExtractEven(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_FilterEven, 'function TIntegerArray_FilterEven(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_ExtractOdd, 'function TIntegerArray_ExtractOdd(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_FilterOdd, 'function TIntegerArray_FilterOdd(const arr: TIntegerArray): TIntegerArray; overload;');
   
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -2598,7 +2602,25 @@ begin
   AddFunction(@T2DArray_Total6, 'function T2DArray_Total(const arr: T2DPointArray): Int64; overload;');
   AddFunction(@T2DArray_Total7, 'function T2DArray_Total(const arr: T2DBoxArray): Int64; overload;');
   AddFunction(@T2DArray_Total8, 'function T2DArray_Total(const arr: T2DRangeArray): Int64; overload;');
-  
+
+  AddFunction(@T2DArray_Population1, 'function T2DArray_Population(const arr: T2DIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Population2, 'function T2DArray_Population(const arr: T2DDoubleArray): Int64; overload;');
+  AddFunction(@T2DArray_Population3, 'function T2DArray_Population(const arr: T2DStringArray): Int64; overload;');
+  AddFunction(@T2DArray_Population4, 'function T2DArray_Population(const arr: T2DCharArray): Int64; overload;');
+  AddFunction(@T2DArray_Population5, 'function T2DArray_Population(const arr: T2DBooleanArray): Int64; overload;');
+  AddFunction(@T2DArray_Population6, 'function T2DArray_Population(const arr: T2DPointArray): Int64; overload;');
+  AddFunction(@T2DArray_Population7, 'function T2DArray_Population(const arr: T2DBoxArray): Int64; overload;');
+  AddFunction(@T2DArray_Population8, 'function T2DArray_Population(const arr: T2DRangeArray): Int64; overload;');
+
+  AddFunction(@T2DArray_Census1, 'function T2DArray_Census(const arr: T2DIntegerArray): Int64; overload;');
+  AddFunction(@T2DArray_Census2, 'function T2DArray_Census(const arr: T2DDoubleArray): Int64; overload;');
+  AddFunction(@T2DArray_Census3, 'function T2DArray_Census(const arr: T2DStringArray): Int64; overload;');
+  AddFunction(@T2DArray_Census4, 'function T2DArray_Census(const arr: T2DCharArray): Int64; overload;');
+  AddFunction(@T2DArray_Census5, 'function T2DArray_Census(const arr: T2DBooleanArray): Int64; overload;');
+  AddFunction(@T2DArray_Census6, 'function T2DArray_Census(const arr: T2DPointArray): Int64; overload;');
+  AddFunction(@T2DArray_Census7, 'function T2DArray_Census(const arr: T2DBoxArray): Int64; overload;');
+  AddFunction(@T2DArray_Census8, 'function T2DArray_Census(const arr: T2DRangeArray): Int64; overload;');
+
   AddFunction(@T2DArray_TArray1, 'function T2DArray_TArray(const arr: T2DIntegerArray): TIntegerArray; overload;');
   AddFunction(@T2DArray_TArray2, 'function T2DArray_TArray(const arr: T2DDoubleArray): TDoubleArray; overload;');
   AddFunction(@T2DArray_TArray3, 'function T2DArray_TArray(const arr: T2DStringArray): TStringArray; overload;');

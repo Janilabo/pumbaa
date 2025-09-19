@@ -161,7 +161,7 @@ function Char_IsUppercase(const c: Char): Boolean; cdecl; begin Result := c.IsUp
 function Char_IsLetter(const c: Char): Boolean; cdecl; begin Result := c.IsLetter; end;
 function Char_Swapcase(const c: Char): Char; cdecl; begin Result := c.Swapcase; end;
 function Char_Upper(const c: Char): Char; cdecl; begin Result := c.Upper; end;
- function Char_Lower(const c: Char): Char; cdecl; begin Result := c.Lower; end;
+function Char_Lower(const c: Char): Char; cdecl; begin Result := c.Lower; end;
 
 function String_Empty(const str: string): Boolean; cdecl; begin Result := str.Empty; end;
 function String_Void(const str: string): Boolean; cdecl; begin Result := str.Void; end;
@@ -595,6 +595,10 @@ function TIntegerArray_Charify2(const arr: TIntegerArray; var str: string): TCha
 function TIntegerArray_Stringify1(const arr: TIntegerArray): string; overload; cdecl; begin Result := arr.Stringify; end;
 function TIntegerArray_Stringify2(const arr: TIntegerArray; var chars: TCharArray): string; overload; cdecl; begin Result := arr.Stringify(chars); end;
 function TIntegerArray_Special(const arr: TIntegerArray): Boolean; cdecl; begin Result := arr.Special; end;
+function TIntegerArray_ExtractEven(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.ExtractEven; end;
+function TIntegerArray_FilterEven(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterEven; end;
+function TIntegerArray_ExtractOdd(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.ExtractOdd; end;
+function TIntegerArray_FilterOdd(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterOdd; end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -2572,6 +2576,24 @@ function T2DArray_Total5(const arr: T2DBooleanArray): Int64; overload; cdecl; be
 function T2DArray_Total6(const arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Total; end;
 function T2DArray_Total7(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Total; end;
 function T2DArray_Total8(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Total; end;
+
+function T2DArray_Population1(const arr: T2DIntegerArray): Int64; overload; cdecl; begin Result := arr.Population; end;
+function T2DArray_Population2(const arr: T2DDoubleArray): Int64; overload; cdecl; begin Result := arr.Population; end;
+function T2DArray_Population3(const arr: T2DStringArray): Int64; overload; cdecl; begin Result := arr.Population; end;
+function T2DArray_Population4(const arr: T2DCharArray): Int64; overload; cdecl; begin Result := arr.Population; end;
+function T2DArray_Population5(const arr: T2DBooleanArray): Int64; overload; cdecl; begin Result := arr.Population; end;
+function T2DArray_Population6(const arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Population; end;
+function T2DArray_Population7(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Population; end;
+function T2DArray_Population8(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Population; end;
+
+function T2DArray_Census1(const arr: T2DIntegerArray): Int64; overload; cdecl; begin Result := arr.Census; end;
+function T2DArray_Census2(const arr: T2DDoubleArray): Int64; overload; cdecl; begin Result := arr.Census; end;
+function T2DArray_Census3(const arr: T2DStringArray): Int64; overload; cdecl; begin Result := arr.Census; end;
+function T2DArray_Census4(const arr: T2DCharArray): Int64; overload; cdecl; begin Result := arr.Census; end;
+function T2DArray_Census5(const arr: T2DBooleanArray): Int64; overload; cdecl; begin Result := arr.Census; end;
+function T2DArray_Census6(const arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Census; end;
+function T2DArray_Census7(const arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Census; end;
+function T2DArray_Census8(const arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Census; end;
 
 function T2DArray_TArray1(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.TArray; end;
 function T2DArray_TArray2(const arr: T2DDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.TArray; end;
