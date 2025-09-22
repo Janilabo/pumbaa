@@ -2410,6 +2410,23 @@ function TArray_SizeMin6(const arr: TPointArray; const target: Integer): Boolean
 function TArray_SizeMin7(const arr: TBoxArray; const target: Integer): Boolean; overload; cdecl; begin Result := arr.SizeMin(target); end;
 function TArray_SizeMin8(const arr: TRangeArray; const target: Integer): Boolean; overload; cdecl; begin Result := arr.SizeMin(target); end;
 
+function TArray_Slice1(const arr: TIntegerArray; const r: TRange): TIntegerArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice2(const arr: TDoubleArray; const r: TRange): TDoubleArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice3(const arr: TStringArray; const r: TRange): TStringArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice4(const arr: TCharArray; const r: TRange): TCharArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice5(const arr: TBooleanArray; const r: TRange): TBooleanArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice6(const arr: TPointArray; const r: TRange): TPointArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice7(const arr: TBoxArray; const r: TRange): TBoxArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice8(const arr: TRangeArray; const r: TRange): TRangeArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice9(const arr: TIntegerArray; const r: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice10(const arr: TDoubleArray; const r: TRangeArray): TDoubleArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice11(const arr: TStringArray; const r: TRangeArray): TStringArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice12(const arr: TCharArray; const r: TRangeArray): TCharArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice13(const arr: TBooleanArray; const r: TRangeArray): TBooleanArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice14(const arr: TPointArray; const r: TRangeArray): TPointArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice15(const arr: TBoxArray; const r: TRangeArray): TBoxArray; overload; cdecl; begin Result := arr.Slice(r); end;
+function TArray_Slice16(const arr: TRangeArray; const r: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Slice(r); end;
+
 function TArray_Slots1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Slots; end;
 function TArray_Slots2(const arr: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := arr.Slots; end;
 function TArray_Slots3(const arr: TStringArray): TIntegerArray; overload; cdecl; begin Result := arr.Slots; end;

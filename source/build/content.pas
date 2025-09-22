@@ -2437,6 +2437,23 @@ begin
   AddFunction(@TArray_SizeMin7, 'function TArray_SizeMin(const arr: TBoxArray; const target: Integer): Boolean; overload;');
   AddFunction(@TArray_SizeMin8, 'function TArray_SizeMin(const arr: TRangeArray; const target: Integer): Boolean; overload;');
   
+  AddFunction(@TArray_Slice1, 'function TArray_Slice(const arr: TIntegerArray; const r: TRange): TIntegerArray; overload;');
+  AddFunction(@TArray_Slice2, 'function TArray_Slice(const arr: TDoubleArray; const r: TRange): TDoubleArray; overload;');
+  AddFunction(@TArray_Slice3, 'function TArray_Slice(const arr: TStringArray; const r: TRange): TStringArray; overload;');
+  AddFunction(@TArray_Slice4, 'function TArray_Slice(const arr: TCharArray; const r: TRange): TCharArray; overload;');
+  AddFunction(@TArray_Slice5, 'function TArray_Slice(const arr: TBooleanArray; const r: TRange): TBooleanArray; overload;');
+  AddFunction(@TArray_Slice6, 'function TArray_Slice(const arr: TPointArray; const r: TRange): TPointArray; overload;');
+  AddFunction(@TArray_Slice7, 'function TArray_Slice(const arr: TBoxArray; const r: TRange): TBoxArray; overload;');
+  AddFunction(@TArray_Slice8, 'function TArray_Slice(const arr: TRangeArray; const r: TRange): TRangeArray; overload;');
+  AddFunction(@TArray_Slice9, 'function TArray_Slice(const arr: TIntegerArray; const r: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Slice10, 'function TArray_Slice(const arr: TDoubleArray; const r: TRangeArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Slice11, 'function TArray_Slice(const arr: TStringArray; const r: TRangeArray): TStringArray; overload;');
+  AddFunction(@TArray_Slice12, 'function TArray_Slice(const arr: TCharArray; const r: TRangeArray): TCharArray; overload;');
+  AddFunction(@TArray_Slice13, 'function TArray_Slice(const arr: TBooleanArray; const r: TRangeArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Slice14, 'function TArray_Slice(const arr: TPointArray; const r: TRangeArray): TPointArray; overload;');
+  AddFunction(@TArray_Slice15, 'function TArray_Slice(const arr: TBoxArray; const r: TRangeArray): TBoxArray; overload;');
+  AddFunction(@TArray_Slice16, 'function TArray_Slice(const arr: TRangeArray; const r: TRangeArray): TRangeArray; overload;');
+  
   AddFunction(@TArray_Slots1, 'function TArray_Slots(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Slots2, 'function TArray_Slots(const arr: TDoubleArray): TIntegerArray; overload;');
   AddFunction(@TArray_Slots3, 'function TArray_Slots(const arr: TStringArray): TIntegerArray; overload;');
