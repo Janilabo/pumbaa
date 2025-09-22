@@ -542,6 +542,7 @@ begin
   AddFunction(@TIntegerArray_Range, 'function TIntegerArray_Range(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Ranged, 'function TIntegerArray_Ranged(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_MinMax, 'function TIntegerArray_MinMax(const arr: TIntegerArray): TRange;');
+  AddFunction(@TIntegerArray_Region, 'function TIntegerArray_Region(const arr: TIntegerArray): TRange; overload;');
   AddFunction(@TIntegerArray_Extent, 'function TIntegerArray_Extent(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Undupe, 'function TIntegerArray_Undupe(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Unduped, 'function TIntegerArray_Unduped(const arr: TIntegerArray): TIntegerArray;');
@@ -739,6 +740,7 @@ begin
   AddFunction(@TPointArray_Box, 'function TPointArray_Box(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Boxed, 'function TPointArray_Boxed(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_MinMax, 'function TPointArray_MinMax(const arr: TPointArray): TBox;');
+  AddFunction(@TPointArray_Region, 'function TPointArray_Region(const arr: TPointArray): TBox; overload;');
   AddFunction(@TPointArray_Undupe, 'function TPointArray_Undupe(const arr: TPointArray): TPointArray;');
   AddFunction(@TPointArray_Unduped, 'function TPointArray_Unduped(const arr: TPointArray): TPointArray;');
   AddFunction(@TPointArray_Invert, 'function TPointArray_Invert(const arr: TPointArray): TPointArray;');
@@ -2192,6 +2194,15 @@ begin
   AddFunction(@TArray_Range6, 'function TArray_Range(const arr: TPointArray; const subArray: TPointArray; const index: Integer = 0): TRange; overload;');
   AddFunction(@TArray_Range7, 'function TArray_Range(const arr: TBoxArray; const subArray: TBoxArray; const index: Integer = 0): TRange; overload;');
   AddFunction(@TArray_Range8, 'function TArray_Range(const arr: TRangeArray; const subArray: TRangeArray; const index: Integer = 0): TRange; overload;');
+  
+  AddFunction(@TArray_Ranges1, 'function TArray_Ranges(const arr: TIntegerArray; const subArray: TIntegerArray; const index: Integer = 0): TRangeArray; overload;');
+  AddFunction(@TArray_Ranges2, 'function TArray_Ranges(const arr: TDoubleArray; const subArray: TDoubleArray; const index: Integer = 0): TRangeArray; overload;');
+  AddFunction(@TArray_Ranges3, 'function TArray_Ranges(const arr: TStringArray; const subArray: TStringArray; const index: Integer = 0): TRangeArray; overload;');
+  AddFunction(@TArray_Ranges4, 'function TArray_Ranges(const arr: TCharArray; const subArray: TCharArray; const index: Integer = 0): TRangeArray; overload;');
+  AddFunction(@TArray_Ranges5, 'function TArray_Ranges(const arr: TBooleanArray; const subArray: TBooleanArray; const index: Integer = 0): TRangeArray; overload;');
+  AddFunction(@TArray_Ranges6, 'function TArray_Ranges(const arr: TPointArray; const subArray: TPointArray; const index: Integer = 0): TRangeArray; overload;');
+  AddFunction(@TArray_Ranges7, 'function TArray_Ranges(const arr: TBoxArray; const subArray: TBoxArray; const index: Integer = 0): TRangeArray; overload;');
+  AddFunction(@TArray_Ranges8, 'function TArray_Ranges(const arr: TRangeArray; const subArray: TRangeArray; const index: Integer = 0): TRangeArray; overload;');
 
   AddFunction(@TArray_Recreate1, 'function TArray_Recreate(var arr: TIntegerArray; const arrSize: Integer): Boolean; overload;');
   AddFunction(@TArray_Recreate2, 'function TArray_Recreate(var arr: TDoubleArray; const arrSize: Integer): Boolean; overload;');
@@ -2460,6 +2471,15 @@ begin
   AddFunction(@TArray_Span6, 'function TArray_Span(const arr: TPointArray; const subArray: TPointArray; const index: Integer = 2147483647): TRange; overload;');
   AddFunction(@TArray_Span7, 'function TArray_Span(const arr: TBoxArray; const subArray: TBoxArray; const index: Integer = 2147483647): TRange; overload;');
   AddFunction(@TArray_Span8, 'function TArray_Span(const arr: TRangeArray; const subArray: TRangeArray; const index: Integer = 2147483647): TRange; overload;');
+  
+  AddFunction(@TArray_Spans1, 'function TArray_Spans(const arr: TIntegerArray; const subArray: TIntegerArray; const index: Integer = 2147483647): TRangeArray; overload;');
+  AddFunction(@TArray_Spans2, 'function TArray_Spans(const arr: TDoubleArray; const subArray: TDoubleArray; const index: Integer = 2147483647): TRangeArray; overload;');
+  AddFunction(@TArray_Spans3, 'function TArray_Spans(const arr: TStringArray; const subArray: TStringArray; const index: Integer = 2147483647): TRangeArray; overload;');
+  AddFunction(@TArray_Spans4, 'function TArray_Spans(const arr: TCharArray; const subArray: TCharArray; const index: Integer = 2147483647): TRangeArray; overload;');
+  AddFunction(@TArray_Spans5, 'function TArray_Spans(const arr: TBooleanArray; const subArray: TBooleanArray; const index: Integer = 2147483647): TRangeArray; overload;');
+  AddFunction(@TArray_Spans6, 'function TArray_Spans(const arr: TPointArray; const subArray: TPointArray; const index: Integer = 2147483647): TRangeArray; overload;');
+  AddFunction(@TArray_Spans7, 'function TArray_Spans(const arr: TBoxArray; const subArray: TBoxArray; const index: Integer = 2147483647): TRangeArray; overload;');
+  AddFunction(@TArray_Spans8, 'function TArray_Spans(const arr: TRangeArray; const subArray: TRangeArray; const index: Integer = 2147483647): TRangeArray; overload;');
 
   AddFunction(@TArray_Strip1, 'function TArray_Strip(const arr: TIntegerArray; const item: Integer; const eraseDuplicates: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_Strip2, 'function TArray_Strip(const arr: TDoubleArray; const item: Double; const eraseDuplicates: Boolean = True): TDoubleArray; overload;');
