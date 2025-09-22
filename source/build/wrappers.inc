@@ -545,27 +545,6 @@ function TIntegerArray_MergeSort(var arr: TIntegerArray; const aAscending: Boole
 function TIntegerArray_MergeSortBU(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.MergeSortBU(aAscending); end;
 function TIntegerArray_ShellSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.ShellSort(aAscending); end;
 function TIntegerArray_RadixSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.RadixSort(aAscending); end;
-function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
-function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
-function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
-function TIntegerArray_BinaryBoundL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryBoundL(x, aAscending); end;
-function TIntegerArray_BinaryBoundR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryBoundR(x, aAscending); end;
-function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosL(x, aAscending); end;
-function TIntegerArray_BinaryPosR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosR(x, aAscending); end;
-function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearch(x, aAscending); end;
-function TIntegerArray_BinaryContains(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryContains(x, aAscending); end;
-function TIntegerArray_BinaryCount(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryCount(x, aAscending); end;
-function TIntegerArray_BinaryLocate(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryLocate(x, aAscending); end;
-function TIntegerArray_BinaryLocation(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryLocation(x, aAscending); end;
-function TIntegerArray_BinaryAppend(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryAppend(x, aAscending); end;
-function TIntegerArray_BinaryAdd(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryAdd(x, aAscending); end;
-function TIntegerArray_BinarySearchF(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearchF(x, aAscending); end;
-function TIntegerArray_BinarySearchL(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearchL(x, aAscending); end;
-function TIntegerArray_BinaryUnique(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUnique(aAscending); end;
-function TIntegerArray_BinaryUniqued(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryUniqued(aAscending); end;
-function TIntegerArray_BinaryUndupe(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryUndupe(aAscending); end;
-function TIntegerArray_BinaryGrow(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryGrow(x, aAscending); end;
-function TIntegerArray_BinaryShrink(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryShrink(x, aAscending); end;
 function TIntegerArray_Split1(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Split(minDiff, maxDiff); end;
 function TIntegerArray_Split2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Split(diff); end;
 function TIntegerArray_Sblit1(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Sblit(minDiff, maxDiff); end;
@@ -605,6 +584,31 @@ function TIntegerArray_FilterEven(const arr: TIntegerArray): TIntegerArray; over
 function TIntegerArray_ExtractOdd(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.ExtractOdd; end;
 function TIntegerArray_FilterOdd(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterOdd; end;
 function TIntegerArray_Reinit(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
+function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
+function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
+function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
+function TIntegerArray_BinaryBoundL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryBoundL(x, aAscending); end;
+function TIntegerArray_BinaryBoundR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryBoundR(x, aAscending); end;
+function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosL(x, aAscending); end;
+function TIntegerArray_BinaryPosR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosR(x, aAscending); end;
+function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearch(x, aAscending); end;
+function TIntegerArray_BinaryContains(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryContains(x, aAscending); end;
+function TIntegerArray_BinaryCount(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryCount(x, aAscending); end;
+function TIntegerArray_BinaryLocate(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryLocate(x, aAscending); end;
+function TIntegerArray_BinaryLocation(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryLocation(x, aAscending); end;
+function TIntegerArray_BinaryAppend(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryAppend(x, aAscending); end;
+function TIntegerArray_BinaryAdd(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryAdd(x, aAscending); end;
+function TIntegerArray_BinarySearchF(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearchF(x, aAscending); end;
+function TIntegerArray_BinarySearchL(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearchL(x, aAscending); end;
+function TIntegerArray_BinaryUnique(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUnique(aAscending); end;
+function TIntegerArray_BinaryUniqued(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryUniqued(aAscending); end;
+function TIntegerArray_BinaryUndupe(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryUndupe(aAscending); end;
+function TIntegerArray_BinaryGrow(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryGrow(x, aAscending); end;
+function TIntegerArray_BinaryShrink(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryShrink(x, aAscending); end;
+function TIntegerArray_BinaryLowerBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryLowerBound(x, aAscending); end;
+function TIntegerArray_BinaryUpperBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUpperBound(x, aAscending); end;
+function TIntegerArray_BinaryRange1(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
+function TIntegerArray_BinaryRange2(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -635,6 +639,10 @@ function TDoubleArray_BinaryUniqued(const arr: TDoubleArray; const aAscending: B
 function TDoubleArray_BinaryUndupe(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; cdecl; begin Result := arr.BinaryUndupe(aAscending); end;
 function TDoubleArray_BinaryGrow(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryGrow(x, aAscending); end;
 function TDoubleArray_BinaryShrink(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryShrink(x, aAscending); end;
+function TDoubleArray_BinaryLowerBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryLowerBound(x, aAscending); end;
+function TDoubleArray_BinaryUpperBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUpperBound(x, aAscending); end;
+function TDoubleArray_BinaryRange1(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
+function TDoubleArray_BinaryRange2(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TDoubleArray_Reinit(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 
 function TStringArray_Span(const arr: TStringArray): Integer; cdecl; begin Result := arr.Span; end;
@@ -2149,6 +2157,15 @@ function TArray_Randomized6(const arr: TPointArray): TPointArray; overload; cdec
 function TArray_Randomized7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Randomized; end;
 function TArray_Randomized8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Randomized; end;
 
+function TArray_Range1(const arr: TIntegerArray; const subArray: TIntegerArray; const index: Integer = 0): TRange; overload; cdecl; begin Result := arr.Range(subArray, index); end;
+function TArray_Range2(const arr: TDoubleArray; const subArray: TDoubleArray; const index: Integer = 0): TRange; overload; cdecl; begin Result := arr.Range(subArray, index); end;
+function TArray_Range3(const arr: TStringArray; const subArray: TStringArray; const index: Integer = 0): TRange; overload; cdecl; begin Result := arr.Range(subArray, index); end;
+function TArray_Range4(const arr: TCharArray; const subArray: TCharArray; const index: Integer = 0): TRange; overload; cdecl; begin Result := arr.Range(subArray, index); end;
+function TArray_Range5(const arr: TBooleanArray; const subArray: TBooleanArray; const index: Integer = 0): TRange; overload; cdecl; begin Result := arr.Range(subArray, index); end;
+function TArray_Range6(const arr: TPointArray; const subArray: TPointArray; const index: Integer = 0): TRange; overload; cdecl; begin Result := arr.Range(subArray, index); end;
+function TArray_Range7(const arr: TBoxArray; const subArray: TBoxArray; const index: Integer = 0): TRange; overload; cdecl; begin Result := arr.Range(subArray, index); end;
+function TArray_Range8(const arr: TRangeArray; const subArray: TRangeArray; const index: Integer = 0): TRange; overload; cdecl; begin Result := arr.Range(subArray, index); end;
+
 function TArray_Recreate1(var arr: TIntegerArray; const arrSize: Integer): Boolean; overload; cdecl; begin Result := arr.Recreate(arrSize); end;
 function TArray_Recreate2(var arr: TDoubleArray; const arrSize: Integer): Boolean; overload; cdecl; begin Result := arr.Recreate(arrSize); end;
 function TArray_Recreate3(var arr: TStringArray; const arrSize: Integer): Boolean; overload; cdecl; begin Result := arr.Recreate(arrSize); end;
@@ -2407,6 +2424,15 @@ function TArray_Some13(const arr: TBooleanArray; const amount: Integer): TBoolea
 function TArray_Some14(const arr: TPointArray; const amount: Integer): TPointArray; overload; cdecl; begin Result := arr.Some(amount); end;
 function TArray_Some15(const arr: TBoxArray; const amount: Integer): TBoxArray; overload; cdecl; begin Result := arr.Some(amount); end;
 function TArray_Some16(const arr: TRangeArray; const amount: Integer): TRangeArray; overload; cdecl; begin Result := arr.Some(amount); end;
+
+function TArray_Span1(const arr: TIntegerArray; const subArray: TIntegerArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
+function TArray_Span2(const arr: TDoubleArray; const subArray: TDoubleArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
+function TArray_Span3(const arr: TStringArray; const subArray: TStringArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
+function TArray_Span4(const arr: TCharArray; const subArray: TCharArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
+function TArray_Span5(const arr: TBooleanArray; const subArray: TBooleanArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
+function TArray_Span6(const arr: TPointArray; const subArray: TPointArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
+function TArray_Span7(const arr: TBoxArray; const subArray: TBoxArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
+function TArray_Span8(const arr: TRangeArray; const subArray: TRangeArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
 
 function TArray_Strip1(const arr: TIntegerArray; const item: Integer; const eraseDuplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Strip(item, eraseDuplicates); end;
 function TArray_Strip2(const arr: TDoubleArray; const item: Double; const eraseDuplicates: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Strip(item, eraseDuplicates); end;
