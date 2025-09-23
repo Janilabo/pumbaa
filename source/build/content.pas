@@ -313,6 +313,8 @@ begin
   AddFunction(@TBox_Size1, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer; overload;');
   AddFunction(@TBox_Size2, 'function TBox_Size: TPoint; overload;');
   AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Integer;');
+  AddFunction(@TBox_Capacity, 'function TBox_Capacity(const bx: TBox): Integer;');
+  AddFunction(@TBox_Footprint, 'function TBox_Footprint(const bx: TBox): Double;');
   AddFunction(@TBox_Perimeter, 'function TBox_Perimeter(const bx: TBox): Integer;');
   AddFunction(@TBox_Perim, 'function TBox_Perim(const bx: TBox): Integer;');
   AddFunction(@TBox_Circumference, 'function TBox_Circumference(const bx: TBox): Integer;');
@@ -1193,6 +1195,24 @@ begin
   AddFunction(@TArray_Distribute6, 'function TArray_Distribute(const arr: TPointArray; const parts: Integer): T2DPointArray; overload;');
   AddFunction(@TArray_Distribute7, 'function TArray_Distribute(const arr: TBoxArray; const parts: Integer): T2DBoxArray; overload;');
   AddFunction(@TArray_Distribute8, 'function TArray_Distribute(const arr: TRangeArray; const parts: Integer): T2DRangeArray; overload;');
+
+  AddFunction(@TArray_Diversify1, 'function TArray_Diversify(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Diversify2, 'function TArray_Diversify(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Diversify3, 'function TArray_Diversify(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Diversify4, 'function TArray_Diversify(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Diversify5, 'function TArray_Diversify(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Diversify6, 'function TArray_Diversify(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Diversify7, 'function TArray_Diversify(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Diversify8, 'function TArray_Diversify(const arr: TRangeArray): TRangeArray; overload;');
+  
+  AddFunction(@TArray_Diversified1, 'function TArray_Diversified(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Diversified2, 'function TArray_Diversified(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Diversified3, 'function TArray_Diversified(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Diversified4, 'function TArray_Diversified(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Diversified5, 'function TArray_Diversified(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Diversified6, 'function TArray_Diversified(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Diversified7, 'function TArray_Diversified(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Diversified8, 'function TArray_Diversified(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Drop1, 'function TArray_Drop(const arr: TIntegerArray; const item: Integer; const eraseDuplicates: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_Drop2, 'function TArray_Drop(const arr: TDoubleArray; const item: Double; const eraseDuplicates: Boolean = True): TDoubleArray; overload;');
@@ -2678,6 +2698,15 @@ begin
   AddFunction(@TArray_Uniformity6, 'function TArray_Uniformity(const arr: TPointArray): Double; overload;');
   AddFunction(@TArray_Uniformity7, 'function TArray_Uniformity(const arr: TBoxArray): Double; overload;');
   AddFunction(@TArray_Uniformity8, 'function TArray_Uniformity(const arr: TRangeArray): Double; overload;');
+  
+  AddFunction(@TArray_Unify1, 'function TArray_Unify(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Unify2, 'function TArray_Unify(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Unify3, 'function TArray_Unify(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Unify4, 'function TArray_Unify(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Unify5, 'function TArray_Unify(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Unify6, 'function TArray_Unify(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Unify7, 'function TArray_Unify(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Unify8, 'function TArray_Unify(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Unique1, 'function TArray_Unique(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Unique2, 'function TArray_Unique(const arr: TDoubleArray): TDoubleArray; overload;');
