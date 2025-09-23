@@ -1167,6 +1167,15 @@ function TArray_Differ6(const arr, target: TPointArray): Boolean; overload; cdec
 function TArray_Differ7(const arr, target: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Differ(target); end;
 function TArray_Differ8(const arr, target: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Differ(target); end;
 
+function TArray_Distinct1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+function TArray_Distinct2(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+function TArray_Distinct3(const arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+function TArray_Distinct4(const arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+function TArray_Distinct5(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+function TArray_Distinct6(const arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+function TArray_Distinct7(const arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+function TArray_Distinct8(const arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+
 function TArray_Disordered1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Disordered; end;
 function TArray_Disordered2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Disordered; end;
 function TArray_Disordered3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Disordered; end;
@@ -2388,6 +2397,15 @@ function TArray_Shuffle6(const arr: TPointArray; const shuffles: Integer = 1): T
 function TArray_Shuffle7(const arr: TBoxArray; const shuffles: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
 function TArray_Shuffle8(const arr: TRangeArray; const shuffles: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
 
+function TArray_Singular1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+function TArray_Singular2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+function TArray_Singular3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+function TArray_Singular4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+function TArray_Singular5(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+function TArray_Singular6(const arr: TPointArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+function TArray_Singular7(const arr: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+function TArray_Singular8(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+
 function TArray_Size1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Size; end;
 function TArray_Size2(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Size; end;
 function TArray_Size3(const arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Size; end;
@@ -2624,6 +2642,15 @@ function TArray_Uniform13(const arr: TBooleanArray; const item: Boolean): Boolea
 function TArray_Uniform14(const arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.Uniform(item); end;
 function TArray_Uniform15(const arr: TBoxArray; const item: TBox): Boolean; overload; cdecl; begin Result := arr.Uniform(item); end;
 function TArray_Uniform16(const arr: TRangeArray; const item: TRange): Boolean; overload; cdecl; begin Result := arr.Uniform(item); end;
+
+function TArray_Uniformity1(const arr: TIntegerArray): Double; overload; cdecl; begin Result := arr.Uniformity; end;
+function TArray_Uniformity2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.Uniformity; end;
+function TArray_Uniformity3(const arr: TStringArray): Double; overload; cdecl; begin Result := arr.Uniformity; end;
+function TArray_Uniformity4(const arr: TCharArray): Double; overload; cdecl; begin Result := arr.Uniformity; end;
+function TArray_Uniformity5(const arr: TBooleanArray): Double; overload; cdecl; begin Result := arr.Uniformity; end;
+function TArray_Uniformity6(const arr: TPointArray): Double; overload; cdecl; begin Result := arr.Uniformity; end;
+function TArray_Uniformity7(const arr: TBoxArray): Double; overload; cdecl; begin Result := arr.Uniformity; end;
+function TArray_Uniformity8(const arr: TRangeArray): Double; overload; cdecl; begin Result := arr.Uniformity; end;
 
 function TArray_Unique1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Unique; end;
 function TArray_Unique2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Unique; end;

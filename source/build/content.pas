@@ -1167,6 +1167,15 @@ begin
   AddFunction(@TArray_Differ7, 'function TArray_Differ(const arr, target: TBoxArray): Boolean; overload;');
   AddFunction(@TArray_Differ8, 'function TArray_Differ(const arr, target: TRangeArray): Boolean; overload;');
 
+  AddFunction(@TArray_Distinct1, 'function TArray_Distinct(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Distinct2, 'function TArray_Distinct(const arr: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Distinct3, 'function TArray_Distinct(const arr: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Distinct4, 'function TArray_Distinct(const arr: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Distinct5, 'function TArray_Distinct(const arr: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Distinct6, 'function TArray_Distinct(const arr: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Distinct7, 'function TArray_Distinct(const arr: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Distinct8, 'function TArray_Distinct(const arr: TRangeArray): Integer; overload;');
+
   AddFunction(@TArray_Disordered1, 'function TArray_Disordered(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Disordered2, 'function TArray_Disordered(const arr: TDoubleArray): TDoubleArray; overload;');
   AddFunction(@TArray_Disordered3, 'function TArray_Disordered(const arr: TStringArray): TStringArray; overload;');
@@ -2415,6 +2424,15 @@ begin
   AddFunction(@TArray_Shuffle7, 'function TArray_Shuffle(const arr: TBoxArray; const shuffles: Integer = 1): TBoxArray; overload;');
   AddFunction(@TArray_Shuffle8, 'function TArray_Shuffle(const arr: TRangeArray; const shuffles: Integer = 1): TRangeArray; overload;');
 
+  AddFunction(@TArray_Singular1, 'function TArray_Singular(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Singular2, 'function TArray_Singular(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Singular3, 'function TArray_Singular(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Singular4, 'function TArray_Singular(const arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_Singular5, 'function TArray_Singular(const arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_Singular6, 'function TArray_Singular(const arr: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_Singular7, 'function TArray_Singular(const arr: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_Singular8, 'function TArray_Singular(const arr: TRangeArray): Boolean; overload;');
+
   AddFunction(@TArray_Size1, 'function TArray_Size(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Size2, 'function TArray_Size(const arr: TDoubleArray): Integer; overload;');
   AddFunction(@TArray_Size3, 'function TArray_Size(const arr: TStringArray): Integer; overload;');
@@ -2651,6 +2669,15 @@ begin
   AddFunction(@TArray_Uniform14, 'function TArray_Uniform(const arr: TPointArray; const item: TPoint): Boolean; overload;');
   AddFunction(@TArray_Uniform15, 'function TArray_Uniform(const arr: TBoxArray; const item: TBox): Boolean; overload;');
   AddFunction(@TArray_Uniform16, 'function TArray_Uniform(const arr: TRangeArray; const item: TRange): Boolean; overload;');
+
+  AddFunction(@TArray_Uniformity1, 'function TArray_Uniformity(const arr: TIntegerArray): Double; overload;');
+  AddFunction(@TArray_Uniformity2, 'function TArray_Uniformity(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_Uniformity3, 'function TArray_Uniformity(const arr: TStringArray): Double; overload;');
+  AddFunction(@TArray_Uniformity4, 'function TArray_Uniformity(const arr: TCharArray): Double; overload;');
+  AddFunction(@TArray_Uniformity5, 'function TArray_Uniformity(const arr: TBooleanArray): Double; overload;');
+  AddFunction(@TArray_Uniformity6, 'function TArray_Uniformity(const arr: TPointArray): Double; overload;');
+  AddFunction(@TArray_Uniformity7, 'function TArray_Uniformity(const arr: TBoxArray): Double; overload;');
+  AddFunction(@TArray_Uniformity8, 'function TArray_Uniformity(const arr: TRangeArray): Double; overload;');
 
   AddFunction(@TArray_Unique1, 'function TArray_Unique(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Unique2, 'function TArray_Unique(const arr: TDoubleArray): TDoubleArray; overload;');
