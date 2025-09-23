@@ -373,6 +373,8 @@ type
     function Mixed(const mixings: Integer = 1): TArr; overload; cdecl;
     function MostCommon: TVar; overload; cdecl;
     function MostFrequent: TVar; overload; cdecl;
+    function Multi(const threshold: Integer = 2): Boolean; overload; cdecl;
+    function Multi(const threshold: TRange): Boolean; overload; cdecl;
     function Next(const index: Integer; const count: Integer = 2147483647): TArr; overload; cdecl;
 	function Occurs(const item: TVar; const occurrence: Integer = 1): Boolean; overload; cdecl;
     function Overlay(const items: TArr; const index: Integer; const init: TVar): TArr; overload; cdecl;
@@ -461,9 +463,13 @@ type
 	function Void: Boolean; overload; cdecl;
     function Waste: Integer; overload; cdecl;
     {$IFDEF Sortable}
+      function Sortable: Boolean; overload; cdecl;
       function Sorted(const aAscending: Boolean = True): Boolean; overload; cdecl;
       function InOrder(const aAscending: Boolean = True): Boolean; overload; cdecl;
       function Orderly: Boolean; overload; cdecl;
+      function Ordered(const aAscending: Boolean = True; const index: Integer = 0): Boolean; overload; cdecl;
+      function Order: Integer; overload; cdecl;
+      function Orientation: Integer; overload; cdecl;
       function Descend: TArr; overload; cdecl;
       function Ascend: TArr; overload; cdecl;
       function Descending: Boolean; overload; cdecl;
