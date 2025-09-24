@@ -25,6 +25,14 @@ procedure AddFunctions;
 begin
   AddFunction(@MiMU_Version, 'function MiMU_Version: Double;');
 
+  AddFunction(@RandomB, 'function RandomB: Boolean; overload;');
+  AddFunction(@RandomBit, 'function RandomBit: Byte; overload;');
+  AddFunction(@RandomSample, 'function RandomSample(const x: Integer; const size: Integer): TIntegerArray; overload;');
+  AddFunction(@RandomMean, 'function RandomMean(const x: Integer; const sample: Integer = 10): Integer; overload;');
+  AddFunction(@Random2, 'function Random2(const x: Integer; const r: Integer = 2): Integer; overload;');
+  AddFunction(@RandomMax, 'function RandomMax(const x: Integer; const r: Integer = 2): Integer; overload;');
+  AddFunction(@RandomMin, 'function RandomMin(const x: Integer; const r: Integer = 2): Integer; overload;');
+
   AddFunction(@Double_ClampMin, 'function Double_ClampMin(const item: Double; const limit: Double): Double;');
   AddFunction(@Double_ClampMax, 'function Double_ClampMax(const item: Double; const limit: Double): Double;');
   AddFunction(@Double_Clamp, 'function Double_Clamp(const item: Double; const minimum, maximum: Double): Double; overload;');  
