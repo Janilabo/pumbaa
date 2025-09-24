@@ -55,6 +55,8 @@ begin
   AddFunction(@Double_Accuracy, 'function Double_Accuracy(const x: Double; const a: Integer): Double;');
   AddFunction(@Double_Compare, 'function Double_Compare(const x, T: Double): Integer;');
   AddFunction(@Double_Precede, 'function Double_Precede(const x, target: Double; const aAscending: Boolean): Boolean;');
+  AddFunction(@Double_Ascending, 'function Double_Ascending(const x, target: Double): Boolean;');
+  AddFunction(@Double_Descending, 'function Double_Descending(const x, target: Double): Boolean;');
   AddFunction(@Double_Distance, 'function Double_Distance(const x, T: Double): Double;');
   AddFunction(@Double_Difference, 'function Double_Difference(const x, T: Double): Double;');
   AddFunction(@Double_Opposite, 'function Double_Opposite(const x: Double): Double;');
@@ -105,6 +107,8 @@ begin
   AddFunction(@Integer_Positive, 'function Integer_Positive(const x: Integer): Boolean;');
   AddFunction(@Integer_Neutral, 'function Integer_Neutral(const x: Integer): Boolean;');
   AddFunction(@Integer_Compare, 'function Integer_Compare(const x, T: Integer): Integer;');
+  AddFunction(@Integer_Ascending, 'function Integer_Ascending(const x, target: Integer): Boolean;');
+  AddFunction(@Integer_Descending, 'function Integer_Descending(const x, target: Integer): Boolean;');
   AddFunction(@Integer_Precede, 'function Integer_Precede(const x, target: Integer; const aAscending: Boolean): Boolean;');
   AddFunction(@Integer_Distance, 'function Integer_Distance(const x, T: Integer): Integer;');
   AddFunction(@Integer_Difference, 'function Integer_Difference(const x, T: Integer): Integer;');
@@ -182,6 +186,8 @@ begin
 
   AddFunction(@Char_Compare, 'function Char_Compare(const c, T: Char): Integer;');
   AddFunction(@Char_Precede, 'function Char_Precede(const x, target: Char; const aAscending: Boolean): Boolean;');
+  AddFunction(@Char_Ascending, 'function Char_Ascending(const x, target: Char): Boolean;');
+  AddFunction(@Char_Descending, 'function Char_Descending(const x, target: Char): Boolean;');
   AddFunction(@Char_Str, 'function Char_Str(const c: Char; const size: Integer = 1): string;');
   AddFunction(@Char_ToStr, 'function Char_ToStr(const c: Char; const size: Integer = 1): string;');
   AddFunction(@Char_IsNumber, 'function Char_IsNumber(const c: Char): Boolean;');
@@ -243,6 +249,8 @@ begin
   AddFunction(@String_Duplicated, 'function String_Duplicated(const str: string; const x: Integer; const glue: string): string;');
   AddFunction(@String_Compare, 'function String_Compare(const str: string; const s: string): Integer;');
   AddFunction(@String_Precede, 'function String_Precede(const x, target: string; const aAscending: Boolean): Boolean;');
+  AddFunction(@String_Ascending, 'function String_Ascending(const x, target: string): Boolean;');
+  AddFunction(@String_Descending, 'function String_Descending(const x, target: string): Boolean;');
   AddFunction(@String_Quotatation, 'function String_Quotatation(const str: string): string;');
   AddFunction(@String_PregQuote, 'function String_PregQuote(const str: string; const regex: string = ''.\+*?[^]$(){}=!<>|:-''): string;');
   AddFunction(@String_TrimLeft, 'function String_TrimLeft(const str: string; const t: Char = #32): string;');
@@ -659,6 +667,7 @@ begin
   AddFunction(@TIntegerArray_BinaryRange2, 'function TIntegerArray_BinaryRange(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinaryMerge, 'function TIntegerArray_BinaryMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryMerged, 'function TIntegerArray_BinaryMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryCombine, 'function TIntegerArray_BinaryCombine(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BMerge, 'function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BMerged, 'function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
 
@@ -698,6 +707,7 @@ begin
   AddFunction(@TDoubleArray_Reinit, 'function TDoubleArray_Reinit(var arr: TDoubleArray): Integer;');
   AddFunction(@TDoubleArray_BinaryMerge, 'function TDoubleArray_BinaryMerge(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TDoubleArray_BinaryMerged, 'function TDoubleArray_BinaryMerged(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TDoubleArray_BinaryCombine, 'function TDoubleArray_BinaryCombine(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
 
   AddFunction(@TStringArray_Span, 'function TStringArray_Span(const arr: TStringArray): Integer;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
