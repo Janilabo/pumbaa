@@ -33,6 +33,7 @@ function Integer_Negative(const x: Integer): Boolean; cdecl; inline; begin Resul
 function Integer_Positive(const x: Integer): Boolean; cdecl; inline; begin Result := x.Positive; end;
 function Integer_Neutral(const x: Integer): Boolean; cdecl; inline; begin Result := x.Neutral; end;
 function Integer_Compare(const x, T: Integer): Integer; cdecl; inline; begin Result := x.Compare(T); end;
+function Integer_Precede(const x, target: Integer; const aAscending: Boolean): Boolean; overload; cdecl; begin Result := x.Precede(target, aAscending); end;
 function Integer_Distance(const x, T: Integer): Integer; cdecl; inline; begin Result := x.Distance(T); end;
 function Integer_Difference(const x, T: Integer): Integer; cdecl; inline; begin Result := x.Difference(T); end;
 function Integer_Opposite(const x: Integer): Integer; cdecl; inline; begin Result := x.Opposite; end;
@@ -59,6 +60,7 @@ function Int64_DigitCount(const x: Int64): Integer; cdecl; begin Result := x.Dig
 function Int64_Digitz(const x: Int64): TIntegerArray; cdecl; begin Result := x.Digitz; end;
 function Int64_Digits(const x: Int64): TIntegerArray; cdecl; begin Result := x.Digits; end;
 function Int64_Compare(const x, T: Int64): Integer; cdecl; inline; begin Result := x.Compare(T); end;
+function Int64_Precede(const x, target: Int64; const aAscending: Boolean): Boolean; overload; cdecl; begin Result := x.Precede(target, aAscending); end;
 function Int64_Distance(const x, T: Int64): Int64; cdecl; inline; begin Result := x.Distance(T); end;
 function Int64_Difference(const x, T: Int64): Int64; cdecl; inline; begin Result := x.Difference(T); end;
 function Int64_Opposite(const x: Int64): Int64; cdecl; inline; begin Result := x.Opposite; end;
@@ -97,7 +99,8 @@ function Double_Neutral(const x: Double): Boolean; cdecl; inline; begin Result :
 function Double_MinDecimal(const x: Double): Double; cdecl; begin Result := x.MinDecimal; end;
 function Double_MaxDecimal(const x: Double): Double; cdecl; begin Result := x.MaxDecimal; end;
 function Double_Accuracy(const x: Double; const a: Int32): Double; cdecl; begin Result := x.Accuracy(a); end;
-function Double_Compare(const x, T: Double): Int32; cdecl; inline; begin Result := x.Compare(T); end; 
+function Double_Compare(const x, T: Double): Int32; cdecl; inline; begin Result := x.Compare(T); end;
+function Double_Precede(const x, target: Double; const aAscending: Boolean): Boolean; overload; cdecl; begin Result := x.Precede(target, aAscending); end; 
 function Double_Distance(const x, T: Double): Double; cdecl; inline; begin Result := x.Distance(T); end;
 function Double_Difference(const x, T: Double): Double; cdecl; inline; begin Result := x.Difference(T); end;
 function Double_Opposite(const x: Double): Double; cdecl; inline; begin Result := x.Opposite; end;
@@ -150,6 +153,8 @@ function Boolean_SetTrue(var x: Boolean): Integer; cdecl; begin Result := x.SetT
 function Boolean_SwitchOn(var x: Boolean; const state: Boolean): Boolean; cdecl; begin Result := x.SwitchOn(state); end;
 function Boolean_SwitchOff(var x: Boolean; const state: Boolean): Boolean; cdecl; begin Result := x.SwitchOff(state); end;
 
+function Char_Compare(const c, T: Char): Integer; cdecl; begin Result := c.Compare(T); end;
+function Char_Precede(const c, target: Char; const aAscending: Boolean): Boolean; overload; cdecl; begin Result := c.Precede(target, aAscending); end; 
 function Char_Str(const c: Char; const size: Integer = 1): string; cdecl; begin Result := c.Str(size); end;
 function Char_ToStr(const c: Char; const size: Integer = 1): string; cdecl; begin Result := c.ToStr(size); end;
 function Char_IsNumber(const c: Char): Boolean; cdecl; begin Result := c.IsNumber; end;
@@ -210,6 +215,7 @@ function String_Stuff(const str: string; const s: string; const iFrom, iCount: I
 function String_Duplicate(const str: string; const x: Integer = 2): string; cdecl; begin Result := str.Duplicate(x); end;
 function String_Duplicated(const str: string; const x: Integer; const glue: string): string; cdecl; begin Result := str.Duplicated(x, glue); end;
 function String_Compare(const str: string; const s: string): Integer; cdecl; inline; begin Result := str.Compare(s); end;
+function String_Precede(const str, target: string; const aAscending: Boolean): Boolean; overload; cdecl; begin Result := str.Precede(target, aAscending); end;
 function String_Quotatation(const str: string): string; cdecl; begin Result := str.Quotatation; end;
 function String_PregQuote(const str: string; const regex: string = '.\+*?[^]$(){}=!<>|:-'): string; cdecl; begin Result := str.PregQuote(regex); end;
 function String_TrimLeft(const str: string; const t: Char = #32): string; cdecl; begin Result := str.TrimLeft(t); end;
@@ -625,6 +631,9 @@ function TIntegerArray_BinaryUpperBound(const arr: TIntegerArray; const x: Integ
 function TIntegerArray_BinaryRange1(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TIntegerArray_BinaryRange2(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TIntegerArray_BinaryMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryMerge(items, aAscending); end;
+function TIntegerArray_BinaryMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryMerged(items, aAscending); end;
+function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BMerge(items, aAscending); end;
+function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BMerged(items, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -661,6 +670,7 @@ function TDoubleArray_BinaryRange1(const arr: TDoubleArray; const x: TRange; con
 function TDoubleArray_BinaryRange2(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TDoubleArray_Reinit(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 function TDoubleArray_BinaryMerge(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryMerge(items, aAscending); end;
+function TDoubleArray_BinaryMerged(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryMerged(items, aAscending); end;
 
 function TStringArray_Span(const arr: TStringArray): Integer; cdecl; begin Result := arr.Span; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
