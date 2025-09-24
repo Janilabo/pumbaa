@@ -624,6 +624,7 @@ function TIntegerArray_BinaryLowerBound(const arr: TIntegerArray; const x: Integ
 function TIntegerArray_BinaryUpperBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUpperBound(x, aAscending); end;
 function TIntegerArray_BinaryRange1(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TIntegerArray_BinaryRange2(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
+function TIntegerArray_BinaryMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryMerge(items, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -659,6 +660,7 @@ function TDoubleArray_BinaryUpperBound(const arr: TDoubleArray; const x: Double;
 function TDoubleArray_BinaryRange1(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TDoubleArray_BinaryRange2(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TDoubleArray_Reinit(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
+function TDoubleArray_BinaryMerge(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryMerge(items, aAscending); end;
 
 function TStringArray_Span(const arr: TStringArray): Integer; cdecl; begin Result := arr.Span; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;

@@ -651,6 +651,7 @@ begin
   AddFunction(@TIntegerArray_BinaryUpperBound, 'function TIntegerArray_BinaryUpperBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryRange1, 'function TIntegerArray_BinaryRange(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinaryRange2, 'function TIntegerArray_BinaryRange(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TIntegerArray_BinaryMerge, 'function TIntegerArray_BinaryMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
 
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -686,6 +687,7 @@ begin
   AddFunction(@TDoubleArray_BinaryRange1, 'function TDoubleArray_BinaryRange(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_BinaryRange2, 'function TDoubleArray_BinaryRange(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_Reinit, 'function TDoubleArray_Reinit(var arr: TDoubleArray): Integer;');
+  AddFunction(@TDoubleArray_BinaryMerge, 'function TDoubleArray_BinaryMerge(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
 
   AddFunction(@TStringArray_Span, 'function TStringArray_Span(const arr: TStringArray): Integer;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
