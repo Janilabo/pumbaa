@@ -1,0 +1,3 @@
+[submodule "source/libraries"]
+	path = source/libraries
+	url = https://github.com/Janilabo/MiMU.git
