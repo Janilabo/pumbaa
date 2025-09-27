@@ -469,7 +469,6 @@ begin
   AddFunction(@TRange_Span, 'function TRange_Span(const range: TRange): Integer;');
   AddFunction(@TRange_Size, 'function TRange_Size(const range: TRange): Integer;');
   AddFunction(@TRange_Capacity, 'function TRange_Capacity(const range: TRange): Integer;');
-  AddFunction(@TRange_Delta, 'function TRange_Delta(const range: TRange): Integer;');
   AddFunction(@TRange_Lowest, 'function TRange_Lowest(const range: TRange): Integer;');
   AddFunction(@TRange_Minimum, 'function TRange_Minimum(const range: TRange): Integer;');
   AddFunction(@TRange_Highest, 'function TRange_Highest(const range: TRange): Integer;');
@@ -540,6 +539,11 @@ begin
   AddFunction(@TRange_Touching, 'function TRange_Touching(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean;');
   AddFunction(@TRange_Distance, 'function TRange_Distance(const range: TRange; const b: TRange): Integer;');
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer;');
+  AddFunction(@TRange_Delta, 'function TRange_Delta(const range: TRange): Integer;');
+  AddFunction(@TRange_Direction, 'function TRange_Direction(const range: TRange): Integer;');
+  AddFunction(@TRange_Magnitude, 'function TRange_Magnitude(const range: TRange): Integer;');
+  AddFunction(@TRange_Orientation, 'function TRange_Orientation(const range: TRange): Integer;');
+  AddFunction(@TRange_Deficit, 'function TRange_Deficit(const range: TRange): Integer;');
   AddFunction(@TRange_Digit, 'function TRange_Digit(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Value, 'function TRange_Value(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Item, 'function TRange_Item(const range: TRange; const x: Integer): Boolean;');
@@ -558,6 +562,9 @@ begin
   AddFunction(@TRange_Summation, 'function TRange_Summation(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Total, 'function TRange_Total(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Extract, 'function TRange_Extract(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Limit, 'function TRange_Limit(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_MinLimit, 'function TRange_MinLimit(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_MaxLimit, 'function TRange_MaxLimit(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Lacks, 'function TRange_Lacks(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Outside, 'function TRange_Outside(const range: TRange; const x: Integer): Boolean;');
 
@@ -601,6 +608,8 @@ begin
   AddFunction(@TIntegerArray_Numberline, 'function TIntegerArray_Numberline(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Sum, 'function TIntegerArray_Sum(const arr: TIntegerArray): Int64;');
   AddFunction(@TIntegerArray_Density, 'function TIntegerArray_Density(const arr: TIntegerArray): Double;');
+  AddFunction(@TIntegerArray_Occupancy, 'function TIntegerArray_Occupancy(const arr: TIntegerArray): Double;');
+  AddFunction(@TIntegerArray_Saturated, 'function TIntegerArray_Saturated(const arr: TIntegerArray): Double;');
   AddFunction(@TIntegerArray_Mean, 'function TIntegerArray_Mean(const arr: TIntegerArray): Double;');
   AddFunction(@TIntegerArray_Median, 'function TIntegerArray_Median(const arr: TIntegerArray): Double;');
   AddFunction(@TIntegerArray_Middle, 'function TIntegerArray_Middle(const arr: TIntegerArray): Double;');
@@ -788,6 +797,7 @@ begin
   AddFunction(@TBooleanArray_BinaryDigits, 'function TBooleanArray_BinaryDigits(const arr: TBooleanArray): TIntegerArray;');
   AddFunction(@TBooleanArray_Binary, 'function TBooleanArray_Binary(const arr: TBooleanArray): string;');
   AddFunction(@TBooleanArray_Reinit, 'function TBooleanArray_Reinit(var arr: TBooleanArray): Integer;');
+  AddFunction(@TBooleanArray_Occupancy, 'function TBooleanArray_Occupancy(const arr: TBooleanArray; const val: Boolean = True): Double; overload;');
 
   AddFunction(@TPointArray_X1, 'function TPointArray_X(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TPointArray_X2, 'function TPointArray_X(const arr: TPointArray; const val: Integer): TIntegerArray; overload;');

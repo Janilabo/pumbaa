@@ -434,7 +434,6 @@ function TRange_Area(const range: TRange): Integer; cdecl; begin Result := range
 function TRange_Span(const range: TRange): Integer; cdecl; begin Result := range.Span; end;
 function TRange_Size(const range: TRange): Integer; cdecl; begin Result := range.Size; end;
 function TRange_Capacity(const range: TRange): Integer; cdecl; begin Result := range.Capacity; end;
-function TRange_Delta(const range: TRange): Integer; cdecl; begin Result := range.Delta; end;
 function TRange_Lowest(const range: TRange): Integer; cdecl; begin Result := range.Lowest; end;
 function TRange_Minimum(const range: TRange): Integer; cdecl; begin Result := range.Minimum; end;
 function TRange_Highest(const range: TRange): Integer; cdecl; begin Result := range.Highest; end;
@@ -505,6 +504,11 @@ function TRange_Touches(const range: TRange; const b: TRange; const maxTouch: In
 function TRange_Touching(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean; cdecl; begin Result := range.Touching(b, maxTouch, minTouch); end;
 function TRange_Distance(const range: TRange; const b: TRange): Integer; cdecl; begin Result := range.Distance(b); end;
 function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer; cdecl; begin Result := range.DistHausdorff(b); end;
+function TRange_Delta(const range: TRange): Integer; cdecl; inline; begin Result := range.Delta; end;
+function TRange_Direction(const range: TRange): Integer; cdecl; inline; begin Result := range.Direction; end;
+function TRange_Magnitude(const range: TRange): Integer; cdecl; inline; begin Result := range.Magnitude; end;
+function TRange_Orientation(const range: TRange): Integer; cdecl; inline; begin Result := range.Orientation; end;
+function TRange_Deficit(const range: TRange): Integer; cdecl; inline; begin Result := range.Deficit; end;
 function TRange_Digit(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Digit(x); end;
 function TRange_Value(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Value(x); end;
 function TRange_Item(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Item(x); end;
@@ -523,6 +527,9 @@ function TRange_Sum(const range: TRange): Int64; cdecl; begin Result := range.Su
 function TRange_Summation(const range: TRange): Int64; cdecl; begin Result := range.Summation; end;
 function TRange_Total(const range: TRange): Int64; cdecl; begin Result := range.Total; end;
 function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
+function TRange_Limit(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Limit(val); end;
+function TRange_MinLimit(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.MinLimit(val); end;
+function TRange_MaxLimit(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.MaxLimit(val); end;
 function TRange_Lacks(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Lacks(x); end;
 function TRange_Outside(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Outside(x); end;
 
@@ -566,6 +573,8 @@ function TIntegerArray_Unduped(const arr: TIntegerArray): TIntegerArray; cdecl; 
 function TIntegerArray_Numberline(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Numberline; end;
 function TIntegerArray_Sum(const arr: TIntegerArray): Int64; cdecl; begin Result := arr.Sum; end;
 function TIntegerArray_Density(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Density; end;
+function TIntegerArray_Occupancy(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Occupancy; end;
+function TIntegerArray_Saturated(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Saturated; end;
 function TIntegerArray_Mean(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Mean; end;
 function TIntegerArray_Median(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Median; end;
 function TIntegerArray_Middle(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Middle; end;
@@ -753,6 +762,7 @@ function TBooleanArray_BinaryStr(const arr: TBooleanArray): string; begin Result
 function TBooleanArray_BinaryDigits(const arr: TBooleanArray): TIntegerArray; begin Result := arr.BinaryDigits; end;
 function TBooleanArray_Binary(const arr: TBooleanArray): string; begin Result := arr.Binary; end;
 function TBooleanArray_Reinit(var arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
+function TBooleanArray_Occupancy(const arr: TBooleanArray; const val: Boolean = True): Double; overload; cdecl; begin Result := arr.Occupancy(val); end;
 
 function TPointArray_X1(const arr: TPointArray): TIntegerArray; cdecl; begin Result := X(arr); end;
 function TPointArray_X2(const arr: TPointArray; const val: Integer): TIntegerArray; cdecl; begin Result := X(arr, val); end;
