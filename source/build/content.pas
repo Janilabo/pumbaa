@@ -319,6 +319,7 @@ begin
   AddFunction(@TBox_Form2, 'function TBox_Form(const pt: TPoint; const width, height: Integer): TBox; overload;');
   AddFunction(@TBox_Frame1, 'function TBox_Frame(const bx: TBox; var width, height: Integer): TBox; overload;');
   AddFunction(@TBox_Frame2, 'function TBox_Frame(const bx: TBox): TBox; overload;');
+  AddFunction(@TBox_Unzip, 'function TBox_Unzip(const bx: TBox; var bX1, bY1, bX2, bY2: Integer): Integer; overload;');
   AddFunction(@TBox_Singular, 'function TBox_Singular(const bx: TBox): Boolean;');
   AddFunction(@TBox_IsPoint, 'function TBox_IsPoint(const bx: TBox): Boolean;');
   AddFunction(@TBox_IsHorizontalLine, 'function TBox_IsHorizontalLine(const bx: TBox): Boolean;');
@@ -668,7 +669,7 @@ begin
   AddFunction(@TIntegerArray_BinaryPosL, 'function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryPosR, 'function TIntegerArray_BinaryPosR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySearch, 'function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_BinarySeek, 'function TIntegerArray_BinarySeek(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinarySeek, 'function TIntegerArray_BinarySeek(const arr: TIntegerArray; const x: Int32; const aAscending: Boolean = True): Int32;');
   AddFunction(@TIntegerArray_BinaryContains, 'function TIntegerArray_BinaryContains(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean;');
   AddFunction(@TIntegerArray_BinaryCount, 'function TIntegerArray_BinaryCount(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryLocate, 'function TIntegerArray_BinaryLocate(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange;');

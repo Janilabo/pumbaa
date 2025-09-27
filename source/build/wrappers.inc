@@ -284,6 +284,7 @@ function TBox_Form1(const pt: TPoint; const size: Integer = 1): TBox; overload; 
 function TBox_Form2(const pt: TPoint; const width, height: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, width, height); end;
 function TBox_Frame1(const bx: TBox; var width, height: Integer): TBox; overload; cdecl; begin Result := bx.Frame(width, height); end;
 function TBox_Frame2(const bx: TBox): TBox; overload; cdecl; begin Result := bx.Frame; end;
+function TBox_Unzip(const bx: TBox; var bX1, bY1, bX2, bY2: Integer): Integer; overload; cdecl; begin Result := bx.Unzip(bX1, bY1, bX2, bY2); end;
 function TBox_Singular(const bx: TBox): Boolean; cdecl; begin Result := bx.Singular; end;
 function TBox_IsPoint(const bx: TBox): Boolean; cdecl; begin Result := bx.IsPoint; end;
 function TBox_IsHorizontalLine(const bx: TBox): Boolean; cdecl; begin Result := bx.IsHorizontalLine; end;
