@@ -1251,6 +1251,15 @@ function TArray_Diversified6(const arr: TPointArray): TPointArray; overload; cde
 function TArray_Diversified7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Diversified; end;
 function TArray_Diversified8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Diversified; end;
 
+function TArray_Domain1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+function TArray_Domain2(const arr: TDoubleArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+function TArray_Domain3(const arr: TStringArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+function TArray_Domain4(const arr: TCharArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+function TArray_Domain5(const arr: TBooleanArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+function TArray_Domain6(const arr: TPointArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+function TArray_Domain7(const arr: TBoxArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+function TArray_Domain8(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+
 function TArray_Drop1(const arr: TIntegerArray; const item: Integer; const eraseDuplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Drop(item, eraseDuplicates); end;
 function TArray_Drop2(const arr: TDoubleArray; const item: Double; const eraseDuplicates: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Drop(item, eraseDuplicates); end;
 function TArray_Drop3(const arr: TStringArray; const item: string; const eraseDuplicates: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Drop(item, eraseDuplicates); end;
@@ -1597,6 +1606,31 @@ function TArray_First21(const arr: TBooleanArray; const items: TBooleanArray): I
 function TArray_First22(const arr: TPointArray; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.First(items); end;
 function TArray_First23(const arr: TBoxArray; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.First(items); end;
 function TArray_First24(const arr: TRangeArray; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.First(items); end;
+
+function TArray_Fit1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function TArray_Fit2(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function TArray_Fit3(const arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function TArray_Fit4(const arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function TArray_Fit5(const arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function TArray_Fit6(const arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function TArray_Fit7(const arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function TArray_Fit8(const arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function TArray_Fit9(var arr: TIntegerArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function TArray_Fit10(var arr: TDoubleArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function TArray_Fit11(var arr: TStringArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function TArray_Fit12(var arr: TCharArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function TArray_Fit13(var arr: TBooleanArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function TArray_Fit14(var arr: TPointArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function TArray_Fit15(var arr: TBoxArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function TArray_Fit16(var arr: TRangeArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function TArray_Fit17(var arr: TIntegerArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function TArray_Fit18(var arr: TDoubleArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function TArray_Fit19(var arr: TStringArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function TArray_Fit20(var arr: TCharArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function TArray_Fit21(var arr: TBooleanArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function TArray_Fit22(var arr: TPointArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function TArray_Fit23(var arr: TBoxArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function TArray_Fit24(var arr: TRangeArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
 
 function TArray_Fits1(const arr: TIntegerArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
 function TArray_Fits2(const arr: TDoubleArray; const maxValue: Integer): Boolean; overload; cdecl; begin Result := arr.Fits(maxValue); end;
@@ -3029,6 +3063,31 @@ function T2DArray_Ragged5(const arr: T2DBooleanArray): Boolean; overload; cdecl;
 function T2DArray_Ragged6(const arr: T2DPointArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
 function T2DArray_Ragged7(const arr: T2DBoxArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
 function T2DArray_Ragged8(const arr: T2DRangeArray): Boolean; overload; cdecl; begin Result := arr.Ragged; end;
+
+function T2DArray_Fit1(const arr: T2DIntegerArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function T2DArray_Fit2(const arr: T2DDoubleArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function T2DArray_Fit3(const arr: T2DStringArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function T2DArray_Fit4(const arr: T2DCharArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function T2DArray_Fit5(const arr: T2DBooleanArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function T2DArray_Fit6(const arr: T2DPointArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function T2DArray_Fit7(const arr: T2DBoxArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function T2DArray_Fit8(const arr: T2DRangeArray): Integer; overload; cdecl; begin Result := arr.Fit; end;
+function T2DArray_Fit9(var arr: T2DIntegerArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function T2DArray_Fit10(var arr: T2DDoubleArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function T2DArray_Fit11(var arr: T2DStringArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function T2DArray_Fit12(var arr: T2DCharArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function T2DArray_Fit13(var arr: T2DBooleanArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function T2DArray_Fit14(var arr: T2DPointArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function T2DArray_Fit15(var arr: T2DBoxArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function T2DArray_Fit16(var arr: T2DRangeArray; const aSize: Integer): Integer; overload; cdecl; begin Result := arr.Fit(aSize); end;
+function T2DArray_Fit17(var arr: T2DIntegerArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function T2DArray_Fit18(var arr: T2DDoubleArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function T2DArray_Fit19(var arr: T2DStringArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function T2DArray_Fit20(var arr: T2DCharArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function T2DArray_Fit21(var arr: T2DBooleanArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function T2DArray_Fit22(var arr: T2DPointArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function T2DArray_Fit23(var arr: T2DBoxArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
+function T2DArray_Fit24(var arr: T2DRangeArray; const aBounds: TRange): Integer; overload; cdecl; begin Result := arr.Fit(aBounds); end;
 
 function T2DArray_Size1(const arr: T2DIntegerArray; var lengths: TIntegerArray): Int64; overload; cdecl; begin Result := arr.Size(lengths); end;
 function T2DArray_Size2(const arr: T2DDoubleArray; var lengths: TIntegerArray): Int64; overload; cdecl; begin Result := arr.Size(lengths); end;
