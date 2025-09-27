@@ -493,6 +493,8 @@ function TRange_RestrictMax(var range: Trange; const maxValue: Integer): Boolean
 function TRange_Clip(const range: TRange; const zone: TRange): TRange; cdecl; begin Result := range.Clip(zone); end;
 function TRange_ClipMin(const range: TRange; const minValue: Integer): TRange; cdecl; begin Result := range.ClipMin(minValue); end;
 function TRange_ClipMax(const range: TRange; const maxValue: Integer): TRange; cdecl; begin Result := range.ClipMax(maxValue); end;
+function TRange_Absorb(var range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Absorb(val); end;
+function TRange_Include(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Include(val); end;
 function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray; cdecl; begin Result := range.Distribute(parts); end;
 function TRange_Partition(const range: TRange; const size: Integer): TRangeArray; cdecl; begin Result := range.Partition(size); end;
 function TRange_Divide(const range: TRange; const size: Integer): TRangeArray; cdecl; begin Result := range.Divide(size); end;
@@ -513,6 +515,7 @@ function TRange_MidVal(const range: TRange): Double; cdecl; begin Result := rang
 function TRange_MidValue(const range: TRange): Double; cdecl; begin Result := range.MidValue; end;
 function TRange_Average(const range: TRange): Double; cdecl; begin Result := range.Average; end;
 function TRange_Center(const range: TRange): Integer; cdecl; begin Result := range.Center; end;
+function TRange_Central(const range: TRange): Integer; cdecl; begin Result := range.Central; end;
 function TRange_Str(const range: TRange; const openRange: string = '['; const closeRange: string = ']'; const glueRange: string = '..'): string; cdecl; begin Result := range.Str(openRange, closeRange, glueRange); end;  
 function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl; begin Result := range.ToStr(glueRange, openRange, closeRange); end;
 function TRange_Stringify(const range: TRange; const openRange: string = '['; const glueRange: string = '..'; const closeRange: string = ']'): string; cdecl; begin Result := range.Stringify(openRange, glueRange, closeRange); end;

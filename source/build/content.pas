@@ -528,6 +528,8 @@ begin
   AddFunction(@TRange_Clip, 'function TRange_Clip(const range: TRange; const zone: TRange): TRange;');
   AddFunction(@TRange_ClipMin, 'function TRange_ClipMin(const range: TRange; const minValue: Integer): TRange;');
   AddFunction(@TRange_ClipMax, 'function TRange_ClipMax(const range: TRange; const maxValue: Integer): TRange;');
+  AddFunction(@TRange_Absorb, 'function TRange_Absorb(var range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Include, 'function TRange_Include(const range: TRange; const val: Integer): TRange; overload;');
   AddFunction(@TRange_Distribute, 'function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray;');
   AddFunction(@TRange_Partition, 'function TRange_Partition(const range: TRange; const size: Integer): TRangeArray;');
   AddFunction(@TRange_Divide, 'function TRange_Divide(const range: TRange; const size: Integer): TRangeArray;');
@@ -548,6 +550,7 @@ begin
   AddFunction(@TRange_MidValue, 'function TRange_MidValue(const range: TRange): Double;');
   AddFunction(@TRange_Average, 'function TRange_Average(const range: TRange): Double;');
   AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Integer;');
+  AddFunction(@TRange_Central, 'function TRange_Central(const range: TRange): Integer;');
   AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange; const openRange: string = ''[''; const closeRange: string = '']''; const glueRange: string = ''..''): string;');  
   AddFunction(@TRange_ToStr, 'function TRange_ToStr(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string;');
   AddFunction(@TRange_Stringify, 'function TRange_Stringify(const range: TRange; const openRange: string = ''[''; const glueRange: string = ''..''; const closeRange: string = '']''): string;');
