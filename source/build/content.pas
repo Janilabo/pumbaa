@@ -313,6 +313,11 @@ begin
   AddFunction(@TBox_Create4, 'function TBox_Create(const target: TPoint): TBox; overload;');
   AddFunction(@TBox_Create5, 'function TBox_Create(const value: Integer = 0): TBox; overload;');
   AddFunction(@TBox_Construct, 'function TBox_Construct(const XS, YS, XE, YE: Integer): TBox; overload');
+  AddFunction(@TBox_Init1, 'function TBox_Init(var bx: TBox; const bX1, bY1, bX2, bY2: Integer): TBox; overload;');
+  AddFunction(@TBox_Init2, 'function TBox_Init(var bx: TBox; const b: TBox): TBox; overload;');
+  AddFunction(@TBox_Init3, 'function TBox_Init(var bx: TBox; const val: Integer = 0): TBox; overload;');
+  AddFunction(@TBox_Init4, 'function TBox_Init(var bx: TBox; const p: TPoint): TBox; overload;');
+  AddFunction(@TBox_Init5, 'function TBox_Init(var bx: TBox; const TL, BR: TPoint): TBox; overload;');
   AddFunction(@TBox_Make1, 'function TBox_Make(const pt: TPoint; const radius: Integer = 0): TBox; overload;');
   AddFunction(@TBox_Make2, 'function TBox_Make(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload;');
   AddFunction(@TBox_Form1, 'function TBox_Form(const pt: TPoint; const size: Integer = 1): TBox; overload;');
@@ -438,6 +443,14 @@ begin
   AddFunction(@TBox_Some1, 'function TBox_Some(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Some2, 'function TBox_Some(const bx: TBox; const amount: Integer): TPointArray; overload;');
 
+  AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
+  AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
+  AddFunction(@TRange_Create3, 'function TRange_Create: TRange; overload;');
+  AddFunction(@TRange_Construct, 'function TRange_Construct(const rStart, rStop: Integer): TRange; overload;');
+  AddFunction(@TRange_Build, 'function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer;');
+  AddFunction(@TRange_Init1, 'function TRange_Init(var range: TRange; const rStart, rStop: Integer): TRange; overload;');
+  AddFunction(@TRange_Init2, 'function TRange_Init(var range: TRange; const r: TRange): TRange; overload;');
+  AddFunction(@TRange_Init3, 'function TRange_Init(var range: TRange; const val: Integer = 0): TRange; overload;');
   AddFunction(@TRange_Singular, 'function TRange_Singular(const range: TRange): Boolean;');
   AddFunction(@TRange_Atomic, 'function TRange_Atomic(const range: TRange): Boolean;');
   AddFunction(@TRange_Plural, 'function TRange_Plural(const range: TRange): Boolean;');
@@ -458,11 +471,6 @@ begin
   AddFunction(@TRange_Rises, 'function TRange_Rises(const range: TRange): Boolean;');
   AddFunction(@TRange_Dropping, 'function TRange_Dropping(const range: TRange): Boolean;');
   AddFunction(@TRange_Drops, 'function TRange_Drops(const range: TRange): Boolean;');
-  AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
-  AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
-  AddFunction(@TRange_Create3, 'function TRange_Create: TRange; overload;');
-  AddFunction(@TRange_Construct, 'function TRange_Construct(const rStart, rStop: Integer): TRange; overload;');
-  AddFunction(@TRange_Build, 'function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer;');
   AddFunction(@TRange_Grab, 'function TRange_Grab(const range: TRange): TRange;');
   AddFunction(@TRange_Count, 'function TRange_Count(const range: TRange): Integer;');
   AddFunction(@TRange_Area, 'function TRange_Area(const range: TRange): Integer;');

@@ -278,6 +278,11 @@ function TBox_Build2(const top, bottom: TPoint): TBox; overload; cdecl; begin Re
 function TBox_Build3(const valueX, valueY: Integer): TBox; overload; cdecl; begin Result.Build(valueX, valueY); end;
 function TBox_Build4(const target: TPoint): TBox; overload; cdecl; begin Result.Build(target); end;
 function TBox_Build5(const value: Integer = 0): TBox; overload; cdecl; begin Result.Build(value); end;
+function TBox_Init1(var bx: TBox; const bX1, bY1, bX2, bY2: Integer): TBox; overload; cdecl; begin Result := bx.Init(bX1, bY1, bX2, bY2); end;
+function TBox_Init2(var bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := bx.Init(b); end;
+function TBox_Init3(var bx: TBox; const val: Integer = 0): TBox; overload; cdecl; begin Result := bx.Init(val); end;
+function TBox_Init4(var bx: TBox; const p: TPoint): TBox; overload; cdecl; begin Result := bx.Init(p); end;
+function TBox_Init5(var bx: TBox; const TL, BR: TPoint): TBox; overload; cdecl; begin Result := bx.Init(TL, BR); end;
 function TBox_Make1(const pt: TPoint; const radius: Integer = 0): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Make(pt, radius); end;
 function TBox_Make2(const pt: TPoint; const wRadius, hRadius: Integer): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Make(pt, wRadius, hRadius); end;
 function TBox_Form1(const pt: TPoint; const size: Integer = 1): TBox; overload; cdecl; var bx: TBox; begin Result := bx.Form(pt, size); end;
@@ -403,6 +408,14 @@ function TBox_Any(const bx: TBox): TPoint; cdecl; begin Result := bx.Any; end;
 function TBox_Some1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Some; end;
 function TBox_Some2(const bx: TBox; const amount: Integer): TPointArray; overload; cdecl; begin Result := bx.Some(amount); end;
 
+function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
+function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
+function TRange_Create3: TRange; overload; cdecl; var range: TRange; begin Result := range.Create; end;
+function TRange_Construct(const rStart, rStop: Integer): TRange; overload; cdecl; begin Result := TRange.Construct(rStart, rStop); end;
+function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer; cdecl; var range: TRange; begin Result := range.Build(rStart, rStop); end;
+function TRange_Init1(var range: TRange; const rStart, rStop: Integer): TRange; overload; cdecl; begin Result := range.Init(rStart, rStop); end;
+function TRange_Init2(var range: TRange; const r: TRange): TRange; overload; cdecl; begin Result := range.Init(r); end;
+function TRange_Init3(var range: TRange; const val: Integer = 0): TRange; overload; cdecl; begin Result := range.Init(val); end;
 function TRange_Singular(const range: TRange): Boolean; cdecl; begin Result := range.Singular; end;
 function TRange_Atomic(const range: TRange): Boolean; cdecl; begin Result := range.Atomic; end;
 function TRange_Plural(const range: TRange): Boolean; cdecl; begin Result := range.Plural; end;
@@ -423,11 +436,6 @@ function TRange_Rising(const range: TRange): Boolean; cdecl; begin Result := ran
 function TRange_Rises(const range: TRange): Boolean; cdecl; begin Result := range.Rises; end;
 function TRange_Dropping(const range: TRange): Boolean; cdecl; begin Result := range.Dropping; end;
 function TRange_Drops(const range: TRange): Boolean; cdecl; begin Result := range.Drops; end;
-function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
-function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
-function TRange_Create3: TRange; overload; cdecl; var range: TRange; begin Result := range.Create; end;
-function TRange_Construct(const rStart, rStop: Integer): TRange; overload; cdecl; begin Result := TRange.Construct(rStart, rStop); end;
-function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer; cdecl; var range: TRange; begin Result := range.Build(rStart, rStop); end;
 function TRange_Grab(const range: TRange): TRange; cdecl; begin Result := range.Grab; end;
 function TRange_Count(const range: TRange): Integer; cdecl; begin Result := range.Count; end; 
 function TRange_Area(const range: TRange): Integer; cdecl; begin Result := range.Area; end;
