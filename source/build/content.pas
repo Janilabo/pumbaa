@@ -624,9 +624,6 @@ begin
   AddFunction(@TIntegerArray_MostFrequent, 'function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer;');
   AddFunction(@TIntegerArray_LeastFrequent, 'function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer;');
   AddFunction(@TIntegerArray_BubbleSort2, 'function TIntegerArray_BubbleSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_QuickSort, 'function TIntegerArray_QuickSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_QuickSort3W, 'function TIntegerArray_QuickSort3W(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_QSort, 'function TIntegerArray_QSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_CoctailSort, 'function TIntegerArray_CoctailSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_CoctailSort2, 'function TIntegerArray_CoctailSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_GnomeSort, 'function TIntegerArray_GnomeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
@@ -2987,12 +2984,57 @@ begin
   AddFunction(@TArray_QuickSorted2, 'function TArray_QuickSorted(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TArray_QuickSorted3, 'function TArray_QuickSorted(const arr: TStringArray; const aAscending: Boolean = True): TStringArray; overload;');
   AddFunction(@TArray_QuickSorted4, 'function TArray_QuickSorted(const arr: TCharArray; const aAscending: Boolean = True): TCharArray; overload;');
+
+  AddFunction(@TArray_QuickSort1, 'function TArray_QuickSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSort2, 'function TArray_QuickSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSort3, 'function TArray_QuickSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSort4, 'function TArray_QuickSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
   
+  AddFunction(@TArray_QuickSort3W1, 'function TArray_QuickSort3W(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSort3W2, 'function TArray_QuickSort3W(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSort3W3, 'function TArray_QuickSort3W(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSort3W4, 'function TArray_QuickSort3W(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+  
+  AddFunction(@TArray_QSort1, 'function TArray_QSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QSort2, 'function TArray_QSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QSort3, 'function TArray_QSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QSort4, 'function TArray_QSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_CoctailSort1, 'function TArray_CoctailSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CoctailSort2, 'function TArray_CoctailSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CoctailSort3, 'function TArray_CoctailSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CoctailSort4, 'function TArray_CoctailSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_CoctailSort21, 'function TArray_CoctailSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CoctailSort22, 'function TArray_CoctailSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CoctailSort23, 'function TArray_CoctailSort2(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CoctailSort24, 'function TArray_CoctailSort2(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_GnomeSort1, 'function TArray_GnomeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_GnomeSort2, 'function TArray_GnomeSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_GnomeSort3, 'function TArray_GnomeSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_GnomeSort4, 'function TArray_GnomeSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_GnomeSortOptimized1, 'function TArray_GnomeSortOptimized(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_GnomeSortOptimized2, 'function TArray_GnomeSortOptimized(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_GnomeSortOptimized3, 'function TArray_GnomeSortOptimized(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_GnomeSortOptimized4, 'function TArray_GnomeSortOptimized(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_PancakeSort1, 'function TArray_PancakeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_PancakeSort2, 'function TArray_PancakeSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_PancakeSort3, 'function TArray_PancakeSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_PancakeSort4, 'function TArray_PancakeSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
   AddFunction(@TArray_BubbleSort1, 'function TArray_BubbleSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BubbleSort2, 'function TArray_BubbleSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BubbleSort3, 'function TArray_BubbleSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BubbleSort4, 'function TArray_BubbleSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
-  
+
+  AddFunction(@TArray_BubbleSort21, 'function TArray_BubbleSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BubbleSort22, 'function TArray_BubbleSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BubbleSort23, 'function TArray_BubbleSort2(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BubbleSort24, 'function TArray_BubbleSort2(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
   AddFunction(@TArray_BubbleSortOptimized1, 'function TArray_BubbleSortOptimized(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BubbleSortOptimized2, 'function TArray_BubbleSortOptimized(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BubbleSortOptimized3, 'function TArray_BubbleSortOptimized(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
