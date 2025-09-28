@@ -588,13 +588,6 @@ function TIntegerArray_Median(const arr: TIntegerArray): Double; cdecl; begin Re
 function TIntegerArray_Middle(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Middle; end;
 function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.MostFreq(null); end;
 function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.LeastFreq(null); end;
-function TIntegerArray_BubbleSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BubbleSort2(aAscending); end;
-function TIntegerArray_CoctailSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.CoctailSort(aAscending); end;
-function TIntegerArray_CoctailSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.CoctailSort2(aAscending); end;
-function TIntegerArray_GnomeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.GnomeSort(aAscending); end;
-function TIntegerArray_GnomeSortOptimized(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.GnomeSortOptimized(aAscending); end;
-function TIntegerArray_InsertionSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.InsertionSort(aAscending); end;
-function TIntegerArray_PancakeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.PancakeSort(aAscending); end;
 function TIntegerArray_RadixSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.RadixSort(aAscending); end;
 function TIntegerArray_Split1(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Split(minDiff, maxDiff); end;
 function TIntegerArray_Split2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Split(diff); end;

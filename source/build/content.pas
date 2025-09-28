@@ -623,12 +623,6 @@ begin
   AddFunction(@TIntegerArray_Middle, 'function TIntegerArray_Middle(const arr: TIntegerArray): Double;');
   AddFunction(@TIntegerArray_MostFrequent, 'function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer;');
   AddFunction(@TIntegerArray_LeastFrequent, 'function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer;');
-  AddFunction(@TIntegerArray_BubbleSort2, 'function TIntegerArray_BubbleSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_CoctailSort, 'function TIntegerArray_CoctailSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_CoctailSort2, 'function TIntegerArray_CoctailSort2(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_GnomeSort, 'function TIntegerArray_GnomeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_GnomeSortOptimized, 'function TIntegerArray_GnomeSortOptimized(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_PancakeSort, 'function TIntegerArray_PancakeSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_RadixSort, 'function TIntegerArray_RadixSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_Split1, 'function TIntegerArray_Split(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Split2, 'function TIntegerArray_Split(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
