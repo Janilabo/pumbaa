@@ -1108,6 +1108,14 @@ begin
   AddFunction(@TArray_Compacted6, 'function TArray_Compacted(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Compacted7, 'function TArray_Compacted(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Compacted8, 'function TArray_Compacted(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TArray_Compacted9, 'function TArray_Compacted(const arr: TIntegerArray; const threshold: Integer): TIntegerArray; overload;');
+  AddFunction(@TArray_Compacted10, 'function TArray_Compacted(const arr: TDoubleArray; const threshold: Integer): TDoubleArray; overload;');
+  AddFunction(@TArray_Compacted11, 'function TArray_Compacted(const arr: TStringArray; const threshold: Integer): TStringArray; overload;');
+  AddFunction(@TArray_Compacted12, 'function TArray_Compacted(const arr: TCharArray; const threshold: Integer): TCharArray; overload;');
+  AddFunction(@TArray_Compacted13, 'function TArray_Compacted(const arr: TBooleanArray; const threshold: Integer): TBooleanArray; overload;');
+  AddFunction(@TArray_Compacted14, 'function TArray_Compacted(const arr: TPointArray; const threshold: Integer): TPointArray; overload;');
+  AddFunction(@TArray_Compacted15, 'function TArray_Compacted(const arr: TBoxArray; const threshold: Integer): TBoxArray; overload;');
+  AddFunction(@TArray_Compacted16, 'function TArray_Compacted(const arr: TRangeArray; const threshold: Integer): TRangeArray; overload;');
 
   AddFunction(@TArray_Combine1, 'function TArray_Combine(const arr, b: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Combine2, 'function TArray_Combine(const arr, b: TDoubleArray): TDoubleArray; overload;');
@@ -1135,6 +1143,14 @@ begin
   AddFunction(@TArray_Compressed6, 'function TArray_Compressed(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Compressed7, 'function TArray_Compressed(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Compressed8, 'function TArray_Compressed(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TArray_Compressed9, 'function TArray_Compressed(const arr: TIntegerArray; const threshold: Integer): TIntegerArray; overload;');
+  AddFunction(@TArray_Compressed10, 'function TArray_Compressed(const arr: TDoubleArray; const threshold: Integer): TDoubleArray; overload;');
+  AddFunction(@TArray_Compressed11, 'function TArray_Compressed(const arr: TStringArray; const threshold: Integer): TStringArray; overload;');
+  AddFunction(@TArray_Compressed12, 'function TArray_Compressed(const arr: TCharArray; const threshold: Integer): TCharArray; overload;');
+  AddFunction(@TArray_Compressed13, 'function TArray_Compressed(const arr: TBooleanArray; const threshold: Integer): TBooleanArray; overload;');
+  AddFunction(@TArray_Compressed14, 'function TArray_Compressed(const arr: TPointArray; const threshold: Integer): TPointArray; overload;');
+  AddFunction(@TArray_Compressed15, 'function TArray_Compressed(const arr: TBoxArray; const threshold: Integer): TBoxArray; overload;');
+  AddFunction(@TArray_Compressed16, 'function TArray_Compressed(const arr: TRangeArray; const threshold: Integer): TRangeArray; overload;');
 
   AddFunction(@TArray_Comprised1, 'function TArray_Comprised(const arr, items: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Comprised2, 'function TArray_Comprised(const arr, items: TDoubleArray): Boolean; overload;');
@@ -2291,6 +2307,15 @@ begin
   AddFunction(@TArray_Previous7, 'function TArray_Previous(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload;');
   AddFunction(@TArray_Previous8, 'function TArray_Previous(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload;');
 
+  AddFunction(@TArray_Prune1, 'function TArray_Prune(var arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Prune2, 'function TArray_Prune(var arr: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Prune3, 'function TArray_Prune(var arr: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Prune4, 'function TArray_Prune(var arr: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Prune5, 'function TArray_Prune(var arr: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Prune6, 'function TArray_Prune(var arr: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Prune7, 'function TArray_Prune(var arr: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Prune8, 'function TArray_Prune(var arr: TRangeArray): Integer; overload;');
+
   AddFunction(@TArray_Pruned1, 'function TArray_Pruned(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Pruned2, 'function TArray_Pruned(const arr: TDoubleArray): TDoubleArray; overload;');
   AddFunction(@TArray_Pruned3, 'function TArray_Pruned(const arr: TStringArray): TStringArray; overload;');
@@ -2299,6 +2324,14 @@ begin
   AddFunction(@TArray_Pruned6, 'function TArray_Pruned(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Pruned7, 'function TArray_Pruned(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Pruned8, 'function TArray_Pruned(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TArray_Pruned9, 'function TArray_Pruned(const arr: TIntegerArray; const threshold: Integer): TIntegerArray; overload;');
+  AddFunction(@TArray_Pruned10, 'function TArray_Pruned(const arr: TDoubleArray; const threshold: Integer): TDoubleArray; overload;');
+  AddFunction(@TArray_Pruned11, 'function TArray_Pruned(const arr: TStringArray; const threshold: Integer): TStringArray; overload;');
+  AddFunction(@TArray_Pruned12, 'function TArray_Pruned(const arr: TCharArray; const threshold: Integer): TCharArray; overload;');
+  AddFunction(@TArray_Pruned13, 'function TArray_Pruned(const arr: TBooleanArray; const threshold: Integer): TBooleanArray; overload;');
+  AddFunction(@TArray_Pruned14, 'function TArray_Pruned(const arr: TPointArray; const threshold: Integer): TPointArray; overload;');
+  AddFunction(@TArray_Pruned15, 'function TArray_Pruned(const arr: TBoxArray; const threshold: Integer): TBoxArray; overload;');
+  AddFunction(@TArray_Pruned16, 'function TArray_Pruned(const arr: TRangeArray; const threshold: Integer): TRangeArray; overload;');
 
   AddFunction(@TArray_Pull1, 'function TArray_Pull(var arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Pull2, 'function TArray_Pull(var arr: TDoubleArray): TDoubleArray; overload;');

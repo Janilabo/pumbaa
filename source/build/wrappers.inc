@@ -1091,6 +1091,14 @@ function TArray_Compacted5(const arr: TBooleanArray): TBooleanArray; overload; c
 function TArray_Compacted6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Compacted; end;
 function TArray_Compacted7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Compacted; end;
 function TArray_Compacted8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Compacted; end;
+function TArray_Compacted9(const arr: TIntegerArray; const threshold: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Compacted(threshold); end;
+function TArray_Compacted10(const arr: TDoubleArray; const threshold: Integer): TDoubleArray; overload; cdecl; begin Result := arr.Compacted(threshold); end;
+function TArray_Compacted11(const arr: TStringArray; const threshold: Integer): TStringArray; overload; cdecl; begin Result := arr.Compacted(threshold); end;
+function TArray_Compacted12(const arr: TCharArray; const threshold: Integer): TCharArray; overload; cdecl; begin Result := arr.Compacted(threshold); end;
+function TArray_Compacted13(const arr: TBooleanArray; const threshold: Integer): TBooleanArray; overload; cdecl; begin Result := arr.Compacted(threshold); end;
+function TArray_Compacted14(const arr: TPointArray; const threshold: Integer): TPointArray; overload; cdecl; begin Result := arr.Compacted(threshold); end;
+function TArray_Compacted15(const arr: TBoxArray; const threshold: Integer): TBoxArray; overload; cdecl; begin Result := arr.Compacted(threshold); end;
+function TArray_Compacted16(const arr: TRangeArray; const threshold: Integer): TRangeArray; overload; cdecl; begin Result := arr.Compacted(threshold); end;
 
 function TArray_Combine1(const arr, b: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Combine(b); end;
 function TArray_Combine2(const arr, b: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Combine(b); end;
@@ -1118,6 +1126,14 @@ function TArray_Compressed5(const arr: TBooleanArray): TBooleanArray; overload; 
 function TArray_Compressed6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Compressed; end;
 function TArray_Compressed7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Compressed; end;
 function TArray_Compressed8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Compressed; end;
+function TArray_Compressed9(const arr: TIntegerArray; const threshold: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Compressed(threshold); end;
+function TArray_Compressed10(const arr: TDoubleArray; const threshold: Integer): TDoubleArray; overload; cdecl; begin Result := arr.Compressed(threshold); end;
+function TArray_Compressed11(const arr: TStringArray; const threshold: Integer): TStringArray; overload; cdecl; begin Result := arr.Compressed(threshold); end;
+function TArray_Compressed12(const arr: TCharArray; const threshold: Integer): TCharArray; overload; cdecl; begin Result := arr.Compressed(threshold); end;
+function TArray_Compressed13(const arr: TBooleanArray; const threshold: Integer): TBooleanArray; overload; cdecl; begin Result := arr.Compressed(threshold); end;
+function TArray_Compressed14(const arr: TPointArray; const threshold: Integer): TPointArray; overload; cdecl; begin Result := arr.Compressed(threshold); end;
+function TArray_Compressed15(const arr: TBoxArray; const threshold: Integer): TBoxArray; overload; cdecl; begin Result := arr.Compressed(threshold); end;
+function TArray_Compressed16(const arr: TRangeArray; const threshold: Integer): TRangeArray; overload; cdecl; begin Result := arr.Compressed(threshold); end;
 
 function TArray_Comprised1(const arr, items: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Comprised(items); end;
 function TArray_Comprised2(const arr, items: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Comprised(items); end;
@@ -2256,6 +2272,15 @@ function TArray_Previous6(const arr: TPointArray; const index: Integer; const co
 function TArray_Previous7(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
 function TArray_Previous8(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
 
+function TArray_Prune1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Prune; end;
+function TArray_Prune2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Prune; end;
+function TArray_Prune3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Prune; end;
+function TArray_Prune4(var arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Prune; end;
+function TArray_Prune5(var arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Prune; end;
+function TArray_Prune6(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Prune; end;
+function TArray_Prune7(var arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Prune; end;
+function TArray_Prune8(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Prune; end;
+
 function TArray_Pruned1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Pruned; end;
 function TArray_Pruned2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Pruned; end;
 function TArray_Pruned3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Pruned; end;
@@ -2264,6 +2289,14 @@ function TArray_Pruned5(const arr: TBooleanArray): TBooleanArray; overload; cdec
 function TArray_Pruned6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Pruned; end;
 function TArray_Pruned7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Pruned; end;
 function TArray_Pruned8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Pruned; end;
+function TArray_Pruned9(const arr: TIntegerArray; const threshold: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Pruned(threshold); end;
+function TArray_Pruned10(const arr: TDoubleArray; const threshold: Integer): TDoubleArray; overload; cdecl; begin Result := arr.Pruned(threshold); end;
+function TArray_Pruned11(const arr: TStringArray; const threshold: Integer): TStringArray; overload; cdecl; begin Result := arr.Pruned(threshold); end;
+function TArray_Pruned12(const arr: TCharArray; const threshold: Integer): TCharArray; overload; cdecl; begin Result := arr.Pruned(threshold); end;
+function TArray_Pruned13(const arr: TBooleanArray; const threshold: Integer): TBooleanArray; overload; cdecl; begin Result := arr.Pruned(threshold); end;
+function TArray_Pruned14(const arr: TPointArray; const threshold: Integer): TPointArray; overload; cdecl; begin Result := arr.Pruned(threshold); end;
+function TArray_Pruned15(const arr: TBoxArray; const threshold: Integer): TBoxArray; overload; cdecl; begin Result := arr.Pruned(threshold); end;
+function TArray_Pruned16(const arr: TRangeArray; const threshold: Integer): TRangeArray; overload; cdecl; begin Result := arr.Pruned(threshold); end;
 
 function TArray_Pull1(var arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Pull; end;
 function TArray_Pull2(var arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Pull; end;
