@@ -686,7 +686,7 @@ begin
   AddFunction(@TIntegerArray_BinaryUniqued, 'function TIntegerArray_BinaryUniqued(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
   AddFunction(@TIntegerArray_BinaryUndupe, 'function TIntegerArray_BinaryUndupe(var arr: TIntegerArray): Integer;');
   AddFunction(@TIntegerArray_BinaryUnduped, 'function TIntegerArray_BinaryUnduped(const arr: TIntegerArray): TIntegerArray;');
-  AddFunction(@TIntegerArray_BinaryUnduplicated, 'function TIntegerArray_BinaryUnduplicated(const arr: TIntegerArray; const dAscending: Boolean = True): TIntegerArray;');
+  AddFunction(@TIntegerArray_BinaryUnified, 'function TIntegerArray_BinaryUnified(const arr: TIntegerArray; const dAscending: Boolean = True): TIntegerArray;');
   AddFunction(@TIntegerArray_BinaryGrow, 'function TIntegerArray_BinaryGrow(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean;');
   AddFunction(@TIntegerArray_BinaryShrink, 'function TIntegerArray_BinaryShrink(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean;');
   AddFunction(@TIntegerArray_BinaryLowerBound, 'function TIntegerArray_BinaryLowerBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
@@ -728,7 +728,7 @@ begin
   AddFunction(@TDoubleArray_BinaryUniqued, 'function TDoubleArray_BinaryUniqued(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray;');
   AddFunction(@TDoubleArray_BinaryUndupe, 'function TDoubleArray_BinaryUndupe(var arr: TDoubleArray): Integer;');
   AddFunction(@TDoubleArray_BinaryUnduped, 'function TDoubleArray_BinaryUnduped(const arr: TDoubleArray): TDoubleArray;');
-  AddFunction(@TDoubleArray_BinaryUnduplicated, 'function TDoubleArray_BinaryUnduplicated(const arr: TDoubleArray; const dAscending: Boolean = True): TDoubleArray;');
+  AddFunction(@TDoubleArray_BinaryUnified, 'function TDoubleArray_BinaryUnified(const arr: TDoubleArray; const dAscending: Boolean = True): TDoubleArray;');
   AddFunction(@TDoubleArray_BinaryGrow, 'function TDoubleArray_BinaryGrow(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean;');
   AddFunction(@TDoubleArray_BinaryShrink, 'function TDoubleArray_BinaryShrink(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean;');
   AddFunction(@TDoubleArray_BinaryLowerBound, 'function TDoubleArray_BinaryLowerBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
@@ -2761,14 +2761,14 @@ begin
   AddFunction(@TArray_Undersize7, 'function TArray_Undersize(const arr: TBoxArray; const limit: Integer): Boolean; overload;');
   AddFunction(@TArray_Undersize8, 'function TArray_Undersize(const arr: TRangeArray; const limit: Integer): Boolean; overload;');
 
-  AddFunction(@TArray_Unduplicate1, 'function TArray_Unduplicate(const arr: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TArray_Unduplicate2, 'function TArray_Unduplicate(const arr: TDoubleArray): TDoubleArray; overload;');
-  AddFunction(@TArray_Unduplicate3, 'function TArray_Unduplicate(const arr: TStringArray): TStringArray; overload;');
-  AddFunction(@TArray_Unduplicate4, 'function TArray_Unduplicate(const arr: TCharArray): TCharArray; overload;');
-  AddFunction(@TArray_Unduplicate5, 'function TArray_Unduplicate(const arr: TBooleanArray): TBooleanArray; overload;');
-  AddFunction(@TArray_Unduplicate6, 'function TArray_Unduplicate(const arr: TPointArray): TPointArray; overload;');
-  AddFunction(@TArray_Unduplicate7, 'function TArray_Unduplicate(const arr: TBoxArray): TBoxArray; overload;');
-  AddFunction(@TArray_Unduplicate8, 'function TArray_Unduplicate(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TArray_Uncluttered1, 'function TArray_Uncluttered(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Uncluttered2, 'function TArray_Uncluttered(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Uncluttered3, 'function TArray_Uncluttered(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Uncluttered4, 'function TArray_Uncluttered(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Uncluttered5, 'function TArray_Uncluttered(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Uncluttered6, 'function TArray_Uncluttered(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Uncluttered7, 'function TArray_Uncluttered(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Uncluttered8, 'function TArray_Uncluttered(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Uniform1, 'function TArray_Uniform(const arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Uniform2, 'function TArray_Uniform(const arr: TDoubleArray): Boolean; overload;');
@@ -2796,23 +2796,32 @@ begin
   AddFunction(@TArray_Uniformity7, 'function TArray_Uniformity(const arr: TBoxArray): Double; overload;');
   AddFunction(@TArray_Uniformity8, 'function TArray_Uniformity(const arr: TRangeArray): Double; overload;');
   
-  AddFunction(@TArray_Unify1, 'function TArray_Unify(const arr: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TArray_Unify2, 'function TArray_Unify(const arr: TDoubleArray): TDoubleArray; overload;');
-  AddFunction(@TArray_Unify3, 'function TArray_Unify(const arr: TStringArray): TStringArray; overload;');
-  AddFunction(@TArray_Unify4, 'function TArray_Unify(const arr: TCharArray): TCharArray; overload;');
-  AddFunction(@TArray_Unify5, 'function TArray_Unify(const arr: TBooleanArray): TBooleanArray; overload;');
-  AddFunction(@TArray_Unify6, 'function TArray_Unify(const arr: TPointArray): TPointArray; overload;');
-  AddFunction(@TArray_Unify7, 'function TArray_Unify(const arr: TBoxArray): TBoxArray; overload;');
-  AddFunction(@TArray_Unify8, 'function TArray_Unify(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TArray_Unified1, 'function TArray_Unified(const arr: TIntegerArray; const dAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Unified2, 'function TArray_Unified(const arr: TDoubleArray; const dAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TArray_Unified3, 'function TArray_Unified(const arr: TStringArray; const dAscending: Boolean = True): TStringArray; overload;');
+  AddFunction(@TArray_Unified4, 'function TArray_Unified(const arr: TCharArray; const dAscending: Boolean = True): TCharArray; overload;');
+  AddFunction(@TArray_Unified5, 'function TArray_Unified(const arr: TBooleanArray; const dAscending: Boolean = True): TBooleanArray; overload;');
+  AddFunction(@TArray_Unified6, 'function TArray_Unified(const arr: TPointArray; const dAscending: Boolean = True): TPointArray; overload;');
+  AddFunction(@TArray_Unified7, 'function TArray_Unified(const arr: TBoxArray; const dAscending: Boolean = True): TBoxArray; overload;');
+  AddFunction(@TArray_Unified8, 'function TArray_Unified(const arr: TRangeArray; const dAscending: Boolean = True): TRangeArray; overload;');
 
-  AddFunction(@TArray_Unique1, 'function TArray_Unique(const arr: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TArray_Unique2, 'function TArray_Unique(const arr: TDoubleArray): TDoubleArray; overload;');
-  AddFunction(@TArray_Unique3, 'function TArray_Unique(const arr: TStringArray): TStringArray; overload;');
-  AddFunction(@TArray_Unique4, 'function TArray_Unique(const arr: TCharArray): TCharArray; overload;');
-  AddFunction(@TArray_Unique5, 'function TArray_Unique(const arr: TBooleanArray): TBooleanArray; overload;');
-  AddFunction(@TArray_Unique6, 'function TArray_Unique(const arr: TPointArray): TPointArray; overload;');
-  AddFunction(@TArray_Unique7, 'function TArray_Unique(const arr: TBoxArray): TBoxArray; overload;');
-  AddFunction(@TArray_Unique8, 'function TArray_Unique(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TArray_Unify1, 'function TArray_Unify(var arr: TIntegerArray; const dAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_Unify2, 'function TArray_Unify(var arr: TDoubleArray; const dAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_Unify3, 'function TArray_Unify(var arr: TStringArray; const dAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_Unify4, 'function TArray_Unify(var arr: TCharArray; const dAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_Unify5, 'function TArray_Unify(var arr: TBooleanArray; const dAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_Unify6, 'function TArray_Unify(var arr: TPointArray; const dAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_Unify7, 'function TArray_Unify(var arr: TBoxArray; const dAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_Unify8, 'function TArray_Unify(var arr: TRangeArray; const dAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_Unduplicated1, 'function TArray_Unduplicated(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Unduplicated2, 'function TArray_Unduplicated(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Unduplicated3, 'function TArray_Unduplicated(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Unduplicated4, 'function TArray_Unduplicated(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Unduplicated5, 'function TArray_Unduplicated(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Unduplicated6, 'function TArray_Unduplicated(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Unduplicated7, 'function TArray_Unduplicated(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Unduplicated8, 'function TArray_Unduplicated(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Uniqued1, 'function TArray_Uniqued(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Uniqued2, 'function TArray_Uniqued(const arr: TDoubleArray): TDoubleArray; overload;');
