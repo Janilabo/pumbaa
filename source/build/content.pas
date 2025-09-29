@@ -1250,15 +1250,6 @@ begin
   AddFunction(@TArray_Distribute7, 'function TArray_Distribute(const arr: TBoxArray; const parts: Integer): T2DBoxArray; overload;');
   AddFunction(@TArray_Distribute8, 'function TArray_Distribute(const arr: TRangeArray; const parts: Integer): T2DRangeArray; overload;');
 
-  AddFunction(@TArray_Diversify1, 'function TArray_Diversify(const arr: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TArray_Diversify2, 'function TArray_Diversify(const arr: TDoubleArray): TDoubleArray; overload;');
-  AddFunction(@TArray_Diversify3, 'function TArray_Diversify(const arr: TStringArray): TStringArray; overload;');
-  AddFunction(@TArray_Diversify4, 'function TArray_Diversify(const arr: TCharArray): TCharArray; overload;');
-  AddFunction(@TArray_Diversify5, 'function TArray_Diversify(const arr: TBooleanArray): TBooleanArray; overload;');
-  AddFunction(@TArray_Diversify6, 'function TArray_Diversify(const arr: TPointArray): TPointArray; overload;');
-  AddFunction(@TArray_Diversify7, 'function TArray_Diversify(const arr: TBoxArray): TBoxArray; overload;');
-  AddFunction(@TArray_Diversify8, 'function TArray_Diversify(const arr: TRangeArray): TRangeArray; overload;');
-  
   AddFunction(@TArray_Diversified1, 'function TArray_Diversified(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Diversified2, 'function TArray_Diversified(const arr: TDoubleArray): TDoubleArray; overload;');
   AddFunction(@TArray_Diversified3, 'function TArray_Diversified(const arr: TStringArray): TStringArray; overload;');
@@ -1267,6 +1258,15 @@ begin
   AddFunction(@TArray_Diversified6, 'function TArray_Diversified(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Diversified7, 'function TArray_Diversified(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Diversified8, 'function TArray_Diversified(const arr: TRangeArray): TRangeArray; overload;');
+  
+  AddFunction(@TArray_DiversifiedEx1, 'function TArray_DiversifiedEx(const arr: TIntegerArray; const dAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_DiversifiedEx2, 'function TArray_DiversifiedEx(const arr: TDoubleArray; const dAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TArray_DiversifiedEx3, 'function TArray_DiversifiedEx(const arr: TStringArray; const dAscending: Boolean = True): TStringArray; overload;');
+  AddFunction(@TArray_DiversifiedEx4, 'function TArray_DiversifiedEx(const arr: TCharArray; const dAscending: Boolean = True): TCharArray; overload;');
+  AddFunction(@TArray_DiversifiedEx5, 'function TArray_DiversifiedEx(const arr: TBooleanArray; const dAscending: Boolean = True): TBooleanArray; overload;');
+  AddFunction(@TArray_DiversifiedEx6, 'function TArray_DiversifiedEx(const arr: TPointArray; const dAscending: Boolean = True): TPointArray; overload;');
+  AddFunction(@TArray_DiversifiedEx7, 'function TArray_DiversifiedEx(const arr: TBoxArray; const dAscending: Boolean = True): TBoxArray; overload;');
+  AddFunction(@TArray_DiversifiedEx8, 'function TArray_DiversifiedEx(const arr: TRangeArray; const dAscending: Boolean = True): TRangeArray; overload;');
 
   AddFunction(@TArray_Domain1, 'function TArray_Domain(const arr: TIntegerArray): TRange; overload;');
   AddFunction(@TArray_Domain2, 'function TArray_Domain(const arr: TDoubleArray): TRange; overload;');

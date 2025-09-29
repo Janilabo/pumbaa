@@ -1242,15 +1242,6 @@ function TArray_Distribute6(const arr: TPointArray; const parts: Integer): T2DPo
 function TArray_Distribute7(const arr: TBoxArray; const parts: Integer): T2DBoxArray; overload; cdecl; begin Result := arr.Distribute(parts); end;
 function TArray_Distribute8(const arr: TRangeArray; const parts: Integer): T2DRangeArray; overload; cdecl; begin Result := arr.Distribute(parts); end;
 
-function TArray_Diversify1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Diversify; end;
-function TArray_Diversify2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Diversify; end;
-function TArray_Diversify3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Diversify; end;
-function TArray_Diversify4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Diversify; end;
-function TArray_Diversify5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Diversify; end;
-function TArray_Diversify6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Diversify; end;
-function TArray_Diversify7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Diversify; end;
-function TArray_Diversify8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Diversify; end;
-
 function TArray_Diversified1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Diversified; end;
 function TArray_Diversified2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Diversified; end;
 function TArray_Diversified3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Diversified; end;
@@ -1259,6 +1250,15 @@ function TArray_Diversified5(const arr: TBooleanArray): TBooleanArray; overload;
 function TArray_Diversified6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Diversified; end;
 function TArray_Diversified7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Diversified; end;
 function TArray_Diversified8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Diversified; end;
+
+function TArray_DiversifiedEx1(const arr: TIntegerArray; const dAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.DiversifiedEx(dAscending); end;
+function TArray_DiversifiedEx2(const arr: TDoubleArray; const dAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.DiversifiedEx(dAscending); end;
+function TArray_DiversifiedEx3(const arr: TStringArray; const dAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.DiversifiedEx(dAscending); end;
+function TArray_DiversifiedEx4(const arr: TCharArray; const dAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.DiversifiedEx(dAscending); end;
+function TArray_DiversifiedEx5(const arr: TBooleanArray; const dAscending: Boolean = True): TBooleanArray; overload; cdecl; begin Result := arr.DiversifiedEx(dAscending); end;
+function TArray_DiversifiedEx6(const arr: TPointArray; const dAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.DiversifiedEx(dAscending); end;
+function TArray_DiversifiedEx7(const arr: TBoxArray; const dAscending: Boolean = True): TBoxArray; overload; cdecl; begin Result := arr.DiversifiedEx(dAscending); end;
+function TArray_DiversifiedEx8(const arr: TRangeArray; const dAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.DiversifiedEx(dAscending); end;
 
 function TArray_Domain1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
 function TArray_Domain2(const arr: TDoubleArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
