@@ -682,8 +682,8 @@ begin
   AddFunction(@TIntegerArray_BinaryAdd, 'function TIntegerArray_BinaryAdd(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TIntegerArray;');
   AddFunction(@TIntegerArray_BinarySearchF, 'function TIntegerArray_BinarySearchF(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySearchL, 'function TIntegerArray_BinarySearchL(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_BinaryUnique, 'function TIntegerArray_BinaryUnique(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TIntegerArray_BinaryUniqued, 'function TIntegerArray_BinaryUniqued(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
+  AddFunction(@TIntegerArray_BinaryPrune, 'function TIntegerArray_BinaryPrune(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryPruned, 'function TIntegerArray_BinaryPruned(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
   AddFunction(@TIntegerArray_BinaryUndupe, 'function TIntegerArray_BinaryUndupe(var arr: TIntegerArray): Integer;');
   AddFunction(@TIntegerArray_BinaryUnduped, 'function TIntegerArray_BinaryUnduped(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_BinaryUnified, 'function TIntegerArray_BinaryUnified(const arr: TIntegerArray; const dAscending: Boolean = True): TIntegerArray;');
@@ -724,8 +724,8 @@ begin
   AddFunction(@TDoubleArray_BinaryAdd, 'function TDoubleArray_BinaryAdd(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TDoubleArray;');
   AddFunction(@TDoubleArray_BinarySearchF, 'function TDoubleArray_BinarySearchF(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinarySearchL, 'function TDoubleArray_BinarySearchL(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TDoubleArray_BinaryUnique, 'function TDoubleArray_BinaryUnique(var arr: TDoubleArray; const aAscending: Boolean = True): Integer;');
-  AddFunction(@TDoubleArray_BinaryUniqued, 'function TDoubleArray_BinaryUniqued(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray;');
+  AddFunction(@TDoubleArray_BinaryPrune, 'function TDoubleArray_BinaryPrune(var arr: TDoubleArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryPruned, 'function TDoubleArray_BinaryPruned(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray;');
   AddFunction(@TDoubleArray_BinaryUndupe, 'function TDoubleArray_BinaryUndupe(var arr: TDoubleArray): Integer;');
   AddFunction(@TDoubleArray_BinaryUnduped, 'function TDoubleArray_BinaryUnduped(const arr: TDoubleArray): TDoubleArray;');
   AddFunction(@TDoubleArray_BinaryUnified, 'function TDoubleArray_BinaryUnified(const arr: TDoubleArray; const dAscending: Boolean = True): TDoubleArray;');

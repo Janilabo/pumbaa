@@ -647,8 +647,8 @@ function TIntegerArray_BinaryAppend(var arr: TIntegerArray; const x: Integer; co
 function TIntegerArray_BinaryAdd(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryAdd(x, aAscending); end;
 function TIntegerArray_BinarySearchF(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearchF(x, aAscending); end;
 function TIntegerArray_BinarySearchL(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearchL(x, aAscending); end;
-function TIntegerArray_BinaryUnique(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUnique(aAscending); end;
-function TIntegerArray_BinaryUniqued(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryUniqued(aAscending); end;
+function TIntegerArray_BinaryPrune(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPrune(aAscending); end;
+function TIntegerArray_BinaryPruned(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryPruned(aAscending); end;
 function TIntegerArray_BinaryUndupe(var arr: TIntegerArray): Integer; cdecl; begin Result := arr.BinaryUndupe; end;
 function TIntegerArray_BinaryUnduped(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.BinaryUnduped; end;
 function TIntegerArray_BinaryUnified(const arr: TIntegerArray; const dAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinaryUnified(dAscending); end;
@@ -689,8 +689,8 @@ function TDoubleArray_BinaryAppend(var arr: TDoubleArray; const x: Double; const
 function TDoubleArray_BinaryAdd(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TDoubleArray; cdecl; begin Result := arr.BinaryAdd(x, aAscending); end;
 function TDoubleArray_BinarySearchF(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearchF(x, aAscending); end;
 function TDoubleArray_BinarySearchL(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearchL(x, aAscending); end;
-function TDoubleArray_BinaryUnique(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUnique(aAscending); end;
-function TDoubleArray_BinaryUniqued(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; cdecl; begin Result := arr.BinaryUniqued(aAscending); end;
+function TDoubleArray_BinaryPrune(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPrune(aAscending); end;
+function TDoubleArray_BinaryPruned(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; cdecl; begin Result := arr.BinaryPruned(aAscending); end;
 function TDoubleArray_BinaryUndupe(var arr: TDoubleArray): Integer; cdecl; begin Result := arr.BinaryUndupe; end;
 function TDoubleArray_BinaryUnduped(const arr: TDoubleArray): TDoubleArray; cdecl; begin Result := arr.BinaryUnduped; end;
 function TDoubleArray_BinaryUnified(const arr: TDoubleArray; const dAscending: Boolean = True): TDoubleArray; cdecl; begin Result := arr.BinaryUnified(dAscending); end;
