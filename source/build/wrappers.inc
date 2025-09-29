@@ -1074,14 +1074,14 @@ function TArray_Clone14(const arr: TPointArray; const ID: TIntegerArray): TPoint
 function TArray_Clone15(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.Clone(ID); end;
 function TArray_Clone16(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Clone(ID); end;
 
-function TArray_Compact1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Compact; end;
-function TArray_Compact2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Compact; end;
-function TArray_Compact3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Compact; end;
-function TArray_Compact4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Compact; end;
-function TArray_Compact5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Compact; end;
-function TArray_Compact6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Compact; end;
-function TArray_Compact7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Compact; end;
-function TArray_Compact8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Compact; end;
+function TArray_Compact1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
+function TArray_Compact2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
+function TArray_Compact3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
+function TArray_Compact4(var arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
+function TArray_Compact5(var arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
+function TArray_Compact6(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
+function TArray_Compact7(var arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
+function TArray_Compact8(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
 
 function TArray_Compacted1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Compacted; end;
 function TArray_Compacted2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Compacted; end;
@@ -1101,14 +1101,14 @@ function TArray_Combine6(const arr, b: TPointArray): TPointArray; overload; cdec
 function TArray_Combine7(const arr, b: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Combine(b); end;
 function TArray_Combine8(const arr, b: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Combine(b); end;
 
-function TArray_Compress1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Compress; end;
-function TArray_Compress2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Compress; end;
-function TArray_Compress3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Compress; end;
-function TArray_Compress4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Compress; end;
-function TArray_Compress5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Compress; end;
-function TArray_Compress6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Compress; end;
-function TArray_Compress7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Compress; end;
-function TArray_Compress8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Compress; end;
+function TArray_Compress1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
+function TArray_Compress2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
+function TArray_Compress3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
+function TArray_Compress4(var arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
+function TArray_Compress5(var arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
+function TArray_Compress6(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
+function TArray_Compress7(var arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
+function TArray_Compress8(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
 
 function TArray_Compressed1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Compressed; end;
 function TArray_Compressed2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Compressed; end;
@@ -1188,6 +1188,15 @@ function TArray_Create13(const aSize: Integer; const item: Boolean): TBooleanArr
 function TArray_Create14(const aSize: Integer; const item: TPoint): TPointArray; overload; cdecl; begin Result.Create(aSize, item); end;
 function TArray_Create15(const aSize: Integer; const item: TBox): TBoxArray; overload; cdecl; begin Result.Create(aSize, item); end;
 function TArray_Create16(const aSize: Integer; const item: TRange): TRangeArray; overload; cdecl; begin Result.Create(aSize, item); end;
+
+function TArray_Deduplicated1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Deduplicated; end;
+function TArray_Deduplicated2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Deduplicated; end;
+function TArray_Deduplicated3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Deduplicated; end;
+function TArray_Deduplicated4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Deduplicated; end;
+function TArray_Deduplicated5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Deduplicated; end;
+function TArray_Deduplicated6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Deduplicated; end;
+function TArray_Deduplicated7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Deduplicated; end;
+function TArray_Deduplicated8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Deduplicated; end;
 
 function TArray_Delete1(const arr: TIntegerArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Delete(index); end;
 function TArray_Delete2(const arr: TDoubleArray; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.Delete(index); end;
@@ -2246,6 +2255,15 @@ function TArray_Previous5(const arr: TBooleanArray; const index: Integer; const 
 function TArray_Previous6(const arr: TPointArray; const index: Integer; const count: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
 function TArray_Previous7(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
 function TArray_Previous8(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Previous(index, count); end;
+
+function TArray_Pruned1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Pruned; end;
+function TArray_Pruned2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Pruned; end;
+function TArray_Pruned3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Pruned; end;
+function TArray_Pruned4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Pruned; end;
+function TArray_Pruned5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Pruned; end;
+function TArray_Pruned6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Pruned; end;
+function TArray_Pruned7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Pruned; end;
+function TArray_Pruned8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Pruned; end;
 
 function TArray_Pull1(var arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Pull; end;
 function TArray_Pull2(var arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Pull; end;

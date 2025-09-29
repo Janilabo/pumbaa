@@ -1091,15 +1091,15 @@ begin
   AddFunction(@TArray_Clone15, 'function TArray_Clone(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload;');
   AddFunction(@TArray_Clone16, 'function TArray_Clone(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload;');
 
-  AddFunction(@TArray_Compact1, 'function TArray_Compact(const arr: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TArray_Compact2, 'function TArray_Compact(const arr: TDoubleArray): TDoubleArray; overload;');
-  AddFunction(@TArray_Compact3, 'function TArray_Compact(const arr: TStringArray): TStringArray; overload;');
-  AddFunction(@TArray_Compact4, 'function TArray_Compact(const arr: TCharArray): TCharArray; overload;');
-  AddFunction(@TArray_Compact5, 'function TArray_Compact(const arr: TBooleanArray): TBooleanArray; overload;');
-  AddFunction(@TArray_Compact6, 'function TArray_Compact(const arr: TPointArray): TPointArray; overload;');
-  AddFunction(@TArray_Compact7, 'function TArray_Compact(const arr: TBoxArray): TBoxArray; overload;');
-  AddFunction(@TArray_Compact8, 'function TArray_Compact(const arr: TRangeArray): TRangeArray; overload;');
-  
+  AddFunction(@TArray_Compact1, 'function TArray_Compact(var arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Compact2, 'function TArray_Compact(var arr: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Compact3, 'function TArray_Compact(var arr: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Compact4, 'function TArray_Compact(var arr: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Compact5, 'function TArray_Compact(var arr: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Compact6, 'function TArray_Compact(var arr: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Compact7, 'function TArray_Compact(var arr: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Compact8, 'function TArray_Compact(var arr: TRangeArray): Integer; overload;');
+
   AddFunction(@TArray_Compacted1, 'function TArray_Compacted(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Compacted2, 'function TArray_Compacted(const arr: TDoubleArray): TDoubleArray; overload;');
   AddFunction(@TArray_Compacted3, 'function TArray_Compacted(const arr: TStringArray): TStringArray; overload;');
@@ -1117,16 +1117,16 @@ begin
   AddFunction(@TArray_Combine6, 'function TArray_Combine(const arr, b: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Combine7, 'function TArray_Combine(const arr, b: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Combine8, 'function TArray_Combine(const arr, b: TRangeArray): TRangeArray; overload;');
-  
-  AddFunction(@TArray_Compress1, 'function TArray_Compress(const arr: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TArray_Compress2, 'function TArray_Compress(const arr: TDoubleArray): TDoubleArray; overload;');
-  AddFunction(@TArray_Compress3, 'function TArray_Compress(const arr: TStringArray): TStringArray; overload;');
-  AddFunction(@TArray_Compress4, 'function TArray_Compress(const arr: TCharArray): TCharArray; overload;');
-  AddFunction(@TArray_Compress5, 'function TArray_Compress(const arr: TBooleanArray): TBooleanArray; overload;');
-  AddFunction(@TArray_Compress6, 'function TArray_Compress(const arr: TPointArray): TPointArray; overload;');
-  AddFunction(@TArray_Compress7, 'function TArray_Compress(const arr: TBoxArray): TBoxArray; overload;');
-  AddFunction(@TArray_Compress8, 'function TArray_Compress(const arr: TRangeArray): TRangeArray; overload;');
-  
+
+  AddFunction(@TArray_Compress1, 'function TArray_Compress(var arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Compress2, 'function TArray_Compress(var arr: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Compress3, 'function TArray_Compress(var arr: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Compress4, 'function TArray_Compress(var arr: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Compress5, 'function TArray_Compress(var arr: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Compress6, 'function TArray_Compress(var arr: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Compress7, 'function TArray_Compress(var arr: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Compress8, 'function TArray_Compress(var arr: TRangeArray): Integer; overload;');
+
   AddFunction(@TArray_Compressed1, 'function TArray_Compressed(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Compressed2, 'function TArray_Compressed(const arr: TDoubleArray): TDoubleArray; overload;');
   AddFunction(@TArray_Compressed3, 'function TArray_Compressed(const arr: TStringArray): TStringArray; overload;');
@@ -1196,6 +1196,15 @@ begin
   AddFunction(@TArray_Create14, 'function TArray_Create(const aSize: Integer; const item: TPoint): TPointArray; overload;');
   AddFunction(@TArray_Create15, 'function TArray_Create(const aSize: Integer; const item: TBox): TBoxArray; overload;');
   AddFunction(@TArray_Create16, 'function TArray_Create(const aSize: Integer; const item: TRange): TRangeArray; overload;');
+
+  AddFunction(@TArray_Deduplicated1, 'function TArray_Deduplicated(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Deduplicated2, 'function TArray_Deduplicated(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Deduplicated3, 'function TArray_Deduplicated(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Deduplicated4, 'function TArray_Deduplicated(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Deduplicated5, 'function TArray_Deduplicated(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Deduplicated6, 'function TArray_Deduplicated(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Deduplicated7, 'function TArray_Deduplicated(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Deduplicated8, 'function TArray_Deduplicated(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Delete1, 'function TArray_Delete(const arr: TIntegerArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Delete2, 'function TArray_Delete(const arr: TDoubleArray; const index: Integer = 0): TDoubleArray; overload;');
@@ -2281,6 +2290,15 @@ begin
   AddFunction(@TArray_Previous6, 'function TArray_Previous(const arr: TPointArray; const index: Integer; const count: Integer = 2147483647): TPointArray; overload;');
   AddFunction(@TArray_Previous7, 'function TArray_Previous(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload;');
   AddFunction(@TArray_Previous8, 'function TArray_Previous(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload;');
+
+  AddFunction(@TArray_Pruned1, 'function TArray_Pruned(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Pruned2, 'function TArray_Pruned(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Pruned3, 'function TArray_Pruned(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Pruned4, 'function TArray_Pruned(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Pruned5, 'function TArray_Pruned(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Pruned6, 'function TArray_Pruned(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Pruned7, 'function TArray_Pruned(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Pruned8, 'function TArray_Pruned(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Pull1, 'function TArray_Pull(var arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Pull2, 'function TArray_Pull(var arr: TDoubleArray): TDoubleArray; overload;');
