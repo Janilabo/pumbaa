@@ -804,6 +804,9 @@ function TPointArray_Clusterize1(const arr: TPointArray; const radius: Double): 
 function TPointArray_Clusterize2(const arr: TPointArray; const xRadius, yRadius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Clusterize(xRadius, yRadius); end;
 function TPointArray_XClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.XClassify(pSorted); end;
 function TPointArray_YClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.YClassify(pSorted); end;
+function TPointArray_SortByRow(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByRow(aAscending); end;
+function TPointArray_SortByColumn(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByColumn(aAscending); end;
+function TPointArray_SortedByIndex(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.SortedByIndex(aAscending); end;
 function TPointArray_Reinit(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;

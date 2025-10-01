@@ -839,6 +839,9 @@ begin
   AddFunction(@TPointArray_Clusterize2, 'function TPointArray_Clusterize(const arr: TPointArray; const xRadius, yRadius: Double): T2DPointArray; overload;');
   AddFunction(@TPointArray_XClassify, 'function TPointArray_XClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload;');
   AddFunction(@TPointArray_YClassify, 'function TPointArray_YClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload;');
+  AddFunction(@TPointArray_SortByRow, 'function TPointArray_SortByRow(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TPointArray_SortByColumn, 'function TPointArray_SortByColumn(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TPointArray_SortedByIndex, 'function TPointArray_SortedByIndex(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload;');
   AddFunction(@TPointArray_Reinit, 'function TPointArray_Reinit(var arr: TPointArray): Integer;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
