@@ -796,6 +796,8 @@ function TPointArray_Zip(const xArr, yArr: TIntegerArray): TPointArray; cdecl; b
 function TPointArray_Extent(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Extent; end;
 function TPointArray_Split1(const arr: TPointArray; const xRadius, yRadius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Split(xRadius, yRadius); end;
 function TPointArray_Split2(const arr: TPointArray; const radius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Split(radius); end;
+function TPointArray_Cluster1(const arr: TPointArray; const width, height: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Cluster(width, height); end;
+function TPointArray_Cluster2(const arr: TPointArray; const dist: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Cluster(dist); end;
 function TPointArray_Segment(const arr: TPointArray; const radius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Segment(radius); end;
 function TPointArray_Fragment(const arr: TPointArray; const radius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Fragment(radius); end;
 function TPointArray_Clusterize1(const arr: TPointArray; const radius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Clusterize(radius); end;
