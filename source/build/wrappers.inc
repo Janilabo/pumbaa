@@ -319,8 +319,10 @@ function TBox_Height1(const bx: TBox): Integer; overload; cdecl; begin Result :=
 function TBox_Height2(var bx: TBox; const h: Integer): Integer; overload; cdecl; begin Result := bx.Height(h); end;
 function TBox_Horizontal(const bx: TBox): TRange; overload; cdecl; begin Result := bx.Horizontal; end;
 function TBox_Vertical(const bx: TBox): TRange; overload; cdecl; begin Result := bx.Vertical; end;
-function TBox_Expand(const bx: TBox; const change: Integer = 1): TBox; cdecl; begin Result := bx.Expand(change); end;
-function TBox_Shrink(const bx: TBox; const change: Integer = 1): TBox; cdecl; begin Result := bx.Shrink(change); end;
+function TBox_Expand1(const bx: TBox; const change: Integer = 1): TBox; overload; cdecl; begin Result := bx.Expand(change); end;
+function TBox_Expand2(const bx: TBox; const target: TBox): TBox; overload; cdecl; begin Result := bx.Expand(target); end;
+function TBox_Shrink1(const bx: TBox; const change: Integer = 1): TBox; overload; cdecl; begin Result := bx.Shrink(change); end;
+function TBox_Shrink2(const bx: TBox; const target: TBox): TBox; overload; cdecl; begin Result := bx.Shrink(target); end;
 function TBox_Resize(const bx: TBox; const change: Integer): TBox; cdecl; begin Result := bx.Resize(change); end;
 function TBox_ResizeVertically(const bx: TBox; const change: Integer): TBox; cdecl; begin Result := bx.ResizeVertically(change); end;
 function TBox_ResizeHorizontally(const bx: TBox; const change: Integer): TBox; cdecl; begin Result := bx.ResizeHorizontally(change); end;
@@ -831,6 +833,9 @@ function TBoxArray_X2Values(const arr: TBoxArray): TIntegerArray; cdecl; begin R
 function TBoxArray_Y2Values(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := arr.Y2Values; end;
 function TBoxArray_Unzip(const arr: TBoxArray; var x1Arr, y1Arr, x2Arr, y2Arr: TIntegerArray): Integer; cdecl; begin Result := arr.Unzip(x1Arr, y1Arr, x2Arr, y2Arr); end;
 function TBoxArray_Zip(const x1Arr, y1Arr, x2Arr, y2Arr: TIntegerArray): TBoxArray; cdecl; begin Result.Zip(x1Arr, y1Arr, x2Arr, y2Arr); end;
+function TBoxArray_Bounds(const arr: TBoxArray): TBox; overload; cdecl; begin Result := arr.Bounds; end;
+function TBoxArray_Boundaries(const arr: TBoxArray): TBox; overload; cdecl; begin Result := arr.Boundaries; end;
+
 
 function TRangeArray_Start1(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := start(arr); end;
 function TRangeArray_Start2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := start(arr, val); end;

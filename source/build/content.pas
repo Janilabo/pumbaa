@@ -354,8 +354,10 @@ begin
   AddFunction(@TBox_Height2, 'function TBox_Height(var bx: TBox; const h: Integer): Integer; overload;');
   AddFunction(@TBox_Horizontal, 'function TBox_Horizontal(const bx: TBox): TRange; overload;');
   AddFunction(@TBox_Vertical, 'function TBox_Vertical(const bx: TBox): TRange; overload;');
-  AddFunction(@TBox_Expand, 'function TBox_Expand(const bx: TBox; const change: Integer = 1): TBox;');
-  AddFunction(@TBox_Shrink, 'function TBox_Shrink(const bx: TBox; const change: Integer = 1): TBox;');
+  AddFunction(@TBox_Expand1, 'function TBox_Expand(const bx: TBox; const change: Integer = 1): TBox; overload;');
+  AddFunction(@TBox_Expand2, 'function TBox_Expand(const bx: TBox; const target: TBox): TBox; overload;');
+  AddFunction(@TBox_Shrink1, 'function TBox_Shrink(const bx: TBox; const change: Integer = 1): TBox; overload;');
+  AddFunction(@TBox_Shrink2, 'function TBox_Shrink(const bx: TBox; const target: TBox): TBox; overload;');
   AddFunction(@TBox_Resize, 'function TBox_Resize(const bx: TBox; const change: Integer): TBox;');
   AddFunction(@TBox_ResizeVertically, 'function TBox_ResizeVertically(const bx: TBox; const change: Integer): TBox;');
   AddFunction(@TBox_ResizeHorizontally, 'function TBox_ResizeHorizontally(const bx: TBox; const change: Integer): TBox;');
@@ -866,6 +868,8 @@ begin
   AddFunction(@TBoxArray_Y2Values, 'function TBoxArray_Y2Values(const arr: TBoxArray): TIntegerArray;');
   AddFunction(@TBoxArray_Unzip, 'function TBoxArray_Unzip(const arr: TBoxArray; var x1Arr, y1Arr, x2Arr, y2Arr: TIntegerArray): Integer;');
   AddFunction(@TBoxArray_Zip, 'function TBoxArray_Zip(const x1Arr, y1Arr, x2Arr, y2Arr: TIntegerArray): TBoxArray;');
+  AddFunction(@TBoxArray_Bounds, 'function TBoxArray_Bounds(const arr: TBoxArray): TBox; overload;');
+  AddFunction(@TBoxArray_Boundaries, 'function TBoxArray_Boundaries(const arr: TBoxArray): TBox; overload;');
 
   AddFunction(@TRangeArray_Start1, 'function TRangeArray_Start(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_Start2, 'function TRangeArray_Start(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
