@@ -444,6 +444,9 @@ begin
   AddFunction(@TBox_Any, 'function TBox_Any(const bx: TBox): TPoint;');
   AddFunction(@TBox_Some1, 'function TBox_Some(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Some2, 'function TBox_Some(const bx: TBox; const amount: Integer): TPointArray; overload;');
+  AddFunction(@TBox_Placements, 'function TBox_Placements(const bx: TBox; const target: TBox): TBoxArray; overload;');
+  AddFunction(@TBox_Tiled, 'function TBox_Tiled(const bx: TBox; const target: TBox): TBoxArray; overload;');
+  AddFunction(@TBox_Gridded, 'function TBox_Gridded(const bx: TBox; const target: TBox): TBoxArray; overload;');
 
   AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');

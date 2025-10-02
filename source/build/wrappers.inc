@@ -409,6 +409,9 @@ function TBox_Shuffle(const bx: TBox; const shuffles: Integer = 1): TPointArray;
 function TBox_Any(const bx: TBox): TPoint; cdecl; begin Result := bx.Any; end;
 function TBox_Some1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Some; end;
 function TBox_Some2(const bx: TBox; const amount: Integer): TPointArray; overload; cdecl; begin Result := bx.Some(amount); end;
+function TBox_Placements(const bx: TBox; const target: TBox): TBoxArray; overload; cdecl; begin Result := bx.Placements(target); end;
+function TBox_Tiled(const bx: TBox; const target: TBox): TBoxArray; overload; cdecl; begin Result := bx.Tiled(target); end;
+function TBox_Gridded(const bx: TBox; const target: TBox): TBoxArray; overload; cdecl; begin Result := bx.Gridded(target); end;
 
 function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
 function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
