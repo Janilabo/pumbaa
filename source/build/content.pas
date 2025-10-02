@@ -582,6 +582,9 @@ begin
   AddFunction(@TRange_MaxLimit, 'function TRange_MaxLimit(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Lacks, 'function TRange_Lacks(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Outside, 'function TRange_Outside(const range: TRange; const x: Integer): Boolean;');
+  AddFunction(@TRange_Windows, 'function TRange_Windows(const range: TRange; const target: TRange): TRangeArray; overload;');
+  AddFunction(@TRange_Sectioned, 'function TRange_Sectioned(const range: TRange; const target: TRange): TRangeArray; overload;');
+  AddFunction(@TRange_Binned, 'function TRange_Binned(const range: TRange; const target: TRange): TRangeArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

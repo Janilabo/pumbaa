@@ -547,6 +547,9 @@ function TRange_MinLimit(const range: TRange; const val: Integer): Integer; over
 function TRange_MaxLimit(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.MaxLimit(val); end;
 function TRange_Lacks(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Lacks(x); end;
 function TRange_Outside(const range: TRange; const x: Integer): Boolean; cdecl; inline; begin Result := range.Outside(x); end;
+function TRange_Windows(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Windows(target); end;
+function TRange_Sectioned(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Sectioned(target); end;
+function TRange_Binned(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Binned(target); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
