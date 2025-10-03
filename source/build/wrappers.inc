@@ -550,6 +550,7 @@ function TRange_Outside(const range: TRange; const x: Integer): Boolean; cdecl; 
 function TRange_Windows(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Windows(target); end;
 function TRange_Sectioned(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Sectioned(target); end;
 function TRange_Binned(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Binned(target); end;
+function TRange_Sample(const range: TRange; const sSize: Integer): TIntegerArray; overload; cdecl; begin Result := range.Sample(sSize); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
@@ -713,7 +714,7 @@ function TDoubleArray_BinaryMerge(const arr: TDoubleArray; const items: TDoubleA
 function TDoubleArray_BinaryMerged(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryMerged(items, aAscending); end;
 function TDoubleArray_BinaryCombine(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryCombine(items, aAscending); end;
 
-function TStringArray_Span(const arr: TStringArray): Integer; cdecl; begin Result := arr.Span; end;
+function TStringArray_Tally(const arr: TStringArray): Int64; cdecl; begin Result := arr.Tally; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
 function TStringArray_Concatenate(const arr: TStringArray): string; cdecl; begin Result := arr.Concatenate; end;
 function TStringArray_Flatten(const arr: TStringArray): string; cdecl; begin Result := arr.Flatten; end;
@@ -2531,6 +2532,15 @@ function TArray_Reversed6(const arr: TPointArray): TPointArray; overload; cdecl;
 function TArray_Reversed7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Reversed; end;
 function TArray_Reversed8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Reversed; end;
 
+function TArray_Sample1(const arr: TIntegerArray; const sSize: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
+function TArray_Sample2(const arr: TDoubleArray; const sSize: Integer): TDoubleArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
+function TArray_Sample3(const arr: TStringArray; const sSize: Integer): TStringArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
+function TArray_Sample4(const arr: TCharArray; const sSize: Integer): TCharArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
+function TArray_Sample5(const arr: TBooleanArray; const sSize: Integer): TBooleanArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
+function TArray_Sample6(const arr: TPointArray; const sSize: Integer): TPointArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
+function TArray_Sample7(const arr: TBoxArray; const sSize: Integer): TBoxArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
+function TArray_Sample8(const arr: TRangeArray; const sSize: Integer): TRangeArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
+
 function TArray_Scan1(const arr: TIntegerArray; const ID: TRange; const item: Integer; const limit: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Scan(ID, item, limit); end;
 function TArray_Scan2(const arr: TDoubleArray; const ID: TRange; const item: Double; const limit: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Scan(ID, item, limit); end;
 function TArray_Scan3(const arr: TStringArray; const ID: TRange; const item: string; const limit: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Scan(ID, item, limit); end;
@@ -2720,6 +2730,14 @@ function TArray_Span5(const arr: TBooleanArray; const subArray: TBooleanArray; c
 function TArray_Span6(const arr: TPointArray; const subArray: TPointArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
 function TArray_Span7(const arr: TBoxArray; const subArray: TBoxArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
 function TArray_Span8(const arr: TRangeArray; const subArray: TRangeArray; const index: Integer = 2147483647): TRange; overload; cdecl; begin Result := arr.Span(subArray, index); end;
+function TArray_Span9(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Span; end;
+function TArray_Span10(const arr: TDoubleArray): TRange; overload; cdecl; begin Result := arr.Span; end;
+function TArray_Span11(const arr: TStringArray): TRange; overload; cdecl; begin Result := arr.Span; end;
+function TArray_Span12(const arr: TCharArray): TRange; overload; cdecl; begin Result := arr.Span; end;
+function TArray_Span13(const arr: TBooleanArray): TRange; overload; cdecl; begin Result := arr.Span; end;
+function TArray_Span14(const arr: TPointArray): TRange; overload; cdecl; begin Result := arr.Span; end;
+function TArray_Span15(const arr: TBoxArray): TRange; overload; cdecl; begin Result := arr.Span; end;
+function TArray_Span16(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Span; end;
 
 function TArray_Spans1(const arr: TIntegerArray; const subArray: TIntegerArray; const index: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Spans(subArray, index); end;
 function TArray_Spans2(const arr: TDoubleArray; const subArray: TDoubleArray; const index: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Spans(subArray, index); end;

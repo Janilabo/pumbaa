@@ -585,6 +585,7 @@ begin
   AddFunction(@TRange_Windows, 'function TRange_Windows(const range: TRange; const target: TRange): TRangeArray; overload;');
   AddFunction(@TRange_Sectioned, 'function TRange_Sectioned(const range: TRange; const target: TRange): TRangeArray; overload;');
   AddFunction(@TRange_Binned, 'function TRange_Binned(const range: TRange; const target: TRange): TRangeArray; overload;');
+  AddFunction(@TRange_Sample, 'function TRange_Sample(const range: TRange; const sSize: Integer): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -748,7 +749,7 @@ begin
   AddFunction(@TDoubleArray_BinaryMerged, 'function TDoubleArray_BinaryMerged(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TDoubleArray_BinaryCombine, 'function TDoubleArray_BinaryCombine(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
 
-  AddFunction(@TStringArray_Span, 'function TStringArray_Span(const arr: TStringArray): Integer;');
+  AddFunction(@TStringArray_Tally, 'function TStringArray_Tally(const arr: TStringArray): Int64;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
   AddFunction(@TStringArray_Concatenate, 'function TStringArray_Concatenate(const arr: TStringArray): string;');
   AddFunction(@TStringArray_Flatten, 'function TStringArray_Flatten(const arr: TStringArray): string;');
@@ -2565,6 +2566,15 @@ begin
   AddFunction(@TArray_Reversed7, 'function TArray_Reversed(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Reversed8, 'function TArray_Reversed(const arr: TRangeArray): TRangeArray; overload;');
 
+  AddFunction(@TArray_Sample1, 'function TArray_Sample(const arr: TIntegerArray; const sSize: Integer): TIntegerArray; overload;');
+  AddFunction(@TArray_Sample2, 'function TArray_Sample(const arr: TDoubleArray; const sSize: Integer): TDoubleArray; overload;');
+  AddFunction(@TArray_Sample3, 'function TArray_Sample(const arr: TStringArray; const sSize: Integer): TStringArray; overload;');
+  AddFunction(@TArray_Sample4, 'function TArray_Sample(const arr: TCharArray; const sSize: Integer): TCharArray; overload;');
+  AddFunction(@TArray_Sample5, 'function TArray_Sample(const arr: TBooleanArray; const sSize: Integer): TBooleanArray; overload;');
+  AddFunction(@TArray_Sample6, 'function TArray_Sample(const arr: TPointArray; const sSize: Integer): TPointArray; overload;');
+  AddFunction(@TArray_Sample7, 'function TArray_Sample(const arr: TBoxArray; const sSize: Integer): TBoxArray; overload;');
+  AddFunction(@TArray_Sample8, 'function TArray_Sample(const arr: TRangeArray; const sSize: Integer): TRangeArray; overload;');
+
   AddFunction(@TArray_Scan1, 'function TArray_Scan(const arr: TIntegerArray; const ID: TRange; const item: Integer; const limit: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Scan2, 'function TArray_Scan(const arr: TDoubleArray; const ID: TRange; const item: Double; const limit: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Scan3, 'function TArray_Scan(const arr: TStringArray; const ID: TRange; const item: string; const limit: Integer = 2147483647): TIntegerArray; overload;');
@@ -2754,6 +2764,14 @@ begin
   AddFunction(@TArray_Span6, 'function TArray_Span(const arr: TPointArray; const subArray: TPointArray; const index: Integer = 2147483647): TRange; overload;');
   AddFunction(@TArray_Span7, 'function TArray_Span(const arr: TBoxArray; const subArray: TBoxArray; const index: Integer = 2147483647): TRange; overload;');
   AddFunction(@TArray_Span8, 'function TArray_Span(const arr: TRangeArray; const subArray: TRangeArray; const index: Integer = 2147483647): TRange; overload;');
+  AddFunction(@TArray_Span9, 'function TArray_Span(const arr: TIntegerArray): TRange; overload;');
+  AddFunction(@TArray_Span10, 'function TArray_Span(const arr: TDoubleArray): TRange; overload;');
+  AddFunction(@TArray_Span11, 'function TArray_Span(const arr: TStringArray): TRange; overload;');
+  AddFunction(@TArray_Span12, 'function TArray_Span(const arr: TCharArray): TRange; overload;');
+  AddFunction(@TArray_Span13, 'function TArray_Span(const arr: TBooleanArray): TRange; overload;');
+  AddFunction(@TArray_Span14, 'function TArray_Span(const arr: TPointArray): TRange; overload;');
+  AddFunction(@TArray_Span15, 'function TArray_Span(const arr: TBoxArray): TRange; overload;');
+  AddFunction(@TArray_Span16, 'function TArray_Span(const arr: TRangeArray): TRange; overload;');
   
   AddFunction(@TArray_Spans1, 'function TArray_Spans(const arr: TIntegerArray; const subArray: TIntegerArray; const index: Integer = 2147483647): TRangeArray; overload;');
   AddFunction(@TArray_Spans2, 'function TArray_Spans(const arr: TDoubleArray; const subArray: TDoubleArray; const index: Integer = 2147483647): TRangeArray; overload;');
