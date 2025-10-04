@@ -576,7 +576,12 @@ begin
   AddFunction(@TRange_Sum, 'function TRange_Sum(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Summation, 'function TRange_Summation(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Total, 'function TRange_Total(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Reserve1, 'function TRange_Reserve(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Reserve2, 'function TRange_Reserve(const range: TRange; var aRange: TIntegerArray): Integer; overload;');
   AddFunction(@TRange_Extract, 'function TRange_Extract(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Extracted, 'function TRange_Extracted(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Steps, 'function TRange_Steps(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Recursed, 'function TRange_Recursed(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Limit, 'function TRange_Limit(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_MinLimit, 'function TRange_MinLimit(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_MaxLimit, 'function TRange_MaxLimit(const range: TRange; const val: Integer): Integer; overload;');
