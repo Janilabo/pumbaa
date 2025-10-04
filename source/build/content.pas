@@ -398,6 +398,7 @@ begin
   AddFunction(@TBox_Contents, 'function TBox_Contents(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Extract, 'function TBox_Extract(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Enumerate, 'function TBox_Enumerate(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Enumerated, 'function TBox_Enumerated(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Elements, 'function TBox_Elements(const bx: TBox): TPointArray;');
   AddFunction(@TBox_IDs1, 'function TBox_IDs(const bx: TBox): TIntegerArray; overload;');
   AddFunction(@TBox_IDs2, 'function TBox_IDs(const bx: TBox; const p: TPoint): Integer; overload;');
@@ -448,6 +449,8 @@ begin
   AddFunction(@TBox_Placements, 'function TBox_Placements(const bx: TBox; const target: TBox): TBoxArray; overload;');
   AddFunction(@TBox_Tiled, 'function TBox_Tiled(const bx: TBox; const target: TBox): TBoxArray; overload;');
   AddFunction(@TBox_Gridded, 'function TBox_Gridded(const bx: TBox; const target: TBox): TBoxArray; overload;');
+  AddFunction(@TBox_Reserve1, 'function TBox_Reserve(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_Reserve2, 'function TBox_Reserve(const bx: TBox; var aBox: TPointArray): Integer; overload;');
 
   AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
@@ -655,6 +658,8 @@ begin
   AddFunction(@TIntegerArray_Clique2, 'function TIntegerArray_Clique(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Knit1, 'function TIntegerArray_Knit(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Knit2, 'function TIntegerArray_Knit(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Reflect, 'function TIntegerArray_Reflect(var arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TIntegerArray_Reflected, 'function TIntegerArray_Reflected(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_Invert, 'function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray;');
   AddFunction(@TIntegerArray_Inverted1, 'function TIntegerArray_Inverted(const arr: TIntegerArray; const arrBounds: TRange): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_Inverted2, 'function TIntegerArray_Inverted(const arr: TIntegerArray): TIntegerArray; overload;');

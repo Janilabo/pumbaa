@@ -363,6 +363,7 @@ function TBox_TPA(const bx: TBox): TPointArray; cdecl; begin Result := bx.TPA; e
 function TBox_Contents(const bx: TBox): TPointArray; cdecl; begin Result := bx.Contents; end;
 function TBox_Extract(const bx: TBox): TPointArray; cdecl; begin Result := bx.Extract; end;
 function TBox_Enumerate(const bx: TBox): TPointArray; cdecl; begin Result := bx.Enumerate; end;
+function TBox_Enumerated(const bx: TBox): TPointArray; cdecl; begin Result := bx.Enumerated; end;
 function TBox_Elements(const bx: TBox): TPointArray; cdecl; begin Result := bx.Elements; end;
 function TBox_IDs1(const bx: TBox): TIntegerArray; overload; cdecl; begin Result := bx.IDs; end;
 function TBox_IDs2(const bx: TBox; const p: TPoint): Integer; overload; cdecl; begin Result := bx.IDs(p); end;
@@ -413,6 +414,8 @@ function TBox_All(const bx: TBox): TPointArray; overload; cdecl; begin Result :=
 function TBox_Placements(const bx: TBox; const target: TBox): TBoxArray; overload; cdecl; begin Result := bx.Placements(target); end;
 function TBox_Tiled(const bx: TBox; const target: TBox): TBoxArray; overload; cdecl; begin Result := bx.Tiled(target); end;
 function TBox_Gridded(const bx: TBox; const target: TBox): TBoxArray; overload; cdecl; begin Result := bx.Gridded(target); end;
+function TBox_Reserve1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Reserve; end;
+function TBox_Reserve2(const bx: TBox; var aBox: TPointArray): Integer; overload; cdecl; begin Result := bx.Reserve(aBox); end;
 
 function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
 function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
@@ -620,6 +623,8 @@ function TIntegerArray_Clique1(const arr: TIntegerArray; const minDiff, maxDiff:
 function TIntegerArray_Clique2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Clique(diff); end;
 function TIntegerArray_Knit1(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Knit(minDiff, maxDiff); end;
 function TIntegerArray_Knit2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Knit(diff); end;
+function TIntegerArray_Reflect(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Reflect; end;
+function TIntegerArray_Reflected(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Reflected; end;
 function TIntegerArray_Invert(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Invert; end;
 function TIntegerArray_Inverted1(const arr: TIntegerArray; const arrBounds: TRange): TIntegerArray; overload; cdecl; begin Result := arr.Inverted(arrBounds); end;
 function TIntegerArray_Inverted2(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Inverted; end;
