@@ -392,7 +392,6 @@ begin
   AddFunction(@TBox_Points2, 'function TBox_Points(const bx: TBox; const pIndex: Integer): TPoint; overload;');
   AddFunction(@TBox_Points3, 'function TBox_Points(const bx: TBox; const pIDs: TIntegerArray): TPointArray; overload;');
   AddFunction(@TBox_Points4, 'function TBox_Points(const bx: TBox; var xArray, yArray: TIntegerArray): Integer; overload;');
-  AddFunction(@TBox_Points5, 'function TBox_Points(const xRange, yRange: TRange): TPointArray; overload;');
   AddFunction(@TBox_Pixels1, 'function TBox_Pixels(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Pixels2, 'function TBox_Pixels(const bx: TBox; const index: Integer): TPoint; overload;');
   AddFunction(@TBox_Pts, 'function TBox_Pts(const bx: TBox): TPointArray; overload;');
@@ -869,6 +868,10 @@ begin
   AddFunction(@TPointArray_SortByColumn, 'function TPointArray_SortByColumn(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TPointArray_SortedByIndex, 'function TPointArray_SortedByIndex(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload;');
   AddFunction(@TPointArray_Reinit, 'function TPointArray_Reinit(var arr: TPointArray): Integer;');
+  AddFunction(@TPointArray_Create1, 'function TPointArray_Create(const xRange, yRange: TRange): TPointArray; overload;');
+  AddFunction(@TPointArray_Create2, 'function TPointArray_Create(const xRange, yRange: TRange; const offset: TPoint): TPointArray; overload;');
+  AddFunction(@TPointArray_Create3, 'function TPointArray_Create(const xValues, yValues: TIntegerArray): TPointArray; overload;');
+  AddFunction(@TPointArray_Create4, 'function TPointArray_Create(const xValues, yValues: TIntegerArray; const offset: TPoint): TPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');

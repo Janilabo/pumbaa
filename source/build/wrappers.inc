@@ -357,7 +357,6 @@ function TBox_Points1(const bx: TBox): TPointArray; overload; cdecl; begin Resul
 function TBox_Points2(const bx: TBox; const pIndex: Integer): TPoint; overload; cdecl; begin Result := bx.Points(pIndex); end;
 function TBox_Points3(const bx: TBox; const pIDs: TIntegerArray): TPointArray; overload; cdecl; begin Result := bx.Points(pIDs); end;
 function TBox_Points4(const bx: TBox; var xArray, yArray: TIntegerArray): Integer; overload; cdecl; begin Result := bx.Points(xArray, yArray); end;
-function TBox_Points5(const xRange, yRange: TRange): TPointArray; overload; cdecl; begin Result := TBox.Points(xRange, yRange); end;
 function TBox_Pixels1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pixels; end;
 function TBox_Pixels2(const bx: TBox; const index: Integer): TPoint; overload; cdecl; begin Result := bx.Pixels(index); end;
 function TBox_Pts(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pts; end;
@@ -834,6 +833,10 @@ function TPointArray_SortByRow(var arr: TPointArray; const aAscending: Boolean =
 function TPointArray_SortByColumn(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByColumn(aAscending); end;
 function TPointArray_SortedByIndex(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.SortedByIndex(aAscending); end;
 function TPointArray_Reinit(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
+function TPointArray_Create1(const xRange, yRange: TRange): TPointArray; overload; cdecl; begin Result := TPA.Create(xRange, yRange); end;
+function TPointArray_Create2(const xRange, yRange: TRange; const offset: TPoint): TPointArray; overload; cdecl; begin Result := TPA.Create(xRange, yRange, offset); end;
+function TPointArray_Create3(const xValues, yValues: TIntegerArray): TPointArray; overload; cdecl; begin Result := TPA.Create(xValues, yValues); end;
+function TPointArray_Create4(const xValues, yValues: TIntegerArray; const offset: TPoint): TPointArray; overload; cdecl; begin Result := TPA.Create(xValues, yValues, offset); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
