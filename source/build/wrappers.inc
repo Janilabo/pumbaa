@@ -359,8 +359,10 @@ function TBox_Points3(const bx: TBox; const pIDs: TIntegerArray): TPointArray; o
 function TBox_Points4(const bx: TBox; var xArray, yArray: TIntegerArray): Integer; overload; cdecl; begin Result := bx.Points(xArray, yArray); end;
 function TBox_Pixels1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pixels; end;
 function TBox_Pixels2(const bx: TBox; const index: Integer): TPoint; overload; cdecl; begin Result := bx.Pixels(index); end;
+function TBox_Pixeled(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pixeled; end;
 function TBox_Pts(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pts; end;
-function TBox_TPA(const bx: TBox): TPointArray; cdecl; begin Result := bx.TPA; end;
+function TBox_TPA1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.TPA; end;
+function TBox_TPA2(const bx: TBox; const index: Integer): TPoint; overload; cdecl; begin Result := bx.TPA(index); end;
 function TBox_Contents(const bx: TBox): TPointArray; cdecl; begin Result := bx.Contents; end;
 function TBox_Extract(const bx: TBox): TPointArray; cdecl; begin Result := bx.Extract; end;
 function TBox_Enumerate(const bx: TBox): TPointArray; cdecl; begin Result := bx.Enumerate; end;
@@ -472,6 +474,7 @@ function TRange_Elements(const range: TRange): TIntegerArray; cdecl; begin Resul
 function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbers; end;
 function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
 function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
+function TRange_AsArray(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsArray; end;
 function TRange_IDs1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.IDs; end;
 function TRange_IDs2(const range: TRange; const dValue: Integer): Integer; overload; cdecl; begin Result := range.IDs(dValue); end;
 function TRange_IDs3(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := range.IDs(dVals); end;

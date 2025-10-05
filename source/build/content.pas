@@ -394,8 +394,10 @@ begin
   AddFunction(@TBox_Points4, 'function TBox_Points(const bx: TBox; var xArray, yArray: TIntegerArray): Integer; overload;');
   AddFunction(@TBox_Pixels1, 'function TBox_Pixels(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Pixels2, 'function TBox_Pixels(const bx: TBox; const index: Integer): TPoint; overload;');
+  AddFunction(@TBox_Pixeled, 'function TBox_Pixeled(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Pts, 'function TBox_Pts(const bx: TBox): TPointArray; overload;');
-  AddFunction(@TBox_TPA, 'function TBox_TPA(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_TPA1, 'function TBox_TPA(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_TPA2, 'function TBox_TPA(const bx: TBox; const index: Integer): TPoint; overload;');
   AddFunction(@TBox_Contents, 'function TBox_Contents(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Extract, 'function TBox_Extract(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Enumerate, 'function TBox_Enumerate(const bx: TBox): TPointArray;');
@@ -507,6 +509,7 @@ begin
   AddFunction(@TRange_Numbers, 'function TRange_Numbers(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_AsArray, 'function TRange_AsArray(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_IDs1, 'function TRange_IDs(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_IDs2, 'function TRange_IDs(const range: TRange; const dValue: Integer): Integer; overload;');
   AddFunction(@TRange_IDs3, 'function TRange_IDs(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload;');
