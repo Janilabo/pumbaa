@@ -392,7 +392,9 @@ begin
   AddFunction(@TBox_Points2, 'function TBox_Points(const bx: TBox; const pIndex: Integer): TPoint; overload;');
   AddFunction(@TBox_Points3, 'function TBox_Points(const bx: TBox; const pIDs: TIntegerArray): TPointArray; overload;');
   AddFunction(@TBox_Points4, 'function TBox_Points(const bx: TBox; var xArray, yArray: TIntegerArray): Integer; overload;');
-  AddFunction(@TBox_Pixels, 'function TBox_Pixels(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Points5, 'function TBox_Points(const xRange, yRange: TRange): TPointArray; overload;');
+  AddFunction(@TBox_Pixels1, 'function TBox_Pixels(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_Pixels2, 'function TBox_Pixels(const bx: TBox; const index: Integer): TPoint; overload;');
   AddFunction(@TBox_Pts, 'function TBox_Pts(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_TPA, 'function TBox_TPA(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Contents, 'function TBox_Contents(const bx: TBox): TPointArray;');
@@ -860,6 +862,9 @@ begin
   AddFunction(@TPointArray_Clusterize2, 'function TPointArray_Clusterize(const arr: TPointArray; const xRadius, yRadius: Double): T2DPointArray; overload;');
   AddFunction(@TPointArray_XClassify, 'function TPointArray_XClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload;');
   AddFunction(@TPointArray_YClassify, 'function TPointArray_YClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Axes, 'function TPointArray_Axes(const arr: TPointArray; var X, Y: TIntegerArray): Integer; overload;');
+  AddFunction(@TPointArray_Axed1, 'function TPointArray_Axed(const arr: TPointArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_Axed2, 'function TPointArray_Axed(const arr: TPointArray; var X, Y: TIntegerArray): Integer; overload;');
   AddFunction(@TPointArray_SortByRow, 'function TPointArray_SortByRow(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TPointArray_SortByColumn, 'function TPointArray_SortByColumn(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TPointArray_SortedByIndex, 'function TPointArray_SortedByIndex(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload;');

@@ -357,7 +357,9 @@ function TBox_Points1(const bx: TBox): TPointArray; overload; cdecl; begin Resul
 function TBox_Points2(const bx: TBox; const pIndex: Integer): TPoint; overload; cdecl; begin Result := bx.Points(pIndex); end;
 function TBox_Points3(const bx: TBox; const pIDs: TIntegerArray): TPointArray; overload; cdecl; begin Result := bx.Points(pIDs); end;
 function TBox_Points4(const bx: TBox; var xArray, yArray: TIntegerArray): Integer; overload; cdecl; begin Result := bx.Points(xArray, yArray); end;
-function TBox_Pixels(const bx: TBox): TPointArray; cdecl; begin Result := bx.Pixels; end;
+function TBox_Points5(const xRange, yRange: TRange): TPointArray; overload; cdecl; begin Result := TBox.Points(xRange, yRange); end;
+function TBox_Pixels1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pixels; end;
+function TBox_Pixels2(const bx: TBox; const index: Integer): TPoint; overload; cdecl; begin Result := bx.Pixels(index); end;
 function TBox_Pts(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pts; end;
 function TBox_TPA(const bx: TBox): TPointArray; cdecl; begin Result := bx.TPA; end;
 function TBox_Contents(const bx: TBox): TPointArray; cdecl; begin Result := bx.Contents; end;
@@ -825,6 +827,9 @@ function TPointArray_Clusterize1(const arr: TPointArray; const radius: Double): 
 function TPointArray_Clusterize2(const arr: TPointArray; const xRadius, yRadius: Double): T2DPointArray; overload; cdecl; begin Result := arr.Clusterize(xRadius, yRadius); end;
 function TPointArray_XClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.XClassify(pSorted); end;
 function TPointArray_YClassify(const arr: TPointArray; const pSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.YClassify(pSorted); end;
+function TPointArray_Axes(const arr: TPointArray; var X, Y: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Axes(X, Y); end;
+function TPointArray_Axed1(const arr: TPointArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Axed; end;
+function TPointArray_Axed2(const arr: TPointArray; var X, Y: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Axed(X, Y); end;
 function TPointArray_SortByRow(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByRow(aAscending); end;
 function TPointArray_SortByColumn(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByColumn(aAscending); end;
 function TPointArray_SortedByIndex(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.SortedByIndex(aAscending); end;
