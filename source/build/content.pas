@@ -521,6 +521,11 @@ begin
   AddFunction(@TRange_Some1, 'function TRange_Some(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Some2, 'function TRange_Some(const range: TRange; const amount: Integer): TIntegerArray; overload;');
   AddFunction(@TRange_All, 'function TRange_All(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unzip, 'function TRange_Unzip(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unpack, 'function TRange_Unpack(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unwrap, 'function TRange_Unwrap(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unfold, 'function TRange_Unfold(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_ZigZag, 'function TRange_ZigZag(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
