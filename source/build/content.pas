@@ -525,7 +525,7 @@ begin
   AddFunction(@TRange_Unpack, 'function TRange_Unpack(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Unwrap, 'function TRange_Unwrap(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Unfold, 'function TRange_Unfold(const range: TRange): TIntegerArray; overload;');
-  AddFunction(@TRange_ZigZag, 'function TRange_ZigZag(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_ZigZag, 'function TRange_ZigZag(const range: TRange; const zAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
@@ -534,7 +534,7 @@ begin
   AddFunction(@TRange_Union1, 'function TRange_Union(const range: TRange; const b: TRange): TRange; overload;');
   AddFunction(@TRange_Union2, 'function TRange_Union(const range: TRange; const val: Integer): TRange; overload;');
   AddFunction(@TRange_Extend, 'function TRange_Extend(var range: TRange; const val: Integer): Boolean;');
-  AddFunction(@TRange_Shift, 'function TRange_Shift(const range: TRange; const sDelta: Integer): TRange;');
+  AddFunction(@TRange_Offset, 'function TRange_Offset(const range: TRange; const sDelta: Integer): TRange;');
   AddFunction(@TRange_Contains1, 'function TRange_Contains(const range: TRange; const x: Integer): Boolean; overload;');
   AddFunction(@TRange_Contains2, 'function TRange_Contains(const range: TRange; const x: TRange): Boolean; overload;');
   AddFunction(@TRange_Above1, 'function TRange_Above(const range: TRange; const target: Integer): Boolean; overload;');
@@ -605,6 +605,14 @@ begin
   AddFunction(@TRange_Sectioned, 'function TRange_Sectioned(const range: TRange; const target: TRange): TRangeArray; overload;');
   AddFunction(@TRange_Binned, 'function TRange_Binned(const range: TRange; const target: TRange): TRangeArray; overload;');
   AddFunction(@TRange_Sample, 'function TRange_Sample(const range: TRange; const sSize: Integer): TIntegerArray; overload;');
+  AddFunction(@TRange_Shift, 'function TRange_Shift(var range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Shifted, 'function TRange_Shifted(const range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Back, 'function TRange_Back(var range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Backed, 'function TRange_Backed(const range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Increase, 'function TRange_Increase(var range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Decrease, 'function TRange_Decrease(var range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Increment, 'function TRange_Increment(var range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Decrement, 'function TRange_Decrement(var range: TRange; const N: Integer = 1): TRange; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -3075,6 +3083,15 @@ begin
   AddFunction(@TArray_Waste6, 'function TArray_Waste(const arr: TPointArray): Integer; overload;');
   AddFunction(@TArray_Waste7, 'function TArray_Waste(const arr: TBoxArray): Integer; overload;');
   AddFunction(@TArray_Waste8, 'function TArray_Waste(const arr: TRangeArray): Integer; overload;');
+
+  AddFunction(@TArray_Zigzag1, 'function TArray_Zigzag(const arr: TIntegerArray; const zAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Zigzag2, 'function TArray_Zigzag(const arr: TDoubleArray; const zAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TArray_Zigzag3, 'function TArray_Zigzag(const arr: TStringArray; const zAscending: Boolean = True): TStringArray; overload;');
+  AddFunction(@TArray_Zigzag4, 'function TArray_Zigzag(const arr: TCharArray; const zAscending: Boolean = True): TCharArray; overload;');
+  AddFunction(@TArray_Zigzag5, 'function TArray_Zigzag(const arr: TBooleanArray; const zAscending: Boolean = True): TBooleanArray; overload;');
+  AddFunction(@TArray_Zigzag6, 'function TArray_Zigzag(const arr: TPointArray; const zAscending: Boolean = True): TPointArray; overload;');
+  AddFunction(@TArray_Zigzag7, 'function TArray_Zigzag(const arr: TBoxArray; const zAscending: Boolean = True): TBoxArray; overload;');
+  AddFunction(@TArray_Zigzag8, 'function TArray_Zigzag(const arr: TRangeArray; const zAscending: Boolean = True): TRangeArray; overload;');
 
   AddFunction(@TArray_Sortable1, 'function TArray_Sortable(const arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Sortable2, 'function TArray_Sortable(const arr: TDoubleArray): Boolean; overload;');
