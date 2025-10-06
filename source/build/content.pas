@@ -2594,6 +2594,15 @@ begin
   AddFunction(@TArray_Resize15, 'function TArray_Resize(var arr: TBoxArray; const aChange: Integer; const null: TBox): Integer; overload;');
   AddFunction(@TArray_Resize16, 'function TArray_Resize(var arr: TRangeArray; const aChange: Integer; const null: TRange): Integer; overload;');
 
+  AddFunction(@TArray_Reversal1, 'function TArray_Reversal(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Reversal2, 'function TArray_Reversal(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Reversal3, 'function TArray_Reversal(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Reversal4, 'function TArray_Reversal(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Reversal5, 'function TArray_Reversal(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Reversal6, 'function TArray_Reversal(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Reversal7, 'function TArray_Reversal(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Reversal8, 'function TArray_Reversal(const arr: TRangeArray): TRangeArray; overload;');
+
   AddFunction(@TArray_Reverse1, 'function TArray_Reverse(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Reverse2, 'function TArray_Reverse(var arr: TDoubleArray): Boolean; overload;');
   AddFunction(@TArray_Reverse3, 'function TArray_Reverse(var arr: TStringArray): Boolean; overload;');
@@ -2611,6 +2620,15 @@ begin
   AddFunction(@TArray_Reversed6, 'function TArray_Reversed(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Reversed7, 'function TArray_Reversed(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Reversed8, 'function TArray_Reversed(const arr: TRangeArray): TRangeArray; overload;');
+  
+  AddFunction(@TArray_Reversion1, 'function TArray_Reversion(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Reversion2, 'function TArray_Reversion(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Reversion3, 'function TArray_Reversion(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Reversion4, 'function TArray_Reversion(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Reversion5, 'function TArray_Reversion(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Reversion6, 'function TArray_Reversion(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Reversion7, 'function TArray_Reversion(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Reversion8, 'function TArray_Reversion(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Sample1, 'function TArray_Sample(const arr: TIntegerArray; const sSize: Integer): TIntegerArray; overload;');
   AddFunction(@TArray_Sample2, 'function TArray_Sample(const arr: TDoubleArray; const sSize: Integer): TDoubleArray; overload;');

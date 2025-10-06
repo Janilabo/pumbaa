@@ -2560,6 +2560,15 @@ function TArray_Resize14(var arr: TPointArray; const aChange: Integer; const nul
 function TArray_Resize15(var arr: TBoxArray; const aChange: Integer; const null: TBox): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
 function TArray_Resize16(var arr: TRangeArray; const aChange: Integer; const null: TRange): Integer; overload; cdecl; begin Result := arr.Resize(aChange, null); end;
 
+function TArray_Reversal1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Reversal; end;
+function TArray_Reversal2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Reversal; end;
+function TArray_Reversal3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Reversal; end;
+function TArray_Reversal4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Reversal; end;
+function TArray_Reversal5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Reversal; end;
+function TArray_Reversal6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Reversal; end;
+function TArray_Reversal7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Reversal; end;
+function TArray_Reversal8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Reversal; end;
+
 function TArray_Reverse1(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
 function TArray_Reverse2(var arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
 function TArray_Reverse3(var arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
@@ -2577,6 +2586,15 @@ function TArray_Reversed5(const arr: TBooleanArray): TBooleanArray; overload; cd
 function TArray_Reversed6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Reversed; end;
 function TArray_Reversed7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Reversed; end;
 function TArray_Reversed8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Reversed; end;
+
+function TArray_Reversion1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Reversion; end;
+function TArray_Reversion2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Reversion; end;
+function TArray_Reversion3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Reversion; end;
+function TArray_Reversion4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Reversion; end;
+function TArray_Reversion5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Reversion; end;
+function TArray_Reversion6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Reversion; end;
+function TArray_Reversion7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Reversion; end;
+function TArray_Reversion8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Reversion; end;
 
 function TArray_Sample1(const arr: TIntegerArray; const sSize: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
 function TArray_Sample2(const arr: TDoubleArray; const sSize: Integer): TDoubleArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
