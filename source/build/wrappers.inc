@@ -1136,6 +1136,15 @@ function TArray_Clone14(const arr: TPointArray; const ID: TIntegerArray): TPoint
 function TArray_Clone15(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.Clone(ID); end;
 function TArray_Clone16(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Clone(ID); end;
 
+function TArray_Cloned1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Cloned; end;
+function TArray_Cloned2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Cloned; end;
+function TArray_Cloned3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Cloned; end;
+function TArray_Cloned4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Cloned; end;
+function TArray_Cloned5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Cloned; end;
+function TArray_Cloned6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Cloned; end;
+function TArray_Cloned7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Cloned; end;
+function TArray_Cloned8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Cloned; end;
+
 function TArray_Compact1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
 function TArray_Compact2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
 function TArray_Compact3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
@@ -1240,6 +1249,15 @@ function TArray_Contains5(const arr: TBooleanArray; const item: Boolean; const i
 function TArray_Contains6(const arr: TPointArray; const item: TPoint; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Contains(item, index); end;
 function TArray_Contains7(const arr: TBoxArray; const item: TBox; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Contains(item, index); end;
 function TArray_Contains8(const arr: TRangeArray; const item: TRange; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Contains(item, index); end;
+
+function TArray_Copied1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Copied; end;
+function TArray_Copied2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Copied; end;
+function TArray_Copied3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Copied; end;
+function TArray_Copied4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Copied; end;
+function TArray_Copied5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Copied; end;
+function TArray_Copied6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Copied; end;
+function TArray_Copied7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Copied; end;
+function TArray_Copied8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Copied; end;
 
 function TArray_Copy1(const arr: TIntegerArray; const index: Integer = 0; const count: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Copy(index, count); end;
 function TArray_Copy2(const arr: TDoubleArray; const index: Integer = 0; const count: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Copy(index, count); end;

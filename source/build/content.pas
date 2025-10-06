@@ -1152,6 +1152,15 @@ begin
   AddFunction(@TArray_Clone15, 'function TArray_Clone(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload;');
   AddFunction(@TArray_Clone16, 'function TArray_Clone(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload;');
 
+  AddFunction(@TArray_Cloned1, 'function TArray_Cloned(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Cloned2, 'function TArray_Cloned(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Cloned3, 'function TArray_Cloned(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Cloned4, 'function TArray_Cloned(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Cloned5, 'function TArray_Cloned(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Cloned6, 'function TArray_Cloned(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Cloned7, 'function TArray_Cloned(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Cloned8, 'function TArray_Cloned(const arr: TRangeArray): TRangeArray; overload;');
+
   AddFunction(@TArray_Compact1, 'function TArray_Compact(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Compact2, 'function TArray_Compact(var arr: TDoubleArray): Integer; overload;');
   AddFunction(@TArray_Compact3, 'function TArray_Compact(var arr: TStringArray): Integer; overload;');
@@ -1256,6 +1265,15 @@ begin
   AddFunction(@TArray_Copy6, 'function TArray_Copy(const arr: TPointArray; const index: Integer = 0; const count: Integer = 2147483647): TPointArray; overload;');
   AddFunction(@TArray_Copy7, 'function TArray_Copy(const arr: TBoxArray; const index: Integer = 0; const count: Integer = 2147483647): TBoxArray; overload;');
   AddFunction(@TArray_Copy8, 'function TArray_Copy(const arr: TRangeArray; const index: Integer = 0; const count: Integer = 2147483647): TRangeArray; overload;');
+
+  AddFunction(@TArray_Copied1, 'function TArray_Copied(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Copied2, 'function TArray_Copied(const arr: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_Copied3, 'function TArray_Copied(const arr: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_Copied4, 'function TArray_Copied(const arr: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_Copied5, 'function TArray_Copied(const arr: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_Copied6, 'function TArray_Copied(const arr: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_Copied7, 'function TArray_Copied(const arr: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_Copied8, 'function TArray_Copied(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_Create1, 'function TArray_Create(const item: Integer): TIntegerArray; overload;');
   AddFunction(@TArray_Create2, 'function TArray_Create(const item: Double): TDoubleArray; overload;');
