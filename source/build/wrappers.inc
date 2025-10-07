@@ -549,6 +549,8 @@ function TRange_MidValue(const range: TRange): Double; cdecl; begin Result := ra
 function TRange_Average(const range: TRange): Double; cdecl; begin Result := range.Average; end;
 function TRange_Center(const range: TRange): Integer; cdecl; begin Result := range.Center; end;
 function TRange_Central(const range: TRange): Integer; cdecl; begin Result := range.Central; end;
+function TRange_Half(const range: TRange): Integer; cdecl; begin Result := range.Half; end;
+function TRange_Halfway(const range: TRange): Integer; cdecl; begin Result := range.Halfway; end;
 function TRange_Str(const range: TRange; const openRange: string = '['; const closeRange: string = ']'; const glueRange: string = '..'): string; cdecl; begin Result := range.Str(openRange, closeRange, glueRange); end;  
 function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl; begin Result := range.ToStr(glueRange, openRange, closeRange); end;
 function TRange_Stringify(const range: TRange; const openRange: string = '['; const glueRange: string = '..'; const closeRange: string = ']'): string; cdecl; begin Result := range.Stringify(openRange, glueRange, closeRange); end;
@@ -570,6 +572,7 @@ function TRange_Windows(const range: TRange; const target: TRange): TRangeArray;
 function TRange_Sectioned(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Sectioned(target); end;
 function TRange_Binned(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Binned(target); end;
 function TRange_Sample(const range: TRange; const sSize: Integer): TIntegerArray; overload; cdecl; begin Result := range.Sample(sSize); end;
+function TRange_Centered(var range: TRange; const rCenter: Integer): TRange; overload; cdecl; begin Result := range.Centered(rCenter); end;
 function TRange_Shift(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Shift(N); end;
 function TRange_Shifted(const range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Shifted(N); end;
 function TRange_Back(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Back(N); end;
@@ -582,6 +585,8 @@ function TRange_Modify(var range: TRange; const mStart, mStop: Integer): TRange;
 function TRange_Modified(const range: TRange; const mStart, mStop: Integer): TRange; overload; cdecl; begin Result := range.Modified(mStart, mStop); end;
 function TRange_Contract(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Contract(N); end;
 function TRange_Contracted(const range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Contracted(N); end;
+function TRange_Expand(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Expand(N); end;
+function TRange_Expanded(const range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Expanded(N); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

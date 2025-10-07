@@ -584,6 +584,8 @@ begin
   AddFunction(@TRange_Average, 'function TRange_Average(const range: TRange): Double;');
   AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Integer;');
   AddFunction(@TRange_Central, 'function TRange_Central(const range: TRange): Integer;');
+  AddFunction(@TRange_Half, 'function TRange_Half(const range: TRange): Integer;');
+  AddFunction(@TRange_Halfway, 'function TRange_Halfway(const range: TRange): Integer;');
   AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange; const openRange: string = ''[''; const closeRange: string = '']''; const glueRange: string = ''..''): string;');  
   AddFunction(@TRange_ToStr, 'function TRange_ToStr(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string;');
   AddFunction(@TRange_Stringify, 'function TRange_Stringify(const range: TRange; const openRange: string = ''[''; const glueRange: string = ''..''; const closeRange: string = '']''): string;');
@@ -605,6 +607,7 @@ begin
   AddFunction(@TRange_Sectioned, 'function TRange_Sectioned(const range: TRange; const target: TRange): TRangeArray; overload;');
   AddFunction(@TRange_Binned, 'function TRange_Binned(const range: TRange; const target: TRange): TRangeArray; overload;');
   AddFunction(@TRange_Sample, 'function TRange_Sample(const range: TRange; const sSize: Integer): TIntegerArray; overload;');
+  AddFunction(@TRange_Centered, 'function TRange_Centered(const range: TRange; const rCenter: Integer): TRange; overload;');
   AddFunction(@TRange_Shift, 'function TRange_Shift(var range: TRange; const N: Integer = 1): TRange; overload;');
   AddFunction(@TRange_Shifted, 'function TRange_Shifted(const range: TRange; const N: Integer = 1): TRange; overload;');
   AddFunction(@TRange_Back, 'function TRange_Back(var range: TRange; const N: Integer = 1): TRange; overload;');
@@ -617,6 +620,8 @@ begin
   AddFunction(@TRange_Modified, 'function TRange_Modified(const range: TRange; const mStart, mStop: Integer): TRange; overload;');
   AddFunction(@TRange_Contract, 'function TRange_Contract(var range: TRange; const N: Integer = 1): TRange; overload;');
   AddFunction(@TRange_Contracted, 'function TRange_Contracted(const range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Expand, 'function TRange_Expand(var range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Expanded, 'function TRange_Expanded(const range: TRange; const N: Integer = 1): TRange; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
