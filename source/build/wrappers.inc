@@ -578,6 +578,10 @@ function TRange_Increase(var range: TRange; const N: Integer = 1): TRange; overl
 function TRange_Decrease(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Decrease(N); end;
 function TRange_Increment(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Increment(N); end;
 function TRange_Decrement(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Decrement(N); end;
+function TRange_Modify(var range: TRange; const mStart, mStop: Integer): TRange; overload; cdecl; begin Result := range.Modify(mStart, mStop); end;
+function TRange_Modified(const range: TRange; const mStart, mStop: Integer): TRange; overload; cdecl; begin Result := range.Modified(mStart, mStop); end;
+function TRange_Contract(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Contract(N); end;
+function TRange_Contracted(const range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Contracted(N); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

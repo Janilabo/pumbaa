@@ -613,6 +613,10 @@ begin
   AddFunction(@TRange_Decrease, 'function TRange_Decrease(var range: TRange; const N: Integer = 1): TRange; overload;');
   AddFunction(@TRange_Increment, 'function TRange_Increment(var range: TRange; const N: Integer = 1): TRange; overload;');
   AddFunction(@TRange_Decrement, 'function TRange_Decrement(var range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Modify, 'function TRange_Modify(var range: TRange; const mStart, mStop: Integer): TRange; overload;');
+  AddFunction(@TRange_Modified, 'function TRange_Modified(const range: TRange; const mStart, mStop: Integer): TRange; overload;');
+  AddFunction(@TRange_Contract, 'function TRange_Contract(var range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Contracted, 'function TRange_Contracted(const range: TRange; const N: Integer = 1): TRange; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
