@@ -433,9 +433,11 @@ function TRange_Atomic(const range: TRange): Boolean; cdecl; begin Result := ran
 function TRange_Plural(const range: TRange): Boolean; cdecl; begin Result := range.Plural; end;
 function TRange_Composite(const range: TRange): Boolean; cdecl; begin Result := range.Composite; end;
 function TRange_Ascend(const range: TRange): TRange; cdecl; begin Result := range.Ascend; end;
+function TRange_Ascended(const range: TRange): TRange; cdecl; begin Result := range.Ascended; end;
 function TRange_Ascending(const range: TRange): Boolean; cdecl; begin Result := range.Ascending; end;
 function TRange_Ascends(const range: TRange): Boolean; cdecl; begin Result := range.Ascends; end;
 function TRange_Descend(const range: TRange): TRange; cdecl; begin Result := range.Descend; end;
+function TRange_Descended(const range: TRange): TRange; cdecl; begin Result := range.Descended; end;
 function TRange_Descending(const range: TRange): Boolean; cdecl; begin Result := range.Descending; end;
 function TRange_Descends(const range: TRange): Boolean; cdecl; begin Result := range.Descends; end;
 function TRange_Increasing(const range: TRange): Boolean; cdecl; begin Result := range.Increasing; end;
@@ -491,7 +493,12 @@ function TRange_Unpack(const range: TRange): TIntegerArray; overload; cdecl; beg
 function TRange_Unwrap(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unwrap; end;
 function TRange_Unfold(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unfold; end;
 function TRange_ZigZag(const range: TRange; const zAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := range.ZigZag(zAscending); end;
+function TRange_Normed(const range: TRange): TRange; cdecl; begin Result := range.Normed; end;
+function TRange_Norm(const range: TRange): TRange; cdecl; begin Result := range.Norm; end;
+function TRange_Normal(const range: TRange): TRange; cdecl; begin Result := range.Normal; end;
+function TRange_Normally(const range: TRange): TRange; cdecl; begin Result := range.Normally; end;
 function TRange_Normalize(const range: TRange): TRange; cdecl; begin Result := range.Normalize; end;
+function TRange_Normalized(const range: TRange): TRange; cdecl; begin Result := range.Normalized; end;
 function TRange_Overlapping(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlapping(b); end;
 function TRange_Overlap(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlap(b); end;
 function TRange_Intersect1(const range: TRange; const b: TRange): TRange; overload; cdecl; begin Result := range.Intersect(b); end;
@@ -521,6 +528,8 @@ function TRange_RestrictMax(var range: Trange; const maxValue: Integer): Boolean
 function TRange_Clip(const range: TRange; const zone: TRange): TRange; cdecl; begin Result := range.Clip(zone); end;
 function TRange_ClipMin(const range: TRange; const minValue: Integer): TRange; cdecl; begin Result := range.ClipMin(minValue); end;
 function TRange_ClipMax(const range: TRange; const maxValue: Integer): TRange; cdecl; begin Result := range.ClipMax(maxValue); end;
+function TRange_Ensured(const range: TRange; const zone: TRange): TRange; cdecl; begin Result := range.Ensured(zone); end;
+function TRange_Ensure(var range: TRange; const zone: TRange): Boolean; cdecl; begin Result := range.Ensure(zone); end;
 function TRange_Absorb(var range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Absorb(val); end;
 function TRange_Include(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Include(val); end;
 function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray; cdecl; begin Result := range.Distribute(parts); end;

@@ -468,9 +468,11 @@ begin
   AddFunction(@TRange_Plural, 'function TRange_Plural(const range: TRange): Boolean;');
   AddFunction(@TRange_Composite, 'function TRange_Composite(const range: TRange): Boolean;');
   AddFunction(@TRange_Ascend, 'function TRange_Ascend(const range: TRange): TRange;');
+  AddFunction(@TRange_Ascended, 'function TRange_Ascended(const range: TRange): TRange;');
   AddFunction(@TRange_Ascending, 'function TRange_Ascending(const range: TRange): Boolean;');
   AddFunction(@TRange_Ascends, 'function TRange_Ascends(const range: TRange): Boolean;');
   AddFunction(@TRange_Descend, 'function TRange_Descend(const range: TRange): TRange;');
+  AddFunction(@TRange_Descended, 'function TRange_Descended(const range: TRange): TRange;');
   AddFunction(@TRange_Descending, 'function TRange_Descending(const range: TRange): Boolean;');
   AddFunction(@TRange_Descends, 'function TRange_Descends(const range: TRange): Boolean;');
   AddFunction(@TRange_Increasing, 'function TRange_Increasing(const range: TRange): Boolean;');
@@ -526,7 +528,12 @@ begin
   AddFunction(@TRange_Unwrap, 'function TRange_Unwrap(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Unfold, 'function TRange_Unfold(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_ZigZag, 'function TRange_ZigZag(const range: TRange; const zAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TRange_Normed, 'function TRange_Normed(const range: TRange): TRange;');
+  AddFunction(@TRange_Norm, 'function TRange_Norm(const range: TRange): TRange;');
+  AddFunction(@TRange_Normal, 'function TRange_Normal(const range: TRange): TRange;');
+  AddFunction(@TRange_Normally, 'function TRange_Normally(const range: TRange): TRange;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
+  AddFunction(@TRange_Normalized, 'function TRange_Normalized(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Intersect1, 'function TRange_Intersection(const range: TRange; const b: TRange): TRange; overload;');
@@ -556,6 +563,8 @@ begin
   AddFunction(@TRange_Clip, 'function TRange_Clip(const range: TRange; const zone: TRange): TRange;');
   AddFunction(@TRange_ClipMin, 'function TRange_ClipMin(const range: TRange; const minValue: Integer): TRange;');
   AddFunction(@TRange_ClipMax, 'function TRange_ClipMax(const range: TRange; const maxValue: Integer): TRange;');
+  AddFunction(@TRange_Ensured, 'function TRange_Ensured(const range: TRange; const zone: TRange): TRange;');
+  AddFunction(@TRange_Ensure, 'function TRange_Ensure(var range: TRange; const zone: TRange): Boolean;');
   AddFunction(@TRange_Absorb, 'function TRange_Absorb(var range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Include, 'function TRange_Include(const range: TRange; const val: Integer): TRange; overload;');
   AddFunction(@TRange_Distribute, 'function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray;');
