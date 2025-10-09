@@ -432,10 +432,16 @@ function TRange_Singular(const range: TRange): Boolean; cdecl; begin Result := r
 function TRange_Atomic(const range: TRange): Boolean; cdecl; begin Result := range.Atomic; end;
 function TRange_Plural(const range: TRange): Boolean; cdecl; begin Result := range.Plural; end;
 function TRange_Composite(const range: TRange): Boolean; cdecl; begin Result := range.Composite; end;
+function TRange_Sorted(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Sorted(oAscending); end;
+function TRange_Sort(var range: TRange; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := range.Sort(oAscending); end;
+function TRange_Ordered(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Ordered(oAscending); end;
+function TRange_Order(var range: TRange; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := range.Order(oAscending); end;
+function TRange_Asc(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Asc; end;
 function TRange_Ascend(const range: TRange): TRange; cdecl; begin Result := range.Ascend; end;
 function TRange_Ascended(const range: TRange): TRange; cdecl; begin Result := range.Ascended; end;
 function TRange_Ascending(const range: TRange): Boolean; cdecl; begin Result := range.Ascending; end;
 function TRange_Ascends(const range: TRange): Boolean; cdecl; begin Result := range.Ascends; end;
+function TRange_Desc(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Desc; end;
 function TRange_Descend(const range: TRange): TRange; cdecl; begin Result := range.Descend; end;
 function TRange_Descended(const range: TRange): TRange; cdecl; begin Result := range.Descended; end;
 function TRange_Descending(const range: TRange): Boolean; cdecl; begin Result := range.Descending; end;
@@ -454,7 +460,8 @@ function TRange_Grab(const range: TRange): TRange; cdecl; begin Result := range.
 function TRange_Count(const range: TRange): Integer; cdecl; begin Result := range.Count; end; 
 function TRange_Area(const range: TRange): Integer; cdecl; begin Result := range.Area; end;
 function TRange_Span(const range: TRange): Integer; cdecl; begin Result := range.Span; end;
-function TRange_Size(const range: TRange): Integer; cdecl; begin Result := range.Size; end;
+function TRange_Size1(const range: TRange): Integer; overload; cdecl; begin Result := range.Size; end;
+function TRange_Size2(const range: TRange; var minVal, maxVal: Integer): Integer; overload; cdecl; begin Result := range.Size(minVal, maxVal); end;
 function TRange_Capacity(const range: TRange): Integer; cdecl; begin Result := range.Capacity; end;
 function TRange_Frame1(const range: TRange; var rSize: Integer): TRange; overload; cdecl; begin Result := range.Frame(rSize); end;
 function TRange_Frame2(const range: TRange): TRange; overload; cdecl; begin Result := range.Frame; end;
@@ -565,6 +572,7 @@ function TRange_Halfway(const range: TRange): Integer; cdecl; begin Result := ra
 function TRange_Radius(const range: TRange): Integer; cdecl; begin Result := range.Radius; end;
 function TRange_Rad(const range: TRange): Integer; cdecl; begin Result := range.Rad; end;
 function TRange_Radiar(const range: TRange): Integer; cdecl; begin Result := range.Radiar; end;
+function TRange_AsStr(const range: TRange; const rReversed: Boolean = False): string; overload; cdecl; begin Result := range.AsStr(rReversed); end;
 function TRange_Str(const range: TRange; const openRange: string = '['; const closeRange: string = ']'; const glueRange: string = '..'): string; cdecl; begin Result := range.Str(openRange, closeRange, glueRange); end;  
 function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl; begin Result := range.ToStr(glueRange, openRange, closeRange); end;
 function TRange_Stringify(const range: TRange; const openRange: string = '['; const glueRange: string = '..'; const closeRange: string = ']'): string; cdecl; begin Result := range.Stringify(openRange, glueRange, closeRange); end;

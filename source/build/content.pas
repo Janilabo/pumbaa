@@ -467,10 +467,16 @@ begin
   AddFunction(@TRange_Atomic, 'function TRange_Atomic(const range: TRange): Boolean;');
   AddFunction(@TRange_Plural, 'function TRange_Plural(const range: TRange): Boolean;');
   AddFunction(@TRange_Composite, 'function TRange_Composite(const range: TRange): Boolean;');
+  AddFunction(@TRange_Sorted, 'function TRange_Sorted(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Sort, 'function TRange_Sort(var range: TRange; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TRange_Ordered, 'function TRange_Ordered(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Order, 'function TRange_Order(var range: TRange; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TRange_Asc, 'function TRange_Asc(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Ascend, 'function TRange_Ascend(const range: TRange): TRange;');
   AddFunction(@TRange_Ascended, 'function TRange_Ascended(const range: TRange): TRange;');
   AddFunction(@TRange_Ascending, 'function TRange_Ascending(const range: TRange): Boolean;');
   AddFunction(@TRange_Ascends, 'function TRange_Ascends(const range: TRange): Boolean;');
+  AddFunction(@TRange_Desc, 'function TRange_Desc(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Descend, 'function TRange_Descend(const range: TRange): TRange;');
   AddFunction(@TRange_Descended, 'function TRange_Descended(const range: TRange): TRange;');
   AddFunction(@TRange_Descending, 'function TRange_Descending(const range: TRange): Boolean;');
@@ -489,7 +495,8 @@ begin
   AddFunction(@TRange_Count, 'function TRange_Count(const range: TRange): Integer;');
   AddFunction(@TRange_Area, 'function TRange_Area(const range: TRange): Integer;');
   AddFunction(@TRange_Span, 'function TRange_Span(const range: TRange): Integer;');
-  AddFunction(@TRange_Size, 'function TRange_Size(const range: TRange): Integer;');
+  AddFunction(@TRange_Size1, 'function TRange_Size(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Size2, 'function TRange_Size(const range: TRange; var minVal, maxVal: Integer): Integer; overload;');
   AddFunction(@TRange_Capacity, 'function TRange_Capacity(const range: TRange): Integer;');
   AddFunction(@TRange_Frame1, 'function TRange_Frame(const range: TRange; var rSize: Integer): TRange; overload;');
   AddFunction(@TRange_Frame2, 'function TRange_Frame(const range: TRange): TRange; overload;');
@@ -600,6 +607,7 @@ begin
   AddFunction(@TRange_Radius, 'function TRange_Radius(const range: TRange): Integer;');
   AddFunction(@TRange_Rad, 'function TRange_Rad(const range: TRange): Integer;');
   AddFunction(@TRange_Radiar, 'function TRange_Radiar(const range: TRange): Integer;');
+  AddFunction(@TRange_AsStr, 'function TRange_AsStr(const range: TRange; const rReversed: Boolean = False): string; overload;');
   AddFunction(@TRange_Str, 'function TRange_Str(const range: TRange; const openRange: string = ''[''; const closeRange: string = '']''; const glueRange: string = ''..''): string;');  
   AddFunction(@TRange_ToStr, 'function TRange_ToStr(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string;');
   AddFunction(@TRange_Stringify, 'function TRange_Stringify(const range: TRange; const openRange: string = ''[''; const glueRange: string = ''..''; const closeRange: string = '']''): string;');
