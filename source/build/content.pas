@@ -454,7 +454,10 @@ begin
   AddFunction(@TBox_Some1, 'function TBox_Some(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Some2, 'function TBox_Some(const bx: TBox; const amount: Integer): TPointArray; overload;');
   AddFunction(@TBox_All, 'function TBox_All(const bx: TBox): TPointArray;');
-  AddFunction(@TBox_Placements, 'function TBox_Placements(const bx: TBox; const target: TBox): TBoxArray; overload;');
+  AddFunction(@TBox_Placements1, 'function TBox_Placements(const bx: TBox; const target: TBox; const o: TPoint): TBoxArray; overload;');
+  AddFunction(@TBox_Placements2, 'function TBox_Placements(const bx: TBox; const target: TBox): TBoxArray; overload;');
+  AddFunction(@TBox_Places1, 'function TBox_Places(const bx: TBox; const target: TBox; const o: TPoint): TPointArray; overload;');
+  AddFunction(@TBox_Places2, 'function TBox_Places(const bx: TBox; const target: TBox): TPointArray; overload;');
   AddFunction(@TBox_Tiled, 'function TBox_Tiled(const bx: TBox; const target: TBox): TBoxArray; overload;');
   AddFunction(@TBox_Gridded, 'function TBox_Gridded(const bx: TBox; const target: TBox): TBoxArray; overload;');
   AddFunction(@TBox_Reserve1, 'function TBox_Reserve(const bx: TBox): TPointArray; overload;');
