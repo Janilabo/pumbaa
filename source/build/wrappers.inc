@@ -266,6 +266,15 @@ function TPoint_DistChebyshev(const pt, target: TPoint): Double; cdecl; begin Re
 function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray; cdecl; begin Result := pt.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Row(cells, space); end;
 function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Column(cells, space); end;
+function TPoint_Neighbour(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload; cdecl; begin Result := pt.Neighbour(p, adjacency8); end;
+function TPoint_Neighbor(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload; cdecl; begin Result := pt.Neighbor(p, adjacency8); end;
+function TPoint_Adjacent1(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload; cdecl; begin Result := pt.Adjacent(p, adjacency8); end;
+function TPoint_Adjacent2(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Adjacent(adjacency8); end;
+function TPoint_Neighbours(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbours(adjacency8); end;
+function TPoint_Neighbors(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbors(adjacency8); end;
+function TPoint_ToY(const pt: TPoint; const yGoal: Integer): TPointArray; overload; cdecl; begin Result := pt.ToY(yGoal); end;
+function TPoint_ToX(const pt: TPoint; const xGoal: Integer): TPointArray; overload; cdecl; begin Result := pt.ToX(xGoal); end;
+function TPoint_Linked(const pt: TPoint; const p: TPoint; const link: TPointArray): Boolean; overload; begin Result := pt.Linked(p, link); end;
 
 function TBox_Create1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Create(minX, minY, maxX, maxY); end;
 function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Create(top, bottom); end;
@@ -704,6 +713,7 @@ function TIntegerArray_FilterEven(const arr: TIntegerArray): TIntegerArray; over
 function TIntegerArray_ExtractOdd(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.ExtractOdd; end;
 function TIntegerArray_FilterOdd(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterOdd; end;
 function TIntegerArray_Reinit(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
+function TIntegerArray_Attach(var arr: TIntegerArray; const items: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
@@ -746,6 +756,8 @@ function TIA_Combine(const A, B: TIntegerArray): TIntegerArray; overload; cdecl;
 
 function ATIA_Merge(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := ATIA.Merge(arr); end;
 
+function TDoubleArray_Reinit(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
+function TDoubleArray_Attach(var arr: TDoubleArray; const items: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
 function TDoubleArray_BSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TDoubleArray_BinarySort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TDoubleArray_BinarySorted(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
@@ -774,7 +786,6 @@ function TDoubleArray_BinaryLowerBound(const arr: TDoubleArray; const x: Double;
 function TDoubleArray_BinaryUpperBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUpperBound(x, aAscending); end;
 function TDoubleArray_BinaryRange1(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TDoubleArray_BinaryRange2(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
-function TDoubleArray_Reinit(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 function TDoubleArray_BinaryMerge(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryMerge(items, aAscending); end;
 function TDoubleArray_BinaryMerged(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryMerged(items, aAscending); end;
 function TDoubleArray_BinaryCombine(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryCombine(items, aAscending); end;
@@ -833,6 +844,7 @@ function TBooleanArray_BinaryDigits(const arr: TBooleanArray): TIntegerArray; be
 function TBooleanArray_Binary(const arr: TBooleanArray): string; begin Result := arr.Binary; end;
 function TBooleanArray_Reinit(var arr: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 function TBooleanArray_Occupancy(const arr: TBooleanArray; const val: Boolean = True): Double; overload; cdecl; begin Result := arr.Occupancy(val); end;
+function TBooleanArray_Attach(var arr: TBooleanArray; const items: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
 
 function TPointArray_X1(const arr: TPointArray): TIntegerArray; cdecl; begin Result := X(arr); end;
 function TPointArray_X2(const arr: TPointArray; const val: Integer): TIntegerArray; cdecl; begin Result := X(arr, val); end;
@@ -889,6 +901,9 @@ function TPointArray_Create1(const xRange, yRange: TRange): TPointArray; overloa
 function TPointArray_Create2(const xRange, yRange: TRange; const offset: TPoint): TPointArray; overload; cdecl; begin Result := TPA.Create(xRange, yRange, offset); end;
 function TPointArray_Create3(const xValues, yValues: TIntegerArray): TPointArray; overload; cdecl; begin Result := TPA.Create(xValues, yValues); end;
 function TPointArray_Create4(const xValues, yValues: TIntegerArray; const offset: TPoint): TPointArray; overload; cdecl; begin Result := TPA.Create(xValues, yValues, offset); end;
+function TPointArray_Attach(var arr: TPointArray; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
+function TPointArray_FrameLinks1(const arr: TPointArray; const dist: Integer; const area: TBox): TPointArray; overload; cdecl; begin Result := arr.FrameLinks(dist, area); end;
+function TPointArray_FrameLinks2(const arr: TPointArray; const dist: Integer = 1): TPointArray; overload; cdecl; begin Result := arr.FrameLinks(dist); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
