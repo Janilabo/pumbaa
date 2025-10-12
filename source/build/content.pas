@@ -749,6 +749,7 @@ begin
   AddFunction(@TIntegerArray_FilterOdd, 'function TIntegerArray_FilterOdd(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_Reinit, 'function TIntegerArray_Reinit(var arr: TIntegerArray): Integer;');
   AddFunction(@TIntegerArray_Attach, 'function TIntegerArray_Attach(var arr: TIntegerArray; const items: TIntegerArray): Integer; overload;');
+  AddFunction(@TIntegerArray_Embed, 'function TIntegerArray_Embed(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySorted, 'function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
@@ -793,6 +794,7 @@ begin
 
   AddFunction(@TDoubleArray_Reinit, 'function TDoubleArray_Reinit(var arr: TDoubleArray): Integer;');
   AddFunction(@TDoubleArray_Attach, 'function TDoubleArray_Attach(var arr: TDoubleArray; const items: TDoubleArray): Integer; overload;');
+  AddFunction(@TDoubleArray_Embed, 'function TDoubleArray_Embed(var arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TDoubleArray_BSort, 'function TDoubleArray_BSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinarySort, 'function TDoubleArray_BinarySort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinarySorted, 'function TDoubleArray_BinarySorted(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray;');
@@ -880,6 +882,7 @@ begin
   AddFunction(@TBooleanArray_Reinit, 'function TBooleanArray_Reinit(var arr: TBooleanArray): Integer;');
   AddFunction(@TBooleanArray_Occupancy, 'function TBooleanArray_Occupancy(const arr: TBooleanArray; const val: Boolean = True): Double; overload;');
   AddFunction(@TBooleanArray_Attach, 'function TBooleanArray_Attach(var arr: TBooleanArray; const items: TBooleanArray): Integer; overload;');
+  AddFunction(@TBooleanArray_Embed, 'function TBooleanArray_Embed(var arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 2147483647): Integer; overload;');
 
   AddFunction(@TPointArray_X1, 'function TPointArray_X(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TPointArray_X2, 'function TPointArray_X(const arr: TPointArray; const val: Integer): TIntegerArray; overload;');
@@ -937,6 +940,7 @@ begin
   AddFunction(@TPointArray_Create3, 'function TPointArray_Create(const xValues, yValues: TIntegerArray): TPointArray; overload;');
   AddFunction(@TPointArray_Create4, 'function TPointArray_Create(const xValues, yValues: TIntegerArray; const offset: TPoint): TPointArray; overload;');
   AddFunction(@TPointArray_Attach, 'function TPointArray_Attach(var arr: TPointArray; const items: TPointArray): Integer; overload;');
+  AddFunction(@TPointArray_Embed, 'function TPointArray_Embed(var arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TPointArray_FrameLinks1, 'function TPointArray_FrameLinks(const arr: TPointArray; const dist: Integer; const area: TBox): TPointArray; overload;');
   AddFunction(@TPointArray_FrameLinks2, 'function TPointArray_FrameLinks(const arr: TPointArray; const dist: Integer = 1): TPointArray; overload;');
 
@@ -2046,6 +2050,15 @@ begin
   AddFunction(@TArray_Indices7, 'function TArray_Indices(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_Indices8, 'function TArray_Indices(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload;');  
 
+  AddFunction(@TArray_Inject1, 'function TArray_Inject(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Inject2, 'function TArray_Inject(var arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Inject3, 'function TArray_Inject(var arr: TStringArray; const items: TStringArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Inject4, 'function TArray_Inject(var arr: TCharArray; const items: TCharArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Inject5, 'function TArray_Inject(var arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Inject6, 'function TArray_Inject(var arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Inject7, 'function TArray_Inject(var arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TArray_Inject8, 'function TArray_Inject(var arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647): Integer; overload;');
+
   AddFunction(@TArray_Keep1, 'function TArray_Keep(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Keep2, 'function TArray_Keep(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload;');
   AddFunction(@TArray_Keep3, 'function TArray_Keep(const arr: TStringArray; const items: TStringArray; const index: Integer = 0): TStringArray; overload;');
@@ -2426,6 +2439,15 @@ begin
   AddFunction(@TArray_Positions22, 'function TArray_Positions(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TArray_Positions23, 'function TArray_Positions(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TArray_Positions24, 'function TArray_Positions(const arr: TRangeArray): TIntegerArray; overload;');
+
+  AddFunction(@TArray_Prepend1, 'function TArray_Prepend(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Prepend2, 'function TArray_Prepend(var arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Prepend3, 'function TArray_Prepend(var arr: TStringArray; const items: TStringArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Prepend4, 'function TArray_Prepend(var arr: TCharArray; const items: TCharArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Prepend5, 'function TArray_Prepend(var arr: TBooleanArray; const items: TBooleanArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Prepend6, 'function TArray_Prepend(var arr: TPointArray; const items: TPointArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Prepend7, 'function TArray_Prepend(var arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TArray_Prepend8, 'function TArray_Prepend(var arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): Integer; overload;');
 
   AddFunction(@TArray_Presence1, 'function TArray_Presence(const arr: TIntegerArray; const Item: Integer; const occurrence: Integer = 1): Boolean; overload;');
   AddFunction(@TArray_Presence2, 'function TArray_Presence(const arr: TDoubleArray; const Item: Double; const occurrence: Integer = 1): Boolean; overload;');
