@@ -922,8 +922,10 @@ begin
   AddFunction(@TPointArray_Split2, 'function TPointArray_Split(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
   AddFunction(@TPointArray_SplitEx1, 'function TPointArray_SplitEx(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_SplitEx2, 'function TPointArray_SplitEx(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
-  AddFunction(@TPointArray_Cluster1, 'function TPointArray_Cluster(const arr: TPointArray; const width, height: Integer): T2DPointArray; overload;');
-  AddFunction(@TPointArray_Cluster2, 'function TPointArray_Cluster(const arr: TPointArray; const dist: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Cluster1, 'function TPointArray_Cluster(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Cluster2, 'function TPointArray_Cluster(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Clump1, 'function TPointArray_Clump(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Clump2, 'function TPointArray_Clump(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
   AddFunction(@TPointArray_Segment, 'function TPointArray_Segment(const arr: TPointArray; const radius: Double): T2DPointArray; overload;');
   AddFunction(@TPointArray_Fragment, 'function TPointArray_Fragment(const arr: TPointArray; const radius: Double): T2DPointArray; overload;');
   AddFunction(@TPointArray_Clusterize1, 'function TPointArray_Clusterize(const arr: TPointArray; const radius: Double): T2DPointArray; overload;');
