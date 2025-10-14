@@ -274,7 +274,13 @@ function TPoint_Neighbours(const pt: TPoint; const adjacency8: Boolean = True): 
 function TPoint_Neighbors(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbors(adjacency8); end;
 function TPoint_ToY(const pt: TPoint; const yGoal: Integer): TPointArray; overload; cdecl; begin Result := pt.ToY(yGoal); end;
 function TPoint_ToX(const pt: TPoint; const xGoal: Integer): TPointArray; overload; cdecl; begin Result := pt.ToX(xGoal); end;
-function TPoint_Linked(const pt: TPoint; const p: TPoint; const link: TPointArray): Boolean; overload; begin Result := pt.Linked(p, link); end;
+function TPoint_Linked(const pt: TPoint; const p: TPoint; const link: TPointArray): Boolean; overload; cdecl; begin Result := pt.Linked(p, link); end;
+function TPoint_Boxed1(const pt: TPoint; const xRadius, yRadius: Integer): TBox; cdecl; begin Result := pt.Boxed(xRadius, yRadius); end;
+function TPoint_Boxed2(const pt: TPoint; const radius: Integer = 0): TBox; cdecl; begin Result := pt.Boxed(radius); end;
+function TPoint_ToBox1(const pt: TPoint; const width, height: Integer): TBox; cdecl; begin Result := pt.ToBox(width, height); end;
+function TPoint_ToBox2(const pt: TPoint; const size: Integer = 0): TBox; cdecl; begin Result := pt.ToBox(size); end;
+function TPoint_Boxify1(const pt: TPoint; const width, height: Integer): TBox; cdecl; begin Result := pt.Boxify(width, height); end;
+function TPoint_Boxify2(const pt: TPoint; const size: Integer = 0): TBox; cdecl; begin Result := pt.Boxify(size); end;
 
 function TBox_Create1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Create(minX, minY, maxX, maxY); end;
 function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Create(top, bottom); end;
@@ -916,6 +922,10 @@ function TPointArray_Attach(var arr: TPointArray; const items: TPointArray): Int
 function TPointArray_Embed(var arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Embed(items, index); end;
 function TPointArray_FrameLinks1(const arr: TPointArray; const dist: Integer; const area: TBox): TPointArray; overload; cdecl; begin Result := arr.FrameLinks(dist, area); end;
 function TPointArray_FrameLinks2(const arr: TPointArray; const dist: Integer = 1): TPointArray; overload; cdecl; begin Result := arr.FrameLinks(dist); end;
+function TPointArray_XVals(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.XVals(aAscending); end;
+function TPointArray_YVals(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.YVals(aAscending); end;
+function TPointArray_XArr(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.XVals(aAscending); end;
+function TPointArray_YArr(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.YVals(aAscending); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;

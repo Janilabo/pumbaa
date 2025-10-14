@@ -309,7 +309,13 @@ begin
   AddFunction(@TPoint_Neighbors, 'function TPoint_Neighbors(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload;'); 
   AddFunction(@TPoint_ToY, 'function TPoint_ToY(const pt: TPoint; const yGoal: Integer): TPointArray; overload;');
   AddFunction(@TPoint_ToX, 'function TPoint_ToX(const pt: TPoint; const xGoal: Integer): TPointArray; overload;');
-  AddFunction(@TPoint_Linked, 'function TPoint_Linked(const pt: TPoint; const p: TPoint; const link: TPointArray): Boolean; overload;');  
+  AddFunction(@TPoint_Linked, 'function TPoint_Linked(const pt: TPoint; const p: TPoint; const link: TPointArray): Boolean; overload;');
+  AddFunction(@TPoint_Boxed1, 'function TPoint_Boxed(const pt: TPoint; const xRadius, yRadius: Integer): TBox; overload;');
+  AddFunction(@TPoint_Boxed2, 'function TPoint_Boxed(const pt: TPoint; const radius: Integer = 0): TBox; overload;');
+  AddFunction(@TPoint_ToBox1, 'function TPoint_ToBox(const pt: TPoint; const width, height: Integer): TBox; overload;');
+  AddFunction(@TPoint_ToBox2, 'function TPoint_ToBox(const pt: TPoint; const size: Integer = 0): TBox; overload;');
+  AddFunction(@TPoint_Boxify1, 'function TPoint_Boxify(const pt: TPoint; const width, height: Integer): TBox; overload;');
+  AddFunction(@TPoint_Boxify2, 'function TPoint_Boxify(const pt: TPoint; const size: Integer = 0): TBox; overload;');  
 
   AddFunction(@TBox_Build1, 'function TBox_Build(const minX, minY, maxX, maxY: Integer): TBox; overload;');
   AddFunction(@TBox_Build2, 'function TBox_Build(const top, bottom: TPoint): TBox; overload;');
@@ -951,6 +957,10 @@ begin
   AddFunction(@TPointArray_Embed, 'function TPointArray_Embed(var arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TPointArray_FrameLinks1, 'function TPointArray_FrameLinks(const arr: TPointArray; const dist: Integer; const area: TBox): TPointArray; overload;');
   AddFunction(@TPointArray_FrameLinks2, 'function TPointArray_FrameLinks(const arr: TPointArray; const dist: Integer = 1): TPointArray; overload;');
+  AddFunction(@TPointArray_XVals, 'function TPointArray_XVals(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray;');
+  AddFunction(@TPointArray_YVals, 'function TPointArray_YVals(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray;');
+  AddFunction(@TPointArray_XArr, 'function TPointArray_XArr(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray;');
+  AddFunction(@TPointArray_YArr, 'function TPointArray_YArr(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
