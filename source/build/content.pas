@@ -928,6 +928,8 @@ begin
   AddFunction(@TPointArray_Split2, 'function TPointArray_Split(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
   AddFunction(@TPointArray_SplitEx1, 'function TPointArray_SplitEx(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_SplitEx2, 'function TPointArray_SplitEx(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Clusters1, 'function TPointArray_Clusters(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Clusters2, 'function TPointArray_Clusters(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
   AddFunction(@TPointArray_Cluster1, 'function TPointArray_Cluster(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_Cluster2, 'function TPointArray_Cluster(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
   AddFunction(@TPointArray_Clustered1, 'function TPointArray_Clustered(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');

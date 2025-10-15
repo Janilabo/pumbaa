@@ -893,6 +893,8 @@ function TPointArray_Split1(const arr: TPointArray; const xRadius, yRadius: Inte
 function TPointArray_Split2(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.Split(radius); end;
 function TPointArray_SplitEx1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.SplitEx(xRadius, yRadius); end;
 function TPointArray_SplitEx2(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.SplitEx(radius); end;
+function TPointArray_Clusters1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Clusters(xRadius, yRadius); end;
+function TPointArray_Clusters2(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.Clusters(radius); end;
 function TPointArray_Cluster1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Cluster(xRadius, yRadius); end;
 function TPointArray_Cluster2(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.Cluster(radius); end;
 function TPointArray_Clustered1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Clustered(xRadius, yRadius); end;
