@@ -889,6 +889,10 @@ function TPointArray_Vertical(const arr: TPointArray): TRange; cdecl; begin Resu
 function TPointArray_Unzip(const arr: TPointArray; var xArr, yArr: TIntegerArray): Integer; cdecl; begin Result := arr.Unzip(xArr, yArr); end;
 function TPointArray_Zip(const xArr, yArr: TIntegerArray): TPointArray; cdecl; begin Result.Zip(xArr, yArr); end;
 function TPointArray_Extent(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Extent; end;
+function TPointArray_RSplit1(const arr: TPointArray; const xRadius, yRadius: Integer; const sSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.RSplit(xRadius, yRadius, sSorted); end;
+function TPointArray_RSplit2(const arr: TPointArray; const radius: Double = 1.0; const sSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.RSplit(radius, sSorted); end;
+function TPointArray_CSplit1(const arr: TPointArray; const xRadius, yRadius: Integer; const sSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.CSplit(xRadius, yRadius, sSorted); end;
+function TPointArray_CSplit2(const arr: TPointArray; const radius: Double = 1.0; const sSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.CSplit(radius, sSorted); end;
 function TPointArray_XSplit1(const arr: TPointArray; const xRadius, yRadius: Integer; const sSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.XSplit(xRadius, yRadius, sSorted); end;
 function TPointArray_XSplit2(const arr: TPointArray; const radius: Double = 1.0; const sSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.XSplit(radius, sSorted); end;
 function TPointArray_YSplit1(const arr: TPointArray; const xRadius, yRadius: Integer; const sSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.YSplit(xRadius, yRadius, sSorted); end;

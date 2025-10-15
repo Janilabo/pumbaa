@@ -924,6 +924,10 @@ begin
   AddFunction(@TPointArray_Unzip, 'function TPointArray_Unzip(const arr: TPointArray; var xArr, yArr: TIntegerArray): Integer;');
   AddFunction(@TPointArray_Zip, 'function TPointArray_Zip(const xArr, yArr: TIntegerArray): TPointArray;');
   AddFunction(@TPointArray_Extent, 'function TPointArray_Extent(const arr: TPointArray): TBox;');
+  AddFunction(@TPointArray_RSplit1, 'function TPointArray_RSplit(const arr: TPointArray; const xRadius, yRadius: Integer; const sSorted: Boolean = False): T2DPointArray; overload;');
+  AddFunction(@TPointArray_RSplit2, 'function TPointArray_RSplit(const arr: TPointArray; const radius: Double = 1.0; const sSorted: Boolean = False): T2DPointArray; overload;');
+  AddFunction(@TPointArray_CSplit1, 'function TPointArray_CSplit(const arr: TPointArray; const xRadius, yRadius: Integer; const sSorted: Boolean = False): T2DPointArray; overload;');
+  AddFunction(@TPointArray_CSplit2, 'function TPointArray_CSplit(const arr: TPointArray; const radius: Double = 1.0; const sSorted: Boolean = False): T2DPointArray; overload;');
   AddFunction(@TPointArray_XSplit1, 'function TPointArray_XSplit(const arr: TPointArray; const xRadius, yRadius: Integer; const sSorted: Boolean = False): T2DPointArray; overload;');
   AddFunction(@TPointArray_XSplit2, 'function TPointArray_XSplit(const arr: TPointArray; const radius: Double = 1.0; const sSorted: Boolean = False): T2DPointArray; overload;');
   AddFunction(@TPointArray_YSplit1, 'function TPointArray_YSplit(const arr: TPointArray; const xRadius, yRadius: Integer; const sSorted: Boolean = False): T2DPointArray; overload;');
