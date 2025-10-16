@@ -266,10 +266,12 @@ function TPoint_DistChebyshev(const pt, target: TPoint): Double; cdecl; begin Re
 function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray; cdecl; begin Result := pt.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Row(cells, space); end;
 function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Column(cells, space); end;
+function TPoint_Surrounding(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Surrounding(adjacency8); end;
 function TPoint_Neighbour(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload; cdecl; begin Result := pt.Neighbour(p, adjacency8); end;
 function TPoint_Neighbor(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload; cdecl; begin Result := pt.Neighbor(p, adjacency8); end;
 function TPoint_Adjacent1(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload; cdecl; begin Result := pt.Adjacent(p, adjacency8); end;
 function TPoint_Adjacent2(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Adjacent(adjacency8); end;
+function TPoint_Adjacency(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Adjacency(adjacency8); end;
 function TPoint_Neighbours(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbours(adjacency8); end;
 function TPoint_Neighbors(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbors(adjacency8); end;
 function TPoint_ToY(const pt: TPoint; const yGoal: Integer): TPointArray; overload; cdecl; begin Result := pt.ToY(yGoal); end;
@@ -914,6 +916,7 @@ function TPointArray_Clusterify1(const arr: TPointArray; const radius: Double = 
 function TPointArray_Clusterify2(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Clusterify(xRadius, yRadius); end;
 function TPointArray_Clusterize1(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.Clusterize(radius); end;
 function TPointArray_Clusterize2(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Clusterize(xRadius, yRadius); end;
+function TPointArray_Groupify(const arr: TPointArray; const adjacency8: Boolean = True): T2DPointArray; overload; cdecl; begin Result := arr.Groupify(adjacency8); end;
 function TPointArray_Segment1(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.Segment(radius); end;
 function TPointArray_Segment2(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Segment(xRadius, yRadius); end;
 function TPointArray_Fragment1(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.Fragment(radius); end;
