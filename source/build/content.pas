@@ -951,7 +951,10 @@ begin
   AddFunction(@TPointArray_Clusterify2, 'function TPointArray_Clusterify(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_Clusterize1, 'function TPointArray_Clusterize(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
   AddFunction(@TPointArray_Clusterize2, 'function TPointArray_Clusterize(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Groups, 'function TPointArray_Groups(const arr: TPointArray; const adjacency8: Boolean = True): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Grouping, 'function TPointArray_Grouping(const arr: TPointArray; const adjacency8: Boolean = True): T2DPointArray; overload;');
   AddFunction(@TPointArray_Groupify, 'function TPointArray_Groupify(const arr: TPointArray; const adjacency8: Boolean = True): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Grouped, 'function TPointArray_Grouped(const arr: TPointArray; const adjacency8: Boolean = True): T2DPointArray; overload;');
   AddFunction(@TPointArray_Segment1, 'function TPointArray_Segment(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
   AddFunction(@TPointArray_Segment2, 'function TPointArray_Segment(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_Fragment1, 'function TPointArray_Fragment(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
