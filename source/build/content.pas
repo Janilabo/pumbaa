@@ -980,6 +980,10 @@ begin
   AddFunction(@TPointArray_YVals, 'function TPointArray_YVals(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray;');
   AddFunction(@TPointArray_XArr, 'function TPointArray_XArr(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray;');
   AddFunction(@TPointArray_YArr, 'function TPointArray_YArr(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray;');
+  AddFunction(@TPointArray_XAxis, 'function TPointArray_XAxis(const arr: TPointArray; const rUnique: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TPointArray_YAxis, 'function TPointArray_YAxis(const arr: TPointArray; const rUnique: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TPointArray_X2D, 'function TPointArray_X2D(const arr: TPointArray; var yArr: TIntegerArray; const xOrder: Boolean = True; const xAscending: Boolean = True): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_Y2D, 'function TPointArray_Y2D(const arr: TPointArray; var xArr: TIntegerArray; const yOrder: Boolean = True; const yAscending: Boolean = True): T2DIntegerArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');

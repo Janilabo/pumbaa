@@ -945,6 +945,10 @@ function TPointArray_XVals(const arr: TPointArray; const aAscending: Boolean = T
 function TPointArray_YVals(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.YVals(aAscending); end;
 function TPointArray_XArr(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.XVals(aAscending); end;
 function TPointArray_YArr(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.YVals(aAscending); end;
+function TPointArray_XAxis(const arr: TPointArray; const rUnique: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.XAxis(rUnique); end;
+function TPointArray_YAxis(const arr: TPointArray; const rUnique: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.YAxis(rUnique); end;
+function TPointArray_X2D(const arr: TPointArray; var yArr: TIntegerArray; const xOrder: Boolean = True; const xAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.X2D(yArr, xOrder, xAscending); end;
+function TPointArray_Y2D(const arr: TPointArray; var xArr: TIntegerArray; const yOrder: Boolean = True; const yAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.Y2D(xArr, yOrder, yAscending); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
