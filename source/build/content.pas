@@ -7,6 +7,10 @@ begin
   AddType('TCharArray', 'array of Char;');
   AddType('T2DCharArray', 'array of TCharArray;');
   AddType('T2DBoxArray', 'array of TBoxArray;');
+  AddType('TConnection', 'record' + #13#10 +
+                         '  id1, id2: Integer;' + #13#10 +
+						 'end;');
+  AddType('TConnectionArray', 'array of TConnection;');
   AddType('TRange', 'record ' + #13#10 + 
                     '  start, stop: Integer;' + #13#10 +
                     'end;');
@@ -32,6 +36,10 @@ begin
   AddFunction(@Random2, 'function Random2(const x: Integer; const r: Integer = 2): Integer; overload;');
   AddFunction(@RandomMax, 'function RandomMax(const x: Integer; const r: Integer = 2): Integer; overload;');
   AddFunction(@RandomMin, 'function RandomMin(const x: Integer; const r: Integer = 2): Integer; overload;');
+
+  AddFunction(@TConnection_Create, 'function TConnection_Create(const index1, index2: Integer): TConnection; overload;');
+  AddFunction(@TConnection_Construct, 'function TConnection_Construct(const index1, index2: Integer): TConnection; overload;');
+  AddFunction(@TConnection_Build, 'function TConnection_Build(const index1, index2: Integer): TConnection; overload;');
 
   AddFunction(@Double_ClampMin, 'function Double_ClampMin(const item: Double; const limit: Double): Double;');
   AddFunction(@Double_ClampMax, 'function Double_ClampMax(const item: Double; const limit: Double): Double;');
@@ -287,6 +295,7 @@ begin
   AddFunction(@TPoint_Create3, 'function TPoint_Create: TPoint; overload;');
   AddFunction(@TPoint_Construct, 'function TPoint_Construct(const pX, pY: Integer): TPoint; overload;');
   AddFunction(@TPoint_Build, 'function TPoint_Build(const X, Y: Integer): TPoint;');
+  AddFunction(@TPoint_Compare, 'function TPoint_Compare(const pt: TPoint; const target: TPoint): Integer; overload;');
   AddFunction(@TPoint_Inside, 'function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean;');
   AddFunction(@TPoint_InCircle, 'function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean;');
   AddFunction(@TPoint_InEllipse, 'function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean;');
@@ -1299,6 +1308,15 @@ begin
   AddFunction(@TArray_Combine6, 'function TArray_Combine(const arr, b: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Combine7, 'function TArray_Combine(const arr, b: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Combine8, 'function TArray_Combine(const arr, b: TRangeArray): TRangeArray; overload;');
+  
+  AddFunction(@TArray_Components1, 'function TArray_Components(const arr: TIntegerArray; const connections: TConnectionArray): T2DIntegerArray; overload;');
+  AddFunction(@TArray_Components2, 'function TArray_Components(const arr: TDoubleArray; const connections: TConnectionArray): T2DDoubleArray; overload;');
+  AddFunction(@TArray_Components3, 'function TArray_Components(const arr: TStringArray; const connections: TConnectionArray): T2DStringArray; overload;');
+  AddFunction(@TArray_Components4, 'function TArray_Components(const arr: TCharArray; const connections: TConnectionArray): T2DCharArray; overload;');
+  AddFunction(@TArray_Components5, 'function TArray_Components(const arr: TBooleanArray; const connections: TConnectionArray): T2DBooleanArray; overload;');
+  AddFunction(@TArray_Components6, 'function TArray_Components(const arr: TPointArray; const connections: TConnectionArray): T2DPointArray; overload;');
+  AddFunction(@TArray_Components7, 'function TArray_Components(const arr: TBoxArray; const connections: TConnectionArray): T2DBoxArray; overload;');
+  AddFunction(@TArray_Components8, 'function TArray_Components(const arr: TRangeArray; const connections: TConnectionArray): T2DRangeArray; overload;');
 
   AddFunction(@TArray_Compress1, 'function TArray_Compress(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Compress2, 'function TArray_Compress(var arr: TDoubleArray): Integer; overload;');

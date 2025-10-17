@@ -1,3 +1,7 @@
+function TConnection_Create(const index1, index2: Integer): TConnection; overload; cdecl; var cn: TConnection; begin Result := cn.Create(index1, index2); end;
+function TConnection_Construct(const index1, index2: Integer): TConnection; overload; cdecl; begin Result := TConnection.Construct(index1, index2); end;
+function TConnection_Build(const index1, index2: Integer): TConnection; overload; cdecl; inline; var cn: TConnection; begin Result := cn.Build(index1, index2); end;
+
 function Integer_ClampMin(const item: Integer; const limit: Integer): Integer; cdecl; begin Result := item.ClampMin(limit); end; 
 function Integer_ClampMax(const item: Integer; const limit: Integer): Integer; cdecl; begin Result := item.ClampMax(limit); end;
 function Integer_Clamp1(const item: Integer; const minimum, maximum: Integer): Integer; overload; cdecl; begin Result := item.Clamp(minimum, maximum); end;
@@ -252,6 +256,7 @@ function TPoint_Create2(const value: Integer): TPoint; overload; cdecl; var pt: 
 function TPoint_Create3: TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create; end;
 function TPoint_Construct(const pX, pY: Integer): TPoint; overload; cdecl; begin Result := TPoint.Construct(pX, pY); end;
 function TPoint_Build(const X, Y: Integer): TPoint; cdecl; inline; var pt: TPoint; begin Result := pt.Build(X, Y); end;
+function TPoint_Compare(const pt: TPoint; const target: TPoint): Integer; overload; cdecl; begin Result := pt.Compare(target); end;
 function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean; cdecl; inline; begin Result := pt.Inside(bx); end;
 function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean; cdecl; inline; begin Result := pt.InCircle(center, radius); end;
 function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean; cdecl; inline; begin Result := pt.InEllipse(center, XRadius, YRadius); end;
@@ -1283,6 +1288,15 @@ function TArray_Combine5(const arr, b: TBooleanArray): TBooleanArray; overload; 
 function TArray_Combine6(const arr, b: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Combine(b); end;
 function TArray_Combine7(const arr, b: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Combine(b); end;
 function TArray_Combine8(const arr, b: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Combine(b); end;
+
+function TArray_Components1(const arr: TIntegerArray; const connections: TConnectionArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Components(connections); end;
+function TArray_Components2(const arr: TDoubleArray; const connections: TConnectionArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Components(connections); end;
+function TArray_Components3(const arr: TStringArray; const connections: TConnectionArray): T2DStringArray; overload; cdecl; begin Result := arr.Components(connections); end;
+function TArray_Components4(const arr: TCharArray; const connections: TConnectionArray): T2DCharArray; overload; cdecl; begin Result := arr.Components(connections); end;
+function TArray_Components5(const arr: TBooleanArray; const connections: TConnectionArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Components(connections); end;
+function TArray_Components6(const arr: TPointArray; const connections: TConnectionArray): T2DPointArray; overload; cdecl; begin Result := arr.Components(connections); end;
+function TArray_Components7(const arr: TBoxArray; const connections: TConnectionArray): T2DBoxArray; overload; cdecl; begin Result := arr.Components(connections); end;
+function TArray_Components8(const arr: TRangeArray; const connections: TConnectionArray): T2DRangeArray; overload; cdecl; begin Result := arr.Components(connections); end;
 
 function TArray_Compress1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
 function TArray_Compress2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Compress; end;
