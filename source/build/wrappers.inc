@@ -961,6 +961,10 @@ function TPointArray_Blobs1(const arr: TPointArray; const xRadius, yRadius: Inte
 function TPointArray_Blobs2(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.Blobs(radius); end;
 function TPointArray_Blobify1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Blobify(xRadius, yRadius); end;
 function TPointArray_Blobify2(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload; cdecl; begin Result := arr.Blobify(radius); end;
+function TPointArray_XTo2D1(const arr: TPointArray; var yArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.XTo2D(yArr, selfIDs); end;
+function TPointArray_XTo2D2(const arr: TPointArray; var yArr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.XTo2D(yArr); end;
+function TPointArray_YTo2D1(const arr: TPointArray; var xArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.YTo2D(xArr, selfIDs); end;
+function TPointArray_YTo2D2(const arr: TPointArray; var xArr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.YTo2D(xArr); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
@@ -3298,6 +3302,11 @@ function TArray_Center2(const arr: TDoubleArray): Double; overload; cdecl; begin
 function TArray_Center3(const arr: TStringArray): string; overload; cdecl; begin Result := arr.Center; end;
 function TArray_Center4(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.Center; end;
 
+function TArray_QuickSortPair1(var arr, partner: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortPair(partner, aAscending); end;
+function TArray_QuickSortPair2(var arr, partner: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortPair(partner, aAscending); end;
+function TArray_QuickSortPair3(var arr, partner: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortPair(partner, aAscending); end;
+function TArray_QuickSortPair4(var arr, partner: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortPair(partner, aAscending); end;
+
 function TArray_QuickSortSwapped1(var arr: TIntegerArray; const aAscending: Boolean = True): TConnectionArray; overload; cdecl; begin Result := arr.QuickSortSwapped(aAscending); end;
 function TArray_QuickSortSwapped2(var arr: TDoubleArray; const aAscending: Boolean = True): TConnectionArray; overload; cdecl; begin Result := arr.QuickSortSwapped(aAscending); end;
 function TArray_QuickSortSwapped3(var arr: TStringArray; const aAscending: Boolean = True): TConnectionArray; overload; cdecl; begin Result := arr.QuickSortSwapped(aAscending); end;
@@ -3422,6 +3431,23 @@ function TArray_Uniq1(const arr: TIntegerArray; const sSorted: Boolean = False):
 function TArray_Uniq2(const arr: TDoubleArray; const sSorted: Boolean = False): TDoubleArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
 function TArray_Uniq3(const arr: TStringArray; const sSorted: Boolean = False): TStringArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
 function TArray_Uniq4(const arr: TCharArray; const sSorted: Boolean = False): TCharArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
+
+function TArray_QuickSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted3(var arr: TStringArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted4(var arr: TCharArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted5(var arr: TBooleanArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted6(var arr: TPointArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted7(var arr: TBoxArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted8(var arr: TRangeArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted9(var arr: TIntegerArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted10(var arr: TDoubleArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted11(var arr: TStringArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted12(var arr: TCharArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted13(var arr: TBooleanArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted14(var arr: TPointArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted15(var arr: TBoxArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
+function TArray_QuickSortWeighted16(var arr: TRangeArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
 
 function TArray_QuickSorted5(const arr: TIntegerArray; const weight: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.QuickSorted(weight, aAscending); end;
 function TArray_QuickSorted6(const arr: TDoubleArray; const weight: TIntegerArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.QuickSorted(weight, aAscending); end;

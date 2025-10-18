@@ -1000,6 +1000,10 @@ begin
   AddFunction(@TPointArray_Blobs2, 'function TPointArray_Blobs(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
   AddFunction(@TPointArray_Blobify1, 'function TPointArray_Blobify(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_Blobify2, 'function TPointArray_Blobify(const arr: TPointArray; const radius: Double = 1.0): T2DPointArray; overload;');
+  AddFunction(@TPointArray_XTo2D1, 'function TPointArray_XTo2D1(const arr: TPointArray; var yArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_XTo2D2, 'function TPointArray_XTo2D2(const arr: TPointArray; var yArr: TIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_YTo2D1, 'function TPointArray_YTo2D1(const arr: TPointArray; var xArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_YTo2D2, 'function TPointArray_YTo2D2(const arr: TPointArray; var xArr: TIntegerArray): T2DIntegerArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
@@ -3345,6 +3349,11 @@ begin
   AddFunction(@TArray_Center3, 'function TArray_Center(const arr: TStringArray): string; overload;');
   AddFunction(@TArray_Center4, 'function TArray_Center(const arr: TCharArray): Char; overload;');
 
+  AddFunction(@TArray_QuickSortPair1, 'function TArray_QuickSortPair(var arr, partner: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortPair2, 'function TArray_QuickSortPair(var arr, partner: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortPair3, 'function TArray_QuickSortPair(var arr, partner: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortPair4, 'function TArray_QuickSortPair(var arr, partner: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
   AddFunction(@TArray_QuickSortSwapped1, 'function TArray_QuickSortSwapped(var arr: TIntegerArray; const aAscending: Boolean = True): TConnectionArray; overload;');
   AddFunction(@TArray_QuickSortSwapped2, 'function TArray_QuickSortSwapped(var arr: TDoubleArray; const aAscending: Boolean = True): TConnectionArray; overload;');
   AddFunction(@TArray_QuickSortSwapped3, 'function TArray_QuickSortSwapped(var arr: TStringArray; const aAscending: Boolean = True): TConnectionArray; overload;');
@@ -3469,6 +3478,23 @@ begin
   AddFunction(@TArray_Uniq2, 'function TArray_Uniq(const arr: TDoubleArray; const sSorted: Boolean = False): TDoubleArray; overload;');
   AddFunction(@TArray_Uniq3, 'function TArray_Uniq(const arr: TStringArray; const sSorted: Boolean = False): TStringArray; overload;');
   AddFunction(@TArray_Uniq4, 'function TArray_Uniq(const arr: TCharArray; const sSorted: Boolean = False): TCharArray; overload;');
+
+  AddFunction(@TArray_QuickSortWeighted1, 'function TArray_QuickSortWeighted(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted2, 'function TArray_QuickSortWeighted(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted3, 'function TArray_QuickSortWeighted(var arr: TStringArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted4, 'function TArray_QuickSortWeighted(var arr: TCharArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted5, 'function TArray_QuickSortWeighted(var arr: TBooleanArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted6, 'function TArray_QuickSortWeighted(var arr: TPointArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted7, 'function TArray_QuickSortWeighted(var arr: TBoxArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted8, 'function TArray_QuickSortWeighted(var arr: TRangeArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted9, 'function TArray_QuickSortWeighted(var arr: TIntegerArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted10, 'function TArray_QuickSortWeighted(var arr: TDoubleArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted11, 'function TArray_QuickSortWeighted(var arr: TStringArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted12, 'function TArray_QuickSortWeighted(var arr: TCharArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted13, 'function TArray_QuickSortWeighted(var arr: TBooleanArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted14, 'function TArray_QuickSortWeighted(var arr: TPointArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted15, 'function TArray_QuickSortWeighted(var arr: TBoxArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_QuickSortWeighted16, 'function TArray_QuickSortWeighted(var arr: TRangeArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
 
   AddFunction(@TArray_QuickSorted5, 'function TArray_QuickSorted(const arr: TIntegerArray; const weight: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_QuickSorted6, 'function TArray_QuickSorted(const arr: TDoubleArray; const weight: TIntegerArray; const aAscending: Boolean = True): TDoubleArray; overload;');
