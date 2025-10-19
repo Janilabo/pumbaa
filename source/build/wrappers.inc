@@ -1643,6 +1643,24 @@ function TArray_Exchange14(var arr, b: TPointArray): Integer; overload; cdecl; b
 function TArray_Exchange15(var arr, b: TBoxArray): Integer; overload; cdecl; begin Result := arr.Exchange(b); end;
 function TArray_Exchange16(var arr, b: TRangeArray): Integer; overload; cdecl; begin Result := arr.Exchange(b); end;
 
+function TArray_Exchange17(const arr: TIntegerArray; const swaps: TConnectionArray): TIntegerArray; overload; cdecl; begin Result := arr.Exchange(swaps); end;
+function TArray_Exchange18(const arr: TDoubleArray; const swaps: TConnectionArray): TDoubleArray; overload; cdecl; begin Result := arr.Exchange(swaps); end;
+function TArray_Exchange19(const arr: TStringArray; const swaps: TConnectionArray): TStringArray; overload; cdecl; begin Result := arr.Exchange(swaps); end;
+function TArray_Exchange20(const arr: TCharArray; const swaps: TConnectionArray): TCharArray; overload; cdecl; begin Result := arr.Exchange(swaps); end;
+function TArray_Exchange21(const arr: TBooleanArray; const swaps: TConnectionArray): TBooleanArray; overload; cdecl; begin Result := arr.Exchange(swaps); end;
+function TArray_Exchange22(const arr: TPointArray; const swaps: TConnectionArray): TPointArray; overload; cdecl; begin Result := arr.Exchange(swaps); end;
+function TArray_Exchange23(const arr: TBoxArray; const swaps: TConnectionArray): TBoxArray; overload; cdecl; begin Result := arr.Exchange(swaps); end;
+function TArray_Exchange24(const arr: TRangeArray; const swaps: TConnectionArray): TRangeArray; overload; cdecl; begin Result := arr.Exchange(swaps); end;
+
+function TArray_Exchanges1(const arr, target: TIntegerArray): TConnectionArray; overload; cdecl; begin Result := arr.Exchanges(target); end;
+function TArray_Exchanges2(const arr, target: TDoubleArray): TConnectionArray; overload; cdecl; begin Result := arr.Exchanges(target); end;
+function TArray_Exchanges3(const arr, target: TStringArray): TConnectionArray; overload; cdecl; begin Result := arr.Exchanges(target); end;
+function TArray_Exchanges4(const arr, target: TCharArray): TConnectionArray; overload; cdecl; begin Result := arr.Exchanges(target); end;
+function TArray_Exchanges5(const arr, target: TBooleanArray): TConnectionArray; overload; cdecl; begin Result := arr.Exchanges(target); end;
+function TArray_Exchanges6(const arr, target: TPointArray): TConnectionArray; overload; cdecl; begin Result := arr.Exchanges(target); end;
+function TArray_Exchanges7(const arr, target: TBoxArray): TConnectionArray; overload; cdecl; begin Result := arr.Exchanges(target); end;
+function TArray_Exchanges8(const arr, target: TRangeArray): TConnectionArray; overload; cdecl; begin Result := arr.Exchanges(target); end;
+
 function TArray_Exclude1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Exclude(items, index); end;
 function TArray_Exclude2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Exclude(items, index); end;
 function TArray_Exclude3(const arr: TStringArray; const items: TStringArray; const index: Integer = 2147483647): TStringArray; overload; cdecl; begin Result := arr.Exclude(items, index); end;
@@ -2264,6 +2282,24 @@ function TArray_MostFrequent5(const arr: TBooleanArray): Boolean; overload; cdec
 function TArray_MostFrequent6(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.MostFrequent; end;
 function TArray_MostFrequent7(const arr: TBoxArray): TBox; overload; cdecl; begin Result := arr.MostFrequent; end;
 function TArray_MostFrequent8(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.MostFrequent; end;
+
+function TArray_Movement1(const arr: TIntegerArray; const moves: TConnectionArray): TIntegerArray; overload; cdecl; begin Result := arr.Movement(moves); end;
+function TArray_Movement2(const arr: TDoubleArray; const moves: TConnectionArray): TDoubleArray; overload; cdecl; begin Result := arr.Movement(moves); end;
+function TArray_Movement3(const arr: TStringArray; const moves: TConnectionArray): TStringArray; overload; cdecl; begin Result := arr.Movement(moves); end;
+function TArray_Movement4(const arr: TCharArray; const moves: TConnectionArray): TCharArray; overload; cdecl; begin Result := arr.Movement(moves); end;
+function TArray_Movement5(const arr: TBooleanArray; const moves: TConnectionArray): TBooleanArray; overload; cdecl; begin Result := arr.Movement(moves); end;
+function TArray_Movement6(const arr: TPointArray; const moves: TConnectionArray): TPointArray; overload; cdecl; begin Result := arr.Movement(moves); end;
+function TArray_Movement7(const arr: TBoxArray; const moves: TConnectionArray): TBoxArray; overload; cdecl; begin Result := arr.Movement(moves); end;
+function TArray_Movement8(const arr: TRangeArray; const moves: TConnectionArray): TRangeArray; overload; cdecl; begin Result := arr.Movement(moves); end;
+	
+function TArray_Movements1(const arr, target: TIntegerArray): TConnectionArray; overload; cdecl; begin Result := arr.Movements(target); end;
+function TArray_Movements2(const arr, target: TDoubleArray): TConnectionArray; overload; cdecl; begin Result := arr.Movements(target); end;
+function TArray_Movements3(const arr, target: TStringArray): TConnectionArray; overload; cdecl; begin Result := arr.Movements(target); end;
+function TArray_Movements4(const arr, target: TCharArray): TConnectionArray; overload; cdecl; begin Result := arr.Movements(target); end;
+function TArray_Movements5(const arr, target: TBooleanArray): TConnectionArray; overload; cdecl; begin Result := arr.Movements(target); end;
+function TArray_Movements6(const arr, target: TPointArray): TConnectionArray; overload; cdecl; begin Result := arr.Movements(target); end;
+function TArray_Movements7(const arr, target: TBoxArray): TConnectionArray; overload; cdecl; begin Result := arr.Movements(target); end;
+function TArray_Movements8(const arr, target: TRangeArray): TConnectionArray; overload; cdecl; begin Result := arr.Movements(target); end;
 
 function TArray_Multi1(const arr: TIntegerArray; const threshold: Integer = 2): Boolean; overload; cdecl; begin Result := arr.Multi(threshold); end;
 function TArray_Multi2(const arr: TDoubleArray; const threshold: Integer = 2): Boolean; overload; cdecl; begin Result := arr.Multi(threshold); end;
@@ -3302,6 +3338,16 @@ function TArray_Center2(const arr: TDoubleArray): Double; overload; cdecl; begin
 function TArray_Center3(const arr: TStringArray): string; overload; cdecl; begin Result := arr.Center; end;
 function TArray_Center4(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.Center; end;
 
+function TArray_MergeSortPair1(var arr, partner: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortPair(partner, aAscending); end;
+function TArray_MergeSortPair2(var arr, partner: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortPair(partner, aAscending); end;
+function TArray_MergeSortPair3(var arr, partner: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortPair(partner, aAscending); end;
+function TArray_MergeSortPair4(var arr, partner: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortPair(partner, aAscending); end;
+
+function TArray_MergeSortIndexed1(var arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.MergeSortIndexed(aAscending); end;
+function TArray_MergeSortIndexed2(var arr: TDoubleArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.MergeSortIndexed(aAscending); end;
+function TArray_MergeSortIndexed3(var arr: TStringArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.MergeSortIndexed(aAscending); end;
+function TArray_MergeSortIndexed4(var arr: TCharArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.MergeSortIndexed(aAscending); end;
+
 function TArray_QuickSortPair1(var arr, partner: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortPair(partner, aAscending); end;
 function TArray_QuickSortPair2(var arr, partner: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortPair(partner, aAscending); end;
 function TArray_QuickSortPair3(var arr, partner: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortPair(partner, aAscending); end;
@@ -3431,6 +3477,23 @@ function TArray_Uniq1(const arr: TIntegerArray; const sSorted: Boolean = False):
 function TArray_Uniq2(const arr: TDoubleArray; const sSorted: Boolean = False): TDoubleArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
 function TArray_Uniq3(const arr: TStringArray; const sSorted: Boolean = False): TStringArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
 function TArray_Uniq4(const arr: TCharArray; const sSorted: Boolean = False): TCharArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
+
+function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted3(var arr: TStringArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted4(var arr: TCharArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted5(var arr: TBooleanArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted6(var arr: TPointArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted7(var arr: TBoxArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted8(var arr: TRangeArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted9(var arr: TIntegerArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted10(var arr: TDoubleArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted11(var arr: TStringArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted12(var arr: TCharArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted13(var arr: TBooleanArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted14(var arr: TPointArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted15(var arr: TBoxArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
+function TArray_MergeSortWeighted16(var arr: TRangeArray; var weight: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 
 function TArray_QuickSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
 function TArray_QuickSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QuickSortWeighted(weight, aAscending); end;
