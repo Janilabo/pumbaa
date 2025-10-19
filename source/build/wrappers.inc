@@ -3388,6 +3388,11 @@ function TArray_QSort2(var arr: TDoubleArray; const aAscending: Boolean = True):
 function TArray_QSort3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QSort(aAscending); end;
 function TArray_QSort4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.QSort(aAscending); end;
 
+function TArray_PartitionSort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.PartitionSort(aAscending); end;
+function TArray_PartitionSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.PartitionSort(aAscending); end;
+function TArray_PartitionSort3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.PartitionSort(aAscending); end;
+function TArray_PartitionSort4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.PartitionSort(aAscending); end;
+
 function TArray_CoctailSort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CoctailSort(aAscending); end;
 function TArray_CoctailSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CoctailSort(aAscending); end;
 function TArray_CoctailSort3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CoctailSort(aAscending); end;
@@ -3472,6 +3477,11 @@ function TArray_MergeSortBU1(var arr: TIntegerArray; const aAscending: Boolean =
 function TArray_MergeSortBU2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortBU(aAscending); end;
 function TArray_MergeSortBU3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortBU(aAscending); end;
 function TArray_MergeSortBU4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortBU(aAscending); end;
+
+function TArray_HybridSort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HybridSort(aAscending); end;
+function TArray_HybridSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HybridSort(aAscending); end;
+function TArray_HybridSort3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HybridSort(aAscending); end;
+function TArray_HybridSort4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HybridSort(aAscending); end;
 
 function TArray_Uniq1(const arr: TIntegerArray; const sSorted: Boolean = False): TIntegerArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
 function TArray_Uniq2(const arr: TDoubleArray; const sSorted: Boolean = False): TDoubleArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;

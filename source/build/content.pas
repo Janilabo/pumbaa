@@ -3434,6 +3434,16 @@ begin
   AddFunction(@TArray_QSort3, 'function TArray_QSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_QSort4, 'function TArray_QSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
 
+  AddFunction(@TArray_HybridSort1, 'function TArray_HybridSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_HybridSort2, 'function TArray_HybridSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_HybridSort3, 'function TArray_HybridSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_HybridSort4, 'function TArray_HybridSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_PartitionSort1, 'function TArray_PartitionSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_PartitionSort2, 'function TArray_PartitionSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_PartitionSort3, 'function TArray_PartitionSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_PartitionSort4, 'function TArray_PartitionSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
+
   AddFunction(@TArray_CoctailSort1, 'function TArray_CoctailSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_CoctailSort2, 'function TArray_CoctailSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_CoctailSort3, 'function TArray_CoctailSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
