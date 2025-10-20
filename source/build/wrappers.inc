@@ -546,6 +546,10 @@ function TRange_Extend(var range: TRange; const val: Integer): Boolean; cdecl; b
 function TRange_Offset(const range: TRange; const sDelta: Integer): TRange; cdecl; begin Result := range.Offset(sDelta); end;
 function TRange_Contains1(const range: TRange; const x: Integer): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
 function TRange_Contains2(const range: TRange; const x: TRange): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
+function TRange_Holds1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Holds(val); end;
+function TRange_Holds2(const range: TRange; const vals: TRange): Boolean; overload; cdecl; begin Result := range.Holds(vals); end;
+function TRange_Missing1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Missing(val); end;
+function TRange_Missing2(const range: TRange; const vals: TRange): Boolean; overload; cdecl; begin Result := range.Missing(vals); end;
 function TRange_Above1(const range: TRange; const target: Integer): Boolean; overload; cdecl; begin Result := range.Above(target); end;
 function TRange_Above2(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.Above(target); end;
 function TRange_Below1(const range: TRange; const target: Integer): Boolean; overload; cdecl; begin Result := range.Below(target); end;
@@ -687,6 +691,15 @@ function TIntegerArray_Median(const arr: TIntegerArray): Double; cdecl; begin Re
 function TIntegerArray_Middle(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Middle; end;
 function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.MostFreq(null); end;
 function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer; cdecl; begin Result := arr.LeastFreq(null); end;
+function TIntegerArray_Succ(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange): Integer; overload; cdecl; begin Result := arr.Succ(currentIndex, range); end;
+function TIntegerArray_Pred(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange): Integer; overload; cdecl; begin Result := arr.Pred(currentIndex, range); end;
+function TIntegerArray_Successor(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Successor(currentIndex, range, aAscending); end;
+function TIntegerArray_Predecessor(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Predecessor(currentIndex, range, aAscending); end;
+function TIntegerArray_Next(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange): Integer; overload; cdecl; begin Result := arr.Next(currentIndex, range); end;
+function TIntegerArray_Previous(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange): Integer; overload; cdecl; begin Result := arr.Previous(currentIndex, range); end;
+function TIntegerArray_Navigate(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Navigate(currentIndex, range, aAscending); end;
+function TIntegerArray_Advance(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Advance(currentIndex, range, aAscending); end;
+function TIntegerArray_Retreat(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Retreat(currentIndex, range, aAscending); end;
 function TIntegerArray_RadixSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.RadixSort(aAscending); end;
 function TIntegerArray_Split1(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Split(minDiff, maxDiff); end;
 function TIntegerArray_Split2(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.Split(diff); end;

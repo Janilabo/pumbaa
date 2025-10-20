@@ -585,6 +585,10 @@ begin
   AddFunction(@TRange_Offset, 'function TRange_Offset(const range: TRange; const sDelta: Integer): TRange;');
   AddFunction(@TRange_Contains1, 'function TRange_Contains(const range: TRange; const x: Integer): Boolean; overload;');
   AddFunction(@TRange_Contains2, 'function TRange_Contains(const range: TRange; const x: TRange): Boolean; overload;');
+  AddFunction(@TRange_Holds1, 'function TRange_Holds(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Holds2, 'function TRange_Holds(const range: TRange; const vals: TRange): Boolean; overload;');
+  AddFunction(@TRange_Missing1, 'function TRange_Missing(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Missing2, 'function TRange_Missing(const range: TRange; const vals: TRange): Boolean; overload;');
   AddFunction(@TRange_Above1, 'function TRange_Above(const range: TRange; const target: Integer): Boolean; overload;');
   AddFunction(@TRange_Above2, 'function TRange_Above(const range: TRange; const target: TRange): Boolean; overload;');
   AddFunction(@TRange_Below1, 'function TRange_Below(const range: TRange; const target: Integer): Boolean; overload;');
@@ -726,6 +730,15 @@ begin
   AddFunction(@TIntegerArray_Middle, 'function TIntegerArray_Middle(const arr: TIntegerArray): Double;');
   AddFunction(@TIntegerArray_MostFrequent, 'function TIntegerArray_MostFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer;');
   AddFunction(@TIntegerArray_LeastFrequent, 'function TIntegerArray_LeastFrequent(const arr: TIntegerArray; const null: Integer = -2147483648): Integer;');
+  AddFunction(@TIntegerArray_Succ, 'function TIntegerArray_Succ(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange): Integer; overload;');
+  AddFunction(@TIntegerArray_Pred, 'function TIntegerArray_Pred(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange): Integer; overload;');
+  AddFunction(@TIntegerArray_Successor, 'function TIntegerArray_Successor(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_Predecessor, 'function TIntegerArray_Predecessor(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_Next, 'function TIntegerArray_Next(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange): Integer; overload;');
+  AddFunction(@TIntegerArray_Previous, 'function TIntegerArray_Previous(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange): Integer; overload;');
+  AddFunction(@TIntegerArray_Advance, 'function TIntegerArray_Advance(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_Retreat, 'function TIntegerArray_Retreat(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_Navigate, 'function TIntegerArray_Navigate(const arr: TIntegerArray; const currentIndex: Integer; const range: TRange; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_RadixSort, 'function TIntegerArray_RadixSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_Split1, 'function TIntegerArray_Split(const arr: TIntegerArray; const minDiff, maxDiff: Integer): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_Split2, 'function TIntegerArray_Split(const arr: TIntegerArray; const diff: Integer): T2DIntegerArray; overload;');
