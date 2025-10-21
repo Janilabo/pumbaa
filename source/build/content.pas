@@ -1019,6 +1019,10 @@ begin
   AddFunction(@TPointArray_XTo2D2, 'function TPointArray_XTo2D(const arr: TPointArray; var yArr: TIntegerArray): T2DIntegerArray; overload;');
   AddFunction(@TPointArray_YTo2D1, 'function TPointArray_YTo2D(const arr: TPointArray; var xArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload;');
   AddFunction(@TPointArray_YTo2D2, 'function TPointArray_YTo2D(const arr: TPointArray; var xArr: TIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_XAs2D1, 'function TPointArray_XAs2D(const arr: TPointArray; var yArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_XAs2D2, 'function TPointArray_XAs2D(const arr: TPointArray; var yArr: TIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_YAs2D1, 'function TPointArray_YAs2D(const arr: TPointArray; var xArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_YAs2D2, 'function TPointArray_YAs2D(const arr: TPointArray; var xArr: TIntegerArray): T2DIntegerArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
