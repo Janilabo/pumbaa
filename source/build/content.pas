@@ -783,6 +783,8 @@ begin
   AddFunction(@TIntegerArray_Reinit, 'function TIntegerArray_Reinit(var arr: TIntegerArray): Integer;');
   AddFunction(@TIntegerArray_Attach, 'function TIntegerArray_Attach(var arr: TIntegerArray; const items: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_Embed, 'function TIntegerArray_Embed(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload;');
+  AddFunction(@TIntegerArray_Broaden1, 'function TIntegerArray_Broaden(const arr: TIntegerArray; const rValues: TRange; const aIndex: Integer): TRange; overload;');
+  AddFunction(@TIntegerArray_Broaden2, 'function TIntegerArray_Broaden(const arr: TIntegerArray; const rValues: TRange; const sSorted: Boolean = False): TRange; overload;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySorted, 'function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
@@ -3546,6 +3548,31 @@ begin
   AddFunction(@TArray_Uniq2, 'function TArray_Uniq(const arr: TDoubleArray; const sSorted: Boolean = False): TDoubleArray; overload;');
   AddFunction(@TArray_Uniq3, 'function TArray_Uniq(const arr: TStringArray; const sSorted: Boolean = False): TStringArray; overload;');
   AddFunction(@TArray_Uniq4, 'function TArray_Uniq(const arr: TCharArray; const sSorted: Boolean = False): TCharArray; overload;');
+
+  AddFunction(@TArray_Downtrending1, 'function TArray_Downtrending(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Downtrending2, 'function TArray_Downtrending(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Downtrending3, 'function TArray_Downtrending(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Downtrending4, 'function TArray_Downtrending(const arr: TCharArray): Boolean; overload;');
+
+  AddFunction(@TArray_Uptrending1, 'function TArray_Uptrending(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Uptrending2, 'function TArray_Uptrending(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Uptrending3, 'function TArray_Uptrending(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Uptrending4, 'function TArray_Uptrending(const arr: TCharArray): Boolean; overload;');
+
+  AddFunction(@TArray_Notrending1, 'function TArray_Notrending(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Notrending2, 'function TArray_Notrending(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Notrending3, 'function TArray_Notrending(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Notrending4, 'function TArray_Notrending(const arr: TCharArray): Boolean; overload;');
+
+  AddFunction(@TArray_Trend1, 'function TArray_Trend(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Trend2, 'function TArray_Trend(const arr: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Trend3, 'function TArray_Trend(const arr: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Trend4, 'function TArray_Trend(const arr: TCharArray): Integer; overload;');
+
+  AddFunction(@TArray_Trending1, 'function TArray_Trending(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Trending2, 'function TArray_Trending(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Trending3, 'function TArray_Trending(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Trending4, 'function TArray_Trending(const arr: TCharArray): Boolean; overload;');
 
   AddFunction(@TArray_MergeSortWeighted1, 'function TArray_MergeSortWeighted(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_MergeSortWeighted2, 'function TArray_MergeSortWeighted(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');

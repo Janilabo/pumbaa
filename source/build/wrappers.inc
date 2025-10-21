@@ -744,6 +744,8 @@ function TIntegerArray_FilterOdd(const arr: TIntegerArray): TIntegerArray; overl
 function TIntegerArray_Reinit(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 function TIntegerArray_Attach(var arr: TIntegerArray; const items: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
 function TIntegerArray_Embed(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Embed(items, index); end;
+function TIntegerArray_Broaden1(const arr: TIntegerArray; const rValues: TRange; const aIndex: Integer): TRange; overload; cdecl; begin Result := arr.Broaden(rValues, aIndex); end;
+function TIntegerArray_Broaden2(const arr: TIntegerArray; const rValues: TRange; const sSorted: Boolean = False): TRange; overload; cdecl; begin Result := arr.Broaden(rValues, sSorted); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
@@ -3500,6 +3502,31 @@ function TArray_Uniq1(const arr: TIntegerArray; const sSorted: Boolean = False):
 function TArray_Uniq2(const arr: TDoubleArray; const sSorted: Boolean = False): TDoubleArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
 function TArray_Uniq3(const arr: TStringArray; const sSorted: Boolean = False): TStringArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
 function TArray_Uniq4(const arr: TCharArray; const sSorted: Boolean = False): TCharArray; overload; cdecl; begin Result := arr.Uniq(sSorted); end;
+
+function TArray_Downtrending1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Downtrending; end;
+function TArray_Downtrending2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Downtrending; end;
+function TArray_Downtrending3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Downtrending; end;
+function TArray_Downtrending4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Downtrending; end;
+
+function TArray_Uptrending1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Uptrending; end;
+function TArray_Uptrending2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Uptrending; end;
+function TArray_Uptrending3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Uptrending; end;
+function TArray_Uptrending4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Uptrending; end;
+
+function TArray_Notrending1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Notrending; end;
+function TArray_Notrending2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Notrending; end;
+function TArray_Notrending3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Notrending; end;
+function TArray_Notrending4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Notrending; end;
+
+function TArray_Trend1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Trend; end;
+function TArray_Trend2(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Trend; end;
+function TArray_Trend3(const arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Trend; end;
+function TArray_Trend4(const arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Trend; end;
+
+function TArray_Trending1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Trending; end;
+function TArray_Trending2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Trending; end;
+function TArray_Trending3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Trending; end;
+function TArray_Trending4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Trending; end;
 
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
