@@ -3573,6 +3573,31 @@ begin
   AddFunction(@TArray_Trending2, 'function TArray_Trending(const arr: TDoubleArray): Boolean; overload;');
   AddFunction(@TArray_Trending3, 'function TArray_Trending(const arr: TStringArray): Boolean; overload;');
   AddFunction(@TArray_Trending4, 'function TArray_Trending(const arr: TCharArray): Boolean; overload;');
+  
+  AddFunction(@TArray_Rising1, 'function TArray_Rising(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Rising2, 'function TArray_Rising(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Rising3, 'function TArray_Rising(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Rising4, 'function TArray_Rising(const arr: TCharArray): Boolean; overload;');
+  
+  AddFunction(@TArray_Falling1, 'function TArray_Falling(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Falling2, 'function TArray_Falling(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Falling3, 'function TArray_Falling(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Falling4, 'function TArray_Falling(const arr: TCharArray): Boolean; overload;');
+
+  AddFunction(@TArray_Direction1, 'function TArray_Direction(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Direction2, 'function TArray_Direction(const arr: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Direction3, 'function TArray_Direction(const arr: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Direction4, 'function TArray_Direction(const arr: TCharArray): Integer; overload;');
+
+  AddFunction(@TArray_TrendRising1, 'function TArray_TrendRising(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_TrendRising2, 'function TArray_TrendRising(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_TrendRising3, 'function TArray_TrendRising(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_TrendRising4, 'function TArray_TrendRising(const arr: TCharArray): Boolean; overload;');
+
+  AddFunction(@TArray_TrendFalling1, 'function TArray_TrendFalling(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_TrendFalling2, 'function TArray_TrendFalling(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_TrendFalling3, 'function TArray_TrendFalling(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_TrendFalling4, 'function TArray_TrendFalling(const arr: TCharArray): Boolean; overload;');
 
   AddFunction(@TArray_MergeSortWeighted1, 'function TArray_MergeSortWeighted(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_MergeSortWeighted2, 'function TArray_MergeSortWeighted(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');

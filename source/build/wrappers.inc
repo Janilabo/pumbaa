@@ -3528,6 +3528,31 @@ function TArray_Trending2(const arr: TDoubleArray): Boolean; overload; cdecl; be
 function TArray_Trending3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Trending; end;
 function TArray_Trending4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Trending; end;
 
+function TArray_Direction1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Direction; end;
+function TArray_Direction2(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Direction; end;
+function TArray_Direction3(const arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Direction; end;
+function TArray_Direction4(const arr: TCharArray): Integer; overload; cdecl; begin Result := arr.Direction; end;
+
+function TArray_Rising1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Rising; end;
+function TArray_Rising2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Rising; end;
+function TArray_Rising3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Rising; end;
+function TArray_Rising4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Rising; end;
+
+function TArray_Falling1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Falling; end;
+function TArray_Falling2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Falling; end;
+function TArray_Falling3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Falling; end;
+function TArray_Falling4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Falling; end;
+
+function TArray_TrendRising1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.TrendRising; end;
+function TArray_TrendRising2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.TrendRising; end;
+function TArray_TrendRising3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.TrendRising; end;
+function TArray_TrendRising4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.TrendRising; end;
+
+function TArray_TrendFalling1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.TrendFalling; end;
+function TArray_TrendFalling2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.TrendFalling; end;
+function TArray_TrendFalling3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.TrendFalling; end;
+function TArray_TrendFalling4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.TrendFalling; end;
+
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted3(var arr: TStringArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
