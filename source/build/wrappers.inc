@@ -984,6 +984,8 @@ function TPointArray_XAs2D1(const arr: TPointArray; var yArr: TIntegerArray; var
 function TPointArray_XAs2D2(const arr: TPointArray; var yArr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.XAs2D(yArr); end;
 function TPointArray_YAs2D1(const arr: TPointArray; var xArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.YAs2D(xArr, selfIDs); end;
 function TPointArray_YAs2D2(const arr: TPointArray; var xArr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.YAs2D(xArr); end;
+function TPointArray_DBSCAN1(const arr: TPointArray; const radius: Double; const minPts: Integer): T2DPointArray; overload; cdecl; begin Result := arr.DBSCAN(radius, minPts); end;
+function TPointArray_DBSCAN2(const arr: TPointArray; const xRadius, yRadius: Integer; const minPts: Integer): T2DPointArray; overload; cdecl; begin Result := arr.DBSCAN(xRadius, yRadius, minPts); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;

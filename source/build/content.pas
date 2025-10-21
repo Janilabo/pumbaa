@@ -1023,6 +1023,8 @@ begin
   AddFunction(@TPointArray_XAs2D2, 'function TPointArray_XAs2D(const arr: TPointArray; var yArr: TIntegerArray): T2DIntegerArray; overload;');
   AddFunction(@TPointArray_YAs2D1, 'function TPointArray_YAs2D(const arr: TPointArray; var xArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload;');
   AddFunction(@TPointArray_YAs2D2, 'function TPointArray_YAs2D(const arr: TPointArray; var xArr: TIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TPointArray_DBSCAN1, 'function TPointArray_DBSCAN(const arr: TPointArray; const radius: Double; const minPts: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_DBSCAN2, 'function TPointArray_DBSCAN(const arr: TPointArray; const xRadius, yRadius: Integer; const minPts: Integer): T2DPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
