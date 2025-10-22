@@ -24,7 +24,7 @@ begin
                      '  radius: Double;' + #13#10 +
                      'end;');
   AddType('TDistanceFunction', 'function(const A, B: TPoint): Double;');
-  AddType('TDistanceMetric', '(dmDistance, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski, dmMaxMinChebyshev);');  
+  AddType('TDistanceMetric', '(dmHypotEuclidean, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski, dmMaxMinChebyshev, dmOctile);');  
 end;
 
 procedure AddFunctions;
@@ -304,14 +304,7 @@ begin
   AddFunction(@TPoint_Clamp, 'function TPoint_Clamp(const pt: TPoint; const area: TBox): TPoint;');
   AddFunction(@TPoint_AngleDegrees, 'function TPoint_AngleDegrees(const pt, target: TPoint; const compass: Boolean = False): Double;');
   AddFunction(@TPoint_AngleRadians, 'function TPoint_AngleRadians(const pt, target: TPoint): Double;');
-  AddFunction(@TPoint_DistEuclidean, 'function TPoint_DistEuclidean(const pt, target: TPoint): Double;');
-  AddFunction(@TPoint_DistEuclidean2, 'function TPoint_DistEuclidean2(const pt, target: TPoint): Double;');
-  AddFunction(@TPoint_DistSquaredEuclidean, 'function TPoint_DistSquaredEuclidean(const pt, target: TPoint): Double;');
-  AddFunction(@TPoint_DistManhattan, 'function TPoint_DistManhattan(const pt, target: TPoint): Double;');
-  AddFunction(@TPoint_DistChebyshev, 'function TPoint_DistChebyshev(const pt, target: TPoint): Double;');
-  AddFunction(@TPoint_DistMinkowski1, 'function TPoint_DistMinkowski(const pt, target: TPoint): Double; overload;');
-  AddFunction(@TPoint_DistMinkowski2, 'function TPoint_DistMinkowski(const pt, target: TPoint; const P: Double): Double; overload;');
-  AddFunction(@TPoint_DistMaxMinChebyshev, 'function TPoint_MaxMinChebyshev(const pt, target: TPoint): Double;');
+  AddFunction(@TPoint_Dist, 'function TPoint_Dist(const pt, target: TPoint; const metric: TDistanceMetric = dmEuclidean): Double;');
   AddFunction(@TPoint_Grid, 'function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray;');
   AddFunction(@TPoint_Row, 'function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray;');
   AddFunction(@TPoint_Column, 'function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray;');
@@ -341,8 +334,6 @@ begin
   AddFunction(@TPoint_DistY, 'function TPoint_DistY(const pt: TPoint; const target: TPoint): Integer;');
   AddFunction(@TPoint_DistanceX, 'function TPoint_DistanceX(const pt: TPoint; const target: TPoint): Integer;');
   AddFunction(@TPoint_DistanceY, 'function TPoint_DistanceY(const pt: TPoint; const target: TPoint): Integer;');
-  AddFunction(@TPoint_DistXBranchless, 'function TPoint_DistXBranchless(const pt: TPoint; const Target: TPoint): Integer;');
-  AddFunction(@TPoint_DistYBranchless, 'function TPoint_DistYBranchless(const pt: TPoint; const Target: TPoint): Integer;');
   AddFunction(@TPoint_DistMaxMinX, 'function TPoint_DistMaxMinX(const pt: TPoint; const target: TPoint): Integer;');
   AddFunction(@TPoint_DistMaxMinY, 'function TPoint_DistMaxMinY(const pt: TPoint; const target: TPoint): Integer;');
   AddFunction(@TPoint_DeltaX, 'function TPoint_DeltaX(const pt: TPoint; const target: TPoint): Integer;');

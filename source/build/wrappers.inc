@@ -263,14 +263,7 @@ function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Doub
 function TPoint_Clamp(const pt: TPoint; const area: TBox): TPoint; cdecl; begin Result := pt.Clamp(area); end;
 function TPoint_AngleDegrees(const pt, target: TPoint; const compass: Boolean = False): Double; cdecl; begin Result := pt.AngleDegrees(target); end;
 function TPoint_AngleRadians(const pt, target: TPoint): Double; cdecl; begin Result := pt.AngleRadians(target); end;
-function TPoint_DistEuclidean(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistEuclidean(target); end;
-function TPoint_DistEuclidean2(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistEuclidean2(target); end;
-function TPoint_DistSquaredEuclidean(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistSquaredEuclidean(target); end;
-function TPoint_DistManhattan(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistManhattan(target); end;
-function TPoint_DistChebyshev(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistChebyshev(target); end;
-function TPoint_DistMinkowski1(const pt, target: TPoint): Double; overload; cdecl; begin Result := pt.DistMinkowski(target); end;
-function TPoint_DistMinkowski2(const pt, target: TPoint; const P: Double): Double; overload; cdecl; begin Result := pt.DistMinkowski(target, P); end;
-function TPoint_DistMaxMinChebyshev(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistMaxMinChebyshev(target); end;
+function TPoint_Dist(const pt, target: TPoint; const metric: TDistanceMetric = dmEuclidean): Double; cdecl; begin Result := pt.Dist(target, metric); end;
 function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray; cdecl; begin Result := pt.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Row(cells, space); end;
 function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Column(cells, space); end;
@@ -300,8 +293,6 @@ function TPoint_DistX(const pt: TPoint; const target: TPoint): Integer; cdecl; b
 function TPoint_DistY(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.DistY(target); end;
 function TPoint_DistanceX(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.DistanceX(target); end;
 function TPoint_DistanceY(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.DistanceY(target); end;
-function TPoint_DistXBranchless(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DistXBranchless(target); end;
-function TPoint_DistYBranchless(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DistYBranchless(target); end;
 function TPoint_DistMaxMinX(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DistMaxMinX(target); end;
 function TPoint_DistMaxMinY(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DistMaxMinX(target); end;
 function TPoint_DeltaX(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DeltaX(target); end;
