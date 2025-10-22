@@ -288,6 +288,8 @@ function TPoint_ToBox1(const pt: TPoint; const width, height: Integer): TBox; cd
 function TPoint_ToBox2(const pt: TPoint; const size: Integer = 0): TBox; cdecl; begin Result := pt.ToBox(size); end;
 function TPoint_Boxify1(const pt: TPoint; const width, height: Integer): TBox; cdecl; begin Result := pt.Boxify(width, height); end;
 function TPoint_Boxify2(const pt: TPoint; const size: Integer = 0): TBox; cdecl; begin Result := pt.Boxify(size); end;
+function TPoint_Within1(const pt: TPoint; const target: TPoint; const radius: Double): Boolean; overload; cdecl; begin Result := pt.Within(target, radius); end;
+function TPoint_Within2(const pt: TPoint; const target: TPoint; const xRadius, yRadius: Integer): Boolean; overload; cdecl; begin Result := pt.Within(target, xRadius, yRadius); end;
 
 function TBox_Create1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Create(minX, minY, maxX, maxY); end;
 function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Create(top, bottom); end;
@@ -984,8 +986,12 @@ function TPointArray_XAs2D1(const arr: TPointArray; var yArr: TIntegerArray; var
 function TPointArray_XAs2D2(const arr: TPointArray; var yArr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.XAs2D(yArr); end;
 function TPointArray_YAs2D1(const arr: TPointArray; var xArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.YAs2D(xArr, selfIDs); end;
 function TPointArray_YAs2D2(const arr: TPointArray; var xArr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.YAs2D(xArr); end;
-function TPointArray_DBSCAN1(const arr: TPointArray; const radius: Double; const minPts: Integer): T2DPointArray; overload; cdecl; begin Result := arr.DBSCAN(radius, minPts); end;
+function TPointArray_DBSCAN1(const arr: TPointArray; const radius: Double = 1.0; const minPts: Integer = 2; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.DBSCAN(radius, minPts, metric); end;
 function TPointArray_DBSCAN2(const arr: TPointArray; const xRadius, yRadius: Integer; const minPts: Integer): T2DPointArray; overload; cdecl; begin Result := arr.DBSCAN(xRadius, yRadius, minPts); end;
+function TPointArray_Nearby1(const arr: TPointArray; const target: TPoint; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload; cdecl; begin Result := arr.Nearby(target, radius, metric); end;
+function TPointArray_Nearby2(const arr: TPointArray; const target: TPoint; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.Nearby(target, xRadius, yRadius); end;
+function TPointArray_Nearby3(const arr: TPointArray; const targets: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload; cdecl; begin Result := arr.Nearby(targets, radius, metric); end;
+function TPointArray_Nearby4(const arr: TPointArray; const targets: TPointArray; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.Nearby(targets, xRadius, yRadius); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;

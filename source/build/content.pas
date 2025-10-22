@@ -22,7 +22,9 @@ begin
   AddType('TCircle2', 'record' + #13#10 +
                      '  center: TPoint;' + #13#10 +
                      '  radius: Double;' + #13#10 +
-                     'end;');					 
+                     'end;');
+  AddType('TDistanceFunction', 'function(const A, B: TPoint): Double;');
+  AddType('TDistanceMetric', '(dmDistance, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev);');  
 end;
 
 procedure AddFunctions;
@@ -326,7 +328,9 @@ begin
   AddFunction(@TPoint_ToBox1, 'function TPoint_ToBox(const pt: TPoint; const width, height: Integer): TBox; overload;');
   AddFunction(@TPoint_ToBox2, 'function TPoint_ToBox(const pt: TPoint; const size: Integer = 0): TBox; overload;');
   AddFunction(@TPoint_Boxify1, 'function TPoint_Boxify(const pt: TPoint; const width, height: Integer): TBox; overload;');
-  AddFunction(@TPoint_Boxify2, 'function TPoint_Boxify(const pt: TPoint; const size: Integer = 0): TBox; overload;');  
+  AddFunction(@TPoint_Boxify2, 'function TPoint_Boxify(const pt: TPoint; const size: Integer = 0): TBox; overload;');
+  AddFunction(@TPoint_Within1, 'function TPoint_Within(const pt: TPoint; const target: TPoint; const radius: Double): Boolean; overload;');
+  AddFunction(@TPoint_Within2, 'function TPoint_Within(const pt: TPoint; const target: TPoint; const xRadius, yRadius: Integer): Boolean; overload;');
 
   AddFunction(@TBox_Build1, 'function TBox_Build(const minX, minY, maxX, maxY: Integer): TBox; overload;');
   AddFunction(@TBox_Build2, 'function TBox_Build(const top, bottom: TPoint): TBox; overload;');
@@ -1023,8 +1027,12 @@ begin
   AddFunction(@TPointArray_XAs2D2, 'function TPointArray_XAs2D(const arr: TPointArray; var yArr: TIntegerArray): T2DIntegerArray; overload;');
   AddFunction(@TPointArray_YAs2D1, 'function TPointArray_YAs2D(const arr: TPointArray; var xArr: TIntegerArray; var selfIDs: T2DIntegerArray): T2DIntegerArray; overload;');
   AddFunction(@TPointArray_YAs2D2, 'function TPointArray_YAs2D(const arr: TPointArray; var xArr: TIntegerArray): T2DIntegerArray; overload;');
-  AddFunction(@TPointArray_DBSCAN1, 'function TPointArray_DBSCAN(const arr: TPointArray; const radius: Double; const minPts: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_DBSCAN1, 'function TPointArray_DBSCAN(const arr: TPointArray; const radius: Double = 1.0; const minPts: Integer = 2; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
   AddFunction(@TPointArray_DBSCAN2, 'function TPointArray_DBSCAN(const arr: TPointArray; const xRadius, yRadius: Integer; const minPts: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Nearby1, 'function TPointArray_Nearby(const arr: TPointArray; const target: TPoint; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload;');
+  AddFunction(@TPointArray_Nearby2, 'function TPointArray_Nearby(const arr: TPointArray; const target: TPoint; const xRadius, yRadius: Integer): TPointArray; overload;');
+  AddFunction(@TPointArray_Nearby3, 'function TPointArray_Nearby(const arr: TPointArray; const targets: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload;');
+  AddFunction(@TPointArray_Nearby4, 'function TPointArray_Nearby(const arr: TPointArray; const targets: TPointArray; const xRadius, yRadius: Integer): TPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
