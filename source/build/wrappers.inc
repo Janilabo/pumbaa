@@ -270,6 +270,7 @@ function TPoint_DistManhattan(const pt, target: TPoint): Double; cdecl; begin Re
 function TPoint_DistChebyshev(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistChebyshev(target); end;
 function TPoint_DistMinkowski1(const pt, target: TPoint): Double; overload; cdecl; begin Result := pt.DistMinkowski(target); end;
 function TPoint_DistMinkowski2(const pt, target: TPoint; const P: Double): Double; overload; cdecl; begin Result := pt.DistMinkowski(target, P); end;
+function TPoint_DistMaxMinChebyshev(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistMaxMinChebyshev(target); end;
 function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray; cdecl; begin Result := pt.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Row(cells, space); end;
 function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Column(cells, space); end;
@@ -290,8 +291,22 @@ function TPoint_ToBox1(const pt: TPoint; const width, height: Integer): TBox; cd
 function TPoint_ToBox2(const pt: TPoint; const size: Integer = 0): TBox; cdecl; begin Result := pt.ToBox(size); end;
 function TPoint_Boxify1(const pt: TPoint; const width, height: Integer): TBox; cdecl; begin Result := pt.Boxify(width, height); end;
 function TPoint_Boxify2(const pt: TPoint; const size: Integer = 0): TBox; cdecl; begin Result := pt.Boxify(size); end;
-function TPoint_Within1(const pt: TPoint; const target: TPoint; const radius: Double): Boolean; overload; cdecl; begin Result := pt.Within(target, radius); end;
+function TPoint_Within1(const pt: TPoint; const target: TPoint; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): Boolean; overload; cdecl; begin Result := pt.Within(target, radius, metric); end;
 function TPoint_Within2(const pt: TPoint; const target: TPoint; const xRadius, yRadius: Integer): Boolean; overload; cdecl; begin Result := pt.Within(target, xRadius, yRadius); end;
+function TPoint_Near1(const pt: TPoint; const target: TPoint; const radius: Double = 1.0): Boolean; overload; cdecl; begin Result := pt.Near(target, radius); end;
+function TPoint_Near2(const pt: TPoint; const target: TPoint; const xRadius, yRadius: Integer): Boolean; overload; cdecl; begin Result := pt.Near(target, xRadius, yRadius); end;
+function TPoint_Near3(const pt: TPoint; const target: TPoint; const radius: Double; const metric: TDistanceMetric): Boolean; overload; cdecl; begin Result := pt.Near(target, radius, metric); end;
+function TPoint_DistX(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.DistX(target); end;
+function TPoint_DistY(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.DistY(target); end;
+function TPoint_DistanceX(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.DistanceX(target); end;
+function TPoint_DistanceY(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.DistanceY(target); end;
+function TPoint_DistXBranchless(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DistXBranchless(target); end;
+function TPoint_DistYBranchless(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DistYBranchless(target); end;
+function TPoint_DistMaxMinX(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DistMaxMinX(target); end;
+function TPoint_DistMaxMinY(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DistMaxMinX(target); end;
+function TPoint_DeltaX(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DeltaX(target); end;
+function TPoint_DeltaY(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DeltaY(target); end;
+function TPoint_Delta(const pt: TPoint; const Target: TPoint): TPoint; cdecl; begin Result := pt.Delta(target); end;
 
 function TBox_Create1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Create(minX, minY, maxX, maxY); end;
 function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Create(top, bottom); end;

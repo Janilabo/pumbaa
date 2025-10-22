@@ -24,7 +24,7 @@ begin
                      '  radius: Double;' + #13#10 +
                      'end;');
   AddType('TDistanceFunction', 'function(const A, B: TPoint): Double;');
-  AddType('TDistanceMetric', '(dmDistance, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski);');  
+  AddType('TDistanceMetric', '(dmDistance, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski, dmMaxMinChebyshev);');  
 end;
 
 procedure AddFunctions;
@@ -311,6 +311,7 @@ begin
   AddFunction(@TPoint_DistChebyshev, 'function TPoint_DistChebyshev(const pt, target: TPoint): Double;');
   AddFunction(@TPoint_DistMinkowski1, 'function TPoint_DistMinkowski(const pt, target: TPoint): Double; overload;');
   AddFunction(@TPoint_DistMinkowski2, 'function TPoint_DistMinkowski(const pt, target: TPoint; const P: Double): Double; overload;');
+  AddFunction(@TPoint_DistMaxMinChebyshev, 'function TPoint_MaxMinChebyshev(const pt, target: TPoint): Double;');
   AddFunction(@TPoint_Grid, 'function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray;');
   AddFunction(@TPoint_Row, 'function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray;');
   AddFunction(@TPoint_Column, 'function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray;');
@@ -331,8 +332,22 @@ begin
   AddFunction(@TPoint_ToBox2, 'function TPoint_ToBox(const pt: TPoint; const size: Integer = 0): TBox; overload;');
   AddFunction(@TPoint_Boxify1, 'function TPoint_Boxify(const pt: TPoint; const width, height: Integer): TBox; overload;');
   AddFunction(@TPoint_Boxify2, 'function TPoint_Boxify(const pt: TPoint; const size: Integer = 0): TBox; overload;');
-  AddFunction(@TPoint_Within1, 'function TPoint_Within(const pt: TPoint; const target: TPoint; const radius: Double): Boolean; overload;');
+  AddFunction(@TPoint_Within1, 'function TPoint_Within(const pt: TPoint; const target: TPoint; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): Boolean; overload;');
   AddFunction(@TPoint_Within2, 'function TPoint_Within(const pt: TPoint; const target: TPoint; const xRadius, yRadius: Integer): Boolean; overload;');
+  AddFunction(@TPoint_Near1, 'function TPoint_Near(const pt: TPoint; const target: TPoint; const radius: Double = 1.0): Boolean; overload;');
+  AddFunction(@TPoint_Near2, 'function TPoint_Near(const pt: TPoint; const target: TPoint; const xRadius, yRadius: Integer): Boolean; overload;');
+  AddFunction(@TPoint_Near3, 'function TPoint_Near(const pt: TPoint; const target: TPoint; const radius: Double; const metric: TDistanceMetric): Boolean; overload;');
+  AddFunction(@TPoint_DistX, 'function TPoint_DistX(const pt: TPoint; const target: TPoint): Integer;');
+  AddFunction(@TPoint_DistY, 'function TPoint_DistY(const pt: TPoint; const target: TPoint): Integer;');
+  AddFunction(@TPoint_DistanceX, 'function TPoint_DistanceX(const pt: TPoint; const target: TPoint): Integer;');
+  AddFunction(@TPoint_DistanceY, 'function TPoint_DistanceY(const pt: TPoint; const target: TPoint): Integer;');
+  AddFunction(@TPoint_DistXBranchless, 'function TPoint_DistXBranchless(const pt: TPoint; const Target: TPoint): Integer;');
+  AddFunction(@TPoint_DistYBranchless, 'function TPoint_DistYBranchless(const pt: TPoint; const Target: TPoint): Integer;');
+  AddFunction(@TPoint_DistMaxMinX, 'function TPoint_DistMaxMinX(const pt: TPoint; const target: TPoint): Integer;');
+  AddFunction(@TPoint_DistMaxMinY, 'function TPoint_DistMaxMinY(const pt: TPoint; const target: TPoint): Integer;');
+  AddFunction(@TPoint_DeltaX, 'function TPoint_DeltaX(const pt: TPoint; const target: TPoint): Integer;');
+  AddFunction(@TPoint_DeltaY, 'function TPoint_DeltaY(const pt: TPoint; const target: TPoint): Integer;');
+  AddFunction(@TPoint_Delta, 'function TPoint_Delta(const pt: TPoint; const target: TPoint): TPoint;');
 
   AddFunction(@TBox_Build1, 'function TBox_Build(const minX, minY, maxX, maxY: Integer): TBox; overload;');
   AddFunction(@TBox_Build2, 'function TBox_Build(const top, bottom: TPoint): TBox; overload;');
