@@ -24,7 +24,7 @@ begin
                      '  radius: Double;' + #13#10 +
                      'end;');
   AddType('TDistanceFunction', 'function(const A, B: TPoint): Double;');
-  AddType('TDistanceMetric', '(dmDistance, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev);');  
+  AddType('TDistanceMetric', '(dmDistance, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski);');  
 end;
 
 procedure AddFunctions;
@@ -309,6 +309,8 @@ begin
   AddFunction(@TPoint_DistSquaredEuclidean, 'function TPoint_DistSquaredEuclidean(const pt, target: TPoint): Double;');
   AddFunction(@TPoint_DistManhattan, 'function TPoint_DistManhattan(const pt, target: TPoint): Double;');
   AddFunction(@TPoint_DistChebyshev, 'function TPoint_DistChebyshev(const pt, target: TPoint): Double;');
+  AddFunction(@TPoint_DistMinkowski1, 'function TPoint_DistMinkowski(const pt, target: TPoint): Double; overload;');
+  AddFunction(@TPoint_DistMinkowski2, 'function TPoint_DistMinkowski(const pt, target: TPoint; const P: Double): Double; overload;');
   AddFunction(@TPoint_Grid, 'function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray;');
   AddFunction(@TPoint_Row, 'function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray;');
   AddFunction(@TPoint_Column, 'function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray;');

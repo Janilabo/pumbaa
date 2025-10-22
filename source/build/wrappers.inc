@@ -268,6 +268,8 @@ function TPoint_DistEuclidean2(const pt, target: TPoint): Double; cdecl; begin R
 function TPoint_DistSquaredEuclidean(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistSquaredEuclidean(target); end;
 function TPoint_DistManhattan(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistManhattan(target); end;
 function TPoint_DistChebyshev(const pt, target: TPoint): Double; cdecl; begin Result := pt.DistChebyshev(target); end;
+function TPoint_DistMinkowski1(const pt, target: TPoint): Double; overload; cdecl; begin Result := pt.DistMinkowski(target); end;
+function TPoint_DistMinkowski2(const pt, target: TPoint; const P: Double): Double; overload; cdecl; begin Result := pt.DistMinkowski(target, P); end;
 function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray; cdecl; begin Result := pt.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
 function TPoint_Row(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Row(cells, space); end;
 function TPoint_Column(const pt: TPoint; const cells: Integer; const space: Integer = 0): TPointArray; cdecl; begin Result := pt.Column(cells, space); end;
