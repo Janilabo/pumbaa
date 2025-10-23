@@ -640,11 +640,17 @@ begin
   AddFunction(@TRange_Touch, 'function TRange_Touch(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Touches, 'function TRange_Touches(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean;');
   AddFunction(@TRange_Touching, 'function TRange_Touching(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean;');
-  AddFunction(@TRange_Distance, 'function TRange_Distance(const range: TRange; const b: TRange): Integer;');
+  AddFunction(@TRange_Distance1, 'function TRange_Distance(const range: TRange; const b: TRange): Integer; overload;');
+  AddFunction(@TRange_Distance2, 'function TRange_Distance(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Dist, 'function TRange_Dist(const range: TRange): Integer;');
+  AddFunction(@TRange_Difference, 'function TRange_Difference(const range: TRange): Integer;');
+  AddFunction(@TRange_Diff, 'function TRange_Diff(const range: TRange): Integer;');
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer;');
   AddFunction(@TRange_Delta, 'function TRange_Delta(const range: TRange): Integer;');
   AddFunction(@TRange_Direction, 'function TRange_Direction(const range: TRange): Integer;');
   AddFunction(@TRange_Magnitude, 'function TRange_Magnitude(const range: TRange): Integer;');
+  AddFunction(@TRange_Signum, 'function TRange_Signum(const range: TRange): Integer;');
+  AddFunction(@TRange_Slope, 'function TRange_Slope(const range: TRange): Integer;');
   AddFunction(@TRange_Orientation, 'function TRange_Orientation(const range: TRange): Integer;');
   AddFunction(@TRange_Deficit, 'function TRange_Deficit(const range: TRange): Integer;');
   AddFunction(@TRange_Digit, 'function TRange_Digit(const range: TRange; const x: Integer): Boolean;');
