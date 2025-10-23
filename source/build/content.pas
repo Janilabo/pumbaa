@@ -339,6 +339,10 @@ begin
   AddFunction(@TPoint_DeltaX, 'function TPoint_DeltaX(const pt: TPoint; const target: TPoint): Integer;');
   AddFunction(@TPoint_DeltaY, 'function TPoint_DeltaY(const pt: TPoint; const target: TPoint): Integer;');
   AddFunction(@TPoint_Delta, 'function TPoint_Delta(const pt: TPoint; const target: TPoint): TPoint;');
+  AddFunction(@TPoint_Uniform1, 'function TPoint_Uniform(const pt: TPoint; const val: Integer): Boolean; overload;');
+  AddFunction(@TPoint_Uniform2, 'function TPoint_Uniform(const pt: TPoint): Boolean; overload;');
+  AddFunction(@TPoint_Employs, 'function TPoint_Employs(const pt: TPoint; const val: Integer): Boolean;');
+  AddFunction(@TPoint_Omits, 'function TPoint_Omits(const pt: TPoint; const val: Integer): Boolean;');
 
   AddFunction(@TBox_Build1, 'function TBox_Build(const minX, minY, maxX, maxY: Integer): TBox; overload;');
   AddFunction(@TBox_Build2, 'function TBox_Build(const top, bottom: TPoint): TBox; overload;');
@@ -500,6 +504,10 @@ begin
   AddFunction(@TBox_Gridded, 'function TBox_Gridded(const bx: TBox; const target: TBox): TBoxArray; overload;');
   AddFunction(@TBox_Reserve1, 'function TBox_Reserve(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Reserve2, 'function TBox_Reserve(const bx: TBox; var aBox: TPointArray): Integer; overload;');
+  AddFunction(@TBox_Uniform1, 'function TBox_Uniform(const bx: TBox; const val: Integer): Boolean; overload;');
+  AddFunction(@TBox_Uniform2, 'function TBox_Uniform(const bx: TBox): Boolean; overload;');
+  AddFunction(@TBox_Employs, 'function TBox_Employs(const bx: TBox; const val: Integer): Boolean;');
+  AddFunction(@TBox_Omits, 'function TBox_Omits(const bx: TBox; const val: Integer): Boolean;');
 
   AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
@@ -694,6 +702,10 @@ begin
   AddFunction(@TRange_Contracted, 'function TRange_Contracted(const range: TRange; const N: Integer = 1): TRange; overload;');
   AddFunction(@TRange_Expand, 'function TRange_Expand(var range: TRange; const N: Integer = 1): TRange; overload;');
   AddFunction(@TRange_Expanded, 'function TRange_Expanded(const range: TRange; const N: Integer = 1): TRange; overload;');
+  AddFunction(@TRange_Uniform1, 'function TRange_Uniform(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Uniform2, 'function TRange_Uniform(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Employs, 'function TRange_Employs(const range: TRange; const val: Integer): Boolean;');
+  AddFunction(@TRange_Omits, 'function TRange_Omits(const range: TRange; const val: Integer): Boolean;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

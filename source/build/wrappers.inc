@@ -298,6 +298,10 @@ function TPoint_DistMaxMinY(const pt: TPoint; const Target: TPoint): Integer; cd
 function TPoint_DeltaX(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DeltaX(target); end;
 function TPoint_DeltaY(const pt: TPoint; const Target: TPoint): Integer; cdecl; begin Result := pt.DeltaY(target); end;
 function TPoint_Delta(const pt: TPoint; const Target: TPoint): TPoint; cdecl; begin Result := pt.Delta(target); end;
+function TPoint_Uniform1(const pt: TPoint; const val: Integer): Boolean; overload; cdecl; begin Result := pt.Uniform(val); end;
+function TPoint_Uniform2(const pt: TPoint): Boolean; overload; cdecl; begin Result := pt.Uniform; end;
+function TPoint_Employs(const pt: TPoint; const val: Integer): Boolean; cdecl; begin Result := pt.Employs(val); end;
+function TPoint_Omits(const pt: TPoint; const val: Integer): Boolean; cdecl; begin Result := pt.Omits(val); end;
 
 function TBox_Create1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Create(minX, minY, maxX, maxY); end;
 function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Create(top, bottom); end;
@@ -459,6 +463,10 @@ function TBox_Tiled(const bx: TBox; const target: TBox): TBoxArray; overload; cd
 function TBox_Gridded(const bx: TBox; const target: TBox): TBoxArray; overload; cdecl; begin Result := bx.Gridded(target); end;
 function TBox_Reserve1(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Reserve; end;
 function TBox_Reserve2(const bx: TBox; var aBox: TPointArray): Integer; overload; cdecl; begin Result := bx.Reserve(aBox); end;
+function TBox_Uniform1(const bx: TBox; const val: Integer): Boolean; overload; cdecl; begin Result := bx.Uniform(val); end;
+function TBox_Uniform2(const bx: TBox): Boolean; overload; cdecl; begin Result := bx.Uniform; end;
+function TBox_Employs(const bx: TBox; const val: Integer): Boolean; cdecl; begin Result := bx.Employs(val); end;
+function TBox_Omits(const bx: TBox; const val: Integer): Boolean; cdecl; begin Result := bx.Omits(val); end;
 
 function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
 function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
@@ -653,6 +661,10 @@ function TRange_Contract(var range: TRange; const N: Integer = 1): TRange; overl
 function TRange_Contracted(const range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Contracted(N); end;
 function TRange_Expand(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Expand(N); end;
 function TRange_Expanded(const range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Expanded(N); end;
+function TRange_Uniform1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Uniform(val); end;
+function TRange_Uniform2(const range: TRange): Boolean; overload; cdecl; begin Result := range.Uniform; end;
+function TRange_Employs(const range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Employs(val); end;
+function TRange_Omits(const range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Omits(val); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
