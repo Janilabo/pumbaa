@@ -843,6 +843,7 @@ begin
   AddFunction(@TIntegerArray_BinaryUpperBound, 'function TIntegerArray_BinaryUpperBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryRange1, 'function TIntegerArray_BinaryRange(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinaryRange2, 'function TIntegerArray_BinaryRange(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TIntegerArray_BinarySpan, 'function TIntegerArray_BinarySpan(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinaryMerge, 'function TIntegerArray_BinaryMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryMerged, 'function TIntegerArray_BinaryMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryCombine, 'function TIntegerArray_BinaryCombine(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
@@ -888,6 +889,7 @@ begin
   AddFunction(@TDoubleArray_BinaryUpperBound, 'function TDoubleArray_BinaryUpperBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryRange1, 'function TDoubleArray_BinaryRange(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_BinaryRange2, 'function TDoubleArray_BinaryRange(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TDoubleArray_BinarySpan, 'function TDoubleArray_BinarySpan(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_BinaryMerge, 'function TDoubleArray_BinaryMerge(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TDoubleArray_BinaryMerged, 'function TDoubleArray_BinaryMerged(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TDoubleArray_BinaryCombine, 'function TDoubleArray_BinaryCombine(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
@@ -1059,6 +1061,12 @@ begin
   AddFunction(@TPointArray_Nearby2, 'function TPointArray_Nearby(const arr: TPointArray; const target: TPoint; const xRadius, yRadius: Integer): TPointArray; overload;');
   AddFunction(@TPointArray_Nearby3, 'function TPointArray_Nearby(const arr: TPointArray; const targets: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload;');
   AddFunction(@TPointArray_Nearby4, 'function TPointArray_Nearby(const arr: TPointArray; const targets: TPointArray; const xRadius, yRadius: Integer): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePointsMax1, 'function TPointArray_CorePointsMax(const arr: TPointArray; const maximumNeighbours: Integer; const xRadius, yRadius: Integer): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePointsMax2, 'function TPointArray_CorePointsMax(const arr: TPointArray; const maximumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePointsMin1, 'function TPointArray_CorePointsMin(const arr: TPointArray; const minimumNeighbours: Integer; const xRadius, yRadius: Integer): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePointsMin2, 'function TPointArray_CorePointsMin(const arr: TPointArray; const minimumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePoints1, 'function TPointArray_CorePoints(const arr: TPointArray; const allowedNeighbours: TRange; const radius: Double; const metric: TDistanceMetric): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePoints2, 'function TPointArray_CorePoints(const arr: TPointArray; const allowedNeighbours: TRange; const xRadius, yRadius: Integer): TPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');

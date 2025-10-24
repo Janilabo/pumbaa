@@ -802,6 +802,7 @@ function TIntegerArray_BinaryLowerBound(const arr: TIntegerArray; const x: Integ
 function TIntegerArray_BinaryUpperBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUpperBound(x, aAscending); end;
 function TIntegerArray_BinaryRange1(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TIntegerArray_BinaryRange2(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
+function TIntegerArray_BinarySpan(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinarySpan(x, aAscending); end;
 function TIntegerArray_BinaryMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryMerge(items, aAscending); end;
 function TIntegerArray_BinaryMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryMerged(items, aAscending); end;
 function TIntegerArray_BinaryCombine(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryCombine(items, aAscending); end;
@@ -847,6 +848,7 @@ function TDoubleArray_BinaryLowerBound(const arr: TDoubleArray; const x: Double;
 function TDoubleArray_BinaryUpperBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUpperBound(x, aAscending); end;
 function TDoubleArray_BinaryRange1(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TDoubleArray_BinaryRange2(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
+function TDoubleArray_BinarySpan(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinarySpan(x, aAscending); end;
 function TDoubleArray_BinaryMerge(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryMerge(items, aAscending); end;
 function TDoubleArray_BinaryMerged(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryMerged(items, aAscending); end;
 function TDoubleArray_BinaryCombine(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryCombine(items, aAscending); end;
@@ -1018,6 +1020,12 @@ function TPointArray_Nearby1(const arr: TPointArray; const target: TPoint; const
 function TPointArray_Nearby2(const arr: TPointArray; const target: TPoint; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.Nearby(target, xRadius, yRadius); end;
 function TPointArray_Nearby3(const arr: TPointArray; const targets: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload; cdecl; begin Result := arr.Nearby(targets, radius, metric); end;
 function TPointArray_Nearby4(const arr: TPointArray; const targets: TPointArray; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.Nearby(targets, xRadius, yRadius); end;
+function TPointArray_CorePointsMax1(const arr: TPointArray; const maximumNeighbours: Integer; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.CorePointsMax(maximumNeighbours, xRadius, yRadius); end;
+function TPointArray_CorePointsMax2(const arr: TPointArray; const maximumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload; cdecl; begin Result := arr.CorePointsMax(maximumNeighbours, radius, metric); end;
+function TPointArray_CorePointsMin1(const arr: TPointArray; const minimumNeighbours: Integer; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.CorePointsMin(minimumNeighbours, xRadius, yRadius); end;
+function TPointArray_CorePointsMin2(const arr: TPointArray; const minimumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload; cdecl; begin Result := arr.CorePointsMin(minimumNeighbours, radius, metric); end;
+function TPointArray_CorePoints1(const arr: TPointArray; const allowedNeighbours: TRange; const radius: Double; const metric: TDistanceMetric): TPointArray; overload; cdecl; begin Result := arr.CorePoints(allowedNeighbours, radius, metric); end;
+function TPointArray_CorePoints2(const arr: TPointArray; const allowedNeighbours: TRange; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.CorePoints(allowedNeighbours, xRadius, yRadius); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
