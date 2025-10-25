@@ -1068,13 +1068,15 @@ begin
   AddFunction(@TPointArray_Nearby3, 'function TPointArray_Nearby(const arr: TPointArray; const targets: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload;');
   AddFunction(@TPointArray_Nearby4, 'function TPointArray_Nearby(const arr: TPointArray; const targets: TPointArray; const xRadius, yRadius: Integer): TPointArray; overload;');
   AddFunction(@TPointArray_CorePointsMax1, 'function TPointArray_CorePointsMax(const arr: TPointArray; const maximumNeighbours: Integer; const xRadius, yRadius: Integer): TPointArray; overload;');
-  AddFunction(@TPointArray_CorePointsMax2, 'function TPointArray_CorePointsMax(const arr: TPointArray; const maximumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePointsMax2, 'function TPointArray_CorePointsMax(const arr: TPointArray; const maximumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload;');
   AddFunction(@TPointArray_CorePointsMin1, 'function TPointArray_CorePointsMin(const arr: TPointArray; const minimumNeighbours: Integer; const xRadius, yRadius: Integer): TPointArray; overload;');
-  AddFunction(@TPointArray_CorePointsMin2, 'function TPointArray_CorePointsMin(const arr: TPointArray; const minimumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload;');
-  AddFunction(@TPointArray_CorePoints1, 'function TPointArray_CorePoints(const arr: TPointArray; const allowedNeighbours: TRange; const radius: Double; const metric: TDistanceMetric): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePointsMin2, 'function TPointArray_CorePointsMin(const arr: TPointArray; const minimumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload;');
+  AddFunction(@TPointArray_CorePoints1, 'function TPointArray_CorePoints(const arr: TPointArray; const allowedNeighbours: TRange; const radius: Double; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload;');
   AddFunction(@TPointArray_CorePoints2, 'function TPointArray_CorePoints(const arr: TPointArray; const allowedNeighbours: TRange; const xRadius, yRadius: Integer): TPointArray; overload;');
   AddFunction(@TPointArray_Binify1, 'function TPointArray_Binify(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
-  AddFunction(@TPointArray_Binify2, 'function TPointArray_Binify(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Binify2, 'function TPointArray_Binify(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Binified1, 'function TPointArray_Binified(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Binified2, 'function TPointArray_Binified(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');

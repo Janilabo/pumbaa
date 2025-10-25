@@ -1027,13 +1027,15 @@ function TPointArray_Nearby2(const arr: TPointArray; const target: TPoint; const
 function TPointArray_Nearby3(const arr: TPointArray; const targets: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload; cdecl; begin Result := arr.Nearby(targets, radius, metric); end;
 function TPointArray_Nearby4(const arr: TPointArray; const targets: TPointArray; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.Nearby(targets, xRadius, yRadius); end;
 function TPointArray_CorePointsMax1(const arr: TPointArray; const maximumNeighbours: Integer; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.CorePointsMax(maximumNeighbours, xRadius, yRadius); end;
-function TPointArray_CorePointsMax2(const arr: TPointArray; const maximumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload; cdecl; begin Result := arr.CorePointsMax(maximumNeighbours, radius, metric); end;
+function TPointArray_CorePointsMax2(const arr: TPointArray; const maximumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload; cdecl; begin Result := arr.CorePointsMax(maximumNeighbours, radius, metric); end;
 function TPointArray_CorePointsMin1(const arr: TPointArray; const minimumNeighbours: Integer; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.CorePointsMin(minimumNeighbours, xRadius, yRadius); end;
-function TPointArray_CorePointsMin2(const arr: TPointArray; const minimumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload; cdecl; begin Result := arr.CorePointsMin(minimumNeighbours, radius, metric); end;
-function TPointArray_CorePoints1(const arr: TPointArray; const allowedNeighbours: TRange; const radius: Double; const metric: TDistanceMetric): TPointArray; overload; cdecl; begin Result := arr.CorePoints(allowedNeighbours, radius, metric); end;
+function TPointArray_CorePointsMin2(const arr: TPointArray; const minimumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload; cdecl; begin Result := arr.CorePointsMin(minimumNeighbours, radius, metric); end;
+function TPointArray_CorePoints1(const arr: TPointArray; const allowedNeighbours: TRange; const radius: Double; const metric: TDistanceMetric = dmEuclidean): TPointArray; overload; cdecl; begin Result := arr.CorePoints(allowedNeighbours, radius, metric); end;
 function TPointArray_CorePoints2(const arr: TPointArray; const allowedNeighbours: TRange; const xRadius, yRadius: Integer): TPointArray; overload; cdecl; begin Result := arr.CorePoints(allowedNeighbours, xRadius, yRadius); end;
 function TPointArray_Binify1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Binify(xRadius, yRadius); end;
-function TPointArray_Binify2(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric): T2DPointArray; overload; cdecl; begin Result := arr.Binify(radius, metric); end;
+function TPointArray_Binify2(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.Binify(radius, metric); end;
+function TPointArray_Binified1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Binified(xRadius, yRadius); end;
+function TPointArray_Binified2(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.Binified(radius, metric); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
