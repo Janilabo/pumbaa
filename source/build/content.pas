@@ -1073,6 +1073,8 @@ begin
   AddFunction(@TPointArray_CorePointsMin2, 'function TPointArray_CorePointsMin(const arr: TPointArray; const minimumNeighbours: Integer; const radius: Double; const metric: TDistanceMetric): TPointArray; overload;');
   AddFunction(@TPointArray_CorePoints1, 'function TPointArray_CorePoints(const arr: TPointArray; const allowedNeighbours: TRange; const radius: Double; const metric: TDistanceMetric): TPointArray; overload;');
   AddFunction(@TPointArray_CorePoints2, 'function TPointArray_CorePoints(const arr: TPointArray; const allowedNeighbours: TRange; const xRadius, yRadius: Integer): TPointArray; overload;');
+  AddFunction(@TPointArray_Binify1, 'function TPointArray_Binify(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Binify2, 'function TPointArray_Binify(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric): T2DPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
