@@ -343,6 +343,8 @@ begin
   AddFunction(@TPoint_Uniform2, 'function TPoint_Uniform(const pt: TPoint): Boolean; overload;');
   AddFunction(@TPoint_Employs, 'function TPoint_Employs(const pt: TPoint; const val: Integer): Boolean;');
   AddFunction(@TPoint_Omits, 'function TPoint_Omits(const pt: TPoint; const val: Integer): Boolean;');
+  AddFunction(@TPoint_Reflected, 'function TPoint_Reflected(const pt: TPoint): TPoint;');
+  AddFunction(@TPoint_Flipped, 'function TPoint_Flipped(const pt: TPoint): TPoint;');
 
   AddFunction(@TBox_Build1, 'function TBox_Build(const minX, minY, maxX, maxY: Integer): TBox; overload;');
   AddFunction(@TBox_Build2, 'function TBox_Build(const top, bottom: TPoint): TBox; overload;');
@@ -1077,6 +1079,8 @@ begin
   AddFunction(@TPointArray_Binify2, 'function TPointArray_Binify(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
   AddFunction(@TPointArray_Binified1, 'function TPointArray_Binified(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_Binified2, 'function TPointArray_Binified(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Bins1, 'function TPointArray_Bins(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Bins2, 'function TPointArray_Bins(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');

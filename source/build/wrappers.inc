@@ -302,6 +302,8 @@ function TPoint_Uniform1(const pt: TPoint; const val: Integer): Boolean; overloa
 function TPoint_Uniform2(const pt: TPoint): Boolean; overload; cdecl; begin Result := pt.Uniform; end;
 function TPoint_Employs(const pt: TPoint; const val: Integer): Boolean; cdecl; begin Result := pt.Employs(val); end;
 function TPoint_Omits(const pt: TPoint; const val: Integer): Boolean; cdecl; begin Result := pt.Omits(val); end;
+function TPoint_Reflected(const pt: TPoint): TPoint; cdecl; begin Result := pt.Reflected; end;
+function TPoint_Flipped(const pt: TPoint): TPoint; cdecl; begin Result := pt.Flipped; end;
 
 function TBox_Create1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Create(minX, minY, maxX, maxY); end;
 function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Create(top, bottom); end;
@@ -1036,6 +1038,8 @@ function TPointArray_Binify1(const arr: TPointArray; const xRadius, yRadius: Int
 function TPointArray_Binify2(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.Binify(radius, metric); end;
 function TPointArray_Binified1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Binified(xRadius, yRadius); end;
 function TPointArray_Binified2(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.Binified(radius, metric); end;
+function TPointArray_Bins1(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.Bins(radius, metric); end;
+function TPointArray_Bins2(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Bins(xRadius, yRadius); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
