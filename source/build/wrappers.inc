@@ -1044,6 +1044,8 @@ function TPointArray_XBuckets(const arr: TPointArray; const bWidth: Integer = 1)
 function TPointArray_YBuckets(const arr: TPointArray; const bHeight: Integer = 1): T2DPointArray; cdecl; begin Result := arr.YBuckets(bHeight); end;
 function TPointArray_Buckets1(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Buckets(bWidth, bHeight); end;
 function TPointArray_Buckets2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Buckets(bSize); end;
+function TPointArray_Bucketed1(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Bucketed(bWidth, bHeight); end;
+function TPointArray_Bucketed2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Bucketed(bSize); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
@@ -3977,6 +3979,24 @@ function T2DArray_Pull5(var arr: T2DBooleanArray): T2DBooleanArray; overload; cd
 function T2DArray_Pull6(var arr: T2DPointArray): T2DPointArray; overload; cdecl; begin Result := arr.Pull; end;
 function T2DArray_Pull7(var arr: T2DBoxArray): T2DBoxArray; overload; cdecl; begin Result := arr.Pull; end;
 function T2DArray_Pull8(var arr: T2DRangeArray): T2DRangeArray; overload; cdecl; begin Result := arr.Pull; end;
+
+function T2DArray_Squeeze1(var arr: T2DIntegerArray): Integer; overload; cdecl; begin Result := arr.Squeeze; end;
+function T2DArray_Squeeze2(var arr: T2DDoubleArray): Integer; overload; cdecl; begin Result := arr.Squeeze; end;
+function T2DArray_Squeeze3(var arr: T2DStringArray): Integer; overload; cdecl; begin Result := arr.Squeeze; end;
+function T2DArray_Squeeze4(var arr: T2DCharArray): Integer; overload; cdecl; begin Result := arr.Squeeze; end;
+function T2DArray_Squeeze5(var arr: T2DBooleanArray): Integer; overload; cdecl; begin Result := arr.Squeeze; end;
+function T2DArray_Squeeze6(var arr: T2DPointArray): Integer; overload; cdecl; begin Result := arr.Squeeze; end;
+function T2DArray_Squeeze7(var arr: T2DBoxArray): Integer; overload; cdecl; begin Result := arr.Squeeze; end;
+function T2DArray_Squeeze8(var arr: T2DRangeArray): Integer; overload; cdecl; begin Result := arr.Squeeze; end;
+
+function T2DArray_Squeezed1(const arr: T2DIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Squeezed; end;
+function T2DArray_Squeezed2(const arr: T2DDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Squeezed; end;
+function T2DArray_Squeezed3(const arr: T2DStringArray): T2DStringArray; overload; cdecl; begin Result := arr.Squeezed; end;
+function T2DArray_Squeezed4(const arr: T2DCharArray): T2DCharArray; overload; cdecl; begin Result := arr.Squeezed; end;
+function T2DArray_Squeezed5(const arr: T2DBooleanArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Squeezed; end;
+function T2DArray_Squeezed6(const arr: T2DPointArray): T2DPointArray; overload; cdecl; begin Result := arr.Squeezed; end;
+function T2DArray_Squeezed7(const arr: T2DBoxArray): T2DBoxArray; overload; cdecl; begin Result := arr.Squeezed; end;
+function T2DArray_Squeezed8(const arr: T2DRangeArray): T2DRangeArray; overload; cdecl; begin Result := arr.Squeezed; end;
 
 function T2DArray_Recreate1(var arr: T2DIntegerArray; const arrSize: Integer): Boolean; overload; cdecl; begin Result := arr.Recreate(arrSize); end;
 function T2DArray_Recreate2(var arr: T2DDoubleArray; const arrSize: Integer): Boolean; overload; cdecl; begin Result := arr.Recreate(arrSize); end;

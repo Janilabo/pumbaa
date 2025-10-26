@@ -1085,6 +1085,8 @@ begin
   AddFunction(@TPointArray_YBuckets, 'function TPointArray_YBuckets(const arr: TPointArray; const bHeight: Integer = 1): T2DPointArray;');
   AddFunction(@TPointArray_Buckets1, 'function TPointArray_Buckets(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_Buckets2, 'function TPointArray_Buckets(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Bucketed1, 'function TPointArray_Bucketed(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Bucketed2, 'function TPointArray_Bucketed(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
@@ -4025,4 +4027,22 @@ begin
   AddFunction(@T2DArray_Pull6, 'function T2DArray_Pull(var arr: T2DPointArray): T2DPointArray; overload;');
   AddFunction(@T2DArray_Pull7, 'function T2DArray_Pull(var arr: T2DBoxArray): T2DBoxArray; overload;');
   AddFunction(@T2DArray_Pull8, 'function T2DArray_Pull(var arr: T2DRangeArray): T2DRangeArray; overload;');
+  
+  AddFunction(@T2DArray_Squeeze1, 'function T2DArray_Squeeze(var arr: T2DIntegerArray): Integer; overload;');
+  AddFunction(@T2DArray_Squeeze2, 'function T2DArray_Squeeze(var arr: T2DDoubleArray): Integer; overload;');
+  AddFunction(@T2DArray_Squeeze3, 'function T2DArray_Squeeze(var arr: T2DStringArray): Integer; overload;');
+  AddFunction(@T2DArray_Squeeze4, 'function T2DArray_Squeeze(var arr: T2DCharArray): Integer; overload;');
+  AddFunction(@T2DArray_Squeeze5, 'function T2DArray_Squeeze(var arr: T2DBooleanArray): Integer; overload;');
+  AddFunction(@T2DArray_Squeeze6, 'function T2DArray_Squeeze(var arr: T2DPointArray): Integer; overload;');
+  AddFunction(@T2DArray_Squeeze7, 'function T2DArray_Squeeze(var arr: T2DBoxArray): Integer; overload;');
+  AddFunction(@T2DArray_Squeeze8, 'function T2DArray_Squeeze(var arr: T2DRangeArray): Integer; overload;');
+
+  AddFunction(@T2DArray_Squeezed1, 'function T2DArray_Squeezed(const arr: T2DIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@T2DArray_Squeezed2, 'function T2DArray_Squeezed(const arr: T2DDoubleArray): T2DDoubleArray; overload;');
+  AddFunction(@T2DArray_Squeezed3, 'function T2DArray_Squeezed(const arr: T2DStringArray): T2DStringArray; overload;');
+  AddFunction(@T2DArray_Squeezed4, 'function T2DArray_Squeezed(const arr: T2DCharArray): T2DCharArray; overload;');
+  AddFunction(@T2DArray_Squeezed5, 'function T2DArray_Squeezed(const arr: T2DBooleanArray): T2DBooleanArray; overload;');
+  AddFunction(@T2DArray_Squeezed6, 'function T2DArray_Squeezed(const arr: T2DPointArray): T2DPointArray; overload;');
+  AddFunction(@T2DArray_Squeezed7, 'function T2DArray_Squeezed(const arr: T2DBoxArray): T2DBoxArray; overload;');
+  AddFunction(@T2DArray_Squeezed8, 'function T2DArray_Squeezed(const arr: T2DRangeArray): T2DRangeArray; overload;');
 end;
