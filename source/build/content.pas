@@ -1081,6 +1081,10 @@ begin
   AddFunction(@TPointArray_Binified2, 'function TPointArray_Binified(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
   AddFunction(@TPointArray_Bins1, 'function TPointArray_Bins(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
   AddFunction(@TPointArray_Bins2, 'function TPointArray_Bins(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_XBuckets, 'function TPointArray_XBuckets(const arr: TPointArray; const bWidth: Integer = 1): T2DPointArray;');
+  AddFunction(@TPointArray_YBuckets, 'function TPointArray_YBuckets(const arr: TPointArray; const bHeight: Integer = 1): T2DPointArray;');
+  AddFunction(@TPointArray_Buckets1, 'function TPointArray_Buckets(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Buckets2, 'function TPointArray_Buckets(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');

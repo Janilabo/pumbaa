@@ -1040,6 +1040,10 @@ function TPointArray_Binified1(const arr: TPointArray; const xRadius, yRadius: I
 function TPointArray_Binified2(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.Binified(radius, metric); end;
 function TPointArray_Bins1(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.Bins(radius, metric); end;
 function TPointArray_Bins2(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Bins(xRadius, yRadius); end;
+function TPointArray_XBuckets(const arr: TPointArray; const bWidth: Integer = 1): T2DPointArray; cdecl; begin Result := arr.XBuckets(bWidth); end;
+function TPointArray_YBuckets(const arr: TPointArray; const bHeight: Integer = 1): T2DPointArray; cdecl; begin Result := arr.YBuckets(bHeight); end;
+function TPointArray_Buckets1(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Buckets(bWidth, bHeight); end;
+function TPointArray_Buckets2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Buckets(bSize); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
