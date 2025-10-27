@@ -1087,6 +1087,15 @@ begin
   AddFunction(@TPointArray_Buckets2, 'function TPointArray_Buckets(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload;');
   AddFunction(@TPointArray_Bucketed1, 'function TPointArray_Bucketed(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_Bucketed2, 'function TPointArray_Bucketed(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Boxify1, 'function TPointArray_Boxify(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Boxify2, 'function TPointArray_Boxify(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Boxified1, 'function TPointArray_Boxified(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Boxified2, 'function TPointArray_Boxified(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload;');
+  AddFunction(@TPointArray_BinBox1, 'function TPointArray_BinBox(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_BinBox2, 'function TPointArray_BinBox(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload;');
+  
+  AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
+  AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
 
   AddFunction(@TBoxArray_X1_1, 'function TBoxArray_X1(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TBoxArray_X1_2, 'function TBoxArray_X1(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');

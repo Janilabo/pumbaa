@@ -1046,6 +1046,15 @@ function TPointArray_Buckets1(const arr: TPointArray; const bWidth, bHeight: Int
 function TPointArray_Buckets2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Buckets(bSize); end;
 function TPointArray_Bucketed1(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Bucketed(bWidth, bHeight); end;
 function TPointArray_Bucketed2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Bucketed(bSize); end;
+function TPointArray_Boxify1(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Boxify(bWidth, bHeight); end;
+function TPointArray_Boxify2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Boxify(bSize); end;
+function TPointArray_Boxified1(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload; cdecl; begin Result := arr.Boxified(bWidth, bHeight); end;
+function TPointArray_Boxified2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Boxified(bSize); end;
+function TPointArray_BinBox1(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload; cdecl; begin Result := arr.BinBox(bWidth, bHeight); end;
+function TPointArray_BinBox2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.BinBox(bSize); end;
+
+function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
+function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
 
 function TBoxArray_X1_1(const arr: TBoxArray): TIntegerArray; cdecl; begin Result := X1(arr); end;
 function TBoxArray_X1_2(const arr: TBoxArray; const val: Integer): TIntegerArray; cdecl; begin Result := X1(arr, val); end;
