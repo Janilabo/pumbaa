@@ -1052,6 +1052,10 @@ function TPointArray_Boxified1(const arr: TPointArray; const bWidth, bHeight: In
 function TPointArray_Boxified2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Boxified(bSize); end;
 function TPointArray_BinBox1(const arr: TPointArray; const bWidth, bHeight: Integer): T2DPointArray; overload; cdecl; begin Result := arr.BinBox(bWidth, bHeight); end;
 function TPointArray_BinBox2(const arr: TPointArray; const bSize: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.BinBox(bSize); end;
+function TPointArray_BinaryFloodFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BinaryFloodFill(radius, metric); end;
+function TPointArray_BinaryFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BinaryFill(radius, metric); end;
+function TPointArray_BinaryFilled(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BinaryFilled(radius, metric); end;
+function TPointArray_BFloodFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BFloodFill(radius, metric); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
