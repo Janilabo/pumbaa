@@ -1098,6 +1098,11 @@ begin
   AddFunction(@TPointArray_BinaryFilled, 'function TPointArray_BinaryFilled(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray;');
   AddFunction(@TPointArray_BFloodFill, 'function TPointArray_BFloodFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray;');
   AddFunction(@TPointArray_AdjFill, 'function TPointArray_AdjFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray;');
+  AddFunction(@TPointArray_NFill, 'function TPointArray_NFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray;');
+  AddFunction(@TPointArray_AFill, 'function TPointArray_AFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray;');
+  AddFunction(@TPointArray_CFill, 'function TPointArray_CFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray;');
+  AddFunction(@TPointArray_BCluster1, 'function TPointArray_BCluster(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
+  AddFunction(@TPointArray_BCluster2, 'function TPointArray_BCluster(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');

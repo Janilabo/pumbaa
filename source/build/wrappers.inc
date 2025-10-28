@@ -1057,6 +1057,11 @@ function TPointArray_BinaryFill(const arr: TPointArray; const radius: Double; co
 function TPointArray_BinaryFilled(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BinaryFilled(radius, metric); end;
 function TPointArray_BFloodFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BFloodFill(radius, metric); end;
 function TPointArray_AdjFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray; cdecl; begin Result := arr.AdjFill(scan8W); end;
+function TPointArray_NFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray; cdecl; begin Result := arr.NFill(scan8W); end;
+function TPointArray_AFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray; cdecl; begin Result := arr.AFill(scan8W); end;
+function TPointArray_CFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray; cdecl; begin Result := arr.CFill(scan8W); end;
+function TPointArray_BCluster1(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.BCluster(radius, metric); end;
+function TPointArray_BCluster2(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.BCluster(xRadius, yRadius); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
