@@ -1056,6 +1056,7 @@ function TPointArray_BinaryFloodFill(const arr: TPointArray; const radius: Doubl
 function TPointArray_BinaryFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BinaryFill(radius, metric); end;
 function TPointArray_BinaryFilled(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BinaryFilled(radius, metric); end;
 function TPointArray_BFloodFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray; cdecl; begin Result := arr.BFloodFill(radius, metric); end;
+function TPointArray_AdjFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray; cdecl; begin Result := arr.AdjFill(scan8W); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;

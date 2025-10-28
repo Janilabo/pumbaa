@@ -1097,6 +1097,7 @@ begin
   AddFunction(@TPointArray_BinaryFill, 'function TPointArray_BinaryFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray;');
   AddFunction(@TPointArray_BinaryFilled, 'function TPointArray_BinaryFilled(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray;');
   AddFunction(@TPointArray_BFloodFill, 'function TPointArray_BFloodFill(const arr: TPointArray; const radius: Double; const metric: TDistanceMetric = dmChebyshev): T2DPointArray;');
+  AddFunction(@TPointArray_AdjFill, 'function TPointArray_AdjFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray;');
   
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
