@@ -1103,6 +1103,10 @@ begin
   AddFunction(@TPointArray_CFill, 'function TPointArray_CFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray;');
   AddFunction(@TPointArray_BCluster1, 'function TPointArray_BCluster(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
   AddFunction(@TPointArray_BCluster2, 'function TPointArray_BCluster(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_QuickSortByX, 'function TPointArray_QuickSortByX(var arr: TPointArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TPointArray_QuickSortByY, 'function TPointArray_QuickSortByY(var arr: TPointArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TPointArray_QuickSortByXY, 'function TPointArray_QuickSortByXY(var arr: TPointArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TPointArray_QuickSortByYX, 'function TPointArray_QuickSortByYX(var arr: TPointArray; const aAscending: Boolean = True): Integer;');
   
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');

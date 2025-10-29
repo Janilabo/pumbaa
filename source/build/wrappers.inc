@@ -1062,6 +1062,10 @@ function TPointArray_AFill(const arr: TPointArray; const scan8W: Boolean = True)
 function TPointArray_CFill(const arr: TPointArray; const scan8W: Boolean = True): T2DPointArray; cdecl; begin Result := arr.CFill(scan8W); end;
 function TPointArray_BCluster1(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.BCluster(radius, metric); end;
 function TPointArray_BCluster2(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.BCluster(xRadius, yRadius); end;
+function TPointArray_QuickSortByX(var arr: TPointArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSortByX(aAscending); end;
+function TPointArray_QuickSortByY(var arr: TPointArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSortByY(aAscending); end;
+function TPointArray_QuickSortByXY(var arr: TPointArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSortByXY(aAscending); end;
+function TPointArray_QuickSortByYX(var arr: TPointArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSortByYX(aAscending); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
