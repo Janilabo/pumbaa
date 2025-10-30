@@ -272,9 +272,12 @@ function TPoint_Neighbour(const pt: TPoint; const p: TPoint; const adjacency8: B
 function TPoint_Neighbor(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload; cdecl; begin Result := pt.Neighbor(p, adjacency8); end;
 function TPoint_Adjacent1(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload; cdecl; begin Result := pt.Adjacent(p, adjacency8); end;
 function TPoint_Adjacent2(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Adjacent(adjacency8); end;
+procedure TPoint_Adjacent3(const pt: TPoint; var adj: TPointArray; const adjacency8: Boolean = True); overload; cdecl; begin pt.Adjacent(adj, adjacency8); end;
 function TPoint_Adjacency(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Adjacency(adjacency8); end;
-function TPoint_Neighbours(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbours(adjacency8); end;
-function TPoint_Neighbors(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbors(adjacency8); end;
+function TPoint_Neighbours1(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbours(adjacency8); end;
+procedure TPoint_Neighbours2(const pt: TPoint; var adj: TPointArray); overload; cdecl; begin pt.Neighbours(adj); end;
+function TPoint_Neighbors1(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload; cdecl; begin Result := pt.Neighbors(adjacency8); end;
+procedure TPoint_Neighbors2(const pt: TPoint; var adj: TPointArray); overload; cdecl; begin pt.Neighbors(adj); end;
 function TPoint_ToY(const pt: TPoint; const yGoal: Integer): TPointArray; overload; cdecl; begin Result := pt.ToY(yGoal); end;
 function TPoint_ToX(const pt: TPoint; const xGoal: Integer): TPointArray; overload; cdecl; begin Result := pt.ToX(xGoal); end;
 function TPoint_Linked(const pt: TPoint; const p: TPoint; const link: TPointArray): Boolean; overload; cdecl; begin Result := pt.Linked(p, link); end;
@@ -776,6 +779,8 @@ function TIntegerArray_Attach(var arr: TIntegerArray; const items: TIntegerArray
 function TIntegerArray_Embed(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Embed(items, index); end;
 function TIntegerArray_Broaden1(const arr: TIntegerArray; const rValues: TRange; const aIndex: Integer): TRange; overload; cdecl; begin Result := arr.Broaden(rValues, aIndex); end;
 function TIntegerArray_Broaden2(const arr: TIntegerArray; const rValues: TRange; const sSorted: Boolean = False): TRange; overload; cdecl; begin Result := arr.Broaden(rValues, sSorted); end;
+function TIntegerArray_CountingSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.CountingSort(aAscending); end;
+function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer; cdecl; begin Result := arr.BinaryCountingSort(aAscending, maxRange); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;

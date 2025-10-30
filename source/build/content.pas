@@ -313,9 +313,12 @@ begin
   AddFunction(@TPoint_Neighbor, 'function TPoint_Neighbor(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload;');
   AddFunction(@TPoint_Adjacent1, 'function TPoint_Adjacent(const pt: TPoint; const p: TPoint; const adjacency8: Boolean = True): Boolean; overload;');
   AddFunction(@TPoint_Adjacent2, 'function TPoint_Adjacent(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload;');
+  AddFunction(@TPoint_Adjacent3, 'procedure TPoint_Adjacent(const pt: TPoint; var adj: TPointArray; const adjacency8: Boolean = True); overload;');
   AddFunction(@TPoint_Adjacency, 'function TPoint_Adjacency(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload;');
-  AddFunction(@TPoint_Neighbours, 'function TPoint_Neighbours(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload;');
-  AddFunction(@TPoint_Neighbors, 'function TPoint_Neighbors(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload;'); 
+  AddFunction(@TPoint_Neighbours1, 'function TPoint_Neighbours(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload;');
+  AddFunction(@TPoint_Neighbours2, 'procedure TPoint_Neighbours(const pt: TPoint; var adj: TPointArray); overload;');
+  AddFunction(@TPoint_Neighbors1, 'function TPoint_Neighbors(const pt: TPoint; const adjacency8: Boolean = True): TPointArray; overload;');
+  AddFunction(@TPoint_Neighbors2, 'procedure TPoint_Neighbors(const pt: TPoint; var adj: TPointArray); overload;');  
   AddFunction(@TPoint_ToY, 'function TPoint_ToY(const pt: TPoint; const yGoal: Integer): TPointArray; overload;');
   AddFunction(@TPoint_ToX, 'function TPoint_ToX(const pt: TPoint; const xGoal: Integer): TPointArray; overload;');
   AddFunction(@TPoint_Linked, 'function TPoint_Linked(const pt: TPoint; const p: TPoint; const link: TPointArray): Boolean; overload;');
@@ -817,6 +820,8 @@ begin
   AddFunction(@TIntegerArray_Embed, 'function TIntegerArray_Embed(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TIntegerArray_Broaden1, 'function TIntegerArray_Broaden(const arr: TIntegerArray; const rValues: TRange; const aIndex: Integer): TRange; overload;');
   AddFunction(@TIntegerArray_Broaden2, 'function TIntegerArray_Broaden(const arr: TIntegerArray; const rValues: TRange; const sSorted: Boolean = False): TRange; overload;');
+  AddFunction(@TIntegerArray_CountingSort, 'function TIntegerArray_CountingSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryCountingSort, 'function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySorted, 'function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
