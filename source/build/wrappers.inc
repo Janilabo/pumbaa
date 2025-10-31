@@ -52,6 +52,18 @@ function Integer_Undersize(const x, limit: Integer): Boolean; cdecl; inline; beg
 function Integer_BitMax(const item: Integer): Integer; cdecl; begin Result := item.BitMax; end;
 function Integer_Unbitify1(const item: Integer): TBooleanArray; overload; cdecl; begin Result := item.Unbitify; end;
 function Integer_Unbitify2(const item: Integer; const bCount: Integer): TBooleanArray; cdecl; begin Result := item.Unbitify(bCount); end;
+function Integer_Adjust(var item: Integer; const cValue: Integer; const limits: TRange): Boolean; cdecl; begin Result := item.Adjust(cValue, limits); end; 
+function Integer_AdjustMin(var item: Integer; const cValue: Integer; const limit: Integer = -2147483648): Boolean; cdecl; begin Result := item.AdjustMin(cValue, limit); end;
+function Integer_AdjustMax(var item: Integer; const cValue: Integer; const limit: Integer = 2147483647): Boolean; cdecl; begin Result := item.AdjustMax(cValue, limit); end;
+function Integer_Adjusted(const item: Integer; const cValue: Integer; const limits: TRange): Integer; cdecl; begin Result := item.Adjusted(cValue, limits); end;
+function Integer_AdjustedMin(const item: Integer; const cValue: Integer; const limit: Integer = -2147483648): Integer; cdecl; begin Result := item.AdjustedMin(cValue, limit); end;
+function Integer_AdjustedMax(const item: Integer; const cValue: Integer; const limit: Integer = 2147483647): Integer; cdecl; begin Result := item.AdjustedMax(cValue, limit); end;
+function Integer_Update(var item: Integer; const cValue: Integer; const limits: TRange): Boolean; cdecl; begin Result := item.Update(cValue, limits); end;
+function Integer_UpdateMin(var item: Integer; const cValue: Integer; const limit: Integer = -2147483648): Boolean; cdecl; begin Result := item.UpdateMin(cValue, limit); end;
+function Integer_UpdateMax(var item: Integer; const cValue: Integer; const limit: Integer = 2147483647): Boolean; cdecl; begin Result := item.UpdateMax(cValue, limit); end;
+function Integer_Updated(const item: Integer; const cValue: Integer; const limits: TRange): Integer; cdecl; begin Result := item.Updated(cValue, limits); end;
+function Integer_UpdatedMin(const item: Integer; const cValue: Integer; const limit: Integer = -2147483648): Integer; cdecl; begin Result := item.UpdatedMin(cValue, limit); end;
+function Integer_UpdatedMax(const item: Integer; const cValue: Integer; const limit: Integer = 2147483647): Integer; cdecl; begin Result := item.UpdatedMax(cValue, limit); end;
 
 function Int64_Prime(const x: Int64): Boolean; cdecl; inline; begin Result := x.Prime; end;
 function Int64_IsPrime(const x: Int64): Boolean; cdecl; inline; begin Result := x.IsPrime; end;
@@ -780,6 +792,7 @@ function TIntegerArray_Embed(var arr: TIntegerArray; const items: TIntegerArray;
 function TIntegerArray_Broaden1(const arr: TIntegerArray; const rValues: TRange; const aIndex: Integer): TRange; overload; cdecl; begin Result := arr.Broaden(rValues, aIndex); end;
 function TIntegerArray_Broaden2(const arr: TIntegerArray; const rValues: TRange; const sSorted: Boolean = False): TRange; overload; cdecl; begin Result := arr.Broaden(rValues, sSorted); end;
 function TIntegerArray_CountingSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.CountingSort(aAscending); end;
+function TIntegerArray_SegmentedCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const bucketSize: Integer = 1024): Integer; cdecl; begin Result := arr.SegmentedCountingSort(aAscending, bucketSize); end;
 function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer; cdecl; begin Result := arr.BinaryCountingSort(aAscending, maxRange); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;

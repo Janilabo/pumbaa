@@ -140,6 +140,18 @@ begin
   AddFunction(@Integer_BitMax, 'function Integer_BitMax(const item: Integer): Integer;');
   AddFunction(@Integer_Unbitify1, 'function Integer_Unbitify(const item: Integer): TBooleanArray; overload;');
   AddFunction(@Integer_Unbitify2, 'function Integer_Unbitify(const item: Integer; const bCount: Integer): TBooleanArray; overload;');
+  AddFunction(@Integer_Adjust, 'function Integer_Adjust(var item: Integer; const cValue: Integer; const limits: TRange): Boolean;'); 
+  AddFunction(@Integer_AdjustMin, 'function Integer_AdjustMin(var item: Integer; const cValue: Integer; const limit: Integer = -2147483648): Boolean;');
+  AddFunction(@Integer_AdjustMax, 'function Integer_AdjustMax(var item: Integer; const cValue: Integer; const limit: Integer = 2147483647): Boolean;');
+  AddFunction(@Integer_Adjusted, 'function Integer_Adjusted(const item: Integer; const cValue: Integer; const limits: TRange): Integer;');
+  AddFunction(@Integer_AdjustedMin, 'function Integer_AdjustedMin(const item: Integer; const cValue: Integer; const limit: Integer = -2147483648): Integer;');
+  AddFunction(@Integer_AdjustedMax, 'function Integer_AdjustedMax(const item: Integer; const cValue: Integer; const limit: Integer = 2147483647): Integer;');
+  AddFunction(@Integer_Update, 'function Integer_Update(var item: Integer; const cValue: Integer; const limits: TRange): Boolean;');
+  AddFunction(@Integer_UpdateMin, 'function Integer_UpdateMin(var item: Integer; const cValue: Integer; const limit: Integer = -2147483648): Boolean;');
+  AddFunction(@Integer_UpdateMax, 'function Integer_UpdateMax(var item: Integer; const cValue: Integer; const limit: Integer = 2147483647): Boolean;');
+  AddFunction(@Integer_Updated, 'function Integer_Updated(const item: Integer; const cValue: Integer; const limits: TRange): Integer;');
+  AddFunction(@Integer_UpdatedMin, 'function Integer_UpdatedMin(const item: Integer; const cValue: Integer; const limit: Integer = -2147483648): Integer;');
+  AddFunction(@Integer_UpdatedMax, 'function Integer_UpdatedMax(const item: Integer; const cValue: Integer; const limit: Integer = 2147483647): Integer;');
 
   AddFunction(@Int64_IsPrime, 'function Int64_IsPrime(const x: Int64): Boolean;');
   AddFunction(@Int64_Prime, 'function Int64_Prime(const x: Int64): Boolean;');
@@ -821,6 +833,7 @@ begin
   AddFunction(@TIntegerArray_Broaden1, 'function TIntegerArray_Broaden(const arr: TIntegerArray; const rValues: TRange; const aIndex: Integer): TRange; overload;');
   AddFunction(@TIntegerArray_Broaden2, 'function TIntegerArray_Broaden(const arr: TIntegerArray; const rValues: TRange; const sSorted: Boolean = False): TRange; overload;');
   AddFunction(@TIntegerArray_CountingSort, 'function TIntegerArray_CountingSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_SegmentedCountingSort, 'function TIntegerArray_SegmentedCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const bucketSize: Integer = 1024): Integer;');
   AddFunction(@TIntegerArray_BinaryCountingSort, 'function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
