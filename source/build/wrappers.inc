@@ -830,6 +830,11 @@ function TIntegerArray_BinaryRemove(var arr: TIntegerArray; const val: Integer; 
 function TIntegerArray_BinaryFind(const arr: TIntegerArray; const val: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFind(val, aAscending); end;
 function TIntegerArray_BinarySearchEx(const arr: TIntegerArray; const x: Integer; const ignore: Integer = -2147483648; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchEx(x, ignore, aAscending); end;
 function TIntegerArray_BinaryInsert(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsert(x, aAscending); end;
+function TIntegerArray_BinarySearchRange(const arr: TIntegerArray; const x: Integer; const rLeft, rRight: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchRange(x, rLeft, rRight); end;
+function TIntegerArray_BinaryDeduplicate(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryDeduplicate(aAscending); end;
+function TIntegerArray_BinaryUnduplicate(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUnduplicate(aAscending); end;
+function TIntegerArray_BinaryDeduplicated(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryDeduplicated(aAscending); end;
+function TIntegerArray_BinaryUnduplicated(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryUnduplicated(aAscending); end;
 function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BMerge(items, aAscending); end;
 function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BMerged(items, aAscending); end;
 
@@ -880,6 +885,11 @@ function TDoubleArray_BinaryRemove(var arr: TDoubleArray; const val: Double; con
 function TDoubleArray_BinaryFind(const arr: TDoubleArray; const val: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFind(val, aAscending); end;
 function TDoubleArray_BinarySearchEx(const arr: TDoubleArray; const x: Double; const ignore: Double = -2147483648; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchEx(x, ignore, aAscending); end;
 function TDoubleArray_BinaryInsert(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsert(x, aAscending); end;
+function TDoubleArray_BinarySearchRange(const arr: TDoubleArray; const x: Double; const rLeft, rRight: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchRange(x, rLeft, rRight); end;
+function TDoubleArray_BinaryDeduplicate(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryDeduplicate(aAscending); end;
+function TDoubleArray_BinaryUnduplicate(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUnduplicate(aAscending); end;
+function TDoubleArray_BinaryDeduplicated(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryDeduplicated(aAscending); end;
+function TDoubleArray_BinaryUnduplicated(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryUnduplicated(aAscending); end;
 
 function TStringArray_Tally(const arr: TStringArray): Int64; cdecl; begin Result := arr.Tally; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
