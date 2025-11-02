@@ -837,6 +837,8 @@ function TIntegerArray_BinaryDeduplicated(const arr: TIntegerArray; const aAscen
 function TIntegerArray_BinaryUnduplicated(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryUnduplicated(aAscending); end;
 function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BMerge(items, aAscending); end;
 function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BMerged(items, aAscending); end;
+function TIntegerArray_BinaryCombined(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryCombined(items, aAscending); end;
+function TIntegerArray_BinaryRank(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRank(x, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -890,6 +892,8 @@ function TDoubleArray_BinaryDeduplicate(var arr: TDoubleArray; const aAscending:
 function TDoubleArray_BinaryUnduplicate(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUnduplicate(aAscending); end;
 function TDoubleArray_BinaryDeduplicated(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryDeduplicated(aAscending); end;
 function TDoubleArray_BinaryUnduplicated(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryUnduplicated(aAscending); end;
+function TDoubleArray_BinaryCombined(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryCombined(items, aAscending); end;
+function TDoubleArray_BinaryRank(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRank(x, aAscending); end;
 
 function TStringArray_Tally(const arr: TStringArray): Int64; cdecl; begin Result := arr.Tally; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;

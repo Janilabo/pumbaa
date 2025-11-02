@@ -876,6 +876,8 @@ begin
   AddFunction(@TIntegerArray_BinaryUnduplicate, 'function TIntegerArray_BinaryUnduplicate(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryDeduplicated, 'function TIntegerArray_BinaryDeduplicated(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryUnduplicated, 'function TIntegerArray_BinaryUnduplicated(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryCombined, 'function TIntegerArray_BinaryCombined(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryRank, 'function TIntegerArray_BinaryRank(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BMerge, 'function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BMerged, 'function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
 
@@ -931,6 +933,8 @@ begin
   AddFunction(@TDoubleArray_BinaryUnduplicate, 'function TDoubleArray_BinaryUnduplicate(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_BinaryDeduplicated, 'function TDoubleArray_BinaryDeduplicated(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TDoubleArray_BinaryUnduplicated, 'function TDoubleArray_BinaryUnduplicated(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TDoubleArray_BinaryCombined, 'function TDoubleArray_BinaryCombined(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TDoubleArray_BinaryRank, 'function TDoubleArray_BinaryRank(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; overload;');
 
   AddFunction(@TStringArray_Tally, 'function TStringArray_Tally(const arr: TStringArray): Int64;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
