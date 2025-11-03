@@ -878,6 +878,11 @@ begin
   AddFunction(@TIntegerArray_BinaryUnduplicated, 'function TIntegerArray_BinaryUnduplicated(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryCombined, 'function TIntegerArray_BinaryCombined(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryRank, 'function TIntegerArray_BinaryRank(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryIndex, 'function TIntegerArray_BinaryIndex(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');  
+  AddFunction(@TIntegerArray_BinaryUpdate, 'function TIntegerArray_BinaryUpdate(var arr: TIntegerArray; const oValue, nValue: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryDelete, 'function TIntegerArray_BinaryDelete(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryReplace, 'function TIntegerArray_BinaryReplace(var arr: TIntegerArray; const oValue, nValue: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryReplaceAll, 'function TIntegerArray_BinaryReplaceAll(var arr: TIntegerArray; const oValue, nValue: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BMerge, 'function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BMerged, 'function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
 
@@ -935,6 +940,11 @@ begin
   AddFunction(@TDoubleArray_BinaryUnduplicated, 'function TDoubleArray_BinaryUnduplicated(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TDoubleArray_BinaryCombined, 'function TDoubleArray_BinaryCombined(const arr: TDoubleArray; const items: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TDoubleArray_BinaryRank, 'function TDoubleArray_BinaryRank(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryIndex, 'function TDoubleArray_BinaryIndex(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryUpdate, 'function TDoubleArray_BinaryUpdate(var arr: TDoubleArray; const oValue, nValue: Double; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TDoubleArray_BinaryDelete, 'function TDoubleArray_BinaryDelete(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TDoubleArray_BinaryReplace, 'function TDoubleArray_BinaryReplace(var arr: TDoubleArray; const oValue, nValue: Double; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TDoubleArray_BinaryReplaceAll, 'function TDoubleArray_BinaryReplaceAll(var arr: TDoubleArray; const oValue, nValue: Double; const aAscending: Boolean = True): Integer; overload;');
 
   AddFunction(@TStringArray_Tally, 'function TStringArray_Tally(const arr: TStringArray): Int64;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
@@ -3447,6 +3457,23 @@ begin
   AddFunction(@TArray_Sorted3, 'function TArray_Sorted(const arr: TStringArray; const aAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_Sorted4, 'function TArray_Sorted(const arr: TCharArray; const aAscending: Boolean = True): Boolean; overload;');
 
+  AddFunction(@TArray_IsSorted1, 'function TArray_IsSorted(const arr: TIntegerArray; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted2, 'function TArray_IsSorted(const arr: TDoubleArray; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted3, 'function TArray_IsSorted(const arr: TStringArray; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted4, 'function TArray_IsSorted(const arr: TCharArray; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted5, 'function TArray_IsSorted(const arr: TIntegerArray; const iStart, iStop: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted6, 'function TArray_IsSorted(const arr: TDoubleArray; const iStart, iStop: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted7, 'function TArray_IsSorted(const arr: TStringArray; const iStart, iStop: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted8, 'function TArray_IsSorted(const arr: TCharArray; const iStart, iStop: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted9, 'function TArray_IsSorted(const arr: TIntegerArray; const indexes: TRange; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted10, 'function TArray_IsSorted(const arr: TDoubleArray; const indexes: TRange; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted11, 'function TArray_IsSorted(const arr: TStringArray; const indexes: TRange; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted12, 'function TArray_IsSorted(const arr: TCharArray; const indexes: TRange; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted13, 'function TArray_IsSorted(const arr: TIntegerArray; const index: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted14, 'function TArray_IsSorted(const arr: TDoubleArray; const index: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted15, 'function TArray_IsSorted(const arr: TStringArray; const index: Integer; const aAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_IsSorted16, 'function TArray_IsSorted(const arr: TCharArray; const index: Integer; const aAscending: Boolean = True): Boolean; overload;');
+
   AddFunction(@TArray_InOrder1, 'function TArray_InOrder(const arr: TIntegerArray; const aAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_InOrder2, 'function TArray_InOrder(const arr: TDoubleArray; const aAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_InOrder3, 'function TArray_InOrder(const arr: TStringArray; const aAscending: Boolean = True): Boolean; overload;');
@@ -3749,6 +3776,11 @@ begin
   AddFunction(@TArray_TrendFalling2, 'function TArray_TrendFalling(const arr: TDoubleArray): Boolean; overload;');
   AddFunction(@TArray_TrendFalling3, 'function TArray_TrendFalling(const arr: TStringArray): Boolean; overload;');
   AddFunction(@TArray_TrendFalling4, 'function TArray_TrendFalling(const arr: TCharArray): Boolean; overload;');
+
+  AddFunction(@TArray_BinaryInsertionSort1, 'function TArray_BinaryInsertionSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryInsertionSort2, 'function TArray_BinaryInsertionSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryInsertionSort3, 'function TArray_BinaryInsertionSort(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryInsertionSort4, 'function TArray_BinaryInsertionSort(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload;');
 
   AddFunction(@TArray_MergeSortWeighted1, 'function TArray_MergeSortWeighted(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_MergeSortWeighted2, 'function TArray_MergeSortWeighted(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
