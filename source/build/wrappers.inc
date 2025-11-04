@@ -1110,6 +1110,10 @@ function TPointArray_QuickSortByX(var arr: TPointArray; const aAscending: Boolea
 function TPointArray_QuickSortByY(var arr: TPointArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSortByY(aAscending); end;
 function TPointArray_QuickSortByXY(var arr: TPointArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSortByXY(aAscending); end;
 function TPointArray_QuickSortByYX(var arr: TPointArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.QuickSortByYX(aAscending); end;
+function TPointArray_SortByIndex1(var arr: TPointArray; const aBounds: TBox; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByIndex(aBounds, aAscending); end;
+function TPointArray_SortByIndex2(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByIndex(aAscending); end;
+function TPointArray_SortByScanline1(var arr: TPointArray; const aBounds: TBox; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByScanline(aBounds, aAscending); end;
+function TPointArray_SortByScanline2(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByScanline(aAscending); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
@@ -2169,6 +2173,33 @@ function TArray_Group21(const arr: TBooleanArray; const weight: TDoubleArray; co
 function TArray_Group22(const arr: TPointArray; const weight: TDoubleArray; const wSorted: Boolean = False): T2DPointArray; overload; cdecl; begin Result := arr.Group(weight, wSorted); end;
 function TArray_Group23(const arr: TBoxArray; const weight: TDoubleArray; const wSorted: Boolean = False): T2DBoxArray; overload; cdecl; begin Result := arr.Group(weight, wSorted); end;
 function TArray_Group24(const arr: TRangeArray; const weight: TDoubleArray; const wSorted: Boolean = False): T2DRangeArray; overload; cdecl; begin Result := arr.Group(weight, wSorted); end;
+
+function TArray_Grouped1(const arr: TIntegerArray; const groups: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Grouped(groups); end;
+function TArray_Grouped2(const arr: TDoubleArray; const groups: TIntegerArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Grouped(groups); end;
+function TArray_Grouped3(const arr: TStringArray; const groups: TIntegerArray): T2DStringArray; overload; cdecl; begin Result := arr.Grouped(groups); end;
+function TArray_Grouped4(const arr: TCharArray; const groups: TIntegerArray): T2DCharArray; overload; cdecl; begin Result := arr.Grouped(groups); end;
+function TArray_Grouped5(const arr: TBooleanArray; const groups: TIntegerArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Grouped(groups); end;
+function TArray_Grouped6(const arr: TPointArray; const groups: TIntegerArray): T2DPointArray; overload; cdecl; begin Result := arr.Grouped(groups); end;
+function TArray_Grouped7(const arr: TBoxArray; const groups: TIntegerArray): T2DBoxArray; overload; cdecl; begin Result := arr.Grouped(groups); end;
+function TArray_Grouped8(const arr: TRangeArray; const groups: TIntegerArray): T2DRangeArray; overload; cdecl; begin Result := arr.Grouped(groups); end;
+
+function TArray_Groupify1(const arr: TIntegerArray; const groups: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Groupify(groups); end;
+function TArray_Groupify2(const arr: TDoubleArray; const groups: TIntegerArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Groupify(groups); end;
+function TArray_Groupify3(const arr: TStringArray; const groups: TIntegerArray): T2DStringArray; overload; cdecl; begin Result := arr.Groupify(groups); end;
+function TArray_Groupify4(const arr: TCharArray; const groups: TIntegerArray): T2DCharArray; overload; cdecl; begin Result := arr.Groupify(groups); end;
+function TArray_Groupify5(const arr: TBooleanArray; const groups: TIntegerArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Groupify(groups); end;
+function TArray_Groupify6(const arr: TPointArray; const groups: TIntegerArray): T2DPointArray; overload; cdecl; begin Result := arr.Groupify(groups); end;
+function TArray_Groupify7(const arr: TBoxArray; const groups: TIntegerArray): T2DBoxArray; overload; cdecl; begin Result := arr.Groupify(groups); end;
+function TArray_Groupify8(const arr: TRangeArray; const groups: TIntegerArray): T2DRangeArray; overload; cdecl; begin Result := arr.Groupify(groups); end;
+
+function TArray_Grouping1(const arr: TIntegerArray; const groups: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Grouping(groups); end;
+function TArray_Grouping2(const arr: TDoubleArray; const groups: TIntegerArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Grouping(groups); end;
+function TArray_Grouping3(const arr: TStringArray; const groups: TIntegerArray): T2DStringArray; overload; cdecl; begin Result := arr.Grouping(groups); end;
+function TArray_Grouping4(const arr: TCharArray; const groups: TIntegerArray): T2DCharArray; overload; cdecl; begin Result := arr.Grouping(groups); end;
+function TArray_Grouping5(const arr: TBooleanArray; const groups: TIntegerArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Grouping(groups); end;
+function TArray_Grouping6(const arr: TPointArray; const groups: TIntegerArray): T2DPointArray; overload; cdecl; begin Result := arr.Grouping(groups); end;
+function TArray_Grouping7(const arr: TBoxArray; const groups: TIntegerArray): T2DBoxArray; overload; cdecl; begin Result := arr.Grouping(groups); end;
+function TArray_Grouping8(const arr: TRangeArray; const groups: TIntegerArray): T2DRangeArray; overload; cdecl; begin Result := arr.Grouping(groups); end;
 
 function TArray_Grow1(const arr: TIntegerArray; const item: Integer; const allowDuplicates: Boolean = False): Integer; overload; cdecl; begin Result := arr.Grow(item, allowDuplicates); end;
 function TArray_Grow2(const arr: TDoubleArray; const item: Double; const allowDuplicates: Boolean = False): Integer; overload; cdecl; begin Result := arr.Grow(item, allowDuplicates); end;

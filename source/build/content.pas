@@ -1151,6 +1151,10 @@ begin
   AddFunction(@TPointArray_QuickSortByY, 'function TPointArray_QuickSortByY(var arr: TPointArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TPointArray_QuickSortByXY, 'function TPointArray_QuickSortByXY(var arr: TPointArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TPointArray_QuickSortByYX, 'function TPointArray_QuickSortByYX(var arr: TPointArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TPointArray_SortByIndex1, 'function TPointArray_SortByIndex(var arr: TPointArray; const aBounds: TBox; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TPointArray_SortByIndex2, 'function TPointArray_SortByIndex(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TPointArray_SortByScanline1, 'function TPointArray_SortByScanline(var arr: TPointArray; const aBounds: TBox; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TPointArray_SortByScanline2, 'function TPointArray_SortByScanline(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
   
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
@@ -2199,6 +2203,33 @@ begin
   AddFunction(@TArray_Group22, 'function TArray_Group(const arr: TPointArray; const weight: TDoubleArray; const wSorted: Boolean = False): T2DPointArray; overload;');
   AddFunction(@TArray_Group23, 'function TArray_Group(const arr: TBoxArray; const weight: TDoubleArray; const wSorted: Boolean = False): T2DBoxArray; overload;');
   AddFunction(@TArray_Group24, 'function TArray_Group(const arr: TRangeArray; const weight: TDoubleArray; const wSorted: Boolean = False): T2DRangeArray; overload;');
+  
+  AddFunction(@TArray_Grouped1, 'function TArray_Grouped(const arr: TIntegerArray; const groups: TIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TArray_Grouped2, 'function TArray_Grouped(const arr: TDoubleArray; const groups: TIntegerArray): T2DDoubleArray; overload;');
+  AddFunction(@TArray_Grouped3, 'function TArray_Grouped(const arr: TStringArray; const groups: TIntegerArray): T2DStringArray; overload;');
+  AddFunction(@TArray_Grouped4, 'function TArray_Grouped(const arr: TCharArray; const groups: TIntegerArray): T2DCharArray; overload;');
+  AddFunction(@TArray_Grouped5, 'function TArray_Grouped(const arr: TBooleanArray; const groups: TIntegerArray): T2DBooleanArray; overload;');
+  AddFunction(@TArray_Grouped6, 'function TArray_Grouped(const arr: TPointArray; const groups: TIntegerArray): T2DPointArray; overload;');
+  AddFunction(@TArray_Grouped7, 'function TArray_Grouped(const arr: TBoxArray; const groups: TIntegerArray): T2DBoxArray; overload;');
+  AddFunction(@TArray_Grouped8, 'function TArray_Grouped(const arr: TRangeArray; const groups: TIntegerArray): T2DRangeArray; overload;');
+
+  AddFunction(@TArray_Grouping1, 'function TArray_Grouping(const arr: TIntegerArray; const groups: TIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TArray_Grouping2, 'function TArray_Grouping(const arr: TDoubleArray; const groups: TIntegerArray): T2DDoubleArray; overload;');
+  AddFunction(@TArray_Grouping3, 'function TArray_Grouping(const arr: TStringArray; const groups: TIntegerArray): T2DStringArray; overload;');
+  AddFunction(@TArray_Grouping4, 'function TArray_Grouping(const arr: TCharArray; const groups: TIntegerArray): T2DCharArray; overload;');
+  AddFunction(@TArray_Grouping5, 'function TArray_Grouping(const arr: TBooleanArray; const groups: TIntegerArray): T2DBooleanArray; overload;');
+  AddFunction(@TArray_Grouping6, 'function TArray_Grouping(const arr: TPointArray; const groups: TIntegerArray): T2DPointArray; overload;');
+  AddFunction(@TArray_Grouping7, 'function TArray_Grouping(const arr: TBoxArray; const groups: TIntegerArray): T2DBoxArray; overload;');
+  AddFunction(@TArray_Grouping8, 'function TArray_Grouping(const arr: TRangeArray; const groups: TIntegerArray): T2DRangeArray; overload;');
+  
+  AddFunction(@TArray_Groupify1, 'function TArray_Groupify(const arr: TIntegerArray; const groups: TIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@TArray_Groupify2, 'function TArray_Groupify(const arr: TDoubleArray; const groups: TIntegerArray): T2DDoubleArray; overload;');
+  AddFunction(@TArray_Groupify3, 'function TArray_Groupify(const arr: TStringArray; const groups: TIntegerArray): T2DStringArray; overload;');
+  AddFunction(@TArray_Groupify4, 'function TArray_Groupify(const arr: TCharArray; const groups: TIntegerArray): T2DCharArray; overload;');
+  AddFunction(@TArray_Groupify5, 'function TArray_Groupify(const arr: TBooleanArray; const groups: TIntegerArray): T2DBooleanArray; overload;');
+  AddFunction(@TArray_Groupify6, 'function TArray_Groupify(const arr: TPointArray; const groups: TIntegerArray): T2DPointArray; overload;');
+  AddFunction(@TArray_Groupify7, 'function TArray_Groupify(const arr: TBoxArray; const groups: TIntegerArray): T2DBoxArray; overload;');
+  AddFunction(@TArray_Groupify8, 'function TArray_Groupify(const arr: TRangeArray; const groups: TIntegerArray): T2DRangeArray; overload;');
 
   AddFunction(@TArray_Grow1, 'function TArray_Grow(const arr: TIntegerArray; const item: Integer; const allowDuplicates: Boolean = False): Integer; overload;');
   AddFunction(@TArray_Grow2, 'function TArray_Grow(const arr: TDoubleArray; const item: Double; const allowDuplicates: Boolean = False): Integer; overload;');
