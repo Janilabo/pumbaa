@@ -1114,6 +1114,10 @@ function TPointArray_SortByIndex1(var arr: TPointArray; const aBounds: TBox; con
 function TPointArray_SortByIndex2(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByIndex(aAscending); end;
 function TPointArray_SortByScanline1(var arr: TPointArray; const aBounds: TBox; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByScanline(aBounds, aAscending); end;
 function TPointArray_SortByScanline2(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByScanline(aAscending); end;
+function TPointArray_ProximityCluster1(const arr: TPointArray; const xRadius, yRadius: Integer; const method: Integer = 0): T2DPointArray; overload; cdecl; begin Result := arr.ProximityCluster(xRadius, yRadius, method); end;
+function TPointArray_ProximityCluster2(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const method: Integer = 0): T2DPointArray; overload; cdecl; begin Result := arr.ProximityCluster(radius, metric, method); end;
+function TPointArray_Linked1(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Linked(radius, metric, check); end;
+function TPointArray_Linked2(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Linked(xRadius, yRadius, check); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
