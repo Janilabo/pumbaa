@@ -1118,6 +1118,10 @@ function TPointArray_ProximityCluster1(const arr: TPointArray; const xRadius, yR
 function TPointArray_ProximityCluster2(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const method: Integer = 0): T2DPointArray; overload; cdecl; begin Result := arr.ProximityCluster(radius, metric, method); end;
 function TPointArray_Linked1(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Linked(radius, metric, check); end;
 function TPointArray_Linked2(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 1): T2DPointArray; overload; cdecl; begin Result := arr.Linked(xRadius, yRadius, check); end;
+function TPointArray_Chain1(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 5): T2DPointArray; overload; cdecl; begin Result := arr.Chain(radius, metric, check); end;
+function TPointArray_Chain2(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload; cdecl; begin Result := arr.Chain(xRadius, yRadius, check); end;
+function TPointArray_Attach1(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 5): T2DPointArray; overload; cdecl; begin Result := arr.Attach(radius, metric, check); end;
+function TPointArray_Attach2(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload; cdecl; begin Result := arr.Attach(xRadius, yRadius, check); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;

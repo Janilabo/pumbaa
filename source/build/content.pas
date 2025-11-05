@@ -1159,6 +1159,10 @@ begin
   AddFunction(@TPointArray_ProximityCluster2, 'function TPointArray_ProximityCluster(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const method: Integer = 0): T2DPointArray; overload;');
   AddFunction(@TPointArray_Linked1, 'function TPointArray_Linked(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 1): T2DPointArray; overload;');
   AddFunction(@TPointArray_Linked2, 'function TPointArray_Linked(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 1): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Chain1, 'function TPointArray_Chain(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 5): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Chain2, 'function TPointArray_Chain(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Attach1, 'function TPointArray_Attach(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 5): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Attach2, 'function TPointArray_Attach(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload;');
   
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
