@@ -1163,6 +1163,14 @@ begin
   AddFunction(@TPointArray_Chain2, 'function TPointArray_Chain(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload;');
   AddFunction(@TPointArray_Attach1, 'function TPointArray_Attach(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 5): T2DPointArray; overload;');
   AddFunction(@TPointArray_Attach2, 'function TPointArray_Attach(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload;');
+  AddFunction(@TPointArray_RCluster1, 'function TPointArray_RCluster(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
+  AddFunction(@TPointArray_RCluster2, 'function TPointArray_RCluster(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload;');
+  AddFunction(@TPointArray_ToRows, 'function TPointArray_ToRows(const arr: TPointArray): T2DPointArray;');
+  AddFunction(@TPointArray_ToColumns, 'function TPointArray_ToColumns(const arr: TPointArray): T2DPointArray;');
+  AddFunction(@TPointArray_AsRows, 'function TPointArray_AsRows(const arr: TPointArray): T2DPointArray;');
+  AddFunction(@TPointArray_AsColumns, 'function TPointArray_AsColumns(const arr: TPointArray): T2DPointArray;');
+  AddFunction(@TPointArray_Rows, 'function TPointArray_Rows(const arr: TPointArray): T2DPointArray;');
+  AddFunction(@TPointArray_Columns, 'function TPointArray_Columns(const arr: TPointArray): T2DPointArray;');
   
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');

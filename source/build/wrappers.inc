@@ -1122,6 +1122,14 @@ function TPointArray_Chain1(const arr: TPointArray; const radius: Double = 1.0; 
 function TPointArray_Chain2(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload; cdecl; begin Result := arr.Chain(xRadius, yRadius, check); end;
 function TPointArray_Attach1(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean; const check: Integer = 5): T2DPointArray; overload; cdecl; begin Result := arr.Attach(radius, metric, check); end;
 function TPointArray_Attach2(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload; cdecl; begin Result := arr.Attach(xRadius, yRadius, check); end;
+function TPointArray_RCluster1(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload; cdecl; begin Result := arr.RCluster(xRadius, yRadius); end;
+function TPointArray_RCluster2(const arr: TPointArray; const radius: Double = 1.0; const metric: TDistanceMetric = dmEuclidean): T2DPointArray; overload; cdecl; begin Result := arr.RCluster(radius, metric); end;
+function TPointArray_ToRows(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.ToRows; end;
+function TPointArray_ToColumns(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.ToColumns; end;
+function TPointArray_AsRows(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.AsRows; end;
+function TPointArray_AsColumns(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.AsColumns; end;
+function TPointArray_Rows(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.Rows; end;
+function TPointArray_Columns(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.Columns; end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
