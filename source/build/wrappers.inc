@@ -856,6 +856,8 @@ function TIntegerArray_BinaryUpdate(var arr: TIntegerArray; const oValue, nValue
 function TIntegerArray_BinaryDelete(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryDelete(x, aAscending); end;
 function TIntegerArray_BinaryReplace(var arr: TIntegerArray; const oValue, nValue: Integer; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryReplace(oValue, nValue, aAscending); end;
 function TIntegerArray_BinaryReplaceAll(var arr: TIntegerArray; const oValue, nValue: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryReplaceAll(oValue, nValue, aAscending); end;
+function TIntegerArray_BinarySinglify(var arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySinglify(item, aAscending); end;
+function TIntegerArray_BinarySinglified(const arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinarySinglified(item, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -916,6 +918,8 @@ function TDoubleArray_BinaryUpdate(var arr: TDoubleArray; const oValue, nValue: 
 function TDoubleArray_BinaryDelete(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryDelete(x, aAscending); end;
 function TDoubleArray_BinaryReplace(var arr: TDoubleArray; const oValue, nValue: Double; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryReplace(oValue, nValue, aAscending); end;
 function TDoubleArray_BinaryReplaceAll(var arr: TDoubleArray; const oValue, nValue: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryReplaceAll(oValue, nValue, aAscending); end;
+function TDoubleArray_BinarySinglify(var arr: TDoubleArray; const item: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySinglify(item, aAscending); end;
+function TDoubleArray_BinarySinglified(const arr: TDoubleArray; const item: Double; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinarySinglified(item, aAscending); end;
 
 function TStringArray_Tally(const arr: TStringArray): Int64; cdecl; begin Result := arr.Tally; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
@@ -1144,6 +1148,8 @@ function TPointArray_Rows(const arr: TPointArray): T2DPointArray; cdecl; begin R
 function TPointArray_Columns(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.Columns; end;
 function TPointArray_BinarySearch(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinarySearch(item); end;
 function TPointArray_BinaryContains(const arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryContains(item); end;
+function TPointArray_BinaryInsert(var arr: TPointArray; const item: TPoint; const allowDuplicates: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsert(item, allowDuplicates); end;
+function TPointArray_BinaryAppend(var arr: TPointArray; const item: TPoint; const allowDuplicates: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAppend(item, allowDuplicates); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
@@ -3100,6 +3106,24 @@ function TArray_Shuffle6(const arr: TPointArray; const shuffles: Integer = 1): T
 function TArray_Shuffle7(const arr: TBoxArray; const shuffles: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
 function TArray_Shuffle8(const arr: TRangeArray; const shuffles: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Shuffle(shuffles); end;
 
+function TArray_Singlify1(var arr: TIntegerArray; const item: Integer): Integer; overload; cdecl; begin Result := arr.Singlify(item); end;
+function TArray_Singlify2(var arr: TDoubleArray; const item: Double): Integer; overload; cdecl; begin Result := arr.Singlify(item); end;
+function TArray_Singlify3(var arr: TStringArray; const item: string): Integer; overload; cdecl; begin Result := arr.Singlify(item); end;
+function TArray_Singlify4(var arr: TCharArray; const item: Char): Integer; overload; cdecl; begin Result := arr.Singlify(item); end;
+function TArray_Singlify5(var arr: TBooleanArray; const item: Boolean): Integer; overload; cdecl; begin Result := arr.Singlify(item); end;
+function TArray_Singlify6(var arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.Singlify(item); end;
+function TArray_Singlify7(var arr: TBoxArray; const item: TBox): Integer; overload; cdecl; begin Result := arr.Singlify(item); end;
+function TArray_Singlify8(var arr: TRangeArray; const item: TRange): Integer; overload; cdecl; begin Result := arr.Singlify(item); end;
+
+function TArray_Singlified1(const arr: TIntegerArray; const item: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Singlified(item); end;
+function TArray_Singlified2(const arr: TDoubleArray; const item: Double): TDoubleArray; overload; cdecl; begin Result := arr.Singlified(item); end;
+function TArray_Singlified3(const arr: TStringArray; const item: string): TStringArray; overload; cdecl; begin Result := arr.Singlified(item); end;
+function TArray_Singlified4(const arr: TCharArray; const item: Char): TCharArray; overload; cdecl; begin Result := arr.Singlified(item); end;
+function TArray_Singlified5(const arr: TBooleanArray; const item: Boolean): TBooleanArray; overload; cdecl; begin Result := arr.Singlified(item); end;
+function TArray_Singlified6(const arr: TPointArray; const item: TPoint): TPointArray; overload; cdecl; begin Result := arr.Singlified(item); end;
+function TArray_Singlified7(const arr: TBoxArray; const item: TBox): TBoxArray; overload; cdecl; begin Result := arr.Singlified(item); end;
+function TArray_Singlified8(const arr: TRangeArray; const item: TRange): TRangeArray; overload; cdecl; begin Result := arr.Singlified(item); end;
+
 function TArray_Singular1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
 function TArray_Singular2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
 function TArray_Singular3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
@@ -3108,6 +3132,24 @@ function TArray_Singular5(const arr: TBooleanArray): Boolean; overload; cdecl; b
 function TArray_Singular6(const arr: TPointArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
 function TArray_Singular7(const arr: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
 function TArray_Singular8(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Singular; end;
+
+function TArray_Singularize1(var arr: TIntegerArray; const item: Integer): Integer; overload; cdecl; begin Result := arr.Singularize(item); end;
+function TArray_Singularize2(var arr: TDoubleArray; const item: Double): Integer; overload; cdecl; begin Result := arr.Singularize(item); end;
+function TArray_Singularize3(var arr: TStringArray; const item: string): Integer; overload; cdecl; begin Result := arr.Singularize(item); end;
+function TArray_Singularize4(var arr: TCharArray; const item: Char): Integer; overload; cdecl; begin Result := arr.Singularize(item); end;
+function TArray_Singularize5(var arr: TBooleanArray; const item: Boolean): Integer; overload; cdecl; begin Result := arr.Singularize(item); end;
+function TArray_Singularize6(var arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.Singularize(item); end;
+function TArray_Singularize7(var arr: TBoxArray; const item: TBox): Integer; overload; cdecl; begin Result := arr.Singularize(item); end;
+function TArray_Singularize8(var arr: TRangeArray; const item: TRange): Integer; overload; cdecl; begin Result := arr.Singularize(item); end;
+
+function TArray_Singularized1(const arr: TIntegerArray; const item: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Singularized(item); end;
+function TArray_Singularized2(const arr: TDoubleArray; const item: Double): TDoubleArray; overload; cdecl; begin Result := arr.Singularized(item); end;
+function TArray_Singularized3(const arr: TStringArray; const item: string): TStringArray; overload; cdecl; begin Result := arr.Singularized(item); end;
+function TArray_Singularized4(const arr: TCharArray; const item: Char): TCharArray; overload; cdecl; begin Result := arr.Singularized(item); end;
+function TArray_Singularized5(const arr: TBooleanArray; const item: Boolean): TBooleanArray; overload; cdecl; begin Result := arr.Singularized(item); end;
+function TArray_Singularized6(const arr: TPointArray; const item: TPoint): TPointArray; overload; cdecl; begin Result := arr.Singularized(item); end;
+function TArray_Singularized7(const arr: TBoxArray; const item: TBox): TBoxArray; overload; cdecl; begin Result := arr.Singularized(item); end;
+function TArray_Singularized8(const arr: TRangeArray; const item: TRange): TRangeArray; overload; cdecl; begin Result := arr.Singularized(item); end;
 
 function TArray_Size1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Size; end;
 function TArray_Size2(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Size; end;
@@ -3186,6 +3228,24 @@ function TArray_Slots5(const arr: TBooleanArray): TIntegerArray; overload; cdecl
 function TArray_Slots6(const arr: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.Slots; end;
 function TArray_Slots7(const arr: TBoxArray): TIntegerArray; overload; cdecl; begin Result := arr.Slots; end;
 function TArray_Slots8(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Slots; end;
+
+function TArray_Soloize1(var arr: TIntegerArray; const item: Integer): Integer; overload; cdecl; begin Result := arr.Soloize(item); end;
+function TArray_Soloize2(var arr: TDoubleArray; const item: Double): Integer; overload; cdecl; begin Result := arr.Soloize(item); end;
+function TArray_Soloize3(var arr: TStringArray; const item: string): Integer; overload; cdecl; begin Result := arr.Soloize(item); end;
+function TArray_Soloize4(var arr: TCharArray; const item: Char): Integer; overload; cdecl; begin Result := arr.Soloize(item); end;
+function TArray_Soloize5(var arr: TBooleanArray; const item: Boolean): Integer; overload; cdecl; begin Result := arr.Soloize(item); end;
+function TArray_Soloize6(var arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.Soloize(item); end;
+function TArray_Soloize7(var arr: TBoxArray; const item: TBox): Integer; overload; cdecl; begin Result := arr.Soloize(item); end;
+function TArray_Soloize8(var arr: TRangeArray; const item: TRange): Integer; overload; cdecl; begin Result := arr.Soloize(item); end;
+
+function TArray_Soloized1(const arr: TIntegerArray; const item: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Soloized(item); end;
+function TArray_Soloized2(const arr: TDoubleArray; const item: Double): TDoubleArray; overload; cdecl; begin Result := arr.Soloized(item); end;
+function TArray_Soloized3(const arr: TStringArray; const item: string): TStringArray; overload; cdecl; begin Result := arr.Soloized(item); end;
+function TArray_Soloized4(const arr: TCharArray; const item: Char): TCharArray; overload; cdecl; begin Result := arr.Soloized(item); end;
+function TArray_Soloized5(const arr: TBooleanArray; const item: Boolean): TBooleanArray; overload; cdecl; begin Result := arr.Soloized(item); end;
+function TArray_Soloized6(const arr: TPointArray; const item: TPoint): TPointArray; overload; cdecl; begin Result := arr.Soloized(item); end;
+function TArray_Soloized7(const arr: TBoxArray; const item: TBox): TBoxArray; overload; cdecl; begin Result := arr.Soloized(item); end;
+function TArray_Soloized8(const arr: TRangeArray; const item: TRange): TRangeArray; overload; cdecl; begin Result := arr.Soloized(item); end;
 
 function TArray_Some1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Some; end;
 function TArray_Some2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Some; end;
