@@ -72,13 +72,13 @@ begin
   AddFunction(@Double_MaxDecimal, 'function Double_MaxDecimal(const x: Double): Double;');
   AddFunction(@Double_Accuracy, 'function Double_Accuracy(const x: Double; const a: Integer): Double;');
   AddFunction(@Double_Compare, 'function Double_Compare(const x, T: Double): Integer;');
+  AddFunction(@Double_Sign, 'function Double_Sign(const x: Double; const target: Double = 0): Integer;');
   AddFunction(@Double_Precede, 'function Double_Precede(const x, target: Double; const aAscending: Boolean): Boolean;');
   AddFunction(@Double_Ascending, 'function Double_Ascending(const x, target: Double): Boolean;');
   AddFunction(@Double_Descending, 'function Double_Descending(const x, target: Double): Boolean;');
   AddFunction(@Double_Distance, 'function Double_Distance(const x, T: Double): Double;');
   AddFunction(@Double_Difference, 'function Double_Difference(const x, T: Double): Double;');
   AddFunction(@Double_Opposite, 'function Double_Opposite(const x: Double): Double;');
-  AddFunction(@Double_Sign, 'function Double_Sign(const x: Double): Integer;');
   AddFunction(@Double_FixDegrees, 'function Double_FixDegrees(const x: Double): Double;');
   AddFunction(@Double_Degrees, 'function Double_Degrees(const x: Double): Double;');
   AddFunction(@Double_FixRadians, 'function Double_FixRadians(const x: Double): Double;');
@@ -131,7 +131,7 @@ begin
   AddFunction(@Integer_Distance, 'function Integer_Distance(const x, T: Integer): Integer;');
   AddFunction(@Integer_Difference, 'function Integer_Difference(const x, T: Integer): Integer;');
   AddFunction(@Integer_Opposite, 'function Integer_Opposite(const x: Integer): Integer;');
-  AddFunction(@Integer_Sign, 'function Integer_Sign(const x: Integer): Integer;');
+  AddFunction(@Integer_Sign, 'function Integer_Sign(const x: Integer; const target: Integer = 0): Integer;');
   AddFunction(@Integer_Shuffle, 'function Integer_Shuffle(const x: Integer): Integer;');
   AddFunction(@Integer_Over, 'function Integer_Over(const x, target: Integer): Boolean;');
   AddFunction(@Integer_Under, 'function Integer_Under(const x, target: Integer): Boolean;');
@@ -170,7 +170,7 @@ begin
   AddFunction(@Int64_Distance, 'function Int64_Distance(const x, T: Int64): Int64;');
   AddFunction(@Int64_Difference, 'function Int64_Difference(const x, T: Int64): Int64;');
   AddFunction(@Int64_Opposite, 'function Int64_Opposite(const x: Int64): Int64;');
-  AddFunction(@Int64_Sign, 'function Int64_Sign(const x: Int64): Integer;');
+  AddFunction(@Int64_Sign, 'function Int64_Sign(const x: Int64; const target: Int64 = 0): Integer;');
   AddFunction(@Int64_Shuffle, 'function Int64_Shuffle(const x: Int64): Int64;');
   AddFunction(@Int64_Over, 'function Int64_Over(const x, target: Int64): Boolean;');
   AddFunction(@Int64_Under, 'function Int64_Under(const x, target: Int64): Boolean;');
@@ -318,6 +318,10 @@ begin
   AddFunction(@TPoint_YCompare, 'function TPoint_YCompare(const pt: TPoint; const target: TPoint): Integer; overload;');
   AddFunction(@TPoint_XComp, 'function TPoint_XComp(const pt: TPoint; const target: TPoint): Integer; overload;');
   AddFunction(@TPoint_YComp, 'function TPoint_YComp(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_CompareX, 'function TPoint_CompareX(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_CompareY, 'function TPoint_CompareY(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_CompX, 'function TPoint_CompX(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_CompY, 'function TPoint_CompY(const pt: TPoint; const target: TPoint): Integer; overload;');
   AddFunction(@TPoint_Inside, 'function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean;');
   AddFunction(@TPoint_InCircle, 'function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean;');
   AddFunction(@TPoint_InEllipse, 'function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean;');
