@@ -309,7 +309,15 @@ begin
   AddFunction(@TPoint_Create3, 'function TPoint_Create: TPoint; overload;');
   AddFunction(@TPoint_Construct, 'function TPoint_Construct(const pX, pY: Integer): TPoint; overload;');
   AddFunction(@TPoint_Build, 'function TPoint_Build(const X, Y: Integer): TPoint;');
+  AddFunction(@TPoint_Comparison, 'function TPoint_Comparison(const pt: TPoint; const target: TPoint): Integer; overload;');
   AddFunction(@TPoint_Compare, 'function TPoint_Compare(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_Compared, 'function TPoint_Compared(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_Comp, 'function TPoint_Comp(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_Cmp, 'function TPoint_Cmp(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_XCompare, 'function TPoint_XCompare(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_YCompare, 'function TPoint_YCompare(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_XComp, 'function TPoint_XComp(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_YComp, 'function TPoint_YComp(const pt: TPoint; const target: TPoint): Integer; overload;');
   AddFunction(@TPoint_Inside, 'function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean;');
   AddFunction(@TPoint_InCircle, 'function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean;');
   AddFunction(@TPoint_InEllipse, 'function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean;');
@@ -1171,7 +1179,9 @@ begin
   AddFunction(@TPointArray_AsColumns, 'function TPointArray_AsColumns(const arr: TPointArray): T2DPointArray;');
   AddFunction(@TPointArray_Rows, 'function TPointArray_Rows(const arr: TPointArray): T2DPointArray;');
   AddFunction(@TPointArray_Columns, 'function TPointArray_Columns(const arr: TPointArray): T2DPointArray;');
-  
+  AddFunction(@TPointArray_BinarySearch, 'function TPointArray_BinarySearch(const arr: TPointArray; const item: TPoint): Integer; overload;');  
+  AddFunction(@TPointArray_BinaryContains, 'function TPointArray_BinaryContains(const arr: TPointArray; const item: TPoint): Boolean; overload;');
+
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
 

@@ -268,7 +268,15 @@ function TPoint_Create2(const value: Integer): TPoint; overload; cdecl; var pt: 
 function TPoint_Create3: TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create; end;
 function TPoint_Construct(const pX, pY: Integer): TPoint; overload; cdecl; begin Result := TPoint.Construct(pX, pY); end;
 function TPoint_Build(const X, Y: Integer): TPoint; cdecl; inline; var pt: TPoint; begin Result := pt.Build(X, Y); end;
+function TPoint_Comparison(const pt: TPoint; const target: TPoint): Integer; overload; cdecl; begin Result := pt.Comparison(target); end;
 function TPoint_Compare(const pt: TPoint; const target: TPoint): Integer; overload; cdecl; begin Result := pt.Compare(target); end;
+function TPoint_Compared(const pt: TPoint; const target: TPoint): Integer; overload; cdecl; begin Result := pt.Compared(target); end;
+function TPoint_Comp(const pt: TPoint; const target: TPoint): Integer; overload; cdecl; begin Result := pt.Comp(target); end;
+function TPoint_Cmp(const pt: TPoint; const target: TPoint): Integer; overload; cdecl; begin Result := pt.Cmp(target); end;
+function TPoint_XComp(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.XComp(target); end;
+function TPoint_YComp(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.YComp(target); end;
+function TPoint_XCompare(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.XCompare(target); end;
+function TPoint_YCompare(const pt: TPoint; const target: TPoint): Integer; cdecl; begin Result := pt.YCompare(target); end;
 function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean; cdecl; inline; begin Result := pt.Inside(bx); end;
 function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean; cdecl; inline; begin Result := pt.InCircle(center, radius); end;
 function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean; cdecl; inline; begin Result := pt.InEllipse(center, XRadius, YRadius); end;
@@ -1130,6 +1138,8 @@ function TPointArray_AsRows(const arr: TPointArray): T2DPointArray; cdecl; begin
 function TPointArray_AsColumns(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.AsColumns; end;
 function TPointArray_Rows(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.Rows; end;
 function TPointArray_Columns(const arr: TPointArray): T2DPointArray; cdecl; begin Result := arr.Columns; end;
+function TPointArray_BinarySearch(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinarySearch(item); end;
+function TPointArray_BinaryContains(const arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryContains(item); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
