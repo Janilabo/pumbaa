@@ -1150,6 +1150,13 @@ function TPointArray_BinarySearch(const arr: TPointArray; const item: TPoint): I
 function TPointArray_BinaryContains(const arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryContains(item); end;
 function TPointArray_BinaryInsert(var arr: TPointArray; const item: TPoint; const allowDuplicates: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsert(item, allowDuplicates); end;
 function TPointArray_BinaryAppend(var arr: TPointArray; const item: TPoint; const allowDuplicates: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAppend(item, allowDuplicates); end;
+function TPointArray_BinaryInsertionSort(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertionSort(aAscending); end;
+function TPointArray_BinaryInsertionSorted(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.BinaryInsertionSorted(aAscending); end; 
+function TPointArray_BinaryCount(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryCount(item); end;
+function TPointArray_BinaryRange(const arr: TPointArray; const item: TPoint): TRange; overload; cdecl; begin Result := arr.BinaryRange(item); end;
+function TPointArray_BinaryScan(const arr: TPointArray; const area: TBox): TIntegerArray; overload; cdecl; begin Result := arr.BinaryScan(area); end;
+function TPointArray_BinaryDelete(var arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryDelete(item); end;
+function TPointArray_BinaryRemove(var arr: TPointArray; const item: TPoint; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRemove(item, all); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
