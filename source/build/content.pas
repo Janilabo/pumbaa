@@ -1187,18 +1187,26 @@ begin
   AddFunction(@TPointArray_AsColumns, 'function TPointArray_AsColumns(const arr: TPointArray): T2DPointArray;');
   AddFunction(@TPointArray_Rows, 'function TPointArray_Rows(const arr: TPointArray): T2DPointArray;');
   AddFunction(@TPointArray_Columns, 'function TPointArray_Columns(const arr: TPointArray): T2DPointArray;');
-  AddFunction(@TPointArray_BinarySearch, 'function TPointArray_BinarySearch(const arr: TPointArray; const item: TPoint): Integer; overload;');  
+  AddFunction(@TPointArray_BinarySearch, 'function TPointArray_BinarySearch(const arr: TPointArray; const item: TPoint): Integer; overload;');
+  AddFunction(@TPointArray_BinaryPosL, 'function TPointArray_BinaryPosL(const arr: TPointArray; const item: TPoint): Integer; overload;'); 
+  AddFunction(@TPointArray_BinaryPosR, 'function TPointArray_BinaryPosR(const arr: TPointArray; const item: TPoint): Integer; overload;');   
+  AddFunction(@TPointArray_BinaryRank, 'function TPointArray_BinaryRank(const arr: TPointArray; const item: TPoint): Integer; overload;');
   AddFunction(@TPointArray_BinaryContains, 'function TPointArray_BinaryContains(const arr: TPointArray; const item: TPoint): Boolean; overload;');
   AddFunction(@TPointArray_BinaryInsert, 'function TPointArray_BinaryInsert(var arr: TPointArray; const item: TPoint; const allowDuplicates: Boolean = True): Integer; overload;');
   AddFunction(@TPointArray_BinaryAppend, 'function TPointArray_BinaryAppend(var arr: TPointArray; const item: TPoint; const allowDuplicates: Boolean = True): Integer; overload;');
+  AddFunction(@TPointArray_BinarySupply, 'function TPointArray_BinarySupply(var arr: TPointArray; const item: TPoint): Integer; overload;');
   AddFunction(@TPointArray_BinaryInsertionSort, 'function TPointArray_BinaryInsertionSort(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TPointArray_BinaryInsertionSorted, 'function TPointArray_BinaryInsertionSorted(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload;');
   AddFunction(@TPointArray_BinaryCount, 'function TPointArray_BinaryCount(const arr: TPointArray; const item: TPoint): Integer; overload;');
+  AddFunction(@TPointArray_BinaryAmount, 'function TPointArray_BinaryAmount(const arr: TPointArray; const item: TPoint): Integer; overload;');
   AddFunction(@TPointArray_BinaryRange, 'function TPointArray_BinaryRange(const arr: TPointArray; const item: TPoint): TRange; overload;');
+  AddFunction(@TPointArray_BinaryRangeOf, 'function TPointArray_BinaryRangeOf(const arr: TPointArray; const item: TPoint): TRange; overload;');
   AddFunction(@TPointArray_BinaryScan, 'function TPointArray_BinaryScan(const arr: TPointArray; const area: TBox): TIntegerArray; overload;');
   AddFunction(@TPointArray_BinaryDelete, 'function TPointArray_BinaryDelete(var arr: TPointArray; const item: TPoint): Boolean; overload;');
   AddFunction(@TPointArray_BinaryRemove, 'function TPointArray_BinaryRemove(var arr: TPointArray; const item: TPoint; const all: Boolean = True): Integer; overload;');
-
+  AddFunction(@TPointArray_BinarySinglify, 'function TPointArray_BinarySinglify(var arr: TPointArray; const item: TPoint): Integer; overload;');
+  AddFunction(@TPointArray_BinarySinglified, 'function TPointArray_BinarySinglified(const arr: TPointArray; const item: TPoint): TPointArray; overload;');
+  
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
 
