@@ -897,6 +897,10 @@ begin
   AddFunction(@TIntegerArray_BinaryReplaceAll, 'function TIntegerArray_BinaryReplaceAll(var arr: TIntegerArray; const oValue, nValue: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinarySinglify, 'function TIntegerArray_BinarySinglify(var arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinarySinglified, 'function TIntegerArray_BinarySinglified(const arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryInterpolationSearch, 'function TIntegerArray_BinaryInterpolationSearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryProbabilisticSearch1, 'function TIntegerArray_BinaryProbabilisticSearch(const arr: TIntegerArray; const x: Integer; const bias: Double = 0.0; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryProbabilisticSearch2, 'function TIntegerArray_BinaryProbabilisticSearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean; const bias: Double = 0.0): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryPinpoint, 'function TIntegerArray_BinaryPinpoint(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BMerge, 'function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BMerged, 'function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
 
