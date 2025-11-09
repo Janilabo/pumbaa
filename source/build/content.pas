@@ -901,6 +901,8 @@ begin
   AddFunction(@TIntegerArray_BinaryProbabilisticSearch1, 'function TIntegerArray_BinaryProbabilisticSearch(const arr: TIntegerArray; const x: Integer; const bias: Double = 0.0; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryProbabilisticSearch2, 'function TIntegerArray_BinaryProbabilisticSearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean; const bias: Double = 0.0): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryPinpoint, 'function TIntegerArray_BinaryPinpoint(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryScan, 'function TIntegerArray_BinaryScan(const arr: TIntegerArray; const area: TRange; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryScanned, 'function TIntegerArray_BinaryScanned(const arr: TIntegerArray; const area: TRange; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BMerge, 'function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BMerged, 'function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
 
@@ -1206,6 +1208,7 @@ begin
   AddFunction(@TPointArray_BinaryRange, 'function TPointArray_BinaryRange(const arr: TPointArray; const item: TPoint): TRange; overload;');
   AddFunction(@TPointArray_BinaryRangeOf, 'function TPointArray_BinaryRangeOf(const arr: TPointArray; const item: TPoint): TRange; overload;');
   AddFunction(@TPointArray_BinaryScan, 'function TPointArray_BinaryScan(const arr: TPointArray; const area: TBox): TIntegerArray; overload;');
+  AddFunction(@TPointArray_BinaryScanned, 'function TPointArray_BinaryScanned(const arr: TPointArray; const area: TBox): TIntegerArray; overload;');
   AddFunction(@TPointArray_BinaryDelete, 'function TPointArray_BinaryDelete(var arr: TPointArray; const item: TPoint): Boolean; overload;');
   AddFunction(@TPointArray_BinaryRemove, 'function TPointArray_BinaryRemove(var arr: TPointArray; const item: TPoint; const all: Boolean = True): Integer; overload;');
   AddFunction(@TPointArray_BinarySinglify, 'function TPointArray_BinarySinglify(var arr: TPointArray; const item: TPoint): Integer; overload;');

@@ -862,6 +862,8 @@ function TIntegerArray_BinaryReplace(var arr: TIntegerArray; const oValue, nValu
 function TIntegerArray_BinaryReplaceAll(var arr: TIntegerArray; const oValue, nValue: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryReplaceAll(oValue, nValue, aAscending); end;
 function TIntegerArray_BinarySinglify(var arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySinglify(item, aAscending); end;
 function TIntegerArray_BinarySinglified(const arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinarySinglified(item, aAscending); end;
+function TIntegerArray_BinaryScan(const arr: TIntegerArray; const area: TRange; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryScan(area, aAscending); end;
+function TIntegerArray_BinaryScanned(const arr: TIntegerArray; const area: TRange; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryScanned(area, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -1165,6 +1167,7 @@ function TPointArray_BinaryAmount(const arr: TPointArray; const item: TPoint): I
 function TPointArray_BinaryRange(const arr: TPointArray; const item: TPoint): TRange; overload; cdecl; begin Result := arr.BinaryRange(item); end;
 function TPointArray_BinaryRangeOf(const arr: TPointArray; const item: TPoint): TRange; overload; cdecl; begin Result := arr.BinaryRangeOf(item); end;
 function TPointArray_BinaryScan(const arr: TPointArray; const area: TBox): TIntegerArray; overload; cdecl; begin Result := arr.BinaryScan(area); end;
+function TPointArray_BinaryScanned(const arr: TPointArray; const area: TBox): TIntegerArray; overload; cdecl; begin Result := arr.BinaryScanned(area); end;
 function TPointArray_BinaryDelete(var arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryDelete(item); end;
 function TPointArray_BinaryRemove(var arr: TPointArray; const item: TPoint; const all: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRemove(item, all); end;
 function TPointArray_BinarySinglify(var arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinarySinglify(item); end;
