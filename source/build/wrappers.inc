@@ -1,3 +1,25 @@
+function Swop1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, oAscending); end;
+function Swop2(var A, B: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, oAscending); end;
+function Swop3(var A, B: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, oAscending); end;
+function Swop4(var A, B: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, oAscending); end;
+function Swop5(var A, B: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, oAscending); end;
+function Swop6(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, C, oAscending); end;
+function Swop7(var A, B, C: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, C, oAscending); end;
+function Swop8(var A, B, C: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, C, oAscending); end;
+function Swop9(var A, B, C: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, C, oAscending); end;
+function Swop10(var A, B, C: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, C, oAscending); end;
+
+function Sort1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, oAscending); end;
+function Sort2(var A, B: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, oAscending); end;
+function Sort3(var A, B: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, oAscending); end;
+function Sort4(var A, B: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, oAscending); end;
+function Sort5(var A, B: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, oAscending); end;
+function Sort6(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
+function Sort7(var A, B, C: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
+function Sort8(var A, B, C: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
+function Sort9(var A, B, C: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
+function Sort10(var A, B, C: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
+
 function TConnection_Create(const index1, index2: Integer): TConnection; overload; cdecl; var cn: TConnection; begin Result := cn.Create(index1, index2); end;
 function TConnection_Construct(const index1, index2: Integer): TConnection; overload; cdecl; begin Result := TConnection.Construct(index1, index2); end;
 function TConnection_Build(const index1, index2: Integer): TConnection; overload; cdecl; inline; var cn: TConnection; begin Result := cn.Build(index1, index2); end;

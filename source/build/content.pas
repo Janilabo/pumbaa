@@ -38,6 +38,26 @@ begin
   AddFunction(@Random2, 'function Random2(const x: Integer; const r: Integer = 2): Integer; overload;');
   AddFunction(@RandomMax, 'function RandomMax(const x: Integer; const r: Integer = 2): Integer; overload;');
   AddFunction(@RandomMin, 'function RandomMin(const x: Integer; const r: Integer = 2): Integer; overload;');
+  AddFunction(@Swop1, 'function Swop(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop2, 'function Swop(var A, B: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop3, 'function Swop(var A, B: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop4, 'function Swop(var A, B: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop5, 'function Swop(var A, B: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop6, 'function Swop(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop7, 'function Swop(var A, B, C: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop8, 'function Swop(var A, B, C: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop9, 'function Swop(var A, B, C: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Swop10, 'function Swop(var A, B, C: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort1, 'function Sort(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort2, 'function Sort(var A, B: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort3, 'function Sort(var A, B: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort4, 'function Sort(var A, B: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort5, 'function Sort(var A, B: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort6, 'function Sort(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort7, 'function Sort(var A, B, C: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort8, 'function Sort(var A, B, C: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort9, 'function Sort(var A, B, C: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@Sort10, 'function Sort(var A, B, C: TPoint; const oAscending: Boolean = True): Boolean; overload;');
 
   AddFunction(@TConnection_Create, 'function TConnection_Create(const index1, index2: Integer): TConnection; overload;');
   AddFunction(@TConnection_Construct, 'function TConnection_Construct(const index1, index2: Integer): TConnection; overload;');
