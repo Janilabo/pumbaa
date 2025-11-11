@@ -809,6 +809,9 @@ function TIntegerArray_Ranges1(const arr: TIntegerArray): TRangeArray; overload;
 function TIntegerArray_Ranges2(const arr: TIntegerArray; const aAscending: Boolean): TRangeArray; overload; cdecl; begin Result := arr.Ranges(aAscending); end;
 function TIntegerArray_CountingSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.CountingSort(aAscending); end;
 function TIntegerArray_SegmentedCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const bucketSize: Integer = 1024): Integer; cdecl; begin Result := arr.SegmentedCountingSort(aAscending, bucketSize); end;
+function TIntegerArray_IsMonotonic(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.IsMonotonic; end;
+function TIntegerArray_Monotonicity(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Monotonicity; end;
+function TIntegerArray_Monotony(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Monotony; end;
 function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer; cdecl; begin Result := arr.BinaryCountingSort(aAscending, maxRange); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
@@ -884,6 +887,9 @@ function ATIA_Merge(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl;
 function TDoubleArray_Reinit(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 function TDoubleArray_Attach(var arr: TDoubleArray; const items: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
 function TDoubleArray_Embed(var arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Embed(items, index); end;
+function TDoubleArray_IsMonotonic(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.IsMonotonic; end;
+function TDoubleArray_Monotonicity(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Monotonicity; end;
+function TDoubleArray_Monotony(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Monotony; end;
 function TDoubleArray_BSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TDoubleArray_BinarySort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TDoubleArray_BinarySorted(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
@@ -3909,6 +3915,16 @@ function TArray_Monotone1(const arr: TIntegerArray): Boolean; overload; cdecl; b
 function TArray_Monotone2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Monotone; end;
 function TArray_Monotone3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Monotone; end;
 function TArray_Monotone4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Monotone; end;
+
+function TArray_IsMonotone1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.IsMonotone; end;
+function TArray_IsMonotone2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.IsMonotone; end;
+function TArray_IsMonotone3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.IsMonotone; end;
+function TArray_IsMonotone4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.IsMonotone; end;
+
+function TArray_Monotonious1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Monotonious; end;
+function TArray_Monotonious2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Monotonious; end;
+function TArray_Monotonious3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Monotonious; end;
+function TArray_Monotonious4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Monotonious; end;
 
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
