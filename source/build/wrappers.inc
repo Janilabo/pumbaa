@@ -20,6 +20,11 @@ function Sort8(var A, B, C: string; const oAscending: Boolean = True): Boolean; 
 function Sort9(var A, B, C: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
 function Sort10(var A, B, C: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
 
+function XORSort1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := XORSort(A, B); end;
+function XORSort2(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := XORSort(A, B, C); end;
+function iSort1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := iSort(A, B); end;
+function iSort2(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := iSort(A, B, C); end;
+
 function TConnection_Create(const index1, index2: Integer): TConnection; overload; cdecl; var cn: TConnection; begin Result := cn.Create(index1, index2); end;
 function TConnection_Construct(const index1, index2: Integer): TConnection; overload; cdecl; begin Result := TConnection.Construct(index1, index2); end;
 function TConnection_Build(const index1, index2: Integer): TConnection; overload; cdecl; inline; var cn: TConnection; begin Result := cn.Build(index1, index2); end;
@@ -3947,6 +3952,11 @@ function TArray_Monotonious1(const arr: TIntegerArray): Boolean; overload; cdecl
 function TArray_Monotonious2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Monotonious; end;
 function TArray_Monotonious3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Monotonious; end;
 function TArray_Monotonious4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Monotonious; end;
+
+function TArray_Unidirectional1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Unidirectional; end;
+function TArray_Unidirectional2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Unidirectional; end;
+function TArray_Unidirectional3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Unidirectional; end;
+function TArray_Unidirectional4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Unidirectional; end;
 
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
