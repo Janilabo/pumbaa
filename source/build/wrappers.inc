@@ -1231,6 +1231,11 @@ function TPointArray_BinaryRemove(var arr: TPointArray; const item: TPoint; cons
 function TPointArray_BinarySinglify(var arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinarySinglify(item); end;
 function TPointArray_BinarySinglified(const arr: TPointArray; const item: TPoint): TPointArray; overload; cdecl; begin Result := arr.BinarySinglified(item); end;
 function TPointArray_BinaryMerge(const arr: TPointArray; const items: TPointArray): TPointArray; overload; cdecl; begin Result := arr.BinaryMerge(items); end;
+function TPointArray_BinaryReplace(var arr: TPointArray; const oItem, nItem: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryReplace(oItem, nItem); end;
+function TPointArray_BinaryReplaceAll(var arr: TPointArray; const oItem, nItem: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryReplaceAll(oItem, nItem); end;
+function TPointArray_BinaryYs(const arr: TPointArray; const unique: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryYs(unique); end;
+function TPointArray_BinaryYPoints(const arr: TPointArray; const yValue: Integer): TPointArray; overload; cdecl; begin Result := arr.BinaryYPoints(yValue); end;
+function TPointArray_BinaryXPoints(const arr: TPointArray; const xValue: Integer): TPointArray; overload; cdecl; begin Result := arr.BinaryXPoints(xValue); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;

@@ -1269,7 +1269,12 @@ begin
   AddFunction(@TPointArray_BinarySinglify, 'function TPointArray_BinarySinglify(var arr: TPointArray; const item: TPoint): Integer; overload;');
   AddFunction(@TPointArray_BinarySinglified, 'function TPointArray_BinarySinglified(const arr: TPointArray; const item: TPoint): TPointArray; overload;');
   AddFunction(@TPointArray_BinaryMerge, 'function TPointArray_BinaryMerge(const arr: TPointArray; const items: TPointArray): TPointArray; overload;');
-  
+  AddFunction(@TPointArray_BinaryReplace, 'function TPointArray_BinaryReplace(var arr: TPointArray; const oItem, nItem: TPoint): Boolean; overload;');
+  AddFunction(@TPointArray_BinaryReplaceAll, 'function TPointArray_BinaryReplaceAll(var arr: TPointArray; const oItem, nItem: TPoint): Integer; overload;');
+  AddFunction(@TPointArray_BinaryYs, 'function TPointArray_BinaryYs(const arr: TPointArray; const unique: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TPointArray_BinaryYPoints, 'function TPointArray_BinaryYPoints(const arr: TPointArray; const yValue: Integer): TPointArray; overload;');
+  AddFunction(@TPointArray_BinaryXPoints, 'function TPointArray_BinaryXPoints(const arr: TPointArray; const xValue: Integer): TPointArray; overload;');
+
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
 
