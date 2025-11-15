@@ -917,6 +917,10 @@ begin
   AddFunction(@TIntegerArray_BinaryShrink, 'function TIntegerArray_BinaryShrink(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean;');
   AddFunction(@TIntegerArray_BinaryLowerBound, 'function TIntegerArray_BinaryLowerBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryUpperBound, 'function TIntegerArray_BinaryUpperBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryRightmost, 'function TIntegerArray_BinaryRightmost(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryLeftmost, 'function TIntegerArray_BinaryLeftmost(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryFirst, 'function TIntegerArray_BinaryFirst(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryLast, 'function TIntegerArray_BinaryLast(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryRange1, 'function TIntegerArray_BinaryRange(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinaryRange2, 'function TIntegerArray_BinaryRange(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinarySpan, 'function TIntegerArray_BinarySpan(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
@@ -994,6 +998,10 @@ begin
   AddFunction(@TDoubleArray_BinaryShrink, 'function TDoubleArray_BinaryShrink(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean;');
   AddFunction(@TDoubleArray_BinaryLowerBound, 'function TDoubleArray_BinaryLowerBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryUpperBound, 'function TDoubleArray_BinaryUpperBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryRightmost, 'function TDoubleArray_BinaryRightmost(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryLeftmost, 'function TDoubleArray_BinaryLeftmost(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryFirst, 'function TDoubleArray_BinaryFirst(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryLast, 'function TDoubleArray_BinaryLast(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryRange1, 'function TDoubleArray_BinaryRange(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_BinaryRange2, 'function TDoubleArray_BinaryRange(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_BinarySpan, 'function TDoubleArray_BinarySpan(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; overload;');
@@ -1274,6 +1282,7 @@ begin
   AddFunction(@TPointArray_BinaryYs, 'function TPointArray_BinaryYs(const arr: TPointArray; const unique: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TPointArray_BinaryYPoints, 'function TPointArray_BinaryYPoints(const arr: TPointArray; const yValue: Integer): TPointArray; overload;');
   AddFunction(@TPointArray_BinaryXPoints, 'function TPointArray_BinaryXPoints(const arr: TPointArray; const xValue: Integer): TPointArray; overload;');
+  AddFunction(@TPointArray_BinaryGrouped, 'function TPointArray_BinaryGrouped(const arr: TPointArray): T2DPointArray; overload;');
 
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');

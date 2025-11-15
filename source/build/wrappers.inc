@@ -879,6 +879,10 @@ function TIntegerArray_BinaryGrow(var arr: TIntegerArray; const x: Integer; cons
 function TIntegerArray_BinaryShrink(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryShrink(x, aAscending); end;
 function TIntegerArray_BinaryLowerBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryLowerBound(x, aAscending); end;
 function TIntegerArray_BinaryUpperBound(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUpperBound(x, aAscending); end;
+function TIntegerArray_BinaryRightmost(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryRightmost(x, aAscending); end;
+function TIntegerArray_BinaryLeftmost(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryLeftmost(x, aAscending); end;
+function TIntegerArray_BinaryFirst(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryFirst(x, aAscending); end;
+function TIntegerArray_BinaryLast(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryLast(x, aAscending); end;
 function TIntegerArray_BinaryRange1(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TIntegerArray_BinaryRange2(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TIntegerArray_BinarySpan(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinarySpan(x, aAscending); end;
@@ -956,6 +960,10 @@ function TDoubleArray_BinaryGrow(var arr: TDoubleArray; const x: Double; const a
 function TDoubleArray_BinaryShrink(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryShrink(x, aAscending); end;
 function TDoubleArray_BinaryLowerBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryLowerBound(x, aAscending); end;
 function TDoubleArray_BinaryUpperBound(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryUpperBound(x, aAscending); end;
+function TDoubleArray_BinaryRightmost(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryRightmost(x, aAscending); end;
+function TDoubleArray_BinaryLeftmost(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryLeftmost(x, aAscending); end;
+function TDoubleArray_BinaryFirst(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryFirst(x, aAscending); end;
+function TDoubleArray_BinaryLast(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryLast(x, aAscending); end;
 function TDoubleArray_BinaryRange1(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TDoubleArray_BinaryRange2(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinaryRange(x, aAscending); end;
 function TDoubleArray_BinarySpan(const arr: TDoubleArray; const x: TRange; const aAscending: Boolean = True): TRange; cdecl; begin Result := arr.BinarySpan(x, aAscending); end;
@@ -1236,6 +1244,7 @@ function TPointArray_BinaryReplaceAll(var arr: TPointArray; const oItem, nItem: 
 function TPointArray_BinaryYs(const arr: TPointArray; const unique: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryYs(unique); end;
 function TPointArray_BinaryYPoints(const arr: TPointArray; const yValue: Integer): TPointArray; overload; cdecl; begin Result := arr.BinaryYPoints(yValue); end;
 function TPointArray_BinaryXPoints(const arr: TPointArray; const xValue: Integer): TPointArray; overload; cdecl; begin Result := arr.BinaryXPoints(xValue); end;
+function TPointArray_BinaryGrouped(const arr: TPointArray): T2DPointArray; overload; cdecl; begin Result := arr.BinaryGrouped; end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
