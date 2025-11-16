@@ -957,6 +957,8 @@ begin
   AddFunction(@TIntegerArray_BMerge, 'function TIntegerArray_BMerge(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BMerged, 'function TIntegerArray_BMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryLookup, 'function TIntegerArray_BinaryLookup(const arr: TIntegerArray; const value: Integer): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryValues1, 'function TIntegerArray_BinaryValues(const arr: TIntegerArray; const value: Integer; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryValues2, 'function TIntegerArray_BinaryValues(const arr: TIntegerArray; const values: TRange; const aAscending: Boolean = True): TIntegerArray; overload;');
 
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -1030,6 +1032,8 @@ begin
   AddFunction(@TDoubleArray_BinarySearchLast, 'function TDoubleArray_BinarySearchLast(const arr: TDoubleArray; const value: Double; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_BinaryLocalize, 'function TDoubleArray_BinaryLocalize(const arr: TDoubleArray; const value: Double; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_BinaryLookup, 'function TDoubleArray_BinaryLookup(const arr: TDoubleArray; const value: Double): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryValues1, 'function TDoubleArray_BinaryValues(const arr: TDoubleArray; const value: Double; const aAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TDoubleArray_BinaryValues2, 'function TDoubleArray_BinaryValues(const arr: TDoubleArray; const values: TRange; const aAscending: Boolean = True): TDoubleArray; overload;');
 
   AddFunction(@TStringArray_Tally, 'function TStringArray_Tally(const arr: TStringArray): Int64;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');

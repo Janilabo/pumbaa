@@ -919,6 +919,8 @@ function TIntegerArray_BinarySearchFirst(const arr: TIntegerArray; const value: 
 function TIntegerArray_BinarySearchLast(const arr: TIntegerArray; const value: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchLast(value, aAscending); end;
 function TIntegerArray_BinaryLocalize(const arr: TIntegerArray; const value: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryLocalize(value, aAscending); end;
 function TIntegerArray_BinaryLookup(const arr: TIntegerArray; const value: Integer): Integer; overload; cdecl; begin Result := arr.BinaryLookup(value); end;
+function TIntegerArray_BinaryValues1(const arr: TIntegerArray; const value: Integer; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryValues(value, aAscending); end;
+function TIntegerArray_BinaryValues2(const arr: TIntegerArray; const values: TRange; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryValues(values, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -992,6 +994,8 @@ function TDoubleArray_BinarySearchFirst(const arr: TDoubleArray; const value: Do
 function TDoubleArray_BinarySearchLast(const arr: TDoubleArray; const value: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchLast(value, aAscending); end;
 function TDoubleArray_BinaryLocalize(const arr: TDoubleArray; const value: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryLocalize(value, aAscending); end;
 function TDoubleArray_BinaryLookup(const arr: TDoubleArray; const value: Double): Integer; overload; cdecl; begin Result := arr.BinaryLookup(value); end;
+function TDoubleArray_BinaryValues1(const arr: TDoubleArray; const value: Double; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryValues(value, aAscending); end;
+function TDoubleArray_BinaryValues2(const arr: TDoubleArray; const values: TRange; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryValues(values, aAscending); end;
 
 function TStringArray_Tally(const arr: TStringArray): Int64; cdecl; begin Result := arr.Tally; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
