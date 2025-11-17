@@ -3166,7 +3166,16 @@ begin
   AddFunction(@TArray_Reversed6, 'function TArray_Reversed(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Reversed7, 'function TArray_Reversed(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Reversed8, 'function TArray_Reversed(const arr: TRangeArray): TRangeArray; overload;');
-  
+
+  AddFunction(@TArray_Reversify1, 'function TArray_Reversify(var arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Reversify2, 'function TArray_Reversify(var arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Reversify3, 'function TArray_Reversify(var arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Reversify4, 'function TArray_Reversify(var arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_Reversify5, 'function TArray_Reversify(var arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_Reversify6, 'function TArray_Reversify(var arr: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_Reversify7, 'function TArray_Reversify(var arr: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_Reversify8, 'function TArray_Reversify(var arr: TRangeArray): Boolean; overload;');
+
   AddFunction(@TArray_Reversion1, 'function TArray_Reversion(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Reversion2, 'function TArray_Reversion(const arr: TDoubleArray): TDoubleArray; overload;');
   AddFunction(@TArray_Reversion3, 'function TArray_Reversion(const arr: TStringArray): TStringArray; overload;');
@@ -3525,6 +3534,33 @@ begin
   AddFunction(@TArray_Supply14, 'function TArray_Supply(var arr: TPointArray; const items: TPointArray): Integer; overload;');
   AddFunction(@TArray_Supply15, 'function TArray_Supply(var arr: TBoxArray; const items: TBoxArray): Integer; overload;');
   AddFunction(@TArray_Supply16, 'function TArray_Supply(var arr: TRangeArray; const items: TRangeArray): Integer; overload;');
+
+  AddFunction(@TArray_Swapped1, 'function TArray_Swapped(var arr: TIntegerArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Swapped2, 'function TArray_Swapped(var arr: TDoubleArray; var target: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Swapped3, 'function TArray_Swapped(var arr: TStringArray; var target: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Swapped4, 'function TArray_Swapped(var arr: TCharArray; var target: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Swapped5, 'function TArray_Swapped(var arr: TBooleanArray; var target: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Swapped6, 'function TArray_Swapped(var arr: TPointArray; var target: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Swapped7, 'function TArray_Swapped(var arr: TBoxArray; var target: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Swapped8, 'function TArray_Swapped(var arr: TRangeArray; var target: TRangeArray): Integer; overload;');
+
+  AddFunction(@TArray_SwappedMerge1, 'function TArray_SwappedMerge(var arr: TIntegerArray; var target: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SwappedMerge2, 'function TArray_SwappedMerge(var arr: TDoubleArray; var target: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_SwappedMerge3, 'function TArray_SwappedMerge(var arr: TStringArray; var target: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_SwappedMerge4, 'function TArray_SwappedMerge(var arr: TCharArray; var target: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_SwappedMerge5, 'function TArray_SwappedMerge(var arr: TBooleanArray; var target: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_SwappedMerge6, 'function TArray_SwappedMerge(var arr: TPointArray; var target: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_SwappedMerge7, 'function TArray_SwappedMerge(var arr: TBoxArray; var target: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_SwappedMerge8, 'function TArray_SwappedMerge(var arr: TRangeArray; var target: TRangeArray): TRangeArray; overload;');
+
+  AddFunction(@TArray_SwapMerged1, 'function TArray_SwapMerged(var arr: TIntegerArray; var target: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_SwapMerged2, 'function TArray_SwapMerged(var arr: TDoubleArray; var target: TDoubleArray): TDoubleArray; overload;');
+  AddFunction(@TArray_SwapMerged3, 'function TArray_SwapMerged(var arr: TStringArray; var target: TStringArray): TStringArray; overload;');
+  AddFunction(@TArray_SwapMerged4, 'function TArray_SwapMerged(var arr: TCharArray; var target: TCharArray): TCharArray; overload;');
+  AddFunction(@TArray_SwapMerged5, 'function TArray_SwapMerged(var arr: TBooleanArray; var target: TBooleanArray): TBooleanArray; overload;');
+  AddFunction(@TArray_SwapMerged6, 'function TArray_SwapMerged(var arr: TPointArray; var target: TPointArray): TPointArray; overload;');
+  AddFunction(@TArray_SwapMerged7, 'function TArray_SwapMerged(var arr: TBoxArray; var target: TBoxArray): TBoxArray; overload;');
+  AddFunction(@TArray_SwapMerged8, 'function TArray_SwapMerged(var arr: TRangeArray; var target: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@TArray_To2D1, 'function TArray_To2D(const arr: TIntegerArray; const rows, columns: Integer): T2DIntegerArray; overload;');
   AddFunction(@TArray_To2D2, 'function TArray_To2D(const arr: TDoubleArray; const rows, columns: Integer): T2DDoubleArray; overload;');
@@ -4319,6 +4355,33 @@ begin
   AddFunction(@T2DArray_Ragged6, 'function T2DArray_Ragged(const arr: T2DPointArray): Boolean; overload;');
   AddFunction(@T2DArray_Ragged7, 'function T2DArray_Ragged(const arr: T2DBoxArray): Boolean; overload;');
   AddFunction(@T2DArray_Ragged8, 'function T2DArray_Ragged(const arr: T2DRangeArray): Boolean; overload;');
+
+  AddFunction(@T2DArray_Reverse1, 'function T2DArray_Reverse(var arr: T2DIntegerArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reverse2, 'function T2DArray_Reverse(var arr: T2DDoubleArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reverse3, 'function T2DArray_Reverse(var arr: T2DStringArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reverse4, 'function T2DArray_Reverse(var arr: T2DCharArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reverse5, 'function T2DArray_Reverse(var arr: T2DBooleanArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reverse6, 'function T2DArray_Reverse(var arr: T2DPointArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reverse7, 'function T2DArray_Reverse(var arr: T2DBoxArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reverse8, 'function T2DArray_Reverse(var arr: T2DRangeArray): Boolean; overload;');
+
+  AddFunction(@T2DArray_Reversed1, 'function T2DArray_Reversed(const arr: T2DIntegerArray): T2DIntegerArray; overload;');
+  AddFunction(@T2DArray_Reversed2, 'function T2DArray_Reversed(const arr: T2DDoubleArray): T2DDoubleArray; overload;');
+  AddFunction(@T2DArray_Reversed3, 'function T2DArray_Reversed(const arr: T2DStringArray): T2DStringArray; overload;');
+  AddFunction(@T2DArray_Reversed4, 'function T2DArray_Reversed(const arr: T2DCharArray): T2DCharArray; overload;');
+  AddFunction(@T2DArray_Reversed5, 'function T2DArray_Reversed(const arr: T2DBooleanArray): T2DBooleanArray; overload;');
+  AddFunction(@T2DArray_Reversed6, 'function T2DArray_Reversed(const arr: T2DPointArray): T2DPointArray; overload;');
+  AddFunction(@T2DArray_Reversed7, 'function T2DArray_Reversed(const arr: T2DBoxArray): T2DBoxArray; overload;');
+  AddFunction(@T2DArray_Reversed8, 'function T2DArray_Reversed(const arr: T2DRangeArray): T2DRangeArray; overload;');
+
+  AddFunction(@T2DArray_Reversify1, 'function T2DArray_Reversify(var arr: T2DIntegerArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reversify2, 'function T2DArray_Reversify(var arr: T2DDoubleArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reversify3, 'function T2DArray_Reversify(var arr: T2DStringArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reversify4, 'function T2DArray_Reversify(var arr: T2DCharArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reversify5, 'function T2DArray_Reversify(var arr: T2DBooleanArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reversify6, 'function T2DArray_Reversify(var arr: T2DPointArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reversify7, 'function T2DArray_Reversify(var arr: T2DBoxArray): Boolean; overload;');
+  AddFunction(@T2DArray_Reversify8, 'function T2DArray_Reversify(var arr: T2DRangeArray): Boolean; overload;');
 
   AddFunction(@T2DArray_Fit1, 'function T2DArray_Fit(const arr: T2DIntegerArray): Integer; overload;');
   AddFunction(@T2DArray_Fit2, 'function T2DArray_Fit(const arr: T2DDoubleArray): Integer; overload;');

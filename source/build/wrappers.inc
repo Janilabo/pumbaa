@@ -3131,6 +3131,15 @@ function TArray_Reversed6(const arr: TPointArray): TPointArray; overload; cdecl;
 function TArray_Reversed7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Reversed; end;
 function TArray_Reversed8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Reversed; end;
 
+function TArray_Reversify1(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function TArray_Reversify2(var arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function TArray_Reversify3(var arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function TArray_Reversify4(var arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function TArray_Reversify5(var arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function TArray_Reversify6(var arr: TPointArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function TArray_Reversify7(var arr: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function TArray_Reversify8(var arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+
 function TArray_Reversion1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Reversion; end;
 function TArray_Reversion2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Reversion; end;
 function TArray_Reversion3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Reversion; end;
@@ -3489,6 +3498,33 @@ function TArray_Supply13(var arr: TBooleanArray; const items: TBooleanArray): In
 function TArray_Supply14(var arr: TPointArray; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.Supply(items); end;
 function TArray_Supply15(var arr: TBoxArray; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.Supply(items); end;
 function TArray_Supply16(var arr: TRangeArray; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.Supply(items); end;
+
+function TArray_Swapped1(var arr: TIntegerArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Swapped(target); end;
+function TArray_Swapped2(var arr: TDoubleArray; var target: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Swapped(target); end;
+function TArray_Swapped3(var arr: TStringArray; var target: TStringArray): Integer; overload; cdecl; begin Result := arr.Swapped(target); end;
+function TArray_Swapped4(var arr: TCharArray; var target: TCharArray): Integer; overload; cdecl; begin Result := arr.Swapped(target); end;
+function TArray_Swapped5(var arr: TBooleanArray; var target: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Swapped(target); end;
+function TArray_Swapped6(var arr: TPointArray; var target: TPointArray): Integer; overload; cdecl; begin Result := arr.Swapped(target); end;
+function TArray_Swapped7(var arr: TBoxArray; var target: TBoxArray): Integer; overload; cdecl; begin Result := arr.Swapped(target); end;
+function TArray_Swapped8(var arr: TRangeArray; var target: TRangeArray): Integer; overload; cdecl; begin Result := arr.Swapped(target); end;
+
+function TArray_SwappedMerge1(var arr: TIntegerArray; var target: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.SwappedMerge(target); end;
+function TArray_SwappedMerge2(var arr: TDoubleArray; var target: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.SwappedMerge(target); end;
+function TArray_SwappedMerge3(var arr: TStringArray; var target: TStringArray): TStringArray; overload; cdecl; begin Result := arr.SwappedMerge(target); end;
+function TArray_SwappedMerge4(var arr: TCharArray; var target: TCharArray): TCharArray; overload; cdecl; begin Result := arr.SwappedMerge(target); end;
+function TArray_SwappedMerge5(var arr: TBooleanArray; var target: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.SwappedMerge(target); end;
+function TArray_SwappedMerge6(var arr: TPointArray; var target: TPointArray): TPointArray; overload; cdecl; begin Result := arr.SwappedMerge(target); end;
+function TArray_SwappedMerge7(var arr: TBoxArray; var target: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.SwappedMerge(target); end;
+function TArray_SwappedMerge8(var arr: TRangeArray; var target: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.SwappedMerge(target); end;
+
+function TArray_SwapMerged1(var arr: TIntegerArray; var target: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.SwapMerged(target); end;
+function TArray_SwapMerged2(var arr: TDoubleArray; var target: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.SwapMerged(target); end;
+function TArray_SwapMerged3(var arr: TStringArray; var target: TStringArray): TStringArray; overload; cdecl; begin Result := arr.SwapMerged(target); end;
+function TArray_SwapMerged4(var arr: TCharArray; var target: TCharArray): TCharArray; overload; cdecl; begin Result := arr.SwapMerged(target); end;
+function TArray_SwapMerged5(var arr: TBooleanArray; var target: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.SwapMerged(target); end;
+function TArray_SwapMerged6(var arr: TPointArray; var target: TPointArray): TPointArray; overload; cdecl; begin Result := arr.SwapMerged(target); end;
+function TArray_SwapMerged7(var arr: TBoxArray; var target: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.SwapMerged(target); end;
+function TArray_SwapMerged8(var arr: TRangeArray; var target: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.SwapMerged(target); end;
 
 function TArray_To2D1(const arr: TIntegerArray; const rows, columns: Integer): T2DIntegerArray; overload; cdecl; begin Result := arr.To2D(rows, columns); end;
 function TArray_To2D2(const arr: TDoubleArray; const rows, columns: Integer): T2DDoubleArray; overload; cdecl; begin Result := arr.To2D(rows, columns); end;
@@ -4422,6 +4458,33 @@ function T2DArray_Reset5(var arr: T2DBooleanArray): Int64; overload; cdecl; begi
 function T2DArray_Reset6(var arr: T2DPointArray): Int64; overload; cdecl; begin Result := arr.Reset; end;
 function T2DArray_Reset7(var arr: T2DBoxArray): Int64; overload; cdecl; begin Result := arr.Reset; end;
 function T2DArray_Reset8(var arr: T2DRangeArray): Int64; overload; cdecl; begin Result := arr.Reset; end;
+
+function T2DArray_Reverse1(var arr: T2DIntegerArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
+function T2DArray_Reverse2(var arr: T2DDoubleArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
+function T2DArray_Reverse3(var arr: T2DStringArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
+function T2DArray_Reverse4(var arr: T2DCharArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
+function T2DArray_Reverse5(var arr: T2DBooleanArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
+function T2DArray_Reverse6(var arr: T2DPointArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
+function T2DArray_Reverse7(var arr: T2DBoxArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
+function T2DArray_Reverse8(var arr: T2DRangeArray): Boolean; overload; cdecl; begin Result := arr.Reverse; end;
+
+function T2DArray_Reversed1(const arr: T2DIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Reversed; end;
+function T2DArray_Reversed2(const arr: T2DDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Reversed; end;
+function T2DArray_Reversed3(const arr: T2DStringArray): T2DStringArray; overload; cdecl; begin Result := arr.Reversed; end;
+function T2DArray_Reversed4(const arr: T2DCharArray): T2DCharArray; overload; cdecl; begin Result := arr.Reversed; end;
+function T2DArray_Reversed5(const arr: T2DBooleanArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Reversed; end;
+function T2DArray_Reversed6(const arr: T2DPointArray): T2DPointArray; overload; cdecl; begin Result := arr.Reversed; end;
+function T2DArray_Reversed7(const arr: T2DBoxArray): T2DBoxArray; overload; cdecl; begin Result := arr.Reversed; end;
+function T2DArray_Reversed8(const arr: T2DRangeArray): T2DRangeArray; overload; cdecl; begin Result := arr.Reversed; end;
+
+function T2DArray_Reversify1(var arr: T2DIntegerArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function T2DArray_Reversify2(var arr: T2DDoubleArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function T2DArray_Reversify3(var arr: T2DStringArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function T2DArray_Reversify4(var arr: T2DCharArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function T2DArray_Reversify5(var arr: T2DBooleanArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function T2DArray_Reversify6(var arr: T2DPointArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function T2DArray_Reversify7(var arr: T2DBoxArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
+function T2DArray_Reversify8(var arr: T2DRangeArray): Boolean; overload; cdecl; begin Result := arr.Reversify; end;
 
 function T2DArray_Destroy1(var arr: T2DIntegerArray): Int64; overload; cdecl; begin Result := arr.Destroy; end;
 function T2DArray_Destroy2(var arr: T2DDoubleArray): Int64; overload; cdecl; begin Result := arr.Destroy; end;
