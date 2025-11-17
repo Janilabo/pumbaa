@@ -961,6 +961,7 @@ begin
   AddFunction(@TIntegerArray_BinaryValues2, 'function TIntegerArray_BinaryValues(const arr: TIntegerArray; const values: TRange; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryGrouped, 'function TIntegerArray_BinaryGrouped(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryGroup, 'function TIntegerArray_BinaryGroup(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryGroups, 'function TIntegerArray_BinaryGroups(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload;');
 
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');

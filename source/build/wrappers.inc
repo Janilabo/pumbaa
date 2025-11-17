@@ -923,6 +923,7 @@ function TIntegerArray_BinaryValues1(const arr: TIntegerArray; const value: Inte
 function TIntegerArray_BinaryValues2(const arr: TIntegerArray; const values: TRange; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryValues(values, aAscending); end;
 function TIntegerArray_BinaryGrouped(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.BinaryGrouped(aAscending); end;
 function TIntegerArray_BinaryGroup(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.BinaryGroup(aAscending); end;
+function TIntegerArray_BinaryGroups(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.BinaryGroups(aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
