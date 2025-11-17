@@ -921,6 +921,8 @@ function TIntegerArray_BinaryLocalize(const arr: TIntegerArray; const value: Int
 function TIntegerArray_BinaryLookup(const arr: TIntegerArray; const value: Integer): Integer; overload; cdecl; begin Result := arr.BinaryLookup(value); end;
 function TIntegerArray_BinaryValues1(const arr: TIntegerArray; const value: Integer; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryValues(value, aAscending); end;
 function TIntegerArray_BinaryValues2(const arr: TIntegerArray; const values: TRange; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryValues(values, aAscending); end;
+function TIntegerArray_BinaryGrouped(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.BinaryGrouped(aAscending); end;
+function TIntegerArray_BinaryGroup(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.BinaryGroup(aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -1552,6 +1554,15 @@ function TArray_Cloned6(const arr: TPointArray): TPointArray; overload; cdecl; b
 function TArray_Cloned7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Cloned; end;
 function TArray_Cloned8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Cloned; end;
 
+function TArray_Collated1(const arr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Collated; end;
+function TArray_Collated2(const arr: TDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Collated; end;
+function TArray_Collated3(const arr: TStringArray): T2DStringArray; overload; cdecl; begin Result := arr.Collated; end;
+function TArray_Collated4(const arr: TCharArray): T2DCharArray; overload; cdecl; begin Result := arr.Collated; end;
+function TArray_Collated5(const arr: TBooleanArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Collated; end;
+function TArray_Collated6(const arr: TPointArray): T2DPointArray; overload; cdecl; begin Result := arr.Collated; end;
+function TArray_Collated7(const arr: TBoxArray): T2DBoxArray; overload; cdecl; begin Result := arr.Collated; end;
+function TArray_Collated8(const arr: TRangeArray): T2DRangeArray; overload; cdecl; begin Result := arr.Collated; end;
+
 function TArray_Compact1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
 function TArray_Compact2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
 function TArray_Compact3(var arr: TStringArray): Integer; overload; cdecl; begin Result := arr.Compact; end;
@@ -1761,6 +1772,15 @@ function TArray_Distinct5(const arr: TBooleanArray): Integer; overload; cdecl; b
 function TArray_Distinct6(const arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
 function TArray_Distinct7(const arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
 function TArray_Distinct8(const arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Distinct; end;
+
+function TArray_Distincted1(const arr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Distincted; end;
+function TArray_Distincted2(const arr: TDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Distincted; end;
+function TArray_Distincted3(const arr: TStringArray): T2DStringArray; overload; cdecl; begin Result := arr.Distincted; end;
+function TArray_Distincted4(const arr: TCharArray): T2DCharArray; overload; cdecl; begin Result := arr.Distincted; end;
+function TArray_Distincted5(const arr: TBooleanArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Distincted; end;
+function TArray_Distincted6(const arr: TPointArray): T2DPointArray; overload; cdecl; begin Result := arr.Distincted; end;
+function TArray_Distincted7(const arr: TBoxArray): T2DBoxArray; overload; cdecl; begin Result := arr.Distincted; end;
+function TArray_Distincted8(const arr: TRangeArray): T2DRangeArray; overload; cdecl; begin Result := arr.Distincted; end;
 
 function TArray_Disordered1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Disordered; end;
 function TArray_Disordered2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Disordered; end;
@@ -3118,6 +3138,15 @@ function TArray_Reversion5(const arr: TBooleanArray): TBooleanArray; overload; c
 function TArray_Reversion6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Reversion; end;
 function TArray_Reversion7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Reversion; end;
 function TArray_Reversion8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Reversion; end;
+
+function TArray_Runs1(const arr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Runs; end;
+function TArray_Runs2(const arr: TDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Runs; end;
+function TArray_Runs3(const arr: TStringArray): T2DStringArray; overload; cdecl; begin Result := arr.Runs; end;
+function TArray_Runs4(const arr: TCharArray): T2DCharArray; overload; cdecl; begin Result := arr.Runs; end;
+function TArray_Runs5(const arr: TBooleanArray): T2DBooleanArray; overload; cdecl; begin Result := arr.Runs; end;
+function TArray_Runs6(const arr: TPointArray): T2DPointArray; overload; cdecl; begin Result := arr.Runs; end;
+function TArray_Runs7(const arr: TBoxArray): T2DBoxArray; overload; cdecl; begin Result := arr.Runs; end;
+function TArray_Runs8(const arr: TRangeArray): T2DRangeArray; overload; cdecl; begin Result := arr.Runs; end;
 
 function TArray_Sample1(const arr: TIntegerArray; const sSize: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
 function TArray_Sample2(const arr: TDoubleArray; const sSize: Integer): TDoubleArray; overload; cdecl; begin Result := arr.Sample(sSize); end;
