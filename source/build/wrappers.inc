@@ -924,6 +924,10 @@ function TIntegerArray_BinaryValues2(const arr: TIntegerArray; const values: TRa
 function TIntegerArray_BinaryGrouped(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.BinaryGrouped(aAscending); end;
 function TIntegerArray_BinaryGroup(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.BinaryGroup(aAscending); end;
 function TIntegerArray_BinaryGroups(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload; cdecl; begin Result := arr.BinaryGroups(aAscending); end;
+function TIntegerArray_BinaryExtract1(const arr: TIntegerArray; const area: TRange; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryExtract(area, aAscending); end;
+function TIntegerArray_BinaryExtract2(const arr: TIntegerArray; const values: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryExtract(values, aAscending); end;
+function TIntegerArray_BinaryFilter1(const arr: TIntegerArray; const area: TRange; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryFilter(area, aAscending); end;
+function TIntegerArray_BinaryFilter2(const arr: TIntegerArray; const values: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryFilter(values, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -1252,6 +1256,8 @@ function TPointArray_BinaryYs(const arr: TPointArray; const unique: Boolean = Tr
 function TPointArray_BinaryYPoints(const arr: TPointArray; const yValue: Integer): TPointArray; overload; cdecl; begin Result := arr.BinaryYPoints(yValue); end;
 function TPointArray_BinaryXPoints(const arr: TPointArray; const xValue: Integer): TPointArray; overload; cdecl; begin Result := arr.BinaryXPoints(xValue); end;
 function TPointArray_BinaryGrouped(const arr: TPointArray): T2DPointArray; overload; cdecl; begin Result := arr.BinaryGrouped; end;
+function TPointArray_BinaryExtract(const arr: TPointArray; const area: TBox): TPointArray; overload; cdecl; begin Result := arr.BinaryExtract(area); end;
+function TPointArray_BinaryFilter(const arr: TPointArray; const area: TBox): TPointArray; overload; cdecl; begin Result := arr.BinaryFilter(area); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;

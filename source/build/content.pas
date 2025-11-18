@@ -962,6 +962,10 @@ begin
   AddFunction(@TIntegerArray_BinaryGrouped, 'function TIntegerArray_BinaryGrouped(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryGroup, 'function TIntegerArray_BinaryGroup(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryGroups, 'function TIntegerArray_BinaryGroups(const arr: TIntegerArray; const aAscending: Boolean = True): T2DIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryExtract1, 'function TIntegerArray_BinaryExtract(const arr: TIntegerArray; const area: TRange; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryExtract2, 'function TIntegerArray_BinaryExtract(const arr: TIntegerArray; const values: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryFilter1, 'function TIntegerArray_BinaryFilter(const arr: TIntegerArray; const area: TRange; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryFilter2, 'function TIntegerArray_BinaryFilter(const arr: TIntegerArray; const values: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
 
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -1290,6 +1294,8 @@ begin
   AddFunction(@TPointArray_BinaryYPoints, 'function TPointArray_BinaryYPoints(const arr: TPointArray; const yValue: Integer): TPointArray; overload;');
   AddFunction(@TPointArray_BinaryXPoints, 'function TPointArray_BinaryXPoints(const arr: TPointArray; const xValue: Integer): TPointArray; overload;');
   AddFunction(@TPointArray_BinaryGrouped, 'function TPointArray_BinaryGrouped(const arr: TPointArray): T2DPointArray; overload;');
+  AddFunction(@TPointArray_BinaryExtract, 'function TPointArray_BinaryExtract(const arr: TPointArray; const area: TBox): TPointArray; overload;');
+  AddFunction(@TPointArray_BinaryFilter, 'function TPointArray_BinaryFilter(const arr: TPointArray; const area: TBox): TPointArray; overload;');
 
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
