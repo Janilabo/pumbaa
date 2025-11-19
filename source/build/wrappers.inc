@@ -1309,6 +1309,14 @@ function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TInteg
 function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray; cdecl; begin Result.Zip(startArr, stopArr); end;
 function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gaps; end;
 
+procedure TXLayer_Clear(var layer: TXLayer); overload; cdecl; begin layer.Clear; end;
+function TXLayer_Create1(const xArr: TIntegerArray; const yArr, yIDs: T2DIntegerArray): TXLayer; overload; cdecl; begin Result.Create(xArr, yArr, yIDs); end;
+function TXLayer_Create2(const arr: TPointArray): TXLayer; overload; cdecl; begin Result.Create(arr); end;
+
+procedure TYLayer_Clear(var layer: TYLayer); overload; cdecl; begin layer.Clear; end;
+function TYLayer_Create1(const yArr: TIntegerArray; const xArr, xIDs: T2DIntegerArray): TYLayer; overload; cdecl; begin Result.Create(yArr, xArr, xIDs); end;
+function TYLayer_Create2(const arr: TPointArray): TYLayer; overload; cdecl; begin Result.Create(arr); end;
+
 function TArray_Add1(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
 function TArray_Add2(const arr: TDoubleArray; const item: Double; const duplicates: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
 function TArray_Add3(const arr: TStringArray; const item: string; const duplicates: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
