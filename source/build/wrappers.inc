@@ -687,6 +687,7 @@ function TRange_Item(const range: TRange; const x: Integer): Boolean; cdecl; inl
 function TRange_Pivot(const range: TRange): Integer; cdecl; begin Result := range.Pivot; end;
 function TRange_Mean(const range: TRange): Double; cdecl; begin Result := range.Mean; end;
 function TRange_Middle(const range: TRange): Integer; cdecl; begin Result := range.Middle; end;
+function TRange_MiddleValue(const range: TRange): Double; cdecl; begin Result := range.MiddleValue; end;
 function TRange_Mid(const range: TRange): Double; cdecl; begin Result := range.Mid; end;
 function TRange_MidVal(const range: TRange): Double; cdecl; begin Result := range.MidVal; end;
 function TRange_MidValue(const range: TRange): Double; cdecl; begin Result := range.MidValue; end;
@@ -1309,13 +1310,15 @@ function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TInteg
 function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray; cdecl; begin Result.Zip(startArr, stopArr); end;
 function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gaps; end;
 
-procedure TXLayer_Clear(var layer: TXLayer); overload; cdecl; begin layer.Clear; end;
-function TXLayer_Create1(const xArr: TIntegerArray; const yArr, yIDs: T2DIntegerArray): TXLayer; overload; cdecl; begin Result.Create(xArr, yArr, yIDs); end;
-function TXLayer_Create2(const arr: TPointArray): TXLayer; overload; cdecl; begin Result.Create(arr); end;
+procedure TLayerX_Clear(var layer: TLayerX); overload; cdecl; begin layer.Clear; end;
+function TLayerX_Create1(const xArr: TIntegerArray; const yArr, yIDs: T2DIntegerArray): TLayerX; overload; cdecl; begin Result.Create(xArr, yArr, yIDs); end;
+function TLayerX_Create2(const arr: TPointArray): TLayerX; overload; cdecl; begin Result.Create(arr); end;
+function TLayerX_Construct(const arr: TPointArray): TLayerX; overload; cdecl; begin Result := TLayerX.Construct(arr); end;
 
-procedure TYLayer_Clear(var layer: TYLayer); overload; cdecl; begin layer.Clear; end;
-function TYLayer_Create1(const yArr: TIntegerArray; const xArr, xIDs: T2DIntegerArray): TYLayer; overload; cdecl; begin Result.Create(yArr, xArr, xIDs); end;
-function TYLayer_Create2(const arr: TPointArray): TYLayer; overload; cdecl; begin Result.Create(arr); end;
+procedure TLayerY_Clear(var layer: TLayerY); overload; cdecl; begin layer.Clear; end;
+function TLayerY_Create1(const yArr: TIntegerArray; const xArr, xIDs: T2DIntegerArray): TLayerY; overload; cdecl; begin Result.Create(yArr, xArr, xIDs); end;
+function TLayerY_Create2(const arr: TPointArray): TLayerY; overload; cdecl; begin Result.Create(arr); end;
+function TLayerY_Construct(const arr: TPointArray): TLayerY; overload; cdecl; begin Result := TLayerY.Construct(arr); end;
 
 function TArray_Add1(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
 function TArray_Add2(const arr: TDoubleArray; const item: Double; const duplicates: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;

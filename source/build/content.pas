@@ -25,11 +25,11 @@ begin
                      'end;');
   AddType('TDistanceFunction', 'function(const A, B: TPoint): Double;');
   AddType('TDistanceMetric', '(dmHypotEuclidean, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski, dmMaxMinChebyshev, dmOctile);');  
-  AddType('TXLayer', 'record' + #13#10 +
+  AddType('TLayerX', 'record' + #13#10 +
                    '  X: TIntegerArray;' + #13#10 +
                    '  Y, IDs: T2DIntegerArray;' + #13#10 +
                    'end;');
-  AddType('TYLayer', 'record' + #13#10 +
+  AddType('TLayerY', 'record' + #13#10 +
                    '  Y: TIntegerArray;' + #13#10 +
                    '  X, IDs: T2DIntegerArray;' + #13#10 +
                    'end;');
@@ -733,6 +733,7 @@ begin
   AddFunction(@TRange_Pivot, 'function TRange_Pivot(const range: TRange): Integer;');
   AddFunction(@TRange_Mean, 'function TRange_Mean(const range: TRange): Double;');
   AddFunction(@TRange_Middle, 'function TRange_Middle(const range: TRange): Integer;');
+  AddFunction(@TRange_MiddleValue, 'function TRange_MiddleValue(const range: TRange): Double;');
   AddFunction(@TRange_Mid, 'function TRange_Mid(const range: TRange): Double;');
   AddFunction(@TRange_MidVal, 'function TRange_MidVal(const range: TRange): Double;');
   AddFunction(@TRange_MidValue, 'function TRange_MidValue(const range: TRange): Double;');
@@ -1354,13 +1355,15 @@ begin
   AddFunction(@TRangeArray_Zip, 'function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray;');
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
 
-  AddFunction(@TXLayer_Clear, 'procedure TXLayer_Clear(var layer: TXLayer); overload;');
-  AddFunction(@TXLayer_Create1, 'function TXLayer_Create(const xArr: TIntegerArray; const yArr, yIDs: T2DIntegerArray): TXLayer; overload;');
-  AddFunction(@TXLayer_Create2, 'function TXLayer_Create(const arr: TPointArray): TXLayer; overload;');
+  AddFunction(@TLayerX_Clear, 'procedure TLayerX_Clear(var layer: TLayerX); overload;');
+  AddFunction(@TLayerX_Create1, 'function TLayerX_Create(const xArr: TIntegerArray; const yArr, yIDs: T2DIntegerArray): TLayerX; overload;');
+  AddFunction(@TLayerX_Create2, 'function TLayerX_Create(const arr: TPointArray): TLayerX; overload;');
+  AddFunction(@TLayerX_Construct, 'function TLayerX_Construct(const arr: TPointArray): TLayerX; overload;');
 
-  AddFunction(@TYLayer_Clear, 'procedure TYLayer_Clear(var layer: TYLayer); overload;');
-  AddFunction(@TYLayer_Create1, 'function TYLayer_Create(const yArr: TIntegerArray; const xArr, xIDs: T2DIntegerArray): TYLayer; overload;');
-  AddFunction(@TYLayer_Create2, 'function TYLayer_Create(const arr: TPointArray): TYLayer; overload;');
+  AddFunction(@TLayerY_Clear, 'procedure TLayerY_Clear(var layer: TLayerY); overload;');
+  AddFunction(@TLayerY_Create1, 'function TLayerY_Create(const yArr: TIntegerArray; const xArr, xIDs: T2DIntegerArray): TLayerY; overload;');
+  AddFunction(@TLayerY_Create2, 'function TLayerY_Create(const arr: TPointArray): TLayerY; overload;');
+  AddFunction(@TLayerY_Construct, 'function TLayerY_Construct(const arr: TPointArray): TLayerY; overload;');
 
   AddFunction(@TArray_Add1, 'function TArray_Add(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_Add2, 'function TArray_Add(const arr: TDoubleArray; const item: Double; const duplicates: Boolean = True): TDoubleArray; overload;');
