@@ -597,6 +597,7 @@ function TRange_TIA(const range: TRange): TIntegerArray; cdecl; begin Result := 
 function TRange_Enumerate(const range: TRange): TIntegerArray; cdecl; begin Result := range.Enumerate; end;
 function TRange_Enumerated(const range: TRange): TIntegerArray; cdecl; begin Result := range.Enumerated; end;
 function TRange_Elements(const range: TRange): TIntegerArray; cdecl; begin Result := range.Elements; end;
+function TRange_Sequence(const range: TRange): TIntegerArray; cdecl; begin Result := range.Sequence; end;
 function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbers; end;
 function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
 function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
@@ -854,6 +855,8 @@ function TIntegerArray_IsMonotonic(const arr: TIntegerArray): Boolean; overload;
 function TIntegerArray_Monotonicity(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Monotonicity; end;
 function TIntegerArray_Monotony(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Monotony; end;
 function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer; cdecl; begin Result := arr.BinaryCountingSort(aAscending, maxRange); end;
+function TIntegerArray_Fuse(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Fuse(items, oAscending); end;
+function TIntegerArray_Combinate(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Combinate(items, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
@@ -935,6 +938,8 @@ function TIntegerArray_BinaryFilter1(const arr: TIntegerArray; const area: TRang
 function TIntegerArray_BinaryFilter2(const arr: TIntegerArray; const values: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryFilter(values, aAscending); end;
 function TIntegerArray_BinaryAmount1(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAmount(x, aAscending); end;
 function TIntegerArray_BinaryAmount2(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAmount(x, aAscending); end;
+function TIntegerArray_BinaryIndexOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIndexOf(value, oAscending); end;
+function TIntegerArray_BinaryExists(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExists(value, oAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -1010,6 +1015,8 @@ function TDoubleArray_BinaryLocalize(const arr: TDoubleArray; const value: Doubl
 function TDoubleArray_BinaryLookup(const arr: TDoubleArray; const value: Double): Integer; overload; cdecl; begin Result := arr.BinaryLookup(value); end;
 function TDoubleArray_BinaryValues1(const arr: TDoubleArray; const value: Double; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryValues(value, aAscending); end;
 function TDoubleArray_BinaryValues2(const arr: TDoubleArray; const values: TRange; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryValues(values, aAscending); end;
+function TDoubleArray_BinaryIndexOf(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIndexOf(value, oAscending); end;
+function TDoubleArray_BinaryExists(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExists(value, oAscending); end;
 
 function TStringArray_Tally(const arr: TStringArray): Int64; cdecl; begin Result := arr.Tally; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
@@ -1240,6 +1247,8 @@ function TPointArray_BSort(var arr: TPointArray; const aAscending: Boolean = Tru
 function TPointArray_BSorted(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.BSorted(aAscending); end;
 function TPointArray_BinarySearch1(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinarySearch(item); end;
 function TPointArray_BinarySearch2(const arr: TPointArray; const area: TBox): Integer; overload; cdecl; begin Result := arr.BinarySearch(area); end;
+function TPointArray_BinaryIndexOf(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryIndexOf(item); end;
+function TPointArray_BinaryExists(const arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryExists(item); end;
 function TPointArray_BinaryPosL(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryPosL(item); end;
 function TPointArray_BinaryPosR(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryPosR(item); end;
 function TPointArray_BinaryRank(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryRank(item); end;

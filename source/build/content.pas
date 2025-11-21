@@ -635,6 +635,7 @@ begin
   AddFunction(@TRange_Enumerate, 'function TRange_Enumerate(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Enumerated, 'function TRange_Enumerated(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Elements, 'function TRange_Elements(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Sequence, 'function TRange_Sequence(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Numbers, 'function TRange_Numbers(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
@@ -891,6 +892,8 @@ begin
   AddFunction(@TIntegerArray_IsMonotonic, 'function TIntegerArray_IsMonotonic(const arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TIntegerArray_Monotonicity, 'function TIntegerArray_Monotonicity(const arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TIntegerArray_Monotony, 'function TIntegerArray_Monotony(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TIntegerArray_Fuse, 'function TIntegerArray_Fuse(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_Combinate, 'function TIntegerArray_Combinate(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryCountingSort, 'function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
@@ -973,6 +976,8 @@ begin
   AddFunction(@TIntegerArray_BinaryFilter2, 'function TIntegerArray_BinaryFilter(const arr: TIntegerArray; const values: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryAmount1, 'function TIntegerArray_BinaryAmount(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryAmount2, 'function TIntegerArray_BinaryAmount(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryIndexOf, 'function TIntegerArray_BinaryIndexOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryExists, 'function TIntegerArray_BinaryExists(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Boolean; overload;');
 
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -1048,6 +1053,8 @@ begin
   AddFunction(@TDoubleArray_BinaryLookup, 'function TDoubleArray_BinaryLookup(const arr: TDoubleArray; const value: Double): Integer; overload;');
   AddFunction(@TDoubleArray_BinaryValues1, 'function TDoubleArray_BinaryValues(const arr: TDoubleArray; const value: Double; const aAscending: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TDoubleArray_BinaryValues2, 'function TDoubleArray_BinaryValues(const arr: TDoubleArray; const values: TRange; const aAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TDoubleArray_BinaryIndexOf, 'function TDoubleArray_BinaryIndexOf(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryExists, 'function TDoubleArray_BinaryExists(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Boolean; overload;');
 
   AddFunction(@TStringArray_Tally, 'function TStringArray_Tally(const arr: TStringArray): Int64;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
@@ -1278,6 +1285,8 @@ begin
   AddFunction(@TPointArray_BSorted, 'function TPointArray_BSorted(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload;');
   AddFunction(@TPointArray_BinarySearch1, 'function TPointArray_BinarySearch(const arr: TPointArray; const item: TPoint): Integer; overload;');
   AddFunction(@TPointArray_BinarySearch2, 'function TPointArray_BinarySearch(const arr: TPointArray; const area: TBox): Integer; overload;');
+  AddFunction(@TPointArray_BinaryIndexOf, 'function TPointArray_BinaryIndexOf(const arr: TPointArray; const item: TPoint): Integer; overload;');
+  AddFunction(@TPointArray_BinaryExists, 'function TPointArray_BinaryExists(const arr: TPointArray; const item: TPoint): Boolean; overload;');
   AddFunction(@TPointArray_BinaryPosL, 'function TPointArray_BinaryPosL(const arr: TPointArray; const item: TPoint): Integer; overload;'); 
   AddFunction(@TPointArray_BinaryPosR, 'function TPointArray_BinaryPosR(const arr: TPointArray; const item: TPoint): Integer; overload;');   
   AddFunction(@TPointArray_BinaryRank, 'function TPointArray_BinaryRank(const arr: TPointArray; const item: TPoint): Integer; overload;');
