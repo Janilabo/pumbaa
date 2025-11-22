@@ -940,6 +940,8 @@ function TIntegerArray_BinaryAmount1(const arr: TIntegerArray; const x: Integer;
 function TIntegerArray_BinaryAmount2(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAmount(x, aAscending); end;
 function TIntegerArray_BinaryIndexOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIndexOf(value, oAscending); end;
 function TIntegerArray_BinaryExists(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExists(value, oAscending); end;
+function TIntegerArray_BinarySearchSpan1(const arr: TIntegerArray; const value: Integer; const L, R: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchSpan(value, L, R, aAscending); end;
+function TIntegerArray_BinarySearchSpan2(const arr: TIntegerArray; const range: TRange; const L, R: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchSpan(range, L, R, aAscending); end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -1017,6 +1019,8 @@ function TDoubleArray_BinaryValues1(const arr: TDoubleArray; const value: Double
 function TDoubleArray_BinaryValues2(const arr: TDoubleArray; const values: TRange; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryValues(values, aAscending); end;
 function TDoubleArray_BinaryIndexOf(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIndexOf(value, oAscending); end;
 function TDoubleArray_BinaryExists(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExists(value, oAscending); end;
+function TDoubleArray_BinarySearchSpan1(const arr: TDoubleArray; const value: Double; const L, R: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchSpan(value, L, R, aAscending); end;
+function TDoubleArray_BinarySearchSpan2(const arr: TDoubleArray; const range: TRange; const L, R: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchSpan(range, L, R, aAscending); end;
 
 function TStringArray_Tally(const arr: TStringArray): Int64; cdecl; begin Result := arr.Tally; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
@@ -1247,6 +1251,8 @@ function TPointArray_BSort(var arr: TPointArray; const aAscending: Boolean = Tru
 function TPointArray_BSorted(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.BSorted(aAscending); end;
 function TPointArray_BinarySearch1(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinarySearch(item); end;
 function TPointArray_BinarySearch2(const arr: TPointArray; const area: TBox): Integer; overload; cdecl; begin Result := arr.BinarySearch(area); end;
+function TPointArray_BinaryFind1(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryFind(item); end;
+function TPointArray_BinaryFind2(const arr: TPointArray; const area: TBox): Integer; overload; cdecl; begin Result := arr.BinaryFind(area); end;
 function TPointArray_BinaryIndexOf(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryIndexOf(item); end;
 function TPointArray_BinaryExists(const arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryExists(item); end;
 function TPointArray_BinaryPosL(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.BinaryPosL(item); end;
