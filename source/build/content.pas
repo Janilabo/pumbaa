@@ -346,6 +346,12 @@ begin
   AddFunction(@TPoint_Construct, 'function TPoint_Construct(const pX, pY: Integer): TPoint; overload;');
   AddFunction(@TPoint_Build, 'function TPoint_Build(const X, Y: Integer): TPoint;');
   AddFunction(@TPoint_Sign, 'function TPoint_Sign(const pt: TPoint; const target: TPoint): Integer; overload;');
+  AddFunction(@TPoint_Lower, 'function TPoint_Lower(const pt: TPoint; const target: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TPoint_Higher, 'function TPoint_Higher(const pt: TPoint; const target: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TPoint_Under, 'function TPoint_Under(const pt: TPoint; const target: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TPoint_Over, 'function TPoint_Over(const pt: TPoint; const target: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TPoint_Behind, 'function TPoint_Behind(const pt: TPoint; const target: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TPoint_Ahead, 'function TPoint_Ahead(const pt: TPoint; const target: TPoint; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TPoint_Comparison, 'function TPoint_Comparison(const pt: TPoint; const target: TPoint): Integer; overload;');
   AddFunction(@TPoint_Compare, 'function TPoint_Compare(const pt: TPoint; const target: TPoint): Integer; overload;');
   AddFunction(@TPoint_Compared, 'function TPoint_Compared(const pt: TPoint; const target: TPoint): Integer; overload;');
@@ -898,6 +904,8 @@ begin
   AddFunction(@TIntegerArray_BinaryCountingSort, 'function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySorted, 'function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
+  AddFunction(@TIntegerArray_BinaryInsertSort, 'function TIntegerArray_BinaryInsertSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryInsertSorted, 'function TIntegerArray_BinaryInsertSorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
   AddFunction(@TIntegerArray_BinaryBoundL, 'function TIntegerArray_BinaryBoundL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryBoundR, 'function TIntegerArray_BinaryBoundR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryPosL, 'function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
@@ -998,6 +1006,8 @@ begin
   AddFunction(@TDoubleArray_BSort, 'function TDoubleArray_BSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinarySort, 'function TDoubleArray_BinarySort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinarySorted, 'function TDoubleArray_BinarySorted(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray;');
+  AddFunction(@TDoubleArray_BinaryInsertSort, 'function TDoubleArray_BinaryInsertSort(var arr: TDoubleArray; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryInsertSorted, 'function TDoubleArray_BinaryInsertSorted(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray;');
   AddFunction(@TDoubleArray_BinaryBoundL, 'function TDoubleArray_BinaryBoundL(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryBoundR, 'function TDoubleArray_BinaryBoundR(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryPosL, 'function TDoubleArray_BinaryPosL(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
@@ -1322,6 +1332,8 @@ begin
   AddFunction(@TPointArray_BinaryFilter, 'function TPointArray_BinaryFilter(const arr: TPointArray; const area: TBox): TPointArray; overload;');
   AddFunction(@TPointArray_BinaryX, 'function TPointArray_BinaryX(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TPointArray_BinaryY, 'function TPointArray_BinaryY(const arr: TPointArray): TIntegerArray; overload;');
+  AddFunction(@TPointArray_BinaryInsertSort, 'function TPointArray_BinaryInsertSort(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TPointArray_BinaryInsertSorted, 'function TPointArray_BinaryInsertSorted(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload;');
 
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
