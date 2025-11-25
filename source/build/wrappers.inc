@@ -965,6 +965,10 @@ function TIntegerArray_BinaryPoint(const arr: TIntegerArray; const value: Intege
 function TIntegerArray_BinaryClosest(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClosest(value, oAscending); end;
 function TIntegerArray_BinaryFarthest(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFarthest(value, oAscending); end;
 function TIntegerArray_BinarySearchNth(const arr: TIntegerArray; const value: Integer; const N: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchNth(value, N, oAscending); end;
+function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
+function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
+function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
+function TIntegerArray_TernaryMountain(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryMountain; end;
 
 function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
 function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
@@ -1058,6 +1062,10 @@ function TDoubleArray_BinaryPoint(const arr: TDoubleArray; const value: Double; 
 function TDoubleArray_BinaryClosest(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClosest(value, oAscending); end;
 function TDoubleArray_BinaryFarthest(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFarthest(value, oAscending); end;
 function TDoubleArray_BinarySearchNth(const arr: TDoubleArray; const value: Double; const N: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchNth(value, N, oAscending); end;
+function TDoubleArray_TernarySearch(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
+function TDoubleArray_TernaryPeak(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
+function TDoubleArray_TernaryValley(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
+function TDoubleArray_TernaryMountain(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.TernaryMountain; end;
 
 function TStringArray_Tally(const arr: TStringArray): Int64; cdecl; begin Result := arr.Tally; end;
 function TStringArray_Concat(const arr: TStringArray): string; cdecl; begin Result := arr.Concat; end;
@@ -4211,6 +4219,18 @@ function TArray_OnOrder2(const arr: TDoubleArray): Boolean; overload; cdecl; beg
 function TArray_OnOrder3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.OnOrder; end;
 function TArray_OnOrder4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.OnOrder; end;
 function TArray_OnOrder5(const arr: TPointArray): Boolean; overload; cdecl; begin Result := arr.OnOrder; end;
+
+function TArray_Peaks1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Peaks; end;
+function TArray_Peaks2(const arr: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := arr.Peaks; end;
+function TArray_Peaks3(const arr: TStringArray): TIntegerArray; overload; cdecl; begin Result := arr.Peaks; end;
+function TArray_Peaks4(const arr: TCharArray): TIntegerArray; overload; cdecl; begin Result := arr.Peaks; end;
+function TArray_Peaks5(const arr: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.Peaks; end;
+
+function TArray_Valleys1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Valleys; end;
+function TArray_Valleys2(const arr: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := arr.Valleys; end;
+function TArray_Valleys3(const arr: TStringArray): TIntegerArray; overload; cdecl; begin Result := arr.Valleys; end;
+function TArray_Valleys4(const arr: TCharArray): TIntegerArray; overload; cdecl; begin Result := arr.Valleys; end;
+function TArray_Valleys5(const arr: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.Valleys; end;
 
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;

@@ -1003,6 +1003,10 @@ begin
   AddFunction(@TIntegerArray_BinaryClosest, 'function TIntegerArray_BinaryClosest(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryFarthest, 'function TIntegerArray_BinaryFarthest(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinarySearchNth, 'function TIntegerArray_BinarySearchNth(const arr: TIntegerArray; const value: Integer; const N: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_TernarySearch, 'function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TIntegerArray_TernaryMountain, 'function TIntegerArray_TernaryMountain(const arr: TIntegerArray): Integer; overload;');
 
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -1096,6 +1100,10 @@ begin
   AddFunction(@TDoubleArray_BinaryClosest, 'function TDoubleArray_BinaryClosest(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_BinaryFarthest, 'function TDoubleArray_BinaryFarthest(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_BinarySearchNth, 'function TDoubleArray_BinarySearchNth(const arr: TDoubleArray; const value: Double; const N: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_TernarySearch, 'function TDoubleArray_TernarySearch(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_TernaryPeak, 'function TDoubleArray_TernaryPeak(const arr: TDoubleArray): Integer; overload;');
+  AddFunction(@TDoubleArray_TernaryValley, 'function TDoubleArray_TernaryValley(const arr: TDoubleArray): Integer; overload;');
+  AddFunction(@TDoubleArray_TernaryMountain, 'function TDoubleArray_TernaryMountain(const arr: TDoubleArray): Integer; overload;');
 
   AddFunction(@TStringArray_Tally, 'function TStringArray_Tally(const arr: TStringArray): Int64;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
@@ -4257,6 +4265,18 @@ begin
   AddFunction(@TArray_OnOrder3, 'function TArray_OnOrder(const arr: TStringArray): Boolean; overload;');
   AddFunction(@TArray_OnOrder4, 'function TArray_OnOrder(const arr: TCharArray): Boolean; overload;');
   AddFunction(@TArray_OnOrder5, 'function TArray_OnOrder(const arr: TPointArray): Boolean; overload;');
+  
+  AddFunction(@TArray_Peaks1, 'function TArray_Peaks(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Peaks2, 'function TArray_Peaks(const arr: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Peaks3, 'function TArray_Peaks(const arr: TStringArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Peaks4, 'function TArray_Peaks(const arr: TCharArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Peaks5, 'function TArray_Peaks(const arr: TPointArray): TIntegerArray; overload;');
+
+  AddFunction(@TArray_Valleys1, 'function TArray_Valleys(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Valleys2, 'function TArray_Valleys(const arr: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Valleys3, 'function TArray_Valleys(const arr: TStringArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Valleys4, 'function TArray_Valleys(const arr: TCharArray): TIntegerArray; overload;');
+  AddFunction(@TArray_Valleys5, 'function TArray_Valleys(const arr: TPointArray): TIntegerArray; overload;');
   
   AddFunction(@TArray_MergeSortWeighted1, 'function TArray_MergeSortWeighted(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_MergeSortWeighted2, 'function TArray_MergeSortWeighted(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
