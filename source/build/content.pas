@@ -415,6 +415,7 @@ begin
   AddFunction(@TPoint_Omits, 'function TPoint_Omits(const pt: TPoint; const val: Integer): Boolean;');
   AddFunction(@TPoint_Reflected, 'function TPoint_Reflected(const pt: TPoint): TPoint;');
   AddFunction(@TPoint_Flipped, 'function TPoint_Flipped(const pt: TPoint): TPoint;');
+  AddFunction(@TPoint_Null, 'function TPoint_Null(const value: Integer = -2147483648): TPoint; overload;');
 
   AddFunction(@TBox_Build1, 'function TBox_Build(const minX, minY, maxX, maxY: Integer): TBox; overload;');
   AddFunction(@TBox_Build2, 'function TBox_Build(const top, bottom: TPoint): TBox; overload;');
@@ -580,6 +581,7 @@ begin
   AddFunction(@TBox_Uniform2, 'function TBox_Uniform(const bx: TBox): Boolean; overload;');
   AddFunction(@TBox_Employs, 'function TBox_Employs(const bx: TBox; const val: Integer): Boolean;');
   AddFunction(@TBox_Omits, 'function TBox_Omits(const bx: TBox; const val: Integer): Boolean;');
+  AddFunction(@TBox_Null, 'function TBox_Null(const value: Integer = -2147483648): TBox; overload;');
 
   AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
@@ -786,6 +788,7 @@ begin
   AddFunction(@TRange_Uniform2, 'function TRange_Uniform(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_Employs, 'function TRange_Employs(const range: TRange; const val: Integer): Boolean;');
   AddFunction(@TRange_Omits, 'function TRange_Omits(const range: TRange; const val: Integer): Boolean;');
+  AddFunction(@TRange_Null, 'function TRange_Null(const value: Integer = -2147483648): TRange; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -908,6 +911,8 @@ begin
   AddFunction(@TIntegerArray_BinaryInsertSorted, 'function TIntegerArray_BinaryInsertSorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray;');
   AddFunction(@TIntegerArray_BinaryBoundL, 'function TIntegerArray_BinaryBoundL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryBoundR, 'function TIntegerArray_BinaryBoundR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryBoundLeft, 'function TIntegerArray_BinaryBoundLeft(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryBoundRight, 'function TIntegerArray_BinaryBoundRight(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryPosL, 'function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryPosR, 'function TIntegerArray_BinaryPosR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinarySearch1, 'function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload;');
@@ -988,6 +993,16 @@ begin
   AddFunction(@TIntegerArray_BinaryExists, 'function TIntegerArray_BinaryExists(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TIntegerArray_BinarySearchSpan1, 'function TIntegerArray_BinarySearchSpan(const value: Integer; const L, R: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinarySearchSpan2, 'function TIntegerArray_BinarySearchSpan(const range: TRange; const L, R: Integer; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryFindFirst1, 'function TIntegerArray_BinaryFindFirst(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryFindFirst2, 'function TIntegerArray_BinaryFindFirst(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryFindLast1, 'function TIntegerArray_BinaryFindLast(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryFindLast2, 'function TIntegerArray_BinaryFindLast(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryCeil, 'function TIntegerArray_BinaryCeil(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryFloor, 'function TIntegerArray_BinaryFloor(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryPoint, 'function TIntegerArray_BinaryPoint(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryClosest, 'function TIntegerArray_BinaryClosest(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryFarthest, 'function TIntegerArray_BinaryFarthest(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinarySearchNth, 'function TIntegerArray_BinarySearchNth(const arr: TIntegerArray; const value: Integer; const N: Integer; const oAscending: Boolean = True): Integer; overload;');
 
   AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -1010,6 +1025,8 @@ begin
   AddFunction(@TDoubleArray_BinaryInsertSorted, 'function TDoubleArray_BinaryInsertSorted(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray;');
   AddFunction(@TDoubleArray_BinaryBoundL, 'function TDoubleArray_BinaryBoundL(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryBoundR, 'function TDoubleArray_BinaryBoundR(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryBoundLeft, 'function TDoubleArray_BinaryBoundLeft(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryBoundRight, 'function TDoubleArray_BinaryBoundRight(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryPosL, 'function TDoubleArray_BinaryPosL(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryPosR, 'function TDoubleArray_BinaryPosR(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinarySearch, 'function TDoubleArray_BinarySearch(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
@@ -1069,6 +1086,16 @@ begin
   AddFunction(@TDoubleArray_BinaryExists, 'function TDoubleArray_BinaryExists(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TDoubleArray_BinarySearchSpan1, 'function TDoubleArray_BinarySearchSpan(const value: Double; const L, R: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_BinarySearchSpan2, 'function TDoubleArray_BinarySearchSpan(const range: TRange; const L, R: Integer; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryFindFirst1, 'function TDoubleArray_BinaryFindFirst(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryFindFirst2, 'function TDoubleArray_BinaryFindFirst(const arr: TDoubleArray; const range: TRange; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryFindLast1, 'function TDoubleArray_BinaryFindLast(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryFindLast2, 'function TDoubleArray_BinaryFindLast(const arr: TDoubleArray; const range: TRange; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryCeil, 'function TDoubleArray_BinaryCeil(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryFloor, 'function TDoubleArray_BinaryFloor(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryPoint, 'function TDoubleArray_BinaryPoint(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryClosest, 'function TDoubleArray_BinaryClosest(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryFarthest, 'function TDoubleArray_BinaryFarthest(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinarySearchNth, 'function TDoubleArray_BinarySearchNth(const arr: TDoubleArray; const value: Double; const N: Integer; const oAscending: Boolean = True): Integer; overload;');
 
   AddFunction(@TStringArray_Tally, 'function TStringArray_Tally(const arr: TStringArray): Int64;');
   AddFunction(@TStringArray_Concat, 'function TStringArray_Concat(const arr: TStringArray): string;');
