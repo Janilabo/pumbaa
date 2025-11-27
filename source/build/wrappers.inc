@@ -866,6 +866,9 @@ function TIntegerArray_Monotony(const arr: TIntegerArray): Boolean; overload; cd
 function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer; cdecl; begin Result := arr.BinaryCountingSort(aAscending, maxRange); end;
 function TIntegerArray_Fuse(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Fuse(items, oAscending); end;
 function TIntegerArray_Combinate(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Combinate(items, oAscending); end;
+function TIntegerArray_ExpandTolerance(const arr: TIntegerArray; const index: Integer; const tolerance: Integer; const oAscending: Boolean = True): TRange; cdecl; begin Result := arr.ExpandTolerance(index, tolerance, oAscending); end;
+function TIntegerArray_ExpandSmooth(const arr: TIntegerArray; const index: Integer; const tolerance: Integer; const oAscending: Boolean = True): TRange; cdecl; begin Result := arr.ExpandSmooth(index, tolerance, oAscending); end;
+function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer; const oAscending: Boolean = True): TRange; cdecl; begin Result := arr.ExpandGradient(index, tolerance, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
@@ -971,6 +974,7 @@ function TIntegerArray_BinaryApproximateSearch(const arr: TIntegerArray; const v
 function TIntegerArray_BinarySearchApproximate(const arr: TIntegerArray; const value: Integer; const tolerance: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchApproximate(value, tolerance, oAscending); end;
 function TIntegerArray_BinaryLowerCount(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryLowerCount(value, oAscending); end;
 function TIntegerArray_BinaryHigherCount(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryHigherCount(value, oAscending); end;
+function TIntegerArray_BinaryRangeEx(const arr: TIntegerArray; const value: Integer; const tolerance: Integer; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryRangeEx(value, tolerance, oAscending); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
@@ -4243,6 +4247,24 @@ function TArray_Valleys2(const arr: TDoubleArray): TIntegerArray; overload; cdec
 function TArray_Valleys3(const arr: TStringArray): TIntegerArray; overload; cdecl; begin Result := arr.Valleys; end;
 function TArray_Valleys4(const arr: TCharArray): TIntegerArray; overload; cdecl; begin Result := arr.Valleys; end;
 function TArray_Valleys5(const arr: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.Valleys; end;
+
+function TArray_Unionize1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Unionize(items, oAscending); end;
+function TArray_Unionize2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Unionize(items, oAscending); end;
+function TArray_Unionize3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Unionize(items, oAscending); end;
+function TArray_Unionize4(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.Unionize(items, oAscending); end;
+function TArray_Unionize5(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Unionize(items, oAscending); end;
+
+function TArray_Subtract1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Subtract(items, oAscending); end;
+function TArray_Subtract2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Subtract(items, oAscending); end;
+function TArray_Subtract3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Subtract(items, oAscending); end;
+function TArray_Subtract4(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.Subtract(items, oAscending); end;
+function TArray_Subtract5(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Subtract(items, oAscending); end;
+
+function TArray_Intersect1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Intersect(items, oAscending); end;
+function TArray_Intersect2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Intersect(items, oAscending); end;
+function TArray_Intersect3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Intersect(items, oAscending); end;
+function TArray_Intersect4(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.Intersect(items, oAscending); end;
+function TArray_Intersect5(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Intersect(items, oAscending); end;
 
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
