@@ -20,10 +20,10 @@ function Sort8(var A, B, C: string; const oAscending: Boolean = True): Boolean; 
 function Sort9(var A, B, C: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
 function Sort10(var A, B, C: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Sort(A, B, C, oAscending); end;
 
-function XORSort1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := XORSort(A, B); end;
-function XORSort2(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := XORSort(A, B, C); end;
-function iSort1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := iSort(A, B); end;
-function iSort2(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := iSort(A, B, C); end;
+function XORSort1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := XORSort(A, B, oAscending); end;
+function XORSort2(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := XORSort(A, B, C, oAscending); end;
+function iSort1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := iSort(A, B, oAscending); end;
+function iSort2(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := iSort(A, B, C, oAscending); end;
 
 function TConnection_Create(const index1, index2: Integer): TConnection; overload; cdecl; var cn: TConnection; begin Result := cn.Create(index1, index2); end;
 function TConnection_Construct(const index1, index2: Integer): TConnection; overload; cdecl; begin Result := TConnection.Construct(index1, index2); end;
@@ -331,7 +331,7 @@ function TPoint_Inside(const pt: TPoint; const bx: TBox): Boolean; cdecl; inline
 function TPoint_InCircle(const pt, center: TPoint; const radius: Double): Boolean; cdecl; inline; begin Result := pt.InCircle(center, radius); end;
 function TPoint_InEllipse(const pt, center: TPoint; const XRadius, YRadius: Double): Boolean; cdecl; inline; begin Result := pt.InEllipse(center, XRadius, YRadius); end;
 function TPoint_Clamp(const pt: TPoint; const area: TBox): TPoint; cdecl; begin Result := pt.Clamp(area); end;
-function TPoint_AngleDegrees(const pt, target: TPoint; const compass: Boolean = False): Double; cdecl; begin Result := pt.AngleDegrees(target); end;
+function TPoint_AngleDegrees(const pt, target: TPoint; const compass: Boolean = False): Double; cdecl; begin Result := pt.AngleDegrees(target, compass); end;
 function TPoint_AngleRadians(const pt, target: TPoint): Double; cdecl; begin Result := pt.AngleRadians(target); end;
 function TPoint_Dist(const pt, target: TPoint; const metric: TDistanceMetric = dmEuclidean): Double; cdecl; begin Result := pt.Dist(target, metric); end;
 function TPoint_Grid(const pt: TPoint; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TPointArray; cdecl; begin Result := pt.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
@@ -453,7 +453,7 @@ function TBox_Inside2(const bx: TBox; const targets: TBoxArray): Boolean; overlo
 function TBox_Center(const bx: TBox): TPoint; cdecl; begin Result := bx.Center; end;
 function TBox_Envelope(const bx: TBox; const b: TBox): TBox; cdecl; begin Result := bx.Envelope(b); end;
 function TBox_Overlap(const bx: TBox; const b: TBox): Boolean; cdecl; inline; begin Result := bx.Overlap(b); end;
-function TBox_Intersect1(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := b.Intersect(b); end;
+function TBox_Intersect1(const bx: TBox; const b: TBox): TBox; overload; cdecl; begin Result := bx.Intersect(b); end;
 function TBox_Intersect2(const bx: TBox; const b: TBox; var iArea: TBox): Boolean; overload; cdecl; begin Result := bx.Intersect(b, iArea); end;
 function TBox_Valid(const bx: TBox): Boolean; cdecl; inline; begin Result := bx.Valid; end;
 function TBox_Invalid(const bx: TBox): Boolean; cdecl; begin Result := bx.Invalid; end;
@@ -919,7 +919,7 @@ function TIntegerArray_BinaryRemove(var arr: TIntegerArray; const val: Integer; 
 function TIntegerArray_BinaryFind(const arr: TIntegerArray; const val: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFind(val, aAscending); end;
 function TIntegerArray_BinarySearchEx(const arr: TIntegerArray; const x: Integer; const ignore: Integer = -2147483648; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchEx(x, ignore, aAscending); end;
 function TIntegerArray_BinaryInsert(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsert(x, aAscending); end;
-function TIntegerArray_BinarySearchRange(const arr: TIntegerArray; const x: Integer; const rLeft, rRight: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchRange(x, rLeft, rRight); end;
+function TIntegerArray_BinarySearchRange(const arr: TIntegerArray; const x: Integer; const rLeft, rRight: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchRange(x, rLeft, rRight, aAscending); end;
 function TIntegerArray_BinaryDeduplicate(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryDeduplicate(aAscending); end;
 function TIntegerArray_BinaryUnduplicate(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUnduplicate(aAscending); end;
 function TIntegerArray_BinaryDeduplicated(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryDeduplicated(aAscending); end;
@@ -1040,7 +1040,7 @@ function TDoubleArray_BinaryRemove(var arr: TDoubleArray; const val: Double; con
 function TDoubleArray_BinaryFind(const arr: TDoubleArray; const val: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFind(val, aAscending); end;
 function TDoubleArray_BinarySearchEx(const arr: TDoubleArray; const x: Double; const ignore: Double = -2147483648; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchEx(x, ignore, aAscending); end;
 function TDoubleArray_BinaryInsert(var arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsert(x, aAscending); end;
-function TDoubleArray_BinarySearchRange(const arr: TDoubleArray; const x: Double; const rLeft, rRight: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchRange(x, rLeft, rRight); end;
+function TDoubleArray_BinarySearchRange(const arr: TDoubleArray; const x: Double; const rLeft, rRight: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchRange(x, rLeft, rRight, aAscending); end;
 function TDoubleArray_BinaryDeduplicate(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryDeduplicate(aAscending); end;
 function TDoubleArray_BinaryUnduplicate(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUnduplicate(aAscending); end;
 function TDoubleArray_BinaryDeduplicated(const arr: TDoubleArray; const aAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryDeduplicated(aAscending); end;
