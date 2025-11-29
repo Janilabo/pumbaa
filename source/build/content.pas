@@ -907,7 +907,7 @@ begin
   AddFunction(@TIntegerArray_Splay2, 'function TIntegerArray_Splay(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_Trace1, 'function TIntegerArray_Trace(const arr: TIntegerArray; const index: Integer; const tolerance: Integer = 1): TRange; overload;');
   AddFunction(@TIntegerArray_Trace2, 'function TIntegerArray_Trace(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1): TRange; overload;');
-  AddFunction(@TIntegerArray_ExpandGradient, 'function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer; const oAscending: Boolean = True): TRange;');
+  AddFunction(@TIntegerArray_ExpandGradient, 'function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer): TRange;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryCountingSort, 'function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');

@@ -870,7 +870,7 @@ function TIntegerArray_Splay1(const arr: TIntegerArray; const index: Integer; co
 function TIntegerArray_Splay2(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Splay(index, limits, tolerance, oAscending); end;
 function TIntegerArray_Trace1(const arr: TIntegerArray; const index: Integer; const tolerance: Integer = 1): TRange; overload; cdecl; begin Result := arr.Trace(index, tolerance); end;
 function TIntegerArray_Trace2(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1): TRange; overload; cdecl; begin Result := arr.Trace(index, limits, tolerance); end;
-function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer; const oAscending: Boolean = True): TRange; cdecl; begin Result := arr.ExpandGradient(index, tolerance, oAscending); end;
+function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer): TRange; cdecl; begin Result := arr.ExpandGradient(index, tolerance); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
