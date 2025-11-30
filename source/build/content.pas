@@ -921,6 +921,8 @@ begin
   AddFunction(@TIntegerArray_BinaryPos, 'function TIntegerArray_BinaryPos(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryPosL, 'function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryPosR, 'function TIntegerArray_BinaryPosR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TIntegerArray_BinaryPosOf, 'function TIntegerArray_BinaryPosOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryPosition, 'function TIntegerArray_BinaryPosition(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinarySearch1, 'function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinarySearch2, 'function TIntegerArray_BinarySearch(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinarySeek, 'function TIntegerArray_BinarySeek(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer;');
@@ -1051,6 +1053,8 @@ begin
   AddFunction(@TDoubleArray_BinaryPos, 'function TDoubleArray_BinaryPos(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_BinaryPosL, 'function TDoubleArray_BinaryPosL(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryPosR, 'function TDoubleArray_BinaryPosR(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
+  AddFunction(@TDoubleArray_BinaryPosOf, 'function TDoubleArray_BinaryPosOf(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TDoubleArray_BinaryPosition, 'function TDoubleArray_BinaryPosition(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_BinarySearch, 'function TDoubleArray_BinarySearch(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinarySeek, 'function TDoubleArray_BinarySeek(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer;');
   AddFunction(@TDoubleArray_BinaryContains, 'function TDoubleArray_BinaryContains(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean;');

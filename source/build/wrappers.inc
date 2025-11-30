@@ -883,6 +883,8 @@ function TIntegerArray_BinaryBoundRight(const arr: TIntegerArray; const value: I
 function TIntegerArray_BinaryPos(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPos(value, oAscending); end;
 function TIntegerArray_BinaryPosL(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosL(x, aAscending); end;
 function TIntegerArray_BinaryPosR(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosR(x, aAscending); end;
+function TIntegerArray_BinaryPosOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosOf(value, oAscending); end;
+function TIntegerArray_BinaryPosition(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosition(value, oAscending); end;
 function TIntegerArray_BinarySearch1(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; overload; begin Result := arr.BinarySearch(x, aAscending); end;
 function TIntegerArray_BinarySearch2(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; cdecl; overload; begin Result := arr.BinarySearch(x, aAscending); end;
 function TIntegerArray_BinarySeek(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySeek(x, aAscending); end;
@@ -1013,6 +1015,8 @@ function TDoubleArray_BinaryBoundRight(const arr: TDoubleArray; const value: Dou
 function TDoubleArray_BinaryPos(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPos(value, oAscending); end;
 function TDoubleArray_BinaryPosL(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosL(x, aAscending); end;
 function TDoubleArray_BinaryPosR(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosR(x, aAscending); end;
+function TDoubleArray_BinaryPosOf(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosOf(value, oAscending); end;
+function TDoubleArray_BinaryPosition(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinaryPosition(value, oAscending); end;
 function TDoubleArray_BinarySearch(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySearch(x, aAscending); end;
 function TDoubleArray_BinarySeek(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySeek(x, aAscending); end;
 function TDoubleArray_BinaryContains(const arr: TDoubleArray; const x: Double; const aAscending: Boolean = True): Boolean; cdecl; begin Result := arr.BinaryContains(x, aAscending); end;
