@@ -622,10 +622,15 @@ begin
   AddFunction(@TRange_Grab, 'function TRange_Grab(const range: TRange): TRange;');
   AddFunction(@TRange_Count, 'function TRange_Count(const range: TRange): Integer;');
   AddFunction(@TRange_Area, 'function TRange_Area(const range: TRange): Integer;');
-  AddFunction(@TRange_Span, 'function TRange_Span(const range: TRange): Integer;');
+  AddFunction(@TRange_Extent, 'function TRange_Extent(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Reach, 'function TRange_Reach(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Coverage, 'function TRange_Coverage(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Diameter, 'function TRange_Diameter(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Population, 'function TRange_Population(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Size1, 'function TRange_Size(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Size2, 'function TRange_Size(const range: TRange; var minVal, maxVal: Integer): Integer; overload;');
   AddFunction(@TRange_Capacity, 'function TRange_Capacity(const range: TRange): Integer;');
+  AddFunction(@TRange_Span, 'function TRange_Span(const range: TRange): Integer;');
   AddFunction(@TRange_Frame1, 'function TRange_Frame(const range: TRange; var rSize: Integer): TRange; overload;');
   AddFunction(@TRange_Frame2, 'function TRange_Frame(const range: TRange): TRange; overload;');
   AddFunction(@TRange_Lowest, 'function TRange_Lowest(const range: TRange): Integer;');
