@@ -675,6 +675,9 @@ begin
   AddFunction(@TRange_Normally, 'function TRange_Normally(const range: TRange): TRange;');
   AddFunction(@TRange_Normalize, 'function TRange_Normalize(const range: TRange): TRange;');
   AddFunction(@TRange_Normalized, 'function TRange_Normalized(const range: TRange): TRange;');
+  AddFunction(@TRange_Normalized, 'function TRange_Normalized(const range: TRange): TRange;');
+  AddFunction(@TRange_MinMax, 'function TRange_MinMax(const range: TRange): TRange;');
+  AddFunction(@TRange_MaxMin, 'function TRange_MaxMin(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Intersect1, 'function TRange_Intersection(const range: TRange; const b: TRange): TRange; overload;');
