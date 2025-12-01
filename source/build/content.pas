@@ -733,8 +733,10 @@ begin
   AddFunction(@TRange_Item, 'function TRange_Item(const range: TRange; const x: Integer): Boolean;');
   AddFunction(@TRange_Pivot, 'function TRange_Pivot(const range: TRange): Integer;');
   AddFunction(@TRange_Mean, 'function TRange_Mean(const range: TRange): Double;');
+  AddFunction(@TRange_Medium, 'function TRange_Medium(const range: TRange): Double;');
   AddFunction(@TRange_Middle, 'function TRange_Middle(const range: TRange): Integer;');
   AddFunction(@TRange_MiddleValue, 'function TRange_MiddleValue(const range: TRange): Double;');
+  AddFunction(@TRange_MiddleVal, 'function TRange_MiddleVal(const range: TRange): Integer;');
   AddFunction(@TRange_Mid, 'function TRange_Mid(const range: TRange): Double;');
   AddFunction(@TRange_MidVal, 'function TRange_MidVal(const range: TRange): Double;');
   AddFunction(@TRange_MidValue, 'function TRange_MidValue(const range: TRange): Double;');
@@ -742,6 +744,9 @@ begin
   AddFunction(@TRange_Average, 'function TRange_Average(const range: TRange): Double;');
   AddFunction(@TRange_Center, 'function TRange_Center(const range: TRange): Integer;');
   AddFunction(@TRange_Central, 'function TRange_Central(const range: TRange): Integer;');
+  AddFunction(@TRange_Centre, 'function TRange_Centre(const range: TRange): Integer;');
+  AddFunction(@TRange_Centroid, 'function TRange_Centroid(const range: TRange): Integer;');
+  AddFunction(@TRange_Core, 'function TRange_Core(const range: TRange): Integer;');
   AddFunction(@TRange_Half, 'function TRange_Half(const range: TRange): Integer;');
   AddFunction(@TRange_Halfway, 'function TRange_Halfway(const range: TRange): Integer;');
   AddFunction(@TRange_Radius, 'function TRange_Radius(const range: TRange): Integer;');
