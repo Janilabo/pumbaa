@@ -627,6 +627,8 @@ begin
   AddFunction(@TRange_Coverage, 'function TRange_Coverage(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Diameter, 'function TRange_Diameter(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Population, 'function TRange_Population(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Length, 'function TRange_Length(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Sized, 'function TRange_Sized(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Size1, 'function TRange_Size(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Size2, 'function TRange_Size(const range: TRange; var minVal, maxVal: Integer): Integer; overload;');
   AddFunction(@TRange_Capacity, 'function TRange_Capacity(const range: TRange): Integer;');
@@ -637,6 +639,14 @@ begin
   AddFunction(@TRange_Minimum, 'function TRange_Minimum(const range: TRange): Integer;');
   AddFunction(@TRange_Highest, 'function TRange_Highest(const range: TRange): Integer;');
   AddFunction(@TRange_Maximum, 'function TRange_Maximum(const range: TRange): Integer;');
+  AddFunction(@TRange_First, 'function TRange_First(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Last, 'function TRange_Last(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Left, 'function TRange_Left(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Right, 'function TRange_Right(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Lower, 'function TRange_Lower(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Higher, 'function TRange_Higher(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Bottom, 'function TRange_Bottom(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Top, 'function TRange_Top(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Exceeds, 'function TRange_Exceeds(const range: TRange; const maxElements: Integer): Boolean;');
   AddFunction(@TRange_Insufficient, 'function Insufficient(const range: TRange; const minElements: Integer): Boolean;');
   AddFunction(@TRange_Digits1, 'function TRange_Digits(const range: TRange): TIntegerArray; overload;');
