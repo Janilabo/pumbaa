@@ -485,6 +485,7 @@ function TBox_Elements(const bx: TBox): TPointArray; cdecl; begin Result := bx.E
 function TBox_Unzip1(const bx: TBox; var bX1, bY1, bX2, bY2: Integer): Integer; overload; cdecl; begin Result := bx.Unzip(bX1, bY1, bX2, bY2); end;
 function TBox_Unzip2(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Unzip; end;
 function TBox_Unpack(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Unpack; end;
+function TBox_Unbox(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Unbox; end;
 function TBox_IDs1(const bx: TBox): TIntegerArray; overload; cdecl; begin Result := bx.IDs; end;
 function TBox_IDs2(const bx: TBox; const p: TPoint): Integer; overload; cdecl; begin Result := bx.IDs(p); end;
 function TBox_IDs3(const bx: TBox; const p: TPointArray): TIntegerArray; overload; cdecl; begin Result := bx.IDs(p); end;
@@ -500,13 +501,19 @@ function TBox_Outline3(const bx: TBox; const pt: TPoint): Boolean; overload; cde
 function TBox_Contour(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Contour; end;
 function TBox_Spiral(const bx: TBox): TPointArray; cdecl; begin Result := bx.Spiral; end;
 function TBox_Traverse(const bx: TBox): TPointArray; cdecl; begin Result := bx.Traverse; end;
-function TBox_Rows(const bx: TBox): T2DPointArray; cdecl; begin Result := bx.Rows; end;
-function TBox_Columns(const bx: TBox): T2DPointArray; cdecl; begin Result := bx.Columns; end;
+function TBox_Row1(const bx: TBox; const index: Integer): TPointArray; overload; cdecl; begin Result := bx.Row(index); end;
+function TBox_Row2(const bx: TBox): T2DPointArray; overload; cdecl; begin Result := bx.Row; end;
+function TBox_Column1(const bx: TBox; const index: Integer): TPointArray; overload; cdecl; begin Result := bx.Column(index); end;
+function TBox_Column2(const bx: TBox): T2DPointArray; overload; cdecl; begin Result := bx.Column; end;
+function TBox_Rows1(const bx: TBox): Integer; overload; cdecl; begin Result := bx.Rows; end;
+function TBox_Rows2(const bx: TBox; const index: Integer): TPointArray; overload; cdecl; begin Result := bx.Rows(index); end;
+function TBox_Columns1(const bx: TBox): Integer; overload; cdecl; begin Result := bx.Columns; end;
+function TBox_Columns2(const bx: TBox; const index: Integer): TPointArray; overload; cdecl; begin Result := bx.Columns(index); end;
 function TBox_Rowwise(const bx: TBox): TPointArray; cdecl; begin Result := bx.Rowwise; end;
 function TBox_Columnwise(const bx: TBox): TPointArray; cdecl; begin Result := bx.Columnwise; end;
-function TBox_Grid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray; cdecl; begin Result := bx.Grid(rows, columns, spaceVertical, spaceHorizontal); end;
-function TBox_Row(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Row(cells, space); end;
-function TBox_Column(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.Column(cells, space); end;
+function TBox_AsGrid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray; cdecl; begin Result := bx.AsGrid(rows, columns, spaceVertical, spaceHorizontal); end;
+function TBox_AsRow(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.AsRow(cells, space); end;
+function TBox_AsColumn(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray; cdecl; begin Result := bx.AsColumn(cells, space); end;
 function TBox_CornerPoints(const bx: TBox): TPointArray; cdecl; begin Result := bx.CornerPoints; end;
 function TBox_CornerPts(const bx: TBox): TPointArray; cdecl; begin Result := bx.CornerPts; end;
 function TBox_Corners(const bx: TBox): TPointArray; cdecl; begin Result := bx.Corners; end;
@@ -888,6 +895,7 @@ function TIntegerArray_Monotony(const arr: TIntegerArray): Boolean; overload; cd
 function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer; cdecl; begin Result := arr.BinaryCountingSort(aAscending, maxRange); end;
 function TIntegerArray_Fuse(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Fuse(items, oAscending); end;
 function TIntegerArray_Combinate(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Combinate(items, oAscending); end;
+function TIntegerArray_Spanning(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(range, oAscending); end;
 function TIntegerArray_Splay1(const arr: TIntegerArray; const index: Integer; const tolerance: Integer = 1; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Splay(index, tolerance, oAscending); end;
 function TIntegerArray_Splay2(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Splay(index, limits, tolerance, oAscending); end;
 function TIntegerArray_Trace1(const arr: TIntegerArray; const index: Integer; const tolerance: Integer = 1): TRange; overload; cdecl; begin Result := arr.Trace(index, tolerance); end;
@@ -4312,6 +4320,12 @@ function TArray_Intersect2(const arr: TDoubleArray; const items: TDoubleArray; c
 function TArray_Intersect3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Intersect(items, oAscending); end;
 function TArray_Intersect4(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.Intersect(items, oAscending); end;
 function TArray_Intersect5(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Intersect(items, oAscending); end;
+
+function TArray_Spanning1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(item, oAscending); end;
+function TArray_Spanning2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(item, oAscending); end;
+function TArray_Spanning3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(item, oAscending); end;
+function TArray_Spanning4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(item, oAscending); end;
+function TArray_Spanning5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(item, oAscending); end;
 
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
