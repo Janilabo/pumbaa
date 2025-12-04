@@ -1060,6 +1060,8 @@ begin
   AddFunction(@TIntegerArray_BinarySpanning2, 'function TIntegerArray_BinarySpanning(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinarySpanOf1, 'function TIntegerArray_BinarySpanOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinarySpanOf2, 'function TIntegerArray_BinarySpanOf(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TIntegerArray_BinaryRangeOf1, 'function TIntegerArray_BinaryRangeOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TIntegerArray_BinaryRangeOf2, 'function TIntegerArray_BinaryRangeOf(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_TernarySearch, 'function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');
@@ -1174,6 +1176,8 @@ begin
   AddFunction(@TDoubleArray_BinarySpanning2, 'function TDoubleArray_BinarySpanning(const arr: TDoubleArray; const range: TRange; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_BinarySpanOf1, 'function TDoubleArray_BinarySpanOf(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_BinarySpanOf2, 'function TDoubleArray_BinarySpanOf(const arr: TDoubleArray; const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TDoubleArray_BinaryRangeOf1, 'function TDoubleArray_BinaryRangeOf(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TDoubleArray_BinaryRangeOf2, 'function TDoubleArray_BinaryRangeOf(const arr: TDoubleArray; const range: TRange; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TDoubleArray_TernarySearch, 'function TDoubleArray_TernarySearch(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TDoubleArray_TernaryPeak, 'function TDoubleArray_TernaryPeak(const arr: TDoubleArray): Integer; overload;');
   AddFunction(@TDoubleArray_TernaryValley, 'function TDoubleArray_TernaryValley(const arr: TDoubleArray): Integer; overload;');

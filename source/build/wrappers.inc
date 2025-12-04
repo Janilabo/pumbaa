@@ -1022,6 +1022,8 @@ function TIntegerArray_BinarySpanning1(const arr: TIntegerArray; const value: In
 function TIntegerArray_BinarySpanning2(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinarySpanning(range, oAscending); end;
 function TIntegerArray_BinarySpanOf1(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinarySpanOf(value, oAscending); end;
 function TIntegerArray_BinarySpanOf2(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinarySpanOf(range, oAscending); end;
+function TIntegerArray_BinaryRangeOf1(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryRangeOf(value, oAscending); end;
+function TIntegerArray_BinaryRangeOf2(const arr: TIntegerArray; const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryRangeOf(range, oAscending); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
@@ -1136,6 +1138,8 @@ function TDoubleArray_BinarySpanning1(const arr: TDoubleArray; const value: Doub
 function TDoubleArray_BinarySpanning2(const arr: TDoubleArray; const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinarySpanning(range, oAscending); end;
 function TDoubleArray_BinarySpanOf1(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinarySpanOf(value, oAscending); end;
 function TDoubleArray_BinarySpanOf2(const arr: TDoubleArray; const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinarySpanOf(range, oAscending); end;
+function TDoubleArray_BinaryRangeOf1(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryRangeOf(value, oAscending); end;
+function TDoubleArray_BinaryRangeOf2(const arr: TDoubleArray; const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryRangeOf(range, oAscending); end;
 function TDoubleArray_TernarySearch(const arr: TDoubleArray; const value: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TDoubleArray_TernaryPeak(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TDoubleArray_TernaryValley(const arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
