@@ -874,9 +874,6 @@ function TIntegerArray_Minimum2(const arr: TIntegerArray): Integer; overload; cd
 function TIntegerArray_Maximum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Maximum(index); end;
 function TIntegerArray_Maximum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Maximum; end;
 function TIntegerArray_Pure(const arr: TIntegerArray; const allowed: TIntegerArray): Boolean; cdecl; begin Result := arr.Pure(allowed); end;
-function TIntegerArray_NoneOf(const arr: TIntegerArray; const forbidden: TIntegerArray): Boolean; cdecl; begin Result := arr.NoneOf(forbidden); end;
-function TIntegerArray_AnyOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean; cdecl; begin Result := arr.AnyOf(candidates); end;
-function TIntegerArray_AllOf(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean; cdecl; begin Result := arr.AllOf(candidates); end;
 function TIntegerArray_Charify1(const arr: TIntegerArray): TCharArray; overload; cdecl; begin Result := arr.Charify; end;
 function TIntegerArray_Charify2(const arr: TIntegerArray; var str: string): TCharArray; overload; cdecl; begin Result := arr.Charify(str); end;
 function TIntegerArray_Stringify1(const arr: TIntegerArray): string; overload; cdecl; begin Result := arr.Stringify; end;
@@ -1497,6 +1494,15 @@ function TArray_AllEqual6(const arr: TPointArray): Boolean; overload; cdecl; beg
 function TArray_AllEqual7(const arr: TBoxArray): Boolean; overload; cdecl; begin Result := arr.AllEqual; end;
 function TArray_AllEqual8(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.AllEqual; end;
 
+function TArray_AllOf1(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.AllOf(candidates); end;
+function TArray_AllOf2(const arr: TDoubleArray; const candidates: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.AllOf(candidates); end;
+function TArray_AllOf3(const arr: TStringArray; const candidates: TStringArray): Boolean; overload; cdecl; begin Result := arr.AllOf(candidates); end;
+function TArray_AllOf4(const arr: TCharArray; const candidates: TCharArray): Boolean; overload; cdecl; begin Result := arr.AllOf(candidates); end;
+function TArray_AllOf5(const arr: TBooleanArray; const candidates: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.AllOf(candidates); end;
+function TArray_AllOf6(const arr: TPointArray; const candidates: TPointArray): Boolean; overload; cdecl; begin Result := arr.AllOf(candidates); end;
+function TArray_AllOf7(const arr: TBoxArray; const candidates: TBoxArray): Boolean; overload; cdecl; begin Result := arr.AllOf(candidates); end;
+function TArray_AllOf8(const arr: TRangeArray; const candidates: TRangeArray): Boolean; overload; cdecl; begin Result := arr.AllOf(candidates); end;
+
 function TArray_AllSame1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.AllSame; end;
 function TArray_AllSame2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.AllSame; end;
 function TArray_AllSame3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.AllSame; end;
@@ -1531,6 +1537,15 @@ function TArray_Any13(const arr: TBooleanArray): Boolean; overload; cdecl; begin
 function TArray_Any14(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.Any; end;
 function TArray_Any15(const arr: TBoxArray): TBox; overload; cdecl; begin Result := arr.Any; end;
 function TArray_Any16(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Any; end;
+
+function TArray_AnyOf1(const arr: TIntegerArray; const candidates: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.AnyOf(candidates); end;
+function TArray_AnyOf2(const arr: TDoubleArray; const candidates: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.AnyOf(candidates); end;
+function TArray_AnyOf3(const arr: TStringArray; const candidates: TStringArray): Boolean; overload; cdecl; begin Result := arr.AnyOf(candidates); end;
+function TArray_AnyOf4(const arr: TCharArray; const candidates: TCharArray): Boolean; overload; cdecl; begin Result := arr.AnyOf(candidates); end;
+function TArray_AnyOf5(const arr: TBooleanArray; const candidates: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.AnyOf(candidates); end;
+function TArray_AnyOf6(const arr: TPointArray; const candidates: TPointArray): Boolean; overload; cdecl; begin Result := arr.AnyOf(candidates); end;
+function TArray_AnyOf7(const arr: TBoxArray; const candidates: TBoxArray): Boolean; overload; cdecl; begin Result := arr.AnyOf(candidates); end;
+function TArray_AnyOf8(const arr: TRangeArray; const candidates: TRangeArray): Boolean; overload; cdecl; begin Result := arr.AnyOf(candidates); end;
 
 function TArray_Append1(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Append(item, duplicates); end;
 function TArray_Append2(const arr: TDoubleArray; const item: Double; const duplicates: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Append(item, duplicates); end;
@@ -2873,6 +2888,15 @@ function TArray_Next5(const arr: TBooleanArray; const index: Integer; const coun
 function TArray_Next6(const arr: TPointArray; const index: Integer; const count: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.Next(index, count); end;
 function TArray_Next7(const arr: TBoxArray; const index: Integer; const count: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Next(index, count); end;
 function TArray_Next8(const arr: TRangeArray; const index: Integer; const count: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Next(index, count); end;
+
+function TArray_NoneOf1(const arr: TIntegerArray; const forbidden: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.NoneOf(forbidden); end;
+function TArray_NoneOf2(const arr: TDoubleArray; const forbidden: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.NoneOf(forbidden); end;
+function TArray_NoneOf3(const arr: TStringArray; const forbidden: TStringArray): Boolean; overload; cdecl; begin Result := arr.NoneOf(forbidden); end;
+function TArray_NoneOf4(const arr: TCharArray; const forbidden: TCharArray): Boolean; overload; cdecl; begin Result := arr.NoneOf(forbidden); end;
+function TArray_NoneOf5(const arr: TBooleanArray; const forbidden: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.NoneOf(forbidden); end;
+function TArray_NoneOf6(const arr: TPointArray; const forbidden: TPointArray): Boolean; overload; cdecl; begin Result := arr.NoneOf(forbidden); end;
+function TArray_NoneOf7(const arr: TBoxArray; const forbidden: TBoxArray): Boolean; overload; cdecl; begin Result := arr.NoneOf(forbidden); end;
+function TArray_NoneOf8(const arr: TRangeArray; const forbidden: TRangeArray): Boolean; overload; cdecl; begin Result := arr.NoneOf(forbidden); end;
 
 function TArray_Occupied1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Occupied; end;
 function TArray_Occupied2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Occupied; end;
