@@ -788,6 +788,12 @@ function TRange_Uniform2(const range: TRange): Boolean; overload; cdecl; begin R
 function TRange_Employs(const range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Employs(val); end;
 function TRange_Omits(const range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Omits(val); end;
 function TRange_Null(const value: Integer = -2147483648): TRange; overload; cdecl; begin Result := TRange.Null(value); end;
+function TRange_Even(const range: TRange): Boolean; overload; cdecl; begin Result := range.Even; end;
+function TRange_Odd(const range: TRange): Boolean; overload; cdecl; begin Result := range.Odd; end;
+function TRange_Evens(const range: TRange): Integer; overload; cdecl; begin Result := range.Evens; end;
+function TRange_Odds(const range: TRange): Integer; overload; cdecl; begin Result := range.Odds; end;
+function TRange_Evened(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Evened; end;
+function TRange_Odded(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Odded; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

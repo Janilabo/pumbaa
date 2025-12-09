@@ -826,6 +826,12 @@ begin
   AddFunction(@TRange_Employs, 'function TRange_Employs(const range: TRange; const val: Integer): Boolean;');
   AddFunction(@TRange_Omits, 'function TRange_Omits(const range: TRange; const val: Integer): Boolean;');
   AddFunction(@TRange_Null, 'function TRange_Null(const value: Integer = -2147483648): TRange; overload;');
+  AddFunction(@TRange_Even, 'function TRange_Even(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Odd, 'function TRange_Odd(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Evens, 'function TRange_Evens(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Odds, 'function TRange_Odds(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Evened, 'function TRange_Evened(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Odded, 'function TRange_Odded(const range: TRange): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
