@@ -792,8 +792,12 @@ function TRange_Even(const range: TRange): Boolean; overload; cdecl; begin Resul
 function TRange_Odd(const range: TRange): Boolean; overload; cdecl; begin Result := range.Odd; end;
 function TRange_Evens(const range: TRange): Integer; overload; cdecl; begin Result := range.Evens; end;
 function TRange_Odds(const range: TRange): Integer; overload; cdecl; begin Result := range.Odds; end;
+function TRange_EvenCount(const range: TRange): Integer; overload; cdecl; begin Result := range.EvenCount; end;
+function TRange_OddCount(const range: TRange): Integer; overload; cdecl; begin Result := range.OddCount; end;
 function TRange_Evened(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Evened; end;
 function TRange_Odded(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Odded; end;
+function TRange_Evenz(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Evenz; end;
+function TRange_Oddz(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Oddz; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
