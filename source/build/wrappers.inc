@@ -4480,6 +4480,18 @@ function TArray_BinarySearchBy3(const arr: TStringArray; const item: string; con
 function TArray_BinarySearchBy4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchBy(item, oAscending); end;
 function TArray_BinarySearchBy5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchBy(item, oAscending); end;
 
+function TArray_BinaryHas1(const arr: TIntegerArray; const item: Integer; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHas(item, index, oAscending); end;
+function TArray_BinaryHas2(const arr: TDoubleArray; const item: Double; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHas(item, index, oAscending); end;
+function TArray_BinaryHas3(const arr: TStringArray; const item: string; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHas(item, index, oAscending); end;
+function TArray_BinaryHas4(const arr: TCharArray; const item: Char; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHas(item, index, oAscending); end;
+function TArray_BinaryHas5(const arr: TPointArray; const item: TPoint; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHas(item, index, oAscending); end;
+
+function TArray_BinaryExpSearch1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
+function TArray_BinaryExpSearch2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
+function TArray_BinaryExpSearch3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
+function TArray_BinaryExpSearch4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
+function TArray_BinaryExpSearch5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
+
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted3(var arr: TStringArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;

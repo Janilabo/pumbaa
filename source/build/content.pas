@@ -4524,7 +4524,19 @@ begin
   AddFunction(@TArray_BinarySearchBy2, 'function TArray_BinarySearchBy(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinarySearchBy3, 'function TArray_BinarySearchBy(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinarySearchBy4, 'function TArray_BinarySearchBy(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload;');
-  AddFunction(@TArray_BinarySearchBy5, 'function TArray_BinarySearchBy(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');  
+  AddFunction(@TArray_BinarySearchBy5, 'function TArray_BinarySearchBy(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_BinaryHas1, 'function TArray_BinaryHas(const arr: TIntegerArray; const item: Integer; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_BinaryHas2, 'function TArray_BinaryHas(const arr: TDoubleArray; const item: Double; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_BinaryHas3, 'function TArray_BinaryHas(const arr: TStringArray; const item: string; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_BinaryHas4, 'function TArray_BinaryHas(const arr: TCharArray; const item: Char; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_BinaryHas5, 'function TArray_BinaryHas(const arr: TPointArray; const item: TPoint; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');   
+
+  AddFunction(@TArray_BinaryExpSearch1, 'function TArray_BinaryExpSearch(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryExpSearch2, 'function TArray_BinaryExpSearch(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryExpSearch3, 'function TArray_BinaryExpSearch(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryExpSearch4, 'function TArray_BinaryExpSearch(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryExpSearch5, 'function TArray_BinaryExpSearch(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');
 
   AddFunction(@TArray_MergeSortWeighted1, 'function TArray_MergeSortWeighted(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_MergeSortWeighted2, 'function TArray_MergeSortWeighted(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
