@@ -910,6 +910,7 @@ function TIntegerArray_Splay2(const arr: TIntegerArray; const index: Integer; co
 function TIntegerArray_Trace1(const arr: TIntegerArray; const index: Integer; const tolerance: Integer = 1): TRange; overload; cdecl; begin Result := arr.Trace(index, tolerance); end;
 function TIntegerArray_Trace2(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1): TRange; overload; cdecl; begin Result := arr.Trace(index, limits, tolerance); end;
 function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer): TRange; cdecl; begin Result := arr.ExpandGradient(index, tolerance); end;
+function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BSearch(value, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
 function TIntegerArray_BinarySorted(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; cdecl; begin Result := arr.BinarySorted(aAscending); end;
@@ -4466,6 +4467,18 @@ function TArray_Spanning2(const arr: TDoubleArray; const item: Double; const oAs
 function TArray_Spanning3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(item, oAscending); end;
 function TArray_Spanning4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(item, oAscending); end;
 function TArray_Spanning5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Spanning(item, oAscending); end;
+
+function TArray_FibonacciSearch1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.FibonacciSearch(item, oAscending); end;
+function TArray_FibonacciSearch2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.FibonacciSearch(item, oAscending); end;
+function TArray_FibonacciSearch3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.FibonacciSearch(item, oAscending); end;
+function TArray_FibonacciSearch4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.FibonacciSearch(item, oAscending); end;
+function TArray_FibonacciSearch5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.FibonacciSearch(item, oAscending); end;
+
+function TArray_BinarySearchBy1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchBy(item, oAscending); end;
+function TArray_BinarySearchBy2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchBy(item, oAscending); end;
+function TArray_BinarySearchBy3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchBy(item, oAscending); end;
+function TArray_BinarySearchBy4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchBy(item, oAscending); end;
+function TArray_BinarySearchBy5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchBy(item, oAscending); end;
 
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;

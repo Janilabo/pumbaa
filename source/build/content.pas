@@ -947,6 +947,7 @@ begin
   AddFunction(@TIntegerArray_Trace1, 'function TIntegerArray_Trace(const arr: TIntegerArray; const index: Integer; const tolerance: Integer = 1): TRange; overload;');
   AddFunction(@TIntegerArray_Trace2, 'function TIntegerArray_Trace(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1): TRange; overload;');
   AddFunction(@TIntegerArray_ExpandGradient, 'function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer): TRange;');
+  AddFunction(@TIntegerArray_BSearch, 'function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryCountingSort, 'function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer;');
   AddFunction(@TIntegerArray_BinarySort, 'function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
@@ -4512,6 +4513,18 @@ begin
   AddFunction(@TArray_Spanning3, 'function TArray_Spanning(const arr: TStringArray; const item: string; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TArray_Spanning4, 'function TArray_Spanning(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TArray_Spanning5, 'function TArray_Spanning(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): TRange; overload;');
+
+  AddFunction(@TArray_FibonacciSearch1, 'function TArray_FibonacciSearch(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_FibonacciSearch2, 'function TArray_FibonacciSearch(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_FibonacciSearch3, 'function TArray_FibonacciSearch(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_FibonacciSearch4, 'function TArray_FibonacciSearch(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_FibonacciSearch5, 'function TArray_FibonacciSearch(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_BinarySearchBy1, 'function TArray_BinarySearchBy(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinarySearchBy2, 'function TArray_BinarySearchBy(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinarySearchBy3, 'function TArray_BinarySearchBy(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinarySearchBy4, 'function TArray_BinarySearchBy(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinarySearchBy5, 'function TArray_BinarySearchBy(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');  
 
   AddFunction(@TArray_MergeSortWeighted1, 'function TArray_MergeSortWeighted(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_MergeSortWeighted2, 'function TArray_MergeSortWeighted(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
