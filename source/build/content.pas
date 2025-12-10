@@ -915,12 +915,6 @@ begin
   AddFunction(@TIntegerArray_Inverse1, 'function TIntegerArray_Inverse(const arr: TIntegerArray; const arrBounds: TRange): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_Inverse2, 'function TIntegerArray_Inverse(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_Mirror, 'function TIntegerArray_Mirror(var arr: TIntegerArray): Boolean; overload;');
-  AddFunction(@TIntegerArray_MinVal, 'function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload;');
-  AddFunction(@TIntegerArray_MaxVal, 'function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload;');
-  AddFunction(@TIntegerArray_Minimum1, 'function TIntegerArray_Minimum(const arr: TIntegerArray; var index: Integer): Integer; overload;');
-  AddFunction(@TIntegerArray_Minimum2, 'function TIntegerArray_Minimum(const arr: TIntegerArray): Integer; overload;');
-  AddFunction(@TIntegerArray_Maximum1, 'function TIntegerArray_Maximum(const arr: TIntegerArray; var index: Integer): Integer; overload;');
-  AddFunction(@TIntegerArray_Maximum2, 'function TIntegerArray_Maximum(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_Pure, 'function TIntegerArray_Pure(const arr: TIntegerArray; const allowed: TIntegerArray): Boolean;');
   AddFunction(@TIntegerArray_Charify1, 'function TIntegerArray_Charify(const arr: TIntegerArray): TCharArray; overload;');
   AddFunction(@TIntegerArray_Charify2, 'function TIntegerArray_Charify(const arr: TIntegerArray; var str: string): TCharArray; overload;');
@@ -2855,6 +2849,72 @@ begin
   AddFunction(@TArray_MadeOf6, 'function TArray_MadeOf(const arr, allowed: TPointArray): Boolean; overload;');
   AddFunction(@TArray_MadeOf7, 'function TArray_MadeOf(const arr, allowed: TBoxArray): Boolean; overload;');
   AddFunction(@TArray_MadeOf8, 'function TArray_MadeOf(const arr, allowed: TRangeArray): Boolean; overload;');
+
+  AddFunction(@TArray_MinItem1, 'function TArray_MinItem(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_MinItem2, 'function TArray_MinItem(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_MinItem3, 'function TArray_MinItem(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_MinItem4, 'function TArray_MinItem(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_MinItem5, 'function TArray_MinItem(const arr: TPointArray): TPoint; overload;');
+  AddFunction(@TArray_MinItem6, 'function TArray_MinItem(const arr: TIntegerArray; const null: Integer): Integer; overload;');
+  AddFunction(@TArray_MinItem7, 'function TArray_MinItem(const arr: TDoubleArray; const null: Double): Double; overload;');
+  AddFunction(@TArray_MinItem8, 'function TArray_MinItem(const arr: TStringArray; const null: string): string; overload;');
+  AddFunction(@TArray_MinItem9, 'function TArray_MinItem(const arr: TCharArray; const null: Char): Char; overload;');
+  AddFunction(@TArray_MinItem10, 'function TArray_MinItem(const arr: TPointArray; const null: TPoint): TPoint; overload;');
+
+  AddFunction(@TArray_MaxItem1, 'function TArray_MaxItem(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_MaxItem2, 'function TArray_MaxItem(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_MaxItem3, 'function TArray_MaxItem(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_MaxItem4, 'function TArray_MaxItem(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_MaxItem5, 'function TArray_MaxItem(const arr: TPointArray): TPoint; overload;');
+  AddFunction(@TArray_MaxItem6, 'function TArray_MaxItem(const arr: TIntegerArray; const null: Integer): Integer; overload;');
+  AddFunction(@TArray_MaxItem7, 'function TArray_MaxItem(const arr: TDoubleArray; const null: Double): Double; overload;');
+  AddFunction(@TArray_MaxItem8, 'function TArray_MaxItem(const arr: TStringArray; const null: string): string; overload;');
+  AddFunction(@TArray_MaxItem9, 'function TArray_MaxItem(const arr: TCharArray; const null: Char): Char; overload;');
+  AddFunction(@TArray_MaxItem10, 'function TArray_MaxItem(const arr: TPointArray; const null: TPoint): TPoint; overload;');
+
+  AddFunction(@TArray_Minimum1, 'function TArray_Minimum(const arr: TIntegerArray; var index: Integer): Integer; overload;');
+  AddFunction(@TArray_Minimum2, 'function TArray_Minimum(const arr: TDoubleArray; var index: Integer): Double; overload;');
+  AddFunction(@TArray_Minimum3, 'function TArray_Minimum(const arr: TStringArray; var index: Integer): string; overload;');
+  AddFunction(@TArray_Minimum4, 'function TArray_Minimum(const arr: TCharArray; var index: Integer): Char; overload;');
+  AddFunction(@TArray_Minimum5, 'function TArray_Minimum(const arr: TPointArray; var index: Integer): TPoint; overload;');
+  AddFunction(@TArray_Minimum6, 'function TArray_Minimum(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Minimum7, 'function TArray_Minimum(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_Minimum8, 'function TArray_Minimum(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_Minimum9, 'function TArray_Minimum(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_Minimum10, 'function TArray_Minimum(const arr: TPointArray): TPoint; overload;');
+
+  AddFunction(@TArray_Maximum1, 'function TArray_Maximum(const arr: TIntegerArray; var index: Integer): Integer; overload;');
+  AddFunction(@TArray_Maximum2, 'function TArray_Maximum(const arr: TDoubleArray; var index: Integer): Double; overload;');
+  AddFunction(@TArray_Maximum3, 'function TArray_Maximum(const arr: TStringArray; var index: Integer): string; overload;');
+  AddFunction(@TArray_Maximum4, 'function TArray_Maximum(const arr: TCharArray; var index: Integer): Char; overload;');
+  AddFunction(@TArray_Maximum5, 'function TArray_Maximum(const arr: TPointArray; var index: Integer): TPoint; overload;');
+  AddFunction(@TArray_Maximum6, 'function TArray_Maximum(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Maximum7, 'function TArray_Maximum(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_Maximum8, 'function TArray_Maximum(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_Maximum9, 'function TArray_Maximum(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_Maximum10, 'function TArray_Maximum(const arr: TPointArray): TPoint; overload;');
+
+  AddFunction(@TArray_Minim1, 'function TArray_Minim(const arr: TIntegerArray; var index: Integer): Integer; overload;');
+  AddFunction(@TArray_Minim2, 'function TArray_Minim(const arr: TDoubleArray; var index: Integer): Double; overload;');
+  AddFunction(@TArray_Minim3, 'function TArray_Minim(const arr: TStringArray; var index: Integer): string; overload;');
+  AddFunction(@TArray_Minim4, 'function TArray_Minim(const arr: TCharArray; var index: Integer): Char; overload;');
+  AddFunction(@TArray_Minim5, 'function TArray_Minim(const arr: TPointArray; var index: Integer): TPoint; overload;');
+  AddFunction(@TArray_Minim6, 'function TArray_Minim(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Minim7, 'function TArray_Minim(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_Minim8, 'function TArray_Minim(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_Minim9, 'function TArray_Minim(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_Minim10, 'function TArray_Minim(const arr: TPointArray): TPoint; overload;');
+
+  AddFunction(@TArray_Maxim1, 'function TArray_Maxim(const arr: TIntegerArray; var index: Integer): Integer; overload;');
+  AddFunction(@TArray_Maxim2, 'function TArray_Maxim(const arr: TDoubleArray; var index: Integer): Double; overload;');
+  AddFunction(@TArray_Maxim3, 'function TArray_Maxim(const arr: TStringArray; var index: Integer): string; overload;');
+  AddFunction(@TArray_Maxim4, 'function TArray_Maxim(const arr: TCharArray; var index: Integer): Char; overload;');
+  AddFunction(@TArray_Maxim5, 'function TArray_Maxim(const arr: TPointArray; var index: Integer): TPoint; overload;');
+  AddFunction(@TArray_Maxim6, 'function TArray_Maxim(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Maxim7, 'function TArray_Maxim(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_Maxim8, 'function TArray_Maxim(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_Maxim9, 'function TArray_Maxim(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_Maxim10, 'function TArray_Maxim(const arr: TPointArray): TPoint; overload;');
 
   AddFunction(@TArray_Mix1, 'function TArray_Mix(var arr: TIntegerArray; const mixings: Integer = 1): Boolean; overload;');
   AddFunction(@TArray_Mix2, 'function TArray_Mix(var arr: TDoubleArray; const mixings: Integer = 1): Boolean; overload;');

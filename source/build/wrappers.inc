@@ -877,12 +877,6 @@ function TIntegerArray_Inverted2(const arr: TIntegerArray): TIntegerArray; overl
 function TIntegerArray_Inverse1(const arr: TIntegerArray; const arrBounds: TRange): TIntegerArray; overload; cdecl; begin Result := arr.Inverse(arrBounds); end;
 function TIntegerArray_Inverse2(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Inverse; end;
 function TIntegerArray_Mirror(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Mirror; end;
-function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MinVal; end;
-function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MaxVal; end;
-function TIntegerArray_Minimum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Minimum(index); end;
-function TIntegerArray_Minimum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Minimum; end;
-function TIntegerArray_Maximum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Maximum(index); end;
-function TIntegerArray_Maximum2(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Maximum; end;
 function TIntegerArray_Pure(const arr: TIntegerArray; const allowed: TIntegerArray): Boolean; cdecl; begin Result := arr.Pure(allowed); end;
 function TIntegerArray_Charify1(const arr: TIntegerArray): TCharArray; overload; cdecl; begin Result := arr.Charify; end;
 function TIntegerArray_Charify2(const arr: TIntegerArray; var str: string): TCharArray; overload; cdecl; begin Result := arr.Charify(str); end;
@@ -2818,6 +2812,72 @@ function TArray_Locations21(const arr: TBooleanArray): TIntegerArray; overload; 
 function TArray_Locations22(const arr: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.Locations; end;
 function TArray_Locations23(const arr: TBoxArray): TIntegerArray; overload; cdecl; begin Result := arr.Locations; end;
 function TArray_Locations24(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Locations; end;
+
+function TArray_MinItem1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MinItem; end;
+function TArray_MinItem2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.MinItem; end;
+function TArray_MinItem3(const arr: TStringArray): string; overload; cdecl; begin Result := arr.MinItem; end;
+function TArray_MinItem4(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.MinItem; end;
+function TArray_MinItem5(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.MinItem; end;
+function TArray_MinItem6(const arr: TIntegerArray; const null: Integer): Integer; overload; cdecl; begin Result := arr.MinItem(null); end;
+function TArray_MinItem7(const arr: TDoubleArray; const null: Double): Double; overload; cdecl; begin Result := arr.MinItem(null); end;
+function TArray_MinItem8(const arr: TStringArray; const null: string): string; overload; cdecl; begin Result := arr.MinItem(null); end;
+function TArray_MinItem9(const arr: TCharArray; const null: Char): Char; overload; cdecl; begin Result := arr.MinItem(null); end;
+function TArray_MinItem10(const arr: TPointArray; const null: TPoint): TPoint; overload; cdecl; begin Result := arr.MinItem(null); end;
+
+function TArray_MaxItem1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MaxItem; end;
+function TArray_MaxItem2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.MaxItem; end;
+function TArray_MaxItem3(const arr: TStringArray): string; overload; cdecl; begin Result := arr.MaxItem; end;
+function TArray_MaxItem4(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.MaxItem; end;
+function TArray_MaxItem5(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.MaxItem; end;
+function TArray_MaxItem6(const arr: TIntegerArray; const null: Integer): Integer; overload; cdecl; begin Result := arr.MaxItem(null); end;
+function TArray_MaxItem7(const arr: TDoubleArray; const null: Double): Double; overload; cdecl; begin Result := arr.MaxItem(null); end;
+function TArray_MaxItem8(const arr: TStringArray; const null: string): string; overload; cdecl; begin Result := arr.MaxItem(null); end;
+function TArray_MaxItem9(const arr: TCharArray; const null: Char): Char; overload; cdecl; begin Result := arr.MaxItem(null); end;
+function TArray_MaxItem10(const arr: TPointArray; const null: TPoint): TPoint; overload; cdecl; begin Result := arr.MaxItem(null); end;
+
+function TArray_Minimum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Minimum(index); end;
+function TArray_Minimum2(const arr: TDoubleArray; var index: Integer): Double; overload; cdecl; begin Result := arr.Minimum(index); end;
+function TArray_Minimum3(const arr: TStringArray; var index: Integer): string; overload; cdecl; begin Result := arr.Minimum(index); end;
+function TArray_Minimum4(const arr: TCharArray; var index: Integer): Char; overload; cdecl; begin Result := arr.Minimum(index); end;
+function TArray_Minimum5(const arr: TPointArray; var index: Integer): TPoint; overload; cdecl; begin Result := arr.Minimum(index); end;
+function TArray_Minimum6(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Minimum; end;
+function TArray_Minimum7(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.Minimum; end;
+function TArray_Minimum8(const arr: TStringArray): string; overload; cdecl; begin Result := arr.Minimum; end;
+function TArray_Minimum9(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.Minimum; end;
+function TArray_Minimum10(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.Minimum; end;
+
+function TArray_Maximum1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Maximum(index); end;
+function TArray_Maximum2(const arr: TDoubleArray; var index: Integer): Double; overload; cdecl; begin Result := arr.Maximum(index); end;
+function TArray_Maximum3(const arr: TStringArray; var index: Integer): string; overload; cdecl; begin Result := arr.Maximum(index); end;
+function TArray_Maximum4(const arr: TCharArray; var index: Integer): Char; overload; cdecl; begin Result := arr.Maximum(index); end;
+function TArray_Maximum5(const arr: TPointArray; var index: Integer): TPoint; overload; cdecl; begin Result := arr.Maximum(index); end;
+function TArray_Maximum6(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Maximum; end;
+function TArray_Maximum7(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.Maximum; end;
+function TArray_Maximum8(const arr: TStringArray): string; overload; cdecl; begin Result := arr.Maximum; end;
+function TArray_Maximum9(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.Maximum; end;
+function TArray_Maximum10(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.Maximum; end;
+
+function TArray_Minim1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Minim(index); end;
+function TArray_Minim2(const arr: TDoubleArray; var index: Integer): Double; overload; cdecl; begin Result := arr.Minim(index); end;
+function TArray_Minim3(const arr: TStringArray; var index: Integer): string; overload; cdecl; begin Result := arr.Minim(index); end;
+function TArray_Minim4(const arr: TCharArray; var index: Integer): Char; overload; cdecl; begin Result := arr.Minim(index); end;
+function TArray_Minim5(const arr: TPointArray; var index: Integer): TPoint; overload; cdecl; begin Result := arr.Minim(index); end;
+function TArray_Minim6(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Minim; end;
+function TArray_Minim7(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.Minim; end;
+function TArray_Minim8(const arr: TStringArray): string; overload; cdecl; begin Result := arr.Minim; end;
+function TArray_Minim9(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.Minim; end;
+function TArray_Minim10(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.Minim; end;
+
+function TArray_Maxim1(const arr: TIntegerArray; var index: Integer): Integer; overload; cdecl; begin Result := arr.Maxim(index); end;
+function TArray_Maxim2(const arr: TDoubleArray; var index: Integer): Double; overload; cdecl; begin Result := arr.Maxim(index); end;
+function TArray_Maxim3(const arr: TStringArray; var index: Integer): string; overload; cdecl; begin Result := arr.Maxim(index); end;
+function TArray_Maxim4(const arr: TCharArray; var index: Integer): Char; overload; cdecl; begin Result := arr.Maxim(index); end;
+function TArray_Maxim5(const arr: TPointArray; var index: Integer): TPoint; overload; cdecl; begin Result := arr.Maxim(index); end;
+function TArray_Maxim6(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Maxim; end;
+function TArray_Maxim7(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.Maxim; end;
+function TArray_Maxim8(const arr: TStringArray): string; overload; cdecl; begin Result := arr.Maxim; end;
+function TArray_Maxim9(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.Maxim; end;
+function TArray_Maxim10(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.Maxim; end;
 
 function TArray_Mix1(var arr: TIntegerArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
 function TArray_Mix2(var arr: TDoubleArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
