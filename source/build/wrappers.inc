@@ -233,6 +233,10 @@ function Char_Swapcase(const c: Char): Char; cdecl; begin Result := c.Swapcase; 
 function Char_Upper(const c: Char): Char; cdecl; begin Result := c.Upper; end;
 function Char_Lower(const c: Char): Char; cdecl; begin Result := c.Lower; end;
 
+function String_CountOf(const str: string; const item: Char): Integer; overload; cdecl; begin Result := str.CountOf(item); end;
+function String_AmountOf(const str: string; const item: Char): Integer; overload; cdecl; begin Result := str.AmountOf(item); end;
+function String_Occurs(const str: string; const item: Char): Integer; overload; cdecl; begin Result := str.Occurs(item); end;
+function String_Occurrences(const str: string; const item: Char): Integer; overload; cdecl; begin Result := str.Occurrences(item); end;
 function String_Empty(const str: string): Boolean; cdecl; begin Result := str.Empty; end;
 function String_Void(const str: string): Boolean; cdecl; begin Result := str.Void; end;
 function String_Blank(const str: string): Boolean; cdecl; begin Result := str.Blank; end;

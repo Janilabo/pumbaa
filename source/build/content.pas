@@ -271,6 +271,10 @@ begin
   AddFunction(@Char_Upper, 'function Char_Upper(const c: Char): Char;');
   AddFunction(@Char_Lower, 'function Char_Lower(const c: Char): Char;');
 
+  AddFunction(@String_CountOf, 'function String_CountOf(const str: string; const item: Char): Integer; overload;');
+  AddFunction(@String_AmountOf, 'function String_AmountOf(const str: string; const item: Char): Integer; overload;');
+  AddFunction(@String_Occurs, 'function String_Occurs(const str: string; const item: Char): Integer; overload;');
+  AddFunction(@String_Occurrences, 'function String_Occurrences(const str: string; const item: Char): Integer; overload;');
   AddFunction(@String_Empty, 'function String_Empty(const str: string): Boolean;');
   AddFunction(@String_Void, 'function String_Void(const str: string): Boolean;');
   AddFunction(@String_Blank, 'function String_Blank(const str: string): Boolean;');
