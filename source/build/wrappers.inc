@@ -1034,6 +1034,7 @@ function TIntegerArray_BinaryUnique(var arr: TIntegerArray; const oAscending: Bo
 function TIntegerArray_BinaryUniqued(const arr: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryUniqued(oAscending); end;
 function TIntegerArray_BinaryUniq(var arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUniq(oAscending); end;
 function TIntegerArray_BinaryUniqd(const arr: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryUniqd(oAscending); end;
+function TIntegerArray_BinaryExistent(const arr: TIntegerArray; const item: Integer; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExistent(item, index, oAscending); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
@@ -4485,6 +4486,12 @@ function TArray_BinaryHas2(const arr: TDoubleArray; const item: Double; out inde
 function TArray_BinaryHas3(const arr: TStringArray; const item: string; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHas(item, index, oAscending); end;
 function TArray_BinaryHas4(const arr: TCharArray; const item: Char; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHas(item, index, oAscending); end;
 function TArray_BinaryHas5(const arr: TPointArray; const item: TPoint; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHas(item, index, oAscending); end;
+
+function TArray_BinaryGot1(const arr: TIntegerArray; const item: Integer; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryGot(item, index, oAscending); end;
+function TArray_BinaryGot2(const arr: TDoubleArray; const item: Double; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryGot(item, index, oAscending); end;
+function TArray_BinaryGot3(const arr: TStringArray; const item: string; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryGot(item, index, oAscending); end;
+function TArray_BinaryGot4(const arr: TCharArray; const item: Char; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryGot(item, index, oAscending); end;
+function TArray_BinaryGot5(const arr: TPointArray; const item: TPoint; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryGot(item, index, oAscending); end;
 
 function TArray_BinaryExpSearch1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
 function TArray_BinaryExpSearch2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
