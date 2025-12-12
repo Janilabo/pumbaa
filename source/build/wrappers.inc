@@ -232,6 +232,7 @@ function Char_IsLetter(const c: Char): Boolean; cdecl; begin Result := c.IsLette
 function Char_Swapcase(const c: Char): Char; cdecl; begin Result := c.Swapcase; end;
 function Char_Upper(const c: Char): Char; cdecl; begin Result := c.Upper; end;
 function Char_Lower(const c: Char): Char; cdecl; begin Result := c.Lower; end;
+function Char_CountIn(const c: Char; const target: string): Integer; overload; cdecl; begin Result := c.CountIn(target); end;
 
 function String_CountOf(const str: string; const item: Char): Integer; overload; cdecl; begin Result := str.CountOf(item); end;
 function String_AmountOf(const str: string; const item: Char): Integer; overload; cdecl; begin Result := str.AmountOf(item); end;
@@ -243,6 +244,9 @@ function String_Blank(const str: string): Boolean; cdecl; begin Result := str.Bl
 function String_Chars(const str: string): TCharArray; cdecl; begin Result := str.Chars; end;
 function String_Charify(const str: string): TCharArray; cdecl; begin Result := str.Charify; end;
 function String_Chop(const str: string): TCharArray; cdecl; begin Result := str.Chop; end;
+function String_CharSet(const str: string): TCharArray; cdecl; begin Result := str.CharSet; end;
+function String_CharacterSet(const str: string): TCharArray; cdecl; begin Result := str.CharacterSet; end;
+function String_UniqueChars(const str: string): TCharArray; cdecl; begin Result := str.UniqueChars; end;
 function String_At(const str: string; const s: string; const index: Integer = 1): Boolean; cdecl; inline; begin Result := str.At(s, index); end;
 function String_Get(const str: string; const index: Integer; const count: Integer): string; cdecl; inline; begin Result := str.Get(index, count); end;
 function String_Pick(const str: string; const index: Integer; const count: Integer = 2147483647): string; cdecl; begin Result := str.Pick(index, count); end;
@@ -256,6 +260,8 @@ function String_Contains(const str: string; const s: string; const index: Intege
 function String_Includes(const str: string; const s: string; const index: Integer = 2147483647): Boolean; cdecl; begin Result := str.Includes(s, index); end;
 function String_Between(const str: string; const s1, s2: string; const index: Integer = 1): string; cdecl; begin Result := str.Between(s1, s2, index); end;
 function String_Count(const str: string; const s: string; const overlap: Boolean = True; const index: Integer = 1): Integer; cdecl; begin Result := str.Count(s, overlap, index); end;
+function String_CountIn(const str: string; const target: string): Integer; overload; cdecl; begin Result := str.CountIn(target); end;
+function String_CountedIn(const str: string; const target: string; const overlap: Boolean = True): Integer; overload; cdecl; begin Result := str.CountedIn(target, overlap); end;
 function String_Amount(const str: string; const s: string; const overlap: Boolean = True; const index: Integer = 2147483647): Integer; cdecl; begin Result := str.Amount(s, overlap, index); end;
 function String_FromLeft(const str: string; const count: Integer; const index: Integer = 1): string; cdecl; begin Result := str.FromLeft(count, index); end;
 function String_FromRight(const str: string; const count: Integer; const index: Integer = 2147483647): string; cdecl; begin Result := str.FromRight(count, index); end;

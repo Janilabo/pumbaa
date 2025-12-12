@@ -270,6 +270,7 @@ begin
   AddFunction(@Char_Swapcase, 'function Char_Swapcase(const c: Char): Char;');
   AddFunction(@Char_Upper, 'function Char_Upper(const c: Char): Char;');
   AddFunction(@Char_Lower, 'function Char_Lower(const c: Char): Char;');
+  AddFunction(@Char_CountIn, 'function Char_CountIn(const c: Char; const target: string): Integer; overload;');
 
   AddFunction(@String_CountOf, 'function String_CountOf(const str: string; const item: Char): Integer; overload;');
   AddFunction(@String_AmountOf, 'function String_AmountOf(const str: string; const item: Char): Integer; overload;');
@@ -282,6 +283,9 @@ begin
   AddFunction(@String_Chars, 'function String_Chars(const str: string): TCharArray;');
   AddFunction(@String_Charify, 'function String_Charify(const str: string): TCharArray;');
   AddFunction(@String_Chop, 'function String_Chop(const str: string): TCharArray;');
+  AddFunction(@String_CharSet, 'function String_CharSet(const str: string): TCharArray;');
+  AddFunction(@String_CharacterSet, 'function String_CharacterSet(const str: string): TCharArray;');
+  AddFunction(@String_UniqueChars, 'function String_UniqueChars(const str: string): TCharArray;');
   AddFunction(@String_Get, 'function String_Get(const str: string; const index: Integer; const count: Integer): string;');
   AddFunction(@String_Pick, 'function String_Pick(const str: string; const index: Integer; const count: Integer = 2147483647): string;');
   AddFunction(@String_Pos, 'function String_Pos(const str: string; const s: string; const index: Integer = 1): Integer;');
@@ -294,6 +298,8 @@ begin
   AddFunction(@String_Includes, 'function String_Includes(const str: string; const s: string; const index: Integer = 2147483647): Boolean;');
   AddFunction(@String_Between, 'function String_Between(const str: string; const s1, s2: string; const index: Integer = 1): string;');
   AddFunction(@String_Count, 'function String_Count(const str: string; const s: string; const overlap: Boolean = True; const index: Integer = 1): Integer;');
+  AddFunction(@String_CountIn, 'function String_CountIn(const str: string; const target: string): Integer; overload;');
+  AddFunction(@String_CountedIn, 'function String_CountedIn(const str: string; const target: string; const overlap: Boolean = True): Integer; overload;');
   AddFunction(@String_Amount, 'function String_Amount(const str: string; const s: string; const overlap: Boolean = True; const index: Integer = 2147483647): Integer;');
   AddFunction(@String_FromLeft, 'function String_FromLeft(const str: string; const count: Integer; const index: Integer = 1): string;');
   AddFunction(@String_FromRight, 'function String_FromRight(const str: string; const count: Integer; const index: Integer = 2147483647): string;');
