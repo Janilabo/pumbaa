@@ -271,6 +271,7 @@ begin
   AddFunction(@Char_Upper, 'function Char_Upper(const c: Char): Char;');
   AddFunction(@Char_Lower, 'function Char_Lower(const c: Char): Char;');
   AddFunction(@Char_CountIn, 'function Char_CountIn(const c: Char; const target: string): Integer; overload;');
+  AddFunction(@Char_Tokenize, 'function Char_Tokenize(const c: Char; const str: string): TStringArray; overload;');
 
   AddFunction(@String_CountOf, 'function String_CountOf(const str: string; const item: Char): Integer; overload;');
   AddFunction(@String_AmountOf, 'function String_AmountOf(const str: string; const item: Char): Integer; overload;');
@@ -279,13 +280,30 @@ begin
   AddFunction(@String_Empty, 'function String_Empty(const str: string): Boolean;');
   AddFunction(@String_Void, 'function String_Void(const str: string): Boolean;');
   AddFunction(@String_Blank, 'function String_Blank(const str: string): Boolean;');
+  AddFunction(@String_IsAt, 'function String_IsAt(const str: string; const s: string; const index: Integer = 1): Boolean;');
   AddFunction(@String_At, 'function String_At(const str: string; const s: string; const index: Integer = 1): Boolean;');
+  AddFunction(@String_At2, 'function String_At2(const str: string; const s: string; const index: Integer = 1): Boolean;');
+  AddFunction(@String_AtP, 'function String_AtP(const str: string; const s: string; const index: Integer = 1): Boolean;');
+  AddFunction(@String_AtPos, 'function String_AtPos(const str: string; const s: string; const index: Integer = 1): Boolean;');
+  AddFunction(@String_AtPosEx, 'function String_AtPosEx(const str: string; const s: string; const index: Integer = 1): Boolean;');
+  AddFunction(@String_AtPosition, 'function String_AtPosition(const str: string; const s: string; const index: Integer = 1): Boolean;');
+  AddFunction(@String_AtIndex, 'function String_AtIndex(const str: string; const s: string; const index: Integer = 1): Boolean;');
   AddFunction(@String_Chars, 'function String_Chars(const str: string): TCharArray;');
   AddFunction(@String_Charify, 'function String_Charify(const str: string): TCharArray;');
-  AddFunction(@String_Chop, 'function String_Chop(const str: string): TCharArray;');
+  AddFunction(@String_Chop1, 'function String_Chop(const str: string): TCharArray; overload;');
+  AddFunction(@String_Chop2, 'function String_Chop(const str: string; const delimiter: Char): TStringArray; overload;');
+  AddFunction(@String_Split1, 'function String_Split(const str: string): TCharArray; overload;');
+  AddFunction(@String_Split2, 'function String_Split(const str: string; const delimiter: Char): TStringArray; overload;');
   AddFunction(@String_CharSet, 'function String_CharSet(const str: string): TCharArray;');
   AddFunction(@String_CharacterSet, 'function String_CharacterSet(const str: string): TCharArray;');
+  AddFunction(@String_BinaryCharSet, 'function String_BinaryCharSet(const str: string): TCharArray;');
+  AddFunction(@String_SetOfCharacters, 'function String_SetOfCharacters(const str: string): TCharArray;');
+  AddFunction(@String_SetOfChars, 'function String_SetOfChars(const str: string): TCharArray;');
   AddFunction(@String_UniqueChars, 'function String_UniqueChars(const str: string): TCharArray;');
+  AddFunction(@String_UniqueCharacters, 'function String_UniqueCharacters(const str: string; const oAscending: Boolean = True): TCharArray;');
+  AddFunction(@String_DistinctChars, 'function String_DistinctChars(const str: string): TCharArray;');
+  AddFunction(@String_DistinctCharacters, 'function String_DistinctCharacters(const str: string): TCharArray;');
+  AddFunction(@String_CharacterDict, 'function String_CharacterDict(const str: string): TCharArray;');
   AddFunction(@String_Get, 'function String_Get(const str: string; const index: Integer; const count: Integer): string;');
   AddFunction(@String_Pick, 'function String_Pick(const str: string; const index: Integer; const count: Integer = 2147483647): string;');
   AddFunction(@String_Pos, 'function String_Pos(const str: string; const s: string; const index: Integer = 1): Integer;');
@@ -306,6 +324,8 @@ begin
   AddFunction(@String_Explode1, 'function String_Explode(const str: string): TCharArray; overload;');
   AddFunction(@String_Explode2, 'function String_Explode(const str: string; const d: string; const limit: Integer = -1): TStringArray; overload;');
   AddFunction(@String_Explode3, 'function String_Explode(const str: string; const d: TStringArray; const limit: Integer = -1): TStringArray; overload;');
+  AddFunction(@String_Tokenized, 'function String_Tokenized(const str: string; const d: Char = #32): TStringArray; overload;');
+  AddFunction(@String_Delimited, 'function String_Delimited(const str: string; const d: Char = #32): TStringArray; overload;');
   AddFunction(@String_Slice, 'function String_Slice(const str: string; const a, b: Integer): string;');
   AddFunction(@String_Chunk, 'function String_Chunk(const str: string; const a, b: Integer): string;');
   AddFunction(@String_Reverse, 'function String_Reverse(var str: string): Boolean;');
