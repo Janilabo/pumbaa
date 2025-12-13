@@ -373,6 +373,15 @@ begin
   AddFunction(@String_Pure, 'function String_Pure(const str: string; const allowed: TCharArray): Boolean;');
   AddFunction(@String_BuiltWith, 'function String_BuiltWith(const str: string; const blocks: TCharArray): Boolean');
   AddFunction(@String_Exists, 'function String_Exists(const str: string): Boolean;');
+  AddFunction(@String_Line1, 'function String_Line(const str: string; const number: Integer; const lineBreak: string): string; overload;');
+  AddFunction(@String_Line2, 'function String_Line(const str: string; const number: Integer; const lineBreak: TStringArray): string; overload;');
+  AddFunction(@String_Line3, 'function String_Line(const str: string; const number: Integer): string; overload;');
+  AddFunction(@String_Lines1, 'function String_Lines(const str: string; const lineBreak: string): TStringArray; overload;');
+  AddFunction(@String_Lines2, 'function String_Lines(const str: string; const lineBreak: TStringArray): TStringArray; overload;');
+  AddFunction(@String_Lines3, 'function String_Lines(const str: string): TStringArray; overload;');
+  AddFunction(@String_LineCount1, 'function String_LineCount(const str: string; const lineBreak: string): Integer; overload;');
+  AddFunction(@String_LineCount2, 'function String_LineCount(const str: string; const lineBreak: TStringArray): Integer; overload;');
+  AddFunction(@String_LineCount3, 'function String_LineCount(const str: string): Integer; overload;');
 
   AddFunction(@TPoint_Create1, 'function TPoint_Create(const X, Y: Integer): TPoint; overload;');
   AddFunction(@TPoint_Create2, 'function TPoint_Create(const value: Integer): TPoint; overload;');
