@@ -335,6 +335,13 @@ function String_Consists(const str: string; const allowed: TCharArray): Boolean;
 function String_Pure(const str: string; const allowed: TCharArray): Boolean; cdecl; begin Result := str.Pure(allowed); end;
 function String_BuiltWith(const str: string; const blocks: TCharArray): Boolean; cdecl; begin Result := str.BuiltWith(blocks); end;
 function String_Exists(const str: string): Boolean; cdecl; begin Result := str.Exists; end;
+function String_CountTokens(const str: string; const items: TStringArray): Integer; overload; cdecl; begin Result := str.CountTokens(items); end;
+function String_TokensCount(const str: string; const items: TStringArray): Integer; overload; cdecl; begin Result := str.TokensCount(items); end;
+function String_LineAmount(const str: string): Integer; overload; cdecl; begin Result := str.LineAmount; end;
+function String_LinesTotal(const str: string): Integer; overload; cdecl; begin Result := str.LinesTotal; end;
+function String_LineQuantity(const str: string): Integer; overload; cdecl; begin Result := str.LineQuantity; end;
+function String_LinePopulation(const str: string): Integer; overload; cdecl; begin Result := str.LinePopulation; end;
+function String_Lined(const str: string): TStringArray; overload; cdecl; begin Result := str.Lined; end;
 function String_Line1(const str: string; const number: Integer; const lineBreak: string): string; overload; cdecl; begin Result := str.Line(number, lineBreak); end;
 function String_Line2(const str: string; const number: Integer; const lineBreak: TStringArray): string; overload; cdecl; begin Result := str.Line(number, lineBreak); end;
 function String_Line3(const str: string; const number: Integer): string; overload; cdecl; begin Result := str.Line(number); end;
@@ -344,6 +351,12 @@ function String_Lines3(const str: string): TStringArray; overload; cdecl; begin 
 function String_LineCount1(const str: string; const lineBreak: string): Integer; overload; cdecl; begin Result := str.LineCount(lineBreak); end;
 function String_LineCount2(const str: string; const lineBreak: TStringArray): Integer; overload; cdecl; begin Result := str.LineCount(lineBreak); end;
 function String_LineCount3(const str: string): Integer; overload; cdecl; begin Result := str.LineCount; end;
+function String_LineByPos(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineByPos(position); end;
+function String_LineByPosition(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineByPosition(position); end;
+function String_LineToPos(const str: string; const line: Integer): Integer; overload; cdecl; begin Result := str.LineToPos(line); end;
+function String_LineToPosition(const str: string; const line: Integer): Integer; overload; cdecl; begin Result := str.LineToPosition(line); end;
+function String_LinePositions(const str: string): TIntegerArray; overload; cdecl; begin Result := str.LinePositions; end;
+function String_LineEndingPositions(const str: string): TIntegerArray; overload; cdecl; cdecl; begin Result := str.LineEndingPositions; end;
 
 function TPoint_Create1(const X, Y: Integer): TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create(X, Y); end;
 function TPoint_Create2(const value: Integer): TPoint; overload; cdecl; var pt: TPoint; begin Result := pt.Create(value); end;

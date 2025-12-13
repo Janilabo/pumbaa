@@ -373,6 +373,13 @@ begin
   AddFunction(@String_Pure, 'function String_Pure(const str: string; const allowed: TCharArray): Boolean;');
   AddFunction(@String_BuiltWith, 'function String_BuiltWith(const str: string; const blocks: TCharArray): Boolean');
   AddFunction(@String_Exists, 'function String_Exists(const str: string): Boolean;');
+  AddFunction(@String_CountTokens, 'function String_CountTokens(const str: string; const items: TStringArray): Integer; overload;');
+  AddFunction(@String_TokensCount, 'function String_TokensCount(const str: string; const items: TStringArray): Integer; overload;');
+  AddFunction(@String_LineAmount, 'function String_LineAmount(const str: string): Integer; overload;');
+  AddFunction(@String_LinesTotal, 'function String_LinesTotal(const str: string): Integer; overload;');
+  AddFunction(@String_LineQuantity, 'function String_LineQuantity(const str: string): Integer; overload;');
+  AddFunction(@String_LinePopulation, 'function String_LinePopulation(const str: string): Integer; overload;');
+  AddFunction(@String_Lined, 'function String_Lined(const str: string): TStringArray; overload;');
   AddFunction(@String_Line1, 'function String_Line(const str: string; const number: Integer; const lineBreak: string): string; overload;');
   AddFunction(@String_Line2, 'function String_Line(const str: string; const number: Integer; const lineBreak: TStringArray): string; overload;');
   AddFunction(@String_Line3, 'function String_Line(const str: string; const number: Integer): string; overload;');
@@ -382,6 +389,12 @@ begin
   AddFunction(@String_LineCount1, 'function String_LineCount(const str: string; const lineBreak: string): Integer; overload;');
   AddFunction(@String_LineCount2, 'function String_LineCount(const str: string; const lineBreak: TStringArray): Integer; overload;');
   AddFunction(@String_LineCount3, 'function String_LineCount(const str: string): Integer; overload;');
+  AddFunction(@String_LineByPos, 'function String_LineByPos(const str: string; const position: Integer): Integer; overload;');
+  AddFunction(@String_LineByPosition, 'function String_LineByPosition(const str: string; const position: Integer): Integer; overload;');
+  AddFunction(@String_LineToPos, 'function String_LineToPos(const str: string; const line: Integer): Integer; overload;');
+  AddFunction(@String_LineToPosition, 'function String_LineToPosition(const str: string; const line: Integer): Integer; overload;');
+  AddFunction(@String_LinePositions, 'function String_LinePositions(const str: string): TIntegerArray; overload;');
+  AddFunction(@String_LineEndingPositions, 'function String_LineEndingPositions(const str: string): TIntegerArray; overload;');
 
   AddFunction(@TPoint_Create1, 'function TPoint_Create(const X, Y: Integer): TPoint; overload;');
   AddFunction(@TPoint_Create2, 'function TPoint_Create(const value: Integer): TPoint; overload;');
