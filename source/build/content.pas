@@ -387,13 +387,17 @@ begin
   AddFunction(@String_LineList, 'function String_LineList(const str: string): TStringArray; overload;');
   AddFunction(@String_LinesList, 'function String_LinesList(const str: string): TStringArray; overload;');
   AddFunction(@String_Line, 'function String_Line(const str: string; const number: Integer): string; overload;');
+  AddFunction(@String_LineByStringList, 'function String_LineByStringList(const str: string; const position: Integer): Integer; overload;');
   AddFunction(@String_LineWithPosition, 'function String_LineWithPosition(const str: string; const position: Integer): Integer; overload;');
+  AddFunction(@String_LineAtPos, 'function String_LineAtPos(const str: string; const position: Integer): Integer; overload;');
+  AddFunction(@String_LineAtPosition, 'function String_LineAtPosition(const str: string; const position: Integer): Integer; overload;');
   AddFunction(@String_LineByPos, 'function String_LineByPos(const str: string; const position: Integer): Integer; overload;');
   AddFunction(@String_LineByPosition, 'function String_LineByPosition(const str: string; const position: Integer): Integer; overload;');
   AddFunction(@String_LineByPosition2, 'function String_LineByPosition2(const str: string; const position: Integer): Integer; overload;');
   AddFunction(@String_LineFromPosition, 'function String_LineFromPosition(const str: string; const position: Integer): Integer; overload;');
   AddFunction(@String_LineToPos, 'function String_LineToPos(const str: string; const line: Integer): Integer; overload;');
   AddFunction(@String_LineToPosition, 'function String_LineToPosition(const str: string; const line: Integer): Integer; overload;');
+  AddFunction(@String_LineNumberMap, 'function String_LineNumberMap(const str: string): TIntegerArray; overload;');
   AddFunction(@String_LineIndexes, 'function String_LineIndexes(const str: string): TIntegerArray; overload;');
   AddFunction(@String_LineRanges, 'function String_LineRanges(const str: string): TRangeArray; overload;');
   AddFunction(@String_LineEndingRanges, 'function String_LineEndingRanges(const str: string): TRangeArray; overload;');

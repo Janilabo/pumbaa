@@ -349,6 +349,9 @@ function String_LineArr(const str: string): TStringArray; overload; cdecl; begin
 function String_LineList(const str: string): TStringArray; overload; cdecl; begin Result := str.LineList; end;
 function String_LinesList(const str: string): TStringArray; overload; cdecl; begin Result := str.LinesList; end;
 function String_Line(const str: string; const number: Integer): string; overload; cdecl; begin Result := str.Line(number); end;
+function String_LineByStringList(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineByStringList(position); end;
+function String_LineAtPos(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineAtPos(position); end;
+function String_LineAtPosition(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineAtPosition(position); end;
 function String_LineWithPosition(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineWithPosition(position); end;
 function String_LineByPos(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineByPos(position); end;
 function String_LineByPosition(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineByPosition(position); end;
@@ -356,6 +359,7 @@ function String_LineByPosition2(const str: string; const position: Integer): Int
 function String_LineFromPosition(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineFromPosition(position); end;
 function String_LineToPos(const str: string; const line: Integer): Integer; overload; cdecl; begin Result := str.LineToPos(line); end;
 function String_LineToPosition(const str: string; const line: Integer): Integer; overload; cdecl; begin Result := str.LineToPosition(line); end;
+function String_LineNumberMap(const str: string): TIntegerArray; overload; cdecl; begin Result := str.LineNumberMap; end;
 function String_LineIndexes(const str: string): TIntegerArray; overload; cdecl; begin Result := str.LineIndexes; end;
 function String_LineRanges(const str: string): TRangeArray; overload; cdecl; begin Result := str.LineRanges; end;
 function String_LineEndingRanges(const str: string): TRangeArray; overload; cdecl; begin Result := str.LineEndingRanges; end;
