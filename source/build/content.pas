@@ -373,6 +373,9 @@ begin
   AddFunction(@String_Pure, 'function String_Pure(const str: string; const allowed: TCharArray): Boolean;');
   AddFunction(@String_BuiltWith, 'function String_BuiltWith(const str: string; const blocks: TCharArray): Boolean');
   AddFunction(@String_Exists, 'function String_Exists(const str: string): Boolean;');
+  AddFunction(@String_ContainsAtLeast, 'function String_ContainsAtLeast(const str: string; const item: string; const limit: Integer): Boolean; overload;');
+  AddFunction(@String_ContainsAtMost, 'function String_ContainsAtMost(const str: string; const item: string; const limit: Integer): Boolean; overload;');
+  AddFunction(@String_ContainsBetween, 'function String_ContainsBetween(const str: string; const item: string; const limit: TRange): Boolean; overload;');
   AddFunction(@String_CountTokens, 'function String_CountTokens(const str: string; const items: TStringArray): Integer; overload;');
   AddFunction(@String_TokensCount, 'function String_TokensCount(const str: string; const items: TStringArray): Integer; overload;');
   AddFunction(@String_LineAmount, 'function String_LineAmount(const str: string): Integer; overload;');
@@ -387,6 +390,8 @@ begin
   AddFunction(@String_LinesStr, 'function String_LinesStr(const str: string; const lineRange: TRange): string; overload;');
   AddFunction(@String_LineArray, 'function String_LineArray(const str: string): TStringArray; overload;');
   AddFunction(@String_LineArr, 'function String_LineArr(const str: string): TStringArray; overload;');
+  AddFunction(@String_LinesArray, 'function String_LinesArray(const str: string): TStringArray; overload;');
+  AddFunction(@String_LinesArr, 'function String_LinesArr(const str: string): TStringArray; overload;');
   AddFunction(@String_LineList, 'function String_LineList(const str: string): TStringArray; overload;');
   AddFunction(@String_LinesList, 'function String_LinesList(const str: string): TStringArray; overload;');
   AddFunction(@String_Line, 'function String_Line(const str: string; const number: Integer): string; overload;');
@@ -415,6 +420,10 @@ begin
   AddFunction(@String_LineDelete, 'function String_LineDelete(const str: string; const lineNumber: Integer): string; overload;');
   AddFunction(@String_LineIsEmpty, 'function String_LineIsEmpty(const str: string; const lineNumber: Integer): Boolean; overload;');
   AddFunction(@String_LinesNormalized, 'function String_LinesNormalized(const str: string; const newLine: string = #13#10): string; overload;');
+  AddFunction(@String_LineClamp, 'function String_LineClamp(const str: string; const lineNumber: Integer): Integer; overload;');
+  AddFunction(@String_LineFixed, 'function String_LineFixed(const str: string; const lineNumber: Integer): Integer; overload;');
+  AddFunction(@String_LineValid, 'function String_LineValid(const str: string; const lineNumber: Integer): Boolean; overload;');
+  AddFunction(@String_LineExists, 'function String_LineExists(const str: string; const lineNumber: Integer): Boolean; overload;');
   AddFunction(@String_LineEx1, 'function String_LineEx(const str: string; const number: Integer; const lineBreak: string): string; overload;');
   AddFunction(@String_LineEx2, 'function String_LineEx(const str: string; const number: Integer; const lineBreak: TStringArray): string; overload;');
   AddFunction(@String_LineEx3, 'function String_LineEx(const str: string; const number: Integer): string; overload;');
