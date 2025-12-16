@@ -347,6 +347,7 @@ function String_LinePopulation(const str: string): Integer; overload; cdecl; beg
 function String_LinesCount(const str: string): Integer; overload; cdecl; begin Result := str.LinesCount; end;
 function String_LineCount(const str: string): Integer; overload; cdecl; begin Result := str.LineCount; end;
 function String_LinesCounted(const str: string): Integer; overload; cdecl; begin Result := str.LinesCounted; end;
+function String_LineCountUpTo(const str: string; const targetLine: Integer): Integer; overload; cdecl; begin Result := str.LineCountUpTo(targetLine); end;
 function String_Lined(const str: string): TStringArray; overload; cdecl; begin Result := str.Lined; end;
 function String_Lines(const str: string): TStringArray; overload; cdecl; begin Result := str.Lines; end;
 function String_LinesStr(const str: string; const lineRange: TRange): string; overload; cdecl; begin Result := str.LinesStr(lineRange); end;
@@ -358,6 +359,8 @@ function String_LineList(const str: string): TStringArray; overload; cdecl; begi
 function String_LinesList(const str: string): TStringArray; overload; cdecl; begin Result := str.LinesList; end;
 function String_Line(const str: string; const number: Integer): string; overload; cdecl; begin Result := str.Line(number); end;
 function String_LineStr(const str: string; const number: Integer): string; overload; cdecl; begin Result := str.LineStr(number); end;
+function String_LineBreaks(const str: string): TStringArray; overload; cdecl; begin Result := str.LineBreaks; end;
+function String_LineBreakArr(const str: string): TStringArray; overload; cdecl; begin Result := str.LineBreakArr; end;
 function String_LineByStringList(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineByStringList(position); end;
 function String_LineAtPos(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineAtPos(position); end;
 function String_LineAtPosition(const str: string; const position: Integer): Integer; overload; cdecl; begin Result := str.LineAtPosition(position); end;
@@ -386,6 +389,8 @@ function String_LineClamp(const str: string; const lineNumber: Integer): Integer
 function String_LineFixed(const str: string; const lineNumber: Integer): Integer; overload; cdecl; begin Result := str.LineFixed(lineNumber); end;
 function String_LineValid(const str: string; const lineNumber: Integer): Boolean; overload; cdecl; begin Result := str.LineValid(lineNumber); end;
 function String_LineExists(const str: string; const lineNumber: Integer): Boolean; overload; cdecl; begin Result := str.LineExists(lineNumber); end;
+function String_LineExisting(const str: string; const lineNumber: Integer): Boolean; overload; cdecl; begin Result := str.LineExisting(lineNumber); end;
+function String_LineExtant(const str: string; const lineNumber: Integer): Boolean; overload; cdecl; begin Result := str.LineExtant(lineNumber); end;
 function String_LineEx1(const str: string; const number: Integer; const lineBreak: string): string; overload; cdecl; begin Result := str.LineEx(number, lineBreak); end;
 function String_LineEx2(const str: string; const number: Integer; const lineBreak: TStringArray): string; overload; cdecl; begin Result := str.LineEx(number, lineBreak); end;
 function String_LineEx3(const str: string; const number: Integer): string; overload; cdecl; begin Result := str.LineEx(number); end;
@@ -917,6 +922,7 @@ function TCircle_Border(const ci: TCircle): TPointArray; cdecl; begin Result := 
 
 function TIntegerArray_Bounds1(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.Bounds; end;
 function TIntegerArray_Bounds2(const arr: TIntegerArray; var aSize: Integer): TRange; overload; cdecl; begin Result := arr.Bounds(aSize); end;
+function TIntegerArray_BRange(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr.BRange; end;
 function TIntegerArray_BoundingRange(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.BoundingRange; end;
 function TIntegerArray_Boundaries(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Boundaries; end;
 function TIntegerArray_Range(const arr: TIntegerArray): TRange; cdecl; begin Result := arr.Range; end;
@@ -1318,6 +1324,7 @@ function TPointArray_Bounds2(const arr: TPointArray; var width, height: Integer)
 function TPointArray_BoundingBox(const arr: TPointArray): TBox; cdecl; begin Result := arr.BoundingBox; end;
 function TPointArray_Boundaries(const arr: TPointArray): TBox; cdecl; begin Result := arr.Boundaries; end;
 function TPointArray_Box(const arr: TPointArray): TBox; cdecl; begin Result := arr.Box; end;
+function TPointArray_BBox(const arr: TPointArray): TBox; cdecl; begin Result := arr.BBox; end;
 function TPointArray_Boxed(const arr: TPointArray): TBox; cdecl; begin Result := arr.Boxed; end;
 function TPointArray_MinMax(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.MinMax; end;
 function TPointArray_Region(const arr: TPointArray): TBox; overload; cdecl; begin Result := arr.Region; end;
@@ -1956,7 +1963,33 @@ function TArray_Contains5(const arr: TBooleanArray; const item: Boolean; const i
 function TArray_Contains6(const arr: TPointArray; const item: TPoint; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Contains(item, index); end;
 function TArray_Contains7(const arr: TBoxArray; const item: TBox; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Contains(item, index); end;
 function TArray_Contains8(const arr: TRangeArray; const item: TRange; const index: Integer = 0): Boolean; overload; cdecl; begin Result := arr.Contains(item, index); end;
+function TArray_Contains9(const arr: TIntegerArray; const item: Integer; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Contains(item, limit); end;
+function TArray_Contains10(const arr: TDoubleArray; const item: Double; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Contains(item, limit); end;
+function TArray_Contains11(const arr: TStringArray; const item: string; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Contains(item, limit); end;
+function TArray_Contains12(const arr: TCharArray; const item: Char; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Contains(item, limit); end;
+function TArray_Contains13(const arr: TBooleanArray; const item: Boolean; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Contains(item, limit); end;
+function TArray_Contains14(const arr: TPointArray; const item: TPoint; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Contains(item, limit); end;
+function TArray_Contains15(const arr: TBoxArray; const item: TBox; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Contains(item, limit); end;
+function TArray_Contains16(const arr: TRangeArray; const item: TRange; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Contains(item, limit); end;
 
+function TArray_ContainsAtLeast1(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtLeast(item, limit); end;
+function TArray_ContainsAtLeast2(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtLeast(item, limit); end;
+function TArray_ContainsAtLeast3(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtLeast(item, limit); end;
+function TArray_ContainsAtLeast4(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtLeast(item, limit); end;
+function TArray_ContainsAtLeast5(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtLeast(item, limit); end;
+function TArray_ContainsAtLeast6(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtLeast(item, limit); end;
+function TArray_ContainsAtLeast7(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtLeast(item, limit); end;
+function TArray_ContainsAtLeast8(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtLeast(item, limit); end;
+
+function TArray_ContainsAtMost1(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtMost(item, limit); end;
+function TArray_ContainsAtMost2(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtMost(item, limit); end;
+function TArray_ContainsAtMost3(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtMost(item, limit); end;
+function TArray_ContainsAtMost4(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtMost(item, limit); end;
+function TArray_ContainsAtMost5(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtMost(item, limit); end;
+function TArray_ContainsAtMost6(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtMost(item, limit); end;
+function TArray_ContainsAtMost7(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtMost(item, limit); end;
+function TArray_ContainsAtMost8(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.ContainsAtMost(item, limit); end;
+  
 function TArray_Copied1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Copied; end;
 function TArray_Copied2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Copied; end;
 function TArray_Copied3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Copied; end;
@@ -1974,6 +2007,23 @@ function TArray_Copy5(const arr: TBooleanArray; const index: Integer = 0; const 
 function TArray_Copy6(const arr: TPointArray; const index: Integer = 0; const count: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.Copy(index, count); end;
 function TArray_Copy7(const arr: TBoxArray; const index: Integer = 0; const count: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Copy(index, count); end;
 function TArray_Copy8(const arr: TRangeArray; const index: Integer = 0; const count: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Copy(index, count); end;
+
+function TArray_Count1(const arr: TIntegerArray; const item: Integer): Integer; overload; cdecl; begin Result := arr.Count(item); end;
+function TArray_Count2(const arr: TDoubleArray; const item: Double): Integer; overload; cdecl; begin Result := arr.Count(item); end;
+function TArray_Count3(const arr: TStringArray; const item: string): Integer; overload; cdecl; begin Result := arr.Count(item); end;
+function TArray_Count4(const arr: TCharArray; const item: Char): Integer; overload; cdecl; begin Result := arr.Count(item); end;
+function TArray_Count5(const arr: TBooleanArray; const item: Boolean): Integer; overload; cdecl; begin Result := arr.Count(item); end;
+function TArray_Count6(const arr: TPointArray; const item: TPoint): Integer; overload; cdecl; begin Result := arr.Count(item); end;
+function TArray_Count7(const arr: TBoxArray; const item: TBox): Integer; overload; cdecl; begin Result := arr.Count(item); end;
+function TArray_Count8(const arr: TRangeArray; const item: TRange): Integer; overload; cdecl; begin Result := arr.Count(item); end;
+function TArray_Count9(const arr: TIntegerArray; const items: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Count(items); end;
+function TArray_Count10(const arr: TDoubleArray; const items: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Count(items); end;
+function TArray_Count11(const arr: TStringArray; const items: TStringArray): Integer; overload; cdecl; begin Result := arr.Count(items); end;
+function TArray_Count12(const arr: TCharArray; const items: TCharArray): Integer; overload; cdecl; begin Result := arr.Count(items); end;
+function TArray_Count13(const arr: TBooleanArray; const items: TBooleanArray): Integer; overload; cdecl; begin Result := arr.Count(items); end;
+function TArray_Count14(const arr: TPointArray; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.Count(items); end;
+function TArray_Count15(const arr: TBoxArray; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.Count(items); end;
+function TArray_Count16(const arr: TRangeArray; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.Count(items); end;
 
 function TArray_Create1(const item: Integer): TIntegerArray; overload; cdecl; begin Result.Create(item); end;
 function TArray_Create2(const item: Double): TDoubleArray; overload; cdecl; begin Result.Create(item); end;
@@ -2584,6 +2634,33 @@ function TArray_Get22(const arr: TPointArray; const ID: TRange): TPointArray; ov
 function TArray_Get23(const arr: TBoxArray; const ID: TRange): TBoxArray; overload; cdecl; begin Result := arr.Get(ID); end;
 function TArray_Get24(const arr: TRangeArray; const ID: TRange): TRangeArray; overload; cdecl; begin Result := arr.Get(ID); end;
 
+function TArray_GotAtLeast1(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtLeast(item, limit); end;
+function TArray_GotAtLeast2(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtLeast(item, limit); end;
+function TArray_GotAtLeast3(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtLeast(item, limit); end;
+function TArray_GotAtLeast4(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtLeast(item, limit); end;
+function TArray_GotAtLeast5(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtLeast(item, limit); end;
+function TArray_GotAtLeast6(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtLeast(item, limit); end;
+function TArray_GotAtLeast7(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtLeast(item, limit); end;
+function TArray_GotAtLeast8(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtLeast(item, limit); end;
+
+function TArray_GotAtMost1(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtMost(item, limit); end;
+function TArray_GotAtMost2(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtMost(item, limit); end;
+function TArray_GotAtMost3(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtMost(item, limit); end;
+function TArray_GotAtMost4(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtMost(item, limit); end;
+function TArray_GotAtMost5(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtMost(item, limit); end;
+function TArray_GotAtMost6(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtMost(item, limit); end;
+function TArray_GotAtMost7(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtMost(item, limit); end;
+function TArray_GotAtMost8(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.GotAtMost(item, limit); end;
+
+function TArray_Got1(const arr: TIntegerArray; const item: Integer; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Got(item, limit); end;
+function TArray_Got2(const arr: TDoubleArray; const item: Double; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Got(item, limit); end;
+function TArray_Got3(const arr: TStringArray; const item: string; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Got(item, limit); end;
+function TArray_Got4(const arr: TCharArray; const item: Char; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Got(item, limit); end;
+function TArray_Got5(const arr: TBooleanArray; const item: Boolean; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Got(item, limit); end;
+function TArray_Got6(const arr: TPointArray; const item: TPoint; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Got(item, limit); end;
+function TArray_Got7(const arr: TBoxArray; const item: TBox; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Got(item, limit); end;
+function TArray_Got8(const arr: TRangeArray; const item: TRange; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Got(item, limit); end;
+
 function TArray_Group1(const arr: TIntegerArray): T2DIntegerArray; overload; cdecl; begin Result := arr.Group; end;
 function TArray_Group2(const arr: TDoubleArray): T2DDoubleArray; overload; cdecl; begin Result := arr.Group; end;
 function TArray_Group3(const arr: TStringArray): T2DStringArray; overload; cdecl; begin Result := arr.Group; end;
@@ -2644,6 +2721,33 @@ function TArray_Grow5(const arr: TBooleanArray; const item: Boolean; const allow
 function TArray_Grow6(const arr: TPointArray; const item: TPoint; const allowDuplicates: Boolean = False): Integer; overload; cdecl; begin Result := arr.Grow(item, allowDuplicates); end;
 function TArray_Grow7(const arr: TBoxArray; const item: TBox; const allowDuplicates: Boolean = False): Integer; overload; cdecl; begin Result := arr.Grow(item, allowDuplicates); end;
 function TArray_Grow8(const arr: TRangeArray; const item: TRange; const allowDuplicates: Boolean = False): Integer; overload; cdecl; begin Result := arr.Grow(item, allowDuplicates); end;
+
+function TArray_HasAtLeast1(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtLeast(item, limit); end;
+function TArray_HasAtLeast2(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtLeast(item, limit); end;
+function TArray_HasAtLeast3(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtLeast(item, limit); end;
+function TArray_HasAtLeast4(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtLeast(item, limit); end;
+function TArray_HasAtLeast5(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtLeast(item, limit); end;
+function TArray_HasAtLeast6(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtLeast(item, limit); end;
+function TArray_HasAtLeast7(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtLeast(item, limit); end;
+function TArray_HasAtLeast8(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtLeast(item, limit); end;
+
+function TArray_HasAtMost1(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtMost(item, limit); end;
+function TArray_HasAtMost2(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtMost(item, limit); end;
+function TArray_HasAtMost3(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtMost(item, limit); end;
+function TArray_HasAtMost4(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtMost(item, limit); end;
+function TArray_HasAtMost5(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtMost(item, limit); end;
+function TArray_HasAtMost6(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtMost(item, limit); end;
+function TArray_HasAtMost7(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtMost(item, limit); end;
+function TArray_HasAtMost8(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.HasAtMost(item, limit); end;
+
+function TArray_Has1(const arr: TIntegerArray; const item: Integer; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Has(item, limit); end;
+function TArray_Has2(const arr: TDoubleArray; const item: Double; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Has(item, limit); end;
+function TArray_Has3(const arr: TStringArray; const item: string; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Has(item, limit); end;
+function TArray_Has4(const arr: TCharArray; const item: Char; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Has(item, limit); end;
+function TArray_Has5(const arr: TBooleanArray; const item: Boolean; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Has(item, limit); end;
+function TArray_Has6(const arr: TPointArray; const item: TPoint; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Has(item, limit); end;
+function TArray_Has7(const arr: TBoxArray; const item: TBox; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Has(item, limit); end;
+function TArray_Has8(const arr: TRangeArray; const item: TRange; const limit: TRange): Boolean; overload; cdecl; begin Result := arr.Has(item, limit); end;
 
 function TArray_Holds1(const arr, chain: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Holds(chain); end;
 function TArray_Holds2(const arr, chain: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Holds(chain); end;

@@ -385,6 +385,7 @@ begin
   AddFunction(@String_LinesCount, 'function String_LinesCount(const str: string): Integer; overload;');
   AddFunction(@String_LineCount, 'function String_LineCount(const str: string): Integer; overload;');
   AddFunction(@String_LinesCounted, 'function String_LinesCounted(const str: string): Integer; overload;');
+  AddFunction(@String_LineCountUpTo, 'function String_LineCountUpTo(const str: string; const targetLine: Integer): Integer; overload;');
   AddFunction(@String_Lined, 'function String_Lined(const str: string): TStringArray; overload;');
   AddFunction(@String_Lines, 'function String_Lines(const str: string): TStringArray; overload;');
   AddFunction(@String_LinesStr, 'function String_LinesStr(const str: string; const lineRange: TRange): string; overload;');
@@ -396,6 +397,8 @@ begin
   AddFunction(@String_LinesList, 'function String_LinesList(const str: string): TStringArray; overload;');
   AddFunction(@String_Line, 'function String_Line(const str: string; const number: Integer): string; overload;');
   AddFunction(@String_LineStr, 'function String_LineStr(const str: string; const number: Integer): string; overload;');
+  AddFunction(@String_LineBreaks, 'function String_LineBreaks(const str: string): TStringArray; overload;');
+  AddFunction(@String_LineBreakArr, 'function String_LineBreakArr(const str: string): TStringArray; overload;');
   AddFunction(@String_LineByStringList, 'function String_LineByStringList(const str: string; const position: Integer): Integer; overload;');
   AddFunction(@String_LineWithPosition, 'function String_LineWithPosition(const str: string; const position: Integer): Integer; overload;');
   AddFunction(@String_LineAtPos, 'function String_LineAtPos(const str: string; const position: Integer): Integer; overload;');
@@ -424,6 +427,8 @@ begin
   AddFunction(@String_LineFixed, 'function String_LineFixed(const str: string; const lineNumber: Integer): Integer; overload;');
   AddFunction(@String_LineValid, 'function String_LineValid(const str: string; const lineNumber: Integer): Boolean; overload;');
   AddFunction(@String_LineExists, 'function String_LineExists(const str: string; const lineNumber: Integer): Boolean; overload;');
+  AddFunction(@String_LineExisting, 'function String_LineExisting(const str: string; const lineNumber: Integer): Boolean; overload;');
+  AddFunction(@String_LineExtant, 'function String_LineExtant(const str: string; const lineNumber: Integer): Boolean; overload;');
   AddFunction(@String_LineEx1, 'function String_LineEx(const str: string; const number: Integer; const lineBreak: string): string; overload;');
   AddFunction(@String_LineEx2, 'function String_LineEx(const str: string; const number: Integer; const lineBreak: TStringArray): string; overload;');
   AddFunction(@String_LineEx3, 'function String_LineEx(const str: string; const number: Integer): string; overload;');
@@ -955,6 +960,7 @@ begin
 
   AddFunction(@TIntegerArray_Bounds1, 'function TIntegerArray_Bounds(const arr: TIntegerArray): TRange; overload;');
   AddFunction(@TIntegerArray_Bounds2, 'function TIntegerArray_Bounds(const arr: TIntegerArray; var aSize: Integer): TRange; overload;');
+  AddFunction(@TIntegerArray_BRange, 'function TIntegerArray_BRange(const arr: TIntegerArray): TRange; overload;');
   AddFunction(@TIntegerArray_BoundingRange, 'function TIntegerArray_BoundingRange(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Boundaries, 'function TIntegerArray_Boundaries(const arr: TIntegerArray): TRange;');
   AddFunction(@TIntegerArray_Range, 'function TIntegerArray_Range(const arr: TIntegerArray): TRange;');
@@ -1356,6 +1362,7 @@ begin
   AddFunction(@TPointArray_BoundingBox, 'function TPointArray_BoundingBox(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Boundaries, 'function TPointArray_Boundaries(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Box, 'function TPointArray_Box(const arr: TPointArray): TBox;');
+  AddFunction(@TPointArray_BBox, 'function TPointArray_BBox(const arr: TPointArray): TBox; overload;');
   AddFunction(@TPointArray_Boxed, 'function TPointArray_Boxed(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_MinMax, 'function TPointArray_MinMax(const arr: TPointArray): TBox;');
   AddFunction(@TPointArray_Region, 'function TPointArray_Region(const arr: TPointArray): TBox; overload;');
@@ -1967,7 +1974,33 @@ begin
   AddFunction(@TArray_Contains6, 'function TArray_Contains(const arr: TPointArray; const item: TPoint; const index: Integer = 0): Boolean; overload;');
   AddFunction(@TArray_Contains7, 'function TArray_Contains(const arr: TBoxArray; const item: TBox; const index: Integer = 0): Boolean; overload;');
   AddFunction(@TArray_Contains8, 'function TArray_Contains(const arr: TRangeArray; const item: TRange; const index: Integer = 0): Boolean; overload;');
+  AddFunction(@TArray_Contains9, 'function TArray_Contains(const arr: TIntegerArray; const item: Integer; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Contains10, 'function TArray_Contains(const arr: TDoubleArray; const item: Double; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Contains11, 'function TArray_Contains(const arr: TStringArray; const item: string; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Contains12, 'function TArray_Contains(const arr: TCharArray; const item: Char; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Contains13, 'function TArray_Contains(const arr: TBooleanArray; const item: Boolean; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Contains14, 'function TArray_Contains(const arr: TPointArray; const item: TPoint; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Contains15, 'function TArray_Contains(const arr: TBoxArray; const item: TBox; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Contains16, 'function TArray_Contains(const arr: TRangeArray; const item: TRange; const limit: TRange): Boolean; overload;');
 
+  AddFunction(@TArray_ContainsAtLeast1, 'function TArray_ContainsAtLeast(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtLeast2, 'function TArray_ContainsAtLeast(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtLeast3, 'function TArray_ContainsAtLeast(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtLeast4, 'function TArray_ContainsAtLeast(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtLeast5, 'function TArray_ContainsAtLeast(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtLeast6, 'function TArray_ContainsAtLeast(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtLeast7, 'function TArray_ContainsAtLeast(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtLeast8, 'function TArray_ContainsAtLeast(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload;');
+
+  AddFunction(@TArray_ContainsAtMost1, 'function TArray_ContainsAtMost(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtMost2, 'function TArray_ContainsAtMost(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtMost3, 'function TArray_ContainsAtMost(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtMost4, 'function TArray_ContainsAtMost(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtMost5, 'function TArray_ContainsAtMost(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtMost6, 'function TArray_ContainsAtMost(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtMost7, 'function TArray_ContainsAtMost(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_ContainsAtMost8, 'function TArray_ContainsAtMost(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload;');
+  
   AddFunction(@TArray_Copy1, 'function TArray_Copy(const arr: TIntegerArray; const index: Integer = 0; const count: Integer = 2147483647): TIntegerArray; overload;');
   AddFunction(@TArray_Copy2, 'function TArray_Copy(const arr: TDoubleArray; const index: Integer = 0; const count: Integer = 2147483647): TDoubleArray; overload;');
   AddFunction(@TArray_Copy3, 'function TArray_Copy(const arr: TStringArray; const index: Integer = 0; const count: Integer = 2147483647): TStringArray; overload;');
@@ -1985,6 +2018,23 @@ begin
   AddFunction(@TArray_Copied6, 'function TArray_Copied(const arr: TPointArray): TPointArray; overload;');
   AddFunction(@TArray_Copied7, 'function TArray_Copied(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Copied8, 'function TArray_Copied(const arr: TRangeArray): TRangeArray; overload;');
+
+  AddFunction(@TArray_Count1, 'function TArray_Count(const arr: TIntegerArray; const item: Integer): Integer; overload;');
+  AddFunction(@TArray_Count2, 'function TArray_Count(const arr: TDoubleArray; const item: Double): Integer; overload;');
+  AddFunction(@TArray_Count3, 'function TArray_Count(const arr: TStringArray; const item: string): Integer; overload;');
+  AddFunction(@TArray_Count4, 'function TArray_Count(const arr: TCharArray; const item: Char): Integer; overload;');
+  AddFunction(@TArray_Count5, 'function TArray_Count(const arr: TBooleanArray; const item: Boolean): Integer; overload;');
+  AddFunction(@TArray_Count6, 'function TArray_Count(const arr: TPointArray; const item: TPoint): Integer; overload;');
+  AddFunction(@TArray_Count7, 'function TArray_Count(const arr: TBoxArray; const item: TBox): Integer; overload;');
+  AddFunction(@TArray_Count8, 'function TArray_Count(const arr: TRangeArray; const item: TRange): Integer; overload;');
+  AddFunction(@TArray_Count9, 'function TArray_Count(const arr: TIntegerArray; const items: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_Count10, 'function TArray_Count(const arr: TDoubleArray; const items: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_Count11, 'function TArray_Count(const arr: TStringArray; const items: TStringArray): Integer; overload;');
+  AddFunction(@TArray_Count12, 'function TArray_Count(const arr: TCharArray; const items: TCharArray): Integer; overload;');
+  AddFunction(@TArray_Count13, 'function TArray_Count(const arr: TBooleanArray; const items: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_Count14, 'function TArray_Count(const arr: TPointArray; const items: TPointArray): Integer; overload;');
+  AddFunction(@TArray_Count15, 'function TArray_Count(const arr: TBoxArray; const items: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_Count16, 'function TArray_Count(const arr: TRangeArray; const items: TRangeArray): Integer; overload;');
 
   AddFunction(@TArray_Create1, 'function TArray_Create(const item: Integer): TIntegerArray; overload;');
   AddFunction(@TArray_Create2, 'function TArray_Create(const item: Double): TDoubleArray; overload;');
@@ -2612,6 +2662,33 @@ begin
   AddFunction(@TArray_Get23, 'function TArray_Get(const arr: TBoxArray; const ID: TRange): TBoxArray; overload;');
   AddFunction(@TArray_Get24, 'function TArray_Get(const arr: TRangeArray; const ID: TRange): TRangeArray; overload;');
 
+  AddFunction(@TArray_GotAtLeast1, 'function TArray_GotAtLeast(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtLeast2, 'function TArray_GotAtLeast(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtLeast3, 'function TArray_GotAtLeast(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtLeast4, 'function TArray_GotAtLeast(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtLeast5, 'function TArray_GotAtLeast(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtLeast6, 'function TArray_GotAtLeast(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtLeast7, 'function TArray_GotAtLeast(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtLeast8, 'function TArray_GotAtLeast(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload;');
+
+  AddFunction(@TArray_GotAtMost1, 'function TArray_GotAtMost(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtMost2, 'function TArray_GotAtMost(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtMost3, 'function TArray_GotAtMost(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtMost4, 'function TArray_GotAtMost(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtMost5, 'function TArray_GotAtMost(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtMost6, 'function TArray_GotAtMost(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtMost7, 'function TArray_GotAtMost(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_GotAtMost8, 'function TArray_GotAtMost(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload;');
+
+  AddFunction(@TArray_Got1, 'function TArray_Got(const arr: TIntegerArray; const item: Integer; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Got2, 'function TArray_Got(const arr: TDoubleArray; const item: Double; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Got3, 'function TArray_Got(const arr: TStringArray; const item: string; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Got4, 'function TArray_Got(const arr: TCharArray; const item: Char; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Got5, 'function TArray_Got(const arr: TBooleanArray; const item: Boolean; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Got6, 'function TArray_Got(const arr: TPointArray; const item: TPoint; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Got7, 'function TArray_Got(const arr: TBoxArray; const item: TBox; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Got8, 'function TArray_Got(const arr: TRangeArray; const item: TRange; const limit: TRange): Boolean; overload;');
+
   AddFunction(@TArray_Group1, 'function TArray_Group(const arr: TIntegerArray): T2DIntegerArray; overload;');
   AddFunction(@TArray_Group2, 'function TArray_Group(const arr: TDoubleArray): T2DDoubleArray; overload;');
   AddFunction(@TArray_Group3, 'function TArray_Group(const arr: TStringArray): T2DStringArray; overload;');
@@ -2672,6 +2749,33 @@ begin
   AddFunction(@TArray_Grow6, 'function TArray_Grow(const arr: TPointArray; const item: TPoint; const allowDuplicates: Boolean = False): Integer; overload;');
   AddFunction(@TArray_Grow7, 'function TArray_Grow(const arr: TBoxArray; const item: TBox; const allowDuplicates: Boolean = False): Integer; overload;');
   AddFunction(@TArray_Grow8, 'function TArray_Grow(const arr: TRangeArray; const item: TRange; const allowDuplicates: Boolean = False): Integer; overload;');
+
+  AddFunction(@TArray_HasAtLeast1, 'function TArray_HasAtLeast(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtLeast2, 'function TArray_HasAtLeast(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtLeast3, 'function TArray_HasAtLeast(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtLeast4, 'function TArray_HasAtLeast(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtLeast5, 'function TArray_HasAtLeast(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtLeast6, 'function TArray_HasAtLeast(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtLeast7, 'function TArray_HasAtLeast(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtLeast8, 'function TArray_HasAtLeast(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload;');
+
+  AddFunction(@TArray_HasAtMost1, 'function TArray_HasAtMost(const arr: TIntegerArray; const item: Integer; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtMost2, 'function TArray_HasAtMost(const arr: TDoubleArray; const item: Double; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtMost3, 'function TArray_HasAtMost(const arr: TStringArray; const item: string; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtMost4, 'function TArray_HasAtMost(const arr: TCharArray; const item: Char; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtMost5, 'function TArray_HasAtMost(const arr: TBooleanArray; const item: Boolean; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtMost6, 'function TArray_HasAtMost(const arr: TPointArray; const item: TPoint; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtMost7, 'function TArray_HasAtMost(const arr: TBoxArray; const item: TBox; const limit: Integer): Boolean; overload;');
+  AddFunction(@TArray_HasAtMost8, 'function TArray_HasAtMost(const arr: TRangeArray; const item: TRange; const limit: Integer): Boolean; overload;');
+
+  AddFunction(@TArray_Has1, 'function TArray_Has(const arr: TIntegerArray; const item: Integer; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Has2, 'function TArray_Has(const arr: TDoubleArray; const item: Double; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Has3, 'function TArray_Has(const arr: TStringArray; const item: string; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Has4, 'function TArray_Has(const arr: TCharArray; const item: Char; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Has5, 'function TArray_Has(const arr: TBooleanArray; const item: Boolean; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Has6, 'function TArray_Has(const arr: TPointArray; const item: TPoint; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Has7, 'function TArray_Has(const arr: TBoxArray; const item: TBox; const limit: TRange): Boolean; overload;');
+  AddFunction(@TArray_Has8, 'function TArray_Has(const arr: TRangeArray; const item: TRange; const limit: TRange): Boolean; overload;');
 
   AddFunction(@TArray_Holds1, 'function TArray_Holds(const arr, chain: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Holds2, 'function TArray_Holds(const arr, chain: TDoubleArray): Boolean; overload;');
