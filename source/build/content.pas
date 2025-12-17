@@ -4360,7 +4360,43 @@ begin
   AddFunction(@TArray_Maxi8, 'function TArray_Maxi(const arr: TStringArray; const start: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_Maxi9, 'function TArray_Maxi(const arr: TCharArray; const start: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_Maxi10, 'function TArray_Maxi(const arr: TPointArray; const start: Integer; const aAscending: Boolean = True): Integer; overload;');
-  
+
+  AddFunction(@TArray_WithinBounds1, 'function TArray_WithinBounds(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_WithinBounds2, 'function TArray_WithinBounds(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_WithinBounds3, 'function TArray_WithinBounds(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_WithinBounds4, 'function TArray_WithinBounds(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_WithinBounds5, 'function TArray_WithinBounds(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+
+  AddFunction(@TArray_OutOfBounds1, 'function TArray_OutOfBounds(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_OutOfBounds2, 'function TArray_OutOfBounds(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_OutOfBounds3, 'function TArray_OutOfBounds(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_OutOfBounds4, 'function TArray_OutOfBounds(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_OutOfBounds5, 'function TArray_OutOfBounds(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+
+  AddFunction(@TArray_Accepts1, 'function TArray_Accepts(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_Accepts2, 'function TArray_Accepts(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_Accepts3, 'function TArray_Accepts(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_Accepts4, 'function TArray_Accepts(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_Accepts5, 'function TArray_Accepts(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+
+  AddFunction(@TArray_Rejects1, 'function TArray_Rejects(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_Rejects2, 'function TArray_Rejects(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_Rejects3, 'function TArray_Rejects(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_Rejects4, 'function TArray_Rejects(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_Rejects5, 'function TArray_Rejects(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+
+  AddFunction(@TArray_InsideBounds1, 'function TArray_InsideBounds(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_InsideBounds2, 'function TArray_InsideBounds(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_InsideBounds3, 'function TArray_InsideBounds(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_InsideBounds4, 'function TArray_InsideBounds(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_InsideBounds5, 'function TArray_InsideBounds(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+
+  AddFunction(@TArray_OutsideBounds1, 'function TArray_OutsideBounds(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_OutsideBounds2, 'function TArray_OutsideBounds(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_OutsideBounds3, 'function TArray_OutsideBounds(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_OutsideBounds4, 'function TArray_OutsideBounds(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TArray_OutsideBounds5, 'function TArray_OutsideBounds(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+
   AddFunction(@TArray_Mode1, 'function TArray_Mode(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TArray_Mode2, 'function TArray_Mode(const arr: TDoubleArray): Double; overload;');
   AddFunction(@TArray_Mode3, 'function TArray_Mode(const arr: TStringArray): string; overload;');

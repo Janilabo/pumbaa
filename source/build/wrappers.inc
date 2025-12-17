@@ -3075,6 +3075,42 @@ function TArray_Maxim8(const arr: TStringArray): string; overload; cdecl; begin 
 function TArray_Maxim9(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.Maxim; end;
 function TArray_Maxim10(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.Maxim; end;
 
+function TArray_WithinBounds1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.WithinBounds(item, oAscending); end;
+function TArray_WithinBounds2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.WithinBounds(item, oAscending); end;
+function TArray_WithinBounds3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.WithinBounds(item, oAscending); end;
+function TArray_WithinBounds4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.WithinBounds(item, oAscending); end;
+function TArray_WithinBounds5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.WithinBounds(item, oAscending); end;
+
+function TArray_OutOfBounds1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutOfBounds(item, oAscending); end;
+function TArray_OutOfBounds2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutOfBounds(item, oAscending); end;
+function TArray_OutOfBounds3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutOfBounds(item, oAscending); end;
+function TArray_OutOfBounds4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutOfBounds(item, oAscending); end;
+function TArray_OutOfBounds5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutOfBounds(item, oAscending); end;
+
+function TArray_Accepts1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Accepts(item, oAscending); end;
+function TArray_Accepts2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Accepts(item, oAscending); end;
+function TArray_Accepts3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Accepts(item, oAscending); end;
+function TArray_Accepts4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Accepts(item, oAscending); end;
+function TArray_Accepts5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Accepts(item, oAscending); end;
+
+function TArray_Rejects1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Rejects(item, oAscending); end;
+function TArray_Rejects2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Rejects(item, oAscending); end;
+function TArray_Rejects3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Rejects(item, oAscending); end;
+function TArray_Rejects4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Rejects(item, oAscending); end;
+function TArray_Rejects5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Rejects(item, oAscending); end;
+
+function TArray_InsideBounds1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.InsideBounds(item, oAscending); end;
+function TArray_InsideBounds2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.InsideBounds(item, oAscending); end;
+function TArray_InsideBounds3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.InsideBounds(item, oAscending); end;
+function TArray_InsideBounds4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.InsideBounds(item, oAscending); end;
+function TArray_InsideBounds5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.InsideBounds(item, oAscending); end;
+
+function TArray_OutsideBounds1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutsideBounds(item, oAscending); end;
+function TArray_OutsideBounds2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutsideBounds(item, oAscending); end;
+function TArray_OutsideBounds3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutsideBounds(item, oAscending); end;
+function TArray_OutsideBounds4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutsideBounds(item, oAscending); end;
+function TArray_OutsideBounds5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.OutsideBounds(item, oAscending); end;
+
 function TArray_Mix1(var arr: TIntegerArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
 function TArray_Mix2(var arr: TDoubleArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
 function TArray_Mix3(var arr: TStringArray; const mixings: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Mix(mixings); end;
