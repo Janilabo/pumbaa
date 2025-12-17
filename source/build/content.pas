@@ -4339,6 +4339,18 @@ begin
   AddFunction(@TArray_Highest4, 'function TArray_Highest(const arr: TCharArray): Char; overload;');
   AddFunction(@TArray_Highest5, 'function TArray_Highest(const arr: TPointArray): TPoint; overload;');
   
+  AddFunction(@TArray_CountOf1, 'function TArray_CountOf(const arr: TIntegerArray; const items: TIntegerArray; const iAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CountOf2, 'function TArray_CountOf(const arr: TDoubleArray; const items: TDoubleArray; const iAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CountOf3, 'function TArray_CountOf(const arr: TStringArray; const items: TStringArray; const iAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CountOf4, 'function TArray_CountOf(const arr: TCharArray; const items: TCharArray; const iAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_CountOf5, 'function TArray_CountOf(const arr: TPointArray; const items: TPointArray; const iAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_Counted1, 'function TArray_Counted(const arr: TIntegerArray; const items: TIntegerArray; const iSorted: Boolean = False): Integer; overload;');
+  AddFunction(@TArray_Counted2, 'function TArray_Counted(const arr: TDoubleArray; const items: TDoubleArray; const iSorted: Boolean = False): Integer; overload;');
+  AddFunction(@TArray_Counted3, 'function TArray_Counted(const arr: TStringArray; const items: TStringArray; const iSorted: Boolean = False): Integer; overload;');
+  AddFunction(@TArray_Counted4, 'function TArray_Counted(const arr: TCharArray; const items: TCharArray; const iSorted: Boolean = False): Integer; overload;');
+  AddFunction(@TArray_Counted5, 'function TArray_Counted(const arr: TPointArray; const items: TPointArray; const iSorted: Boolean = False): Integer; overload;');
+  
   AddFunction(@TArray_Mini1, 'function TArray_Mini(const arr: TIntegerArray; const aAscending: Boolean = True; const start: Integer = -1): Integer; overload;');
   AddFunction(@TArray_Mini2, 'function TArray_Mini(const arr: TDoubleArray; const aAscending: Boolean = True; const start: Integer = -1): Integer; overload;');
   AddFunction(@TArray_Mini3, 'function TArray_Mini(const arr: TStringArray; const aAscending: Boolean = True; const start: Integer = -1): Integer; overload;');

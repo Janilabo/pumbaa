@@ -4603,6 +4603,18 @@ function TArray_TrendFalling3(const arr: TStringArray): Boolean; overload; cdecl
 function TArray_TrendFalling4(const arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.TrendFalling; end;
 function TArray_TrendFalling5(const arr: TPointArray): Boolean; overload; cdecl; begin Result := arr.TrendFalling; end;
 
+function TArray_CountOf1(const arr: TIntegerArray; const items: TIntegerArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CountOf(items, iAscending); end;
+function TArray_CountOf2(const arr: TDoubleArray; const items: TDoubleArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CountOf(items, iAscending); end;
+function TArray_CountOf3(const arr: TStringArray; const items: TStringArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CountOf(items, iAscending); end;
+function TArray_CountOf4(const arr: TCharArray; const items: TCharArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CountOf(items, iAscending); end;
+function TArray_CountOf5(const arr: TPointArray; const items: TPointArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CountOf(items, iAscending); end;
+
+function TArray_Counted1(const arr: TIntegerArray; const items: TIntegerArray; const iSorted: Boolean = False): Integer; overload; cdecl; begin Result := arr.Counted(items, iSorted); end;
+function TArray_Counted2(const arr: TDoubleArray; const items: TDoubleArray; const iSorted: Boolean = False): Integer; overload; cdecl; begin Result := arr.Counted(items, iSorted); end;
+function TArray_Counted3(const arr: TStringArray; const items: TStringArray; const iSorted: Boolean = False): Integer; overload; cdecl; begin Result := arr.Counted(items, iSorted); end;
+function TArray_Counted4(const arr: TCharArray; const items: TCharArray; const iSorted: Boolean = False): Integer; overload; cdecl; begin Result := arr.Counted(items, iSorted); end;
+function TArray_Counted5(const arr: TPointArray; const items: TPointArray; const iSorted: Boolean = False): Integer; overload; cdecl; begin Result := arr.Counted(items, iSorted); end;
+
 function TArray_BinaryInsertionSort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertionSort(aAscending); end;
 function TArray_BinaryInsertionSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertionSort(aAscending); end;
 function TArray_BinaryInsertionSort3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertionSort(aAscending); end;
