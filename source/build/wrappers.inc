@@ -233,6 +233,10 @@ function Char_Swapcase(const c: Char): Char; cdecl; begin Result := c.Swapcase; 
 function Char_Upper(const c: Char): Char; cdecl; begin Result := c.Upper; end;
 function Char_Lower(const c: Char): Char; cdecl; begin Result := c.Lower; end;
 function Char_CountIn(const c: Char; const target: string): Integer; overload; cdecl; begin Result := c.CountIn(target); end;
+function Char_OccurrencesIn(const c: Char; const target: string): Integer; overload; cdecl; begin Result := c.OccurrencesIn(target); end;
+function Char_Occurs(const c: Char; const target: string): Integer; overload; cdecl; begin Result := c.Occurs(target); end;
+function Char_AmountIn(const c: Char; const target: string): Integer; overload; cdecl; begin Result := c.AmountIn(target); end;
+function Char_AppearsIn(const c: Char; const target: string): Integer; overload; cdecl; begin Result := c.AppearsIn(target); end;
 function Char_Tokenize(const c: Char; const str: string): TStringArray; overload; cdecl; begin Result := c.Tokenize(str); end;
 
 function String_CountOf(const str: string; const item: Char): Integer; overload; cdecl; begin Result := str.CountOf(item); end;
@@ -1571,6 +1575,87 @@ function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TInteg
 function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray; cdecl; begin Result.Zip(startArr, stopArr); end;
 function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gaps; end;
 
+function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
+function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
+function Var_TArray3(const v: string; const aSize: Integer = 1): TStringArray; overload; cdecl; begin Result := v.TArray(aSize); end;
+function Var_TArray4(const v: Char; const aSize: Integer = 1): TCharArray; overload; cdecl; begin Result := v.TArray(aSize); end;
+function Var_TArray5(const v: Boolean; const aSize: Integer = 1): TBooleanArray; overload; cdecl; begin Result := v.TArray(aSize); end;
+function Var_TArray6(const v: TPoint; const aSize: Integer = 1): TPointArray; overload; cdecl; begin Result := v.TArray(aSize); end;
+function Var_TArray7(const v: TBox; const aSize: Integer = 1): TBoxArray; overload; cdecl; begin Result := v.TArray(aSize); end;
+function Var_TArray8(const v: TRange; const aSize: Integer = 1): TRangeArray; overload; cdecl; begin Result := v.TArray(aSize); end;
+  
+function Var_T2DArray1(const v: Integer; const size1D: Integer = 1; const size2D: Integer = 1): T2DIntegerArray; overload; cdecl; begin Result := v.T2DArray(size1D, size2D); end;
+function Var_T2DArray2(const v: Double; const size1D: Integer = 1; const size2D: Integer = 1): T2DDoubleArray; overload; cdecl; begin Result := v.T2DArray(size1D, size2D); end;
+function Var_T2DArray3(const v: string; const size1D: Integer = 1; const size2D: Integer = 1): T2DStringArray; overload; cdecl; begin Result := v.T2DArray(size1D, size2D); end;
+function Var_T2DArray4(const v: Char; const size1D: Integer = 1; const size2D: Integer = 1): T2DCharArray; overload; cdecl; begin Result := v.T2DArray(size1D, size2D); end;
+function Var_T2DArray5(const v: Boolean; const size1D: Integer = 1; const size2D: Integer = 1): T2DBooleanArray; overload; cdecl; begin Result := v.T2DArray(size1D, size2D); end;
+function Var_T2DArray6(const v: TPoint; const size1D: Integer = 1; const size2D: Integer = 1): T2DPointArray; overload; cdecl; begin Result := v.T2DArray(size1D, size2D); end;
+function Var_T2DArray7(const v: TBox; const size1D: Integer = 1; const size2D: Integer = 1): T2DBoxArray; overload; cdecl; begin Result := v.T2DArray(size1D, size2D); end;
+function Var_T2DArray8(const v: TRange; const size1D: Integer = 1; const size2D: Integer = 1): T2DRangeArray; overload; cdecl; begin Result := v.T2DArray(size1D, size2D); end;
+
+function Var_AppearsIn1(const v: Integer; const target: TIntegerArray): Integer; overload; cdecl; begin Result := v.AppearsIn(target); end;
+function Var_AppearsIn2(const v: Double; const target: TDoubleArray): Integer; overload; cdecl; begin Result := v.AppearsIn(target); end;
+function Var_AppearsIn3(const v: string; const target: TStringArray): Integer; overload; cdecl; begin Result := v.AppearsIn(target); end;
+function Var_AppearsIn4(const v: Char; const target: TCharArray): Integer; overload; cdecl; begin Result := v.AppearsIn(target); end;
+function Var_AppearsIn5(const v: Boolean; const target: TBooleanArray): Integer; overload; cdecl; begin Result := v.AppearsIn(target); end;
+function Var_AppearsIn6(const v: TPoint; const target: TPointArray): Integer; overload; cdecl; begin Result := v.AppearsIn(target); end;
+function Var_AppearsIn7(const v: TBox; const target: TBoxArray): Integer; overload; cdecl; begin Result := v.AppearsIn(target); end;
+function Var_AppearsIn8(const v: TRange; const target: TRangeArray): Integer; overload; cdecl; begin Result := v.AppearsIn(target); end;
+  
+function Var_CountIn1(const v: Integer; const target: TIntegerArray): Integer; overload; cdecl; begin Result := v.CountIn(target); end;
+function Var_CountIn2(const v: Double; const target: TDoubleArray): Integer; overload; cdecl; begin Result := v.CountIn(target); end;
+function Var_CountIn3(const v: string; const target: TStringArray): Integer; overload; cdecl; begin Result := v.CountIn(target); end;
+function Var_CountIn4(const v: Char; const target: TCharArray): Integer; overload; cdecl; begin Result := v.CountIn(target); end;
+function Var_CountIn5(const v: Boolean; const target: TBooleanArray): Integer; overload; cdecl; begin Result := v.CountIn(target); end;
+function Var_CountIn6(const v: TPoint; const target: TPointArray): Integer; overload; cdecl; begin Result := v.CountIn(target); end;
+function Var_CountIn7(const v: TBox; const target: TBoxArray): Integer; overload; cdecl; begin Result := v.CountIn(target); end;
+function Var_CountIn8(const v: TRange; const target: TRangeArray): Integer; overload; cdecl; begin Result := v.CountIn(target); end;
+
+function Var_Scan1(const v: Integer; const target: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := v.Scan(target); end;
+function Var_Scan2(const v: Double; const target: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := v.Scan(target); end;
+function Var_Scan3(const v: string; const target: TStringArray): TIntegerArray; overload; cdecl; begin Result := v.Scan(target); end;
+function Var_Scan4(const v: Char; const target: TCharArray): TIntegerArray; overload; cdecl; begin Result := v.Scan(target); end;
+function Var_Scan5(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := v.Scan(target); end;
+function Var_Scan6(const v: TPoint; const target: TPointArray): TIntegerArray; overload; cdecl; begin Result := v.Scan(target); end;
+function Var_Scan7(const v: TBox; const target: TBoxArray): TIntegerArray; overload; cdecl; begin Result := v.Scan(target); end;
+function Var_Scan8(const v: TRange; const target: TRangeArray): TIntegerArray; overload; cdecl; begin Result := v.Scan(target); end;
+
+function Var_PositionsIn1(const v: Integer; const target: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := v.PositionsIn(target); end;
+function Var_PositionsIn2(const v: Double; const target: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := v.PositionsIn(target); end;
+function Var_PositionsIn3(const v: string; const target: TStringArray): TIntegerArray; overload; cdecl; begin Result := v.PositionsIn(target); end;
+function Var_PositionsIn4(const v: Char; const target: TCharArray): TIntegerArray; overload; cdecl; begin Result := v.PositionsIn(target); end;
+function Var_PositionsIn5(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := v.PositionsIn(target); end;
+function Var_PositionsIn6(const v: TPoint; const target: TPointArray): TIntegerArray; overload; cdecl; begin Result := v.PositionsIn(target); end;
+function Var_PositionsIn7(const v: TBox; const target: TBoxArray): TIntegerArray; overload; cdecl; begin Result := v.PositionsIn(target); end;
+function Var_PositionsIn8(const v: TRange; const target: TRangeArray): TIntegerArray; overload; cdecl; begin Result := v.PositionsIn(target); end;
+
+function Var_LocationsIn1(const v: Integer; const target: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := v.LocationsIn(target); end;
+function Var_LocationsIn2(const v: Double; const target: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := v.LocationsIn(target); end;
+function Var_LocationsIn3(const v: string; const target: TStringArray): TIntegerArray; overload; cdecl; begin Result := v.LocationsIn(target); end;
+function Var_LocationsIn4(const v: Char; const target: TCharArray): TIntegerArray; overload; cdecl; begin Result := v.LocationsIn(target); end;
+function Var_LocationsIn5(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := v.LocationsIn(target); end;
+function Var_LocationsIn6(const v: TPoint; const target: TPointArray): TIntegerArray; overload; cdecl; begin Result := v.LocationsIn(target); end;
+function Var_LocationsIn7(const v: TBox; const target: TBoxArray): TIntegerArray; overload; cdecl; begin Result := v.LocationsIn(target); end;
+function Var_LocationsIn8(const v: TRange; const target: TRangeArray): TIntegerArray; overload; cdecl; begin Result := v.LocationsIn(target); end;
+
+function Var_Positions1(const v: Integer; const target: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := v.Positions(target); end;
+function Var_Positions2(const v: Double; const target: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := v.Positions(target); end;
+function Var_Positions3(const v: string; const target: TStringArray): TIntegerArray; overload; cdecl; begin Result := v.Positions(target); end;
+function Var_Positions4(const v: Char; const target: TCharArray): TIntegerArray; overload; cdecl; begin Result := v.Positions(target); end;
+function Var_Positions5(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := v.Positions(target); end;
+function Var_Positions6(const v: TPoint; const target: TPointArray): TIntegerArray; overload; cdecl; begin Result := v.Positions(target); end;
+function Var_Positions7(const v: TBox; const target: TBoxArray): TIntegerArray; overload; cdecl; begin Result := v.Positions(target); end;
+function Var_Positions8(const v: TRange; const target: TRangeArray): TIntegerArray; overload; cdecl; begin Result := v.Positions(target); end;
+
+function Var_Locations1(const v: Integer; const target: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := v.Locations(target); end;
+function Var_Locations2(const v: Double; const target: TDoubleArray): TIntegerArray; overload; cdecl; begin Result := v.Locations(target); end;
+function Var_Locations3(const v: string; const target: TStringArray): TIntegerArray; overload; cdecl; begin Result := v.Locations(target); end;
+function Var_Locations4(const v: Char; const target: TCharArray): TIntegerArray; overload; cdecl; begin Result := v.Locations(target); end;
+function Var_Locations5(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := v.Locations(target); end;
+function Var_Locations6(const v: TPoint; const target: TPointArray): TIntegerArray; overload; cdecl; begin Result := v.Locations(target); end;
+function Var_Locations7(const v: TBox; const target: TBoxArray): TIntegerArray; overload; cdecl; begin Result := v.Locations(target); end;
+function Var_Locations8(const v: TRange; const target: TRangeArray): TIntegerArray; overload; cdecl; begin Result := v.Locations(target); end;
+
 function TArray_Add1(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
 function TArray_Add2(const arr: TDoubleArray; const item: Double; const duplicates: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
 function TArray_Add3(const arr: TStringArray; const item: string; const duplicates: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Add(item, duplicates); end;
@@ -2879,6 +2964,15 @@ function TArray_Inject5(var arr: TBooleanArray; const items: TBooleanArray; cons
 function TArray_Inject6(var arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Inject(items, index); end;
 function TArray_Inject7(var arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Inject(items, index); end;
 function TArray_Inject8(var arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Inject(items, index); end;
+
+function TArray_IntersectionCounted1(const arr: TIntegerArray; const items: TIntegerArray): Integer; overload; cdecl; begin Result := arr.IntersectionCounted(items); end;
+function TArray_IntersectionCounted2(const arr: TDoubleArray; const items: TDoubleArray): Integer; overload; cdecl; begin Result := arr.IntersectionCounted(items); end;
+function TArray_IntersectionCounted3(const arr: TStringArray; const items: TStringArray): Integer; overload; cdecl; begin Result := arr.IntersectionCounted(items); end;
+function TArray_IntersectionCounted4(const arr: TCharArray; const items: TCharArray): Integer; overload; cdecl; begin Result := arr.IntersectionCounted(items); end;
+function TArray_IntersectionCounted5(const arr: TBooleanArray; const items: TBooleanArray): Integer; overload; cdecl; begin Result := arr.IntersectionCounted(items); end;
+function TArray_IntersectionCounted6(const arr: TPointArray; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.IntersectionCounted(items); end;
+function TArray_IntersectionCounted7(const arr: TBoxArray; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.IntersectionCounted(items); end;
+function TArray_IntersectionCounted8(const arr: TRangeArray; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.IntersectionCounted(items); end;
 
 function TArray_Keep1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Keep(items, index); end;
 function TArray_Keep2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.Keep(items, index); end;
@@ -4614,6 +4708,12 @@ function TArray_Counted2(const arr: TDoubleArray; const items: TDoubleArray; con
 function TArray_Counted3(const arr: TStringArray; const items: TStringArray; const iSorted: Boolean = False): Integer; overload; cdecl; begin Result := arr.Counted(items, iSorted); end;
 function TArray_Counted4(const arr: TCharArray; const items: TCharArray; const iSorted: Boolean = False): Integer; overload; cdecl; begin Result := arr.Counted(items, iSorted); end;
 function TArray_Counted5(const arr: TPointArray; const items: TPointArray; const iSorted: Boolean = False): Integer; overload; cdecl; begin Result := arr.Counted(items, iSorted); end;
+
+function TArray_IntersectionCount1(const arr: TIntegerArray; const items: TIntegerArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.IntersectionCount(items, iAscending); end;
+function TArray_IntersectionCount2(const arr: TDoubleArray; const items: TDoubleArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.IntersectionCount(items, iAscending); end;
+function TArray_IntersectionCount3(const arr: TStringArray; const items: TStringArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.IntersectionCount(items, iAscending); end;
+function TArray_IntersectionCount4(const arr: TCharArray; const items: TCharArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.IntersectionCount(items, iAscending); end;
+function TArray_IntersectionCount5(const arr: TPointArray; const items: TPointArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.IntersectionCount(items, iAscending); end;
 
 function TArray_BinaryInsertionSort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertionSort(aAscending); end;
 function TArray_BinaryInsertionSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertionSort(aAscending); end;

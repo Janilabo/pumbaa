@@ -271,6 +271,10 @@ begin
   AddFunction(@Char_Upper, 'function Char_Upper(const c: Char): Char;');
   AddFunction(@Char_Lower, 'function Char_Lower(const c: Char): Char;');
   AddFunction(@Char_CountIn, 'function Char_CountIn(const c: Char; const target: string): Integer; overload;');
+  AddFunction(@Char_OccurrencesIn, 'function Char_OccurrencesIn(const c: Char; const target: string): Integer; overload;');
+  AddFunction(@Char_Occurs, 'function Char_Occurs(const c: Char; const target: string): Integer; overload;');
+  AddFunction(@Char_AmountIn, 'function Char_AmountIn(const c: Char; const target: string): Integer; overload;');
+  AddFunction(@Char_AppearsIn, 'function Char_AppearsIn(const c: Char; const target: string): Integer; overload;');
   AddFunction(@Char_Tokenize, 'function Char_Tokenize(const c: Char; const str: string): TStringArray; overload;');
 
   AddFunction(@String_CountOf, 'function String_CountOf(const str: string; const item: Char): Integer; overload;');
@@ -1609,6 +1613,87 @@ begin
   AddFunction(@TRangeArray_Zip, 'function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray;');
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
 
+  AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
+  AddFunction(@Var_TArray3, 'function Var_TArray(const v: string; const aSize: Integer = 1): TStringArray; overload;');
+  AddFunction(@Var_TArray4, 'function Var_TArray(const v: Char; const aSize: Integer = 1): TCharArray; overload;');
+  AddFunction(@Var_TArray5, 'function Var_TArray(const v: Boolean; const aSize: Integer = 1): TBooleanArray; overload;');
+  AddFunction(@Var_TArray6, 'function Var_TArray(const v: TPoint; const aSize: Integer = 1): TPointArray; overload;');
+  AddFunction(@Var_TArray7, 'function Var_TArray(const v: TBox; const aSize: Integer = 1): TBoxArray; overload;');
+  AddFunction(@Var_TArray8, 'function Var_TArray(const v: TRange; const aSize: Integer = 1): TRangeArray; overload;');
+  
+  AddFunction(@Var_T2DArray1, 'function Var_T2DArray(const v: Integer; const size1D: Integer = 1; const size2D: Integer = 1): T2DIntegerArray; overload;');
+  AddFunction(@Var_T2DArray2, 'function Var_T2DArray(const v: Double; const size1D: Integer = 1; const size2D: Integer = 1): T2DDoubleArray; overload;');
+  AddFunction(@Var_T2DArray3, 'function Var_T2DArray(const v: string; const size1D: Integer = 1; const size2D: Integer = 1): T2DStringArray; overload;');
+  AddFunction(@Var_T2DArray4, 'function Var_T2DArray(const v: Char; const size1D: Integer = 1; const size2D: Integer = 1): T2DCharArray; overload;');
+  AddFunction(@Var_T2DArray5, 'function Var_T2DArray(const v: Boolean; const size1D: Integer = 1; const size2D: Integer = 1): T2DBooleanArray; overload;');
+  AddFunction(@Var_T2DArray6, 'function Var_T2DArray(const v: TPoint; const size1D: Integer = 1; const size2D: Integer = 1): T2DPointArray; overload;');
+  AddFunction(@Var_T2DArray7, 'function Var_T2DArray(const v: TBox; const size1D: Integer = 1; const size2D: Integer = 1): T2DBoxArray; overload;');
+  AddFunction(@Var_T2DArray8, 'function Var_T2DArray(const v: TRange; const size1D: Integer = 1; const size2D: Integer = 1): T2DRangeArray; overload;');
+
+  AddFunction(@Var_AppearsIn1, 'function Var_AppearsIn(const v: Integer; const target: TIntegerArray): Integer; overload;');
+  AddFunction(@Var_AppearsIn2, 'function Var_AppearsIn(const v: Double; const target: TDoubleArray): Integer; overload;');
+  AddFunction(@Var_AppearsIn3, 'function Var_AppearsIn(const v: string; const target: TStringArray): Integer; overload;');
+  AddFunction(@Var_AppearsIn4, 'function Var_AppearsIn(const v: Char; const target: TCharArray): Integer; overload;');
+  AddFunction(@Var_AppearsIn5, 'function Var_AppearsIn(const v: Boolean; const target: TBooleanArray): Integer; overload;');
+  AddFunction(@Var_AppearsIn6, 'function Var_AppearsIn(const v: TPoint; const target: TPointArray): Integer; overload;');
+  AddFunction(@Var_AppearsIn7, 'function Var_AppearsIn(const v: TBox; const target: TBoxArray): Integer; overload;');
+  AddFunction(@Var_AppearsIn8, 'function Var_AppearsIn(const v: TRange; const target: TRangeArray): Integer; overload;');
+  
+  AddFunction(@Var_CountIn1, 'function Var_CountIn(const v: Integer; const target: TIntegerArray): Integer; overload;');
+  AddFunction(@Var_CountIn2, 'function Var_CountIn(const v: Double; const target: TDoubleArray): Integer; overload;');
+  AddFunction(@Var_CountIn3, 'function Var_CountIn(const v: string; const target: TStringArray): Integer; overload;');
+  AddFunction(@Var_CountIn4, 'function Var_CountIn(const v: Char; const target: TCharArray): Integer; overload;');
+  AddFunction(@Var_CountIn5, 'function Var_CountIn(const v: Boolean; const target: TBooleanArray): Integer; overload;');
+  AddFunction(@Var_CountIn6, 'function Var_CountIn(const v: TPoint; const target: TPointArray): Integer; overload;');
+  AddFunction(@Var_CountIn7, 'function Var_CountIn(const v: TBox; const target: TBoxArray): Integer; overload;');
+  AddFunction(@Var_CountIn8, 'function Var_CountIn(const v: TRange; const target: TRangeArray): Integer; overload;');
+  
+  AddFunction(@Var_Scan1, 'function Var_Scan(const v: Integer; const target: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@Var_Scan2, 'function Var_Scan(const v: Double; const target: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@Var_Scan3, 'function Var_Scan(const v: string; const target: TStringArray): TIntegerArray; overload;');
+  AddFunction(@Var_Scan4, 'function Var_Scan(const v: Char; const target: TCharArray): TIntegerArray; overload;');
+  AddFunction(@Var_Scan5, 'function Var_Scan(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@Var_Scan6, 'function Var_Scan(const v: TPoint; const target: TPointArray): TIntegerArray; overload;');
+  AddFunction(@Var_Scan7, 'function Var_Scan(const v: TBox; const target: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@Var_Scan8, 'function Var_Scan(const v: TRange; const target: TRangeArray): TIntegerArray; overload;');
+  
+  AddFunction(@Var_PositionsIn1, 'function Var_PositionsIn(const v: Integer; const target: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@Var_PositionsIn2, 'function Var_PositionsIn(const v: Double; const target: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@Var_PositionsIn3, 'function Var_PositionsIn(const v: string; const target: TStringArray): TIntegerArray; overload;');
+  AddFunction(@Var_PositionsIn4, 'function Var_PositionsIn(const v: Char; const target: TCharArray): TIntegerArray; overload;');
+  AddFunction(@Var_PositionsIn5, 'function Var_PositionsIn(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@Var_PositionsIn6, 'function Var_PositionsIn(const v: TPoint; const target: TPointArray): TIntegerArray; overload;');
+  AddFunction(@Var_PositionsIn7, 'function Var_PositionsIn(const v: TBox; const target: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@Var_PositionsIn8, 'function Var_PositionsIn(const v: TRange; const target: TRangeArray): TIntegerArray; overload;');
+  
+  AddFunction(@Var_LocationsIn1, 'function Var_LocationsIn(const v: Integer; const target: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@Var_LocationsIn2, 'function Var_LocationsIn(const v: Double; const target: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@Var_LocationsIn3, 'function Var_LocationsIn(const v: string; const target: TStringArray): TIntegerArray; overload;');
+  AddFunction(@Var_LocationsIn4, 'function Var_LocationsIn(const v: Char; const target: TCharArray): TIntegerArray; overload;');
+  AddFunction(@Var_LocationsIn5, 'function Var_LocationsIn(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@Var_LocationsIn6, 'function Var_LocationsIn(const v: TPoint; const target: TPointArray): TIntegerArray; overload;');
+  AddFunction(@Var_LocationsIn7, 'function Var_LocationsIn(const v: TBox; const target: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@Var_LocationsIn8, 'function Var_LocationsIn(const v: TRange; const target: TRangeArray): TIntegerArray; overload;');
+  
+  AddFunction(@Var_Positions1, 'function Var_Positions(const v: Integer; const target: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@Var_Positions2, 'function Var_Positions(const v: Double; const target: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@Var_Positions3, 'function Var_Positions(const v: string; const target: TStringArray): TIntegerArray; overload;');
+  AddFunction(@Var_Positions4, 'function Var_Positions(const v: Char; const target: TCharArray): TIntegerArray; overload;');
+  AddFunction(@Var_Positions5, 'function Var_Positions(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@Var_Positions6, 'function Var_Positions(const v: TPoint; const target: TPointArray): TIntegerArray; overload;');
+  AddFunction(@Var_Positions7, 'function Var_Positions(const v: TBox; const target: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@Var_Positions8, 'function Var_Positions(const v: TRange; const target: TRangeArray): TIntegerArray; overload;');
+  
+  AddFunction(@Var_Locations1, 'function Var_Locations(const v: Integer; const target: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@Var_Locations2, 'function Var_Locations(const v: Double; const target: TDoubleArray): TIntegerArray; overload;');
+  AddFunction(@Var_Locations3, 'function Var_Locations(const v: string; const target: TStringArray): TIntegerArray; overload;');
+  AddFunction(@Var_Locations4, 'function Var_Locations(const v: Char; const target: TCharArray): TIntegerArray; overload;');
+  AddFunction(@Var_Locations5, 'function Var_Locations(const v: Boolean; const target: TBooleanArray): TIntegerArray; overload;');
+  AddFunction(@Var_Locations6, 'function Var_Locations(const v: TPoint; const target: TPointArray): TIntegerArray; overload;');
+  AddFunction(@Var_Locations7, 'function Var_Locations(const v: TBox; const target: TBoxArray): TIntegerArray; overload;');
+  AddFunction(@Var_Locations8, 'function Var_Locations(const v: TRange; const target: TRangeArray): TIntegerArray; overload;');
+
   AddFunction(@TArray_Add1, 'function TArray_Add(const arr: TIntegerArray; const item: Integer; const duplicates: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_Add2, 'function TArray_Add(const arr: TDoubleArray; const item: Double; const duplicates: Boolean = True): TDoubleArray; overload;');
   AddFunction(@TArray_Add3, 'function TArray_Add(const arr: TStringArray; const item: string; const duplicates: Boolean = True): TStringArray; overload;');
@@ -2907,6 +2992,15 @@ begin
   AddFunction(@TArray_Inject6, 'function TArray_Inject(var arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TArray_Inject7, 'function TArray_Inject(var arr: TBoxArray; const items: TBoxArray; const index: Integer = 2147483647): Integer; overload;');
   AddFunction(@TArray_Inject8, 'function TArray_Inject(var arr: TRangeArray; const items: TRangeArray; const index: Integer = 2147483647): Integer; overload;');
+
+  AddFunction(@TArray_IntersectionCounted1, 'function TArray_IntersectionCounted(const arr: TIntegerArray; const items: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_IntersectionCounted2, 'function TArray_IntersectionCounted(const arr: TDoubleArray; const items: TDoubleArray): Integer; overload;');
+  AddFunction(@TArray_IntersectionCounted3, 'function TArray_IntersectionCounted(const arr: TStringArray; const items: TStringArray): Integer; overload;');
+  AddFunction(@TArray_IntersectionCounted4, 'function TArray_IntersectionCounted(const arr: TCharArray; const items: TCharArray): Integer; overload;');
+  AddFunction(@TArray_IntersectionCounted5, 'function TArray_IntersectionCounted(const arr: TBooleanArray; const items: TBooleanArray): Integer; overload;');
+  AddFunction(@TArray_IntersectionCounted6, 'function TArray_IntersectionCounted(const arr: TPointArray; const items: TPointArray): Integer; overload;');
+  AddFunction(@TArray_IntersectionCounted7, 'function TArray_IntersectionCounted(const arr: TBoxArray; const items: TBoxArray): Integer; overload;');
+  AddFunction(@TArray_IntersectionCounted8, 'function TArray_IntersectionCounted(const arr: TRangeArray; const items: TRangeArray): Integer; overload;');
 
   AddFunction(@TArray_Keep1, 'function TArray_Keep(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_Keep2, 'function TArray_Keep(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload;');
@@ -4350,6 +4444,12 @@ begin
   AddFunction(@TArray_Counted3, 'function TArray_Counted(const arr: TStringArray; const items: TStringArray; const iSorted: Boolean = False): Integer; overload;');
   AddFunction(@TArray_Counted4, 'function TArray_Counted(const arr: TCharArray; const items: TCharArray; const iSorted: Boolean = False): Integer; overload;');
   AddFunction(@TArray_Counted5, 'function TArray_Counted(const arr: TPointArray; const items: TPointArray; const iSorted: Boolean = False): Integer; overload;');
+  
+  AddFunction(@TArray_IntersectionCount1, 'function TArray_IntersectionCount(const arr: TIntegerArray; const items: TIntegerArray; const iAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_IntersectionCount2, 'function TArray_IntersectionCount(const arr: TDoubleArray; const items: TDoubleArray; const iAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_IntersectionCount3, 'function TArray_IntersectionCount(const arr: TStringArray; const items: TStringArray; const iAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_IntersectionCount4, 'function TArray_IntersectionCount(const arr: TCharArray; const items: TCharArray; const iAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_IntersectionCount5, 'function TArray_IntersectionCount(const arr: TPointArray; const items: TPointArray; const iAscending: Boolean = True): Integer; overload;');
   
   AddFunction(@TArray_Mini1, 'function TArray_Mini(const arr: TIntegerArray; const aAscending: Boolean = True; const start: Integer = -1): Integer; overload;');
   AddFunction(@TArray_Mini2, 'function TArray_Mini(const arr: TDoubleArray; const aAscending: Boolean = True; const start: Integer = -1): Integer; overload;');
