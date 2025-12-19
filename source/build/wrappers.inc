@@ -901,6 +901,7 @@ function TRange_Evened(const range: TRange): TIntegerArray; overload; cdecl; beg
 function TRange_Odded(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Odded; end;
 function TRange_Evenz(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Evenz; end;
 function TRange_Oddz(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Oddz; end;
+function TRange_CompareSize(const range: TRange; const target: TRange): Integer; cdecl; begin Result := range.CompareSize(target); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
@@ -1578,6 +1579,7 @@ function TRangeArray_StopValues(const arr: TRangeArray): TIntegerArray; cdecl; b
 function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TIntegerArray): Integer; cdecl; begin Result := arr.Unzip(startArr, stopArr); end;
 function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray; cdecl; begin Result.Zip(startArr, stopArr); end;
 function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gaps; end;
+function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.SortBySize(oAscending); end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;

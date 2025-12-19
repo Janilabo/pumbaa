@@ -939,6 +939,7 @@ begin
   AddFunction(@TRange_Odded, 'function TRange_Odded(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Evenz, 'function TRange_Evenz(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Oddz, 'function TRange_Oddz(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_CompareSize, 'function TRange_CompareSize(const range: TRange; const target: TRange): Integer;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -1616,6 +1617,7 @@ begin
   AddFunction(@TRangeArray_Unzip, 'function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TIntegerArray): Integer;');
   AddFunction(@TRangeArray_Zip, 'function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray;');
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
