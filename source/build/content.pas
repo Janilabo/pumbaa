@@ -865,9 +865,13 @@ begin
   AddFunction(@TRange_Pivot, 'function TRange_Pivot(const range: TRange): Integer;');
   AddFunction(@TRange_Mean, 'function TRange_Mean(const range: TRange): Double;');
   AddFunction(@TRange_Medium, 'function TRange_Medium(const range: TRange): Double;');
+  AddFunction(@TRange_MiddleRight, 'function TRange_MiddleRight(const range: TRange): Integer;');
+  AddFunction(@TRange_MiddleLeft, 'function TRange_MiddleLeft(const range: TRange): Integer;');
   AddFunction(@TRange_Middle, 'function TRange_Middle(const range: TRange): Integer;');
   AddFunction(@TRange_MiddleValue, 'function TRange_MiddleValue(const range: TRange): Double;');
   AddFunction(@TRange_MiddleVal, 'function TRange_MiddleVal(const range: TRange): Integer;');
+  AddFunction(@TRange_MiddleBit, 'function TRange_MiddleBit(const range: TRange): Integer;');
+  AddFunction(@TRange_MidBit, 'function TRange_MidBit(const range: TRange): Integer;');
   AddFunction(@TRange_Mid, 'function TRange_Mid(const range: TRange): Double;');
   AddFunction(@TRange_MidVal, 'function TRange_MidVal(const range: TRange): Double;');
   AddFunction(@TRange_MidValue, 'function TRange_MidValue(const range: TRange): Double;');
@@ -4938,7 +4942,13 @@ begin
   AddFunction(@TArray_QuickSorted18, 'function TArray_QuickSorted(const arr: TPointArray; const weight: TDoubleArray; const aAscending: Boolean = True): TPointArray; overload;');
   AddFunction(@TArray_QuickSorted19, 'function TArray_QuickSorted(const arr: TBoxArray; const weight: TDoubleArray; const aAscending: Boolean = True): TBoxArray; overload;');
   AddFunction(@TArray_QuickSorted20, 'function TArray_QuickSorted(const arr: TRangeArray; const weight: TDoubleArray; const aAscending: Boolean = True): TRangeArray; overload;');
- 
+
+  AddFunction(@BinarySearch1, 'function BinarySearch(const arr: TIntegerArray; const item: Integer; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BinarySearch2, 'function BinarySearch(const arr: TDoubleArray; const item: Double; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BinarySearch3, 'function BinarySearch(const arr: TStringArray; const item: string; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BinarySearch4, 'function BinarySearch(const arr: TCharArray; const item: Char; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BinarySearch5, 'function BinarySearch(const arr: TPointArray; const item: TPoint; const ascending: Boolean = True): Integer; overload;');
+
   AddFunction(@T1D_Create1, 'function T1D_Create(const item: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@T1D_Create2, 'function T1D_Create(const item: Double; const aSize: Integer = 1): TDoubleArray; overload;');
   AddFunction(@T1D_Create3, 'function T1D_Create(const item: string; const aSize: Integer = 1): TStringArray; overload;');

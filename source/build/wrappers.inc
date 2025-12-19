@@ -827,9 +827,13 @@ function TRange_Item(const range: TRange; const x: Integer): Boolean; cdecl; inl
 function TRange_Pivot(const range: TRange): Integer; cdecl; begin Result := range.Pivot; end;
 function TRange_Mean(const range: TRange): Double; cdecl; begin Result := range.Mean; end;
 function TRange_Medium(const range: TRange): Double; cdecl; begin Result := range.Medium; end;
+function TRange_MiddleRight(const range: TRange): Integer; cdecl; begin Result := range.MiddleRight; end;
+function TRange_MiddleLeft(const range: TRange): Integer; cdecl; begin Result := range.MiddleLeft; end;
 function TRange_Middle(const range: TRange): Integer; cdecl; begin Result := range.Middle; end;
 function TRange_MiddleValue(const range: TRange): Double; cdecl; begin Result := range.MiddleValue; end;
 function TRange_MiddleVal(const range: TRange): Integer; cdecl; begin Result := range.MiddleVal; end;
+function TRange_MiddleBit(const range: TRange): Integer; cdecl; begin Result := range.MiddleBit; end;
+function TRange_MidBit(const range: TRange): Integer; cdecl; begin Result := range.MidBit; end;
 function TRange_Mid(const range: TRange): Double; cdecl; begin Result := range.Mid; end;
 function TRange_MidVal(const range: TRange): Double; cdecl; begin Result := range.MidVal; end;
 function TRange_MidValue(const range: TRange): Double; cdecl; begin Result := range.MidValue; end;
@@ -4901,6 +4905,12 @@ function TArray_Zigzag5(const arr: TBooleanArray; const zAscending: Boolean = Tr
 function TArray_Zigzag6(const arr: TPointArray; const zAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Zigzag(zAscending); end;
 function TArray_Zigzag7(const arr: TBoxArray; const zAscending: Boolean = True): TBoxArray; overload; cdecl; begin Result := arr.Zigzag(zAscending); end;
 function TArray_Zigzag8(const arr: TRangeArray; const zAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Zigzag(zAscending); end;
+
+function BinarySearch1(const arr: TIntegerArray; const item: Integer; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := TBinarySearch.Search(arr, item, ascending); end;
+function BinarySearch2(const arr: TDoubleArray; const item: Double; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := TBinarySearch.Search(arr, item, ascending); end;
+function BinarySearch3(const arr: TStringArray; const item: string; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := TBinarySearch.Search(arr, item, ascending); end;
+function BinarySearch4(const arr: TCharArray; const item: Char; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := TBinarySearch.Search(arr, item, ascending); end;
+function BinarySearch5(const arr: TPointArray; const item: TPoint; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := TBinarySearch.Search(arr, item, ascending); end;
 
 function T1D_Create1(const item: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
 function T1D_Create2(const item: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := T1D.Create(item, aSize); end;
