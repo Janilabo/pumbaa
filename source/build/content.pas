@@ -1183,13 +1183,13 @@ begin
   AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryMountain, 'function TIntegerArray_TernaryMountain(const arr: TIntegerArray): Integer; overload;');
 
-  AddFunction(@TIA_Init, 'function TIA_Init(var arr: TIntegerArray): Integer; overload;');
-  AddFunction(@TIA_Unique, 'function TIA_Unique(var arr: TIntegerArray): Integer; overload;');
-  AddFunction(@TIA_Reverse, 'function TIA_Reverse(var arr: TIntegerArray): Boolean; overload;');
-  AddFunction(@TIA_Reversed, 'function TIA_Reversed(const arr: TIntegerArray): TIntegerArray; overload;');
-  AddFunction(@TIA_Combine, 'function TIA_Combine(const A, B: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@CIntegerArray_Init, 'function CIntegerArray_Init(var arr: TIntegerArray): Integer; overload;');
+  AddFunction(@CIntegerArray_Unique, 'function CIntegerArray_Unique(var arr: TIntegerArray): Integer; overload;');
+  AddFunction(@CIntegerArray_Reverse, 'function CIntegerArray_Reverse(var arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@CIntegerArray_Reversed, 'function CIntegerArray_Reversed(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@CIntegerArray_Combine, 'function CIntegerArray_Combine(const A, B: TIntegerArray): TIntegerArray; overload;');
   
-  AddFunction(@ATIA_Merge, 'function ATIA_Merge(const arr: T2DIntegerArray): TIntegerArray; overload;');
+  AddFunction(@C2DIntegerArray_Merge, 'function C2DIntegerArray_Merge(const arr: T2DIntegerArray): TIntegerArray; overload;');
 
   AddFunction(@TDoubleArray_Reinit, 'function TDoubleArray_Reinit(var arr: TDoubleArray): Integer;');
   AddFunction(@TDoubleArray_Attach, 'function TDoubleArray_Attach(var arr: TDoubleArray; const items: TDoubleArray): Integer; overload;');

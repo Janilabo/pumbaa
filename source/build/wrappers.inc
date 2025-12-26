@@ -1145,13 +1145,13 @@ function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
 function TIntegerArray_TernaryMountain(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryMountain; end;
 
-function TIA_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Init(arr); end;
-function TIA_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := TIA.Unique(arr); end;
-function TIA_Reverse(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := TIA.Reverse(arr); end;
-function TIA_Reversed(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := TIA.Reversed(arr); end;
-function TIA_Combine(const A, B: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := TIA.Combine(A, B); end;
+function CIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := CIntegerArray.Init(arr); end;
+function CIntegerArray_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := CIntegerArray.Unique(arr); end;
+function CIntegerArray_Reverse(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := CIntegerArray.Reverse(arr); end;
+function CIntegerArray_Reversed(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := CIntegerArray.Reversed(arr); end;
+function CIntegerArray_Combine(const A, B: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := CIntegerArray.Combine(A, B); end;
 
-function ATIA_Merge(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := ATIA.Merge(arr); end;
+function C2DIntegerArray_Merge(const arr: T2DIntegerArray): TIntegerArray; overload; cdecl; begin Result := C2DIntegerArray.Merge(arr); end;
 
 function TDoubleArray_Reinit(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 function TDoubleArray_Attach(var arr: TDoubleArray; const items: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
@@ -1399,10 +1399,10 @@ function TPointArray_SortByRow(var arr: TPointArray; const aAscending: Boolean =
 function TPointArray_SortByColumn(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.SortByColumn(aAscending); end;
 function TPointArray_SortedByIndex(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.SortedByIndex(aAscending); end;
 function TPointArray_Reinit(var arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
-function TPointArray_Create1(const xRange, yRange: TRange): TPointArray; overload; cdecl; begin Result := TPA.Create(xRange, yRange); end;
-function TPointArray_Create2(const xRange, yRange: TRange; const offset: TPoint): TPointArray; overload; cdecl; begin Result := TPA.Create(xRange, yRange, offset); end;
-function TPointArray_Create3(const xValues, yValues: TIntegerArray): TPointArray; overload; cdecl; begin Result := TPA.Create(xValues, yValues); end;
-function TPointArray_Create4(const xValues, yValues: TIntegerArray; const offset: TPoint): TPointArray; overload; cdecl; begin Result := TPA.Create(xValues, yValues, offset); end;
+function TPointArray_Create1(const xRange, yRange: TRange): TPointArray; overload; cdecl; begin Result := CPointArray.Create(xRange, yRange); end;
+function TPointArray_Create2(const xRange, yRange: TRange; const offset: TPoint): TPointArray; overload; cdecl; begin Result := CPointArray.Create(xRange, yRange, offset); end;
+function TPointArray_Create3(const xValues, yValues: TIntegerArray): TPointArray; overload; cdecl; begin Result := CPointArray.Create(xValues, yValues); end;
+function TPointArray_Create4(const xValues, yValues: TIntegerArray; const offset: TPoint): TPointArray; overload; cdecl; begin Result := CPointArray.Create(xValues, yValues, offset); end;
 function TPointArray_Attach(var arr: TPointArray; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
 function TPointArray_Embed(var arr: TPointArray; const items: TPointArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Embed(items, index); end;
 function TPointArray_FrameLinks1(const arr: TPointArray; const dist: Integer; const area: TBox): TPointArray; overload; cdecl; begin Result := arr.FrameLinks(dist, area); end;
