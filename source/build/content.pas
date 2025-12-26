@@ -1515,12 +1515,12 @@ begin
   AddFunction(@TPointArray_SortByScanline2, 'function TPointArray_SortByScanline(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TPointArray_ProximityCluster1, 'function TPointArray_ProximityCluster(const arr: TPointArray; const xRadius, yRadius: Integer; const method: Integer = 0): T2DPointArray; overload;');
   AddFunction(@TPointArray_ProximityCluster2, 'function TPointArray_ProximityCluster(const arr: TPointArray; const radius: Double = 1.0; const metric: TMetrics = dmEuclidean; const method: Integer = 0): T2DPointArray; overload;');
-  AddFunction(@TPointArray_Linked1, 'function TPointArray_Linked(const arr: TPointArray; const radius: Double = 1.0; const metric: TMetrics = dmEuclidean; const check: Integer = 1): T2DPointArray; overload;');
-  AddFunction(@TPointArray_Linked2, 'function TPointArray_Linked(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 1): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Link1, 'function TPointArray_Link(const arr: TPointArray; const radius: Double = 1.0; const metric: TMetrics = dmEuclidean; const check: Integer = 1): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Link2, 'function TPointArray_Link(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 1): T2DPointArray; overload;');
   AddFunction(@TPointArray_Chain1, 'function TPointArray_Chain(const arr: TPointArray; const radius: Double = 1.0; const metric: TMetrics = dmEuclidean; const check: Integer = 5): T2DPointArray; overload;');
   AddFunction(@TPointArray_Chain2, 'function TPointArray_Chain(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload;');
-  AddFunction(@TPointArray_Attach1, 'function TPointArray_Attach(const arr: TPointArray; const radius: Double = 1.0; const metric: TMetrics = dmEuclidean; const check: Integer = 5): T2DPointArray; overload;');
-  AddFunction(@TPointArray_Attach2, 'function TPointArray_Attach(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Connect1, 'function TPointArray_Connect(const arr: TPointArray; const radius: Double = 1.0; const metric: TMetrics = dmEuclidean; const check: Integer = 5): T2DPointArray; overload;');
+  AddFunction(@TPointArray_Connect2, 'function TPointArray_Connect(const arr: TPointArray; const xRadius, yRadius: Integer; const check: Integer = 5): T2DPointArray; overload;');
   AddFunction(@TPointArray_RCluster1, 'function TPointArray_RCluster(const arr: TPointArray; const xRadius, yRadius: Integer): T2DPointArray; overload;');
   AddFunction(@TPointArray_RCluster2, 'function TPointArray_RCluster(const arr: TPointArray; const radius: Double = 1.0; const metric: TMetrics = dmEuclidean): T2DPointArray; overload;');
   AddFunction(@TPointArray_ToRows, 'function TPointArray_ToRows(const arr: TPointArray): T2DPointArray;');
