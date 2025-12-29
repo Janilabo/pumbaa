@@ -99,7 +99,11 @@ begin
   AddFunction(@Double_MinDecimal, 'function Double_MinDecimal(const x: Double): Double;');
   AddFunction(@Double_MaxDecimal, 'function Double_MaxDecimal(const x: Double): Double;');
   AddFunction(@Double_Accuracy, 'function Double_Accuracy(const x: Double; const a: Integer): Double;');
+  AddFunction(@Double_Cmpr, 'function Double_Cmpr(const x, T: Double): Integer;');
   AddFunction(@Double_Compare, 'function Double_Compare(const x, T: Double): Integer;');
+  AddFunction(@Double_Compared, 'function Double_Compared(const x, T: Double; const oAscending: Boolean = True): Integer;');
+  AddFunction(@Double_CompareWith, 'function Double_CompareWith(const x, T: Double; const oAscending: Boolean = True): Integer;');
+  AddFunction(@Double_CompareTo, 'function Double_CompareTo(const x, T: Double; const oAscending: Boolean = True): Integer;');
   AddFunction(@Double_Sign, 'function Double_Sign(const x: Double; const target: Double = 0): Integer;');
   AddFunction(@Double_Precede, 'function Double_Precede(const x, target: Double; const aAscending: Boolean): Boolean;');
   AddFunction(@Double_Ascending, 'function Double_Ascending(const x, target: Double): Boolean;');
@@ -156,7 +160,11 @@ begin
   AddFunction(@Integer_Negative, 'function Integer_Negative(const x: Integer): Boolean;');
   AddFunction(@Integer_Positive, 'function Integer_Positive(const x: Integer): Boolean;');
   AddFunction(@Integer_Neutral, 'function Integer_Neutral(const x: Integer): Boolean;');
+  AddFunction(@Integer_Cmpr, 'function Integer_Cmpr(const x, T: Integer): Integer;');
   AddFunction(@Integer_Compare, 'function Integer_Compare(const x, T: Integer): Integer;');
+  AddFunction(@Integer_Compared, 'function Integer_Compared(const x, T: Integer; const oAscending: Boolean = True): Integer;');
+  AddFunction(@Integer_CompareWith, 'function Integer_CompareWith(const x, T: Integer; const oAscending: Boolean = True): Integer;');
+  AddFunction(@Integer_CompareTo, 'function Integer_CompareTo(const x, T: Integer; const oAscending: Boolean = True): Integer;');
   AddFunction(@Integer_Ascending, 'function Integer_Ascending(const x, target: Integer): Boolean;');
   AddFunction(@Integer_Descending, 'function Integer_Descending(const x, target: Integer): Boolean;');
   AddFunction(@Integer_Precede, 'function Integer_Precede(const x, target: Integer; const aAscending: Boolean): Boolean;');
@@ -1142,6 +1150,10 @@ begin
   AddFunction(@TIntegerArray_BinaryFilter2, 'function TIntegerArray_BinaryFilter(const arr: TIntegerArray; const values: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryAmount1, 'function TIntegerArray_BinaryAmount(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryAmount2, 'function TIntegerArray_BinaryAmount(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryQuantity1, 'function TIntegerArray_BinaryQuantity(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryQuantity2, 'function TIntegerArray_BinaryQuantity(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryCounted1, 'function TIntegerArray_BinaryCounted(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryCounted2, 'function TIntegerArray_BinaryCounted(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryIndexOf, 'function TIntegerArray_BinaryIndexOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryExists, 'function TIntegerArray_BinaryExists(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TIntegerArray_BinarySearchSpan1, 'function TIntegerArray_BinarySearchSpan(const value: Integer; const L, R: Integer; const aAscending: Boolean = True): Integer; overload;');

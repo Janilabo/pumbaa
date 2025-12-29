@@ -67,7 +67,11 @@ function Integer_Neg(const x: Integer): Integer; cdecl; inline; begin Result := 
 function Integer_Negative(const x: Integer): Boolean; cdecl; inline; begin Result := x.Negative; end;
 function Integer_Positive(const x: Integer): Boolean; cdecl; inline; begin Result := x.Positive; end;
 function Integer_Neutral(const x: Integer): Boolean; cdecl; inline; begin Result := x.Neutral; end;
+function Integer_Cmpr(const x, T: Integer): Integer; cdecl; inline; begin Result := x.Cmpr(T); end;
 function Integer_Compare(const x, T: Integer): Integer; cdecl; inline; begin Result := x.Compare(T); end;
+function Integer_Compared(const x, T: Integer; const oAscending: Boolean = True): Integer; cdecl; inline; begin Result := x.Compared(T, oAscending); end;
+function Integer_CompareWith(const x, T: Integer; const oAscending: Boolean = True): Integer; cdecl; inline; begin Result := x.CompareWith(T, oAscending); end;
+function Integer_CompareTo(const x, T: Integer; const oAscending: Boolean = True): Integer; cdecl; inline; begin Result := x.CompareTo(T, oAscending); end;
 function Integer_Precede(const x, target: Integer; const aAscending: Boolean): Boolean; overload; cdecl; begin Result := x.Precede(target, aAscending); end;
 function Integer_Ascending(const x, target: Integer): Boolean; overload; cdecl; begin Result := x.Ascending(target); end;
 function Integer_Descending(const x, target: Integer): Boolean; overload; cdecl; begin Result := x.Descending(target); end;
@@ -160,7 +164,11 @@ function Double_Neutral(const x: Double): Boolean; cdecl; inline; begin Result :
 function Double_MinDecimal(const x: Double): Double; cdecl; begin Result := x.MinDecimal; end;
 function Double_MaxDecimal(const x: Double): Double; cdecl; begin Result := x.MaxDecimal; end;
 function Double_Accuracy(const x: Double; const a: Integer): Double; cdecl; begin Result := x.Accuracy(a); end;
+function Double_Cmpr(const x, T: Double): Integer; cdecl; inline; begin Result := x.Cmpr(T); end;
 function Double_Compare(const x, T: Double): Integer; cdecl; inline; begin Result := x.Compare(T); end;
+function Double_Compared(const x, T: Double; const oAscending: Boolean = True): Integer; cdecl; inline; begin Result := x.Compared(T, oAscending); end;
+function Double_CompareWith(const x, T: Double; const oAscending: Boolean = True): Integer; cdecl; inline; begin Result := x.CompareWith(T, oAscending); end;
+function Double_CompareTo(const x, T: Double; const oAscending: Boolean = True): Integer; cdecl; inline; begin Result := x.CompareTo(T, oAscending); end;
 function Double_Precede(const x, target: Double; const aAscending: Boolean): Boolean; overload; cdecl; begin Result := x.Precede(target, aAscending); end;
 function Double_Ascending(const x, target: Double): Boolean; overload; cdecl; begin Result := x.Ascending(target); end;
 function Double_Descending(const x, target: Double): Boolean; overload; cdecl; begin Result := x.Descending(target); end;
@@ -1104,6 +1112,10 @@ function TIntegerArray_BinaryFilter1(const arr: TIntegerArray; const area: TRang
 function TIntegerArray_BinaryFilter2(const arr: TIntegerArray; const values: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryFilter(values, aAscending); end;
 function TIntegerArray_BinaryAmount1(const arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAmount(x, aAscending); end;
 function TIntegerArray_BinaryAmount2(const arr: TIntegerArray; const x: TRange; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAmount(x, aAscending); end;
+function TIntegerArray_BinaryQuantity1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryQuantity(x, oAscending); end;
+function TIntegerArray_BinaryQuantity2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryQuantity(x, oAscending); end;
+function TIntegerArray_BinaryCounted1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryCounted(x, oAscending); end;
+function TIntegerArray_BinaryCounted2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryCounted(x, oAscending); end;
 function TIntegerArray_BinaryIndexOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIndexOf(value, oAscending); end;
 function TIntegerArray_BinaryExists(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExists(value, oAscending); end;
 function TIntegerArray_BinarySearchSpan1(const arr: TIntegerArray; const value: Integer; const L, R: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchSpan(value, L, R, aAscending); end;
