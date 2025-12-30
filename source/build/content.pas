@@ -1158,6 +1158,8 @@ begin
   AddFunction(@TIntegerArray_BinaryCountFor2, 'function TIntegerArray_BinaryCountFor(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryCounted1, 'function TIntegerArray_BinaryCounted(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryCounted2, 'function TIntegerArray_BinaryCounted(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryTally1, 'function TIntegerArray_BinaryTally(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryTally2, 'function TIntegerArray_BinaryTally(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryIndexOf, 'function TIntegerArray_BinaryIndexOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryExists, 'function TIntegerArray_BinaryExists(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TIntegerArray_BinarySearchSpan1, 'function TIntegerArray_BinarySearchSpan(const value: Integer; const L, R: Integer; const aAscending: Boolean = True): Integer; overload;');

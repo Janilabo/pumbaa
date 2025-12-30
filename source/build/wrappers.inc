@@ -1120,6 +1120,8 @@ function TIntegerArray_BinaryCountFor1(const arr: TIntegerArray; const x: Intege
 function TIntegerArray_BinaryCountFor2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryCountFor(x, oAscending); end;
 function TIntegerArray_BinaryCounted1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryCounted(x, oAscending); end;
 function TIntegerArray_BinaryCounted2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryCounted(x, oAscending); end;
+function TIntegerArray_BinaryTally1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryTally(x, oAscending); end;
+function TIntegerArray_BinaryTally2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryTally(x, oAscending); end;
 function TIntegerArray_BinaryIndexOf(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIndexOf(value, oAscending); end;
 function TIntegerArray_BinaryExists(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExists(value, oAscending); end;
 function TIntegerArray_BinarySearchSpan1(const arr: TIntegerArray; const value: Integer; const L, R: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchSpan(value, L, R, aAscending); end;
