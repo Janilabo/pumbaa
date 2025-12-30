@@ -1198,6 +1198,14 @@ begin
   AddFunction(@TIntegerArray_BinaryExistent, 'function TIntegerArray_BinaryExistent(const arr: TIntegerArray; const item: Integer; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TIntegerArray_BinaryContact1, 'function TIntegerArray_BinaryContact(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TIntegerArray_BinaryContact2, 'function TIntegerArray_BinaryContact(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryMember1, 'function TIntegerArray_BinaryMember(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryMember2, 'function TIntegerArray_BinaryMember(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryAvailable1, 'function TIntegerArray_BinaryAvailable(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryAvailable2, 'function TIntegerArray_BinaryAvailable(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryUnavailable1, 'function TIntegerArray_BinaryUnavailable(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryUnavailable2, 'function TIntegerArray_BinaryUnavailable(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryOverlaps1, 'function TIntegerArray_BinaryOverlaps(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TIntegerArray_BinaryOverlaps2, 'function TIntegerArray_BinaryOverlaps(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TIntegerArray_TernarySearch, 'function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');

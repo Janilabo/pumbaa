@@ -1160,6 +1160,14 @@ function TIntegerArray_BinaryUniqd(const arr: TIntegerArray; const oAscending: B
 function TIntegerArray_BinaryExistent(const arr: TIntegerArray; const item: Integer; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExistent(item, index, oAscending); end;
 function TIntegerArray_BinaryContact1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryContact(x, oAscending); end;
 function TIntegerArray_BinaryContact2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryContact(x, oAscending); end;
+function TIntegerArray_BinaryMember1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMember(x, oAscending); end;
+function TIntegerArray_BinaryMember2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMember(x, oAscending); end;
+function TIntegerArray_BinaryAvailable1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryAvailable(x, oAscending); end;
+function TIntegerArray_BinaryAvailable2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryAvailable(x, oAscending); end;
+function TIntegerArray_BinaryUnavailable1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryUnavailable(x, oAscending); end;
+function TIntegerArray_BinaryUnavailable2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryUnavailable(x, oAscending); end;
+function TIntegerArray_BinaryOverlaps1(const arr: TIntegerArray; const x: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryOverlaps(x, oAscending); end;
+function TIntegerArray_BinaryOverlaps2(const arr: TIntegerArray; const x: TRange; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryOverlaps(x, oAscending); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
