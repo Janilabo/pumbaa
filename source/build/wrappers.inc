@@ -388,7 +388,7 @@ function String_LineIndexes(const str: string): TIntegerArray; overload; cdecl; 
 function String_LineRanges(const str: string): TRangeArray; overload; cdecl; begin Result := str.LineRanges; end;
 function String_LineEndingRanges(const str: string): TRangeArray; overload; cdecl; begin Result := str.LineEndingRanges; end;
 function String_LinePositions(const str: string): TIntegerArray; overload; cdecl; begin Result := str.LinePositions; end;
-function String_LineEndingPositions(const str: string): TIntegerArray; overload; cdecl; cdecl; begin Result := str.LineEndingPositions; end;
+function String_LineEndingPositions(const str: string): TIntegerArray; overload; cdecl; begin Result := str.LineEndingPositions; end;
 function String_LineStartPosition(const str: string; const lineNumber: Integer): Integer; overload; cdecl; begin Result := str.LineStartPosition(lineNumber); end;
 function String_LineEndPosition(const str: string; const lineNumber: Integer): Integer; overload; cdecl; begin Result := str.LineEndPosition(lineNumber); end;
 function String_LineRange(const str: string; const lineNumber: Integer): TRange; overload; cdecl; begin Result := str.LineRange(lineNumber); end;
@@ -774,7 +774,7 @@ function TRange_MaxMin(const range: TRange): TRange; cdecl; begin Result := rang
 function TRange_Overlapping(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlapping(b); end;
 function TRange_Overlap(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Overlap(b); end;
 function TRange_Intersect1(const range: TRange; const b: TRange): TRange; overload; cdecl; begin Result := range.Intersect(b); end;
-function TRange_Intersect2(const range: TRange; const b: TRange; var iZone: TRange): Boolean; overload; cdecl; begin range.Intersect(b, iZone); end;
+function TRange_Intersect2(const range: TRange; const b: TRange; var iZone: TRange): Boolean; overload; cdecl; begin Result := range.Intersect(b, iZone); end;
 function TRange_Union1(const range: TRange; const b: TRange): TRange; overload; cdecl; begin Result := range.Union(b); end;
 function TRange_Union2(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Union(val); end;
 function TRange_Extend(var range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Extend(val); end;
