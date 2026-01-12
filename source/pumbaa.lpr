@@ -1,5 +1,3 @@
-library pumbaa;
-
 {$mode objfpc}
 {$macro on}
 {$inline on}
@@ -7,6 +5,8 @@ library pumbaa;
 {$modeswitch arrayoperators}
 {$modeswitch typehelpers}
 {$H+}
+
+library pumbaa;
 
 uses
   classes, sysutils, math, MiMU;

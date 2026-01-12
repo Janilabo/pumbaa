@@ -1645,7 +1645,7 @@ begin
   AddFunction(@TRangeArray_Unzip, 'function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TIntegerArray): Integer;');
   AddFunction(@TRangeArray_Zip, 'function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray;');
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
-//  AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer;');
+  AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
