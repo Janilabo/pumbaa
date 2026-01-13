@@ -704,6 +704,7 @@ begin
   AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
   AddFunction(@TRange_Create3, 'function TRange_Create: TRange; overload;');
+  AddFunction(@TRange_Create4, 'function TRange_Create(const data: string): TRange; overload;');
   AddFunction(@TRange_Construct, 'function TRange_Construct(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Build, 'function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer;');
   AddFunction(@TRange_Init1, 'function TRange_Init(var range: TRange; const rStart, rStop: Integer): TRange; overload;');

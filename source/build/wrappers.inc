@@ -666,6 +666,7 @@ function TBox_Null(const value: Integer = -2147483648): TBox; overload; cdecl; b
 function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
 function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
 function TRange_Create3: TRange; overload; cdecl; var range: TRange; begin Result := range.Create; end;
+function TRange_Create4(const data: string): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(data); end;
 function TRange_Construct(const rStart, rStop: Integer): TRange; overload; cdecl; begin Result := TRange.Construct(rStart, rStop); end;
 function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer; cdecl; var range: TRange; begin Result := range.Build(rStart, rStop); end;
 function TRange_Init1(var range: TRange; const rStart, rStop: Integer): TRange; overload; cdecl; begin Result := range.Init(rStart, rStop); end;
