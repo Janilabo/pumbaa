@@ -2,6 +2,7 @@
 
 procedure AddTypes;
 begin
+  AddType('TByteSet', 'set of Byte;');
   AddType('T2DBooleanArray', 'TBooleanMatrix;');
   AddType('T2DDoubleArray', 'TDoubleMatrix;');
   AddType('TCharArray', 'array of Char;');
@@ -701,6 +702,11 @@ begin
   AddFunction(@TBox_Omits, 'function TBox_Omits(const bx: TBox; const val: Integer): Boolean;');
   AddFunction(@TBox_Null, 'function TBox_Null(const value: Integer = -2147483648): TBox; overload;');
 
+  AddFunction(@TRange_Implicit1, 'function TRange_Implicit(const val: Integer): TRange; overload;');
+  AddFunction(@TRange_Implicit2, 'function TRange_Implicit(const bytes: TByteSet): TRange; overload;');
+  AddFunction(@TRange_Implicit3, 'function TRange_Implicit(const arr: TIntegerArray): TRange; overload;');
+  AddFunction(@TRange_ToString, 'function TRange_ToString(const range: TRange): string;');
+  AddFunction(@TRange_ToTIA, 'function TRange_ToTIA(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
   AddFunction(@TRange_Create3, 'function TRange_Create: TRange; overload;');

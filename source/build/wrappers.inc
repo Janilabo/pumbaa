@@ -663,6 +663,11 @@ function TBox_Employs(const bx: TBox; const val: Integer): Boolean; cdecl; begin
 function TBox_Omits(const bx: TBox; const val: Integer): Boolean; cdecl; begin Result := bx.Omits(val); end;
 function TBox_Null(const value: Integer = -2147483648): TBox; overload; cdecl; begin Result := TBox.Null(value); end;
 
+function TRange_Implicit1(const val: Integer): TRange; overload; cdecl; begin Result := val; end;
+function TRange_Implicit2(const bytes: TByteSet): TRange; overload; cdecl; begin Result := bytes; end;
+function TRange_Implicit3(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr; end;
+function TRange_ToString(const range: TRange): string; cdecl; begin Result := range; end;
+function TRange_ToTIA(const range: TRange): TIntegerArray; cdecl; begin Result := range; end;
 function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
 function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
 function TRange_Create3: TRange; overload; cdecl; var range: TRange; begin Result := range.Create; end;
