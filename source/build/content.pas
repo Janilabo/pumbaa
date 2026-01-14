@@ -1067,6 +1067,8 @@ begin
   AddFunction(@TIntegerArray_Trace1, 'function TIntegerArray_Trace(const arr: TIntegerArray; const index: Integer; const tolerance: Integer = 1): TRange; overload;');
   AddFunction(@TIntegerArray_Trace2, 'function TIntegerArray_Trace(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1): TRange; overload;');
   AddFunction(@TIntegerArray_ExpandGradient, 'function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer): TRange;');
+  AddFunction(@TIntegerArray_Hits1, 'function TIntegerArray_Hits(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Hits2, 'function TIntegerArray_Hits(const arr: TIntegerArray; const items: TRange; const oAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BSearch, 'function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryCountingSort, 'function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer;');
