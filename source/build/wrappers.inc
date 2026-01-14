@@ -4883,6 +4883,12 @@ function TArray_BinaryExpSearch3(const arr: TStringArray; const item: string; co
 function TArray_BinaryExpSearch4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
 function TArray_BinaryExpSearch5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryExpSearch(item, oAscending); end;
 
+function TArray_BinaryHits1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryHits(items, oAscending); end;
+function TArray_BinaryHits2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryHits(items, oAscending); end;
+function TArray_BinaryHits3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryHits(items, oAscending); end;
+function TArray_BinaryHits4(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryHits(items, oAscending); end;
+function TArray_BinaryHits5(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryHits(items, oAscending); end;
+
 function TArray_MergeSortWeighted1(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted2(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;
 function TArray_MergeSortWeighted3(var arr: TStringArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortWeighted(weight, aAscending); end;

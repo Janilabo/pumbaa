@@ -4912,6 +4912,12 @@ begin
   AddFunction(@TArray_BinarySearchBy4, 'function TArray_BinarySearchBy(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinarySearchBy5, 'function TArray_BinarySearchBy(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');
 
+  AddFunction(@TArray_BinaryHits1, 'function TArray_BinaryHits(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_BinaryHits2, 'function TArray_BinaryHits(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_BinaryHits3, 'function TArray_BinaryHits(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_BinaryHits4, 'function TArray_BinaryHits(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_BinaryHits5, 'function TArray_BinaryHits(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+
   AddFunction(@TArray_BinaryHas1, 'function TArray_BinaryHas(const arr: TIntegerArray; const item: Integer; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_BinaryHas2, 'function TArray_BinaryHas(const arr: TDoubleArray; const item: Double; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_BinaryHas3, 'function TArray_BinaryHas(const arr: TStringArray; const item: string; out index: Integer; const oAscending: Boolean = True): Boolean; overload;');
