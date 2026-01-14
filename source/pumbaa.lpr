@@ -1,15 +1,19 @@
-{$mode objfpc}
-{$macro on}
-{$inline on}
-{$modeswitch advancedrecords}
-{$modeswitch arrayoperators}
-{$modeswitch typehelpers}
+{$MODE OBJFPC}
 {$H+}
+{$MACRO ON}
+{$INLINE OFF}
+{$MODESWITCH ADVANCEDRECORDS}
+{$MODESWITCH ARRAYOPERATORS}
+{$MODESWITCH TYPEHELPERS}
+{$SMARTLINK OFF}
+{$OPTIMIZATION OFF}
+{$ALIGN 16}
+{$CODEALIGN PROC=16}
 
 library pumbaa;
 
 uses
-  classes, sysutils, math, MiMU;
+  Classes, SysUtils, Math, MiMU;
 
 {$I build/plugin.inc}
 {$I build/content.pas}
