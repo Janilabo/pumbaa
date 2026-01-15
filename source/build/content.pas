@@ -965,6 +965,12 @@ begin
   AddFunction(@TRange_Covers, 'function TRange_Covers(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Has, 'function TRange_Has(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Inside, 'function TRange_Inside(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Volume, 'function TRange_Volume(const range: TRange): Integer;');
+  AddFunction(@TRange_Measure, 'function TRange_Measure(const range: TRange): Integer;');
+  AddFunction(@TRange_Footprint, 'function TRange_Footprint(const range: TRange): Integer;');
+  AddFunction(@TRange_Mass, 'function TRange_Mass(const range: TRange): Integer;');
+  AddFunction(@TRange_Tally, 'function TRange_Tally(const range: TRange): Integer;');
+  AddFunction(@TRange_Quantity, 'function TRange_Quantity(const range: TRange): Integer;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

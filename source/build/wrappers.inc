@@ -926,6 +926,12 @@ function TRange_Owns(const range: TRange; const val: Integer): Boolean; overload
 function TRange_Covers(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Covers(val); end;
 function TRange_Has(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Has(val); end;
 function TRange_Inside(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Inside(val); end;
+function TRange_Volume(const range: TRange): Integer; cdecl; begin Result := range.Volume; end;
+function TRange_Measure(const range: TRange): Integer; cdecl; begin Result := range.Measure; end;
+function TRange_Footprint(const range: TRange): Integer; cdecl; begin Result := range.Footprint; end;
+function TRange_Mass(const range: TRange): Integer; cdecl; begin Result := range.Mass; end;
+function TRange_Tally(const range: TRange): Integer; cdecl; begin Result := range.Tally; end;
+function TRange_Quantity(const range: TRange): Integer; cdecl; begin Result := range.Quantity; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
