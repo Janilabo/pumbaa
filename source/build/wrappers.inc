@@ -921,6 +921,11 @@ function TRange_Odded(const range: TRange): TIntegerArray; overload; cdecl; begi
 function TRange_Evenz(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Evenz; end;
 function TRange_Oddz(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Oddz; end;
 function TRange_CompareSize(const range: TRange; const target: TRange): Integer; cdecl; begin Result := range.CompareSize(target); end;
+function TRange_Got(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Got(val); end;
+function TRange_Owns(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Owns(val); end;
+function TRange_Covers(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Covers(val); end;
+function TRange_Has(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Has(val); end;
+function TRange_Inside(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Inside(val); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

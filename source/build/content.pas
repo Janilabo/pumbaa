@@ -960,6 +960,11 @@ begin
   AddFunction(@TRange_Evenz, 'function TRange_Evenz(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Oddz, 'function TRange_Oddz(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_CompareSize, 'function TRange_CompareSize(const range: TRange; const target: TRange): Integer;');
+  AddFunction(@TRange_Got, 'function TRange_Got(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Owns, 'function TRange_Owns(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Covers, 'function TRange_Covers(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Has, 'function TRange_Has(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Inside, 'function TRange_Inside(const range: TRange; const val: Integer): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
