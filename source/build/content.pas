@@ -802,7 +802,13 @@ begin
   AddFunction(@TRange_IDs1, 'function TRange_IDs(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_IDs2, 'function TRange_IDs(const range: TRange; const dValue: Integer): Integer; overload;');
   AddFunction(@TRange_IDs3, 'function TRange_IDs(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TRange_List, 'function TRange_List(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Contents, 'function TRange_Contents(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Data, 'function TRange_Data(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Generate, 'function TRange_Generate(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Members, 'function TRange_Members(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Materialized, 'function TRange_Materialized(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Explode, 'function TRange_Explode(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Exploded, 'function TRange_Exploded(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Mixed, 'function TRange_Mixed(const range: TRange; const mixings: Integer = 1): TIntegerArray;');

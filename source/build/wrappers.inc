@@ -763,7 +763,13 @@ function TRange_AsArray(const range: TRange): TIntegerArray; overload; cdecl; be
 function TRange_IDs1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.IDs; end;
 function TRange_IDs2(const range: TRange; const dValue: Integer): Integer; overload; cdecl; begin Result := range.IDs(dValue); end;
 function TRange_IDs3(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := range.IDs(dVals); end;
+function TRange_List(const range: TRange): TIntegerArray; cdecl; begin Result := range.List; end;
+function TRange_Contents(const range: TRange): TIntegerArray; cdecl; begin Result := range.Contents; end;
+function TRange_Data(const range: TRange): TIntegerArray; cdecl; begin Result := range.Data; end;
+function TRange_Generate(const range: TRange): TIntegerArray; cdecl; begin Result := range.Generate; end;
+function TRange_Members(const range: TRange): TIntegerArray; cdecl; begin Result := range.Members; end;
 function TRange_Materialize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Materialize; end;
+function TRange_Materialized(const range: TRange): TIntegerArray; cdecl; begin Result := range.Materialized; end;
 function TRange_Explode(const range: TRange): TIntegerArray; cdecl; begin Result := range.Explode; end;
 function TRange_Exploded(const range: TRange): TIntegerArray; cdecl; begin Result := range.Exploded; end;
 function TRange_Mixed(const range: TRange; const mixings: Integer = 1): TIntegerArray; cdecl; begin Result := range.Mixed(mixings); end;
