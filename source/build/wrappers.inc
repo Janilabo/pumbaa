@@ -756,12 +756,16 @@ function TRange_Elements(const range: TRange): TIntegerArray; cdecl; begin Resul
 function TRange_Sequence(const range: TRange): TIntegerArray; cdecl; begin Result := range.Sequence; end;
 function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbers; end;
 function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
+function TRange_ToArr(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArr; end;
 function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
+function TRange_AsArr(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsArr; end;
 function TRange_AsArray(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsArray; end;
 function TRange_IDs1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.IDs; end;
 function TRange_IDs2(const range: TRange; const dValue: Integer): Integer; overload; cdecl; begin Result := range.IDs(dValue); end;
 function TRange_IDs3(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := range.IDs(dVals); end;
 function TRange_Materialize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Materialize; end;
+function TRange_Explode(const range: TRange): TIntegerArray; cdecl; begin Result := range.Explode; end;
+function TRange_Exploded(const range: TRange): TIntegerArray; cdecl; begin Result := range.Exploded; end;
 function TRange_Mixed(const range: TRange; const mixings: Integer = 1): TIntegerArray; cdecl; begin Result := range.Mixed(mixings); end;
 function TRange_Shake(const range: TRange; const shakes: Integer = 1): TIntegerArray; cdecl; begin Result := range.Shake(shakes); end;
 function TRange_Shuffle(const range: TRange; const shuffles: Integer = 1): TIntegerArray; cdecl; begin Result := range.Shuffle(shuffles); end;

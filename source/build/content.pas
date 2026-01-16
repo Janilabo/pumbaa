@@ -795,12 +795,16 @@ begin
   AddFunction(@TRange_Sequence, 'function TRange_Sequence(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Numbers, 'function TRange_Numbers(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_ToArr, 'function TRange_ToArr(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_AsArr, 'function TRange_AsArr(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_AsArray, 'function TRange_AsArray(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_IDs1, 'function TRange_IDs(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_IDs2, 'function TRange_IDs(const range: TRange; const dValue: Integer): Integer; overload;');
   AddFunction(@TRange_IDs3, 'function TRange_IDs(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Explode, 'function TRange_Explode(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Exploded, 'function TRange_Exploded(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Mixed, 'function TRange_Mixed(const range: TRange; const mixings: Integer = 1): TIntegerArray;');
   AddFunction(@TRange_Shake, 'function TRange_Shake(const range: TRange; const shakes: Integer = 1): TIntegerArray;');
   AddFunction(@TRange_Shuffle, 'function TRange_Shuffle(const range: TRange; const shuffles: Integer = 1): TIntegerArray;');
