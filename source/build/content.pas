@@ -525,9 +525,12 @@ begin
   AddFunction(@TPoint_Uniform2, 'function TPoint_Uniform(const pt: TPoint): Boolean; overload;');
   AddFunction(@TPoint_Employs, 'function TPoint_Employs(const pt: TPoint; const val: Integer): Boolean;');
   AddFunction(@TPoint_Omits, 'function TPoint_Omits(const pt: TPoint; const val: Integer): Boolean;');
-  AddFunction(@TPoint_Reflected, 'function TPoint_Reflected(const pt: TPoint): TPoint;');
+  AddFunction(@TPoint_Flip, 'function TPoint_Flip(const pt: TPoint): TPoint;');
   AddFunction(@TPoint_Flipped, 'function TPoint_Flipped(const pt: TPoint): TPoint;');
   AddFunction(@TPoint_Null, 'function TPoint_Null(const value: Integer = -2147483648): TPoint; overload;');
+  AddFunction(@TPoint_ReflectX, 'function TPoint_ReflectX(const pt: TPoint; const axis: Integer = 0): TPoint;');
+  AddFunction(@TPoint_ReflectY, 'function TPoint_ReflectY(const pt: TPoint; const axis: Integer = 0): TPoint;');
+  AddFunction(@TPoint_Reflect, 'function TPoint_Reflect(const pt: TPoint; const axis: Integer = 0): TPoint;');
 
   AddFunction(@TBox_Build1, 'function TBox_Build(const minX, minY, maxX, maxY: Integer): TBox; overload;');
   AddFunction(@TBox_Build2, 'function TBox_Build(const top, bottom: TPoint): TBox; overload;');
@@ -803,6 +806,7 @@ begin
   AddFunction(@TRange_IDs2, 'function TRange_IDs(const range: TRange; const dValue: Integer): Integer; overload;');
   AddFunction(@TRange_IDs3, 'function TRange_IDs(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TRange_List, 'function TRange_List(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Content, 'function TRange_Content(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Contents, 'function TRange_Contents(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Data, 'function TRange_Data(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Generate, 'function TRange_Generate(const range: TRange): TIntegerArray;');
@@ -981,6 +985,7 @@ begin
   AddFunction(@TRange_Mass, 'function TRange_Mass(const range: TRange): Integer;');
   AddFunction(@TRange_Tally, 'function TRange_Tally(const range: TRange): Integer;');
   AddFunction(@TRange_Quantity, 'function TRange_Quantity(const range: TRange): Integer;');
+  AddFunction(@TRange_Mirror, 'function TRange_Mirror(const range: TRange; const mCenter: Integer = 0): TRange;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

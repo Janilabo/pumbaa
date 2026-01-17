@@ -486,9 +486,12 @@ function TPoint_Uniform1(const pt: TPoint; const val: Integer): Boolean; overloa
 function TPoint_Uniform2(const pt: TPoint): Boolean; overload; cdecl; begin Result := pt.Uniform; end;
 function TPoint_Employs(const pt: TPoint; const val: Integer): Boolean; cdecl; begin Result := pt.Employs(val); end;
 function TPoint_Omits(const pt: TPoint; const val: Integer): Boolean; cdecl; begin Result := pt.Omits(val); end;
-function TPoint_Reflected(const pt: TPoint): TPoint; cdecl; begin Result := pt.Reflected; end;
+function TPoint_Flip(const pt: TPoint): TPoint; cdecl; begin Result := pt.Flip; end;
 function TPoint_Flipped(const pt: TPoint): TPoint; cdecl; begin Result := pt.Flipped; end;
 function TPoint_Null(const value: Integer = -2147483648): TPoint; overload; cdecl; begin Result := TPoint.Null(value); end;
+function TPoint_ReflectX(const pt: TPoint; const axis: Integer = 0): TPoint; cdecl; begin Result := pt.ReflectX(axis); end;
+function TPoint_ReflectY(const pt: TPoint; const axis: Integer = 0): TPoint; cdecl; begin Result := pt.ReflectY(axis); end;
+function TPoint_Reflect(const pt: TPoint; const axis: Integer = 0): TPoint; cdecl; begin Result := pt.Reflect(axis); end;
 
 function TBox_Create1(const minX, minY, maxX, maxY: Integer): TBox; overload; cdecl; begin Result.Create(minX, minY, maxX, maxY); end;
 function TBox_Create2(const top, bottom: TPoint): TBox; overload; cdecl; begin Result.Create(top, bottom); end;
@@ -764,6 +767,7 @@ function TRange_IDs1(const range: TRange): TIntegerArray; overload; cdecl; begin
 function TRange_IDs2(const range: TRange; const dValue: Integer): Integer; overload; cdecl; begin Result := range.IDs(dValue); end;
 function TRange_IDs3(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := range.IDs(dVals); end;
 function TRange_List(const range: TRange): TIntegerArray; cdecl; begin Result := range.List; end;
+function TRange_Content(const range: TRange): TIntegerArray; cdecl; begin Result := range.Content; end;
 function TRange_Contents(const range: TRange): TIntegerArray; cdecl; begin Result := range.Contents; end;
 function TRange_Data(const range: TRange): TIntegerArray; cdecl; begin Result := range.Data; end;
 function TRange_Generate(const range: TRange): TIntegerArray; cdecl; begin Result := range.Generate; end;
@@ -942,6 +946,7 @@ function TRange_Footprint(const range: TRange): Integer; cdecl; begin Result := 
 function TRange_Mass(const range: TRange): Integer; cdecl; begin Result := range.Mass; end;
 function TRange_Tally(const range: TRange): Integer; cdecl; begin Result := range.Tally; end;
 function TRange_Quantity(const range: TRange): Integer; cdecl; begin Result := range.Quantity; end;
+function TRange_Mirror(const range: TRange; const mCenter: Integer = 0): TRange; cdecl; begin Result := range.Mirror(mCenter); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
