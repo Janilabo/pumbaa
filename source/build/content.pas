@@ -568,7 +568,9 @@ begin
   AddFunction(@TBox_Equilateral, 'function TBox_Equilateral(const bx: TBox): Boolean;');
   AddFunction(@TBox_Square, 'function TBox_Square(const bx: TBox): Boolean;');
   AddFunction(@TBox_Size1, 'function TBox_Size(const bx: TBox; var width, height: Integer): Integer; overload;');
-  AddFunction(@TBox_Size2, 'function TBox_Size: TPoint; overload;');
+  AddFunction(@TBox_Size2, 'function TBox_Size: Integer; overload;');
+  AddFunction(@TBox_Dimensions1, 'function TBox_Dimensions(const bx: TBox; var bHorizontal, bVertical: TRange): Integer; overload;');
+  AddFunction(@TBox_Dimensions2, 'function TBox_Dimensions(const bx: TBox; var bWidth, bHeight: Integer): Integer; overload;');
   AddFunction(@TBox_Area, 'function TBox_Area(const bx: TBox): Integer;');
   AddFunction(@TBox_Capacity, 'function TBox_Capacity(const bx: TBox): Integer;');
   AddFunction(@TBox_Footprint, 'function TBox_Footprint(const bx: TBox): Double;');
@@ -625,7 +627,9 @@ begin
   AddFunction(@TBox_Pixels2, 'function TBox_Pixels(const bx: TBox; const index: Integer): TPoint; overload;');
   AddFunction(@TBox_Pixeled, 'function TBox_Pixeled(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Pts, 'function TBox_Pts(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_Elements, 'function TBox_Elements(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Explode, 'function TBox_Explode(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_Exploded, 'function TBox_Exploded(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Flat, 'function TBox_Flat(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_TPA1, 'function TBox_TPA(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_TPA2, 'function TBox_TPA(const bx: TBox; const index: Integer): TPoint; overload;');
@@ -634,7 +638,7 @@ begin
   AddFunction(@TBox_Extract, 'function TBox_Extract(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Enumerate, 'function TBox_Enumerate(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Enumerated, 'function TBox_Enumerated(const bx: TBox): TPointArray;');
-  AddFunction(@TBox_Elements, 'function TBox_Elements(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_List, 'function TBox_List(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Unzip1, 'function TBox_Unzip(const bx: TBox; var bX1, bY1, bX2, bY2: Integer): Integer; overload;');
   AddFunction(@TBox_Unzip2, 'function TBox_Unzip(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Unpack, 'function TBox_Unpack(const bx: TBox): TPointArray; overload;');
@@ -655,6 +659,11 @@ begin
   AddFunction(@TBox_AsGrid, 'function TBox_AsGrid(const bx: TBox; const rows, columns: Integer; const spaceVertical: Integer = 0; const spaceHorizontal: Integer = 0): TBoxArray;');
   AddFunction(@TBox_AsRow, 'function TBox_AsRow(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
   AddFunction(@TBox_AsColumn, 'function TBox_AsColumn(const bx: TBox; const cells: Integer; const space: Integer = 0): TBoxArray;');
+  AddFunction(@TBox_Bottom, 'function TBox_Bottom(const bx: TBox): Integer;');
+  AddFunction(@TBox_Top, 'function TBox_Top(const bx: TBox): Integer;');
+  AddFunction(@TBox_Left, 'function TBox_Left(const bx: TBox): Integer;');
+  AddFunction(@TBox_Right, 'function TBox_Right(const bx: TBox): Integer;');
+  AddFunction(@TBox_Skeleton, 'function TBox_Skeleton(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Border1, 'function TBox_Border(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Border2, 'function TBox_Border(const bx: TBox; const X, Y: Integer): Boolean; overload;');
   AddFunction(@TBox_Border3, 'function TBox_Border(const bx: TBox; const pt: TPoint): Boolean; overload;');
