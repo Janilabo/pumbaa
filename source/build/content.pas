@@ -197,6 +197,10 @@ begin
   AddFunction(@Integer_Factors, 'function Integer_Factors(const item: Integer): TIntegerArray;');
   AddFunction(@Integer_DivisibleBy, 'function Integer_DivisibleBy(const item: Integer; const value: Integer): Boolean;');
   AddFunction(@Integer_MultipleOf, 'function Integer_MultipleOf(const item: Integer; const value: Integer): Boolean;');
+  AddFunction(@Integer_X, 'function Integer_X(var val: Integer; const N: Integer = 1): Integer; overload;');
+  AddFunction(@Integer_X2, 'function Integer_X2(var val: Integer; const N: Integer = 1): Integer; overload;');
+  AddFunction(@Integer_X3, 'function Integer_X3(var val: Integer; const N: Integer = 1): Integer; overload;');
+  AddFunction(@Integer_X4, 'function Integer_X4(var val: Integer; const N: Integer = 1): Integer; overload;');
 
   AddFunction(@Int64_IsPrime, 'function Int64_IsPrime(const x: Int64): Boolean;');
   AddFunction(@Int64_Prime, 'function Int64_Prime(const x: Int64): Boolean;');

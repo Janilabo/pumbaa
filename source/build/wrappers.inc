@@ -103,6 +103,10 @@ function Integer_Divisors(const item: Integer): TIntegerArray; cdecl; begin Resu
 function Integer_Factors(const item: Integer): TIntegerArray; cdecl; begin Result := item.Factors; end;
 function Integer_DivisibleBy(const item: Integer; const value: Integer): Boolean; cdecl; begin Result := item.DivisibleBy(value); end;
 function Integer_MultipleOf(const item: Integer; const value: Integer): Boolean; cdecl; begin Result := item.MultipleOf(value); end;
+function Integer_X(var val: Integer; const N: Integer = 1): Integer; overload; cdecl; begin Result := X(val, N); end;
+function Integer_X2(var val: Integer; const N: Integer = 1): Integer; overload; cdecl; begin Result := X2(val, N); end;
+function Integer_X3(var val: Integer; const N: Integer = 1): Integer; overload; cdecl; begin Result := X3(val, N); end;
+function Integer_X4(var val: Integer; const N: Integer = 1): Integer; overload; cdecl; begin Result := X4(val, N); end;
 
 function Int64_Prime(const x: Int64): Boolean; cdecl; begin Result := x.Prime; end;
 function Int64_IsPrime(const x: Int64): Boolean; cdecl; begin Result := x.IsPrime; end;
