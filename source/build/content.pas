@@ -32,6 +32,15 @@ procedure AddFunctions;
 begin
   AddFunction(@MiMU_Version, 'function MiMU_Version: Double;');
 
+  AddFunction(@AsNextPowerOf2, 'function AsNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@AtNextPowerOf2, 'function AtNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@CountNextPowerOf2, 'function CountNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@FindNextPowerOf2, 'function FindNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@ForNextPowerOf2, 'function ForNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@GetNextPowerOf2, 'function GetNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@NextPowerOf2, 'function NextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@ReturnNextPowerOf2, 'function ReturnNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@ToNextPowerOf2, 'function ToNextPowerOf2(const x: Integer): Integer;');
   AddFunction(@RandomB, 'function RandomB: Boolean; overload;');
   AddFunction(@RandomBit, 'function RandomBit: Byte; overload;');
   AddFunction(@RandomSample, 'function RandomSample(const x: Integer; const size: Integer): TIntegerArray; overload;');
