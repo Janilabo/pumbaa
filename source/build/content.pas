@@ -32,15 +32,27 @@ procedure AddFunctions;
 begin
   AddFunction(@MiMU_Version, 'function MiMU_Version: Double;');
 
+  AddFunction(@IsPowerOf2, 'function IsPowerOf2(const x: Integer): Boolean');
+  AddFunction(@IsPowerOfTwo, 'function IsPowerOfTwo(const x: Integer): Boolean');
   AddFunction(@AsNextPowerOf2, 'function AsNextPowerOf2(const x: Integer): Integer;');
   AddFunction(@AtNextPowerOf2, 'function AtNextPowerOf2(const x: Integer): Integer;');
   AddFunction(@CountNextPowerOf2, 'function CountNextPowerOf2(const x: Integer): Integer;');
   AddFunction(@FindNextPowerOf2, 'function FindNextPowerOf2(const x: Integer): Integer;');
   AddFunction(@ForNextPowerOf2, 'function ForNextPowerOf2(const x: Integer): Integer;');
   AddFunction(@GetNextPowerOf2, 'function GetNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@GetPowersOf2, 'function GetPowersOf2(const upTo: Integer = 2147483647): TIntegerArray;');
   AddFunction(@NextPowerOf2, 'function NextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@PowerOf2, 'function PowerOf2: TIntegerArray;');
+  AddFunction(@PowerOf2Array, 'function PowerOf2Array: TIntegerArray;');
+  AddFunction(@PowersOf2_1, 'function PowersOf2: TIntegerArray; overload;');
+  AddFunction(@PowersOf2_2, 'function PowersOf2(const pCount: Integer): TIntegerArray; overload;');
   AddFunction(@ReturnNextPowerOf2, 'function ReturnNextPowerOf2(const x: Integer): Integer;');
   AddFunction(@ToNextPowerOf2, 'function ToNextPowerOf2(const x: Integer): Integer;');
+  AddFunction(@IsPowOf2, 'function IsPowOf2(const x: Integer): Boolean;');
+  AddFunction(@NearestPowerOf2, 'function NearestPowerOf2(const x: Integer): Integer;');
+  AddFunction(@NearestPowerOfTwo, 'function NearestPowerOfTwo(const x: Integer): Integer;');
+  AddFunction(@PreviousPowerOfTwo, 'function PreviousPowerOfTwo(const x: Integer): Integer;');
+  AddFunction(@PreviousPowerOf2, 'function PreviousPowerOf2(const x: Integer): Integer;');
   AddFunction(@RandomB, 'function RandomB: Boolean; overload;');
   AddFunction(@RandomBit, 'function RandomBit: Byte; overload;');
   AddFunction(@RandomSample, 'function RandomSample(const x: Integer; const size: Integer): TIntegerArray; overload;');

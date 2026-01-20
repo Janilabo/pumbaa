@@ -1,3 +1,25 @@
+function PowersOf2_1: TIntegerArray; overload; cdecl; begin Result := PowersOf2; end;
+function PowersOf2_2(const pCount: Integer): TIntegerArray; overload cdecl; begin Result := PowersOf2(pCount); end;
+function AsNextPowerOf2(const x: Integer): Integer; cdecl; begin Result := AsNextPowerOf2(x); end;
+function AtNextPowerOf2(const x: Integer): Integer; cdecl; begin Result := AtNextPowerOf2(x); end;
+function CountNextPowerOf2(const x: Integer): Integer; cdecl; begin Result := CountNextPowerOf2(x); end;
+function FindNextPowerOf2(const x: Integer): Integer; cdecl; begin Result := FindNextPowerOf2(x); end;
+function ForNextPowerOf2(const x: Integer): Integer; cdecl; begin Result := ForNextPowerOf2(x); end;
+function GetNextPowerOf2(const x: Integer): Integer; cdecl; begin Result := GetNextPowerOf2(x); end;
+function GetPowersOf2(const upTo: Integer = 2147483647): TIntegerArray; cdecl; begin Result := GetPowersOf2(upTo); end;
+function IsPowerOf2(const x: Integer): Boolean; cdecl; begin Result := IsPowerOf2(x); end;
+function IsPowerOfTwo(const x: Integer): Boolean; cdecl; begin Result := IsPowerOfTwo(x); end;
+function IsPowOf2(const x: Integer): Boolean; cdecl; begin Result := IsPowOf2(x); end;
+function NearestPowerOf2(const x: Integer): Integer; cdecl; begin Result := NearestPowerOf2(x); end;
+function NearestPowerOfTwo(const x: Integer): Integer; cdecl; begin Result := NearestPowerOfTwo(x); end;
+function NextPowerOf2(const x: Integer): Integer; cdecl; begin Result := NextPowerOf2(x); end;
+function PowerOf2: TIntegerArray; cdecl; begin Result := PowerOf2; end;
+function PowerOf2Array: TIntegerArray; cdecl; begin Result := PowerOf2Array; end;
+function PreviousPowerOfTwo(const x: Integer): Integer; cdecl; begin Result := PreviousPowerOfTwo(x); end;
+function PreviousPowerOf2(const x: Integer): Integer; cdecl; begin Result := PreviousPowerOf2(x); end;
+function ReturnNextPowerOf2(const x: Integer): Integer; cdecl; begin Result := ReturnNextPowerOf2(x); end;
+function ToNextPowerOf2(const x: Integer): Integer; cdecl; begin Result := ToNextPowerOf2(x); end;
+
 function Swop1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, oAscending); end;
 function Swop2(var A, B: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, oAscending); end;
 function Swop3(var A, B: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := Swop(A, B, oAscending); end;
