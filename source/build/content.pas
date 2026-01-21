@@ -1021,6 +1021,12 @@ begin
   AddFunction(@TRange_Tally, 'function TRange_Tally(const range: TRange): Integer;');
   AddFunction(@TRange_Quantity, 'function TRange_Quantity(const range: TRange): Integer;');
   AddFunction(@TRange_Mirror, 'function TRange_Mirror(const range: TRange; const mCenter: Integer = 0): TRange;');
+  AddFunction(@TRange_Backwards, 'function TRange_Backwards(const range: TRange): TRange;');
+  AddFunction(@TRange_Forwards, 'function TRange_Forwards(const range: TRange): TRange;');
+  AddFunction(@TRange_LowToHigh, 'function TRange_LowToHigh(const range: TRange): TRange;');
+  AddFunction(@TRange_HighToLow, 'function TRange_HighToLow(const range: TRange): TRange;');
+  AddFunction(@TRange_Interior, 'function TRange_Interior(const range: TRange; const val: Integer): Boolean;');
+  AddFunction(@TRange_Internal, 'function TRange_Internal(const range: TRange; const val: Integer): Boolean;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

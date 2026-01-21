@@ -983,6 +983,12 @@ function TRange_Mass(const range: TRange): Integer; cdecl; begin Result := range
 function TRange_Tally(const range: TRange): Integer; cdecl; begin Result := range.Tally; end;
 function TRange_Quantity(const range: TRange): Integer; cdecl; begin Result := range.Quantity; end;
 function TRange_Mirror(const range: TRange; const mCenter: Integer = 0): TRange; cdecl; begin Result := range.Mirror(mCenter); end;
+function TRange_Backwards(const range: TRange): TRange; cdecl; begin Result := range.Backwards; end;
+function TRange_Forwards(const range: TRange): TRange; cdecl; begin Result := range.Forwards; end;
+function TRange_LowToHigh(const range: TRange): TRange; cdecl; begin Result := range.LowToHigh; end;
+function TRange_HighToLow(const range: TRange): TRange; cdecl; begin Result := range.HighToLow; end;
+function TRange_Interior(const range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Interior(val); end;
+function TRange_Internal(const range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Internal(val); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
