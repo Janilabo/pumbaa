@@ -14,7 +14,7 @@ var
     Code: string;
   end;
 
-procedure AddFunction(const method: Pointer; const header: string); cdecl;
+procedure AddFunction(const method: Pointer; const header: string); cdecl; export;
 var
   h: Int32;
 begin
@@ -27,7 +27,7 @@ begin
   end;
 end;
 
-procedure AddType(const name: string; const str: string); cdecl;
+procedure AddType(const name: string; const str: string); cdecl; export;
 var
   h: Int32;
 begin
@@ -42,12 +42,12 @@ end;
 
 // Exports
 
-function GetTypeCount(): Int32; cdecl;
+function GetTypeCount(): Int32; cdecl; export;
 begin
   Result := Length(Plugin.Types);
 end;
 
-function GetTypeInfo(const index: Int32; var name, str: PChar): Int32; cdecl;
+function GetTypeInfo(const index: Int32; var name, str: PChar): Int32; cdecl; export;
 begin
   with Plugin do
   begin
@@ -62,7 +62,7 @@ begin
   Result := Length(Plugin.Functions);
 end;
 
-function GetFunctionInfo(const index: Int32; var method: Pointer; var header: PChar): Int32; cdecl;
+function GetFunctionInfo(const index: Int32; var method: Pointer; var header: PChar): Int32; cdecl; export;
 begin
   with Plugin do
   begin
@@ -72,28 +72,28 @@ begin
   Result := index;
 end;
 
-function GetCodeLength: Int32; cdecl;
+function GetCodeLength: Int32; cdecl; export;
 begin
   Result := Length(Plugin.Code);
 end;
 
-procedure GetCode(var code: PChar); cdecl;
+procedure GetCode(var code: PChar); cdecl; export;
 begin
   StrPCopy(code, Plugin.Code);
 end;
 
-function GetPluginABIVersion: Int32; cdecl;
+function GetPluginABIVersion: Int32; cdecl; export;
 begin
   Result := 2;
 end;
 
-procedure SetPluginMemManager(const manager: TMemoryManager); cdecl;
+procedure SetPluginMemManager(const manager: TMemoryManager); cdecl; export;
 begin
   GetMemoryManager(memoryManager);
   SetMemoryManager(manager);
 end;
 
-procedure OnDetach(); cdecl;
+procedure OnDetach(); cdecl; export;
 begin
   SetMemoryManager(memoryManager);
 end;
