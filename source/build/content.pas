@@ -1017,6 +1017,7 @@ begin
   AddFunction(@TRange_Inside, 'function TRange_Inside(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Volume, 'function TRange_Volume(const range: TRange): Integer;');
   AddFunction(@TRange_Measure, 'function TRange_Measure(const range: TRange): Integer;');
+  AddFunction(@TRange_Measured, 'function TRange_Measured(const range: TRange): Integer;');
   AddFunction(@TRange_Footprint, 'function TRange_Footprint(const range: TRange): Integer;');
   AddFunction(@TRange_Mass, 'function TRange_Mass(const range: TRange): Integer;');
   AddFunction(@TRange_Tally, 'function TRange_Tally(const range: TRange): Integer;');
@@ -1039,6 +1040,10 @@ begin
   AddFunction(@TRange_IsSubsetFor, 'function TRange_IsSubsetFor(const range: TRange; const target: TRange): Boolean;');
   AddFunction(@TRange_IsSubsetOf, 'function TRange_IsSubsetOf(const range: TRange; const target: TRange): Boolean;');
   AddFunction(@TRange_Subset, 'function TRange_Subset(const range: TRange; const r: TRange): Boolean;');
+  AddFunction(@TRange_Spread, 'function TRange_Spread(const range: TRange): Integer;');
+  AddFunction(@TRange_Quantify, 'function TRange_Quantify(const range: TRange): Integer;');
+  AddFunction(@TRange_Emit, 'function TRange_Emit(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Flatten, 'function TRange_Flatten(const range: TRange): TIntegerArray;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

@@ -979,6 +979,7 @@ function TRange_Has(const range: TRange; const val: Integer): Boolean; overload;
 function TRange_Inside(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Inside(val); end;
 function TRange_Volume(const range: TRange): Integer; cdecl; begin Result := range.Volume; end;
 function TRange_Measure(const range: TRange): Integer; cdecl; begin Result := range.Measure; end;
+function TRange_Measured(const range: TRange): Integer; cdecl; begin Result := range.Measured; end;
 function TRange_Footprint(const range: TRange): Integer; cdecl; begin Result := range.Footprint; end;
 function TRange_Mass(const range: TRange): Integer; cdecl; begin Result := range.Mass; end;
 function TRange_Tally(const range: TRange): Integer; cdecl; begin Result := range.Tally; end;
@@ -1001,6 +1002,10 @@ function TRange_LowerBound(const range: TRange): Integer; cdecl; begin Result :=
 function TRange_IsSubsetFor(const range: TRange; const target: TRange): Boolean; cdecl; begin Result := range.IsSubsetFor(target); end;
 function TRange_IsSubsetOf(const range: TRange; const target: TRange): Boolean; cdecl; begin Result := range.IsSubsetOf(target); end;
 function TRange_Subset(const range: TRange; const r: TRange): Boolean; cdecl; begin Result := range.Subset(r); end;
+function TRange_Spread(const range: TRange): Integer; cdecl; begin Result := range.Spread; end;
+function TRange_Quantify(const range: TRange): Integer; cdecl; begin Result := range.Quantify; end;
+function TRange_Emit(const range: TRange): TIntegerArray; cdecl; begin Result := range.Emit; end;
+function TRange_Flatten(const range: TRange): TIntegerArray; cdecl; begin Result := range.Flatten; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
