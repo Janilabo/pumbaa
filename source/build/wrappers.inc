@@ -803,6 +803,7 @@ function TRange_IDs1(const range: TRange): TIntegerArray; overload; cdecl; begin
 function TRange_IDs2(const range: TRange; const dValue: Integer): Integer; overload; cdecl; begin Result := range.IDs(dValue); end;
 function TRange_IDs3(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := range.IDs(dVals); end;
 function TRange_List(const range: TRange): TIntegerArray; cdecl; begin Result := range.List; end;
+function TRange_Collect(const range: TRange): TIntegerArray; cdecl; begin Result := range.Collect; end;
 function TRange_Content(const range: TRange): TIntegerArray; cdecl; begin Result := range.Content; end;
 function TRange_Contents(const range: TRange): TIntegerArray; cdecl; begin Result := range.Contents; end;
 function TRange_Data(const range: TRange): TIntegerArray; cdecl; begin Result := range.Data; end;
@@ -987,8 +988,19 @@ function TRange_Backwards(const range: TRange): TRange; cdecl; begin Result := r
 function TRange_Forwards(const range: TRange): TRange; cdecl; begin Result := range.Forwards; end;
 function TRange_LowToHigh(const range: TRange): TRange; cdecl; begin Result := range.LowToHigh; end;
 function TRange_HighToLow(const range: TRange): TRange; cdecl; begin Result := range.HighToLow; end;
+function TRange_LoHi(const range: TRange): TRange; cdecl; begin Result := range.LoHi; end;
+function TRange_HiLo(const range: TRange): TRange; cdecl; begin Result := range.HiLo; end;
 function TRange_Interior(const range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Interior(val); end;
 function TRange_Internal(const range: TRange; const val: Integer): Boolean; cdecl; begin Result := range.Internal(val); end;
+function TRange_Stretch(const range: TRange): Integer; cdecl; begin Result := range.Stretch; end;
+function TRange_InclusiveSize(const range: TRange): Integer; cdecl; begin Result := range.InclusiveSize; end;
+function TRange_HighValue(const range: TRange): Integer; cdecl; begin Result := range.HighValue; end;
+function TRange_LowValue(const range: TRange): Integer; cdecl; begin Result := range.LowValue; end;
+function TRange_UpperBound(const range: TRange): Integer; cdecl; begin Result := range.UpperBound; end;
+function TRange_LowerBound(const range: TRange): Integer; cdecl; begin Result := range.LowerBound; end;
+function TRange_IsSubsetFor(const range: TRange; const target: TRange): Boolean; cdecl; begin Result := range.IsSubsetFor(target); end;
+function TRange_IsSubsetOf(const range: TRange; const target: TRange): Boolean; cdecl; begin Result := range.IsSubsetOf(target); end;
+function TRange_Subset(const range: TRange; const r: TRange): Boolean; cdecl; begin Result := range.Subset(r); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

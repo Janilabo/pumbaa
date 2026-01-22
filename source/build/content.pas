@@ -841,6 +841,7 @@ begin
   AddFunction(@TRange_IDs2, 'function TRange_IDs(const range: TRange; const dValue: Integer): Integer; overload;');
   AddFunction(@TRange_IDs3, 'function TRange_IDs(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TRange_List, 'function TRange_List(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Collect, 'function TRange_Collect(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Content, 'function TRange_Content(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Contents, 'function TRange_Contents(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Data, 'function TRange_Data(const range: TRange): TIntegerArray;');
@@ -1025,8 +1026,19 @@ begin
   AddFunction(@TRange_Forwards, 'function TRange_Forwards(const range: TRange): TRange;');
   AddFunction(@TRange_LowToHigh, 'function TRange_LowToHigh(const range: TRange): TRange;');
   AddFunction(@TRange_HighToLow, 'function TRange_HighToLow(const range: TRange): TRange;');
+  AddFunction(@TRange_LoHi, 'function TRange_LoHi(const range: TRange): TRange;');
+  AddFunction(@TRange_HiLo, 'function TRange_HiLo(const range: TRange): TRange;');
   AddFunction(@TRange_Interior, 'function TRange_Interior(const range: TRange; const val: Integer): Boolean;');
   AddFunction(@TRange_Internal, 'function TRange_Internal(const range: TRange; const val: Integer): Boolean;');
+  AddFunction(@TRange_Stretch, 'function TRange_Stretch(const range: TRange): Integer;');
+  AddFunction(@TRange_InclusiveSize, 'function TRange_InclusiveSize(const range: TRange): Integer;');
+  AddFunction(@TRange_HighValue, 'function TRange_HighValue(const range: TRange): Integer;');
+  AddFunction(@TRange_LowValue, 'function TRange_LowValue(const range: TRange): Integer;');
+  AddFunction(@TRange_UpperBound, 'function TRange_UpperBound(const range: TRange): Integer;');
+  AddFunction(@TRange_LowerBound, 'function TRange_LowerBound(const range: TRange): Integer;');
+  AddFunction(@TRange_IsSubsetFor, 'function TRange_IsSubsetFor(const range: TRange; const target: TRange): Boolean;');
+  AddFunction(@TRange_IsSubsetOf, 'function TRange_IsSubsetOf(const range: TRange; const target: TRange): Boolean;');
+  AddFunction(@TRange_Subset, 'function TRange_Subset(const range: TRange; const r: TRange): Boolean;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
