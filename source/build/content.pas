@@ -841,10 +841,12 @@ begin
   AddFunction(@TRange_IDs2, 'function TRange_IDs(const range: TRange; const dValue: Integer): Integer; overload;');
   AddFunction(@TRange_IDs3, 'function TRange_IDs(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TRange_List, 'function TRange_List(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Listed, 'function TRange_Listed(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Collect, 'function TRange_Collect(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Content, 'function TRange_Content(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Contents, 'function TRange_Contents(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Data, 'function TRange_Data(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Gather, 'function TRange_Gather(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Generate, 'function TRange_Generate(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Members, 'function TRange_Members(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
@@ -1041,6 +1043,7 @@ begin
   AddFunction(@TRange_IsSubsetOf, 'function TRange_IsSubsetOf(const range: TRange; const target: TRange): Boolean;');
   AddFunction(@TRange_Subset, 'function TRange_Subset(const range: TRange; const r: TRange): Boolean;');
   AddFunction(@TRange_Spread, 'function TRange_Spread(const range: TRange): Integer;');
+  AddFunction(@TRange_Quantified, 'function TRange_Quantified(const range: TRange): Int64;');
   AddFunction(@TRange_Quantify, 'function TRange_Quantify(const range: TRange): Integer;');
   AddFunction(@TRange_Emit, 'function TRange_Emit(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Flatten, 'function TRange_Flatten(const range: TRange): TIntegerArray;');
