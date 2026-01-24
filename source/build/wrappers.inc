@@ -1009,6 +1009,16 @@ function TRange_Quantified(const range: TRange): Int64; cdecl; begin Result := r
 function TRange_Quantify(const range: TRange): Integer; cdecl; begin Result := range.Quantify; end;
 function TRange_Emit(const range: TRange): TIntegerArray; cdecl; begin Result := range.Emit; end;
 function TRange_Flatten(const range: TRange): TIntegerArray; cdecl; begin Result := range.Flatten; end;
+function TRange_Overlaps(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.Overlaps(other); end;
+function TRange_Gap(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.Gap(other); end;
+function TRange_GapTo(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.GapTo(other); end;
+function TRange_DistanceTo(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.DistanceTo(other); end;
+function TRange_Shared(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.Shared(other); end;
+function TRange_Separation(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.Separation(other); end;
+function TRange_Separated(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.Separated(other); end;
+function TRange_IsAdjacent(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.IsAdjacent(other); end;
+function TRange_IsMergeable(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.IsMergeable(other); end;
+function TRange_Mergeable(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.Mergeable(other); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
