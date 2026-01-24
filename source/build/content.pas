@@ -1057,6 +1057,10 @@ begin
   AddFunction(@TRange_IsAdjacent, 'function TRange_IsAdjacent(const range: TRange; const other: TRange): Boolean;');
   AddFunction(@TRange_IsMergeable, 'function TRange_IsMergeable(const range: TRange; const other: TRange): Boolean;');
   AddFunction(@TRange_Mergeable, 'function TRange_Mergeable(const range: TRange; const other: TRange): Boolean;');
+  AddFunction(@TRange_Sigma, 'function TRange_Sigma(const range: TRange): Int64;');
+  AddFunction(@TRange_Summa, 'function TRange_Summa(const range: TRange): Int64;');
+  AddFunction(@TRange_Aggregate, 'function TRange_Aggregate(const range: TRange; var items: TIntegerArray): Int64;');
+  AddFunction(@TRange_Aggregated, 'function TRange_Aggregated(const range: TRange; var items: TIntegerArray): Int64;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

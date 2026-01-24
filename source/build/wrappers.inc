@@ -1019,6 +1019,10 @@ function TRange_Separated(const range: TRange; const other: TRange): Boolean; cd
 function TRange_IsAdjacent(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.IsAdjacent(other); end;
 function TRange_IsMergeable(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.IsMergeable(other); end;
 function TRange_Mergeable(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.Mergeable(other); end;
+function TRange_Sigma(const range: TRange): Int64; cdecl; begin Result := range.Sigma; end;
+function TRange_Summa(const range: TRange): Int64; cdecl; begin Result := range.Summa; end;
+function TRange_Aggregate(const range: TRange; var items: TIntegerArray): Int64; cdecl; begin Result := range.Aggregate(items); end;
+function TRange_Aggregated(const range: TRange; var items: TIntegerArray): Int64; cdecl; begin Result := range.Aggregated(items); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
