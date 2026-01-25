@@ -1061,6 +1061,20 @@ begin
   AddFunction(@TRange_Summa, 'function TRange_Summa(const range: TRange): Int64;');
   AddFunction(@TRange_Aggregate, 'function TRange_Aggregate(const range: TRange; var items: TIntegerArray): Int64;');
   AddFunction(@TRange_Aggregated, 'function TRange_Aggregated(const range: TRange; var items: TIntegerArray): Int64;');
+  AddFunction(@TRange_Prod, 'function TRange_Prod(const range: TRange): Int64;');
+  AddFunction(@TRange_Product, 'function TRange_Product(const range: TRange): Int64;');
+  AddFunction(@TRange_Ratio, 'function TRange_Ratio(const range: TRange; const defaultValue: Double = 0.0): Double;');
+  AddFunction(@TRange_Quotient, 'function TRange_Quotient(const range: TRange; const defaultValue: Integer = 0): Integer;');
+  AddFunction(@TRange_Counted, 'function TRange_Counted(const range: TRange): Int64;');
+  AddFunction(@TRange_GetCount, 'function TRange_GetCount(const range: TRange): Integer;');
+  AddFunction(@TRange_PopulationSize, 'function TRange_PopulationSize(const range: TRange): Integer;');
+  AddFunction(@TRange_Bipolar, 'function TRange_Bipolar(const range: TRange): Boolean;');
+  AddFunction(@TRange_Negative, 'function TRange_Negative(const range: TRange): Boolean;');
+  AddFunction(@TRange_NonNegative, 'function TRange_NonNegative(const range: TRange): Boolean;');
+  AddFunction(@TRange_NonPositive, 'function TRange_NonPositive(const range: TRange): Boolean;');
+  AddFunction(@TRange_Positive, 'function TRange_Positive(const range: TRange): Boolean;');
+  AddFunction(@TRange_Zero, 'function TRange_Zero(const range: TRange): Boolean;');
+  AddFunction(@TRange_Terminal, 'function TRange_Terminal(const range: TRange; const sValue: Integer = 0): Boolean;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
