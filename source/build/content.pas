@@ -960,6 +960,7 @@ begin
   AddFunction(@TRange_Centroid, 'function TRange_Centroid(const range: TRange): Integer;');
   AddFunction(@TRange_Core, 'function TRange_Core(const range: TRange): Integer;');
   AddFunction(@TRange_Half, 'function TRange_Half(const range: TRange): Integer;');
+  AddFunction(@TRange_Halfstep, 'function TRange_Halfstep(const range: TRange): Integer;');
   AddFunction(@TRange_Halfway, 'function TRange_Halfway(const range: TRange): Integer;');
   AddFunction(@TRange_Radius, 'function TRange_Radius(const range: TRange): Integer;');
   AddFunction(@TRange_Rad, 'function TRange_Rad(const range: TRange): Integer;');
@@ -1080,6 +1081,9 @@ begin
   AddFunction(@TRange_Positive, 'function TRange_Positive(const range: TRange): Boolean;');
   AddFunction(@TRange_Zero, 'function TRange_Zero(const range: TRange): Boolean;');
   AddFunction(@TRange_Terminal, 'function TRange_Terminal(const range: TRange; const sValue: Integer = 0): Boolean;');
+  AddFunction(@TRange_Bisect, 'function TRange_Bisect(const range: TRange): Integer;');
+  AddFunction(@TRange_Nexus, 'function TRange_Nexus(const range: TRange): Integer;');
+  AddFunction(@TRange_Kernel, 'function TRange_Kernel(const range: TRange): Integer;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

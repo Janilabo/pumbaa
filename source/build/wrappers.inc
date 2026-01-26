@@ -918,6 +918,7 @@ function TRange_Centre(const range: TRange): Integer; cdecl; begin Result := ran
 function TRange_Centroid(const range: TRange): Integer; cdecl; begin Result := range.Centroid; end;
 function TRange_Core(const range: TRange): Integer; cdecl; begin Result := range.Core; end;
 function TRange_Half(const range: TRange): Integer; cdecl; begin Result := range.Half; end;
+function TRange_Halfstep(const range: TRange): Integer; cdecl; begin Result := range.Halfstep; end;
 function TRange_Halfway(const range: TRange): Integer; cdecl; begin Result := range.Halfway; end;
 function TRange_Radius(const range: TRange): Integer; cdecl; begin Result := range.Radius; end;
 function TRange_Rad(const range: TRange): Integer; cdecl; begin Result := range.Rad; end;
@@ -1042,6 +1043,9 @@ function TRange_NonPositive(const range: TRange): Boolean; cdecl; begin Result :
 function TRange_Positive(const range: TRange): Boolean; cdecl; begin Result := range.Positive; end;
 function TRange_Zero(const range: TRange): Boolean; cdecl; begin Result := range.Zero; end;
 function TRange_Terminal(const range: TRange; const sValue: Integer = 0): Boolean; cdecl; begin Result := range.Terminal(sValue); end;
+function TRange_Bisect(const range: TRange): Integer; cdecl; begin Result := range.Bisect; end;
+function TRange_Nexus(const range: TRange): Integer; cdecl; begin Result := range.Nexus; end;
+function TRange_Kernel(const range: TRange): Integer; cdecl; begin Result := range.Kernel; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
