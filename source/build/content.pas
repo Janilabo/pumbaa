@@ -664,6 +664,7 @@ begin
   AddFunction(@TBox_Enumerate, 'function TBox_Enumerate(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Enumerated, 'function TBox_Enumerated(const bx: TBox): TPointArray;');
   AddFunction(@TBox_List, 'function TBox_List(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Materialize, 'function TBox_Materialize(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Unzip1, 'function TBox_Unzip(const bx: TBox; var bX1, bY1, bX2, bY2: Integer): Integer; overload;');
   AddFunction(@TBox_Unzip2, 'function TBox_Unzip(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Unpack, 'function TBox_Unpack(const bx: TBox): TPointArray; overload;');
@@ -754,6 +755,10 @@ begin
   AddFunction(@TRange_Init1, 'function TRange_Init(var range: TRange; const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Init2, 'function TRange_Init(var range: TRange; const r: TRange): TRange; overload;');
   AddFunction(@TRange_Init3, 'function TRange_Init(var range: TRange; const val: Integer = 0): TRange; overload;');
+  AddFunction(@TRange_IsSingular, 'function TRange_IsSingular(const range: TRange): Boolean;');
+  AddFunction(@TRange_IsPlural, 'function TRange_IsPlural(const range: TRange): Boolean;');
+  AddFunction(@TRange_IsAscending, 'function TRange_IsAscending(const range: TRange): Boolean;');
+  AddFunction(@TRange_IsDescending, 'function TRange_IsDescending(const range: TRange): Boolean;');
   AddFunction(@TRange_Singular, 'function TRange_Singular(const range: TRange): Boolean;');
   AddFunction(@TRange_Atomic, 'function TRange_Atomic(const range: TRange): Boolean;');
   AddFunction(@TRange_Plural, 'function TRange_Plural(const range: TRange): Boolean;');
