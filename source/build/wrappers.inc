@@ -702,7 +702,15 @@ function TBox_Uniform2(const bx: TBox): Boolean; overload; cdecl; begin Result :
 function TBox_Employs(const bx: TBox; const val: Integer): Boolean; cdecl; begin Result := bx.Employs(val); end;
 function TBox_Omits(const bx: TBox; const val: Integer): Boolean; cdecl; begin Result := bx.Omits(val); end;
 function TBox_Null(const value: Integer = -2147483648): TBox; overload; cdecl; begin Result := TBox.Null(value); end;
+function TBox_Blanco(const bx: TBox): TBox; cdecl; begin Result := bx.Blanco; end;
+function TBox_Localize(const bx: TBox): TPoint; cdecl; begin Result := bx.Localize; end;
+function TBox_Localized(const bx: TBox): TBox; cdecl; begin Result := bx.Localized; end;
+function TBox_Template(const bx: TBox): TBox; cdecl; begin Result := bx.Template; end;
 
+function TRange_Blanco(const range: TRange): TRange; cdecl; begin Result := range.Blanco; end;
+function TRange_Template(const range: TRange): TRange; cdecl; begin Result := range.Template; end;
+function TRange_Localized(const range: TRange): TRange; cdecl; begin Result := range.Localized; end;
+function TRange_Localize(var range: TRange): Integer; cdecl; begin Result := range.Localize; end;
 function TRange_Implicit1(const val: Integer): TRange; overload; cdecl; begin Result := val; end;
 function TRange_Implicit2(const bytes: TByteSet): TRange; overload; cdecl; begin Result := bytes; end;
 function TRange_Implicit3(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr; end;
@@ -1046,6 +1054,17 @@ function TRange_Terminal(const range: TRange; const sValue: Integer = 0): Boolea
 function TRange_Bisect(const range: TRange): Integer; cdecl; begin Result := range.Bisect; end;
 function TRange_Nexus(const range: TRange): Integer; cdecl; begin Result := range.Nexus; end;
 function TRange_Kernel(const range: TRange): Integer; cdecl; begin Result := range.Kernel; end;
+function TRange_Anchor(const range: TRange): Integer; cdecl; begin Result := range.Anchor; end;
+function TRange_AMean(const range: TRange): Double; cdecl; begin Result := range.AMean; end;
+function TRange_Capture(const range: TRange): TIntegerArray; cdecl; begin Result := range.Capture; end;
+function TRange_Captured(const range: TRange): TIntegerArray; cdecl; begin Result := range.Captured; end;
+function TRange_Snapshot(const range: TRange): TIntegerArray; cdecl; begin Result := range.Snapshot; end;
+function TRange_Iterated(const range: TRange): TIntegerArray; cdecl; begin Result := range.Iterated; end;
+function TRange_Split(const range: TRange; var rLeft, rRight: TRange): Integer; cdecl; begin Result := range.Split(rLeft, rRight); end;
+function TRange_Middleway(const range: TRange): Integer; cdecl; begin Result := range.Middleway; end;
+function TRange_Medoid(const range: TRange): Integer; cdecl; begin Result := range.Medoid; end;
+function TRange_Centerpoint(const range: TRange): Integer; cdecl; begin Result := range.Centerpoint; end;
+function TRange_Progress(const range: TRange; const pPercent: Double): Integer; cdecl; begin Result := range.Progress(pPercent); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

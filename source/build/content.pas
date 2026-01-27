@@ -740,7 +740,16 @@ begin
   AddFunction(@TBox_Employs, 'function TBox_Employs(const bx: TBox; const val: Integer): Boolean;');
   AddFunction(@TBox_Omits, 'function TBox_Omits(const bx: TBox; const val: Integer): Boolean;');
   AddFunction(@TBox_Null, 'function TBox_Null(const value: Integer = -2147483648): TBox; overload;');
+  AddFunction(@TBox_Blanco, 'function TBox_Blanco(const bx: TBox): TBox;');
+  AddFunction(@TBox_Localize, 'function TBox_Localize(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Localized, 'function TBox_Localized(const bx: TBox): TBox;');
+  AddFunction(@TBox_Template, 'function TBox_Template(const bx: TBox): TBox;');
 
+  AddFunction(@TRange_Blanco, 'function TRange_Blanco(const range: TRange): TRange;');
+  AddFunction(@TRange_Template, 'function TRange_Template(const range: TRange): TRange;');
+  AddFunction(@TRange_Localized, 'function TRange_Localized(const range: TRange): TRange;');
+  AddFunction(@TRange_Localize, 'function TRange_Localize(var range: TRange): Integer;');
+  
   AddFunction(@TRange_Implicit1, 'function TRange_Implicit(const val: Integer): TRange; overload;');
   AddFunction(@TRange_Implicit2, 'function TRange_Implicit(const bytes: TByteSet): TRange; overload;');
   AddFunction(@TRange_Implicit3, 'function TRange_Implicit(const arr: TIntegerArray): TRange; overload;');
@@ -1084,6 +1093,17 @@ begin
   AddFunction(@TRange_Bisect, 'function TRange_Bisect(const range: TRange): Integer;');
   AddFunction(@TRange_Nexus, 'function TRange_Nexus(const range: TRange): Integer;');
   AddFunction(@TRange_Kernel, 'function TRange_Kernel(const range: TRange): Integer;');
+  AddFunction(@TRange_Anchor, 'function TRange_Anchor(const range: TRange): Integer;');
+  AddFunction(@TRange_Capture, 'function TRange_Capture(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Captured, 'function TRange_Captured(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Snapshot, 'function TRange_Snapshot(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Iterated, 'function TRange_Iterated(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Split, 'function TRange_Split(const range: TRange; var rLeft, rRight: TRange): Integer;');
+  AddFunction(@TRange_AMean, 'function TRange_AMean(const range: TRange): Double;');
+  AddFunction(@TRange_Middleway, 'function TRange_Middleway(const range: TRange): Integer;');
+  AddFunction(@TRange_Medoid, 'function TRange_Medoid(const range: TRange): Integer;');
+  AddFunction(@TRange_Centerpoint, 'function TRange_Centerpoint(const range: TRange): Integer;');
+  AddFunction(@TRange_Progress, 'function TRange_Progress(const range: TRange; const pPercent: Double): Integer;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
