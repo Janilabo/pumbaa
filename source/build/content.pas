@@ -744,12 +744,33 @@ begin
   AddFunction(@TBox_Localize, 'function TBox_Localize(const bx: TBox): TPoint;');
   AddFunction(@TBox_Localized, 'function TBox_Localized(const bx: TBox): TBox;');
   AddFunction(@TBox_Template, 'function TBox_Template(const bx: TBox): TBox;');
+  Addfunction(@TBox_Resolution, 'function TBox_Resolution(const bx: TBox): Int64;');
+  Addfunction(@TBox_Cardinality, 'function TBox_Cardinality(const bx: TBox): Int64;');
+  Addfunction(@TBox_Population, 'function TBox_Population(const bx: TBox): Integer;');
+  AddFunction(@TBox_Flatten, 'function TBox_Flatten(const bx: TBox): TPointArray;');
+  AddFunction(@TBox_Central, 'function TBox_Central(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Centre, 'function TBox_Centre(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Centroid, 'function TBox_Centroid(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Mean, 'function TBox_Mean(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Medium, 'function TBox_Medium(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Mid, 'function TBox_Mid(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Middle, 'function TBox_Middle(const bx: TBox): TPoint;');
+  AddFunction(@TBox_MiddlePoint, 'function TBox_MiddlePoint(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Average, 'function TBox_Average(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Extent, 'function TBox_Extent(const bx: TBox): Int64;');
+  AddFunction(@TBox_BottomEdge, 'function TBox_BottomEdge(const bx: TBox): TRange;');
+  AddFunction(@TBox_BottomLeft, 'function TBox_BottomLeft(const bx: TBox): TPoint;');
+  AddFunction(@TBox_BottomRight, 'function TBox_BottomRight(const bx: TBox): TPoint;');
+  AddFunction(@TBox_LeftEdge, 'function TBox_LeftEdge(const bx: TBox): TRange;');
+  AddFunction(@TBox_RightEdge, 'function TBox_RightEdge(const bx: TBox): TRange;');
+  AddFunction(@TBox_TopEdge, 'function TBox_TopEdge(const bx: TBox): TRange;');
+  AddFunction(@TBox_TopLeft, 'function TBox_TopLeft(const bx: TBox): TPoint;');
+  AddFunction(@TBox_TopRight, 'function TBox_TopRight(const bx: TBox): TPoint;');
 
   AddFunction(@TRange_Blanco, 'function TRange_Blanco(const range: TRange): TRange;');
   AddFunction(@TRange_Template, 'function TRange_Template(const range: TRange): TRange;');
   AddFunction(@TRange_Localized, 'function TRange_Localized(const range: TRange): TRange;');
   AddFunction(@TRange_Localize, 'function TRange_Localize(var range: TRange): Integer;');
-  
   AddFunction(@TRange_Implicit1, 'function TRange_Implicit(const val: Integer): TRange; overload;');
   AddFunction(@TRange_Implicit2, 'function TRange_Implicit(const bytes: TByteSet): TRange; overload;');
   AddFunction(@TRange_Implicit3, 'function TRange_Implicit(const arr: TIntegerArray): TRange; overload;');
