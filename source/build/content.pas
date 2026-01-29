@@ -875,6 +875,11 @@ begin
   AddFunction(@TRange_IDs1, 'function TRange_IDs(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_IDs2, 'function TRange_IDs(const range: TRange; const dValue: Integer): Integer; overload;');
   AddFunction(@TRange_IDs3, 'function TRange_IDs(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TRange_Indexed, 'function TRange_Indexed(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Indexes, 'function TRange_Indexes(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_AsIndexes, 'function TRange_AsIndexes(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_ToIndexes, 'function TRange_ToIndexes(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Indices, 'function TRange_Indices(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_List, 'function TRange_List(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Listed, 'function TRange_Listed(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Collect, 'function TRange_Collect(const range: TRange): TIntegerArray;');
@@ -1122,6 +1127,7 @@ begin
   AddFunction(@TRange_Split, 'function TRange_Split(const range: TRange; var rLeft, rRight: TRange): Integer;');
   AddFunction(@TRange_AMean, 'function TRange_AMean(const range: TRange): Double;');
   AddFunction(@TRange_Median, 'function TRange_Median(const range: TRange): Double;');
+  AddFunction(@TRange_MiddlePoint, 'function TRange_MiddlePoint(const range: TRange): Double;');
   AddFunction(@TRange_Middleway, 'function TRange_Middleway(const range: TRange): Integer;');
   AddFunction(@TRange_Medoid, 'function TRange_Medoid(const range: TRange): Integer;');
   AddFunction(@TRange_Centerpoint, 'function TRange_Centerpoint(const range: TRange): Integer;');
@@ -1133,6 +1139,19 @@ begin
   AddFunction(@TRange_AnchorStop, 'function TRange_AnchorStop(const range: TRange; const aLength: Integer = 1): TRange;');
   AddFunction(@TRange_AnchorStart, 'function TRange_AnchorStart(const range: TRange; const aLength: Integer = 1): TRange;');
   AddFunction(@TRange_Anchor, 'function TRange_Anchor(const range: TRange; const aLength: Integer = 1): TRange;');
+  AddFunction(@TRange_Interpolate, 'function TRange_Interpolate(const range: TRange; const F: Double): Double;');
+  AddFunction(@TRange_Percentile, 'function TRange_Percentile(const range: TRange; const F: Double): Double;');
+  AddFunction(@TRange_Q1, 'function TRange_Q1(const range: TRange): Double;');
+  AddFunction(@TRange_Q2, 'function TRange_Q2(const range: TRange): Double;');
+  AddFunction(@TRange_Q3, 'function TRange_Q3(const range: TRange): Double;');
+  AddFunction(@TRange_At, 'function TRange_At(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Elem, 'function TRange_Elem(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Element, 'function TRange_Element(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Entry, 'function TRange_Entry(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Fetch, 'function TRange_Fetch(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Get, 'function TRange_Get(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Member, 'function TRange_Member(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Nth, 'function TRange_Nth(const range: TRange; const index: Integer = 0): Integer;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
