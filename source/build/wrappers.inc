@@ -1076,8 +1076,9 @@ function TRange_Terminal(const range: TRange; const sValue: Integer = 0): Boolea
 function TRange_Bisect(const range: TRange): Integer; cdecl; begin Result := range.Bisect; end;
 function TRange_Nexus(const range: TRange): Integer; cdecl; begin Result := range.Nexus; end;
 function TRange_Kernel(const range: TRange): Integer; cdecl; begin Result := range.Kernel; end;
-function TRange_Anchor(const range: TRange): Integer; cdecl; begin Result := range.Anchor; end;
+function TRange_Amid(const range: TRange): Integer; cdecl; begin Result := range.Amid; end;
 function TRange_AMean(const range: TRange): Double; cdecl; begin Result := range.AMean; end;
+function TRange_Median(const range: TRange): Double; cdecl; begin Result := range.Median; end;
 function TRange_Capture(const range: TRange): TIntegerArray; cdecl; begin Result := range.Capture; end;
 function TRange_Captured(const range: TRange): TIntegerArray; cdecl; begin Result := range.Captured; end;
 function TRange_Snapshot(const range: TRange): TIntegerArray; cdecl; begin Result := range.Snapshot; end;
@@ -1091,6 +1092,9 @@ procedure TRange_Scale(const range: TRange; const sFactor: Integer); cdecl; begi
 function TRange_Scaled(const range: TRange; const sFactor: Integer): TRange; cdecl; begin Result := range.Scaled(sFactor); end;
 procedure TRange_Translate(const range: TRange; const tDelta: Integer); cdecl; begin range.Translate(tDelta); end;
 function TRange_Translated(const range: TRange; const tDelta: Integer): TRange; cdecl; begin Result := range.Translated(tDelta); end;
+function TRange_AnchorStart(const range: TRange; const aLength: Integer = 1): TRange; cdecl; begin Result := range.AnchorStart(aLength); end;
+function TRange_AnchorStop(const range: TRange; const aLength: Integer = 1): TRange; cdecl; begin Result := range.AnchorStop(aLength); end;
+function TRange_Anchor(const range: TRange; const aLength: Integer = 1): TRange; cdecl; begin Result := range.Anchor(aLength); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

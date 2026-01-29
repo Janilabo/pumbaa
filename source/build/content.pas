@@ -1114,13 +1114,14 @@ begin
   AddFunction(@TRange_Bisect, 'function TRange_Bisect(const range: TRange): Integer;');
   AddFunction(@TRange_Nexus, 'function TRange_Nexus(const range: TRange): Integer;');
   AddFunction(@TRange_Kernel, 'function TRange_Kernel(const range: TRange): Integer;');
-  AddFunction(@TRange_Anchor, 'function TRange_Anchor(const range: TRange): Integer;');
+  AddFunction(@TRange_Amid, 'function TRange_Amid(const range: TRange): Integer;');
   AddFunction(@TRange_Capture, 'function TRange_Capture(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Captured, 'function TRange_Captured(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Snapshot, 'function TRange_Snapshot(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Iterated, 'function TRange_Iterated(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Split, 'function TRange_Split(const range: TRange; var rLeft, rRight: TRange): Integer;');
   AddFunction(@TRange_AMean, 'function TRange_AMean(const range: TRange): Double;');
+  AddFunction(@TRange_Median, 'function TRange_Median(const range: TRange): Double;');
   AddFunction(@TRange_Middleway, 'function TRange_Middleway(const range: TRange): Integer;');
   AddFunction(@TRange_Medoid, 'function TRange_Medoid(const range: TRange): Integer;');
   AddFunction(@TRange_Centerpoint, 'function TRange_Centerpoint(const range: TRange): Integer;');
@@ -1129,6 +1130,9 @@ begin
   AddFunction(@TRange_Scaled, 'function TRange_Scaled(const range: TRange; const sFactor: Integer): TRange;');
   AddFunction(@TRange_Translate, 'procedure TRange_Translate(const range: TRange; const tDelta: Integer);');
   AddFunction(@TRange_Translated, 'function TRange_Translated(const range: TRange; const tDelta: Integer): TRange;');
+  AddFunction(@TRange_AnchorStop, 'function TRange_AnchorStop(const range: TRange; const aLength: Integer = 1): TRange;');
+  AddFunction(@TRange_AnchorStart, 'function TRange_AnchorStart(const range: TRange; const aLength: Integer = 1): TRange;');
+  AddFunction(@TRange_Anchor, 'function TRange_Anchor(const range: TRange; const aLength: Integer = 1): TRange;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
