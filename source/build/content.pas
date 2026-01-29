@@ -1125,6 +1125,10 @@ begin
   AddFunction(@TRange_Medoid, 'function TRange_Medoid(const range: TRange): Integer;');
   AddFunction(@TRange_Centerpoint, 'function TRange_Centerpoint(const range: TRange): Integer;');
   AddFunction(@TRange_Progress, 'function TRange_Progress(const range: TRange; const pPercent: Double): Integer;');
+  AddFunction(@TRange_Scale, 'procedure TRange_Scale(const range: TRange; const sFactor: Integer);');
+  AddFunction(@TRange_Scaled, 'function TRange_Scaled(const range: TRange; const sFactor: Integer): TRange;');
+  AddFunction(@TRange_Translate, 'procedure TRange_Translate(const range: TRange; const tDelta: Integer);');
+  AddFunction(@TRange_Translated, 'function TRange_Translated(const range: TRange; const tDelta: Integer): TRange;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

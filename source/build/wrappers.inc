@@ -1087,6 +1087,10 @@ function TRange_Middleway(const range: TRange): Integer; cdecl; begin Result := 
 function TRange_Medoid(const range: TRange): Integer; cdecl; begin Result := range.Medoid; end;
 function TRange_Centerpoint(const range: TRange): Integer; cdecl; begin Result := range.Centerpoint; end;
 function TRange_Progress(const range: TRange; const pPercent: Double): Integer; cdecl; begin Result := range.Progress(pPercent); end;
+procedure TRange_Scale(const range: TRange; const sFactor: Integer); cdecl; begin range.Scale(sFactor); end;
+function TRange_Scaled(const range: TRange; const sFactor: Integer): TRange; cdecl; begin Result := range.Scaled(sFactor); end;
+procedure TRange_Translate(const range: TRange; const tDelta: Integer); cdecl; begin range.Translate(tDelta); end;
+function TRange_Translated(const range: TRange; const tDelta: Integer): TRange; cdecl; begin Result := range.Translated(tDelta); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
