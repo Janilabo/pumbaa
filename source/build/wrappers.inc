@@ -837,6 +837,11 @@ function TRange_Indexed(const range: TRange): TIntegerArray; overload; cdecl; be
 function TRange_Indexes(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Indexes; end;
 function TRange_AsIndexes(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsIndexes; end;
 function TRange_ToIndexes(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToIndexes; end;
+function TRange_GetIndexes(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.GetIndexes; end;
+function TRange_IndexList(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.IndexList; end;
+function TRange_Keys(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Keys; end;
+function TRange_Positions(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Positions; end;
+function TRange_Indiced(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Indiced; end;
 function TRange_Indices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Indices; end;
 function TRange_List(const range: TRange): TIntegerArray; cdecl; begin Result := range.List; end;
 function TRange_Listed(const range: TRange): TIntegerArray; cdecl; begin Result := range.Listed; end;
@@ -1114,6 +1119,8 @@ function TRange_Fetch(const range: TRange; const index: Integer = 0): Integer; c
 function TRange_Get(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Get(index); end;
 function TRange_Member(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Member(index); end;
 function TRange_Nth(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Nth(index); end;
+function TRange_Rand(const range: TRange): Integer; cdecl; begin Result := range.Rand; end;
+function TRange_Randomize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Randomize; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

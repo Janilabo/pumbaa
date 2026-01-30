@@ -879,6 +879,11 @@ begin
   AddFunction(@TRange_Indexes, 'function TRange_Indexes(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_AsIndexes, 'function TRange_AsIndexes(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToIndexes, 'function TRange_ToIndexes(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_GetIndexes, 'function TRange_GetIndexes(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_IndexList, 'function TRange_IndexList(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Keys, 'function TRange_Keys(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Positions, 'function TRange_Positions(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Indiced, 'function TRange_Indiced(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Indices, 'function TRange_Indices(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_List, 'function TRange_List(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Listed, 'function TRange_Listed(const range: TRange): TIntegerArray;');
@@ -1152,6 +1157,8 @@ begin
   AddFunction(@TRange_Get, 'function TRange_Get(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Member, 'function TRange_Member(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Nth, 'function TRange_Nth(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Rand, 'function TRange_Rand(const range: TRange): Integer;');
+  AddFunction(@TRange_Randomize, 'function TRange_Randomize(const range: TRange): TIntegerArray;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
