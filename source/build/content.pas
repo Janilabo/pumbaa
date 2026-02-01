@@ -28,6 +28,10 @@ begin
   AddType('TMetrics', '(dmHypotEuclidean, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski, dmMaxMinChebyshev, dmOctile);');  
 end;
 
+procedure DoNothing;
+begin
+end;
+
 procedure AddFunctions;
 begin
   AddFunction(@MiMU_Version, 'function MiMU_Version: Double;');
@@ -767,6 +771,8 @@ begin
   AddFunction(@TBox_TopLeft, 'function TBox_TopLeft(const bx: TBox): TPoint;');
   AddFunction(@TBox_TopRight, 'function TBox_TopRight(const bx: TBox): TPoint;');
 
+  AddFunction(@DoNothing, 'procedure ______________;');
+  AddFunction(@DoNothing, 'procedure TRANGE_METHODS;');
   AddFunction(@TRange_BitCast1, 'function TRange_BitCast(const range: TRange): Int64; overload;');
   AddFunction(@TRange_BitCast2, 'procedure TRange_BitCast(var range: TRange; const rCast: Int64); overload;');
   AddFunction(@TRange_Decode, 'function TRange_Decode(var range: TRange; const rPacked: Int64): Integer; overload;');
@@ -864,7 +870,7 @@ begin
   AddFunction(@TRange_Bottom, 'function TRange_Bottom(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Top, 'function TRange_Top(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Exceeds, 'function TRange_Exceeds(const range: TRange; const maxElements: Integer): Boolean;');
-  AddFunction(@TRange_Insufficient, 'function Insufficient(const range: TRange; const minElements: Integer): Boolean;');
+  AddFunction(@TRange_Insufficient, 'function TRange_Insufficient(const range: TRange; const minElements: Integer): Boolean;');
   AddFunction(@TRange_Digits1, 'function TRange_Digits(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Digits2, 'function TRange_Digits(const range: TRange; const dIndex: Integer): Integer; overload;');
   AddFunction(@TRange_Digits3, 'function TRange_Digits(const range: TRange; const dIDs: TIntegerArray): TIntegerArray; overload;');
@@ -879,6 +885,7 @@ begin
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArr, 'function TRange_ToArr(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Atomize, 'function TRange_Atomize(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_AsArr, 'function TRange_AsArr(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_AsArray, 'function TRange_AsArray(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_IDs1, 'function TRange_IDs(const range: TRange): TIntegerArray; overload;');
@@ -902,7 +909,12 @@ begin
   AddFunction(@TRange_Data, 'function TRange_Data(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Gather, 'function TRange_Gather(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Generate, 'function TRange_Generate(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Generated, 'function TRange_Generated(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Disjoint, 'function TRange_Disjoint(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Numbered, 'function TRange_Numbered(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Pull, 'function TRange_Pull(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Members, 'function TRange_Members(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Material, 'function TRange_Material(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Materialized, 'function TRange_Materialized(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Explode, 'function TRange_Explode(const range: TRange): TIntegerArray;');

@@ -837,6 +837,7 @@ function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result
 function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
 function TRange_ToArr(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArr; end;
 function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
+function TRange_Atomize(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Atomize; end;
 function TRange_AsArr(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsArr; end;
 function TRange_AsArray(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsArray; end;
 function TRange_IDs1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.IDs; end;
@@ -860,7 +861,12 @@ function TRange_Contents(const range: TRange): TIntegerArray; cdecl; begin Resul
 function TRange_Data(const range: TRange): TIntegerArray; cdecl; begin Result := range.Data; end;
 function TRange_Gather(const range: TRange): TIntegerArray; cdecl; begin Result := range.Gather; end;
 function TRange_Generate(const range: TRange): TIntegerArray; cdecl; begin Result := range.Generate; end;
+function TRange_Generated(const range: TRange): TIntegerArray; cdecl; begin Result := range.Generated; end;
 function TRange_Members(const range: TRange): TIntegerArray; cdecl; begin Result := range.Members; end;
+function TRange_Disjoint(const range: TRange): TIntegerArray; cdecl; begin Result := range.Disjoint; end;
+function TRange_Numbered(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbered; end;
+function TRange_Pull(const range: TRange): TIntegerArray; cdecl; begin Result := range.Pull; end;
+function TRange_Material(const range: TRange): TIntegerArray; cdecl; begin Result := range.Material; end;
 function TRange_Materialize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Materialize; end;
 function TRange_Materialized(const range: TRange): TIntegerArray; cdecl; begin Result := range.Materialized; end;
 function TRange_Explode(const range: TRange): TIntegerArray; cdecl; begin Result := range.Explode; end;
