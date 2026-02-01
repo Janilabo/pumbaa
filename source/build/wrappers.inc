@@ -838,6 +838,7 @@ function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result :
 function TRange_ToArr(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArr; end;
 function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
 function TRange_Atomize(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Atomize; end;
+function TRange_ArrayOf(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ArrayOf; end;
 function TRange_AsArr(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsArr; end;
 function TRange_AsArray(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsArray; end;
 function TRange_IDs1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.IDs; end;
@@ -845,8 +846,12 @@ function TRange_IDs2(const range: TRange; const dValue: Integer): Integer; overl
 function TRange_IDs3(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := range.IDs(dVals); end;
 function TRange_Indexed(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Indexed; end;
 function TRange_Indexes(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Indexes; end;
+function TRange_Indexing(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Indexing; end;
+function TRange_ToIDs(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToIDs; end;
+function TRange_AsIDs(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsIDs; end;
 function TRange_AsIndexes(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsIndexes; end;
 function TRange_ToIndexes(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToIndexes; end;
+function TRange_GetIDs(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.GetIDs; end;
 function TRange_GetIndexes(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.GetIndexes; end;
 function TRange_IndexList(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.IndexList; end;
 function TRange_Keys(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Keys; end;
@@ -878,6 +883,9 @@ function TRange_Any(const range: TRange): Integer; cdecl; begin Result := range.
 function TRange_Some1(const range: TRange): TIntegerArray; cdecl; begin Result := range.Some; end;
 function TRange_Some2(const range: TRange; const amount: Integer): TIntegerArray; cdecl; begin Result := range.Some(amount); end;
 function TRange_All(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.All; end;
+function TRange_Bank(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Bank; end;
+function TRange_Stock(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Stock; end;
+function TRange_Storage(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Storage; end;
 function TRange_Unzip(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unzip; end;
 function TRange_Unpack(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unpack; end;
 function TRange_Unwrap(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unwrap; end;
@@ -1053,6 +1061,8 @@ function TRange_IsInside(const range: TRange; const val: Integer): Boolean; over
 function TRange_Covered(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Covered(val); end;
 function TRange_Number(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Number(val); end;
 function TRange_Volume(const range: TRange): Integer; cdecl; begin Result := range.Volume; end;
+function TRange_Bulk(const range: TRange): Integer; cdecl; begin Result := range.Bulk; end;
+function TRange_Latitude(const range: TRange): Integer; cdecl; begin Result := range.Latitude; end;
 function TRange_Measure(const range: TRange): Integer; cdecl; begin Result := range.Measure; end;
 function TRange_Measured(const range: TRange): Integer; cdecl; begin Result := range.Measured; end;
 function TRange_Footprint(const range: TRange): Integer; cdecl; begin Result := range.Footprint; end;
@@ -1152,6 +1162,7 @@ function TRange_Member(const range: TRange; const index: Integer = 0): Integer; 
 function TRange_Nth(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Nth(index); end;
 function TRange_Rand(const range: TRange): Integer; cdecl; begin Result := range.Rand; end;
 function TRange_Randomize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Randomize; end;
+function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange; cdecl; begin Result := range.Populate(arr); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

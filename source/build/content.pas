@@ -886,6 +886,7 @@ begin
   AddFunction(@TRange_ToArr, 'function TRange_ToArr(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Atomize, 'function TRange_Atomize(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_ArrayOf, 'function TRange_ArrayOf(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_AsArr, 'function TRange_AsArr(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_AsArray, 'function TRange_AsArray(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_IDs1, 'function TRange_IDs(const range: TRange): TIntegerArray; overload;');
@@ -893,8 +894,12 @@ begin
   AddFunction(@TRange_IDs3, 'function TRange_IDs(const range: TRange; const dVals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TRange_Indexed, 'function TRange_Indexed(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Indexes, 'function TRange_Indexes(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Indexing, 'function TRange_Indexing(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_ToIDs, 'function TRange_ToIDs(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_AsIDs, 'function TRange_AsIDs(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_AsIndexes, 'function TRange_AsIndexes(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToIndexes, 'function TRange_ToIndexes(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_GetIDs, 'function TRange_GetIDs(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_GetIndexes, 'function TRange_GetIndexes(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_IndexList, 'function TRange_IndexList(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Keys, 'function TRange_Keys(const range: TRange): TIntegerArray;');
@@ -926,6 +931,9 @@ begin
   AddFunction(@TRange_Some1, 'function TRange_Some(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Some2, 'function TRange_Some(const range: TRange; const amount: Integer): TIntegerArray; overload;');
   AddFunction(@TRange_All, 'function TRange_All(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Bank, 'function TRange_Bank(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Stock, 'function TRange_Stock(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Storage, 'function TRange_Storage(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Unzip, 'function TRange_Unzip(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Unpack, 'function TRange_Unpack(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Unwrap, 'function TRange_Unwrap(const range: TRange): TIntegerArray; overload;');
@@ -1101,6 +1109,8 @@ begin
   AddFunction(@TRange_Covered, 'function TRange_Covered(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Number, 'function TRange_Number(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Volume, 'function TRange_Volume(const range: TRange): Integer;');
+  AddFunction(@TRange_Bulk, 'function TRange_Bulk(const range: TRange): Integer;');
+  AddFunction(@TRange_Latitude, 'function TRange_Latitude(const range: TRange): Integer;');
   AddFunction(@TRange_Measure, 'function TRange_Measure(const range: TRange): Integer;');
   AddFunction(@TRange_Measured, 'function TRange_Measured(const range: TRange): Integer;');
   AddFunction(@TRange_Footprint, 'function TRange_Footprint(const range: TRange): Integer;');
@@ -1196,6 +1206,7 @@ begin
   AddFunction(@TRange_Nth, 'function TRange_Nth(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Rand, 'function TRange_Rand(const range: TRange): Integer;');
   AddFunction(@TRange_Randomize, 'function TRange_Randomize(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Populate, 'function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
