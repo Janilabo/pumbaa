@@ -996,6 +996,8 @@ begin
   AddFunction(@TRange_Distribute, 'function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray;');
   AddFunction(@TRange_Partition, 'function TRange_Partition(const range: TRange; const size: Integer): TRangeArray;');
   AddFunction(@TRange_Divide, 'function TRange_Divide(const range: TRange; const size: Integer): TRangeArray;');
+  AddFunction(@TRange_Chunked, 'function TRange_Chunked(const range: TRange; const chunkSize: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Chunkify, 'function TRange_Chunkify(const range: TRange; const chunkSize: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Neighbor, 'function TRange_Neighbor(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Neighbour, 'function TRange_Neighbour(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Touch, 'function TRange_Touch(const range: TRange; const b: TRange): Boolean;');
@@ -1010,6 +1012,7 @@ begin
   AddFunction(@TRange_DistanceWith, 'function TRange_DistanceWith(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_DistAt, 'function TRange_DistAt(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_GetDistance, 'function TRange_GetDistance(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_ValueAt, 'function TRange_ValueAt(const range: TRange; const offset: Integer = 0): Integer; overload;');
   
   AddFunction(@TRange_Dist1, 'function TRange_Dist(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Dist2, 'function TRange_Dist(const range: TRange; const target: TRange): Integer; overload;');

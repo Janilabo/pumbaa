@@ -1024,6 +1024,8 @@ function TRange_Outside(const range: TRange; const x: Integer): Boolean; cdecl; 
 function TRange_Windows(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Windows(target); end;
 function TRange_Sectioned(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Sectioned(target); end;
 function TRange_Binned(const range: TRange; const target: TRange): TRangeArray; overload; cdecl; begin Result := range.Binned(target); end;
+function TRange_Chunked(const range: TRange; const chunkSize: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Chunked(chunkSize); end;
+function TRange_Chunkify(const range: TRange; const chunkSize: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Chunkify(chunkSize); end;
 function TRange_Sample(const range: TRange; const sSize: Integer): TIntegerArray; overload; cdecl; begin Result := range.Sample(sSize); end;
 function TRange_Centered(var range: TRange; const rCenter: Integer): TRange; overload; cdecl; begin Result := range.Centered(rCenter); end;
 function TRange_Shift(var range: TRange; const N: Integer = 1): TRange; overload; cdecl; begin Result := range.Shift(N); end;
@@ -1163,6 +1165,7 @@ function TRange_Q1(const range: TRange): Double; cdecl; begin Result := range.Q1
 function TRange_Q2(const range: TRange): Double; cdecl; begin Result := range.Q2; end;
 function TRange_Q3(const range: TRange): Double; cdecl; begin Result := range.Q3; end;
 function TRange_At(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.At(index); end;
+function TRange_ValueAt(const range: TRange; const offset: Integer = 0): Integer; overload; cdecl; begin Result := range.ValueAt(offset); end;
 function TRange_Elem(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Elem(index); end;
 function TRange_Element(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Element(index); end;
 function TRange_Entry(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Entry(index); end;
