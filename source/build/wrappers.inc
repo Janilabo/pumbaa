@@ -953,7 +953,15 @@ function TRange_Touches(const range: TRange; const b: TRange; const maxTouch: In
 function TRange_Touching(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean; cdecl; begin Result := range.Touching(b, maxTouch, minTouch); end;
 function TRange_Distance1(const range: TRange; const b: TRange): Integer; overload; cdecl; begin Result := range.Distance(b); end;
 function TRange_Distance2(const range: TRange): Integer; overload; cdecl; begin Result := range.Distance; end;
-function TRange_Dist(const range: TRange): Integer; cdecl; begin Result := range.Dist; end;
+function TRange_DistanceEx(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.DistanceEx(target); end;
+function TRange_DistanceAt(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.DistanceAt(target); end;
+function TRange_DistanceFor(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.DistanceFor(target); end;
+function TRange_DistanceOf(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.DistanceOf(target); end;
+function TRange_DistanceWith(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.DistanceWith(target); end;
+function TRange_DistAt(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.DistAt(target); end;
+function TRange_GetDistance(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.GetDistance(target); end;
+function TRange_Dist1(const range: TRange): Integer; overload; cdecl; begin Result := range.Dist; end;
+function TRange_Dist2(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Dist(target); end;
 function TRange_Difference(const range: TRange): Integer; cdecl; begin Result := range.Difference; end;
 function TRange_Diff(const range: TRange): Integer; cdecl; begin Result := range.Diff; end;
 function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer; cdecl; begin Result := range.DistHausdorff(b); end;

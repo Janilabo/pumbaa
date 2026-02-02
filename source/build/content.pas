@@ -1001,7 +1001,16 @@ begin
   AddFunction(@TRange_Touching, 'function TRange_Touching(const range: TRange; const b: TRange; const maxTouch: Integer = 1; const minTouch: Integer = 1): Boolean;');
   AddFunction(@TRange_Distance1, 'function TRange_Distance(const range: TRange; const b: TRange): Integer; overload;');
   AddFunction(@TRange_Distance2, 'function TRange_Distance(const range: TRange): Integer; overload;');
-  AddFunction(@TRange_Dist, 'function TRange_Dist(const range: TRange): Integer;');
+  AddFunction(@TRange_DistanceEx, 'function TRange_DistanceEx(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_DistanceAt, 'function TRange_DistanceAt(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_DistanceFor, 'function TRange_DistanceFor(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_DistanceOf, 'function TRange_DistanceOf(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_DistanceWith, 'function TRange_DistanceWith(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_DistAt, 'function TRange_DistAt(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_GetDistance, 'function TRange_GetDistance(const range: TRange; const target: TRange): Integer; overload;');
+  
+  AddFunction(@TRange_Dist1, 'function TRange_Dist(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Dist2, 'function TRange_Dist(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_Difference, 'function TRange_Difference(const range: TRange): Integer;');
   AddFunction(@TRange_Diff, 'function TRange_Diff(const range: TRange): Integer;');
   AddFunction(@TRange_DistHausdorff, 'function TRange_DistHausdorff(const range: TRange; const b: TRange): Integer;');
