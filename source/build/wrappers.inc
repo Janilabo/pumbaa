@@ -860,6 +860,8 @@ function TRange_Indiced(const range: TRange): TIntegerArray; overload; cdecl; be
 function TRange_Indices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Indices; end;
 function TRange_List(const range: TRange): TIntegerArray; cdecl; begin Result := range.List; end;
 function TRange_Listed(const range: TRange): TIntegerArray; cdecl; begin Result := range.Listed; end;
+function TRange_Listing(const range: TRange): TIntegerArray; cdecl; begin Result := range.Listing; end;
+function TRange_Stack(const range: TRange): TIntegerArray; cdecl; begin Result := range.Stack; end;
 function TRange_Collect(const range: TRange): TIntegerArray; cdecl; begin Result := range.Collect; end;
 function TRange_Content(const range: TRange): TIntegerArray; cdecl; begin Result := range.Content; end;
 function TRange_Contents(const range: TRange): TIntegerArray; cdecl; begin Result := range.Contents; end;

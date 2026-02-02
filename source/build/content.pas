@@ -908,6 +908,8 @@ begin
   AddFunction(@TRange_Indices, 'function TRange_Indices(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_List, 'function TRange_List(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Listed, 'function TRange_Listed(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Listing, 'function TRange_Listing(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Stack, 'function TRange_Stack(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Collect, 'function TRange_Collect(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Content, 'function TRange_Content(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Contents, 'function TRange_Contents(const range: TRange): TIntegerArray;');
