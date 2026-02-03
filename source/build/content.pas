@@ -1012,8 +1012,6 @@ begin
   AddFunction(@TRange_DistanceWith, 'function TRange_DistanceWith(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_DistAt, 'function TRange_DistAt(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_GetDistance, 'function TRange_GetDistance(const range: TRange; const target: TRange): Integer; overload;');
-  AddFunction(@TRange_ValueAt, 'function TRange_ValueAt(const range: TRange; const offset: Integer = 0): Integer; overload;');
-  
   AddFunction(@TRange_Dist1, 'function TRange_Dist(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Dist2, 'function TRange_Dist(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_Difference, 'function TRange_Difference(const range: TRange): Integer;');
@@ -1210,12 +1208,21 @@ begin
   AddFunction(@TRange_Q1, 'function TRange_Q1(const range: TRange): Double;');
   AddFunction(@TRange_Q2, 'function TRange_Q2(const range: TRange): Double;');
   AddFunction(@TRange_Q3, 'function TRange_Q3(const range: TRange): Double;');
+  AddFunction(@TRange_Access, 'function TRange_Access(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_ToValue, 'function TRange_ToValue(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_ValueAt, 'function TRange_ValueAt(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_AsValue, 'function TRange_AsValue(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_At, 'function TRange_At(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_AtIndex, 'function TRange_AtIndex(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_AtPos, 'function TRange_AtPos(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_AtPosition, 'function TRange_AtPosition(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Elem, 'function TRange_Elem(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Element, 'function TRange_Element(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Entry, 'function TRange_Entry(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Fetch, 'function TRange_Fetch(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Get, 'function TRange_Get(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Lookup, 'function TRange_Lookup(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_GetValue, 'function TRange_GetValue(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Member, 'function TRange_Member(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Nth, 'function TRange_Nth(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Rand, 'function TRange_Rand(const range: TRange): Integer;');
