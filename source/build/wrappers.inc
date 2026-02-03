@@ -1184,6 +1184,8 @@ function TRange_Nth(const range: TRange; const index: Integer = 0): Integer; cde
 function TRange_Rand(const range: TRange): Integer; cdecl; begin Result := range.Rand; end;
 function TRange_Randomize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Randomize; end;
 function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange; cdecl; begin Result := range.Populate(arr); end;
+function TRange_Term(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Term(index); end;
+function TRange_Map(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Map(index); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

@@ -1228,6 +1228,8 @@ begin
   AddFunction(@TRange_Rand, 'function TRange_Rand(const range: TRange): Integer;');
   AddFunction(@TRange_Randomize, 'function TRange_Randomize(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Populate, 'function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange;');
+  AddFunction(@TRange_Term, 'function TRange_Term(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Map, 'function TRange_Map(const range: TRange; const index: Integer = 0): Integer;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
