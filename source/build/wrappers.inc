@@ -740,7 +740,7 @@ function TRange_Localize(var range: TRange): Integer; cdecl; begin Result := ran
 function TRange_Implicit1(const val: Integer): TRange; overload; cdecl; begin Result := val; end;
 function TRange_Implicit2(const bytes: TByteSet): TRange; overload; cdecl; begin Result := bytes; end;
 function TRange_Implicit3(const arr: TIntegerArray): TRange; overload; cdecl; begin Result := arr; end;
-function TRange_ToString(const range: TRange): string; cdecl; begin Result := range; end;
+function TRange_GetString(const range: TRange): string; cdecl; begin Result := range; end;
 function TRange_ToTIA(const range: TRange): TIntegerArray; cdecl; begin Result := range; end;
 function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(rStart, rStop); end;
 function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
@@ -1186,6 +1186,15 @@ function TRange_Randomize(const range: TRange): TIntegerArray; cdecl; begin Resu
 function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange; cdecl; begin Result := range.Populate(arr); end;
 function TRange_Term(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Term(index); end;
 function TRange_Map(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Map(index); end;
+function TRange_Wind(const range: TRange): Integer; overload; cdecl; begin Result := range.Wind; end;
+function TRange_Winding(const range: TRange): Integer; overload; cdecl; begin Result := range.Winding; end;
+function TRange_Winds(const range: TRange): Integer; overload; cdecl; begin Result := range.Winds; end;
+function TRange_Windy(const range: TRange): Integer; overload; cdecl; begin Result := range.Windy; end;
+function TRange_Polarity(const range: TRange): Integer; overload; cdecl; begin Result := range.Polarity; end;
+function TRange_Sgn(const range: TRange): Integer; overload; cdecl; begin Result := range.Sgn; end;
+function TRange_Trend(const range: TRange): Integer; overload; cdecl; begin Result := range.Trend; end;
+function TRange_Text(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; overload; cdecl; begin Result := range.Text(glueRange, openRange, closeRange); end;
+function TRange_ToString(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; overload; cdecl; begin Result := range.ToString(glueRange, openRange, closeRange); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

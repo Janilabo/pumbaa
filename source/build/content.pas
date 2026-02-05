@@ -784,7 +784,7 @@ begin
   AddFunction(@TRange_Implicit1, 'function TRange_Implicit(const val: Integer): TRange; overload;');
   AddFunction(@TRange_Implicit2, 'function TRange_Implicit(const bytes: TByteSet): TRange; overload;');
   AddFunction(@TRange_Implicit3, 'function TRange_Implicit(const arr: TIntegerArray): TRange; overload;');
-  AddFunction(@TRange_ToString, 'function TRange_ToString(const range: TRange): string;');
+  AddFunction(@TRange_GetString, 'function TRange_GetString(const range: TRange): string;');
   AddFunction(@TRange_ToTIA, 'function TRange_ToTIA(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Create1, 'function TRange_Create(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
@@ -1230,6 +1230,15 @@ begin
   AddFunction(@TRange_Populate, 'function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange;');
   AddFunction(@TRange_Term, 'function TRange_Term(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Map, 'function TRange_Map(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_Wind, 'function TRange_Wind(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Winding, 'function TRange_Winding(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Winds, 'function TRange_Winds(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Windy, 'function TRange_Windy(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Polarity, 'function TRange_Polarity(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Sgn, 'function TRange_Sgn(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Trend, 'function TRange_Trend(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Text, 'function TRange_Text(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string; overload;');
+  AddFunction(@TRange_ToString, 'function TRange_ToString(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
