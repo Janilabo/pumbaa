@@ -1239,6 +1239,9 @@ begin
   AddFunction(@TRange_Trend, 'function TRange_Trend(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Text, 'function TRange_Text(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string; overload;');
   AddFunction(@TRange_ToString, 'function TRange_ToString(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string; overload;');
+  AddFunction(@TRange_Subdivide, 'function TRange_Subdivide(const range: TRange; const partCount: Integer): TRangeArray; overload;');
+  AddFunction(@TRange_Subdivided, 'function TRange_Subdivided(const range: TRange; const partCount: Integer): TRangeArray; overload;');
+  AddFunction(@TRange_Sliced, 'function TRange_Sliced(const range: TRange; const partCount: Integer): TRangeArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
