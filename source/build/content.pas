@@ -1239,9 +1239,16 @@ begin
   AddFunction(@TRange_Trend, 'function TRange_Trend(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Text, 'function TRange_Text(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string; overload;');
   AddFunction(@TRange_ToString, 'function TRange_ToString(const range: TRange; const glueRange: string = ''..''; const openRange: string = ''[''; const closeRange: string = '']''): string; overload;');
-  AddFunction(@TRange_Subdivide, 'function TRange_Subdivide(const range: TRange; const partCount: Integer): TRangeArray; overload;');
-  AddFunction(@TRange_Subdivided, 'function TRange_Subdivided(const range: TRange; const partCount: Integer): TRangeArray; overload;');
-  AddFunction(@TRange_Sliced, 'function TRange_Sliced(const range: TRange; const partCount: Integer): TRangeArray; overload;');
+  AddFunction(@TRange_Subdiv, 'function TRange_Subdiv(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Subdivide, 'function TRange_Subdivide(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Subdivided, 'function TRange_Subdivided(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Subdivision, 'function TRange_Subdivision(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Sliced, 'function TRange_Sliced(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Splinter, 'function TRange_Splinter(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Divided, 'function TRange_Divided(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Distributed, 'function TRange_Distributed(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Segmented, 'function TRange_Segmented(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Partitioned, 'function TRange_Partitioned(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

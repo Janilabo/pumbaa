@@ -1195,9 +1195,16 @@ function TRange_Sgn(const range: TRange): Integer; overload; cdecl; begin Result
 function TRange_Trend(const range: TRange): Integer; overload; cdecl; begin Result := range.Trend; end;
 function TRange_Text(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; overload; cdecl; begin Result := range.Text(glueRange, openRange, closeRange); end;
 function TRange_ToString(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; overload; cdecl; begin Result := range.ToString(glueRange, openRange, closeRange); end;
-function TRange_Subdivide(const range: TRange; const partCount: Integer): TRangeArray; overload; cdecl; begin Result := range.Subdivide(partCount); end;
-function TRange_Subdivided(const range: TRange; const partCount: Integer): TRangeArray; overload; cdecl; begin Result := range.Subdivided(partCount); end;
-function TRange_Sliced(const range: TRange; const partCount: Integer): TRangeArray; overload; cdecl; begin Result := range.Sliced(partCount); end;
+function TRange_Subdiv(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Subdiv(partCount); end;
+function TRange_Subdivide(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Subdivide(partCount); end;
+function TRange_Subdivided(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Subdivided(partCount); end;
+function TRange_Subdivision(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Subdivision(partCount); end;
+function TRange_Sliced(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Sliced(partCount); end;
+function TRange_Splinter(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Splinter(partCount); end;
+function TRange_Divided(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Divided(partCount); end;
+function TRange_Distributed(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Distributed(partCount); end;
+function TRange_Segmented(const range: TRange; const partCount: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Segmented(partCount); end;
+function TRange_Partitioned(const range: TRange; const partSize: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Partitioned(partSize); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
