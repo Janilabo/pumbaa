@@ -1248,7 +1248,13 @@ begin
   AddFunction(@TRange_Divided, 'function TRange_Divided(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Distributed, 'function TRange_Distributed(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Segmented, 'function TRange_Segmented(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Partitions, 'function TRange_Partitions(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Partitioned, 'function TRange_Partitioned(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Chunks, 'function TRange_Chunks(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Parted, 'function TRange_Parted(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Parts, 'function TRange_Parts(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_ToParts, 'function TRange_ToParts(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Separate, 'function TRange_Separate(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
