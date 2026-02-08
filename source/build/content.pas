@@ -1244,6 +1244,7 @@ begin
   AddFunction(@TRange_Subdivided, 'function TRange_Subdivided(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Subdivision, 'function TRange_Subdivision(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Sliced, 'function TRange_Sliced(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Slices, 'function TRange_Slices(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Splinter, 'function TRange_Splinter(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Divided, 'function TRange_Divided(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Distributed, 'function TRange_Distributed(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
@@ -1368,6 +1369,8 @@ begin
   AddFunction(@TIntegerArray_Trace2, 'function TIntegerArray_Trace(const arr: TIntegerArray; const index: Integer; const limits: TRange; const tolerance: Integer = 1): TRange; overload;');
   AddFunction(@TIntegerArray_ExpandGradient, 'function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer): TRange;');
   AddFunction(@TIntegerArray_Hits, 'function TIntegerArray_Hits(const arr: TIntegerArray; const items: TRange; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_Merge, 'function TIntegerArray_Merge(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Fusion, 'function TIntegerArray_Fusion(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_BSearch, 'function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
   AddFunction(@TIntegerArray_BinaryCountingSort, 'function TIntegerArray_BinaryCountingSort(var arr: TIntegerArray; const aAscending: Boolean = True; const maxRange: Integer = 2000): Integer;');
