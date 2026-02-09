@@ -1022,6 +1022,9 @@ begin
   AddFunction(@TRange_Magnitude, 'function TRange_Magnitude(const range: TRange): Integer;');
   AddFunction(@TRange_Signum, 'function TRange_Signum(const range: TRange): Integer;');
   AddFunction(@TRange_Slope, 'function TRange_Slope(const range: TRange): Integer;');
+  AddFunction(@TRange_State, 'function TRange_State(const range: TRange): Integer;');
+  AddFunction(@TRange_Status, 'function TRange_Status(const range: TRange): Integer;');
+  AddFunction(@TRange_Flow, 'function TRange_Flow(const range: TRange): Integer;');
   AddFunction(@TRange_Orientation, 'function TRange_Orientation(const range: TRange): Integer;');
   AddFunction(@TRange_Deficit, 'function TRange_Deficit(const range: TRange): Integer;');
   AddFunction(@TRange_Digit, 'function TRange_Digit(const range: TRange; const x: Integer): Boolean;');
@@ -1372,7 +1375,10 @@ begin
   AddFunction(@TIntegerArray_Merge, 'function TIntegerArray_Merge(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Merged, 'function TIntegerArray_Merged(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Fusion, 'function TIntegerArray_Fusion(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Streaks, 'function TIntegerArray_Streaks(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Sequences, 'function TIntegerArray_Sequences(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_TRA, 'function TIntegerArray_TRA(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_ToTRangeArray, 'function TIntegerArray_ToTRangeArray(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Consolidate, 'function TIntegerArray_Consolidate(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_BSearch, 'function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BSort, 'function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');

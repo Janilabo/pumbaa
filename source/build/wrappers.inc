@@ -972,6 +972,9 @@ function TRange_Direction(const range: TRange): Integer; cdecl; begin Result := 
 function TRange_Magnitude(const range: TRange): Integer; cdecl; begin Result := range.Magnitude; end;
 function TRange_Signum(const range: TRange): Integer; cdecl; begin Result := range.Signum; end;
 function TRange_Slope(const range: TRange): Integer; cdecl; begin Result := range.Slope; end;
+function TRange_State(const range: TRange): Integer; cdecl; begin Result := range.State; end;
+function TRange_Status(const range: TRange): Integer; cdecl; begin Result := range.Status; end;
+function TRange_Flow(const range: TRange): Integer; cdecl; begin Result := range.Flow; end;
 function TRange_Orientation(const range: TRange): Integer; cdecl; begin Result := range.Orientation; end;
 function TRange_Deficit(const range: TRange): Integer; cdecl; begin Result := range.Deficit; end;
 function TRange_Digit(const range: TRange; const x: Integer): Boolean; cdecl; begin Result := range.Digit(x); end;
@@ -1329,7 +1332,10 @@ function TIntegerArray_Hits(const arr: TIntegerArray; const items: TRange; const
 function TIntegerArray_Merge(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Merge(rAscending); end;
 function TIntegerArray_Merged(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Merged(rAscending); end;
 function TIntegerArray_Fusion(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Fusion; end;
+function TIntegerArray_Streaks(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Streaks; end;
+function TIntegerArray_Sequences(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Sequences; end;
 function TIntegerArray_TRA(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.TRA; end;
+function TIntegerArray_ToTRangeArray(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.ToTRangeArray; end;
 function TIntegerArray_Consolidate(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Consolidate; end;
 function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BSearch(value, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
