@@ -884,8 +884,13 @@ function TRange_Shuffle(const range: TRange; const shuffles: Integer = 1): TInte
 function TRange_Any(const range: TRange): Integer; cdecl; begin Result := range.Any; end;
 function TRange_Some1(const range: TRange): TIntegerArray; cdecl; begin Result := range.Some; end;
 function TRange_Some2(const range: TRange; const amount: Integer): TIntegerArray; cdecl; begin Result := range.Some(amount); end;
+function TRange_Numerals(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Numerals; end;
+function TRange_Numeralize(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Numeralize; end;
+function TRange_Pile(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Pile; end;
+function TRange_Decompose(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Decompose; end;
 function TRange_All(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.All; end;
 function TRange_Bank(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Bank; end;
+function TRange_Breakdown(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Breakdown; end;
 function TRange_Stock(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Stock; end;
 function TRange_Storage(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Storage; end;
 function TRange_Unzip(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unzip; end;
@@ -1333,6 +1338,8 @@ function TIntegerArray_Merge(const arr: TIntegerArray; const rAscending: Boolean
 function TIntegerArray_Merged(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Merged(rAscending); end;
 function TIntegerArray_Fusion(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Fusion; end;
 function TIntegerArray_Streaks(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Streaks; end;
+function TIntegerArray_Streams(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Streams; end;
+function TIntegerArray_Strands(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Strands; end;
 function TIntegerArray_Sequences(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Sequences; end;
 function TIntegerArray_TRA(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.TRA; end;
 function TIntegerArray_ToTRangeArray(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.ToTRangeArray; end;

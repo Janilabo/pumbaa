@@ -932,8 +932,13 @@ begin
   AddFunction(@TRange_Any, 'function TRange_Any(const range: TRange): Integer;');
   AddFunction(@TRange_Some1, 'function TRange_Some(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Some2, 'function TRange_Some(const range: TRange; const amount: Integer): TIntegerArray; overload;');
+  AddFunction(@TRange_Numerals, 'function TRange_Numerals(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Numeralize, 'function TRange_Numeralize(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Pile, 'function TRange_Pile(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Decompose, 'function TRange_Decompose(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_All, 'function TRange_All(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Bank, 'function TRange_Bank(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Breakdown, 'function TRange_Breakdown(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Stock, 'function TRange_Stock(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Storage, 'function TRange_Storage(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Unzip, 'function TRange_Unzip(const range: TRange): TIntegerArray; overload;');
@@ -1376,6 +1381,8 @@ begin
   AddFunction(@TIntegerArray_Merged, 'function TIntegerArray_Merged(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Fusion, 'function TIntegerArray_Fusion(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Streaks, 'function TIntegerArray_Streaks(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Streams, 'function TIntegerArray_Streams(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Strands, 'function TIntegerArray_Strands(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Sequences, 'function TIntegerArray_Sequences(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_TRA, 'function TIntegerArray_TRA(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_ToTRangeArray, 'function TIntegerArray_ToTRangeArray(const arr: TIntegerArray): TRangeArray; overload;');
