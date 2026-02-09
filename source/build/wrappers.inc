@@ -1327,7 +1327,10 @@ function TIntegerArray_Trace2(const arr: TIntegerArray; const index: Integer; co
 function TIntegerArray_ExpandGradient(const arr: TIntegerArray; const index: Integer; const tolerance: Integer): TRange; cdecl; begin Result := arr.ExpandGradient(index, tolerance); end;
 function TIntegerArray_Hits(const arr: TIntegerArray; const items: TRange; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Hits(items, oAscending); end;
 function TIntegerArray_Merge(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Merge(rAscending); end;
+function TIntegerArray_Merged(const arr: TIntegerArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Merged(rAscending); end;
 function TIntegerArray_Fusion(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Fusion; end;
+function TIntegerArray_TRA(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.TRA; end;
+function TIntegerArray_Consolidate(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Consolidate; end;
 function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BSearch(value, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
