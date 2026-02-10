@@ -850,6 +850,8 @@ begin
   AddFunction(@TRange_Cardinality, 'function TRange_Cardinality(const range: TRange): Integer;');
   AddFunction(@TRange_Width, 'function TRange_Width(const range: TRange): Integer;');
   AddFunction(@TRange_Len, 'function TRange_Len(const range: TRange): Integer;');
+  AddFunction(@TRange_Amount, 'function TRange_Amount(const range: TRange): Int64');
+  AddFunction(@TRange_Perimeter, 'function TRange_Perimeter(const range: TRange): Int64;');
   AddFunction(@TRange_Span, 'function TRange_Span(const range: TRange): Integer;');
   AddFunction(@TRange_Frame1, 'function TRange_Frame(const range: TRange; var rSize: Integer): TRange; overload;');
   AddFunction(@TRange_Frame2, 'function TRange_Frame(const range: TRange): TRange; overload;');

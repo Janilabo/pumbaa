@@ -801,6 +801,8 @@ function TRange_Size2(const range: TRange; var minVal, maxVal: Integer): Integer
 function TRange_Capacity(const range: TRange): Integer; cdecl; begin Result := range.Capacity; end;
 function TRange_Cardinality(const range: TRange): Integer; cdecl; begin Result := range.Cardinality; end;
 function TRange_Len(const range: TRange): Integer; cdecl; begin Result := range.Len; end;
+function TRange_Amount(const range: TRange): Int64; cdecl; begin Result := range.Amount; end;
+function TRange_Perimeter(const range: TRange): Int64; cdecl; begin Result := range.Perimeter; end;
 function TRange_Width(const range: TRange): Integer; cdecl; begin Result := range.Width; end;
 function TRange_Span(const range: TRange): Integer; cdecl; begin Result := range.Span; end;
 function TRange_Frame1(const range: TRange; var rSize: Integer): TRange; overload; cdecl; begin Result := range.Frame(rSize); end;
