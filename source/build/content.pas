@@ -1373,8 +1373,12 @@ begin
   AddFunction(@TIntegerArray_Broaden2, 'function TIntegerArray_Broaden(const arr: TIntegerArray; const rValues: TRange; const sSorted: Boolean = False): TRange; overload;');
   AddFunction(@TIntegerArray_ToRanges1, 'function TIntegerArray_ToRanges(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_ToRanges2, 'function TIntegerArray_ToRanges(const arr: TIntegerArray; const aAscending: Boolean): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Rangefy, 'function TIntegerArray_Rangefy(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Rangefied, 'function TIntegerArray_Rangefied(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Rangified, 'function TIntegerArray_Rangified(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Rangify, 'function TIntegerArray_Rangify(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Runified, 'function TIntegerArray_Runified(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_Runify, 'function TIntegerArray_Runify(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Ranges1, 'function TIntegerArray_Ranges(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Ranges2, 'function TIntegerArray_Ranges(const arr: TIntegerArray; const aAscending: Boolean): TRangeArray; overload;');
   AddFunction(@TIntegerArray_CountingSort, 'function TIntegerArray_CountingSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer;');
