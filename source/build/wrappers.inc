@@ -1330,6 +1330,8 @@ function TIntegerArray_Broaden2(const arr: TIntegerArray; const rValues: TRange;
 function TIntegerArray_ToRanges1(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.ToRanges; end;
 function TIntegerArray_ToRanges2(const arr: TIntegerArray; const aAscending: Boolean): TRangeArray; overload; cdecl; begin Result := arr.ToRanges(aAscending); end;
 function TIntegerArray_ToTRA(const arr: TIntegerArray; const buffer: Integer = 0): TRangeArray; overload; cdecl; begin Result := arr.ToTRA(buffer); end;
+function TIntegerArray_Rangified(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Rangified; end;
+function TIntegerArray_Rangify(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Rangify; end;
 function TIntegerArray_Ranges1(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Ranges; end;
 function TIntegerArray_Ranges2(const arr: TIntegerArray; const aAscending: Boolean): TRangeArray; overload; cdecl; begin Result := arr.Ranges(aAscending); end;
 function TIntegerArray_CountingSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.CountingSort(aAscending); end;
