@@ -843,6 +843,7 @@ begin
   AddFunction(@TRange_Length, 'function TRange_Length(const range: TRange): Integer; overload;');
   AddFunction(@TRange_GetLength, 'function TRange_GetLength(const range: TRange): Integer; overload;');
   AddFunction(@TRange_GetSize, 'function TRange_GetSize(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_GetAmount, 'function TRange_GetAmount(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Sized, 'function TRange_Sized(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Size1, 'function TRange_Size(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Size2, 'function TRange_Size(const range: TRange; var minVal, maxVal: Integer): Integer; overload;');
@@ -1002,6 +1003,11 @@ begin
   AddFunction(@TRange_IncludeMin, 'function TRange_IncludeMin(const range: TRange; const val: Integer): TRange; overload;');
   AddFunction(@TRange_Distribute, 'function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray;');
   AddFunction(@TRange_Partition, 'function TRange_Partition(const range: TRange; const size: Integer): TRangeArray;');
+  AddFunction(@TRange_Halve, 'function TRange_Halve(const range: TRange): TRangeArray;');
+  AddFunction(@TRange_Halved, 'function TRange_Halved(const range: TRange): TRangeArray;');
+  AddFunction(@TRange_Halves, 'function TRange_Halves(const range: TRange): TRangeArray;');
+  AddFunction(@TRange_Sever1, 'function TRange_Sever(const range: TRange; const atValue: Integer): TRangeArray; overload;');
+  AddFunction(@TRange_Sever2, 'function TRange_Sever(const range: TRange; const atValues: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TRange_Divide, 'function TRange_Divide(const range: TRange; const size: Integer): TRangeArray;');
   AddFunction(@TRange_Chunked, 'function TRange_Chunked(const range: TRange; const chunkSize: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Chunkify, 'function TRange_Chunkify(const range: TRange; const chunkSize: Integer = 2): TRangeArray; overload;');
@@ -1235,7 +1241,9 @@ begin
   AddFunction(@TRange_GetValue, 'function TRange_GetValue(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Member, 'function TRange_Member(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Nth, 'function TRange_Nth(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_NthVal, 'function TRange_NthVal(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Rand, 'function TRange_Rand(const range: TRange): Integer;');
+  AddFunction(@TRange_Randomly, 'function TRange_Randomly(const range: TRange): Integer;');
   AddFunction(@TRange_Randomize, 'function TRange_Randomize(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Populate, 'function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange;');
   AddFunction(@TRange_Term, 'function TRange_Term(const range: TRange; const index: Integer = 0): Integer;');

@@ -795,6 +795,7 @@ function TRange_Population(const range: TRange): Integer; overload; cdecl; begin
 function TRange_Length(const range: TRange): Integer; overload; cdecl; begin Result := range.Length; end;
 function TRange_GetLength(const range: TRange): Integer; overload; cdecl; begin Result := range.GetLength; end;
 function TRange_GetSize(const range: TRange): Integer; overload; cdecl; begin Result := range.GetSize; end;
+function TRange_GetAmount(const range: TRange): Int64; overload; cdecl; begin Result := range.GetAmount; end;
 function TRange_Sized(const range: TRange): Integer; overload; cdecl; begin Result := range.Sized; end;
 function TRange_Size1(const range: TRange): Integer; overload; cdecl; begin Result := range.Size; end;
 function TRange_Size2(const range: TRange; var minVal, maxVal: Integer): Integer; overload; cdecl; begin Result := range.Size(minVal, maxVal); end;
@@ -954,6 +955,11 @@ function TRange_IncludeMax(const range: TRange; const val: Integer): TRange; ove
 function TRange_IncludeMin(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.IncludeMin(val); end;
 function TRange_Distribute(const range: TRange; const parts: Integer): TRangeArray; cdecl; begin Result := range.Distribute(parts); end;
 function TRange_Partition(const range: TRange; const size: Integer): TRangeArray; cdecl; begin Result := range.Partition(size); end;
+function TRange_Halve(const range: TRange): TRangeArray; cdecl; begin Result := range.Halve; end;
+function TRange_Halved(const range: TRange): TRangeArray; cdecl; begin Result := range.Halved; end;
+function TRange_Halves(const range: TRange): TRangeArray; cdecl; begin Result := range.Halves; end;
+function TRange_Sever1(const range: TRange; const atValue: Integer): TRangeArray; overload; cdecl; begin Result := range.Sever(atValue); end;
+function TRange_Sever2(const range: TRange; const atValues: TIntegerArray): TRangeArray; overload; cdecl; begin Result := range.Sever(atValues); end;
 function TRange_Divide(const range: TRange; const size: Integer): TRangeArray; cdecl; begin Result := range.Divide(size); end;
 function TRange_Neighbor(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Neighbor(b); end;
 function TRange_Neighbour(const range: TRange; const b: TRange): Boolean; cdecl; begin Result := range.Neighbour(b); end;
@@ -1191,7 +1197,9 @@ function TRange_Get(const range: TRange; const index: Integer = 0): Integer; cde
 function TRange_GetValue(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.GetValue(index); end;
 function TRange_Member(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Member(index); end;
 function TRange_Nth(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Nth(index); end;
+function TRange_NthVal(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.NthVal(index); end;
 function TRange_Rand(const range: TRange): Integer; cdecl; begin Result := range.Rand; end;
+function TRange_Randomly(const range: TRange): Integer; cdecl; begin Result := range.Randomly; end;
 function TRange_Randomize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Randomize; end;
 function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange; cdecl; begin Result := range.Populate(arr); end;
 function TRange_Term(const range: TRange; const index: Integer = 0): Integer; cdecl; begin Result := range.Term(index); end;
