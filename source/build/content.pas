@@ -1366,6 +1366,10 @@ begin
   AddFunction(@TIntegerArray_FilterEven, 'function TIntegerArray_FilterEven(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_ExtractOdd, 'function TIntegerArray_ExtractOdd(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_FilterOdd, 'function TIntegerArray_FilterOdd(const arr: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_ExtractValues1, 'function TIntegerArray_ExtractValues(const arr: TIntegerArray; const values: TRange): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_ExtractValues2, 'function TIntegerArray_ExtractValues(const arr: TIntegerArray; const values: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_FilterValues1, 'function TIntegerArray_FilterValues(const arr: TIntegerArray; const values: TRange): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_FilterValues2, 'function TIntegerArray_FilterValues(const arr: TIntegerArray; const values: TRangeArray): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_Reinit, 'function TIntegerArray_Reinit(var arr: TIntegerArray): Integer;');
   AddFunction(@TIntegerArray_Attach, 'function TIntegerArray_Attach(var arr: TIntegerArray; const items: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_Embed, 'function TIntegerArray_Embed(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload;');
@@ -1992,7 +1996,7 @@ begin
   AddFunction(@TRangeArray_Zip, 'function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray;');
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer;');
-  AddFunction(@TRangeArray_Squeeze, 'function TRangeArray_Squeeze(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Squeeze, 'function TRangeArray_Squeeze(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');

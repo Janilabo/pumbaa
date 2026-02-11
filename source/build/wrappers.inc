@@ -1322,6 +1322,10 @@ function TIntegerArray_ExtractEven(const arr: TIntegerArray): TIntegerArray; ove
 function TIntegerArray_FilterEven(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterEven; end;
 function TIntegerArray_ExtractOdd(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.ExtractOdd; end;
 function TIntegerArray_FilterOdd(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterOdd; end;
+function TIntegerArray_ExtractValues1(const arr: TIntegerArray; const values: TRange): TIntegerArray; overload; cdecl; begin Result := arr.ExtractValues(values); end;
+function TIntegerArray_ExtractValues2(const arr: TIntegerArray; const values: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.ExtractValues(values); end;
+function TIntegerArray_FilterValues1(const arr: TIntegerArray; const values: TRange): TIntegerArray; overload; cdecl; begin Result := arr.FilterValues(values); end;
+function TIntegerArray_FilterValues2(const arr: TIntegerArray; const values: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterValues(values); end;
 function TIntegerArray_Reinit(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Reinit; end;
 function TIntegerArray_Attach(var arr: TIntegerArray; const items: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Attach(items); end;
 function TIntegerArray_Embed(var arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Embed(items, index); end;
@@ -1948,7 +1952,7 @@ function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TInteg
 function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray; cdecl; begin Result.Zip(startArr, stopArr); end;
 function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gaps; end;
 function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.SortBySize(oAscending); end;
-function TRangeArray_Squeeze(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Squeeze; end;
+function TRangeArray_Squeeze(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Squeeze(rAscending); end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
