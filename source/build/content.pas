@@ -1242,9 +1242,11 @@ begin
   AddFunction(@TRange_Member, 'function TRange_Member(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Nth, 'function TRange_Nth(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_NthVal, 'function TRange_NthVal(const range: TRange; const index: Integer = 0): Integer;');
+  AddFunction(@TRange_NValue, 'function TRange_NValue(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Rand, 'function TRange_Rand(const range: TRange): Integer;');
   AddFunction(@TRange_Randomly, 'function TRange_Randomly(const range: TRange): Integer;');
   AddFunction(@TRange_Randomize, 'function TRange_Randomize(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Raffle, 'function TRange_Raffle(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Populate, 'function TRange_Populate(const range: TRange; var arr: TIntegerArray): TRange;');
   AddFunction(@TRange_Term, 'function TRange_Term(const range: TRange; const index: Integer = 0): Integer;');
   AddFunction(@TRange_Map, 'function TRange_Map(const range: TRange; const index: Integer = 0): Integer;');
@@ -1395,6 +1397,7 @@ begin
   AddFunction(@TIntegerArray_Strands, 'function TIntegerArray_Strands(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Sequences, 'function TIntegerArray_Sequences(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_TRA, 'function TIntegerArray_TRA(const arr: TIntegerArray): TRangeArray; overload;');
+  AddFunction(@TIntegerArray_ToTRA, 'function TIntegerArray_ToTRA(const arr: TIntegerArray; const buffer: Integer = 0): TRangeArray; overload;');
   AddFunction(@TIntegerArray_ToTRangeArray, 'function TIntegerArray_ToTRangeArray(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_Consolidate, 'function TIntegerArray_Consolidate(const arr: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TIntegerArray_BSearch, 'function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
@@ -1983,6 +1986,7 @@ begin
   AddFunction(@TRangeArray_Zip, 'function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray;');
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer;');
+  AddFunction(@TRangeArray_Squeeze, 'function TRangeArray_Squeeze(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
