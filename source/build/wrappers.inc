@@ -1938,7 +1938,9 @@ function TRangeArray_Stop1(const arr: TRangeArray): TIntegerArray; cdecl; begin 
 function TRangeArray_Stop2(const arr: TRangeArray; const val: Integer): TIntegerArray; cdecl; begin Result := stop(arr, val); end;
 function TRangeArray_Stop3(const arr: TRangeArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := stop(arr, vals); end;
 function TRangeArray_Bounds(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Bounds; end;
+function TRangeArray_Normalize(var arr: TRangeArray): Integer; cdecl; begin Result := arr.Normalize; end;
 function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray; cdecl; begin Result := arr.Normalized; end;
+function TRangeArray_Normally(const arr: TRangeArray): TRangeArray; cdecl; begin Result := arr.Normally; end;
 function TRangeArray_Range(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Range; end;
 function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Starting; end;
 function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Stopping; end;

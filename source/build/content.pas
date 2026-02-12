@@ -1982,7 +1982,9 @@ begin
   AddFunction(@TRangeArray_Stop2, 'function TRangeArray_Stop(const arr: TBoxArray; const val: Integer): TIntegerArray; overload;');
   AddFunction(@TRangeArray_Stop3, 'function TRangeArray_Stop(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TRangeArray_Bounds, 'function TRangeArray_Bounds(const arr: TRangeArray): TRange;');
+  AddFunction(@TRangeArray_Normalize, 'function TRangeArray_Normalize(var arr: TRangeArray): Integer;');
   AddFunction(@TRangeArray_Normalized, 'function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray;');
+  AddFunction(@TRangeArray_Normally, 'function TRangeArray_Normally(const arr: TRangeArray): TRangeArray;');
   AddFunction(@TRangeArray_Range, 'function TRangeArray_Range(const arr: TRangeArray): TRange;');
   AddFunction(@TRangeArray_Starting, 'function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray;');
   AddFunction(@TRangeArray_Stopping, 'function TRangeArray_Stopping(const arr: TRangeArray): TIntegerArray;');
