@@ -1085,6 +1085,8 @@ begin
   AddFunction(@TRange_Extracted, 'function TRange_Extracted(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Steps, 'function TRange_Steps(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Recursed, 'function TRange_Recursed(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Recursively, 'function TRange_Recursively(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Particles, 'function TRange_Particles(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Limit, 'function TRange_Limit(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_MinLimit, 'function TRange_MinLimit(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_MaxLimit, 'function TRange_MaxLimit(const range: TRange; const val: Integer): Integer; overload;');
@@ -1207,6 +1209,7 @@ begin
   AddFunction(@TRange_Captured, 'function TRange_Captured(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Snapshot, 'function TRange_Snapshot(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Iterated, 'function TRange_Iterated(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Iteration, 'function TRange_Iteration(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Split, 'function TRange_Split(const range: TRange; var rLeft, rRight: TRange): Integer;');
   AddFunction(@TRange_AMean, 'function TRange_AMean(const range: TRange): Double;');
   AddFunction(@TRange_Median, 'function TRange_Median(const range: TRange): Double;');

@@ -1035,6 +1035,8 @@ function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; be
 function TRange_Extracted(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extracted; end;
 function TRange_Steps(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Steps; end;
 function TRange_Recursed(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Recursed; end;
+function TRange_Recursively(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Recursively; end;
+function TRange_Particles(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Particles; end;
 function TRange_Limit(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Limit(val); end;
 function TRange_MinLimit(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.MinLimit(val); end;
 function TRange_MaxLimit(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.MaxLimit(val); end;
@@ -1166,6 +1168,7 @@ function TRange_Capture(const range: TRange): TIntegerArray; cdecl; begin Result
 function TRange_Captured(const range: TRange): TIntegerArray; cdecl; begin Result := range.Captured; end;
 function TRange_Snapshot(const range: TRange): TIntegerArray; cdecl; begin Result := range.Snapshot; end;
 function TRange_Iterated(const range: TRange): TIntegerArray; cdecl; begin Result := range.Iterated; end;
+function TRange_Iteration(const range: TRange): TIntegerArray; cdecl; begin Result := range.Iteration; end;
 function TRange_Split(const range: TRange; var rLeft, rRight: TRange): Integer; cdecl; begin Result := range.Split(rLeft, rRight); end;
 function TRange_Middleway(const range: TRange): Integer; cdecl; begin Result := range.Middleway; end;
 function TRange_Medoid(const range: TRange): Integer; cdecl; begin Result := range.Medoid; end;
