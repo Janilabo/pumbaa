@@ -874,6 +874,7 @@ begin
   AddFunction(@TRange_Top, 'function TRange_Top(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Exceeds, 'function TRange_Exceeds(const range: TRange; const maxElements: Integer): Boolean;');
   AddFunction(@TRange_Insufficient, 'function TRange_Insufficient(const range: TRange; const minElements: Integer): Boolean;');
+  AddFunction(@TRange_Digited, 'function TRange_Digited(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Digits1, 'function TRange_Digits(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Digits2, 'function TRange_Digits(const range: TRange; const dIndex: Integer): Integer; overload;');
   AddFunction(@TRange_Digits3, 'function TRange_Digits(const range: TRange; const dIDs: TIntegerArray): TIntegerArray; overload;');
@@ -885,6 +886,8 @@ begin
   AddFunction(@TRange_Elements, 'function TRange_Elements(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Sequence, 'function TRange_Sequence(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Numbers, 'function TRange_Numbers(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Numerics, 'function TRange_Numerics(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Numericize, 'function TRange_Numericize(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Items, 'function TRange_Items(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArr, 'function TRange_ToArr(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_ToArray, 'function TRange_ToArray(const range: TRange): TIntegerArray;');
@@ -1983,7 +1986,8 @@ begin
   AddFunction(@TRangeArray_Stop3, 'function TRangeArray_Stop(const arr: TBoxArray; const vals: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TRangeArray_Bounds, 'function TRangeArray_Bounds(const arr: TRangeArray): TRange;');
   AddFunction(@TRangeArray_Normalize, 'function TRangeArray_Normalize(var arr: TRangeArray): Integer;');
-  AddFunction(@TRangeArray_Normalized, 'function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray;');
+  AddFunction(@TRangeArray_Normalized1, 'function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Normalized2, 'function TRangeArray_Normalized(const arr: TRangeArray; out reversedIndices: TIntegerArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Normally, 'function TRangeArray_Normally(const arr: TRangeArray): TRangeArray;');
   AddFunction(@TRangeArray_Range, 'function TRangeArray_Range(const arr: TRangeArray): TRange;');
   AddFunction(@TRangeArray_Starting, 'function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray;');
@@ -1999,6 +2003,18 @@ begin
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer;');
   AddFunction(@TRangeArray_Squeeze, 'function TRangeArray_Squeeze(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Ascending, 'function TRangeArray_Ascending(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Ascends, 'function TRangeArray_Ascends(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Descending, 'function TRangeArray_Descending(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Descends, 'function TRangeArray_Descends(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Decreasing, 'function TRangeArray_Decreasing(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Increasing, 'function TRangeArray_Increasing(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_IsAscending, 'function TRangeArray_IsAscending(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_IsDescending, 'function TRangeArray_IsDescending(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Ascend, 'function TRangeArray_Ascend(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Ascended, 'function TRangeArray_Ascended(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Descend, 'function TRangeArray_Descend(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Descended, 'function TRangeArray_Descended(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');

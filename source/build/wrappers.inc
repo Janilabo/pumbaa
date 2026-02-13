@@ -826,6 +826,7 @@ function TRange_Bottom(const range: TRange): Integer; overload; cdecl; begin Res
 function TRange_Top(const range: TRange): Integer; overload; cdecl; begin Result := range.Top; end;
 function TRange_Exceeds(const range: TRange; const maxElements: Integer): Boolean; cdecl; begin Result := range.Exceeds(maxElements); end;
 function TRange_Insufficient(const range: TRange; const minElements: Integer): Boolean; cdecl; begin Result := range.Insufficient(minElements); end;
+function TRange_Digited(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Digited; end;
 function TRange_Digits1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Digits; end;
 function TRange_Digits2(const range: TRange; const dIndex: Integer): Integer; overload; cdecl; begin Result := range.Digits(dIndex); end;
 function TRange_Digits3(const range: TRange; const dIDs: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := range.Digits(dIDs); end;
@@ -837,6 +838,8 @@ function TRange_Enumerated(const range: TRange): TIntegerArray; cdecl; begin Res
 function TRange_Elements(const range: TRange): TIntegerArray; cdecl; begin Result := range.Elements; end;
 function TRange_Sequence(const range: TRange): TIntegerArray; cdecl; begin Result := range.Sequence; end;
 function TRange_Numbers(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbers; end;
+function TRange_Numerics(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numerics; end;
+function TRange_Numericize(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numericize; end;
 function TRange_Items(const range: TRange): TIntegerArray; cdecl; begin Result := range.Items; end;
 function TRange_ToArr(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArr; end;
 function TRange_ToArray(const range: TRange): TIntegerArray; cdecl; begin Result := range.ToArray; end;
@@ -1939,7 +1942,8 @@ function TRangeArray_Stop2(const arr: TRangeArray; const val: Integer): TInteger
 function TRangeArray_Stop3(const arr: TRangeArray; const vals: TIntegerArray): TIntegerArray; cdecl; begin Result := stop(arr, vals); end;
 function TRangeArray_Bounds(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Bounds; end;
 function TRangeArray_Normalize(var arr: TRangeArray): Integer; cdecl; begin Result := arr.Normalize; end;
-function TRangeArray_Normalized(const arr: TRangeArray): TRangeArray; cdecl; begin Result := arr.Normalized; end;
+function TRangeArray_Normalized1(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Normalized; end;
+function TRangeArray_Normalized2(const arr: TRangeArray; out reversedIndices: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Normalized(reversedIndices); end;
 function TRangeArray_Normally(const arr: TRangeArray): TRangeArray; cdecl; begin Result := arr.Normally; end;
 function TRangeArray_Range(const arr: TRangeArray): TRange; cdecl; begin Result := arr.Range; end;
 function TRangeArray_Starting(const arr: TRangeArray): TIntegerArray; cdecl; begin Result := arr.Starting; end;
@@ -1955,6 +1959,18 @@ function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray; c
 function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gaps; end;
 function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer; cdecl; begin Result := arr.SortBySize(oAscending); end;
 function TRangeArray_Squeeze(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Squeeze(rAscending); end;
+function TRangeArray_Ascending(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Ascending; end;
+function TRangeArray_Ascends(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Ascends; end;
+function TRangeArray_Descending(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Descending; end;
+function TRangeArray_Descends(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Descends; end;
+function TRangeArray_Decreasing(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Decreasing; end;
+function TRangeArray_Increasing(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Increasing; end;
+function TRangeArray_IsAscending(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.IsAscending; end;
+function TRangeArray_IsDescending(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.IsDescending; end;
+function TRangeArray_Ascend(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Ascend; end;
+function TRangeArray_Ascended(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Ascended; end;
+function TRangeArray_Descend(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Descend; end;
+function TRangeArray_Descended(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Descended; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
