@@ -1282,6 +1282,10 @@ begin
   AddFunction(@TRange_Parts, 'function TRange_Parts(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_ToParts, 'function TRange_ToParts(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Separate, 'function TRange_Separate(const range: TRange; const partSize: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Ahead, 'function TRange_Ahead(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Behind, 'function TRange_Behind(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Precedes, 'function TRange_Precedes(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Succeeds, 'function TRange_Succeeds(const range: TRange; const val: Integer): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

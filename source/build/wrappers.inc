@@ -1238,6 +1238,10 @@ function TRange_Parted(const range: TRange; const partSize: Integer = 2): TRange
 function TRange_Parts(const range: TRange; const partSize: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Parts(partSize); end;
 function TRange_ToParts(const range: TRange; const partSize: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.ToParts(partSize); end;
 function TRange_Separate(const range: TRange; const partSize: Integer = 2): TRangeArray; overload; cdecl; begin Result := range.Separate(partSize); end;
+function TRange_Ahead(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Ahead(val); end;
+function TRange_Behind(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Behind(val); end;
+function TRange_Precedes(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Precedes(val); end;
+function TRange_Succeeds(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Succeeds(val); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
