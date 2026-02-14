@@ -1286,6 +1286,15 @@ begin
   AddFunction(@TRange_Behind, 'function TRange_Behind(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Precedes, 'function TRange_Precedes(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Succeeds, 'function TRange_Succeeds(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Retrograde, 'function TRange_Retrograde(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Backtrack, 'function TRange_Backtrack(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Reversion, 'function TRange_Reversion(const range: TRange): TRange; overload;');
+  AddFunction(@TRange_Rewind, 'function TRange_Rewind(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Revert, 'function TRange_Revert(const range: TRange): TRange; overload;');
+  AddFunction(@TRange_Turnaround, 'function TRange_Turnaround(const range: TRange): TRange; overload;');
+  AddFunction(@TRange_Deconstruct, 'function TRange_Deconstruct(const range: TRange; var rStart, rStop: Integer): Integer; overload;');
+  AddFunction(@TRange_Extents1, 'function TRange_Extents(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Extents2, 'function TRange_Extents(const range: TRange; var rMin, rMax: Integer): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

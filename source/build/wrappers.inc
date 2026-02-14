@@ -1242,6 +1242,15 @@ function TRange_Ahead(const range: TRange; const val: Integer): Boolean; overloa
 function TRange_Behind(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Behind(val); end;
 function TRange_Precedes(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Precedes(val); end;
 function TRange_Succeeds(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Succeeds(val); end;
+function TRange_Retrograde(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Retrograde; end;
+function TRange_Backtrack(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Backtrack; end;
+function TRange_Reversion(const range: TRange): TRange; overload; cdecl; begin Result := range.Reversion; end;
+function TRange_Rewind(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Rewind; end;
+function TRange_Revert(const range: TRange): TRange; overload; cdecl; begin Result := range.Revert; end;
+function TRange_Turnaround(const range: TRange): TRange; overload; cdecl; begin Result := range.Turnaround; end;
+function TRange_Deconstruct(const range: TRange; var rStart, rStop: Integer): Integer; overload; cdecl; begin Result := range.Deconstruct(rStart, rStop); end;
+function TRange_Extents1(const range: TRange): Integer; overload; cdecl; begin Result := range.Extents; end;
+function TRange_Extents2(const range: TRange; var rMin, rMax: Integer): Integer; overload; cdecl; begin Result := range.Extents(rMin, rMax); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
