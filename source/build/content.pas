@@ -656,6 +656,9 @@ begin
   AddFunction(@TBox_Pixels2, 'function TBox_Pixels(const bx: TBox; const index: Integer): TPoint; overload;');
   AddFunction(@TBox_Pixeled, 'function TBox_Pixeled(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Pts, 'function TBox_Pts(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_Atomize, 'function TBox_Atomize(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_Breakdown, 'function TBox_Breakdown(const bx: TBox): TPointArray; overload;');
+  AddFunction(@TBox_Decompose, 'function TBox_Decompose(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Elements, 'function TBox_Elements(const bx: TBox): TPointArray;');
   AddFunction(@TBox_Explode, 'function TBox_Explode(const bx: TBox): TPointArray; overload;');
   AddFunction(@TBox_Exploded, 'function TBox_Exploded(const bx: TBox): TPointArray;');
@@ -922,8 +925,9 @@ begin
   AddFunction(@TRange_Data, 'function TRange_Data(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Gather, 'function TRange_Gather(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Generate, 'function TRange_Generate(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Disjoint, 'function TRange_Disjoint(const range: TRange; const target: TRange): Boolean;');
   AddFunction(@TRange_Generated, 'function TRange_Generated(const range: TRange): TIntegerArray;');
-  AddFunction(@TRange_Disjoint, 'function TRange_Disjoint(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Dismantle, 'function TRange_Dismantle(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Numbered, 'function TRange_Numbered(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Pull, 'function TRange_Pull(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Members, 'function TRange_Members(const range: TRange): TIntegerArray;');

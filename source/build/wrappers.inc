@@ -614,6 +614,9 @@ function TBox_Pixels1(const bx: TBox): TPointArray; overload; cdecl; begin Resul
 function TBox_Pixels2(const bx: TBox; const index: Integer): TPoint; overload; cdecl; begin Result := bx.Pixels(index); end;
 function TBox_Pixeled(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pixeled; end;
 function TBox_Pts(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Pts; end;
+function TBox_Atomize(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Atomize; end;
+function TBox_Breakdown(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Breakdown; end;
+function TBox_Decompose(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Decompose; end;
 function TBox_Elements(const bx: TBox): TPointArray; cdecl; begin Result := bx.Elements; end;
 function TBox_Explode(const bx: TBox): TPointArray; overload; cdecl; begin Result := bx.Explode; end;
 function TBox_Exploded(const bx: TBox): TPointArray; cdecl; begin Result := bx.Exploded; end;
@@ -876,7 +879,8 @@ function TRange_Gather(const range: TRange): TIntegerArray; cdecl; begin Result 
 function TRange_Generate(const range: TRange): TIntegerArray; cdecl; begin Result := range.Generate; end;
 function TRange_Generated(const range: TRange): TIntegerArray; cdecl; begin Result := range.Generated; end;
 function TRange_Members(const range: TRange): TIntegerArray; cdecl; begin Result := range.Members; end;
-function TRange_Disjoint(const range: TRange): TIntegerArray; cdecl; begin Result := range.Disjoint; end;
+function TRange_Disjoint(const range: TRange; const target: TRange): Boolean; cdecl; begin Result := range.Disjoint(target); end;
+function TRange_Dismantle(const range: TRange): TIntegerArray; cdecl; begin Result := range.Dismantle; end;
 function TRange_Numbered(const range: TRange): TIntegerArray; cdecl; begin Result := range.Numbered; end;
 function TRange_Pull(const range: TRange): TIntegerArray; cdecl; begin Result := range.Pull; end;
 function TRange_Material(const range: TRange): TIntegerArray; cdecl; begin Result := range.Material; end;
