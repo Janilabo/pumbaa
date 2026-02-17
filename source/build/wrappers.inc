@@ -1259,6 +1259,8 @@ function TRange_Deconstruct(const range: TRange; var rStart, rStop: Integer): In
 function TRange_Extents1(const range: TRange): Integer; overload; cdecl; begin Result := range.Extents; end;
 function TRange_Extents2(const range: TRange; var rMin, rMax: Integer): Integer; overload; cdecl; begin Result := range.Extents(rMin, rMax); end;
 function TRange_Echo(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Echo; end;
+function TRange_AsID(const range: TRange; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := range.AsID(oAscending); end;
+function TRange_LoadID(const range: TRange; var target: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := range.LoadID(target, oAscending); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
@@ -2235,6 +2237,15 @@ function TArray_AsIndexes5(const arr: TBooleanArray; const aAscending: Boolean =
 function TArray_AsIndexes6(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndexes(aAscending); end;
 function TArray_AsIndexes7(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndexes(aAscending); end;
 function TArray_AsIndexes8(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndexes(aAscending); end;
+
+function TArray_AsIndices1(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
+function TArray_AsIndices2(const arr: TDoubleArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
+function TArray_AsIndices3(const arr: TStringArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
+function TArray_AsIndices4(const arr: TCharArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
+function TArray_AsIndices5(const arr: TBooleanArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
+function TArray_AsIndices6(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
+function TArray_AsIndices7(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
+function TArray_AsIndices8(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
 
 function TArray_Backwards1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Backwards; end;
 function TArray_Backwards2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Backwards; end;
@@ -3744,6 +3755,42 @@ function TArray_Length5(const arr: TBooleanArray): Integer; overload; cdecl; beg
 function TArray_Length6(const arr: TPointArray): Integer; overload; cdecl; begin Result := arr.Length; end;
 function TArray_Length7(const arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Length; end;
 function TArray_Length8(const arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Length; end;
+
+function TArray_LoadID1(const arr: TIntegerArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.LoadID(target, aAscending); end;
+function TArray_LoadID2(const arr: TDoubleArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.LoadID(target, aAscending); end;
+function TArray_LoadID3(const arr: TStringArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.LoadID(target, aAscending); end;
+function TArray_LoadID4(const arr: TCharArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.LoadID(target, aAscending); end;
+function TArray_LoadID5(const arr: TBooleanArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.LoadID(target, aAscending); end;
+function TArray_LoadID6(const arr: TPointArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.LoadID(target, aAscending); end;
+function TArray_LoadID7(const arr: TBoxArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.LoadID(target, aAscending); end;
+function TArray_LoadID8(const arr: TRangeArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.LoadID(target, aAscending); end;
+
+function TArray_LoadIDs1(const arr: TIntegerArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIDs(target); end;
+function TArray_LoadIDs2(const arr: TDoubleArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIDs(target); end;
+function TArray_LoadIDs3(const arr: TStringArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIDs(target); end;
+function TArray_LoadIDs4(const arr: TCharArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIDs(target); end;
+function TArray_LoadIDs5(const arr: TBooleanArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIDs(target); end;
+function TArray_LoadIDs6(const arr: TPointArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIDs(target); end;
+function TArray_LoadIDs7(const arr: TBoxArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIDs(target); end;
+function TArray_LoadIDs8(const arr: TRangeArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIDs(target); end;
+
+function TArray_LoadIndexes1(const arr: TIntegerArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndexes(target); end;
+function TArray_LoadIndexes2(const arr: TDoubleArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndexes(target); end;
+function TArray_LoadIndexes3(const arr: TStringArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndexes(target); end;
+function TArray_LoadIndexes4(const arr: TCharArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndexes(target); end;
+function TArray_LoadIndexes5(const arr: TBooleanArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndexes(target); end;
+function TArray_LoadIndexes6(const arr: TPointArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndexes(target); end;
+function TArray_LoadIndexes7(const arr: TBoxArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndexes(target); end;
+function TArray_LoadIndexes8(const arr: TRangeArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndexes(target); end;
+
+function TArray_LoadIndices1(const arr: TIntegerArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndices(target); end;
+function TArray_LoadIndices2(const arr: TDoubleArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndices(target); end;
+function TArray_LoadIndices3(const arr: TStringArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndices(target); end;
+function TArray_LoadIndices4(const arr: TCharArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndices(target); end;
+function TArray_LoadIndices5(const arr: TBooleanArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndices(target); end;
+function TArray_LoadIndices6(const arr: TPointArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndices(target); end;
+function TArray_LoadIndices7(const arr: TBoxArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndices(target); end;
+function TArray_LoadIndices8(const arr: TRangeArray; var target: TIntegerArray): Integer; overload; cdecl; begin Result := arr.LoadIndices(target); end;
 
 function TArray_Loc1(const arr: TIntegerArray; const item: Integer; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;
 function TArray_Loc2(const arr: TDoubleArray; const item: Double; const index: Integer = 2147483647): Integer; overload; cdecl; begin Result := arr.Loc(item, index); end;

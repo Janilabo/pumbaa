@@ -1303,6 +1303,8 @@ begin
   AddFunction(@TRange_Extents1, 'function TRange_Extents(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Extents2, 'function TRange_Extents(const range: TRange; var rMin, rMax: Integer): Integer; overload;');
   AddFunction(@TRange_Echo, 'function TRange_Echo(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_AsID, 'function TRange_AsID(const range: TRange; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TRange_LoadID, 'function TRange_LoadID(const range: TRange; var target: TIntegerArray; const oAscending: Boolean = True): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -2279,6 +2281,15 @@ begin
   AddFunction(@TArray_AsIndexes6, 'function TArray_AsIndexes(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_AsIndexes7, 'function TArray_AsIndexes(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_AsIndexes8, 'function TArray_AsIndexes(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+
+  AddFunction(@TArray_AsIndices1, 'function TArray_AsIndices(const arr: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_AsIndices2, 'function TArray_AsIndices(const arr: TDoubleArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_AsIndices3, 'function TArray_AsIndices(const arr: TStringArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_AsIndices4, 'function TArray_AsIndices(const arr: TCharArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_AsIndices5, 'function TArray_AsIndices(const arr: TBooleanArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_AsIndices6, 'function TArray_AsIndices(const arr: TPointArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_AsIndices7, 'function TArray_AsIndices(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_AsIndices8, 'function TArray_AsIndices(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload;');
 
   AddFunction(@TArray_Backwards1, 'function TArray_Backwards(const arr: TIntegerArray): TIntegerArray; overload;');
   AddFunction(@TArray_Backwards2, 'function TArray_Backwards(const arr: TDoubleArray): TDoubleArray; overload;');
@@ -3837,6 +3848,42 @@ begin
   AddFunction(@TArray_Locations22, 'function TArray_Locations(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TArray_Locations23, 'function TArray_Locations(const arr: TBoxArray): TIntegerArray; overload;');
   AddFunction(@TArray_Locations24, 'function TArray_Locations(const arr: TRangeArray): TIntegerArray; overload;');
+
+  AddFunction(@TArray_LoadID1, 'function TArray_LoadID(const arr: TIntegerArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_LoadID2, 'function TArray_LoadID(const arr: TDoubleArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_LoadID3, 'function TArray_LoadID(const arr: TStringArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_LoadID4, 'function TArray_LoadID(const arr: TCharArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_LoadID5, 'function TArray_LoadID(const arr: TBooleanArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_LoadID6, 'function TArray_LoadID(const arr: TPointArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_LoadID7, 'function TArray_LoadID(const arr: TBoxArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_LoadID8, 'function TArray_LoadID(const arr: TRangeArray; var target: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_LoadIDs1, 'function TArray_LoadIDs(const arr: TIntegerArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIDs2, 'function TArray_LoadIDs(const arr: TDoubleArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIDs3, 'function TArray_LoadIDs(const arr: TStringArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIDs4, 'function TArray_LoadIDs(const arr: TCharArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIDs5, 'function TArray_LoadIDs(const arr: TBooleanArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIDs6, 'function TArray_LoadIDs(const arr: TPointArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIDs7, 'function TArray_LoadIDs(const arr: TBoxArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIDs8, 'function TArray_LoadIDs(const arr: TRangeArray; var target: TIntegerArray): Integer; overload;');
+
+  AddFunction(@TArray_LoadIndexes1, 'function TArray_LoadIndexes(const arr: TIntegerArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndexes2, 'function TArray_LoadIndexes(const arr: TDoubleArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndexes3, 'function TArray_LoadIndexes(const arr: TStringArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndexes4, 'function TArray_LoadIndexes(const arr: TCharArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndexes5, 'function TArray_LoadIndexes(const arr: TBooleanArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndexes6, 'function TArray_LoadIndexes(const arr: TPointArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndexes7, 'function TArray_LoadIndexes(const arr: TBoxArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndexes8, 'function TArray_LoadIndexes(const arr: TRangeArray; var target: TIntegerArray): Integer; overload;');
+
+  AddFunction(@TArray_LoadIndices1, 'function TArray_LoadIndices(const arr: TIntegerArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndices2, 'function TArray_LoadIndices(const arr: TDoubleArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndices3, 'function TArray_LoadIndices(const arr: TStringArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndices4, 'function TArray_LoadIndices(const arr: TCharArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndices5, 'function TArray_LoadIndices(const arr: TBooleanArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndices6, 'function TArray_LoadIndices(const arr: TPointArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndices7, 'function TArray_LoadIndices(const arr: TBoxArray; var target: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_LoadIndices8, 'function TArray_LoadIndices(const arr: TRangeArray; var target: TIntegerArray): Integer; overload;');
 
   AddFunction(@TArray_MadeOf1, 'function TArray_MadeOf(const arr, allowed: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_MadeOf2, 'function TArray_MadeOf(const arr, allowed: TDoubleArray): Boolean; overload;');
