@@ -2919,6 +2919,15 @@ function TArray_Extract14(const arr: TPointArray; const items: TPointArray; cons
 function TArray_Extract15(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TBoxArray; overload; cdecl; begin Result := arr.Extract(items, index); end;
 function TArray_Extract16(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TRangeArray; overload; cdecl; begin Result := arr.Extract(items, index); end;
 
+function TArray_ExtractByIndices1(const arr: TIntegerArray; const ID: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.ExtractByIndices(ID); end;
+function TArray_ExtractByIndices2(const arr: TDoubleArray; const ID: TIntegerArray): TDoubleArray; overload; cdecl; begin Result := arr.ExtractByIndices(ID); end;
+function TArray_ExtractByIndices3(const arr: TStringArray; const ID: TIntegerArray): TStringArray; overload; cdecl; begin Result := arr.ExtractByIndices(ID); end;
+function TArray_ExtractByIndices4(const arr: TCharArray; const ID: TIntegerArray): TCharArray; overload; cdecl; begin Result := arr.ExtractByIndices(ID); end;
+function TArray_ExtractByIndices5(const arr: TBooleanArray; const ID: TIntegerArray): TBooleanArray; overload; cdecl; begin Result := arr.ExtractByIndices(ID); end;
+function TArray_ExtractByIndices6(const arr: TPointArray; const ID: TIntegerArray): TPointArray; overload; cdecl; begin Result := arr.ExtractByIndices(ID); end;
+function TArray_ExtractByIndices7(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.ExtractByIndices(ID); end;
+function TArray_ExtractByIndices8(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.ExtractByIndices(ID); end;
+
 function TArray_ExtractEvery1(const arr: TIntegerArray; const X: Integer = 1; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.ExtractEvery(X, index); end;
 function TArray_ExtractEvery2(const arr: TDoubleArray; const X: Integer = 1; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.ExtractEvery(X, index); end;
 function TArray_ExtractEvery3(const arr: TStringArray; const X: Integer = 1; const index: Integer = 0): TStringArray; overload; cdecl; begin Result := arr.ExtractEvery(X, index); end;
@@ -2997,6 +3006,15 @@ function TArray_Filter13(const arr: TBooleanArray; const items: TBooleanArray; c
 function TArray_Filter14(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): TPointArray; overload; cdecl; begin Result := arr.Filter(items, index); end;
 function TArray_Filter15(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TBoxArray; overload; cdecl; begin Result := arr.Filter(items, index); end;
 function TArray_Filter16(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TRangeArray; overload; cdecl; begin Result := arr.Filter(items, index); end;
+
+function TArray_FilterByIndices1(const arr: TIntegerArray; const ID: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.FilterByIndices(ID); end;
+function TArray_FilterByIndices2(const arr: TDoubleArray; const ID: TIntegerArray): TDoubleArray; overload; cdecl; begin Result := arr.FilterByIndices(ID); end;
+function TArray_FilterByIndices3(const arr: TStringArray; const ID: TIntegerArray): TStringArray; overload; cdecl; begin Result := arr.FilterByIndices(ID); end;
+function TArray_FilterByIndices4(const arr: TCharArray; const ID: TIntegerArray): TCharArray; overload; cdecl; begin Result := arr.FilterByIndices(ID); end;
+function TArray_FilterByIndices5(const arr: TBooleanArray; const ID: TIntegerArray): TBooleanArray; overload; cdecl; begin Result := arr.FilterByIndices(ID); end;
+function TArray_FilterByIndices6(const arr: TPointArray; const ID: TIntegerArray): TPointArray; overload; cdecl; begin Result := arr.FilterByIndices(ID); end;
+function TArray_FilterByIndices7(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.FilterByIndices(ID); end;
+function TArray_FilterByIndices8(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.FilterByIndices(ID); end;
 
 function TArray_FilterEvery1(const arr: TIntegerArray; const X: Integer = 1; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.FilterEvery(X, index); end;
 function TArray_FilterEvery2(const arr: TDoubleArray; const X: Integer = 1; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.FilterEvery(X, index); end;

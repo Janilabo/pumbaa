@@ -2944,6 +2944,15 @@ begin
   AddFunction(@TArray_Extract15, 'function TArray_Extract(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TBoxArray; overload;');
   AddFunction(@TArray_Extract16, 'function TArray_Extract(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TRangeArray; overload;');
 
+  AddFunction(@TArray_ExtractByIndices1, 'function TArray_ExtractByIndices(const arr: TIntegerArray; const ID: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_ExtractByIndices2, 'function TArray_ExtractByIndices(const arr: TDoubleArray; const ID: TIntegerArray): TDoubleArray; overload;');
+  AddFunction(@TArray_ExtractByIndices3, 'function TArray_ExtractByIndices(const arr: TStringArray; const ID: TIntegerArray): TStringArray; overload;');
+  AddFunction(@TArray_ExtractByIndices4, 'function TArray_ExtractByIndices(const arr: TCharArray; const ID: TIntegerArray): TCharArray; overload;');
+  AddFunction(@TArray_ExtractByIndices5, 'function TArray_ExtractByIndices(const arr: TBooleanArray; const ID: TIntegerArray): TBooleanArray; overload;');
+  AddFunction(@TArray_ExtractByIndices6, 'function TArray_ExtractByIndices(const arr: TPointArray; const ID: TIntegerArray): TPointArray; overload;');
+  AddFunction(@TArray_ExtractByIndices7, 'function TArray_ExtractByIndices(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload;');
+  AddFunction(@TArray_ExtractByIndices8, 'function TArray_ExtractByIndices(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload;');
+
   AddFunction(@TArray_ExtractEvery1, 'function TArray_ExtractEvery(const arr: TIntegerArray; const X: Integer = 1; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_ExtractEvery2, 'function TArray_ExtractEvery(const arr: TDoubleArray; const X: Integer = 1; const index: Integer = 0): TDoubleArray; overload;');
   AddFunction(@TArray_ExtractEvery3, 'function TArray_ExtractEvery(const arr: TStringArray; const X: Integer = 1; const index: Integer = 0): TStringArray; overload;');
@@ -3022,6 +3031,15 @@ begin
   AddFunction(@TArray_Filter14, 'function TArray_Filter(const arr: TPointArray; const items: TPointArray; const index: Integer = 0): TPointArray; overload;');
   AddFunction(@TArray_Filter15, 'function TArray_Filter(const arr: TBoxArray; const items: TBoxArray; const index: Integer = 0): TBoxArray; overload;');
   AddFunction(@TArray_Filter16, 'function TArray_Filter(const arr: TRangeArray; const items: TRangeArray; const index: Integer = 0): TRangeArray; overload;');
+
+  AddFunction(@TArray_FilterByIndices1, 'function TArray_FilterByIndices(const arr: TIntegerArray; const ID: TIntegerArray): TIntegerArray; overload;');
+  AddFunction(@TArray_FilterByIndices2, 'function TArray_FilterByIndices(const arr: TDoubleArray; const ID: TIntegerArray): TDoubleArray; overload;');
+  AddFunction(@TArray_FilterByIndices3, 'function TArray_FilterByIndices(const arr: TStringArray; const ID: TIntegerArray): TStringArray; overload;');
+  AddFunction(@TArray_FilterByIndices4, 'function TArray_FilterByIndices(const arr: TCharArray; const ID: TIntegerArray): TCharArray; overload;');
+  AddFunction(@TArray_FilterByIndices5, 'function TArray_FilterByIndices(const arr: TBooleanArray; const ID: TIntegerArray): TBooleanArray; overload;');
+  AddFunction(@TArray_FilterByIndices6, 'function TArray_FilterByIndices(const arr: TPointArray; const ID: TIntegerArray): TPointArray; overload;');
+  AddFunction(@TArray_FilterByIndices7, 'function TArray_FilterByIndices(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload;');
+  AddFunction(@TArray_FilterByIndices8, 'function TArray_FilterByIndices(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload;');
 
   AddFunction(@TArray_FilterEvery1, 'function TArray_FilterEvery(const arr: TIntegerArray; const X: Integer = 1; const index: Integer = 0): TIntegerArray; overload;');
   AddFunction(@TArray_FilterEvery2, 'function TArray_FilterEvery(const arr: TDoubleArray; const X: Integer = 1; const index: Integer = 0): TDoubleArray; overload;');
