@@ -731,6 +731,9 @@ function TBox_RightEdge(const bx: TBox): TRange; cdecl; begin Result := bx.Right
 function TBox_TopEdge(const bx: TBox): TRange; cdecl; begin Result := bx.TopEdge; end;
 function TBox_TopLeft(const bx: TBox): TPoint; cdecl; begin Result := bx.TopLeft; end;
 function TBox_TopRight(const bx: TBox): TPoint; cdecl; begin Result := bx.TopRight; end;
+function TBox_Indexed(const bx: TBox): T2DIntegerArray; overload; cdecl; begin Result := bx.Indexed; end;
+function TBox_Indexes(const bx: TBox): TIntegerArray; overload; cdecl; begin Result := bx.Indexes; end;
+function TBox_IndexList(const bx: TBox): TIntegerArray; overload; cdecl; begin Result := bx.IndexList; end;
 
 function TRange_BitCast1(const range: TRange): Int64; overload; cdecl; begin Result := range.BitCast; end;
 procedure TRange_BitCast2(var range: TRange; const rCast: Int64); overload; cdecl; begin range.BitCast(rCast); end;

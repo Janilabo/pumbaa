@@ -773,6 +773,9 @@ begin
   AddFunction(@TBox_TopEdge, 'function TBox_TopEdge(const bx: TBox): TRange;');
   AddFunction(@TBox_TopLeft, 'function TBox_TopLeft(const bx: TBox): TPoint;');
   AddFunction(@TBox_TopRight, 'function TBox_TopRight(const bx: TBox): TPoint;');
+  AddFunction(@TBox_Indexed, 'function TBox_Indexed(const bx: TBox): T2DIntegerArray; overload;');
+  AddFunction(@TBox_Indexes, 'function TBox_Indexes(const bx: TBox): TIntegerArray; overload;');
+  AddFunction(@TBox_IndexList, 'function TBox_IndexList(const bx: TBox): TIntegerArray; overload;');
 
   AddFunction(@DoNothing, 'procedure ______________;');
   AddFunction(@DoNothing, 'procedure TRANGE_METHODS;');
