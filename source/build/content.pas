@@ -4585,6 +4585,15 @@ begin
   AddFunction(@TArray_Reversed7, 'function TArray_Reversed(const arr: TBoxArray): TBoxArray; overload;');
   AddFunction(@TArray_Reversed8, 'function TArray_Reversed(const arr: TRangeArray): TRangeArray; overload;');
 
+  AddFunction(@TArray_Reversement1, 'function TArray_Reversement(var arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_Reversement2, 'function TArray_Reversement(var arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_Reversement3, 'function TArray_Reversement(var arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_Reversement4, 'function TArray_Reversement(var arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_Reversement5, 'function TArray_Reversement(var arr: TBooleanArray): Boolean; overload;');
+  AddFunction(@TArray_Reversement6, 'function TArray_Reversement(var arr: TPointArray): Boolean; overload;');
+  AddFunction(@TArray_Reversement7, 'function TArray_Reversement(var arr: TBoxArray): Boolean; overload;');
+  AddFunction(@TArray_Reversement8, 'function TArray_Reversement(var arr: TRangeArray): Boolean; overload;');
+
   AddFunction(@TArray_Reversify1, 'function TArray_Reversify(var arr: TIntegerArray): Boolean; overload;');
   AddFunction(@TArray_Reversify2, 'function TArray_Reversify(var arr: TDoubleArray): Boolean; overload;');
   AddFunction(@TArray_Reversify3, 'function TArray_Reversify(var arr: TStringArray): Boolean; overload;');
