@@ -1402,6 +1402,9 @@ function TIntegerArray_Unduplicate(var arr: TIntegerArray): Integer; overload; c
 function TIntegerArray_Intervals(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Intervals; end;
 function TIntegerArray_ToTRangeArray(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.ToTRangeArray; end;
 function TIntegerArray_Consolidate(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Consolidate; end;
+function TIntegerArray_Average(const arr: TIntegerArray): Double; overload; cdecl; begin Result := arr.Average; end;
+function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MaxVal; end;
+function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MinVal; end;
 function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BSearch(value, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
@@ -2262,6 +2265,24 @@ function TArray_AsIndices6(const arr: TPointArray; const aAscending: Boolean = T
 function TArray_AsIndices7(const arr: TBoxArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
 function TArray_AsIndices8(const arr: TRangeArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.AsIndices(aAscending); end;
 
+function TArray_At1(const arr: TIntegerArray; const sArray: TIntegerArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.At(sArray, aIndex); end;
+function TArray_At2(const arr: TDoubleArray; const sArray: TDoubleArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.At(sArray, aIndex); end;
+function TArray_At3(const arr: TStringArray; const sArray: TStringArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.At(sArray, aIndex); end;
+function TArray_At4(const arr: TCharArray; const sArray: TCharArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.At(sArray, aIndex); end;
+function TArray_At5(const arr: TBooleanArray; const sArray: TBooleanArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.At(sArray, aIndex); end;
+function TArray_At6(const arr: TPointArray; const sArray: TPointArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.At(sArray, aIndex); end;
+function TArray_At7(const arr: TBoxArray; const sArray: TBoxArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.At(sArray, aIndex); end;
+function TArray_At8(const arr: TRangeArray; const sArray: TRangeArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.At(sArray, aIndex); end;
+
+function TArray_AtPosition1(const arr: TIntegerArray; const sArray: TIntegerArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.AtPosition(sArray, aIndex); end;
+function TArray_AtPosition2(const arr: TDoubleArray; const sArray: TDoubleArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.AtPosition(sArray, aIndex); end;
+function TArray_AtPosition3(const arr: TStringArray; const sArray: TStringArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.AtPosition(sArray, aIndex); end;
+function TArray_AtPosition4(const arr: TCharArray; const sArray: TCharArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.AtPosition(sArray, aIndex); end;
+function TArray_AtPosition5(const arr: TBooleanArray; const sArray: TBooleanArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.AtPosition(sArray, aIndex); end;
+function TArray_AtPosition6(const arr: TPointArray; const sArray: TPointArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.AtPosition(sArray, aIndex); end;
+function TArray_AtPosition7(const arr: TBoxArray; const sArray: TBoxArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.AtPosition(sArray, aIndex); end;
+function TArray_AtPosition8(const arr: TRangeArray; const sArray: TRangeArray; const aIndex: Integer = 0): Boolean; overload; cdecl; begin Result := arr.AtPosition(sArray, aIndex); end;
+
 function TArray_Backwards1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Backwards; end;
 function TArray_Backwards2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Backwards; end;
 function TArray_Backwards3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Backwards; end;
@@ -2770,6 +2791,15 @@ function TArray_Domain5(const arr: TBooleanArray): TRange; overload; cdecl; begi
 function TArray_Domain6(const arr: TPointArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
 function TArray_Domain7(const arr: TBoxArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
 function TArray_Domain8(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Domain; end;
+
+function TArray_Doublet1(const arr: TIntegerArray; const fromIndex: Integer = 0; const toIndex: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Doublet(fromIndex, toIndex); end;
+function TArray_Doublet2(const arr: TDoubleArray; const fromIndex: Integer = 0; const toIndex: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Doublet(fromIndex, toIndex); end;
+function TArray_Doublet3(const arr: TStringArray; const fromIndex: Integer = 0; const toIndex: Integer = 2147483647): TStringArray; overload; cdecl; begin Result := arr.Doublet(fromIndex, toIndex); end;
+function TArray_Doublet4(const arr: TCharArray; const fromIndex: Integer = 0; const toIndex: Integer = 2147483647): TCharArray; overload; cdecl; begin Result := arr.Doublet(fromIndex, toIndex); end;
+function TArray_Doublet5(const arr: TBooleanArray; const fromIndex: Integer = 0; const toIndex: Integer = 2147483647): TBooleanArray; overload; cdecl; begin Result := arr.Doublet(fromIndex, toIndex); end;
+function TArray_Doublet6(const arr: TPointArray; const fromIndex: Integer = 0; const toIndex: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.Doublet(fromIndex, toIndex); end;
+function TArray_Doublet7(const arr: TBoxArray; const fromIndex: Integer = 0; const toIndex: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Doublet(fromIndex, toIndex); end;
+function TArray_Doublet8(const arr: TRangeArray; const fromIndex: Integer = 0; const toIndex: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Doublet(fromIndex, toIndex); end;
 
 function TArray_Drop1(const arr: TIntegerArray; const item: Integer; const eraseDuplicates: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Drop(item, eraseDuplicates); end;
 function TArray_Drop2(const arr: TDoubleArray; const item: Double; const eraseDuplicates: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Drop(item, eraseDuplicates); end;
@@ -5538,6 +5568,12 @@ function TArray_CombSort3(var arr: TStringArray; const aAscending: Boolean = Tru
 function TArray_CombSort4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CombSort(aAscending); end;
 function TArray_CombSort5(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.CombSort(aAscending); end;
 
+function TArray_HeapifySort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HeapifySort(aAscending); end;
+function TArray_HeapifySort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HeapifySort(aAscending); end;
+function TArray_HeapifySort3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HeapifySort(aAscending); end;
+function TArray_HeapifySort4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HeapifySort(aAscending); end;
+function TArray_HeapifySort5(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HeapifySort(aAscending); end;
+
 function TArray_HeapSort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HeapSort(aAscending); end;
 function TArray_HeapSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HeapSort(aAscending); end;
 function TArray_HeapSort3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HeapSort(aAscending); end;
@@ -5585,6 +5621,18 @@ function TArray_MergeSortBU2(var arr: TDoubleArray; const aAscending: Boolean = 
 function TArray_MergeSortBU3(var arr: TStringArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortBU(aAscending); end;
 function TArray_MergeSortBU4(var arr: TCharArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortBU(aAscending); end;
 function TArray_MergeSortBU5(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.MergeSortBU(aAscending); end;
+
+function TArray_TreeSort1(var arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TreeSort(oAscending); end;
+function TArray_TreeSort2(var arr: TDoubleArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TreeSort(oAscending); end;
+function TArray_TreeSort3(var arr: TStringArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TreeSort(oAscending); end;
+function TArray_TreeSort4(var arr: TCharArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TreeSort(oAscending); end;
+function TArray_TreeSort5(var arr: TPointArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TreeSort(oAscending); end;
+  
+function TArray_BinaryTreeSort1(var arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryTreeSort(oAscending); end;
+function TArray_BinaryTreeSort2(var arr: TDoubleArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryTreeSort(oAscending); end;
+function TArray_BinaryTreeSort3(var arr: TStringArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryTreeSort(oAscending); end;
+function TArray_BinaryTreeSort4(var arr: TCharArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryTreeSort(oAscending); end;
+function TArray_BinaryTreeSort5(var arr: TPointArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryTreeSort(oAscending); end;
 
 function TArray_HybridSort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HybridSort(aAscending); end;
 function TArray_HybridSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.HybridSort(aAscending); end;
