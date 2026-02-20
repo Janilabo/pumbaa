@@ -1398,6 +1398,8 @@ function TIntegerArray_Streams(const arr: TIntegerArray): TRangeArray; overload;
 function TIntegerArray_Strands(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Strands; end;
 function TIntegerArray_Sequences(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Sequences; end;
 function TIntegerArray_TRA(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.TRA; end;
+function TIntegerArray_Unduplicate(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Unduplicate; end;
+function TIntegerArray_Intervals(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Intervals; end;
 function TIntegerArray_ToTRangeArray(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.ToTRangeArray; end;
 function TIntegerArray_Consolidate(const arr: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Consolidate; end;
 function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BSearch(value, oAscending); end;
@@ -1720,7 +1722,7 @@ function TBooleanArray_Trueness(const arr: TBooleanArray): Integer; overload; cd
 function TBooleanArray_Trues(const arr: TBooleanArray): TIntegerArray; overload; cdecl; begin Result := arr.Trues; end;
 function TBooleanArray_Truesome1(const arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Truesome; end;
 function TBooleanArray_Truesome2(const arr: TBooleanArray; const minTrue: Integer): Boolean; overload; cdecl; begin Result := arr.Truesome(minTrue); end;
-function TBooleanArray_Opposite(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Opposite; end;
+function TBooleanArray_Opposites(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Opposites; end;
 function TBooleanArray_BinaryStr(const arr: TBooleanArray): string; begin Result := arr.BinaryStr; end;
 function TBooleanArray_BinaryDigits(const arr: TBooleanArray): TIntegerArray; begin Result := arr.BinaryDigits; end;
 function TBooleanArray_Binary(const arr: TBooleanArray): string; begin Result := arr.Binary; end;
@@ -2661,6 +2663,15 @@ function TArray_Delete13(const arr: TBooleanArray; const ID: TIntegerArray): TBo
 function TArray_Delete14(const arr: TPointArray; const ID: TIntegerArray): TPointArray; overload; cdecl; begin Result := arr.Delete(ID); end;
 function TArray_Delete15(const arr: TBoxArray; const ID: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.Delete(ID); end;
 function TArray_Delete16(const arr: TRangeArray; const ID: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Delete(ID); end;
+
+function TArray_Deload1(var arr: TIntegerArray; var target: TIntegerArray; const clearing: Boolean = True): Integer; overload; cdecl; begin Result := arr.Deload(target, clearing); end;
+function TArray_Deload2(var arr: TDoubleArray; var target: TDoubleArray; const clearing: Boolean = True): Integer; overload; cdecl; begin Result := arr.Deload(target, clearing); end;
+function TArray_Deload3(var arr: TStringArray; var target: TStringArray; const clearing: Boolean = True): Integer; overload; cdecl; begin Result := arr.Deload(target, clearing); end;
+function TArray_Deload4(var arr: TCharArray; var target: TCharArray; const clearing: Boolean = True): Integer; overload; cdecl; begin Result := arr.Deload(target, clearing); end;
+function TArray_Deload5(var arr: TBooleanArray; var target: TBooleanArray; const clearing: Boolean = True): Integer; overload; cdecl; begin Result := arr.Deload(target, clearing); end;
+function TArray_Deload6(var arr: TPointArray; var target: TPointArray; const clearing: Boolean = True): Integer; overload; cdecl; begin Result := arr.Deload(target, clearing); end;
+function TArray_Deload7(var arr: TBoxArray; var target: TBoxArray; const clearing: Boolean = True): Integer; overload; cdecl; begin Result := arr.Deload(target, clearing); end;
+function TArray_Deload8(var arr: TRangeArray; var target: TRangeArray; const clearing: Boolean = True): Integer; overload; cdecl; begin Result := arr.Deload(target, clearing); end;
 
 function TArray_Devein1(const arr: TIntegerArray; const dIDs: TIntegerArray; const dValue: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Devein(dIDs, dValue); end;
 function TArray_Devein2(const arr: TDoubleArray; const dIDs: TIntegerArray; const dValue: Double): TDoubleArray; overload; cdecl; begin Result := arr.Devein(dIDs, dValue); end;
@@ -4152,6 +4163,24 @@ function TArray_Occurs6(const arr: TPointArray; const Item: TPoint; const occurr
 function TArray_Occurs7(const arr: TBoxArray; const Item: TBox; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
 function TArray_Occurs8(const arr: TRangeArray; const Item: TRange; const occurrence: Integer = 1): Boolean; overload; cdecl; begin Result := arr.Occurs(item, occurrence); end;
 
+function TArray_Oppose1(var arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Oppose; end;
+function TArray_Oppose2(var arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Oppose; end;
+function TArray_Oppose3(var arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Oppose; end;
+function TArray_Oppose4(var arr: TCharArray): Boolean; overload; cdecl; begin Result := arr.Oppose; end;
+function TArray_Oppose5(var arr: TBooleanArray): Boolean; overload; cdecl; begin Result := arr.Oppose; end;
+function TArray_Oppose6(var arr: TPointArray): Boolean; overload; cdecl; begin Result := arr.Oppose; end;
+function TArray_Oppose7(var arr: TBoxArray): Boolean; overload; cdecl; begin Result := arr.Oppose; end;
+function TArray_Oppose8(var arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Oppose; end;
+
+function TArray_Opposite1(const arr: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Opposite; end;
+function TArray_Opposite2(const arr: TDoubleArray): TDoubleArray; overload; cdecl; begin Result := arr.Opposite; end;
+function TArray_Opposite3(const arr: TStringArray): TStringArray; overload; cdecl; begin Result := arr.Opposite; end;
+function TArray_Opposite4(const arr: TCharArray): TCharArray; overload; cdecl; begin Result := arr.Opposite; end;
+function TArray_Opposite5(const arr: TBooleanArray): TBooleanArray; overload; cdecl; begin Result := arr.Opposite; end;
+function TArray_Opposite6(const arr: TPointArray): TPointArray; overload; cdecl; begin Result := arr.Opposite; end;
+function TArray_Opposite7(const arr: TBoxArray): TBoxArray; overload; cdecl; begin Result := arr.Opposite; end;
+function TArray_Opposite8(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Opposite; end;
+
 function TArray_Overlay1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer; const init: Integer): TIntegerArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
 function TArray_Overlay2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer; const init: Double): TDoubleArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
 function TArray_Overlay3(const arr: TStringArray; const items: TStringArray; const index: Integer; const init: string): TStringArray; overload; cdecl; begin Result := arr.Overlay(items, index, init); end;
@@ -4558,6 +4587,24 @@ function TArray_Replace13(const arr: TBooleanArray; const old, new: Boolean; con
 function TArray_Replace14(const arr: TPointArray; const old, new: TPoint; const exceptions: TIntegerArray): TPointArray; overload; cdecl; begin Result := arr.Replace(old, new, exceptions); end;
 function TArray_Replace15(const arr: TBoxArray; const old, new: TBox; const exceptions: TIntegerArray): TBoxArray; overload; cdecl; begin Result := arr.Replace(old, new, exceptions); end;
 function TArray_Replace16(const arr: TRangeArray; const old, new: TRange; const exceptions: TIntegerArray): TRangeArray; overload; cdecl; begin Result := arr.Replace(old, new, exceptions); end;
+
+function TArray_Replica1(const arr: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Replica(oAscending); end;
+function TArray_Replica2(const arr: TDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Replica(oAscending); end;
+function TArray_Replica3(const arr: TStringArray; const oAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Replica(oAscending); end;
+function TArray_Replica4(const arr: TCharArray; const oAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.Replica(oAscending); end;
+function TArray_Replica5(const arr: TBooleanArray; const oAscending: Boolean = True): TBooleanArray; overload; cdecl; begin Result := arr.Replica(oAscending); end;
+function TArray_Replica6(const arr: TPointArray; const oAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Replica(oAscending); end;
+function TArray_Replica7(const arr: TBoxArray; const oAscending: Boolean = True): TBoxArray; overload; cdecl; begin Result := arr.Replica(oAscending); end;
+function TArray_Replica8(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Replica(oAscending); end;
+
+function TArray_Replicate1(const arr: TIntegerArray; const index: Integer = 0; const count: Integer = 2147483647): TIntegerArray; overload; cdecl; begin Result := arr.Replicate(index, count); end;
+function TArray_Replicate2(const arr: TDoubleArray; const index: Integer = 0; const count: Integer = 2147483647): TDoubleArray; overload; cdecl; begin Result := arr.Replicate(index, count); end;
+function TArray_Replicate3(const arr: TStringArray; const index: Integer = 0; const count: Integer = 2147483647): TStringArray; overload; cdecl; begin Result := arr.Replicate(index, count); end;
+function TArray_Replicate4(const arr: TCharArray; const index: Integer = 0; const count: Integer = 2147483647): TCharArray; overload; cdecl; begin Result := arr.Replicate(index, count); end;
+function TArray_Replicate5(const arr: TBooleanArray; const index: Integer = 0; const count: Integer = 2147483647): TBooleanArray; overload; cdecl; begin Result := arr.Replicate(index, count); end;
+function TArray_Replicate6(const arr: TPointArray; const index: Integer = 0; const count: Integer = 2147483647): TPointArray; overload; cdecl; begin Result := arr.Replicate(index, count); end;
+function TArray_Replicate7(const arr: TBoxArray; const index: Integer = 0; const count: Integer = 2147483647): TBoxArray; overload; cdecl; begin Result := arr.Replicate(index, count); end;
+function TArray_Replicate8(const arr: TRangeArray; const index: Integer = 0; const count: Integer = 2147483647): TRangeArray; overload; cdecl; begin Result := arr.Replicate(index, count); end;
 
 function TArray_Reset1(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.Reset; end;
 function TArray_Reset2(var arr: TDoubleArray): Integer; overload; cdecl; begin Result := arr.Reset; end;
