@@ -1554,6 +1554,8 @@ function TIntegerArray_BinaryOverlaps2(const arr: TIntegerArray; const x: TRange
 function TIntegerArray_BinaryNear(const arr: TIntegerArray; const target: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryNear(target, oAscending); end;
 function TIntegerArray_BinaryNearest(const arr: TIntegerArray; const target: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryNearest(target, oAscending); end;
 function TIntegerArray_BinaryClamp(var arr: TIntegerArray; const allowed: TRange; const oAscending: Boolean = True): Integer; overload; overload; cdecl; begin Result := arr.BinaryClamp(allowed, oAscending); end;
+function TIntegerArray_BinaryClampMaximum(var arr: TIntegerArray; const aMax: Integer; const oAscending: Boolean = True): Integer; overload; overload; cdecl; begin Result := arr.BinaryClampMaximum(aMax, oAscending); end;
+function TIntegerArray_BinaryClampMinimum(var arr: TIntegerArray; const aMin: Integer; const oAscending: Boolean = True): Integer; overload; overload; cdecl; begin Result := arr.BinaryClampMinimum(aMin, oAscending); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;

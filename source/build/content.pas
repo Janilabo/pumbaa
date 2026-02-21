@@ -1599,6 +1599,8 @@ begin
   AddFunction(@TIntegerArray_BinaryNear, 'function TIntegerArray_BinaryNear(const arr: TIntegerArray; const target: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryNearest, 'function TIntegerArray_BinaryNearest(const arr: TIntegerArray; const target: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryClamp, 'function TIntegerArray_BinaryClamp(var arr: TIntegerArray; const allowed: TRange; const oAscending: Boolean = True): Integer; overload; overload;');
+  AddFunction(@TIntegerArray_BinaryClampMaximum, 'function TIntegerArray_BinaryClampMaximum(var arr: TIntegerArray; const aMax: Integer; const oAscending: Boolean = True): Integer; overload; overload;');
+  AddFunction(@TIntegerArray_BinaryClampMinimum, 'function TIntegerArray_BinaryClampMinimum(var arr: TIntegerArray; const aMin: Integer; const oAscending: Boolean = True): Integer; overload; overload;');
   AddFunction(@TIntegerArray_TernarySearch, 'function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');
