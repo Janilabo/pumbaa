@@ -1405,6 +1405,7 @@ function TIntegerArray_Consolidate(const arr: TIntegerArray): TRangeArray; overl
 function TIntegerArray_Average(const arr: TIntegerArray): Double; overload; cdecl; begin Result := arr.Average; end;
 function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MaxVal; end;
 function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MinVal; end;
+function TIntegerArray_Complement(const arr: TIntegerArray; const sSorted: Boolean = False): TIntegerArray; overload; cdecl; begin Result := arr.Complement(sSorted); end;
 function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BSearch(value, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
@@ -5809,6 +5810,18 @@ function TArray_BinaryIdentify2(const arr: TDoubleArray; const aIndex: Integer; 
 function TArray_BinaryIdentify3(const arr: TStringArray; const aIndex: Integer; const iItems: TStringArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIdentify(aIndex, iItems, iAscending); end;
 function TArray_BinaryIdentify4(const arr: TCharArray; const aIndex: Integer; const iItems: TCharArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIdentify(aIndex, iItems, iAscending); end;
 function TArray_BinaryIdentify5(const arr: TPointArray; const aIndex: Integer; const iItems: TPointArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryIdentify(aIndex, iItems, iAscending); end;
+
+function TArray_BinaryClampMax1(var arr: TIntegerArray; const aMax: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMax(aMax, oAscending); end;
+function TArray_BinaryClampMax2(var arr: TDoubleArray; const aMax: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMax(aMax, oAscending); end;
+function TArray_BinaryClampMax3(var arr: TStringArray; const aMax: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMax(aMax, oAscending); end;
+function TArray_BinaryClampMax4(var arr: TCharArray; const aMax: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMax(aMax, oAscending); end;
+function TArray_BinaryClampMax5(var arr: TPointArray; const aMax: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMax(aMax, oAscending); end;
+
+function TArray_BinaryClampMin1(var arr: TIntegerArray; const aMin: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMin(aMin, oAscending); end;
+function TArray_BinaryClampMin2(var arr: TDoubleArray; const aMin: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMin(aMin, oAscending); end;
+function TArray_BinaryClampMin3(var arr: TStringArray; const aMin: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMin(aMin, oAscending); end;
+function TArray_BinaryClampMin4(var arr: TCharArray; const aMin: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMin(aMin, oAscending); end;
+function TArray_BinaryClampMin5(var arr: TPointArray; const aMin: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryClampMin(aMin, oAscending); end;
 
 function TArray_Sortedness1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Sortedness; end;
 function TArray_Sortedness2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Sortedness; end;
