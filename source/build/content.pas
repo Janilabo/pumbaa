@@ -1601,6 +1601,11 @@ begin
   AddFunction(@TIntegerArray_BinaryClamp, 'function TIntegerArray_BinaryClamp(var arr: TIntegerArray; const allowed: TRange; const oAscending: Boolean = True): Integer; overload; overload;');
   AddFunction(@TIntegerArray_BinaryClampMaximum, 'function TIntegerArray_BinaryClampMaximum(var arr: TIntegerArray; const aMax: Integer; const oAscending: Boolean = True): Integer; overload; overload;');
   AddFunction(@TIntegerArray_BinaryClampMinimum, 'function TIntegerArray_BinaryClampMinimum(var arr: TIntegerArray; const aMin: Integer; const oAscending: Boolean = True): Integer; overload; overload;');
+  AddFunction(@TIntegerArray_BinaryCapture, 'function TIntegerArray_BinaryCapture(const arr: TIntegerArray; const items: TIntegerArray; const iAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryIsolate, 'function TIntegerArray_BinaryIsolate(const arr: TIntegerArray; const items: TIntegerArray; const iAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TIntegerArray_BinaryWindow1, 'function TIntegerArray_BinaryWindow(const arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TIntegerArray_BinaryWindow2, 'function TIntegerArray_BinaryWindow(const arr: TIntegerArray; const items: TRange; const aAscending: Boolean = True): TRange; overload;');
+
   AddFunction(@TIntegerArray_TernarySearch, 'function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');
@@ -6083,6 +6088,24 @@ begin
   AddFunction(@TArray_BinaryClampMin3, 'function TArray_BinaryClampMin(var arr: TStringArray; const aMin: string; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryClampMin4, 'function TArray_BinaryClampMin(var arr: TCharArray; const aMin: Char; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryClampMin5, 'function TArray_BinaryClampMin(var arr: TPointArray; const aMin: TPoint; const oAscending: Boolean = True): Integer; overload;');
+
+  AddFunction(@TArray_BinaryInterval1, 'function TArray_BinaryInterval(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryInterval2, 'function TArray_BinaryInterval(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryInterval3, 'function TArray_BinaryInterval(const arr: TStringArray; const item: string; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryInterval4, 'function TArray_BinaryInterval(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryInterval5, 'function TArray_BinaryInterval(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): TRange; overload;');
+  
+  AddFunction(@TArray_BinaryBounds1, 'function TArray_BinaryBounds(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryBounds2, 'function TArray_BinaryBounds(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryBounds3, 'function TArray_BinaryBounds(const arr: TStringArray; const item: string; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryBounds4, 'function TArray_BinaryBounds(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryBounds5, 'function TArray_BinaryBounds(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): TRange; overload;');
+
+  AddFunction(@TArray_BinaryCluster1, 'function TArray_BinaryCluster(const arr: TIntegerArray; const start: Integer; const allowed: TIntegerArray; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryCluster2, 'function TArray_BinaryCluster(const arr: TDoubleArray; const start: Integer; const allowed: TDoubleArray; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryCluster3, 'function TArray_BinaryCluster(const arr: TStringArray; const start: Integer; const allowed: TStringArray; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryCluster4, 'function TArray_BinaryCluster(const arr: TCharArray; const start: Integer; const allowed: TCharArray; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TArray_BinaryCluster5, 'function TArray_BinaryCluster(const arr: TPointArray; const start: Integer; const allowed: TPointArray; const aAscending: Boolean = True): TRange; overload;');
 
   AddFunction(@TArray_MergeSortWeighted1, 'function TArray_MergeSortWeighted(var arr: TIntegerArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_MergeSortWeighted2, 'function TArray_MergeSortWeighted(var arr: TDoubleArray; var weight: TIntegerArray; const aAscending: Boolean = True): Integer; overload;');
