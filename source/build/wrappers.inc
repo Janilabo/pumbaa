@@ -47,6 +47,17 @@ function XORSort2(var A, B, C: Integer; const oAscending: Boolean = True): Boole
 function iSort1(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := iSort(A, B, oAscending); end;
 function iSort2(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := iSort(A, B, C, oAscending); end;
 
+function BSearch1(const arr: TIntegerArray; const item: Integer; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := BinarySearch(arr, item, ascending); end;
+function BSearch2(const arr: TDoubleArray; const item: Double; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := BinarySearch(arr, item, ascending); end;
+function BSearch3(const arr: TStringArray; const item: string; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := BinarySearch(arr, item, ascending); end;
+function BSearch4(const arr: TCharArray; const item: Char; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := BinarySearch(arr, item, ascending); end;
+function BSearch5(const arr: TPointArray; const item: TPoint; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := BinarySearch(arr, item, ascending); end;
+function BContains1(const arr: TIntegerArray; const item: Integer; const ascending: Boolean = True): Boolean; overload; cdecl; begin Result := BinaryContains(arr, item, ascending); end;
+function BContains2(const arr: TDoubleArray; const item: Double; const ascending: Boolean = True): Boolean; overload cdecl; begin Result := BinaryContains(arr, item, ascending); end;
+function BContains3(const arr: TStringArray; const item: string; const ascending: Boolean = True): Boolean; overload; cdecl; begin Result := BinaryContains(arr, item, ascending); end;
+function BContains4(const arr: TCharArray; const item: Char; const ascending: Boolean = True): Boolean; overload; cdecl; begin Result := BinaryContains(arr, item, ascending); end;
+function BContains5(const arr: TPointArray; const item: TPoint; const ascending: Boolean = True): Boolean; overload; cdecl; begin Result := BinaryContains(arr, item, ascending); end;
+
 function TConnection_Create(const index1, index2: Integer): TConnection; overload; cdecl; var cn: TConnection; begin Result := cn.Create(index1, index2); end;
 function TConnection_Construct(const index1, index2: Integer): TConnection; overload; cdecl; begin Result := TConnection.Construct(index1, index2); end;
 function TConnection_Build(const index1, index2: Integer): TConnection; overload; cdecl; var cn: TConnection; begin Result := cn.Build(index1, index2); end;

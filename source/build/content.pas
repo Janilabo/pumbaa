@@ -89,6 +89,16 @@ begin
   AddFunction(@XORSort2, 'function XORSort(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@iSort1, 'function iSort(var A, B: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@iSort2, 'function iSort(var A, B, C: Integer; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@BSearch1, 'function BSearch(const arr: TIntegerArray; const item: Integer; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BSearch2, 'function BSearch(const arr: TDoubleArray; const item: Double; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BSearch3, 'function BSearch(const arr: TStringArray; const item: string; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BSearch4, 'function BSearch(const arr: TCharArray; const item: Char; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BSearch5, 'function BSearch(const arr: TPointArray; const item: TPoint; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@BContains1, 'function BContains(const arr: TIntegerArray; const item: Integer; const ascending: Boolean = True): Boolean; overload;');
+  AddFunction(@BContains2, 'function BContains(const arr: TDoubleArray; const item: Double; const ascending: Boolean = True): Boolean; overload;');
+  AddFunction(@BContains3, 'function BContains(const arr: TStringArray; const item: string; const ascending: Boolean = True): Boolean; overload;');
+  AddFunction(@BContains4, 'function BContains(const arr: TCharArray; const item: Char; const ascending: Boolean = True): Boolean; overload;');
+  AddFunction(@BContains5, 'function BContains(const arr: TPointArray; const item: TPoint; const ascending: Boolean = True): Boolean; overload;');
 
   AddFunction(@TConnection_Create, 'function TConnection_Create(const index1, index2: Integer): TConnection; overload;');
   AddFunction(@TConnection_Construct, 'function TConnection_Construct(const index1, index2: Integer): TConnection; overload;');
