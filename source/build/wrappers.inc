@@ -1466,7 +1466,8 @@ function TIntegerArray_BinaryMerge(const arr: TIntegerArray; const items: TInteg
 function TIntegerArray_BinaryMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryMerged(items, aAscending); end;
 function TIntegerArray_BinaryCombine(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryCombine(items, aAscending); end;
 function TIntegerArray_BinaryRemove(var arr: TIntegerArray; const val: Integer; const all: Boolean = True; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRemove(val, all, aAscending); end;
-function TIntegerArray_BinaryFind(const arr: TIntegerArray; const val: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFind(val, aAscending); end;
+function TIntegerArray_BinaryFind1(const arr: TIntegerArray; const val: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFind(val, aAscending); end;
+function TIntegerArray_BinaryFind2(const arr: TIntegerArray; const val: Integer; const scan: TRange; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFind(val, scan, ascending); end;
 function TIntegerArray_BinarySearchEx(const arr: TIntegerArray; const x: Integer; const ignore: Integer = -2147483648; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchEx(x, ignore, aAscending); end;
 function TIntegerArray_BinaryInsert(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsert(x, aAscending); end;
 function TIntegerArray_BinarySearchRange(const arr: TIntegerArray; const x: Integer; const rLeft, rRight: Integer; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySearchRange(x, rLeft, rRight, aAscending); end;
@@ -1571,6 +1572,8 @@ function TIntegerArray_BinaryCapture(const arr: TIntegerArray; const items: TInt
 function TIntegerArray_BinaryIsolate(const arr: TIntegerArray; const items: TIntegerArray; const iAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIsolate(items, iAscending); end;
 function TIntegerArray_BinaryWindow1(const arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryWindow(item, aAscending); end;
 function TIntegerArray_BinaryWindow2(const arr: TIntegerArray; const items: TRange; const aAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryWindow(items, aAscending); end;
+function TIntegerArray_BinaryPositionOf1(const arr: TIntegerArray; const item: Integer; const chunkRadius: Integer = 5; const ascending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryPositionOf(item, chunkRadius, ascending); end;
+function TIntegerArray_BinaryPositionOf2(const arr: TIntegerArray; const item: Integer; const ascending: Boolean; const chunkRadius: Integer = 5): Integer; overload; cdecl; begin Result := arr.BinaryPositionOf(item, ascending, chunkRadius); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;

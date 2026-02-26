@@ -1510,7 +1510,8 @@ begin
   AddFunction(@TIntegerArray_BinaryMerged, 'function TIntegerArray_BinaryMerged(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryCombine, 'function TIntegerArray_BinaryCombine(const arr: TIntegerArray; const items: TIntegerArray; const aAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryRemove, 'function TIntegerArray_BinaryRemove(var arr: TIntegerArray; const val: Integer; const all: Boolean = True; const aAscending: Boolean = True): Integer; overload;');
-  AddFunction(@TIntegerArray_BinaryFind, 'function TIntegerArray_BinaryFind(const arr: TIntegerArray; const val: Integer; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryFind1, 'function TIntegerArray_BinaryFind(const arr: TIntegerArray; const val: Integer; const aAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryFind2, 'function TIntegerArray_BinaryFind(const arr: TIntegerArray; const val: Integer; const scan: TRange; const ascending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinarySearchEx, 'function TIntegerArray_BinarySearchEx(const arr: TIntegerArray; const x: Integer; const ignore: Integer = -2147483648; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryInsert, 'function TIntegerArray_BinaryInsert(var arr: TIntegerArray; const x: Integer; const aAscending: Boolean = True): Integer; overload;');  
   AddFunction(@TIntegerArray_BinarySearchRange, 'function TIntegerArray_BinarySearchRange(const arr: TIntegerArray; const x: Integer; const rLeft, rRight: Integer; const aAscending: Boolean = True): Integer; overload;');
@@ -1615,6 +1616,8 @@ begin
   AddFunction(@TIntegerArray_BinaryIsolate, 'function TIntegerArray_BinaryIsolate(const arr: TIntegerArray; const items: TIntegerArray; const iAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TIntegerArray_BinaryWindow1, 'function TIntegerArray_BinaryWindow(const arr: TIntegerArray; const item: Integer; const aAscending: Boolean = True): TRange; overload;');
   AddFunction(@TIntegerArray_BinaryWindow2, 'function TIntegerArray_BinaryWindow(const arr: TIntegerArray; const items: TRange; const aAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TIntegerArray_BinaryPositionOf1, 'function TIntegerArray_BinaryPositionOf(const arr: TIntegerArray; const item: Integer; const chunkRadius: Integer = 5; const ascending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryPositionOf2, 'function TIntegerArray_BinaryPositionOf(const arr: TIntegerArray; const item: Integer; const ascending: Boolean; const chunkRadius: Integer = 5): Integer; overload;');
 
   AddFunction(@TIntegerArray_TernarySearch, 'function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
