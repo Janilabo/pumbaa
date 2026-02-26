@@ -6080,6 +6080,12 @@ begin
   AddFunction(@TArray_BinarySpot4, 'function TArray_BinarySpot(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinarySpot5, 'function TArray_BinarySpot(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');
 
+  AddFunction(@TArray_BinaryIndexes1, 'function TArray_BinaryIndexes(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_BinaryIndexes2, 'function TArray_BinaryIndexes(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_BinaryIndexes3, 'function TArray_BinaryIndexes(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_BinaryIndexes4, 'function TArray_BinaryIndexes(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_BinaryIndexes5, 'function TArray_BinaryIndexes(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+
   AddFunction(@TArray_BinaryIndices1, 'function TArray_BinaryIndices(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_BinaryIndices2, 'function TArray_BinaryIndices(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TArray_BinaryIndices3, 'function TArray_BinaryIndices(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TIntegerArray; overload;');

@@ -6105,6 +6105,12 @@ function TArray_BinaryUniformSearch3(const arr: TStringArray; const item: string
 function TArray_BinaryUniformSearch4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUniformSearch(item, oAscending); end;
 function TArray_BinaryUniformSearch5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUniformSearch(item, oAscending); end;
 
+function TArray_BinaryIndexes1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
+function TArray_BinaryIndexes2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
+function TArray_BinaryIndexes3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
+function TArray_BinaryIndexes4(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
+function TArray_BinaryIndexes5(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
+
 function TArray_BinaryIndices1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndices(items, oAscending); end;
 function TArray_BinaryIndices2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndices(items, oAscending); end;
 function TArray_BinaryIndices3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndices(items, oAscending); end;
