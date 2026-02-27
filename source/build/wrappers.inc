@@ -1316,6 +1316,9 @@ function TIntegerArray_Extent(const arr: TIntegerArray): TRange; cdecl; begin Re
 function TIntegerArray_Undupe(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Undupe; end;
 function TIntegerArray_Unduped(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Unduped; end;
 function TIntegerArray_Numberline(const arr: TIntegerArray): TIntegerArray; cdecl; begin Result := arr.Numberline; end;
+function TIntegerArray_GetMinMax(const arr: TIntegerArray; var AMin, AMax: Integer): Boolean; overload; cdecl; begin Result := arr.GetMinMax(AMin, AMax); end;
+function TIntegerArray_GetRange(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.GetRange(rAscending); end;
+function TIntegerArray_WhereIn(const arr: TIntegerArray; const items: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.WhereIn(items); end;
 function TIntegerArray_Sum(const arr: TIntegerArray): Int64; cdecl; begin Result := arr.Sum; end;
 function TIntegerArray_Density(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Density; end;
 function TIntegerArray_Occupancy(const arr: TIntegerArray): Double; cdecl; begin Result := arr.Occupancy; end;
@@ -5421,6 +5424,18 @@ function TArray_Waste6(const arr: TPointArray): Integer; overload; cdecl; begin 
 function TArray_Waste7(const arr: TBoxArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
 function TArray_Waste8(const arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Waste; end;
 
+function TArray_GetBounds1(const arr: TIntegerArray; var AMin, AMax: Integer): Boolean; overload; cdecl; begin Result := arr.GetBounds(AMin, AMax); end;
+function TArray_GetBounds2(const arr: TDoubleArray; var AMin, AMax: Double): Boolean; overload; cdecl; begin Result := arr.GetBounds(AMin, AMax); end;
+function TArray_GetBounds3(const arr: TStringArray; var AMin, AMax: string): Boolean; overload; cdecl; begin Result := arr.GetBounds(AMin, AMax); end;
+function TArray_GetBounds4(const arr: TCharArray; var AMin, AMax: Char): Boolean; overload; cdecl; begin Result := arr.GetBounds(AMin, AMax); end;
+function TArray_GetBounds5(const arr: TPointArray; var AMin, AMax: TPoint): Boolean; overload; cdecl; begin Result := arr.GetBounds(AMin, AMax); end;
+
+function TArray_Where1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Where(items, oAscending); end;
+function TArray_Where2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Where(items, oAscending); end;
+function TArray_Where3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Where(items, oAscending); end;
+function TArray_Where4(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Where(items, oAscending); end;
+function TArray_Where5(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Where(items, oAscending); end;
+
 function TArray_Sortable1(const arr: TIntegerArray): Boolean; overload; cdecl; begin Result := arr.Sortable; end;
 function TArray_Sortable2(const arr: TDoubleArray): Boolean; overload; cdecl; begin Result := arr.Sortable; end;
 function TArray_Sortable3(const arr: TStringArray): Boolean; overload; cdecl; begin Result := arr.Sortable; end;
@@ -6104,12 +6119,6 @@ function TArray_BinaryUniformSearch2(const arr: TDoubleArray; const item: Double
 function TArray_BinaryUniformSearch3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUniformSearch(item, oAscending); end;
 function TArray_BinaryUniformSearch4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUniformSearch(item, oAscending); end;
 function TArray_BinaryUniformSearch5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryUniformSearch(item, oAscending); end;
-
-function TArray_BinaryIndexes1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
-function TArray_BinaryIndexes2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
-function TArray_BinaryIndexes3(const arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
-function TArray_BinaryIndexes4(const arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
-function TArray_BinaryIndexes5(const arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndexes(items, oAscending); end;
 
 function TArray_BinaryIndices1(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndices(items, oAscending); end;
 function TArray_BinaryIndices2(const arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryIndices(items, oAscending); end;
