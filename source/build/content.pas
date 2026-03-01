@@ -2012,6 +2012,7 @@ begin
   AddFunction(@TPointArray_BinaryY, 'function TPointArray_BinaryY(const arr: TPointArray): TIntegerArray; overload;');
   AddFunction(@TPointArray_BinaryInsertSort, 'function TPointArray_BinaryInsertSort(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload;');
   AddFunction(@TPointArray_BinaryInsertSorted, 'function TPointArray_BinaryInsertSorted(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload;');
+  AddFunction(@TPointArray_Project, 'function TPointArray_Project(const arr: TPointArray; var sX, sY: TIntegerArray): TBox; overload;');
 
   AddFunction(@T2DPointArray_AllBounds1, 'function T2DPointArray_AllBounds(const arr: T2DPointArray): TBoxArray; overload;');
   AddFunction(@T2DPointArray_AllBounds2, 'function T2DPointArray_AllBounds(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload;');
@@ -2716,6 +2717,15 @@ begin
   AddFunction(@TArray_Create14, 'function TArray_Create(const aSize: Integer; const item: TPoint): TPointArray; overload;');
   AddFunction(@TArray_Create15, 'function TArray_Create(const aSize: Integer; const item: TBox): TBoxArray; overload;');
   AddFunction(@TArray_Create16, 'function TArray_Create(const aSize: Integer; const item: TRange): TRangeArray; overload;');
+
+  AddFunction(@TArray_Cull1, 'function TArray_Cull(const arr: TIntegerArray; const items: TIntegerArray; const iMatching: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TArray_Cull2, 'function TArray_Cull(const arr: TDoubleArray; const items: TDoubleArray; const iMatching: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@TArray_Cull3, 'function TArray_Cull(const arr: TStringArray; const items: TStringArray; const iMatching: Boolean = True): TStringArray; overload;');
+  AddFunction(@TArray_Cull4, 'function TArray_Cull(const arr: TCharArray; const items: TCharArray; const iMatching: Boolean = True): TCharArray; overload;');
+  AddFunction(@TArray_Cull5, 'function TArray_Cull(const arr: TBooleanArray; const items: TBooleanArray; const iMatching: Boolean = True): TBooleanArray; overload;');
+  AddFunction(@TArray_Cull6, 'function TArray_Cull(const arr: TPointArray; const items: TPointArray; const iMatching: Boolean = True): TPointArray; overload;');
+  AddFunction(@TArray_Cull7, 'function TArray_Cull(const arr: TBoxArray; const items: TBoxArray; const iMatching: Boolean = True): TBoxArray; overload;');
+  AddFunction(@TArray_Cull8, 'function TArray_Cull(const arr: TRangeArray; const items: TRangeArray; const iMatching: Boolean = True): TRangeArray; overload;');
 
   AddFunction(@TArray_Dedup1, 'function TArray_Dedup(var arr: TIntegerArray; const item: Integer; const sIndex: Integer = 0): Integer; overload;');
   AddFunction(@TArray_Dedup2, 'function TArray_Dedup(var arr: TDoubleArray; const item: Double; const sIndex: Integer = 0): Integer; overload;');

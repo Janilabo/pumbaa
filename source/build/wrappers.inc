@@ -1968,6 +1968,7 @@ function TPointArray_BinaryX(const arr: TPointArray): TIntegerArray; overload; c
 function TPointArray_BinaryY(const arr: TPointArray): TIntegerArray; overload; cdecl; begin Result := arr.BinaryY; end;
 function TPointArray_BinaryInsertSort(var arr: TPointArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertSort(aAscending); end;
 function TPointArray_BinaryInsertSorted(const arr: TPointArray; const aAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.BinaryInsertSorted(aAscending); end;
+function TPointArray_Project(const arr: TPointArray; var sX, sY: TIntegerArray): TBox; overload; cdecl; begin Result := arr.Project(sX, sY); end;
 
 function T2DPointArray_AllBounds1(const arr: T2DPointArray): TBoxArray; overload; cdecl; begin Result := arr.AllBounds; end;
 function T2DPointArray_AllBounds2(const arr: T2DPointArray; var aBounds: TBox): TBoxArray; overload; cdecl; begin Result := arr.AllBounds(aBounds); end;
@@ -2699,6 +2700,15 @@ function TArray_Create13(const aSize: Integer; const item: Boolean): TBooleanArr
 function TArray_Create14(const aSize: Integer; const item: TPoint): TPointArray; overload; cdecl; begin Result.Create(aSize, item); end;
 function TArray_Create15(const aSize: Integer; const item: TBox): TBoxArray; overload; cdecl; begin Result.Create(aSize, item); end;
 function TArray_Create16(const aSize: Integer; const item: TRange): TRangeArray; overload; cdecl; begin Result.Create(aSize, item); end;
+
+function TArray_Cull1(const arr: TIntegerArray; const items: TIntegerArray; const iMatching: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Cull(items, iMatching); end;
+function TArray_Cull2(const arr: TDoubleArray; const items: TDoubleArray; const iMatching: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Cull(items, iMatching); end;
+function TArray_Cull3(const arr: TStringArray; const items: TStringArray; const iMatching: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Cull(items, iMatching); end;
+function TArray_Cull4(const arr: TCharArray; const items: TCharArray; const iMatching: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.Cull(items, iMatching); end;
+function TArray_Cull5(const arr: TBooleanArray; const items: TBooleanArray; const iMatching: Boolean = True): TBooleanArray; overload; cdecl; begin Result := arr.Cull(items, iMatching); end;
+function TArray_Cull6(const arr: TPointArray; const items: TPointArray; const iMatching: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Cull(items, iMatching); end;
+function TArray_Cull7(const arr: TBoxArray; const items: TBoxArray; const iMatching: Boolean = True): TBoxArray; overload; cdecl; begin Result := arr.Cull(items, iMatching); end;
+function TArray_Cull8(const arr: TRangeArray; const items: TRangeArray; const iMatching: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Cull(items, iMatching); end;
 
 function TArray_Dedup1(var arr: TIntegerArray; const item: Integer; const sIndex: Integer = 0): Integer; overload; cdecl; begin Result := arr.Dedup(item, sIndex); end;
 function TArray_Dedup2(var arr: TDoubleArray; const item: Double; const sIndex: Integer = 0): Integer; overload; cdecl; begin Result := arr.Dedup(item, sIndex); end;
