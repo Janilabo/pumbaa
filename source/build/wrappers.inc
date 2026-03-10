@@ -1588,6 +1588,8 @@ function TIntegerArray_BinaryAdaptiveSearch(const arr: TIntegerArray; const item
 function TIntegerArray_BinaryPlacement(var arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryPlacement(item, oAscending); end;
 function TIntegerArray_BinaryFindClosest(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindClosest(item, oAscending); end;
 function TIntegerArray_BinaryMedian(const arr: TIntegerArray): Double; overload; cdecl; begin Result := arr.BinaryMedian; end;
+function TIntegerArray_BinaryQuantile(const arr: TIntegerArray; const aProbability: Double = 0.5): Double; overload; cdecl; begin Result := arr.BinaryQuantile(aProbability); end;
+function TIntegerArray_BinarySpread(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySpread(oAscending); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;

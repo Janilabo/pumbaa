@@ -1632,6 +1632,8 @@ begin
   AddFunction(@TIntegerArray_BinaryPlacement, 'function TIntegerArray_BinaryPlacement(var arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryFindClosest, 'function TIntegerArray_BinaryFindClosest(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryMedian, 'function TIntegerArray_BinaryMedian(const arr: TIntegerArray): Double; overload;');
+  AddFunction(@TIntegerArray_BinaryQuantile, 'function TIntegerArray_BinaryQuantile(const arr: TIntegerArray; const aProbability: Double = 0.5): Double; overload;');
+  AddFunction(@TIntegerArray_BinarySpread, 'function TIntegerArray_BinarySpread(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernarySearch, 'function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');
