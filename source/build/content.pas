@@ -1632,8 +1632,10 @@ begin
   AddFunction(@TIntegerArray_BinaryPlacement, 'function TIntegerArray_BinaryPlacement(var arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryFindClosest, 'function TIntegerArray_BinaryFindClosest(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_BinaryMedian, 'function TIntegerArray_BinaryMedian(const arr: TIntegerArray): Double; overload;');
+  AddFunction(@TIntegerArray_BinaryMidrange, 'function TIntegerArray_BinaryMidrange(const arr: TIntegerArray): Double; overload;');
   AddFunction(@TIntegerArray_BinaryQuantile, 'function TIntegerArray_BinaryQuantile(const arr: TIntegerArray; const aProbability: Double = 0.5): Double; overload;');
-  AddFunction(@TIntegerArray_BinarySpread, 'function TIntegerArray_BinarySpread(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryDiff, 'function TIntegerArray_BinaryDiff(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TIntegerArray_BinaryDifference, 'function TIntegerArray_BinaryDifference(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernarySearch, 'function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');
@@ -6184,6 +6186,12 @@ begin
   AddFunction(@TArray_BinaryFloored4, 'function TArray_BinaryFloored(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryFloored5, 'function TArray_BinaryFloored(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');
   
+  AddFunction(@TArray_BinaryPercentile1, 'function TArray_BinaryPercentile(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Double; overload;');
+  AddFunction(@TArray_BinaryPercentile2, 'function TArray_BinaryPercentile(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Double; overload;');
+  AddFunction(@TArray_BinaryPercentile3, 'function TArray_BinaryPercentile(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Double; overload;');
+  AddFunction(@TArray_BinaryPercentile4, 'function TArray_BinaryPercentile(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Double; overload;');
+  AddFunction(@TArray_BinaryPercentile5, 'function TArray_BinaryPercentile(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Double; overload;');
+  
   AddFunction(@TArray_BinaryOccurrence1, 'function TArray_BinaryOccurrence(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryOccurrence2, 'function TArray_BinaryOccurrence(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryOccurrence3, 'function TArray_BinaryOccurrence(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload;');
@@ -6424,11 +6432,41 @@ begin
   AddFunction(@TArray_BinaryInterval4, 'function TArray_BinaryInterval(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TArray_BinaryInterval5, 'function TArray_BinaryInterval(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): TRange; overload;');
   
+  AddFunction(@TArray_BinaryIsConstant1, 'function TArray_BinaryIsConstant(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryIsConstant2, 'function TArray_BinaryIsConstant(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryIsConstant3, 'function TArray_BinaryIsConstant(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryIsConstant4, 'function TArray_BinaryIsConstant(const arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryIsConstant5, 'function TArray_BinaryIsConstant(const arr: TPointArray): Boolean; overload;');        
+  
+  AddFunction(@TArray_BinaryIsUnique1, 'function TArray_BinaryIsUnique(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryIsUnique2, 'function TArray_BinaryIsUnique(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryIsUnique3, 'function TArray_BinaryIsUnique(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryIsUnique4, 'function TArray_BinaryIsUnique(const arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryIsUnique5, 'function TArray_BinaryIsUnique(const arr: TPointArray): Boolean; overload;');
+  
+  AddFunction(@TArray_BinaryHasVariance1, 'function TArray_BinaryHasVariance(const arr: TIntegerArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryHasVariance2, 'function TArray_BinaryHasVariance(const arr: TDoubleArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryHasVariance3, 'function TArray_BinaryHasVariance(const arr: TStringArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryHasVariance4, 'function TArray_BinaryHasVariance(const arr: TCharArray): Boolean; overload;');
+  AddFunction(@TArray_BinaryHasVariance5, 'function TArray_BinaryHasVariance(const arr: TPointArray): Boolean; overload;');
+  
+  AddFunction(@TArray_BinaryMode1, 'function TArray_BinaryMode(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TArray_BinaryMode2, 'function TArray_BinaryMode(const arr: TDoubleArray): Double; overload;');
+  AddFunction(@TArray_BinaryMode3, 'function TArray_BinaryMode(const arr: TStringArray): string; overload;');
+  AddFunction(@TArray_BinaryMode4, 'function TArray_BinaryMode(const arr: TCharArray): Char; overload;');
+  AddFunction(@TArray_BinaryMode5, 'function TArray_BinaryMode(const arr: TPointArray): TPoint; overload;');
+  
   AddFunction(@TArray_BinaryMembership1, 'function TArray_BinaryMembership(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_BinaryMembership2, 'function TArray_BinaryMembership(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_BinaryMembership3, 'function TArray_BinaryMembership(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_BinaryMembership4, 'function TArray_BinaryMembership(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload;');
   AddFunction(@TArray_BinaryMembership5, 'function TArray_BinaryMembership(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload;');
+  
+  AddFunction(@TArray_BinaryMetaSearch1, 'function TArray_BinaryMetaSearch(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryMetaSearch2, 'function TArray_BinaryMetaSearch(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryMetaSearch3, 'function TArray_BinaryMetaSearch(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryMetaSearch4, 'function TArray_BinaryMetaSearch(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryMetaSearch5, 'function TArray_BinaryMetaSearch(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload;');
   
   AddFunction(@TArray_BinaryBounds1, 'function TArray_BinaryBounds(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TArray_BinaryBounds2, 'function TArray_BinaryBounds(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): TRange; overload;');
