@@ -6379,6 +6379,12 @@ function TArray_BinaryCardinality3(const arr: TStringArray; const itemMin, itemM
 function TArray_BinaryCardinality4(const arr: TCharArray; const itemMin, itemMax: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryCardinality(itemMin, itemMax, oAscending); end;
 function TArray_BinaryCardinality5(const arr: TPointArray; const itemMin, itemMax: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryCardinality(itemMin, itemMax, oAscending); end;
 
+function TArray_BinaryEncounter1(const arr: TIntegerArray; const startItem, stopItem: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEncounter(startItem, stopItem, oAscending); end;
+function TArray_BinaryEncounter2(const arr: TDoubleArray; const startItem, stopItem: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEncounter(startItem, stopItem, oAscending); end;
+function TArray_BinaryEncounter3(const arr: TStringArray; const startItem, stopItem: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEncounter(startItem, stopItem, oAscending); end;
+function TArray_BinaryEncounter4(const arr: TCharArray; const startItem, stopItem: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEncounter(startItem, stopItem, oAscending); end;
+function TArray_BinaryEncounter5(const arr: TPointArray; const startItem, stopItem: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEncounter(startItem, stopItem, oAscending); end;
+
 function TArray_BinaryFindID1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindID(item, oAscending); end;
 function TArray_BinaryFindID2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindID(item, oAscending); end;
 function TArray_BinaryFindID3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindID(item, oAscending); end;

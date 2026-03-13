@@ -6402,6 +6402,12 @@ begin
   AddFunction(@TArray_BinarySlice4, 'function TArray_BinarySlice(const arr: TCharArray; const itemMin, itemMax: Char; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TArray_BinarySlice5, 'function TArray_BinarySlice(const arr: TPointArray; const itemMin, itemMax: TPoint; const oAscending: Boolean = True): TRange; overload;');
 
+  AddFunction(@TArray_BinaryEncounter1, 'function TArray_BinaryEncounter(const arr: TIntegerArray; const startItem, stopItem: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryEncounter2, 'function TArray_BinaryEncounter(const arr: TDoubleArray; const startItem, stopItem: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryEncounter3, 'function TArray_BinaryEncounter(const arr: TStringArray; const startItem, stopItem: string; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryEncounter4, 'function TArray_BinaryEncounter(const arr: TCharArray; const startItem, stopItem: Char; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryEncounter5, 'function TArray_BinaryEncounter(const arr: TPointArray; const startItem, stopItem: TPoint; const oAscending: Boolean = True): Integer; overload;');
+
   AddFunction(@TArray_BinarySearchBy1, 'function TArray_BinarySearchBy(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinarySearchBy2, 'function TArray_BinarySearchBy(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinarySearchBy3, 'function TArray_BinarySearchBy(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload;');
