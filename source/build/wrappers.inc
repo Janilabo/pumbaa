@@ -1592,6 +1592,7 @@ function TIntegerArray_BinaryMidrange(const arr: TIntegerArray): Double; overloa
 function TIntegerArray_BinaryQuantile(const arr: TIntegerArray; const aProbability: Double = 0.5): Double; overload; cdecl; begin Result := arr.BinaryQuantile(aProbability); end;
 function TIntegerArray_BinaryDiff(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.BinaryDiff; end;
 function TIntegerArray_BinaryDifference(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryDifference(oAscending); end;
+function TIntegerArray_BinaryRemoval(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryRemoval(items, oAscending); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
@@ -5351,6 +5352,24 @@ function TArray_Trade6(var arr, b: TPointArray): Integer; overload; cdecl; begin
 function TArray_Trade7(var arr, b: TBoxArray): Integer; overload; cdecl; begin Result := arr.Trade(b); end;
 function TArray_Trade8(var arr, b: TRangeArray): Integer; overload; cdecl; begin Result := arr.Trade(b); end;
 
+function TArray_Trim1(const arr: TIntegerArray; const tCount: Integer = 1): TIntegerArray; overload; cdecl; begin Result := arr.Trim(tCount); end;
+function TArray_Trim2(const arr: TDoubleArray; const tCount: Integer = 1): TDoubleArray; overload; cdecl; begin Result := arr.Trim(tCount); end;
+function TArray_Trim3(const arr: TStringArray; const tCount: Integer = 1): TStringArray; overload; cdecl; begin Result := arr.Trim(tCount); end;
+function TArray_Trim4(const arr: TCharArray; const tCount: Integer = 1): TCharArray; overload; cdecl; begin Result := arr.Trim(tCount); end;
+function TArray_Trim5(const arr: TBooleanArray; const tCount: Integer = 1): TBooleanArray; overload; cdecl; begin Result := arr.Trim(tCount); end;
+function TArray_Trim6(const arr: TPointArray; const tCount: Integer = 1): TPointArray; overload; cdecl; begin Result := arr.Trim(tCount); end;
+function TArray_Trim7(const arr: TBoxArray; const tCount: Integer = 1): TBoxArray; overload; cdecl; begin Result := arr.Trim(tCount); end;
+function TArray_Trim8(const arr: TRangeArray; const tCount: Integer = 1): TRangeArray; overload; cdecl; begin Result := arr.Trim(tCount); end;
+  
+function TArray_Truncate1(const arr: TIntegerArray; const tRate: Double = 10): TIntegerArray; overload; cdecl; begin Result := arr.Truncate(tRate); end;
+function TArray_Truncate2(const arr: TDoubleArray; const tRate: Double = 10): TDoubleArray; overload; cdecl; begin Result := arr.Truncate(tRate); end;
+function TArray_Truncate3(const arr: TStringArray; const tRate: Double = 10): TStringArray; overload; cdecl; begin Result := arr.Truncate(tRate); end;
+function TArray_Truncate4(const arr: TCharArray; const tRate: Double = 10): TCharArray; overload; cdecl; begin Result := arr.Truncate(tRate); end;
+function TArray_Truncate5(const arr: TBooleanArray; const tRate: Double = 10): TBooleanArray; overload; cdecl; begin Result := arr.Truncate(tRate); end;
+function TArray_Truncate6(const arr: TPointArray; const tRate: Double = 10): TPointArray; overload; cdecl; begin Result := arr.Truncate(tRate); end;
+function TArray_Truncate7(const arr: TBoxArray; const tRate: Double = 10): TBoxArray; overload; cdecl; begin Result := arr.Truncate(tRate); end;
+function TArray_Truncate8(const arr: TRangeArray; const tRate: Double = 10): TRangeArray; overload; cdecl; begin Result := arr.Truncate(tRate); end;
+
 function TArray_Undersize1(const arr: TIntegerArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Undersize(limit); end;
 function TArray_Undersize2(const arr: TDoubleArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Undersize(limit); end;
 function TArray_Undersize3(const arr: TStringArray; const limit: Integer): Boolean; overload; cdecl; begin Result := arr.Undersize(limit); end;
@@ -6246,6 +6265,18 @@ function TArray_BinaryEncase3(const arr: TStringArray; const item: string): Bool
 function TArray_BinaryEncase4(const arr: TCharArray; const item: Char): Boolean; overload; cdecl; begin Result := arr.BinaryEncase(item); end;
 function TArray_BinaryEncase5(const arr: TPointArray; const item: TPoint): Boolean; overload; cdecl; begin Result := arr.BinaryEncase(item); end;
 
+function TArray_BinaryWithout1(const arr: TIntegerArray; const target: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryWithout(target, oAscending); end;
+function TArray_BinaryWithout2(const arr: TDoubleArray; const target: TDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryWithout(target, oAscending); end;
+function TArray_BinaryWithout3(const arr: TStringArray; const target: TStringArray; const oAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.BinaryWithout(target, oAscending); end;
+function TArray_BinaryWithout4(const arr: TCharArray; const target: TCharArray; const oAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.BinaryWithout(target, oAscending); end;
+function TArray_BinaryWithout5(const arr: TPointArray; const target: TPointArray; const oAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.BinaryWithout(target, oAscending); end;
+
+function TArray_BinaryExcept1(const arr: TIntegerArray; const target: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryExcept(target, oAscending); end;
+function TArray_BinaryExcept2(const arr: TDoubleArray; const target: TDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.BinaryExcept(target, oAscending); end;
+function TArray_BinaryExcept3(const arr: TStringArray; const target: TStringArray; const oAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.BinaryExcept(target, oAscending); end;
+function TArray_BinaryExcept4(const arr: TCharArray; const target: TCharArray; const oAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.BinaryExcept(target, oAscending); end;
+function TArray_BinaryExcept5(const arr: TPointArray; const target: TPointArray; const oAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.BinaryExcept(target, oAscending); end;
+
 function TArray_BinaryHave1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHave(item, oAscending); end;
 function TArray_BinaryHave2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHave(item, oAscending); end;
 function TArray_BinaryHave3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryHave(item, oAscending); end;
@@ -6257,6 +6288,12 @@ function TArray_BinaryGot2(const arr: TDoubleArray; const item: Double; out inde
 function TArray_BinaryGot3(const arr: TStringArray; const item: string; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryGot(item, index, oAscending); end;
 function TArray_BinaryGot4(const arr: TCharArray; const item: Char; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryGot(item, index, oAscending); end;
 function TArray_BinaryGot5(const arr: TPointArray; const item: TPoint; out index: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryGot(item, index, oAscending); end;
+
+function TArray_BinaryRemoveAll1(var arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRemoveAll(items, oAscending); end;
+function TArray_BinaryRemoveAll2(var arr: TDoubleArray; const items: TDoubleArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRemoveAll(items, oAscending); end;
+function TArray_BinaryRemoveAll3(var arr: TStringArray; const items: TStringArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRemoveAll(items, oAscending); end;
+function TArray_BinaryRemoveAll4(var arr: TCharArray; const items: TCharArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRemoveAll(items, oAscending); end;
+function TArray_BinaryRemoveAll5(var arr: TPointArray; const items: TPointArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRemoveAll(items, oAscending); end;
 
 function TArray_BinaryExist1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExist(item, oAscending); end;
 function TArray_BinaryExist2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryExist(item, oAscending); end;
