@@ -6402,6 +6402,18 @@ begin
   AddFunction(@TArray_BinarySlice4, 'function TArray_BinarySlice(const arr: TCharArray; const itemMin, itemMax: Char; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TArray_BinarySlice5, 'function TArray_BinarySlice(const arr: TPointArray; const itemMin, itemMax: TPoint; const oAscending: Boolean = True): TRange; overload;');
 
+  AddFunction(@TArray_BinaryLeft1, 'function TArray_BinaryLeft(const arr: TIntegerArray; const startItem, stopItem: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryLeft2, 'function TArray_BinaryLeft(const arr: TDoubleArray; const startItem, stopItem: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryLeft3, 'function TArray_BinaryLeft(const arr: TStringArray; const startItem, stopItem: string; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryLeft4, 'function TArray_BinaryLeft(const arr: TCharArray; const startItem, stopItem: Char; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryLeft5, 'function TArray_BinaryLeft(const arr: TPointArray; const startItem, stopItem: TPoint; const oAscending: Boolean = True): Integer; overload;');
+  
+  AddFunction(@TArray_BinaryRight1, 'function TArray_BinaryRight(const arr: TIntegerArray; const startItem, stopItem: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryRight2, 'function TArray_BinaryRight(const arr: TDoubleArray; const startItem, stopItem: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryRight3, 'function TArray_BinaryRight(const arr: TStringArray; const startItem, stopItem: string; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryRight4, 'function TArray_BinaryRight(const arr: TCharArray; const startItem, stopItem: Char; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryRight5, 'function TArray_BinaryRight(const arr: TPointArray; const startItem, stopItem: TPoint; const oAscending: Boolean = True): Integer; overload;');
+
   AddFunction(@TArray_BinaryEncounter1, 'function TArray_BinaryEncounter(const arr: TIntegerArray; const startItem, stopItem: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryEncounter2, 'function TArray_BinaryEncounter(const arr: TDoubleArray; const startItem, stopItem: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryEncounter3, 'function TArray_BinaryEncounter(const arr: TStringArray; const startItem, stopItem: string; const oAscending: Boolean = True): Integer; overload;');

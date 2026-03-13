@@ -6385,6 +6385,18 @@ function TArray_BinaryEncounter3(const arr: TStringArray; const startItem, stopI
 function TArray_BinaryEncounter4(const arr: TCharArray; const startItem, stopItem: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEncounter(startItem, stopItem, oAscending); end;
 function TArray_BinaryEncounter5(const arr: TPointArray; const startItem, stopItem: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEncounter(startItem, stopItem, oAscending); end;
 
+function TArray_BinaryLeft1(const arr: TIntegerArray; const startItem, stopItem: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryLeft(startItem, stopItem, oAscending); end;
+function TArray_BinaryLeft2(const arr: TDoubleArray; const startItem, stopItem: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryLeft(startItem, stopItem, oAscending); end;
+function TArray_BinaryLeft3(const arr: TStringArray; const startItem, stopItem: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryLeft(startItem, stopItem, oAscending); end;
+function TArray_BinaryLeft4(const arr: TCharArray; const startItem, stopItem: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryLeft(startItem, stopItem, oAscending); end;
+function TArray_BinaryLeft5(const arr: TPointArray; const startItem, stopItem: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryLeft(startItem, stopItem, oAscending); end;
+  
+function TArray_BinaryRight1(const arr: TIntegerArray; const startItem, stopItem: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRight(startItem, stopItem, oAscending); end;
+function TArray_BinaryRight2(const arr: TDoubleArray; const startItem, stopItem: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRight(startItem, stopItem, oAscending); end;
+function TArray_BinaryRight3(const arr: TStringArray; const startItem, stopItem: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRight(startItem, stopItem, oAscending); end;
+function TArray_BinaryRight4(const arr: TCharArray; const startItem, stopItem: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRight(startItem, stopItem, oAscending); end;
+function TArray_BinaryRight5(const arr: TPointArray; const startItem, stopItem: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryRight(startItem, stopItem, oAscending); end;
+
 function TArray_BinaryFindID1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindID(item, oAscending); end;
 function TArray_BinaryFindID2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindID(item, oAscending); end;
 function TArray_BinaryFindID3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindID(item, oAscending); end;
