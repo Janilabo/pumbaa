@@ -6019,11 +6019,29 @@ function TArray_BinaryMetaSearch3(const arr: TStringArray; const item: string; c
 function TArray_BinaryMetaSearch4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryMetaSearch(item, oAscending); end;
 function TArray_BinaryMetaSearch5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryMetaSearch(item, oAscending); end;
   
+function TArray_BinaryFrequency1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFrequency(item, oAscending); end;
+function TArray_BinaryFrequency2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFrequency(item, oAscending); end;
+function TArray_BinaryFrequency3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFrequency(item, oAscending); end;
+function TArray_BinaryFrequency4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFrequency(item, oAscending); end;
+function TArray_BinaryFrequency5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFrequency(item, oAscending); end;
+
+function TArray_BinaryRanking1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryRanking(item, oAscending); end;
+function TArray_BinaryRanking2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryRanking(item, oAscending); end;
+function TArray_BinaryRanking3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryRanking(item, oAscending); end;
+function TArray_BinaryRanking4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryRanking(item, oAscending); end;
+function TArray_BinaryRanking5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryRanking(item, oAscending); end;
+  
 function TArray_BinaryMode1(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.BinaryMode; end;
 function TArray_BinaryMode2(const arr: TDoubleArray): Double; overload; cdecl; begin Result := arr.BinaryMode; end;
 function TArray_BinaryMode3(const arr: TStringArray): string; overload; cdecl; begin Result := arr.BinaryMode; end;
 function TArray_BinaryMode4(const arr: TCharArray): Char; overload; cdecl; begin Result := arr.BinaryMode; end;
 function TArray_BinaryMode5(const arr: TPointArray): TPoint; overload; cdecl; begin Result := arr.BinaryMode; end;
+
+function TArray_BinaryPopular1(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryPopular(oAscending); end;
+function TArray_BinaryPopular2(const arr: TDoubleArray; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPopular(oAscending); end;
+function TArray_BinaryPopular3(const arr: TStringArray; const oAscending: Boolean = True): string; overload; cdecl; begin Result := arr.BinaryPopular(oAscending); end;
+function TArray_BinaryPopular4(const arr: TCharArray; const oAscending: Boolean = True): Char; overload; cdecl; begin Result := arr.BinaryPopular(oAscending); end;
+function TArray_BinaryPopular5(const arr: TPointArray; const oAscending: Boolean = True): TPoint; overload; cdecl; begin Result := arr.BinaryPopular(oAscending); end;
 
 function TArray_BinaryInterval1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryInterval(item, oAscending); end;
 function TArray_BinaryInterval2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.BinaryInterval(item, oAscending); end;
@@ -6347,6 +6365,23 @@ function TArray_BinaryPercentile2(const arr: TDoubleArray; const item: Double; c
 function TArray_BinaryPercentile3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPercentile(item, oAscending); end;
 function TArray_BinaryPercentile4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPercentile(item, oAscending); end;
 function TArray_BinaryPercentile5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPercentile(item, oAscending); end;
+
+function TArray_BinaryPercented1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPercented(item, oAscending); end;
+function TArray_BinaryPercented2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPercented(item, oAscending); end;
+function TArray_BinaryPercented3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPercented(item, oAscending); end;
+function TArray_BinaryPercented4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPercented(item, oAscending); end;
+function TArray_BinaryPercented5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Double; overload; cdecl; begin Result := arr.BinaryPercented(item, oAscending); end;
+
+function TArray_BinaryMajority1(const arr: TIntegerArray; out oItem: Integer; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oItem, oAscending); end;
+function TArray_BinaryMajority2(const arr: TDoubleArray; out oItem: Double; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oItem, oAscending); end;
+function TArray_BinaryMajority3(const arr: TStringArray; out oItem: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oItem, oAscending); end;
+function TArray_BinaryMajority4(const arr: TCharArray; out oItem: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oItem, oAscending); end;
+function TArray_BinaryMajority5(const arr: TPointArray; out oItem: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oItem, oAscending); end;
+function TArray_BinaryMajority6(const arr: TIntegerArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oAscending); end;
+function TArray_BinaryMajority7(const arr: TDoubleArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oAscending); end;
+function TArray_BinaryMajority8(const arr: TStringArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oAscending); end;
+function TArray_BinaryMajority9(const arr: TCharArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oAscending); end;
+function TArray_BinaryMajority10(const arr: TPointArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryMajority(oAscending); end;
 
 function TArray_BinaryFindIndex1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindIndex(item, oAscending); end;
 function TArray_BinaryFindIndex2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFindIndex(item, oAscending); end;
