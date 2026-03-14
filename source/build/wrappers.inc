@@ -6440,6 +6440,12 @@ function TArray_BinaryPlace3(const arr: TStringArray; const target: string; cons
 function TArray_BinaryPlace4(const arr: TCharArray; const target: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryPlace(target, oAscending); end;
 function TArray_BinaryPlace5(const arr: TPointArray; const target: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryPlace(target, oAscending); end;
 
+function TArray_BinaryEntry1(const arr: TIntegerArray; const target: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEntry(target, oAscending); end;
+function TArray_BinaryEntry2(const arr: TDoubleArray; const target: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEntry(target, oAscending); end;
+function TArray_BinaryEntry3(const arr: TStringArray; const target: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEntry(target, oAscending); end;
+function TArray_BinaryEntry4(const arr: TCharArray; const target: Char; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEntry(target, oAscending); end;
+function TArray_BinaryEntry5(const arr: TPointArray; const target: TPoint; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryEntry(target, oAscending); end;
+
 function TArray_BinaryAddress1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAddress(item, oAscending); end;
 function TArray_BinaryAddress2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAddress(item, oAscending); end;
 function TArray_BinaryAddress3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryAddress(item, oAscending); end;

@@ -6457,6 +6457,12 @@ begin
   AddFunction(@TArray_BinaryPlace4, 'function TArray_BinaryPlace(const arr: TCharArray; const target: Char; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryPlace5, 'function TArray_BinaryPlace(const arr: TPointArray; const target: TPoint; const oAscending: Boolean = True): Integer; overload;');
 
+  AddFunction(@TArray_BinaryEntry1, 'function TArray_BinaryEntry(const arr: TIntegerArray; const target: Integer; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryEntry2, 'function TArray_BinaryEntry(const arr: TDoubleArray; const target: Double; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryEntry3, 'function TArray_BinaryEntry(const arr: TStringArray; const target: string; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryEntry4, 'function TArray_BinaryEntry(const arr: TCharArray; const target: Char; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TArray_BinaryEntry5, 'function TArray_BinaryEntry(const arr: TPointArray; const target: TPoint; const oAscending: Boolean = True): Integer; overload;');
+
   AddFunction(@TArray_BinaryEncounter1, 'function TArray_BinaryEncounter(const arr: TIntegerArray; const startItem, stopItem: Integer; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryEncounter2, 'function TArray_BinaryEncounter(const arr: TDoubleArray; const startItem, stopItem: Double; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TArray_BinaryEncounter3, 'function TArray_BinaryEncounter(const arr: TStringArray; const startItem, stopItem: string; const oAscending: Boolean = True): Integer; overload;');
