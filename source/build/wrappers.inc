@@ -1421,6 +1421,8 @@ function TIntegerArray_Consolidate(const arr: TIntegerArray): TRangeArray; overl
 function TIntegerArray_Average(const arr: TIntegerArray): Double; overload; cdecl; begin Result := arr.Average; end;
 function TIntegerArray_MaxVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MaxVal; end;
 function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.MinVal; end;
+function TIntegerArray_Sorting(const arr: TIntegerArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sorting(oAscending); end;
+function TIntegerArray_Orderliness(const arr: TIntegerArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Orderliness(oAscending); end;
 function TIntegerArray_Complement(const arr: TIntegerArray; const sSorted: Boolean = False): TIntegerArray; overload; cdecl; begin Result := arr.Complement(sSorted); end;
 function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BSearch(value, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
@@ -5529,6 +5531,24 @@ function TArray_Sorted2(const arr: TDoubleArray; const aAscending: Boolean = Tru
 function TArray_Sorted3(const arr: TStringArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sorted(aAscending); end;
 function TArray_Sorted4(const arr: TCharArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sorted(aAscending); end;
 function TArray_Sorted5(const arr: TPointArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sorted(aAscending); end;
+
+function TArray_SortedAs1(const arr: TIntegerArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedAs(aAscending); end;
+function TArray_SortedAs2(const arr: TDoubleArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedAs(aAscending); end;
+function TArray_SortedAs3(const arr: TStringArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedAs(aAscending); end;
+function TArray_SortedAs4(const arr: TCharArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedAs(aAscending); end;
+function TArray_SortedAs5(const arr: TPointArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedAs(aAscending); end;
+
+function TArray_SortedWith1(const arr: TIntegerArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedWith(aAscending); end;
+function TArray_SortedWith2(const arr: TDoubleArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedWith(aAscending); end;
+function TArray_SortedWith3(const arr: TStringArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedWith(aAscending); end;
+function TArray_SortedWith4(const arr: TCharArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedWith(aAscending); end;
+function TArray_SortedWith5(const arr: TPointArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.SortedWith(aAscending); end;
+
+function TArray_Sortered1(const arr: TIntegerArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sortered(oAscending); end;
+function TArray_Sortered2(const arr: TDoubleArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sortered(oAscending); end;
+function TArray_Sortered3(const arr: TStringArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sortered(oAscending); end;
+function TArray_Sortered4(const arr: TCharArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sortered(oAscending); end;
+function TArray_Sortered5(const arr: TPointArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sortered(oAscending); end;
 
 function TArray_IsSorted1(const arr: TIntegerArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.IsSorted(aAscending); end;
 function TArray_IsSorted2(const arr: TDoubleArray; const aAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.IsSorted(aAscending); end;
