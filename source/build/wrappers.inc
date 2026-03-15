@@ -1594,6 +1594,8 @@ function TIntegerArray_BinaryDiff(const arr: TIntegerArray): Integer; overload; 
 function TIntegerArray_BinaryDifference(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryDifference(oAscending); end;
 function TIntegerArray_BinaryRemoval(const arr: TIntegerArray; const items: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.BinaryRemoval(items, oAscending); end;
 function TIntegerArray_BinarySnap(const arr: TIntegerArray; const target: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinarySnap(target, oAscending); end;
+function TIntegerArray_BinaryBreach(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryBreach(oAscending); end;
+function TIntegerArray_BinaryBreaks(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryBreaks(oAscending); end;
 function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.TernarySearch(value, oAscending); end;
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
@@ -6307,6 +6309,30 @@ function TArray_BinaryContain2(const arr: TDoubleArray; const item: Double; cons
 function TArray_BinaryContain3(const arr: TStringArray; const item: string; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryContain(item, oAscending); end;
 function TArray_BinaryContain4(const arr: TCharArray; const item: Char; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryContain(item, oAscending); end;
 function TArray_BinaryContain5(const arr: TPointArray; const item: TPoint; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.BinaryContain(item, oAscending); end;
+
+function TArray_BinaryError1(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryError(oAscending); end;
+function TArray_BinaryError2(const arr: TDoubleArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryError(oAscending); end;
+function TArray_BinaryError3(const arr: TStringArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryError(oAscending); end;
+function TArray_BinaryError4(const arr: TCharArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryError(oAscending); end;
+function TArray_BinaryError5(const arr: TPointArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryError(oAscending); end;
+
+function TArray_BinaryFail1(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFail(oAscending); end;
+function TArray_BinaryFail2(const arr: TDoubleArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFail(oAscending); end;
+function TArray_BinaryFail3(const arr: TStringArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFail(oAscending); end;
+function TArray_BinaryFail4(const arr: TCharArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFail(oAscending); end;
+function TArray_BinaryFail5(const arr: TPointArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFail(oAscending); end;
+
+function TArray_BinaryFailure1(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFailure(oAscending); end;
+function TArray_BinaryFailure2(const arr: TDoubleArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFailure(oAscending); end;
+function TArray_BinaryFailure3(const arr: TStringArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFailure(oAscending); end;
+function TArray_BinaryFailure4(const arr: TCharArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFailure(oAscending); end;
+function TArray_BinaryFailure5(const arr: TPointArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryFailure(oAscending); end;
+
+function TArray_BinaryViolation1(const arr: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryViolation(oAscending); end;
+function TArray_BinaryViolation2(const arr: TDoubleArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryViolation(oAscending); end;
+function TArray_BinaryViolation3(const arr: TStringArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryViolation(oAscending); end;
+function TArray_BinaryViolation4(const arr: TCharArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryViolation(oAscending); end;
+function TArray_BinaryViolation5(const arr: TPointArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryViolation(oAscending); end;
 
 function TArray_BinaryStart1(const arr: TIntegerArray; const item: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryStart(item, oAscending); end;
 function TArray_BinaryStart2(const arr: TDoubleArray; const item: Double; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryStart(item, oAscending); end;
