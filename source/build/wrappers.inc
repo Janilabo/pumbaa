@@ -1028,6 +1028,9 @@ function TRange_Middle(const range: TRange): Integer; cdecl; begin Result := ran
 function TRange_MiddleValue(const range: TRange): Double; cdecl; begin Result := range.MiddleValue; end;
 function TRange_MiddleVal(const range: TRange): Integer; cdecl; begin Result := range.MiddleVal; end;
 function TRange_MiddleBit(const range: TRange): Integer; cdecl; begin Result := range.MiddleBit; end;
+function TRange_MiddleDigit(const range: TRange): Integer; cdecl; begin Result := range.MiddleDigit; end;
+function TRange_Bisector(const range: TRange): Integer; cdecl; begin Result := range.Bisector; end;
+function TRange_Base(const range: TRange): Integer; cdecl; begin Result := range.Base; end;
 function TRange_MidBit(const range: TRange): Integer; cdecl; begin Result := range.MidBit; end;
 function TRange_Mid(const range: TRange): Double; cdecl; begin Result := range.Mid; end;
 function TRange_MidVal(const range: TRange): Double; cdecl; begin Result := range.MidVal; end;
@@ -1045,6 +1048,8 @@ function TRange_Halfway(const range: TRange): Integer; cdecl; begin Result := ra
 function TRange_Radius(const range: TRange): Integer; cdecl; begin Result := range.Radius; end;
 function TRange_Rad(const range: TRange): Integer; cdecl; begin Result := range.Rad; end;
 function TRange_Radiar(const range: TRange): Integer; cdecl; begin Result := range.Radiar; end;
+function TRange_Iterate1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Iterate; end;
+function TRange_Iterate2(const range: TRange; out digits: TIntegerArray; const rReverse: Boolean = False): Integer; overload; cdecl; begin Result := range.Iterate(digits, rReverse); end;
 function TRange_AsStr(const range: TRange; const rReversed: Boolean = False): string; overload; cdecl; begin Result := range.AsStr(rReversed); end;
 function TRange_Str(const range: TRange; const openRange: string = '['; const closeRange: string = ']'; const glueRange: string = '..'): string; cdecl; begin Result := range.Str(openRange, closeRange, glueRange); end;  
 function TRange_ToStr(const range: TRange; const glueRange: string = '..'; const openRange: string = '['; const closeRange: string = ']'): string; cdecl; begin Result := range.ToStr(glueRange, openRange, closeRange); end;
@@ -1190,8 +1195,10 @@ function TRange_MiddlePoint(const range: TRange): Double; cdecl; begin Result :=
 function TRange_Capture(const range: TRange): TIntegerArray; cdecl; begin Result := range.Capture; end;
 function TRange_Captured(const range: TRange): TIntegerArray; cdecl; begin Result := range.Captured; end;
 function TRange_Snapshot(const range: TRange): TIntegerArray; cdecl; begin Result := range.Snapshot; end;
-function TRange_Iterated(const range: TRange): TIntegerArray; cdecl; begin Result := range.Iterated; end;
-function TRange_Iteration(const range: TRange): TIntegerArray; cdecl; begin Result := range.Iteration; end;
+function TRange_Iterated1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Iterated; end;
+function TRange_Iterated2(const range: TRange; out digits: TIntegerArray; const rReverse: Boolean = False): Integer; overload; cdecl; begin Result := range.Iterated(digits, rReverse); end;
+function TRange_Iteration1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Iteration; end;
+function TRange_Iteration2(const range: TRange; out digits: TIntegerArray; const rReverse: Boolean = False): Integer; overload; cdecl; begin Result := range.Iteration(digits, rReverse); end;
 function TRange_Split(const range: TRange; var rLeft, rRight: TRange): Integer; cdecl; begin Result := range.Split(rLeft, rRight); end;
 function TRange_Middleway(const range: TRange): Integer; cdecl; begin Result := range.Middleway; end;
 function TRange_Medoid(const range: TRange): Integer; cdecl; begin Result := range.Medoid; end;
