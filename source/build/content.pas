@@ -239,6 +239,9 @@ begin
   AddFunction(@Integer_X2, 'function Integer_X2(var val: Integer; const N: Integer = 1): Integer; overload;');
   AddFunction(@Integer_X3, 'function Integer_X3(var val: Integer; const N: Integer = 1): Integer; overload;');
   AddFunction(@Integer_X4, 'function Integer_X4(var val: Integer; const N: Integer = 1): Integer; overload;');
+  AddFunction(@Integer_Add, 'function Integer_Add(const val: Integer; const N: Integer; const aBounds: TRange): Integer; overload;');
+  AddFunction(@Integer_Pred, 'function Integer_Pred(const val: Integer; const N: Integer = 1; const minBound: Integer = -2147483648): Integer; overload;');
+  AddFunction(@Integer_Succ, 'function Integer_Succ(const val: Integer; const N: Integer = 1; const maxBound: Integer = 2147483647): Integer; overload;');
 
   AddFunction(@Int64_IsPrime, 'function Int64_IsPrime(const x: Int64): Boolean;');
   AddFunction(@Int64_Prime, 'function Int64_Prime(const x: Int64): Boolean;');
@@ -1241,6 +1244,10 @@ begin
   AddFunction(@TRange_MiddlePoint, 'function TRange_MiddlePoint(const range: TRange): Double;');
   AddFunction(@TRange_Middleway, 'function TRange_Middleway(const range: TRange): Integer;');
   AddFunction(@TRange_Base, 'function TRange_Base(const range: TRange): Integer;');
+  AddFunction(@TRange_Stepped, 'function TRange_Stepped(const range: TRange; const sSize: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Sweep, 'function TRange_Sweep(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Iter1, 'function TRange_Iter(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Iter2, 'function TRange_Iter(const range: TRange; out digits: TIntegerArray; const rReverse: Boolean = False): Integer; overload;');
   AddFunction(@TRange_Iterate1, 'function TRange_Iterate(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Iterate2, 'function TRange_Iterate(const range: TRange; out digits: TIntegerArray; const rReverse: Boolean = False): Integer; overload;');
   AddFunction(@TRange_MiddleDigit, 'function TRange_MiddleDigit(const range: TRange): Integer;');
@@ -1328,6 +1335,14 @@ begin
   AddFunction(@TRange_Echo, 'function TRange_Echo(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_AsID, 'function TRange_AsID(const range: TRange; const oAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TRange_LoadID, 'function TRange_LoadID(const range: TRange; var target: TIntegerArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TRange_Load, 'function TRange_Load(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Mob, 'function TRange_Mob(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Populates, 'function TRange_Populates(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Quota, 'function TRange_Quota(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Sizing, 'function TRange_Sizing(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Weight, 'function TRange_Weight(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_EvenSummed, 'function TRange_EvenSummed(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_OddSummed, 'function TRange_OddSummed(const range: TRange): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

@@ -142,6 +142,9 @@ function Integer_X(var val: Integer; const N: Integer = 1): Integer; overload; c
 function Integer_X2(var val: Integer; const N: Integer = 1): Integer; overload; cdecl; begin Result := X2(val, N); end;
 function Integer_X3(var val: Integer; const N: Integer = 1): Integer; overload; cdecl; begin Result := X3(val, N); end;
 function Integer_X4(var val: Integer; const N: Integer = 1): Integer; overload; cdecl; begin Result := X4(val, N); end;
+function Integer_Add(const val: Integer; const N: Integer; const aBounds: TRange): Integer; overload; cdecl; begin Result := val.Add(N, aBounds); end;
+function Integer_Pred(const val: Integer; const N: Integer = 1; const minBound: Integer = -2147483648): Integer; overload; cdecl; begin Result := val.Pred(N, minBound); end;
+function Integer_Succ(const val: Integer; const N: Integer = 1; const maxBound: Integer = 2147483647): Integer; overload; cdecl; begin Result := val.Succ(N, maxBound); end;
 
 function Int64_Prime(const x: Int64): Boolean; cdecl; begin Result := x.Prime; end;
 function Int64_IsPrime(const x: Int64): Boolean; cdecl; begin Result := x.IsPrime; end;
@@ -1048,6 +1051,10 @@ function TRange_Halfway(const range: TRange): Integer; cdecl; begin Result := ra
 function TRange_Radius(const range: TRange): Integer; cdecl; begin Result := range.Radius; end;
 function TRange_Rad(const range: TRange): Integer; cdecl; begin Result := range.Rad; end;
 function TRange_Radiar(const range: TRange): Integer; cdecl; begin Result := range.Radiar; end;
+function TRange_Stepped(const range: TRange; const sSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Stepped(sSize); end;
+function TRange_Sweep(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Sweep; end;
+function TRange_Iter1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Iter; end;
+function TRange_Iter2(const range: TRange; out digits: TIntegerArray; const rReverse: Boolean = False): Integer; overload; cdecl; begin Result := range.Iter(digits, rReverse); end;
 function TRange_Iterate1(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Iterate; end;
 function TRange_Iterate2(const range: TRange; out digits: TIntegerArray; const rReverse: Boolean = False): Integer; overload; cdecl; begin Result := range.Iterate(digits, rReverse); end;
 function TRange_AsStr(const range: TRange; const rReversed: Boolean = False): string; overload; cdecl; begin Result := range.AsStr(rReversed); end;
@@ -1284,6 +1291,14 @@ function TRange_Extents2(const range: TRange; var rMin, rMax: Integer): Integer;
 function TRange_Echo(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Echo; end;
 function TRange_AsID(const range: TRange; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := range.AsID(oAscending); end;
 function TRange_LoadID(const range: TRange; var target: TIntegerArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := range.LoadID(target, oAscending); end;
+function TRange_Load(const range: TRange): Integer; overload; cdecl; begin Result := range.Load; end;
+function TRange_Mob(const range: TRange): Integer; overload; cdecl; begin Result := range.Mob; end;
+function TRange_Populates(const range: TRange): Integer; overload; cdecl; begin Result := range.Populates; end;
+function TRange_Quota(const range: TRange): Integer; overload; cdecl; begin Result := range.Quota; end;
+function TRange_Sizing(const range: TRange): Integer; overload; cdecl; begin Result := range.Sizing; end;
+function TRange_Weight(const range: TRange): Integer; overload; cdecl; begin Result := range.Weight; end;
+function TRange_EvenSummed(const range: TRange): Boolean; overload; cdecl; begin Result := range.EvenSummed; end;
+function TRange_OddSummed(const range: TRange): Boolean; overload; cdecl; begin Result := range.OddSummed; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
