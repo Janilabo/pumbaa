@@ -1364,6 +1364,9 @@ begin
   AddFunction(@TRange_Far, 'function TRange_Far(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload;');
   AddFunction(@TRange_Apart, 'function TRange_Apart(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload;');
   AddFunction(@TRange_Distant, 'function TRange_Distant(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload;');
+  AddFunction(@TRange_Outlier, 'function TRange_Outlier(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_IsMissing, 'function TRange_IsMissing(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Deviant, 'function TRange_Deviant(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Closest, 'function TRange_Closest(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Distal, 'function TRange_Distal(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Farthest, 'function TRange_Farthest(const range: TRange; const val: Integer): Integer; overload;');
@@ -1372,6 +1375,14 @@ begin
   AddFunction(@TRange_Pinned, 'function TRange_Pinned(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_PinMax, 'function TRange_PinMax(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_PinMin, 'function TRange_PinMin(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_IsNegligible, 'function TRange_IsNegligible(const range: TRange; const threshold: Integer = 0): Boolean; overload;');
+  AddFunction(@TRange_IsSignificant, 'function TRange_IsSignificant(const range: TRange; const threshold: Integer = 0): Boolean; overload;');
+  AddFunction(@TRange_IsSubstantial, 'function TRange_IsSubstantial(const range: TRange; const threshold: Integer): Boolean; overload;');
+  AddFunction(@TRange_IsNarrow, 'function TRange_IsNarrow(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_IsWide, 'function TRange_IsWide(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_IsSingle, 'function TRange_IsSingle(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Singleton, 'function TRange_Singleton(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Multiple, 'function TRange_Multiple(const range: TRange): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

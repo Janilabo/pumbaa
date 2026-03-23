@@ -1320,6 +1320,9 @@ function TRange_Near(const range: TRange; const val: Integer; const vRadius: Int
 function TRange_Far(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload; cdecl; begin Result := range.Far(val, threshold); end;
 function TRange_Apart(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload; cdecl; begin Result := range.Apart(val, threshold); end;
 function TRange_Distant(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload; cdecl; begin Result := range.Distant(val, threshold); end;
+function TRange_Outlier(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Outlier(val); end;
+function TRange_IsMissing(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.IsMissing(val); end;
+function TRange_Deviant(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Deviant(val); end;
 function TRange_Closest(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Closest(val); end;
 function TRange_Distal(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Distal(val); end;
 function TRange_Farthest(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Farthest(val); end;
@@ -1328,6 +1331,14 @@ function TRange_Pin(const range: TRange; const val: Integer): Integer; overload;
 function TRange_Pinned(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Pinned(val); end;
 function TRange_PinMax(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.PinMax(val); end;
 function TRange_PinMin(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.PinMin(val); end;
+function TRange_IsNegligible(const range: TRange; const threshold: Integer = 0): Boolean; overload; cdecl; begin Result := range.IsNegligible(threshold); end;
+function TRange_IsSignificant(const range: TRange; const threshold: Integer = 0): Boolean; overload; cdecl; begin Result := range.IsSignificant(threshold); end;
+function TRange_IsSubstantial(const range: TRange; const threshold: Integer): Boolean; overload; cdecl; begin Result := range.IsSubstantial(threshold); end;
+function TRange_IsNarrow(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.IsNarrow(val); end;
+function TRange_IsWide(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.IsWide(val); end;
+function TRange_IsSingle(const range: TRange): Boolean; overload; cdecl; begin Result := range.IsSingle; end;
+function TRange_Singleton(const range: TRange): Boolean; overload; cdecl; begin Result := range.Singleton; end;
+function TRange_Multiple(const range: TRange): Boolean; overload; cdecl; begin Result := range.Multiple; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
