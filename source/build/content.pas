@@ -1341,6 +1341,9 @@ begin
   AddFunction(@TRange_Quota, 'function TRange_Quota(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Sizing, 'function TRange_Sizing(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Weight, 'function TRange_Weight(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Perim, 'function TRange_Perim(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Ordinality, 'function TRange_Ordinality(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_PopulationCount, 'function TRange_PopulationCount(const range: TRange): Integer; overload;');
   AddFunction(@TRange_EvenSummed, 'function TRange_EvenSummed(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_OddSummed, 'function TRange_OddSummed(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_Within, 'function TRange_Within(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload;');
@@ -1349,6 +1352,19 @@ begin
   AddFunction(@TRange_GetChunk, 'function TRange_GetChunk(const range: TRange; const chunkIndex: Integer; const totalChunks: Integer = 2147483647): TRange; overload;');
   AddFunction(@TRange_Itemize, 'function TRange_Itemize(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Itemized, 'function TRange_Itemized(const range: TRange; const AStep: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Reverted, 'function TRange_Reverted(const range: TRange): TRange; overload;');
+  AddFunction(@TRange_Normalization, 'function TRange_Normalization(const range: TRange): TRange; overload;');
+  AddFunction(@TRange_ToOrder, 'function TRange_ToOrder(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_OrderTo, 'function TRange_OrderTo(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Arrange, 'function TRange_Arrange(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Fix, 'function TRange_Fix(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Separately, 'function TRange_Separately(const range: TRange; const rReverse: Boolean = False): TIntegerArray; overload;');
+  AddFunction(@TRange_Ordering, 'function TRange_Ordering(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Near, 'function TRange_Near(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload;');
+  AddFunction(@TRange_Closest, 'function TRange_Closest(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Distal, 'function TRange_Distal(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Farthest, 'function TRange_Farthest(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Remap, 'function TRange_Remap(const range: TRange; const val: Integer; const target: TRange): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

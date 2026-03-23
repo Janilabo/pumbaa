@@ -1297,6 +1297,9 @@ function TRange_Populates(const range: TRange): Integer; overload; cdecl; begin 
 function TRange_Quota(const range: TRange): Integer; overload; cdecl; begin Result := range.Quota; end;
 function TRange_Sizing(const range: TRange): Integer; overload; cdecl; begin Result := range.Sizing; end;
 function TRange_Weight(const range: TRange): Integer; overload; cdecl; begin Result := range.Weight; end;
+function TRange_Perim(const range: TRange): Integer; overload; cdecl; begin Result := range.Perim; end;
+function TRange_Ordinality(const range: TRange): Integer; overload; cdecl; begin Result := range.Ordinality; end;
+function TRange_PopulationCount(const range: TRange): Integer; overload; cdecl; begin Result := range.PopulationCount; end;
 function TRange_EvenSummed(const range: TRange): Boolean; overload; cdecl; begin Result := range.EvenSummed; end;
 function TRange_OddSummed(const range: TRange): Boolean; overload; cdecl; begin Result := range.OddSummed; end;
 function TRange_Within(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload; cdecl; begin Result := range.Within(val, vRadius); end;
@@ -1305,6 +1308,19 @@ function TRange_Have(const range: TRange; const val: Integer): Boolean; overload
 function TRange_GetChunk(const range: TRange; const chunkIndex: Integer; const totalChunks: Integer = 2147483647): TRange; overload; cdecl; begin Result := range.GetChunk(chunkIndex, totalChunks); end;
 function TRange_Itemize(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Itemize; end;
 function TRange_Itemized(const range: TRange; const AStep: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Itemized(AStep); end;
+function TRange_Reverted(const range: TRange): TRange; overload; cdecl; begin Result := range.Reverted; end;
+function TRange_Normalization(const range: TRange): TRange; overload; cdecl; begin Result := range.Normalization; end;
+function TRange_ToOrder(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.ToOrder(oAscending); end;
+function TRange_OrderTo(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.OrderTo(oAscending); end;
+function TRange_Arrange(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Arrange(oAscending); end;
+function TRange_Fix(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Fix(oAscending); end;
+function TRange_Separately(const range: TRange; const rReverse: Boolean = False): TIntegerArray; overload; cdecl; begin Result := range.Separately(rReverse); end;
+function TRange_Ordering(const range: TRange): Integer; overload; cdecl; begin Result := range.Ordering; end;
+function TRange_Near(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload; cdecl; begin Result := range.Near(val, vRadius); end;
+function TRange_Closest(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Closest(val); end;
+function TRange_Distal(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Distal(val); end;
+function TRange_Farthest(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Farthest(val); end;
+function TRange_Remap(const range: TRange; const val: Integer; const target: TRange): Integer; overload; cdecl; begin Result := range.Remap(val, target); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
