@@ -1361,10 +1361,17 @@ begin
   AddFunction(@TRange_Separately, 'function TRange_Separately(const range: TRange; const rReverse: Boolean = False): TIntegerArray; overload;');
   AddFunction(@TRange_Ordering, 'function TRange_Ordering(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Near, 'function TRange_Near(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload;');
+  AddFunction(@TRange_Far, 'function TRange_Far(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload;');
+  AddFunction(@TRange_Apart, 'function TRange_Apart(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload;');
+  AddFunction(@TRange_Distant, 'function TRange_Distant(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload;');
   AddFunction(@TRange_Closest, 'function TRange_Closest(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Distal, 'function TRange_Distal(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Farthest, 'function TRange_Farthest(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Remap, 'function TRange_Remap(const range: TRange; const val: Integer; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_Pin, 'function TRange_Pin(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Pinned, 'function TRange_Pinned(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_PinMax, 'function TRange_PinMax(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_PinMin, 'function TRange_PinMin(const range: TRange; const val: Integer): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

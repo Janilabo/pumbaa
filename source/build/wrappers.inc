@@ -1317,10 +1317,17 @@ function TRange_Fix(const range: TRange; const oAscending: Boolean = True): TRan
 function TRange_Separately(const range: TRange; const rReverse: Boolean = False): TIntegerArray; overload; cdecl; begin Result := range.Separately(rReverse); end;
 function TRange_Ordering(const range: TRange): Integer; overload; cdecl; begin Result := range.Ordering; end;
 function TRange_Near(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload; cdecl; begin Result := range.Near(val, vRadius); end;
+function TRange_Far(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload; cdecl; begin Result := range.Far(val, threshold); end;
+function TRange_Apart(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload; cdecl; begin Result := range.Apart(val, threshold); end;
+function TRange_Distant(const range: TRange; const val: Integer; const threshold: Integer = 1): Boolean; overload; cdecl; begin Result := range.Distant(val, threshold); end;
 function TRange_Closest(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Closest(val); end;
 function TRange_Distal(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Distal(val); end;
 function TRange_Farthest(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Farthest(val); end;
 function TRange_Remap(const range: TRange; const val: Integer; const target: TRange): Integer; overload; cdecl; begin Result := range.Remap(val, target); end;
+function TRange_Pin(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Pin(val); end;
+function TRange_Pinned(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Pinned(val); end;
+function TRange_PinMax(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.PinMax(val); end;
+function TRange_PinMin(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.PinMin(val); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
