@@ -1343,6 +1343,12 @@ begin
   AddFunction(@TRange_Weight, 'function TRange_Weight(const range: TRange): Integer; overload;');
   AddFunction(@TRange_EvenSummed, 'function TRange_EvenSummed(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_OddSummed, 'function TRange_OddSummed(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Within, 'function TRange_Within(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload;');
+  AddFunction(@TRange_Covering, 'function TRange_Covering(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Have, 'function TRange_Have(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_GetChunk, 'function TRange_GetChunk(const range: TRange; const chunkIndex: Integer; const totalChunks: Integer = 2147483647): TRange; overload;');
+  AddFunction(@TRange_Itemize, 'function TRange_Itemize(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Itemized, 'function TRange_Itemized(const range: TRange; const AStep: Integer = 1): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

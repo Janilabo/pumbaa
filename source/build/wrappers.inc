@@ -1299,6 +1299,12 @@ function TRange_Sizing(const range: TRange): Integer; overload; cdecl; begin Res
 function TRange_Weight(const range: TRange): Integer; overload; cdecl; begin Result := range.Weight; end;
 function TRange_EvenSummed(const range: TRange): Boolean; overload; cdecl; begin Result := range.EvenSummed; end;
 function TRange_OddSummed(const range: TRange): Boolean; overload; cdecl; begin Result := range.OddSummed; end;
+function TRange_Within(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload; cdecl; begin Result := range.Within(val, vRadius); end;
+function TRange_Covering(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Covering(val); end;
+function TRange_Have(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Have(val); end;
+function TRange_GetChunk(const range: TRange; const chunkIndex: Integer; const totalChunks: Integer = 2147483647): TRange; overload; cdecl; begin Result := range.GetChunk(chunkIndex, totalChunks); end;
+function TRange_Itemize(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Itemize; end;
+function TRange_Itemized(const range: TRange; const AStep: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Itemized(AStep); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
