@@ -1383,6 +1383,10 @@ begin
   AddFunction(@TRange_IsSingle, 'function TRange_IsSingle(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_Singleton, 'function TRange_Singleton(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_Multiple, 'function TRange_Multiple(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Displacement, 'function TRange_Displacement(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Margin, 'function TRange_Margin(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Proximity, 'function TRange_Proximity(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Equivalent, 'function TRange_Equivalent(const range: TRange; const b: TRange): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

@@ -1339,6 +1339,10 @@ function TRange_IsWide(const range: TRange; const val: Integer): Boolean; overlo
 function TRange_IsSingle(const range: TRange): Boolean; overload; cdecl; begin Result := range.IsSingle; end;
 function TRange_Singleton(const range: TRange): Boolean; overload; cdecl; begin Result := range.Singleton; end;
 function TRange_Multiple(const range: TRange): Boolean; overload; cdecl; begin Result := range.Multiple; end;
+function TRange_Displacement(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Displacement(val); end;
+function TRange_Margin(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Margin(val); end;
+function TRange_Proximity(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Proximity(val); end;
+function TRange_Equivalent(const range: TRange; const b: TRange): Boolean; overload; cdecl; begin Result := range.Equivalent(b); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
