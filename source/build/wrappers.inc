@@ -751,6 +751,8 @@ function TBox_Indexed(const bx: TBox): T2DIntegerArray; overload; cdecl; begin R
 function TBox_Indexes(const bx: TBox): TIntegerArray; overload; cdecl; begin Result := bx.Indexes; end;
 function TBox_IndexList(const bx: TBox): TIntegerArray; overload; cdecl; begin Result := bx.IndexList; end;
 
+function TRange_Range(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := Range(arr, rAscending); end;
+function TRange_R(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := R(arr, rAscending); end;
 function TRange_BitCast1(const range: TRange): Int64; overload; cdecl; begin Result := range.BitCast; end;
 procedure TRange_BitCast2(var range: TRange; const rCast: Int64); overload; cdecl; begin range.BitCast(rCast); end;
 function TRange_Decode(var range: TRange; const rPacked: Int64): Integer; overload; cdecl; begin Result := range.Decode(rPacked); end;
@@ -768,6 +770,7 @@ function TRange_Create1(const rStart, rStop: Integer): TRange; overload; cdecl; 
 function TRange_Create2(const value: Integer): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(value); end;
 function TRange_Create3: TRange; overload; cdecl; var range: TRange; begin Result := range.Create; end;
 function TRange_Create4(const data: string): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(data); end;
+function TRange_Create5(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload; cdecl; var range: TRange; begin Result := range.Create(arr, rAscending); end;
 function TRange_Construct1(const rStart, rStop: Integer): TRange; overload; cdecl; begin Result := TRange.Construct(rStart, rStop); end;
 function TRange_Construct2(const rVal: Integer): TRange; overload; cdecl; begin Result := TRange.Construct(rVal); end;
 function TRange_Construct3: TRange; overload; cdecl; begin Result := TRange.Construct; end;
@@ -1343,6 +1346,10 @@ function TRange_Displacement(const range: TRange; const val: Integer): Integer; 
 function TRange_Margin(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Margin(val); end;
 function TRange_Proximity(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Proximity(val); end;
 function TRange_Equivalent(const range: TRange; const b: TRange): Boolean; overload; cdecl; begin Result := range.Equivalent(b); end;
+function TRange_Form1(const val: Integer; const radius: Integer = 0; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := TRange.Form(val, radius, rAscending); end;
+function TRange_Form2(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := TRange.Form(arr, rAscending); end;
+function TRange_From1(const startVal: Integer; const stepCount: Integer = 0): TRange; overload; cdecl; begin Result := TRange.From(startVal, stepCount); end;
+function TRange_From2(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := TRange.From(arr, rAscending); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

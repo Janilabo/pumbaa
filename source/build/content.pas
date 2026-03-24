@@ -795,6 +795,8 @@ begin
 
   AddFunction(@DoNothing, 'procedure ______________;');
   AddFunction(@DoNothing, 'procedure TRANGE_METHODS;');
+  AddFunction(@TRange_Range, 'function TRange_Range(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_R, 'function TRange_R(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload;');
   AddFunction(@TRange_BitCast1, 'function TRange_BitCast(const range: TRange): Int64; overload;');
   AddFunction(@TRange_BitCast2, 'procedure TRange_BitCast(var range: TRange; const rCast: Int64); overload;');
   AddFunction(@TRange_Decode, 'function TRange_Decode(var range: TRange; const rPacked: Int64): Integer; overload;');
@@ -812,10 +814,13 @@ begin
   AddFunction(@TRange_Create2, 'function TRange_Create(const value: Integer): TRange; overload;');
   AddFunction(@TRange_Create3, 'function TRange_Create: TRange; overload;');
   AddFunction(@TRange_Create4, 'function TRange_Create(const data: string): TRange; overload;');
+  AddFunction(@TRange_Create5, 'function TRange_Create(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload;');
   AddFunction(@TRange_Construct1, 'function TRange_Construct(const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Construct2, 'function TRange_Construct(const rVal: Integer): TRange; overload;');
   AddFunction(@TRange_Construct3, 'function TRange_Construct: TRange; overload;');
   AddFunction(@TRange_Construct4, 'function TRange_Construct(const arr: TIntegerArray; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_From1, 'function TRange_From(const startVal: Integer; const stepCount: Integer = 0): TRange; overload;');
+  AddFunction(@TRange_From2, 'function TRange_From(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload;');
   AddFunction(@TRange_Build, 'function TRange_Build(const rStart: Integer = 0; const rStop: Integer = 0): Integer;');
   AddFunction(@TRange_Init1, 'function TRange_Init(var range: TRange; const rStart, rStop: Integer): TRange; overload;');
   AddFunction(@TRange_Init2, 'function TRange_Init(var range: TRange; const r: TRange): TRange; overload;');
@@ -1387,6 +1392,8 @@ begin
   AddFunction(@TRange_Margin, 'function TRange_Margin(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Proximity, 'function TRange_Proximity(const range: TRange; const val: Integer): Integer; overload;');
   AddFunction(@TRange_Equivalent, 'function TRange_Equivalent(const range: TRange; const b: TRange): Boolean; overload;');
+  AddFunction(@TRange_Form1, 'function TRange_Form(const val: Integer; const radius: Integer = 0; const rAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Form2, 'function TRange_Form(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
