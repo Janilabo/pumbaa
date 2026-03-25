@@ -1362,6 +1362,10 @@ function TRange_Joinage2(const range: TRange; const other: TRange): TRange; over
 function TRange_Enclose1(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Enclose(val); end;
 function TRange_Enclose2(const range: TRange; const other: TRange): TRange; overload; cdecl; begin Result := range.Enclose(other); end;
 function TRange_Wrap(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Wrap(val); end;
+function TRange_Bounce(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Bounce(val); end;
+function TRange_Samples(const range: TRange; const rCount: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Samples(rCount); end;
+function TRange_Randoms(const range: TRange; const rSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Randoms(rSize); end;
+function TRange_Lottery(const range: TRange; const lCount: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Lottery(lCount); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

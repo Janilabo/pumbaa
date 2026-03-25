@@ -1406,6 +1406,10 @@ begin
   AddFunction(@TRange_Enclose1, 'function TRange_Enclose(const range: TRange; const val: Integer): TRange; overload;');
   AddFunction(@TRange_Enclose2, 'function TRange_Enclose(const range: TRange; const other: TRange): TRange; overload;');
   AddFunction(@TRange_Wrap, 'function TRange_Wrap(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Bounce, 'function TRange_Bounce(const range: TRange; const val: Integer): Integer; overload;');
+  AddFunction(@TRange_Samples, 'function TRange_Samples(const range: TRange; const rCount: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Randoms, 'function TRange_Randoms(const range: TRange; const rSize: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Lottery, 'function TRange_Lottery(const range: TRange; const lCount: Integer = 1): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
