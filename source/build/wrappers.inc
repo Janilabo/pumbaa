@@ -1350,6 +1350,18 @@ function TRange_Form1(const val: Integer; const radius: Integer = 0; const rAsce
 function TRange_Form2(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := TRange.Form(arr, rAscending); end;
 function TRange_From1(const startVal: Integer; const stepCount: Integer = 0): TRange; overload; cdecl; begin Result := TRange.From(startVal, stepCount); end;
 function TRange_From2(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := TRange.From(arr, rAscending); end;
+function TRange_IsDisjoint(const range: TRange; const other: TRange): Boolean; overload; cdecl; begin Result := range.IsDisjoint(other); end;
+function TRange_Meet(const range: TRange; const other: TRange; out mRange: TRange): Boolean; overload; cdecl; begin Result := range.Meet(other, mRange); end;
+function TRange_Abuts(const range: TRange; const other: TRange): Boolean; overload; cdecl; begin Result := range.Abuts(other); end;
+function TRange_Encapsulate1(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Encapsulate(val); end;
+function TRange_Encapsulate2(const range: TRange; const other: TRange): TRange; overload; cdecl; begin Result := range.Encapsulate(other); end;
+function TRange_Join1(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Join(val); end;
+function TRange_Join2(const range: TRange; const other: TRange): TRange; overload; cdecl; begin Result := range.Join(other); end;
+function TRange_Joinage1(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Joinage(val); end;
+function TRange_Joinage2(const range: TRange; const other: TRange): TRange; overload; cdecl; begin Result := range.Joinage(other); end;
+function TRange_Enclose1(const range: TRange; const val: Integer): TRange; overload; cdecl; begin Result := range.Enclose(val); end;
+function TRange_Enclose2(const range: TRange; const other: TRange): TRange; overload; cdecl; begin Result := range.Enclose(other); end;
+function TRange_Wrap(const range: TRange; const val: Integer): Integer; overload; cdecl; begin Result := range.Wrap(val); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

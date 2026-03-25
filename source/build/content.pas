@@ -1394,6 +1394,18 @@ begin
   AddFunction(@TRange_Equivalent, 'function TRange_Equivalent(const range: TRange; const b: TRange): Boolean; overload;');
   AddFunction(@TRange_Form1, 'function TRange_Form(const val: Integer; const radius: Integer = 0; const rAscending: Boolean = True): TRange; overload;');
   AddFunction(@TRange_Form2, 'function TRange_Form(const arr: TIntegerArray; const rAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_IsDisjoint, 'function TRange_IsDisjoint(const range: TRange; const other: TRange): Boolean; overload;');
+  AddFunction(@TRange_Meet, 'function TRange_Meet(const range: TRange; const other: TRange; out mRange: TRange): Boolean; overload;');
+  AddFunction(@TRange_Abuts, 'function TRange_Abuts(const range: TRange; const other: TRange): Boolean; overload;');
+  AddFunction(@TRange_Encapsulate1, 'function TRange_Encapsulate(const range: TRange; const val: Integer): TRange; overload;');
+  AddFunction(@TRange_Encapsulate2, 'function TRange_Encapsulate(const range: TRange; const other: TRange): TRange; overload;');
+  AddFunction(@TRange_Join1, 'function TRange_Join(const range: TRange; const val: Integer): TRange; overload;');
+  AddFunction(@TRange_Join2, 'function TRange_Join(const range: TRange; const other: TRange): TRange; overload;');
+  AddFunction(@TRange_Joinage1, 'function TRange_Joinage(const range: TRange; const val: Integer): TRange; overload;');
+  AddFunction(@TRange_Joinage2, 'function TRange_Joinage(const range: TRange; const other: TRange): TRange; overload;');
+  AddFunction(@TRange_Enclose1, 'function TRange_Enclose(const range: TRange; const val: Integer): TRange; overload;');
+  AddFunction(@TRange_Enclose2, 'function TRange_Enclose(const range: TRange; const other: TRange): TRange; overload;');
+  AddFunction(@TRange_Wrap, 'function TRange_Wrap(const range: TRange; const val: Integer): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
