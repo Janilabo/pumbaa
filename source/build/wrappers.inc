@@ -1366,6 +1366,16 @@ function TRange_Bounce(const range: TRange; const val: Integer): Integer; overlo
 function TRange_Samples(const range: TRange; const rCount: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Samples(rCount); end;
 function TRange_Randoms(const range: TRange; const rSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Randoms(rSize); end;
 function TRange_Lottery(const range: TRange; const lCount: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Lottery(lCount); end;
+function TRange_Subsample(const range: TRange; const sSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Subsample(sSize); end;
+function TRange_Subsampled(const range: TRange; const sSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Subsampled(sSize); end;
+function TRange_Arbitrary(const range: TRange): Integer; overload; cdecl; begin Result := range.Arbitrary; end;
+function TRange_PickStart(var range: TRange): Integer; overload; cdecl; begin Result := range.PickStart; end;
+function TRange_PickStop(var range: TRange): Integer; overload; cdecl; begin Result := range.PickStop; end;
+function TRange_PopStart(var range: TRange): Integer; overload; cdecl; begin Result := range.PopStart; end;
+function TRange_PopStop(var range: TRange): Integer; overload; cdecl; begin Result := range.PopStop; end;
+function TRange_PullStart(var range: TRange): Integer; overload; cdecl; begin Result := range.PullStart; end;
+function TRange_PullStop(var range: TRange): Integer; overload; cdecl; begin Result := range.PullStop; end;
+function TRange_Roll(const range: TRange; const rCount: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Roll(rCount); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

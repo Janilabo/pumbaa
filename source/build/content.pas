@@ -1410,6 +1410,16 @@ begin
   AddFunction(@TRange_Samples, 'function TRange_Samples(const range: TRange; const rCount: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Randoms, 'function TRange_Randoms(const range: TRange; const rSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Lottery, 'function TRange_Lottery(const range: TRange; const lCount: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Subsample, 'function TRange_Subsample(const range: TRange; const sSize: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Subsampled, 'function TRange_Subsampled(const range: TRange; const sSize: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Roll, 'function TRange_Roll(const range: TRange; const rCount: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Arbitrary, 'function TRange_Arbitrary(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_PickStart, 'function TRange_PickStart(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_PickStop, 'function TRange_PickStop(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_PopStart, 'function TRange_PopStart(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_PopStop, 'function TRange_PopStop(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_PullStart, 'function TRange_PullStart(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_PullStop, 'function TRange_PullStop(var range: TRange): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
