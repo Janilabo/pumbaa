@@ -1420,6 +1420,14 @@ begin
   AddFunction(@TRange_PopStop, 'function TRange_PopStop(var range: TRange): Integer; overload;');
   AddFunction(@TRange_PullStart, 'function TRange_PullStart(var range: TRange): Integer; overload;');
   AddFunction(@TRange_PullStop, 'function TRange_PullStop(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_ConsumeStart, 'function TRange_ConsumeStart(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_ConsumeStop, 'function TRange_ConsumeStop(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_StepStart, 'function TRange_StepStart(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_StepStop, 'function TRange_StepStop(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_InsideRange1, 'function TRange_InsideRange(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_InsideRange2, 'function TRange_InsideRange(const range: TRange; const vals: TRange): Boolean; overload;');
+  AddFunction(@TRange_OutOfRange1, 'function TRange_OutOfRange(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_OutOfRange2, 'function TRange_OutOfRange(const range: TRange; const vals: TRange): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

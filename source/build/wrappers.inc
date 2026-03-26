@@ -1375,7 +1375,15 @@ function TRange_PopStart(var range: TRange): Integer; overload; cdecl; begin Res
 function TRange_PopStop(var range: TRange): Integer; overload; cdecl; begin Result := range.PopStop; end;
 function TRange_PullStart(var range: TRange): Integer; overload; cdecl; begin Result := range.PullStart; end;
 function TRange_PullStop(var range: TRange): Integer; overload; cdecl; begin Result := range.PullStop; end;
+function TRange_ConsumeStart(var range: TRange): Integer; overload; cdecl; begin Result := range.ConsumeStart; end;
+function TRange_ConsumeStop(var range: TRange): Integer; overload; cdecl; begin Result := range.ConsumeStop; end;
+function TRange_StepStart(var range: TRange): Integer; overload; cdecl; begin Result := range.StepStart; end;
+function TRange_StepStop(var range: TRange): Integer; overload; cdecl; begin Result := range.StepStop; end;
 function TRange_Roll(const range: TRange; const rCount: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Roll(rCount); end;
+function TRange_InsideRange1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.InsideRange(val); end;
+function TRange_InsideRange2(const range: TRange; const vals: TRange): Boolean; overload; cdecl; begin Result := range.InsideRange(vals); end;
+function TRange_OutOfRange1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.OutOfRange(val); end;
+function TRange_OutOfRange2(const range: TRange; const vals: TRange): Boolean; overload; cdecl; begin Result := range.OutOfRange(vals); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
