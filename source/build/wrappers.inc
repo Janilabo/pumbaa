@@ -1384,6 +1384,10 @@ function TRange_InsideRange1(const range: TRange; const val: Integer): Boolean; 
 function TRange_InsideRange2(const range: TRange; const vals: TRange): Boolean; overload; cdecl; begin Result := range.InsideRange(vals); end;
 function TRange_OutOfRange1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.OutOfRange(val); end;
 function TRange_OutOfRange2(const range: TRange; const vals: TRange): Boolean; overload; cdecl; begin Result := range.OutOfRange(vals); end;
+function TRange_InSet(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.InSet(val); end;
+function TRange_Containing(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Containing(val); end;
+function TRange_Admits(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Admits(val); end;
+function TRange_Accepts(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Accepts(val); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

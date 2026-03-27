@@ -1428,6 +1428,10 @@ begin
   AddFunction(@TRange_InsideRange2, 'function TRange_InsideRange(const range: TRange; const vals: TRange): Boolean; overload;');
   AddFunction(@TRange_OutOfRange1, 'function TRange_OutOfRange(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_OutOfRange2, 'function TRange_OutOfRange(const range: TRange; const vals: TRange): Boolean; overload;');
+  AddFunction(@TRange_InSet, 'function TRange_InSet(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Containing, 'function TRange_Containing(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Admits, 'function TRange_Admits(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Accepts, 'function TRange_Accepts(const range: TRange; const val: Integer): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
