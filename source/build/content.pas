@@ -1208,7 +1208,6 @@ begin
   AddFunction(@TRange_Gap, 'function TRange_Gap(const range: TRange; const other: TRange): Integer;');
   AddFunction(@TRange_GapTo, 'function TRange_GapTo(const range: TRange; const other: TRange): Integer;');
   AddFunction(@TRange_DistanceTo, 'function TRange_DistanceTo(const range: TRange; const other: TRange): Integer;');
-  AddFunction(@TRange_Shared, 'function TRange_Shared(const range: TRange; const other: TRange): Integer;');
   AddFunction(@TRange_Separation, 'function TRange_Separation(const range: TRange; const other: TRange): Integer;');
   AddFunction(@TRange_Separated, 'function TRange_Separated(const range: TRange; const other: TRange): Boolean;');
   AddFunction(@TRange_IsAdjacent, 'function TRange_IsAdjacent(const range: TRange; const other: TRange): Boolean;');
@@ -1442,6 +1441,23 @@ begin
   AddFunction(@TRange_Allows, 'function TRange_Allows(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_WithinBounds, 'function TRange_WithinBounds(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_IsInRange, 'function TRange_IsInRange(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Commonality, 'function TRange_Commonality(const range: TRange; const other: TRange): Integer; overload;');
+  AddFunction(@TRange_Shared, 'function TRange_Shared(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Shares, 'function TRange_Shares(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Sharing, 'function TRange_Sharing(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unsharing, 'function TRange_Unsharing(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unshared, 'function TRange_Unshared(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unshares, 'function TRange_Unshares(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Common, 'function TRange_Common(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Commons, 'function TRange_Commons(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_CommonWith, 'function TRange_CommonWith(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Uncommon, 'function TRange_Uncommon(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Uncommons, 'function TRange_Uncommons(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_UncommonWith, 'function TRange_UncommonWith(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Without, 'function TRange_Without(const range: TRange; const other: TRange): TRangeArray; overload;');
+  AddFunction(@TRange_Subtract, 'function TRange_Subtract(const range: TRange; const other: TRange): TRangeArray; overload;');
+  AddFunction(@TRange_Exclusive, 'function TRange_Exclusive(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Diverge, 'function TRange_Diverge(const range: TRange; const other: TRange): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

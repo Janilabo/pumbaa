@@ -1167,7 +1167,6 @@ function TRange_Overlaps(const range: TRange; const other: TRange): Boolean; cde
 function TRange_Gap(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.Gap(other); end;
 function TRange_GapTo(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.GapTo(other); end;
 function TRange_DistanceTo(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.DistanceTo(other); end;
-function TRange_Shared(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.Shared(other); end;
 function TRange_Separation(const range: TRange; const other: TRange): Integer; cdecl; begin Result := range.Separation(other); end;
 function TRange_Separated(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.Separated(other); end;
 function TRange_IsAdjacent(const range: TRange; const other: TRange): Boolean; cdecl; begin Result := range.IsAdjacent(other); end;
@@ -1398,6 +1397,23 @@ function TRange_InInterval(const range: TRange; const val: Integer): Boolean; ov
 function TRange_Allows(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Allows(val); end;
 function TRange_WithinBounds(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.WithinBounds(val); end;
 function TRange_IsInRange(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.IsInRange(val); end;
+function TRange_Commonality(const range: TRange; const other: TRange): Integer; overload; cdecl; begin Result := range.Commonality(other); end;
+function TRange_Shared(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Shared(other); end;
+function TRange_Shares(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Shares(other); end;
+function TRange_Sharing(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Sharing(other); end;
+function TRange_Unsharing(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unsharing(other); end;
+function TRange_Unshared(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unshared(other); end;
+function TRange_Unshares(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unshares(other); end;
+function TRange_Common(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Common(other); end;
+function TRange_CommonWith(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.CommonWith(other); end;
+function TRange_Commons(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Commons(other); end;
+function TRange_Uncommon(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Uncommon(other); end;
+function TRange_Uncommons(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Uncommons(other); end;
+function TRange_UncommonWith(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.UncommonWith(other); end;
+function TRange_Without(const range: TRange; const other: TRange): TRangeArray; overload; cdecl; begin Result := range.Without(other); end;
+function TRange_Subtract(const range: TRange; const other: TRange): TRangeArray; overload; cdecl; begin Result := range.Subtract(other); end;
+function TRange_Exclusive(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Exclusive(other); end;
+function TRange_Diverge(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Diverge(other); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
