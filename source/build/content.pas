@@ -1432,6 +1432,16 @@ begin
   AddFunction(@TRange_Containing, 'function TRange_Containing(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Admits, 'function TRange_Admits(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Accepts, 'function TRange_Accepts(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Own, 'function TRange_Own(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Embody, 'function TRange_Embody(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Carry, 'function TRange_Carry(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_InBounds, 'function TRange_InBounds(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Inhere, 'function TRange_Inhere(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Binds, 'function TRange_Binds(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_InInterval, 'function TRange_InInterval(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Allows, 'function TRange_Allows(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_WithinBounds, 'function TRange_WithinBounds(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_IsInRange, 'function TRange_IsInRange(const range: TRange; const val: Integer): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

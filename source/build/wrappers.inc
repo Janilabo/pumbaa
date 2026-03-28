@@ -1388,6 +1388,16 @@ function TRange_InSet(const range: TRange; const val: Integer): Boolean; overloa
 function TRange_Containing(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Containing(val); end;
 function TRange_Admits(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Admits(val); end;
 function TRange_Accepts(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Accepts(val); end;
+function TRange_Own(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Own(val); end;
+function TRange_Embody(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Embody(val); end;
+function TRange_Carry(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Carry(val); end;
+function TRange_InBounds(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.InBounds(val); end;
+function TRange_Inhere(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Inhere(val); end;
+function TRange_Binds(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Binds(val); end;
+function TRange_InInterval(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.InInterval(val); end;
+function TRange_Allows(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Allows(val); end;
+function TRange_WithinBounds(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.WithinBounds(val); end;
+function TRange_IsInRange(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.IsInRange(val); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
