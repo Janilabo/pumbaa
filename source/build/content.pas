@@ -2227,6 +2227,10 @@ begin
   AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TRangeArray_SortByStart, 'function TRangeArray_SortByStart(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TRangeArray_SortByStop, 'function TRangeArray_SortByStop(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_SortedByMaximum, 'function TRangeArray_SortedByMaximum(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_SortedByMinimum, 'function TRangeArray_SortedByMinimum(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_SortedByStart, 'function TRangeArray_SortedByStart(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_SortedByStop, 'function TRangeArray_SortedByStop(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
   AddFunction(@TRangeArray_Squeeze, 'function TRangeArray_Squeeze(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
   AddFunction(@TRangeArray_Ascending, 'function TRangeArray_Ascending(const arr: TRangeArray): Boolean; overload;');
   AddFunction(@TRangeArray_Ascends, 'function TRangeArray_Ascends(const arr: TRangeArray): Boolean; overload;');
@@ -2241,6 +2245,13 @@ begin
   AddFunction(@TRangeArray_Descend, 'function TRangeArray_Descend(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Descended, 'function TRangeArray_Descended(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Merge, 'function TRangeArray_Merge(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Fuse, 'function TRangeArray_Fuse(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Simplify, 'function TRangeArray_Simplify(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Defragment, 'function TRangeArray_Defragment(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Consolidate, 'function TRangeArray_Consolidate(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Consolidated, 'function TRangeArray_Consolidated(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Redirect, 'function TRangeArray_Redirect(var arr: TRangeArray): Integer; overload;');
+  AddFunction(@TRangeArray_Redirected, 'function TRangeArray_Redirected(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
