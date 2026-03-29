@@ -2222,7 +2222,11 @@ begin
   AddFunction(@TRangeArray_Unzip, 'function TRangeArray_Unzip(const arr: TRangeArray; var startArr, stopArr: TIntegerArray): Integer;');
   AddFunction(@TRangeArray_Zip, 'function TRangeArray_Zip(const startArr, stopArr: TIntegerArray): TRangeArray;');
   AddFunction(@TRangeArray_Gaps, 'function TRangeArray_Gaps(const arr: TRangeArray): TRangeArray; overload;');
-  AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer;');
+  AddFunction(@TRangeArray_SortByMaximum, 'function TRangeArray_SortByMaximum(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_SortByMinimum, 'function TRangeArray_SortByMinimum(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_SortBySize, 'function TRangeArray_SortBySize(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_SortByStart, 'function TRangeArray_SortByStart(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_SortByStop, 'function TRangeArray_SortByStop(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
   AddFunction(@TRangeArray_Squeeze, 'function TRangeArray_Squeeze(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
   AddFunction(@TRangeArray_Ascending, 'function TRangeArray_Ascending(const arr: TRangeArray): Boolean; overload;');
   AddFunction(@TRangeArray_Ascends, 'function TRangeArray_Ascends(const arr: TRangeArray): Boolean; overload;');
@@ -2236,6 +2240,7 @@ begin
   AddFunction(@TRangeArray_Ascended, 'function TRangeArray_Ascended(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Descend, 'function TRangeArray_Descend(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Descended, 'function TRangeArray_Descended(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Merge, 'function TRangeArray_Merge(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
