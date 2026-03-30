@@ -1424,6 +1424,14 @@ function TRange_AtBorder1(const range: TRange; const val: Integer): Boolean; ove
 function TRange_AtBorder2(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.AtBorder(target); end;
 function TRange_Flush1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Flush(val); end;
 function TRange_Flush2(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.Flush(target); end;
+function TRange_Adjoins1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Adjoins(val); end;
+function TRange_Adjoins2(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.Adjoins(target); end;
+function TRange_Tangent1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Tangent(val); end;
+function TRange_Tangent2(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.Tangent(target); end;
+function TRange_Kissing1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Kissing(val); end;
+function TRange_Kissing2(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.Kissing(target); end;
+function TRange_Confluency(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Confluency(target); end;
+function TRange_Intersection(const range: TRange; const target: TRange): TRange; overload; cdecl; begin Result := range.Intersection(target); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

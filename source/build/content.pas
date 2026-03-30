@@ -993,7 +993,7 @@ begin
   AddFunction(@TRange_MaxMin, 'function TRange_MaxMin(const range: TRange): TRange;');
   AddFunction(@TRange_Overlapping, 'function TRange_Overlapping(const range: TRange; const b: TRange): Boolean;');
   AddFunction(@TRange_Overlap, 'function TRange_Overlap(const range: TRange; const b: TRange): Boolean;');
-  AddFunction(@TRange_Intersect1, 'function TRange_Intersection(const range: TRange; const b: TRange): TRange; overload;');
+  AddFunction(@TRange_Intersect1, 'function TRange_Intersect(const range: TRange; const b: TRange): TRange; overload;');
   AddFunction(@TRange_Intersect2, 'function TRange_Intersect(const range: TRange; const b: TRange; var iZone: TRange): Boolean; overload;');
   AddFunction(@TRange_Union1, 'function TRange_Union(const range: TRange; const b: TRange): TRange; overload;');
   AddFunction(@TRange_Union2, 'function TRange_Union(const range: TRange; const val: Integer): TRange; overload;');
@@ -1468,6 +1468,14 @@ begin
   AddFunction(@TRange_AtBorder2, 'function TRange_AtBorder(const range: TRange; const target: TRange): Boolean; overload;');
   AddFunction(@TRange_Flush1, 'function TRange_Flush(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Flush2, 'function TRange_Flush(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Adjoins1, 'function TRange_Adjoins(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Adjoins2, 'function TRange_Adjoins(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Tangent1, 'function TRange_Tangent(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Tangent2, 'function TRange_Tangent(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Kissing1, 'function TRange_Kissing(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Kissing2, 'function TRange_Kissing(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Confluency, 'function TRange_Confluency(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_Intersection, 'function TRange_Intersection(const range: TRange; const target: TRange): TRange; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
