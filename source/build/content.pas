@@ -1458,6 +1458,16 @@ begin
   AddFunction(@TRange_Subtract, 'function TRange_Subtract(const range: TRange; const other: TRange): TRangeArray; overload;');
   AddFunction(@TRange_Exclusive, 'function TRange_Exclusive(const range: TRange; const other: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Diverge, 'function TRange_Diverge(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_IsConnected, 'function TRange_IsConnected(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_RelationshipTo, 'function TRange_RelationshipTo(const range: TRange; const target: TRange): Byte; overload;');
+  AddFunction(@TRange_RelationTo, 'function TRange_RelationTo(const range: TRange; const target: TRange): Byte; overload;');
+  AddFunction(@TRange_Enveloping, 'function TRange_Enveloping(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Envelops, 'function TRange_Envelops(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Surrounds, 'function TRange_Surrounds(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_AtBorder1, 'function TRange_AtBorder(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_AtBorder2, 'function TRange_AtBorder(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Flush1, 'function TRange_Flush(const range: TRange; const val: Integer): Boolean; overload;');
+  AddFunction(@TRange_Flush2, 'function TRange_Flush(const range: TRange; const target: TRange): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
