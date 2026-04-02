@@ -2232,6 +2232,11 @@ function TRangeArray_Squashed(const arr: TRangeArray): TRangeArray; overload; cd
 function TRangeArray_Fused(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Fused; end;
 function TRangeArray_Merged(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Merged; end;
 function TRangeArray_Normed(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Normed; end;
+function TRangeArray_Align(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Align(oAscending); end;
+function TRangeArray_Aligned(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Aligned(oAscending); end;
+function TRangeArray_ToNormal(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.ToNormal; end;
+function TRangeArray_ToNormalized(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.ToNormalized; end;
+function TRangeArray_AsNormalized(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.AsNormalized; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;

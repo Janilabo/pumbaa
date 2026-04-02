@@ -2276,6 +2276,11 @@ begin
   AddFunction(@TRangeArray_Fused, 'function TRangeArray_Fused(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Merged, 'function TRangeArray_Merged(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Normed, 'function TRangeArray_Normed(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Align, 'function TRangeArray_Align(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_Aligned, 'function TRangeArray_Aligned(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_ToNormal, 'function TRangeArray_ToNormal(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_ToNormalized, 'function TRangeArray_ToNormalized(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_AsNormalized, 'function TRangeArray_AsNormalized(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
