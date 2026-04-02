@@ -1072,7 +1072,11 @@ function TRange_Reserve2(const range: TRange; var aRange: TIntegerArray): Intege
 function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
 function TRange_Extracted(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extracted; end;
 function TRange_Steps(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Steps; end;
+function TRange_Fill(const range: TRange; var target: TIntegerArray): Integer; overload; cdecl; begin Result := range.Fill(target); end;
 function TRange_Elemented(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Elemented; end;
+function TRange_Itemed(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Itemed; end;
+function TRange_Resources(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Resources; end;
+function TRange_Unrolled(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unrolled; end;
 function TRange_ToValues(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToValues; end;
 function TRange_Recursed(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Recursed; end;
 function TRange_Recursively(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Recursively; end;

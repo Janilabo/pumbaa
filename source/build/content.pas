@@ -975,7 +975,11 @@ begin
   AddFunction(@TRange_Numeralize, 'function TRange_Numeralize(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Pile, 'function TRange_Pile(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Decompose, 'function TRange_Decompose(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Fill, 'function TRange_Fill(const range: TRange; var target: TIntegerArray): Integer; overload;');
   AddFunction(@TRange_All, 'function TRange_All(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Resources, 'function TRange_Resources(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unrolled, 'function TRange_Unrolled(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Itemed, 'function TRange_Itemed(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Bank, 'function TRange_Bank(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Breakdown, 'function TRange_Breakdown(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Stock, 'function TRange_Stock(const range: TRange): TIntegerArray; overload;');
