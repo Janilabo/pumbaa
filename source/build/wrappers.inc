@@ -1072,6 +1072,8 @@ function TRange_Reserve2(const range: TRange; var aRange: TIntegerArray): Intege
 function TRange_Extract(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extract; end;
 function TRange_Extracted(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Extracted; end;
 function TRange_Steps(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Steps; end;
+function TRange_Elemented(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Elemented; end;
+function TRange_ToValues(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToValues; end;
 function TRange_Recursed(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Recursed; end;
 function TRange_Recursively(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Recursively; end;
 function TRange_Particles(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Particles; end;
@@ -2237,6 +2239,7 @@ function TRangeArray_Aligned(const arr: TRangeArray; const oAscending: Boolean =
 function TRangeArray_ToNormal(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.ToNormal; end;
 function TRangeArray_ToNormalized(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.ToNormalized; end;
 function TRangeArray_AsNormalized(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.AsNormalized; end;
+function TRangeArray_Normalizify(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Normalizify; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;

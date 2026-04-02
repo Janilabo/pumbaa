@@ -25,7 +25,7 @@ begin
                      '  radius: Double;' + #13#10 +
                      'end;');
   AddType('TDistance', 'function(const A, B: TPoint): Double;');
-  AddType('TMetrics', '(dmHypotEuclidean, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski, dmMaxMinChebyshev, dmOctile);');  
+  AddType('TMetrics', '(dmHypotEuclidean, dmEuclidean, dmEuclidean2, dmSquaredEuclidean, dmManhattan, dmChebyshev, dmMinkowski, dmMaxMinChebyshev, dmOctile);');
 end;
 
 procedure DoNothing;
@@ -958,6 +958,8 @@ begin
   AddFunction(@TRange_Numbered, 'function TRange_Numbered(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Pull, 'function TRange_Pull(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Members, 'function TRange_Members(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_Elemented, 'function TRange_Elemented(const range: TRange): TIntegerArray;');
+  AddFunction(@TRange_ToValues, 'function TRange_ToValues(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Material, 'function TRange_Material(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Materialize, 'function TRange_Materialize(const range: TRange): TIntegerArray;');
   AddFunction(@TRange_Materialized, 'function TRange_Materialized(const range: TRange): TIntegerArray;');
@@ -2281,6 +2283,7 @@ begin
   AddFunction(@TRangeArray_ToNormal, 'function TRangeArray_ToNormal(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_ToNormalized, 'function TRangeArray_ToNormalized(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_AsNormalized, 'function TRangeArray_AsNormalized(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Normalizify, 'function TRangeArray_Normalizify(var arr: TRangeArray): Integer; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
