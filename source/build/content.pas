@@ -2270,6 +2270,12 @@ begin
   AddFunction(@TRangeArray_Consolidated, 'function TRangeArray_Consolidated(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
   AddFunction(@TRangeArray_Redirect, 'function TRangeArray_Redirect(var arr: TRangeArray): Integer; overload;');
   AddFunction(@TRangeArray_Redirected, 'function TRangeArray_Redirected(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Coalesce, 'function TRangeArray_Coalesce(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Collapse, 'function TRangeArray_Collapse(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Squashed, 'function TRangeArray_Squashed(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Fused, 'function TRangeArray_Fused(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Merged, 'function TRangeArray_Merged(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Normed, 'function TRangeArray_Normed(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');

@@ -2226,6 +2226,12 @@ function TRangeArray_Consolidate(const arr: TRangeArray; const rAscending: Boole
 function TRangeArray_Consolidated(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Consolidated(rAscending); end;
 function TRangeArray_Redirect(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Redirect; end;
 function TRangeArray_Redirected(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Redirected; end;
+function TRangeArray_Coalesce(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Coalesce; end;
+function TRangeArray_Collapse(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Collapse; end;
+function TRangeArray_Squashed(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Squashed; end;
+function TRangeArray_Fused(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Fused; end;
+function TRangeArray_Merged(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Merged; end;
+function TRangeArray_Normed(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Normed; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
