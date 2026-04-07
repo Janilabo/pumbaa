@@ -1438,6 +1438,7 @@ function TRange_Kissing1(const range: TRange; const val: Integer): Boolean; over
 function TRange_Kissing2(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.Kissing(target); end;
 function TRange_Confluency(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Confluency(target); end;
 function TRange_Intersection(const range: TRange; const target: TRange): TRange; overload; cdecl; begin Result := range.Intersection(target); end;
+function TRange_Comparison(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Comparison(target); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
@@ -2244,6 +2245,25 @@ function TRangeArray_ToNormal(const arr: TRangeArray): TRangeArray; overload; cd
 function TRangeArray_ToNormalized(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.ToNormalized; end;
 function TRangeArray_AsNormalized(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.AsNormalized; end;
 function TRangeArray_Normalizify(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Normalizify; end;
+function TRangeArray_Amounts(const arr: TRangeArray): TInt64Array; overload; cdecl; begin Result := arr.Amounts; end; 
+function TRangeArray_Counts(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Counts; end;
+function TRangeArray_Lengths(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Lengths; end;
+function TRangeArray_Sized(const arr: TRangeArray): Int64; overload; cdecl; begin Result := arr.Sized; end;
+function TRangeArray_Sizes(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Sizes; end;
+function TRangeArray_Sort(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.Sort(oAscending); end;
+function TRangeArray_Complement(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Complement; end;
+function TRangeArray_Cracks(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Cracks(rAscending); end;
+function TRangeArray_Holes(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Holes; end;
+function TRangeArray_Spaces(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Spaces; end;
+function TRangeArray_Unite(const arr: TRangeArray; const mAdjacent: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Unite(mAdjacent); end;
+function TRangeArray_Meld(const arr: TRangeArray; const rSort: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Meld(rSort); end;
+function TRangeArray_Melted(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Melted(oAscending); end;
+function TRangeArray_Condense(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Condense(oAscending); end;
+function TRangeArray_Streamed(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Streamed(oAscending); end;
+function TRangeArray_Stream(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Stream(oAscending); end;
+function TRangeArray_Streamline(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Streamline; end;
+function TRangeArray_Mergify(var arr: TRangeArray; const threshold: Integer = -1): Integer; overload; cdecl; begin Result := arr.Mergify(threshold); end;
+function TRangeArray_Mergified(const arr: TRangeArray; const threshold: Integer = -1): TRangeArray; overload; cdecl; begin Result := arr.Mergified(threshold); end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;

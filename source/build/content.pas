@@ -1482,6 +1482,7 @@ begin
   AddFunction(@TRange_Kissing2, 'function TRange_Kissing(const range: TRange; const target: TRange): Boolean; overload;');
   AddFunction(@TRange_Confluency, 'function TRange_Confluency(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_Intersection, 'function TRange_Intersection(const range: TRange; const target: TRange): TRange; overload;');
+  AddFunction(@TRange_Comparison, 'function TRange_Comparison(const range: TRange; const target: TRange): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -2288,6 +2289,25 @@ begin
   AddFunction(@TRangeArray_ToNormalized, 'function TRangeArray_ToNormalized(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_AsNormalized, 'function TRangeArray_AsNormalized(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Normalizify, 'function TRangeArray_Normalizify(var arr: TRangeArray): Integer; overload;');
+  AddFunction(@TRangeArray_Amounts, 'function TRangeArray_Amounts(const arr: TRangeArray): TInt64Array; overload;');
+  AddFunction(@TRangeArray_Counts, 'function TRangeArray_Counts(const arr: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Lengths, 'function TRangeArray_Lengths(const arr: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Sized, 'function TRangeArray_Sized(const arr: TRangeArray): Int64; overload;');
+  AddFunction(@TRangeArray_Sizes, 'function TRangeArray_Sizes(const arr: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Sort, 'function TRangeArray_Sort(var arr: TRangeArray; const oAscending: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_Complement, 'function TRangeArray_Complement(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Cracks, 'function TRangeArray_Cracks(const arr: TRangeArray; const rAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Holes, 'function TRangeArray_Holes(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Spaces, 'function TRangeArray_Spaces(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Unite, 'function TRangeArray_Unite(const arr: TRangeArray; const mAdjacent: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Meld, 'function TRangeArray_Meld(const arr: TRangeArray; const rSort: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Melted, 'function TRangeArray_Melted(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Condense, 'function TRangeArray_Condense(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Streamed, 'function TRangeArray_Streamed(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Stream, 'function TRangeArray_Stream(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Streamline, 'function TRangeArray_Streamline(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Mergify, 'function TRangeArray_Mergify(var arr: TRangeArray; const threshold: Integer = -1): Integer; overload;');
+  AddFunction(@TRangeArray_Mergified, 'function TRangeArray_Mergified(const arr: TRangeArray; const threshold: Integer = -1): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
