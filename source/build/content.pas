@@ -2308,6 +2308,11 @@ begin
   AddFunction(@TRangeArray_Streamline, 'function TRangeArray_Streamline(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Mergify, 'function TRangeArray_Mergify(var arr: TRangeArray; const threshold: Integer = -1): Integer; overload;');
   AddFunction(@TRangeArray_Mergified, 'function TRangeArray_Mergified(const arr: TRangeArray; const threshold: Integer = -1): TRangeArray; overload;');
+  AddFunction(@TRangeArray_SortBySizing, 'function TRangeArray_SortBySizing(var arr: TRangeArray; const oAscending: Boolean): Integer; overload;');
+  AddFunction(@TRangeArray_SortedBySize, 'function TRangeArray_SortedBySize(const arr: TRangeArray; const oAscending: Boolean): TRangeArray; overload;');
+  AddFunction(@TRangeArray_SortBySizes, 'function TRangeArray_SortBySizes(var arr: TRangeArray; var rSizes: TIntegerArray; const oAscending: Boolean): Integer; overload;');
+  AddFunction(@TRangeArray_SortWithSizing, 'function TRangeArray_SortWithSizing(var arr: TRangeArray; const oAscending: Boolean): Integer; overload;');
+  AddFunction(@TRangeArray_SortingBySize, 'function TRangeArray_SortingBySize(var arr: TRangeArray; const oAscending: Boolean): Integer; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');

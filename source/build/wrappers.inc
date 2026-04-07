@@ -2264,6 +2264,12 @@ function TRangeArray_Stream(const arr: TRangeArray; const oAscending: Boolean = 
 function TRangeArray_Streamline(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Streamline; end;
 function TRangeArray_Mergify(var arr: TRangeArray; const threshold: Integer = -1): Integer; overload; cdecl; begin Result := arr.Mergify(threshold); end;
 function TRangeArray_Mergified(const arr: TRangeArray; const threshold: Integer = -1): TRangeArray; overload; cdecl; begin Result := arr.Mergified(threshold); end;
+function TRangeArray_SortBySizing(var arr: TRangeArray; const oAscending: Boolean): Integer; overload; cdecl; begin Result := arr.SortBySizing(oAscending); end;
+function TRangeArray_SortedBySize(const arr: TRangeArray; const oAscending: Boolean): TRangeArray; overload; cdecl; begin Result := arr.SortedBySize(oAscending); end;
+function TRangeArray_SortBySizes(var arr: TRangeArray; var rSizes: TIntegerArray; const oAscending: Boolean): Integer; overload; cdecl; begin Result := arr.SortBySizes(rSizes, oAscending); end;
+function TRangeArray_SortedWithSize(const arr: TRangeArray; const oAscending: Boolean): TRangeArray; overload; cdecl; begin Result := arr.SortedWithSize(oAscending); end;
+function TRangeArray_SortWithSizing(var arr: TRangeArray; const oAscending: Boolean): Integer; overload; cdecl; begin Result := arr.SortWithSizing(oAscending); end;
+function TRangeArray_SortingBySize(var arr: TRangeArray; const oAscending: Boolean): Integer; overload; cdecl; begin Result := arr.SortingBySize(oAscending); end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
