@@ -1483,6 +1483,11 @@ begin
   AddFunction(@TRange_Confluency, 'function TRange_Confluency(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_Intersection, 'function TRange_Intersection(const range: TRange; const target: TRange): TRange; overload;');
   AddFunction(@TRange_Comparison, 'function TRange_Comparison(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_SumAll, 'function TRange_SumAll(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Sumify, 'function TRange_Sumify(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Summary, 'function TRange_Summary(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Summed, 'function TRange_Summed(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Summative, 'function TRange_Summative(const range: TRange): Int64; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -2310,9 +2315,12 @@ begin
   AddFunction(@TRangeArray_Mergified, 'function TRangeArray_Mergified(const arr: TRangeArray; const threshold: Integer = -1): TRangeArray; overload;');
   AddFunction(@TRangeArray_SortBySizing, 'function TRangeArray_SortBySizing(var arr: TRangeArray; const oAscending: Boolean): Integer; overload;');
   AddFunction(@TRangeArray_SortedBySize, 'function TRangeArray_SortedBySize(const arr: TRangeArray; const oAscending: Boolean): TRangeArray; overload;');
+  AddFunction(@TRangeArray_SortedWithSize, 'function TRangeArray_SortedWithSize(const arr: TRangeArray; const oAscending: Boolean): TRangeArray; overload;');
   AddFunction(@TRangeArray_SortBySizes, 'function TRangeArray_SortBySizes(var arr: TRangeArray; var rSizes: TIntegerArray; const oAscending: Boolean): Integer; overload;');
   AddFunction(@TRangeArray_SortWithSizing, 'function TRangeArray_SortWithSizing(var arr: TRangeArray; const oAscending: Boolean): Integer; overload;');
   AddFunction(@TRangeArray_SortingBySize, 'function TRangeArray_SortingBySize(var arr: TRangeArray; const oAscending: Boolean): Integer; overload;');
+  AddFunction(@TRangeArray_Restacked, 'function TRangeArray_Restacked(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Scanlined, 'function TRangeArray_Scanlined(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');

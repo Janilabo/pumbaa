@@ -1439,6 +1439,11 @@ function TRange_Kissing2(const range: TRange; const target: TRange): Boolean; ov
 function TRange_Confluency(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Confluency(target); end;
 function TRange_Intersection(const range: TRange; const target: TRange): TRange; overload; cdecl; begin Result := range.Intersection(target); end;
 function TRange_Comparison(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Comparison(target); end;
+function TRange_SumAll(const range: TRange): Int64; overload; cdecl; begin Result := range.SumAll; end;
+function TRange_Sumify(const range: TRange): Int64; overload; cdecl; begin Result := range.Sumify; end;
+function TRange_Summary(const range: TRange): Int64; overload; cdecl; begin Result := range.Summary; end;
+function TRange_Summed(const range: TRange): Int64; overload; cdecl; begin Result := range.Summed; end;
+function TRange_Summative(const range: TRange): Int64; overload; cdecl; begin Result := range.Summative; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
@@ -2270,6 +2275,8 @@ function TRangeArray_SortBySizes(var arr: TRangeArray; var rSizes: TIntegerArray
 function TRangeArray_SortedWithSize(const arr: TRangeArray; const oAscending: Boolean): TRangeArray; overload; cdecl; begin Result := arr.SortedWithSize(oAscending); end;
 function TRangeArray_SortWithSizing(var arr: TRangeArray; const oAscending: Boolean): Integer; overload; cdecl; begin Result := arr.SortWithSizing(oAscending); end;
 function TRangeArray_SortingBySize(var arr: TRangeArray; const oAscending: Boolean): Integer; overload; cdecl; begin Result := arr.SortingBySize(oAscending); end;
+function TRangeArray_Restacked(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Restacked; end;
+function TRangeArray_Scanlined(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Scanlined; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
