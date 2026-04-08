@@ -1441,6 +1441,7 @@ function TRange_Intersection(const range: TRange; const target: TRange): TRange;
 function TRange_Comparison(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Comparison(target); end;
 function TRange_SumAll(const range: TRange): Int64; overload; cdecl; begin Result := range.SumAll; end;
 function TRange_Sumify(const range: TRange): Int64; overload; cdecl; begin Result := range.Sumify; end;
+function TRange_Sumified(const range: TRange): Int64; overload; cdecl; begin Result := range.Sumified; end;
 function TRange_Summary(const range: TRange): Int64; overload; cdecl; begin Result := range.Summary; end;
 function TRange_Summed(const range: TRange): Int64; overload; cdecl; begin Result := range.Summed; end;
 function TRange_Summative(const range: TRange): Int64; overload; cdecl; begin Result := range.Summative; end;
@@ -1769,6 +1770,7 @@ function TIntegerArray_TernarySearch(const arr: TIntegerArray; const value: Inte
 function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryPeak; end;
 function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryValley; end;
 function TIntegerArray_TernaryMountain(const arr: TIntegerArray): Integer; overload; cdecl; begin Result := arr.TernaryMountain; end;
+function TIntegerArray_AsRanges(const arr: TIntegerArray; const oAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.AsRanges(oAscending); end;
 
 function CIntegerArray_Init(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := CIntegerArray.Init(arr); end;
 function CIntegerArray_Unique(var arr: TIntegerArray): Integer; overload; cdecl; begin Result := CIntegerArray.Unique(arr); end;
@@ -2277,6 +2279,15 @@ function TRangeArray_SortWithSizing(var arr: TRangeArray; const oAscending: Bool
 function TRangeArray_SortingBySize(var arr: TRangeArray; const oAscending: Boolean): Integer; overload; cdecl; begin Result := arr.SortingBySize(oAscending); end;
 function TRangeArray_Restacked(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Restacked; end;
 function TRangeArray_Scanlined(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Scanlined; end;
+function TRangeArray_Reduce(var arr: TRangeArray): Integer; overload; cdecl; begin Result := arr.Reduce; end;
+function TRangeArray_Refine(var arr: TRangeArray; const strictly: Boolean = True): Integer; overload; cdecl; begin Result := arr.Refine(strictly); end;
+function TRangeArray_Unionized(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload; cdecl; begin Result := arr.Unionized(oAscending); end;
+function TRangeArray_Heaped(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Heaped; end;
+function TRangeArray_Bisected(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Bisected; end;
+function TRangeArray_Gridded(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Gridded; end;
+function TRangeArray_Clean(var arr: TRangeArray; const strictly: Boolean = True): Integer; overload; cdecl; begin Result := arr.Clean(strictly); end;
+function TRangeArray_Containing(const arr: TRangeArray; const R: TRange; const strictly: Boolean = False): Boolean; overload; cdecl; begin Result := arr.Containing(R, strictly); end;
+function TRangeArray_Boundaries(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Boundaries; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;

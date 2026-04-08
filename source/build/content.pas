@@ -1485,6 +1485,7 @@ begin
   AddFunction(@TRange_Comparison, 'function TRange_Comparison(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_SumAll, 'function TRange_SumAll(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Sumify, 'function TRange_Sumify(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Sumified, 'function TRange_Sumified(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Summary, 'function TRange_Summary(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Summed, 'function TRange_Summed(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Summative, 'function TRange_Summative(const range: TRange): Int64; overload;');
@@ -1813,6 +1814,7 @@ begin
   AddFunction(@TIntegerArray_TernaryPeak, 'function TIntegerArray_TernaryPeak(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryValley, 'function TIntegerArray_TernaryValley(const arr: TIntegerArray): Integer; overload;');
   AddFunction(@TIntegerArray_TernaryMountain, 'function TIntegerArray_TernaryMountain(const arr: TIntegerArray): Integer; overload;');
+  AddFunction(@TIntegerArray_AsRanges, 'function TIntegerArray_AsRanges(const arr: TIntegerArray; const oAscending: Boolean = True): TRangeArray; overload;');
 
   AddFunction(@CIntegerArray_Init, 'function CIntegerArray_Init(var arr: TIntegerArray): Integer; overload;');
   AddFunction(@CIntegerArray_Unique, 'function CIntegerArray_Unique(var arr: TIntegerArray): Integer; overload;');
@@ -2321,6 +2323,15 @@ begin
   AddFunction(@TRangeArray_SortingBySize, 'function TRangeArray_SortingBySize(var arr: TRangeArray; const oAscending: Boolean): Integer; overload;');
   AddFunction(@TRangeArray_Restacked, 'function TRangeArray_Restacked(const arr: TRangeArray): TRangeArray; overload;');
   AddFunction(@TRangeArray_Scanlined, 'function TRangeArray_Scanlined(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Reduce, 'function TRangeArray_Reduce(var arr: TRangeArray): Integer; overload;');
+  AddFunction(@TRangeArray_Refine, 'function TRangeArray_Refine(var arr: TRangeArray; const strictly: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_Unionized, 'function TRangeArray_Unionized(const arr: TRangeArray; const oAscending: Boolean = True): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Heaped, 'function TRangeArray_Heaped(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Bisected, 'function TRangeArray_Bisected(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Gridded, 'function TRangeArray_Gridded(const arr: TRangeArray): TRangeArray; overload;');
+  AddFunction(@TRangeArray_Clean, 'function TRangeArray_Clean(var arr: TRangeArray; const strictly: Boolean = True): Integer; overload;');
+  AddFunction(@TRangeArray_Containing, 'function TRangeArray_Containing(const arr: TRangeArray; const R: TRange; const strictly: Boolean = False): Boolean; overload;');
+  AddFunction(@TRangeArray_Boundaries, 'function TRangeArray_Boundaries(const arr: TRangeArray): TRange; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');
