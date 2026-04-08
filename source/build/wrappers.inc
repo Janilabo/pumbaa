@@ -1445,6 +1445,10 @@ function TRange_Sumified(const range: TRange): Int64; overload; cdecl; begin Res
 function TRange_Summary(const range: TRange): Int64; overload; cdecl; begin Result := range.Summary; end;
 function TRange_Summed(const range: TRange): Int64; overload; cdecl; begin Result := range.Summed; end;
 function TRange_Summative(const range: TRange): Int64; overload; cdecl; begin Result := range.Summative; end;
+function TRange_AsNormal(const range: TRange): TRange; overload; cdecl; begin Result := range.AsNormal; end;
+function TRange_ToNormal(const range: TRange): TRange; overload; cdecl; begin Result := range.ToNormal; end;
+function TRange_ToNormalized(const range: TRange): TRange; overload; cdecl; begin Result := range.ToNormalized; end;
+function TRange_SortedTo(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.SortedTo(oAscending); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

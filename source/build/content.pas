@@ -1489,6 +1489,10 @@ begin
   AddFunction(@TRange_Summary, 'function TRange_Summary(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Summed, 'function TRange_Summed(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Summative, 'function TRange_Summative(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_AsNormal, 'function TRange_AsNormal(const range: TRange): TRange; overload;');
+  AddFunction(@TRange_ToNormal, 'function TRange_ToNormal(const range: TRange): TRange; overload;');
+  AddFunction(@TRange_ToNormalized, 'function TRange_ToNormalized(const range: TRange): TRange; overload;');
+  AddFunction(@TRange_SortedTo, 'function TRange_SortedTo(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
