@@ -1493,6 +1493,16 @@ begin
   AddFunction(@TRange_ToNormal, 'function TRange_ToNormal(const range: TRange): TRange; overload;');
   AddFunction(@TRange_ToNormalized, 'function TRange_ToNormalized(const range: TRange): TRange; overload;');
   AddFunction(@TRange_SortedTo, 'function TRange_SortedTo(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Collection, 'function TRange_Collection(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Raw, 'function TRange_Raw(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Positional, 'function TRange_Positional(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Identifiers, 'function TRange_Identifiers(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Entries, 'function TRange_Entries(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Included, 'function TRange_Included(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Excluded, 'function TRange_Excluded(const range: TRange; const other: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Intro, 'function TRange_Intro(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Outro, 'function TRange_Outro(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Lucky, 'function TRange_Lucky(const range: TRange): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

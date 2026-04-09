@@ -1449,6 +1449,16 @@ function TRange_AsNormal(const range: TRange): TRange; overload; cdecl; begin Re
 function TRange_ToNormal(const range: TRange): TRange; overload; cdecl; begin Result := range.ToNormal; end;
 function TRange_ToNormalized(const range: TRange): TRange; overload; cdecl; begin Result := range.ToNormalized; end;
 function TRange_SortedTo(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.SortedTo(oAscending); end;
+function TRange_Collection(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Collection; end;
+function TRange_Raw(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Raw; end;
+function TRange_Positional(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Positional; end;
+function TRange_Identifiers(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Identifiers; end;
+function TRange_Entries(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Entries; end;
+function TRange_Included(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Included(other); end;
+function TRange_Excluded(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Excluded(other); end;
+function TRange_Intro(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Intro(N); end;
+function TRange_Outro(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Outro(N); end;
+function TRange_Lucky(const range: TRange): Integer; overload; cdecl; begin Result := range.Lucky; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
