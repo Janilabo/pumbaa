@@ -1475,6 +1475,8 @@ function TRange_Lead(const range: TRange; const N: Integer = 1): TIntegerArray; 
 function TRange_Trail(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Trail(N); end;
 function TRange_Leading(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Leading(N); end;
 function TRange_Trailing(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Trailing(N); end;
+function TRange_Prefix(const range: TRange; const N: Integer = 1; const rClamp: Boolean = False): TIntegerArray; overload; cdecl; begin Result := range.Prefix(N, rClamp); end;
+function TRange_Suffix(const range: TRange; const N: Integer = 1; const rClamp: Boolean = False): TIntegerArray; overload; cdecl; begin Result := range.Suffix(N, rClamp); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

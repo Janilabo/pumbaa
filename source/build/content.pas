@@ -1519,6 +1519,8 @@ begin
   AddFunction(@TRange_Trail, 'function TRange_Trail(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Leading, 'function TRange_Leading(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Trailing, 'function TRange_Trailing(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Prefix, 'function TRange_Prefix(const range: TRange; const N: Integer = 1; const rClamp: Boolean = False): TIntegerArray; overload;');
+  AddFunction(@TRange_Suffix, 'function TRange_Suffix(const range: TRange; const N: Integer = 1; const rClamp: Boolean = False): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
