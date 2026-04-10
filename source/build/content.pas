@@ -1010,6 +1010,7 @@ begin
   AddFunction(@TRange_Offset, 'function TRange_Offset(const range: TRange; const sDelta: Integer): TRange;');
   AddFunction(@TRange_Contains1, 'function TRange_Contains(const range: TRange; const x: Integer): Boolean; overload;');
   AddFunction(@TRange_Contains2, 'function TRange_Contains(const range: TRange; const x: TRange): Boolean; overload;');
+  AddFunction(@TRange_Contains3, 'function TRange_Contains(const range: TRange; const x: TIntegerArray): Boolean; overload;');
   AddFunction(@TRange_Holding, 'function TRange_Holding(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Holds1, 'function TRange_Holds(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Holds2, 'function TRange_Holds(const range: TRange; const vals: TRange): Boolean; overload;');
@@ -1503,6 +1504,21 @@ begin
   AddFunction(@TRange_Intro, 'function TRange_Intro(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Outro, 'function TRange_Outro(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Lucky, 'function TRange_Lucky(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Medlo, 'function TRange_Medlo(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Midar, 'function TRange_Midar(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Adjacent, 'function TRange_Adjacent(const range: TRange; const other: TRange): Boolean; overload;');
+  AddFunction(@TRange_Tail, 'function TRange_Tail(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Head, 'function TRange_Head(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Beginning, 'function TRange_Beginning(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Ending, 'function TRange_Ending(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Opening, 'function TRange_Opening(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Closing, 'function TRange_Closing(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Terminus, 'function TRange_Terminus(const range: TRange; const sSteps: Integer = 0): TIntegerArray; overload;');
+  AddFunction(@TRange_Origin, 'function TRange_Origin(const range: TRange; const sSteps: Integer = 0): TIntegerArray; overload;');
+  AddFunction(@TRange_Lead, 'function TRange_Lead(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Trail, 'function TRange_Trail(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Leading, 'function TRange_Leading(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Trailing, 'function TRange_Trailing(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

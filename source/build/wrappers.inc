@@ -954,6 +954,7 @@ function TRange_ExtendMin(var range: TRange; const val: Integer): Boolean; overl
 function TRange_Offset(const range: TRange; const sDelta: Integer): TRange; cdecl; begin Result := range.Offset(sDelta); end;
 function TRange_Contains1(const range: TRange; const x: Integer): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
 function TRange_Contains2(const range: TRange; const x: TRange): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
+function TRange_Contains3(const range: TRange; const x: TIntegerArray): Boolean; overload; cdecl; begin Result := range.Contains(x); end;
 function TRange_Holding(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Holding(val); end;
 function TRange_Holds1(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Holds(val); end;
 function TRange_Holds2(const range: TRange; const vals: TRange): Boolean; overload; cdecl; begin Result := range.Holds(vals); end;
@@ -1459,6 +1460,21 @@ function TRange_Excluded(const range: TRange; const other: TRange): TIntegerArra
 function TRange_Intro(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Intro(N); end;
 function TRange_Outro(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Outro(N); end;
 function TRange_Lucky(const range: TRange): Integer; overload; cdecl; begin Result := range.Lucky; end;
+function TRange_Medlo(const range: TRange): Integer; overload; cdecl; begin Result := range.Medlo; end;
+function TRange_Midar(const range: TRange): Integer; overload; cdecl; begin Result := range.Midar; end;
+function TRange_Adjacent(const range: TRange; const other: TRange): Boolean; overload; cdecl; begin Result := range.Adjacent(other); end;
+function TRange_Tail(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Tail(N); end;
+function TRange_Head(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Head(N); end;
+function TRange_Beginning(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Beginning(N); end;
+function TRange_Ending(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Ending(N); end;
+function TRange_Opening(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Opening(N); end;
+function TRange_Closing(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Closing(N); end;
+function TRange_Terminus(const range: TRange; const sSteps: Integer = 0): TIntegerArray; overload; cdecl; begin Result := range.Terminus(sSteps); end;
+function TRange_Origin(const range: TRange; const sSteps: Integer = 0): TIntegerArray; overload; cdecl; begin Result := range.Origin(sSteps); end;
+function TRange_Lead(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Lead(N); end;
+function TRange_Trail(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Trail(N); end;
+function TRange_Leading(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Leading(N); end;
+function TRange_Trailing(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Trailing(N); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
