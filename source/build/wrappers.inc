@@ -1446,12 +1446,17 @@ function TRange_Sumified(const range: TRange): Int64; overload; cdecl; begin Res
 function TRange_Summary(const range: TRange): Int64; overload; cdecl; begin Result := range.Summary; end;
 function TRange_Summed(const range: TRange): Int64; overload; cdecl; begin Result := range.Summed; end;
 function TRange_Summative(const range: TRange): Int64; overload; cdecl; begin Result := range.Summative; end;
+function TRange_Summing(const range: TRange): Int64; overload; cdecl; begin Result := range.Summing; end;
+function TRange_Resultant(const range: TRange): Int64; overload; cdecl; begin Result := range.Resultant; end;
 function TRange_AsNormal(const range: TRange): TRange; overload; cdecl; begin Result := range.AsNormal; end;
 function TRange_ToNormal(const range: TRange): TRange; overload; cdecl; begin Result := range.ToNormal; end;
 function TRange_ToNormalized(const range: TRange): TRange; overload; cdecl; begin Result := range.ToNormalized; end;
 function TRange_SortedTo(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.SortedTo(oAscending); end;
 function TRange_Collection(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Collection; end;
 function TRange_Raw(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Raw; end;
+function TRange_Produce(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Produce; end;
+function TRange_Integers(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Integers; end;
+function TRange_Realize(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Realize; end;
 function TRange_Positional(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Positional; end;
 function TRange_Identifiers(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Identifiers; end;
 function TRange_Entries(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Entries; end;
@@ -1477,6 +1482,14 @@ function TRange_Leading(const range: TRange; const N: Integer = 1): TIntegerArra
 function TRange_Trailing(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Trailing(N); end;
 function TRange_Prefix(const range: TRange; const N: Integer = 1; const rClamp: Boolean = False): TIntegerArray; overload; cdecl; begin Result := range.Prefix(N, rClamp); end;
 function TRange_Suffix(const range: TRange; const N: Integer = 1; const rClamp: Boolean = False): TIntegerArray; overload; cdecl; begin Result := range.Suffix(N, rClamp); end;
+function TRange_SStart(var range: TRange): Integer; overload; cdecl; begin Result := range.SStart; end;
+function TRange_SStop(var range: TRange): Integer; overload; cdecl; begin Result := range.SStop; end;
+function TRange_StartToStop(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.StartToStop; end;
+function TRange_StopToStart(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.StopToStart; end;
+function TRange_Start2Stop(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Start2Stop; end;
+function TRange_Stop2Start(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Stop2Start; end;
+function TRange_StartAtStop(var range: TRange): TIntegerArray; overload; cdecl; begin Result := range.StartAtStop; end;
+function TRange_StopAtStart(var range: TRange): TIntegerArray; overload; cdecl; begin Result := range.StopAtStart; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

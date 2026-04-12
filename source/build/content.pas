@@ -1490,12 +1490,17 @@ begin
   AddFunction(@TRange_Summary, 'function TRange_Summary(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Summed, 'function TRange_Summed(const range: TRange): Int64; overload;');
   AddFunction(@TRange_Summative, 'function TRange_Summative(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Summing, 'function TRange_Summing(const range: TRange): Int64; overload;');
+  AddFunction(@TRange_Resultant, 'function TRange_Resultant(const range: TRange): Int64; overload;');
   AddFunction(@TRange_AsNormal, 'function TRange_AsNormal(const range: TRange): TRange; overload;');
   AddFunction(@TRange_ToNormal, 'function TRange_ToNormal(const range: TRange): TRange; overload;');
   AddFunction(@TRange_ToNormalized, 'function TRange_ToNormalized(const range: TRange): TRange; overload;');
   AddFunction(@TRange_SortedTo, 'function TRange_SortedTo(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TRange_Collection, 'function TRange_Collection(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Raw, 'function TRange_Raw(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Produce, 'function TRange_Produce(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Integers, 'function TRange_Integers(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Realize, 'function TRange_Realize(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Positional, 'function TRange_Positional(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Identifiers, 'function TRange_Identifiers(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Entries, 'function TRange_Entries(const range: TRange): TIntegerArray; overload;');
@@ -1521,6 +1526,14 @@ begin
   AddFunction(@TRange_Trailing, 'function TRange_Trailing(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Prefix, 'function TRange_Prefix(const range: TRange; const N: Integer = 1; const rClamp: Boolean = False): TIntegerArray; overload;');
   AddFunction(@TRange_Suffix, 'function TRange_Suffix(const range: TRange; const N: Integer = 1; const rClamp: Boolean = False): TIntegerArray; overload;');
+  AddFunction(@TRange_SStart, 'function TRange_SStart(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_SStop, 'function TRange_SStop(var range: TRange): Integer; overload;');
+  AddFunction(@TRange_StartToStop, 'function TRange_StartToStop(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_StopToStart, 'function TRange_StopToStart(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Start2Stop, 'function TRange_Start2Stop(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Stop2Start, 'function TRange_Stop2Start(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_StartAtStop, 'function TRange_StartAtStop(var range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_StopAtStart, 'function TRange_StopAtStart(var range: TRange): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
