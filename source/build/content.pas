@@ -1543,6 +1543,14 @@ begin
   AddFunction(@TRange_StopStep, 'function TRange_StopStep(var range: TRange): Integer; overload;');
   AddFunction(@TRange_Startwarded, 'function TRange_Startwarded(var range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Stopwarded, 'function TRange_Stopwarded(var range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Startbent, 'function TRange_Startbent(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Startminded, 'function TRange_Startminded(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Startwise, 'function TRange_Startwise(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Stopbent, 'function TRange_Stopbent(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Stopminded, 'function TRange_Stopminded(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Stopwise, 'function TRange_Stopwise(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Incremental, 'function TRange_Incremental(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Decremental, 'function TRange_Decremental(const range: TRange): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

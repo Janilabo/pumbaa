@@ -1499,6 +1499,14 @@ function TRange_Startwarded(var range: TRange): TIntegerArray; overload; cdecl; 
 function TRange_Stopwarded(var range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Stopwarded; end;
 function TRange_StartStep(var range: TRange): Integer; overload; cdecl; begin Result := range.StartStep; end;
 function TRange_StopStep(var range: TRange): Integer; overload; cdecl; begin Result := range.StopStep; end;
+function TRange_Startbent(const range: TRange): Boolean; overload; cdecl; begin Result := range.Startbent; end;
+function TRange_Startminded(const range: TRange): Boolean; overload; cdecl; begin Result := range.Startminded; end;
+function TRange_Startwise(const range: TRange): Boolean; overload; cdecl; begin Result := range.Startwise; end;
+function TRange_Stopbent(const range: TRange): Boolean; overload; cdecl; begin Result := range.Stopbent; end;
+function TRange_Stopminded(const range: TRange): Boolean; overload; cdecl; begin Result := range.Stopminded; end;
+function TRange_Stopwise(const range: TRange): Boolean; overload; cdecl; begin Result := range.Stopwise; end;
+function TRange_Incremental(const range: TRange): Boolean; overload; cdecl; begin Result := range.Incremental; end;
+function TRange_Decremental(const range: TRange): Boolean; overload; cdecl; begin Result := range.Decremental; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
