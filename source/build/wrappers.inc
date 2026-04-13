@@ -1453,6 +1453,7 @@ function TRange_ToNormal(const range: TRange): TRange; overload; cdecl; begin Re
 function TRange_ToNormalized(const range: TRange): TRange; overload; cdecl; begin Result := range.ToNormalized; end;
 function TRange_SortedTo(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.SortedTo(oAscending); end;
 function TRange_Collection(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Collection; end;
+function TRange_Body(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Body; end;
 function TRange_Raw(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Raw; end;
 function TRange_Produce(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Produce; end;
 function TRange_Integers(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Integers; end;
@@ -1490,6 +1491,14 @@ function TRange_Start2Stop(const range: TRange): TIntegerArray; overload; cdecl;
 function TRange_Stop2Start(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Stop2Start; end;
 function TRange_StartAtStop(var range: TRange): TIntegerArray; overload; cdecl; begin Result := range.StartAtStop; end;
 function TRange_StopAtStart(var range: TRange): TIntegerArray; overload; cdecl; begin Result := range.StopAtStart; end;
+function TRange_ShiftStart(const range: TRange; const N: Integer = 1): Integer; overload; cdecl; begin Result := range.ShiftStart(N); end;
+function TRange_ShiftStop(const range: TRange; const N: Integer = 1): Integer; overload; cdecl; begin Result := range.ShiftStop(N); end;
+function TRange_Startward(var range: TRange): Integer; overload; cdecl; begin Result := range.Startward; end;
+function TRange_Stopward(var range: TRange): Integer; overload; cdecl; begin Result := range.Stopward; end;
+function TRange_Startwarded(var range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Startwarded; end;
+function TRange_Stopwarded(var range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Stopwarded; end;
+function TRange_StartStep(var range: TRange): Integer; overload; cdecl; begin Result := range.StartStep; end;
+function TRange_StopStep(var range: TRange): Integer; overload; cdecl; begin Result := range.StopStep; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
@@ -1637,6 +1646,7 @@ function TIntegerArray_MinVal(const arr: TIntegerArray): Integer; overload; cdec
 function TIntegerArray_Sorting(const arr: TIntegerArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Sorting(oAscending); end;
 function TIntegerArray_Orderliness(const arr: TIntegerArray; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := arr.Orderliness(oAscending); end;
 function TIntegerArray_Complement(const arr: TIntegerArray; const sSorted: Boolean = False): TIntegerArray; overload; cdecl; begin Result := arr.Complement(sSorted); end;
+function TIntegerArray_Mount(const arr: TIntegerArray; const other: TIntegerArray): TIntegerArray; overload; cdecl; begin Result := arr.Mount(other); end;
 function TIntegerArray_BSearch(const arr: TIntegerArray; const value: Integer; const oAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BSearch(value, oAscending); end;
 function TIntegerArray_BSort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BSort(aAscending); end;
 function TIntegerArray_BinarySort(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; cdecl; begin Result := arr.BinarySort(aAscending); end;
@@ -4691,6 +4701,15 @@ function TArray_Patch5(var arr: TBooleanArray; const index: Integer; const items
 function TArray_Patch6(var arr: TPointArray; const index: Integer; const items: TPointArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
 function TArray_Patch7(var arr: TBoxArray; const index: Integer; const items: TBoxArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
 function TArray_Patch8(var arr: TRangeArray; const index: Integer; const items: TRangeArray): Integer; overload; cdecl; begin Result := arr.Patch(index, items); end;
+
+function TArray_Piece1(const arr: TIntegerArray; const sIndexes: TRange): TIntegerArray; overload; cdecl; begin Result := arr.Piece(sIndexes); end;
+function TArray_Piece2(const arr: TDoubleArray; const sIndexes: TRange): TDoubleArray; overload; cdecl; begin Result := arr.Piece(sIndexes); end;
+function TArray_Piece3(const arr: TStringArray; const sIndexes: TRange): TStringArray; overload; cdecl; begin Result := arr.Piece(sIndexes); end;
+function TArray_Piece4(const arr: TCharArray; const sIndexes: TRange): TCharArray; overload; cdecl; begin Result := arr.Piece(sIndexes); end;
+function TArray_Piece5(const arr: TBooleanArray; const sIndexes: TRange): TBooleanArray; overload; cdecl; begin Result := arr.Piece(sIndexes); end;
+function TArray_Piece6(const arr: TPointArray; const sIndexes: TRange): TPointArray; overload; cdecl; begin Result := arr.Piece(sIndexes); end;
+function TArray_Piece7(const arr: TBoxArray; const sIndexes: TRange): TBoxArray; overload; cdecl; begin Result := arr.Piece(sIndexes); end;
+function TArray_Piece8(const arr: TRangeArray; const sIndexes: TRange): TRangeArray; overload; cdecl; begin Result := arr.Piece(sIndexes); end;
 
 function TArray_Pick1(const arr: TIntegerArray; const items: TIntegerArray; const index: Integer = 0): TIntegerArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
 function TArray_Pick2(const arr: TDoubleArray; const items: TDoubleArray; const index: Integer = 0): TDoubleArray; overload; cdecl; begin Result := arr.Pick(items, index); end;
