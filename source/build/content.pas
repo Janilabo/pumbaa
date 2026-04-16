@@ -1551,6 +1551,13 @@ begin
   AddFunction(@TRange_Stopwise, 'function TRange_Stopwise(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_Incremental, 'function TRange_Incremental(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_Decremental, 'function TRange_Decremental(const range: TRange): Boolean; overload;');
+  AddFunction(@TRange_Arrayed, 'function TRange_Arrayed(const range: TRange; const rAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TRange_FromTo, 'function TRange_FromTo(const range: TRange; const rAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TRange_Publish, 'function TRange_Publish(const range: TRange; const rAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TRange_Harvest, 'function TRange_Harvest(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Entirely, 'function TRange_Entirely(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Entirety, 'function TRange_Entirety(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_ToIntegers, 'function TRange_ToIntegers(const range: TRange): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
