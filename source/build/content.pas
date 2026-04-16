@@ -1554,10 +1554,13 @@ begin
   AddFunction(@TRange_Arrayed, 'function TRange_Arrayed(const range: TRange; const rAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TRange_FromTo, 'function TRange_FromTo(const range: TRange; const rAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TRange_Publish, 'function TRange_Publish(const range: TRange; const rAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@TRange_Expose, 'function TRange_Expose(const range: TRange; const rAscending: Boolean = True): TIntegerArray; overload;');
   AddFunction(@TRange_Harvest, 'function TRange_Harvest(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Entirely, 'function TRange_Entirely(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Entirety, 'function TRange_Entirety(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_ToIntegers, 'function TRange_ToIntegers(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Succinct, 'function TRange_Succinct(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Dequeued, 'function TRange_Dequeued(const range: TRange): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
