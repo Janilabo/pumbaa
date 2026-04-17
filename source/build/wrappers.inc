@@ -1523,6 +1523,14 @@ function TRange_Composition(const range: TRange): TIntegerArray; overload; cdecl
 function TRange_Formation(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Formation; end;
 function TRange_Flattened(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Flattened; end;
 function TRange_Atomized(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Atomized; end;
+function TRange_Pulled(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Pulled; end;
+function TRange_Explosion(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Explosion; end;
+function TRange_Render(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Render; end;
+function TRange_Bundle(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Bundle; end;
+function TRange_Enumerating(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Enumerating; end;
+function TRange_Depth(const range: TRange): Integer; overload; cdecl; begin Result := range.Depth; end;
+function TRange_Counting(const range: TRange): Integer; overload; cdecl; begin Result := range.Counting; end;
+function TRange_Measuring(const range: TRange): Integer; overload; cdecl; begin Result := range.Measuring; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
