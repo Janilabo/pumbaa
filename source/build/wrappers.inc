@@ -1517,6 +1517,12 @@ function TRange_Entirely(const range: TRange): TIntegerArray; overload; cdecl; b
 function TRange_ToIntegers(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToIntegers; end;
 function TRange_Succinct(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Succinct; end;
 function TRange_Dequeued(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Dequeued; end;
+function TRange_Lay(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Lay; end;
+function TRange_Layout(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Layout; end;
+function TRange_Composition(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Composition; end;
+function TRange_Formation(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Formation; end;
+function TRange_Flattened(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Flattened; end;
+function TRange_Atomized(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Atomized; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

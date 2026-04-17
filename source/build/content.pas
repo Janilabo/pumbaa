@@ -1561,6 +1561,12 @@ begin
   AddFunction(@TRange_ToIntegers, 'function TRange_ToIntegers(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Succinct, 'function TRange_Succinct(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Dequeued, 'function TRange_Dequeued(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Lay, 'function TRange_Lay(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Layout, 'function TRange_Layout(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Composition, 'function TRange_Composition(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Formation, 'function TRange_Formation(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Flattened, 'function TRange_Flattened(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Atomized, 'function TRange_Atomized(const range: TRange): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
