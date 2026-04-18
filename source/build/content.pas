@@ -1584,6 +1584,12 @@ begin
   AddFunction(@TRange_ToIndices, 'function TRange_ToIndices(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_AsIndices, 'function TRange_AsIndices(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_GetIndices, 'function TRange_GetIndices(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Produced, 'function TRange_Produced(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Unpacked, 'function TRange_Unpacked(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Open, 'function TRange_Open(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_YoYo, 'function TRange_YoYo(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Every, 'function TRange_Every(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Sampled, 'function TRange_Sampled(const range: TRange; const totalElements: Integer = 1): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

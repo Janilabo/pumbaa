@@ -1540,6 +1540,12 @@ function TRange_Serialization(const range: TRange): TIntegerArray; overload; cde
 function TRange_ToIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToIndices; end;
 function TRange_AsIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsIndices; end;
 function TRange_GetIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.GetIndices; end;
+function TRange_Produced(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Produced; end;
+function TRange_Unpacked(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unpacked; end;
+function TRange_Open(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Open; end;
+function TRange_YoYo(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.YoYo; end;
+function TRange_Every(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Every(N); end;
+function TRange_Sampled(const range: TRange; const totalElements: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Sampled(totalElements); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
