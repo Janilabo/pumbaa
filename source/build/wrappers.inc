@@ -1537,6 +1537,9 @@ function TRange_Orient(const range: TRange; const oAscending: Boolean = True): T
 function TRange_Oriented(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Oriented(oAscending); end;
 function TRange_Slots(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Slots; end;
 function TRange_Serialization(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Serialization; end;
+function TRange_ToIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToIndices; end;
+function TRange_AsIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsIndices; end;
+function TRange_GetIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.GetIndices; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

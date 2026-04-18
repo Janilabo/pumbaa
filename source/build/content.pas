@@ -1581,6 +1581,9 @@ begin
   AddFunction(@TRange_Oriented, 'function TRange_Oriented(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TRange_Slots, 'function TRange_Slots(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Serialization, 'function TRange_Serialization(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_ToIndices, 'function TRange_ToIndices(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_AsIndices, 'function TRange_AsIndices(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_GetIndices, 'function TRange_GetIndices(const range: TRange): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
