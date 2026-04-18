@@ -874,6 +874,7 @@ begin
   AddFunction(@TRange_Sized, 'function TRange_Sized(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Size1, 'function TRange_Size(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Size2, 'function TRange_Size(const range: TRange; var minVal, maxVal: Integer): Integer; overload;');
+  AddFunction(@TRange_Size3, 'function TRange_Size(const range: TRange; var vSize: Integer): Integer; overload;');
   AddFunction(@TRange_Capacity, 'function TRange_Capacity(const range: TRange): Integer;');
   AddFunction(@TRange_Cardinality, 'function TRange_Cardinality(const range: TRange): Integer;');
   AddFunction(@TRange_Width, 'function TRange_Width(const range: TRange): Integer;');
@@ -1590,6 +1591,9 @@ begin
   AddFunction(@TRange_YoYo, 'function TRange_YoYo(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Every, 'function TRange_Every(const range: TRange; const N: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Sampled, 'function TRange_Sampled(const range: TRange; const totalElements: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Quantized, 'function TRange_Quantized(const range: TRange; const sStep: Integer = 1): TIntegerArray; overload;');
+  AddFunction(@TRange_Randomized, 'function TRange_Randomized(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_View, 'function TRange_View(const range: TRange; const vSize: Integer = 2147483647; const sIndex: Integer = 0): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

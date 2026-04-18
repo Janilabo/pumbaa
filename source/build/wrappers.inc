@@ -824,6 +824,7 @@ function TRange_GetAmount(const range: TRange): Int64; overload; cdecl; begin Re
 function TRange_Sized(const range: TRange): Integer; overload; cdecl; begin Result := range.Sized; end;
 function TRange_Size1(const range: TRange): Integer; overload; cdecl; begin Result := range.Size; end;
 function TRange_Size2(const range: TRange; var minVal, maxVal: Integer): Integer; overload; cdecl; begin Result := range.Size(minVal, maxVal); end;
+function TRange_Size3(const range: TRange; var vSize: Integer): Integer; overload; cdecl; begin Result := range.Size(vSize); end;
 function TRange_Capacity(const range: TRange): Integer; cdecl; begin Result := range.Capacity; end;
 function TRange_Cardinality(const range: TRange): Integer; cdecl; begin Result := range.Cardinality; end;
 function TRange_Len(const range: TRange): Integer; cdecl; begin Result := range.Len; end;
@@ -1546,6 +1547,9 @@ function TRange_Open(const range: TRange): TIntegerArray; overload; cdecl; begin
 function TRange_YoYo(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.YoYo; end;
 function TRange_Every(const range: TRange; const N: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Every(N); end;
 function TRange_Sampled(const range: TRange; const totalElements: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Sampled(totalElements); end;
+function TRange_Quantized(const range: TRange; const sStep: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Quantized(sStep); end;
+function TRange_Randomized(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Randomized; end;
+function TRange_View(const range: TRange; const vSize: Integer = 2147483647; const sIndex: Integer = 0): TIntegerArray; overload; cdecl; begin Result := range.View(vSize, sIndex); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
