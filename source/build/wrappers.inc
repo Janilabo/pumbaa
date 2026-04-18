@@ -1531,6 +1531,12 @@ function TRange_Enumerating(const range: TRange): TIntegerArray; overload; cdecl
 function TRange_Depth(const range: TRange): Integer; overload; cdecl; begin Result := range.Depth; end;
 function TRange_Counting(const range: TRange): Integer; overload; cdecl; begin Result := range.Counting; end;
 function TRange_Measuring(const range: TRange): Integer; overload; cdecl; begin Result := range.Measuring; end;
+function TRange_Align(var range: TRange; const oAscending: Boolean = True): Boolean; overload; cdecl; begin Result := range.Align(oAscending); end;
+function TRange_Fixed(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Fixed(oAscending); end;
+function TRange_Orient(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Orient(oAscending); end;
+function TRange_Oriented(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Oriented(oAscending); end;
+function TRange_Slots(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Slots; end;
+function TRange_Serialization(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Serialization; end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

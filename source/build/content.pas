@@ -1575,6 +1575,12 @@ begin
   AddFunction(@TRange_Depth, 'function TRange_Depth(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Counting, 'function TRange_Counting(const range: TRange): Integer; overload;');
   AddFunction(@TRange_Measuring, 'function TRange_Measuring(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Align, 'function TRange_Align(var range: TRange; const oAscending: Boolean = True): Boolean; overload;');
+  AddFunction(@TRange_Fixed, 'function TRange_Fixed(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Orient, 'function TRange_Orient(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Oriented, 'function TRange_Oriented(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRange_Slots, 'function TRange_Slots(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Serialization, 'function TRange_Serialization(const range: TRange): TIntegerArray; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
