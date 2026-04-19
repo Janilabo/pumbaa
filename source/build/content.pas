@@ -1581,10 +1581,12 @@ begin
   AddFunction(@TRange_Orient, 'function TRange_Orient(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TRange_Oriented, 'function TRange_Oriented(const range: TRange; const oAscending: Boolean = True): TRange; overload;');
   AddFunction(@TRange_Slots, 'function TRange_Slots(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Slotted, 'function TRange_Slotted(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Serialization, 'function TRange_Serialization(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_ToIndices, 'function TRange_ToIndices(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_AsIndices, 'function TRange_AsIndices(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_GetIndices, 'function TRange_GetIndices(const range: TRange): TIntegerArray; overload;');
+  AddFunction(@TRange_Positionally, 'function TRange_Positionally(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Produced, 'function TRange_Produced(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Unpacked, 'function TRange_Unpacked(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Open, 'function TRange_Open(const range: TRange): TIntegerArray; overload;');
@@ -1594,6 +1596,14 @@ begin
   AddFunction(@TRange_Quantized, 'function TRange_Quantized(const range: TRange; const sStep: Integer = 1): TIntegerArray; overload;');
   AddFunction(@TRange_Randomized, 'function TRange_Randomized(const range: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_View, 'function TRange_View(const range: TRange; const vSize: Integer = 2147483647; const sIndex: Integer = 0): TIntegerArray; overload;');
+  AddFunction(@TRange_Node, 'function TRange_Node(const range: TRange; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TRange_Retrieve, 'function TRange_Retrieve(const range: TRange; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TRange_Evaluate, 'function TRange_Evaluate(const range: TRange; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TRange_Derive, 'function TRange_Derive(const range: TRange; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TRange_Yield, 'function TRange_Yield(const range: TRange; const index: Integer = 0): Integer; overload;');
+  AddFunction(@TRange_Superset, 'function TRange_Superset(const range: TRange; const r: TRange): Boolean; overload;');
+  AddFunction(@TRange_Wraps, 'function TRange_Wraps(const range: TRange; const r: TRange): Boolean; overload;');
+  AddFunction(@TRange_Wrapping, 'function TRange_Wrapping(const range: TRange; const r: TRange): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');

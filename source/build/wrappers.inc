@@ -1537,10 +1537,12 @@ function TRange_Fixed(const range: TRange; const oAscending: Boolean = True): TR
 function TRange_Orient(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Orient(oAscending); end;
 function TRange_Oriented(const range: TRange; const oAscending: Boolean = True): TRange; overload; cdecl; begin Result := range.Oriented(oAscending); end;
 function TRange_Slots(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Slots; end;
+function TRange_Slotted(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Slotted; end;
 function TRange_Serialization(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Serialization; end;
 function TRange_ToIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.ToIndices; end;
 function TRange_AsIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.AsIndices; end;
 function TRange_GetIndices(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.GetIndices; end;
+function TRange_Positionally(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Positionally; end;
 function TRange_Produced(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Produced; end;
 function TRange_Unpacked(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Unpacked; end;
 function TRange_Open(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Open; end;
@@ -1550,6 +1552,14 @@ function TRange_Sampled(const range: TRange; const totalElements: Integer = 1): 
 function TRange_Quantized(const range: TRange; const sStep: Integer = 1): TIntegerArray; overload; cdecl; begin Result := range.Quantized(sStep); end;
 function TRange_Randomized(const range: TRange): TIntegerArray; overload; cdecl; begin Result := range.Randomized; end;
 function TRange_View(const range: TRange; const vSize: Integer = 2147483647; const sIndex: Integer = 0): TIntegerArray; overload; cdecl; begin Result := range.View(vSize, sIndex); end;
+function TRange_Node(const range: TRange; const index: Integer = 0): Integer; overload; cdecl; begin Result := range.Node(index); end;
+function TRange_Retrieve(const range: TRange; const index: Integer = 0): Integer; overload; cdecl; begin Result := range.Retrieve(index); end;
+function TRange_Evaluate(const range: TRange; const index: Integer = 0): Integer; overload; cdecl; begin Result := range.Evaluate(index); end;
+function TRange_Derive(const range: TRange; const index: Integer = 0): Integer; overload; cdecl; begin Result := range.Derive(index); end;
+function TRange_Yield(const range: TRange; const index: Integer = 0): Integer; overload; cdecl; begin Result := range.Yield(index); end;
+function TRange_Superset(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Superset(r); end;
+function TRange_Wraps(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Wraps(r); end;
+function TRange_Wrapping(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Wrapping(r); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
