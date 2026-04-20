@@ -1560,6 +1560,11 @@ function TRange_Yield(const range: TRange; const index: Integer = 0): Integer; o
 function TRange_Superset(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Superset(r); end;
 function TRange_Wraps(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Wraps(r); end;
 function TRange_Wrapping(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Wrapping(r); end;
+function TRange_Contiguous(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Contiguous(r); end;
+function TRange_Follows(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Follows(r); end;
+function TRange_Precedes(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Precedes(r); end;
+function TRange_IsNeighbor(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.IsNeighbor(r); end;
+function TRange_Neighboring(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Neighboring(r); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;

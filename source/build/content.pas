@@ -1604,6 +1604,11 @@ begin
   AddFunction(@TRange_Superset, 'function TRange_Superset(const range: TRange; const r: TRange): Boolean; overload;');
   AddFunction(@TRange_Wraps, 'function TRange_Wraps(const range: TRange; const r: TRange): Boolean; overload;');
   AddFunction(@TRange_Wrapping, 'function TRange_Wrapping(const range: TRange; const r: TRange): Boolean; overload;');
+  AddFunction(@TRange_Contiguous, 'function TRange_Contiguous(const range: TRange; const r: TRange): Boolean; overload;');
+  AddFunction(@TRange_Follows, 'function TRange_Follows(const range: TRange; const r: TRange): Boolean; overload;');
+  AddFunction(@TRange_Precedes, 'function TRange_Precedes(const range: TRange; const r: TRange): Boolean; overload;');
+  AddFunction(@TRange_IsNeighbor, 'function TRange_IsNeighbor(const range: TRange; const r: TRange): Boolean; overload;');
+  AddFunction(@TRange_Neighboring, 'function TRange_Neighboring(const range: TRange; const r: TRange): Boolean; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
