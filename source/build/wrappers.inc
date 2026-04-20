@@ -1568,6 +1568,8 @@ function TRange_Neighboring(const range: TRange; const r: TRange): Boolean; over
 function TRange_Neighbors(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Neighbors(r); end;
 function TRange_Separaty(const range: TRange; const r: TRange): Integer; overload; cdecl; begin Result := range.Separaty(r); end;
 function TRange_Gapless(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Gapless(r); end;
+function TRange_Jointed(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Jointed(r); end;
+function TRange_Linkable(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.Linkable(target); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
@@ -2412,6 +2414,10 @@ function TRangeArray_Gridded(const arr: TRangeArray): TRangeArray; overload; cde
 function TRangeArray_Clean(var arr: TRangeArray; const strictly: Boolean = True): Integer; overload; cdecl; begin Result := arr.Clean(strictly); end;
 function TRangeArray_Containing(const arr: TRangeArray; const R: TRange; const strictly: Boolean = False): Boolean; overload; cdecl; begin Result := arr.Containing(R, strictly); end;
 function TRangeArray_Boundaries(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Boundaries; end;
+function TRangeArray_Deconstruct(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Deconstruct; end;
+function TRangeArray_Disassemble(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Disassemble; end;
+function TRangeArray_Gapless(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Gapless; end;
+function TRangeArray_Solid(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Solid; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
@@ -6378,6 +6384,12 @@ function TArray_IntersectionCount2(const arr: TDoubleArray; const items: TDouble
 function TArray_IntersectionCount3(const arr: TStringArray; const items: TStringArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.IntersectionCount(items, iAscending); end;
 function TArray_IntersectionCount4(const arr: TCharArray; const items: TCharArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.IntersectionCount(items, iAscending); end;
 function TArray_IntersectionCount5(const arr: TPointArray; const items: TPointArray; const iAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.IntersectionCount(items, iAscending); end;
+
+function TArray_Cleaned1(const arr: TIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload; cdecl; begin Result := arr.Cleaned(oAscending); end;
+function TArray_Cleaned2(const arr: TDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload; cdecl; begin Result := arr.Cleaned(oAscending); end;
+function TArray_Cleaned3(const arr: TStringArray; const oAscending: Boolean = True): TStringArray; overload; cdecl; begin Result := arr.Cleaned(oAscending); end;
+function TArray_Cleaned4(const arr: TCharArray; const oAscending: Boolean = True): TCharArray; overload; cdecl; begin Result := arr.Cleaned(oAscending); end;
+function TArray_Cleaned5(const arr: TPointArray; const oAscending: Boolean = True): TPointArray; overload; cdecl; begin Result := arr.Cleaned(oAscending); end;
 
 function TArray_BinaryInsertingSort1(var arr: TIntegerArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertingSort(aAscending); end;
 function TArray_BinaryInsertingSort2(var arr: TDoubleArray; const aAscending: Boolean = True): Integer; overload; cdecl; begin Result := arr.BinaryInsertingSort(aAscending); end;
