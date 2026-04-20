@@ -1565,6 +1565,9 @@ function TRange_Follows(const range: TRange; const r: TRange): Boolean; overload
 function TRange_Precedes(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Precedes(r); end;
 function TRange_IsNeighbor(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.IsNeighbor(r); end;
 function TRange_Neighboring(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Neighboring(r); end;
+function TRange_Neighbors(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Neighbors(r); end;
+function TRange_Separaty(const range: TRange; const r: TRange): Integer; overload; cdecl; begin Result := range.Separaty(r); end;
+function TRange_Gapless(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Gapless(r); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
