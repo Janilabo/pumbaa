@@ -2462,6 +2462,11 @@ begin
   AddFunction(@TRangeArray_Disassemble, 'function TRangeArray_Disassemble(const arr: TRangeArray): TIntegerArray; overload;');
   AddFunction(@TRangeArray_Gapless, 'function TRangeArray_Gapless(const arr: TRangeArray): Boolean; overload;');
   AddFunction(@TRangeArray_Solid, 'function TRangeArray_Solid(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Continuous, 'function TRangeArray_Continuous(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Contiguous, 'function TRangeArray_Contiguous(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Cohesive, 'function TRangeArray_Cohesive(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Integral, 'function TRangeArray_Integral(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Monolithic, 'function TRangeArray_Monolithic(const arr: TRangeArray): Boolean; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');

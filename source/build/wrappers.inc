@@ -2418,6 +2418,11 @@ function TRangeArray_Deconstruct(const arr: TRangeArray): TIntegerArray; overloa
 function TRangeArray_Disassemble(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Disassemble; end;
 function TRangeArray_Gapless(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Gapless; end;
 function TRangeArray_Solid(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Solid; end;
+function TRangeArray_Continuous(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Continuous; end;
+function TRangeArray_Contiguous(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Contiguous; end;
+function TRangeArray_Cohesive(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Cohesive; end;
+function TRangeArray_Integral(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Integral; end;
+function TRangeArray_Monolithic(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Monolithic; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
