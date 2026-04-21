@@ -2416,6 +2416,7 @@ function TRangeArray_Containing(const arr: TRangeArray; const R: TRange; const s
 function TRangeArray_Boundaries(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Boundaries; end;
 function TRangeArray_Deconstruct(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Deconstruct; end;
 function TRangeArray_Disassemble(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Disassemble; end;
+function TRangeArray_Spit(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Spit; end;
 function TRangeArray_Gapless(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Gapless; end;
 function TRangeArray_Solid(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Solid; end;
 function TRangeArray_Continuous(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Continuous; end;
@@ -2423,6 +2424,11 @@ function TRangeArray_Contiguous(const arr: TRangeArray): Boolean; overload; cdec
 function TRangeArray_Cohesive(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Cohesive; end;
 function TRangeArray_Integral(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Integral; end;
 function TRangeArray_Monolithic(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Monolithic; end;
+function TRangeArray_Extent(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Extent; end;
+function TRangeArray_Spannage(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.Spannage; end;
+function TRangeArray_MaxMin(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.MaxMin; end;
+function TRangeArray_MinMax(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.MinMax; end;
+function TRangeArray_Bounding(const arr: TRangeArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Bounding(rAscending); end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
