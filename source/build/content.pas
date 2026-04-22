@@ -2483,6 +2483,9 @@ begin
   AddFunction(@TRangeArray_Materialize, 'function TRangeArray_Materialize(const arr: TRangeArray): TIntegerArray; overload;');
   AddFunction(@TRangeArray_Materialized, 'function TRangeArray_Materialized(const arr: TRangeArray): TIntegerArray; overload;');
   AddFunction(@TRangeArray_Material, 'function TRangeArray_Material(const arr: TRangeArray; const chunkSize: Integer = 16): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Seamless, 'function TRangeArray_Seamless(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Unbroken, 'function TRangeArray_Unbroken(const arr: TRangeArray): Boolean; overload;');
+  AddFunction(@TRangeArray_Simplified, 'function TRangeArray_Simplified(const arr: TRangeArray): TRangeArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');

@@ -2439,6 +2439,9 @@ function TRangeArray_Digitted2(const arr: TRangeArray): TIntegerArray; overload;
 function TRangeArray_Materialize(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Materialize; end;
 function TRangeArray_Materialized(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Materialized; end;
 function TRangeArray_Material(const arr: TRangeArray; const chunkSize: Integer = 16): TIntegerArray; overload; cdecl; begin Result := arr.Material(chunkSize); end;
+function TRangeArray_Seamless(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Seamless; end;
+function TRangeArray_Unbroken(const arr: TRangeArray): Boolean; overload; cdecl; begin Result := arr.Unbroken; end;
+function TRangeArray_Simplified(const arr: TRangeArray): TRangeArray; overload; cdecl; begin Result := arr.Simplified; end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
