@@ -1358,7 +1358,7 @@ begin
   AddFunction(@TRange_PopulationCount, 'function TRange_PopulationCount(const range: TRange): Integer; overload;');
   AddFunction(@TRange_EvenSummed, 'function TRange_EvenSummed(const range: TRange): Boolean; overload;');
   AddFunction(@TRange_OddSummed, 'function TRange_OddSummed(const range: TRange): Boolean; overload;');
-  AddFunction(@TRange_Within, 'function TRange_Within(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload;');
+  AddFunction(@TRange_IsWithin, 'function TRange_IsWithin(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload;');
   AddFunction(@TRange_Covering, 'function TRange_Covering(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_Have, 'function TRange_Have(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_GetChunk, 'function TRange_GetChunk(const range: TRange; const chunkIndex: Integer; const totalChunks: Integer = 2147483647): TRange; overload;');
@@ -1449,7 +1449,7 @@ begin
   AddFunction(@TRange_Allows, 'function TRange_Allows(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_WithinBounds, 'function TRange_WithinBounds(const range: TRange; const val: Integer): Boolean; overload;');
   AddFunction(@TRange_IsInRange, 'function TRange_IsInRange(const range: TRange; const val: Integer): Boolean; overload;');
-  AddFunction(@TRange_Commonality, 'function TRange_Commonality(const range: TRange; const other: TRange): Integer; overload;');
+  AddFunction(@TRange_Overlapment, 'function TRange_Overlapment(const range: TRange; const other: TRange): Integer; overload;');
   AddFunction(@TRange_Shared, 'function TRange_Shared(const range: TRange; const other: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Shares, 'function TRange_Shares(const range: TRange; const other: TRange): TIntegerArray; overload;');
   AddFunction(@TRange_Sharing, 'function TRange_Sharing(const range: TRange; const other: TRange): TIntegerArray; overload;');
@@ -1614,6 +1614,8 @@ begin
   AddFunction(@TRange_Gapless, 'function TRange_Gapless(const range: TRange; const r: TRange): Boolean; overload;');
   AddFunction(@TRange_Jointed, 'function TRange_Jointed(const range: TRange; const r: TRange): Boolean; overload;');
   AddFunction(@TRange_Linkable, 'function TRange_Linkable(const range: TRange; const target: TRange): Boolean; overload;');
+  AddFunction(@TRange_Commonality, 'function TRange_Commonality(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_Relationality, 'function TRange_Relationality(const range: TRange; const target: TRange): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -2473,6 +2475,14 @@ begin
   AddFunction(@TRangeArray_MaxMin, 'function TRangeArray_MaxMin(const arr: TRangeArray): TRange; overload;');
   AddFunction(@TRangeArray_MinMax, 'function TRangeArray_MinMax(const arr: TRangeArray): TRange; overload;');
   AddFunction(@TRangeArray_Bounding, 'function TRangeArray_Bounding(const arr: TRangeArray; const rAscending: Boolean = True): TRange; overload;');
+  AddFunction(@TRangeArray_BRange, 'function TRangeArray_BRange(const arr: TRangeArray): TRange; overload;');
+  AddFunction(@TRangeArray_Digitize, 'function TRangeArray_Digitize(const arr: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Digitized, 'function TRangeArray_Digitized(const arr: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Digitted1, 'function TRangeArray_Digitted(const arr: TRangeArray; const sIDs: TRange): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Digitted2, 'function TRangeArray_Digitted(const arr: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Materialize, 'function TRangeArray_Materialize(const arr: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Materialized, 'function TRangeArray_Materialized(const arr: TRangeArray): TIntegerArray; overload;');
+  AddFunction(@TRangeArray_Material, 'function TRangeArray_Material(const arr: TRangeArray; const chunkSize: Integer = 16): TIntegerArray; overload;');
 
   AddFunction(@Var_TArray1, 'function Var_TArray(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload;');
   AddFunction(@Var_TArray2, 'function Var_TArray(const v: Double; const aSize: Integer = 1): TDoubleArray; overload;');

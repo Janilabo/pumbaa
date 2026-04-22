@@ -1312,7 +1312,7 @@ function TRange_Ordinality(const range: TRange): Integer; overload; cdecl; begin
 function TRange_PopulationCount(const range: TRange): Integer; overload; cdecl; begin Result := range.PopulationCount; end;
 function TRange_EvenSummed(const range: TRange): Boolean; overload; cdecl; begin Result := range.EvenSummed; end;
 function TRange_OddSummed(const range: TRange): Boolean; overload; cdecl; begin Result := range.OddSummed; end;
-function TRange_Within(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload; cdecl; begin Result := range.Within(val, vRadius); end;
+function TRange_IsWithin(const range: TRange; const val: Integer; const vRadius: Integer = 0): Boolean; overload; cdecl; begin Result := range.IsWithin(val, vRadius); end;
 function TRange_Covering(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Covering(val); end;
 function TRange_Have(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Have(val); end;
 function TRange_GetChunk(const range: TRange; const chunkIndex: Integer; const totalChunks: Integer = 2147483647): TRange; overload; cdecl; begin Result := range.GetChunk(chunkIndex, totalChunks); end;
@@ -1405,7 +1405,7 @@ function TRange_InInterval(const range: TRange; const val: Integer): Boolean; ov
 function TRange_Allows(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.Allows(val); end;
 function TRange_WithinBounds(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.WithinBounds(val); end;
 function TRange_IsInRange(const range: TRange; const val: Integer): Boolean; overload; cdecl; begin Result := range.IsInRange(val); end;
-function TRange_Commonality(const range: TRange; const other: TRange): Integer; overload; cdecl; begin Result := range.Commonality(other); end;
+function TRange_Overlapment(const range: TRange; const other: TRange): Integer; overload; cdecl; begin Result := range.Overlapment(other); end;
 function TRange_Shared(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Shared(other); end;
 function TRange_Shares(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Shares(other); end;
 function TRange_Sharing(const range: TRange; const other: TRange): TIntegerArray; overload; cdecl; begin Result := range.Sharing(other); end;
@@ -1570,6 +1570,8 @@ function TRange_Separaty(const range: TRange; const r: TRange): Integer; overloa
 function TRange_Gapless(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Gapless(r); end;
 function TRange_Jointed(const range: TRange; const r: TRange): Boolean; overload; cdecl; begin Result := range.Jointed(r); end;
 function TRange_Linkable(const range: TRange; const target: TRange): Boolean; overload; cdecl; begin Result := range.Linkable(target); end;
+function TRange_Commonality(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Commonality(target); end;
+function TRange_Relationality(const range: TRange; const target: TRange): Integer; overload; cdecl; begin Result := range.Relationality(target); end;
 
 function TSegment_Create1(const sA, sB: TPoint): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(sA, sB); end;
 function TSegment_Create2(const aX, aY, bX, bY: Integer): TSegment; overload; cdecl; var sg: TSegment; begin Result := sg.Create(aX, aY, bX, bY); end;
@@ -2429,6 +2431,14 @@ function TRangeArray_Spannage(const arr: TRangeArray): TRange; overload; cdecl; 
 function TRangeArray_MaxMin(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.MaxMin; end;
 function TRangeArray_MinMax(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.MinMax; end;
 function TRangeArray_Bounding(const arr: TRangeArray; const rAscending: Boolean = True): TRange; overload; cdecl; begin Result := arr.Bounding(rAscending); end;
+function TRangeArray_BRange(const arr: TRangeArray): TRange; overload; cdecl; begin Result := arr.BRange; end;
+function TRangeArray_Digitize(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Digitize; end;
+function TRangeArray_Digitized(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Digitized; end;
+function TRangeArray_Digitted1(const arr: TRangeArray; const sIDs: TRange): TIntegerArray; overload; cdecl; begin Result := arr.Digitted(sIDs); end;
+function TRangeArray_Digitted2(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Digitted; end;
+function TRangeArray_Materialize(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Materialize; end;
+function TRangeArray_Materialized(const arr: TRangeArray): TIntegerArray; overload; cdecl; begin Result := arr.Materialized; end;
+function TRangeArray_Material(const arr: TRangeArray; const chunkSize: Integer = 16): TIntegerArray; overload; cdecl; begin Result := arr.Material(chunkSize); end;
 
 function Var_TArray1(const v: Integer; const aSize: Integer = 1): TIntegerArray; overload; cdecl; begin Result := v.TArray(aSize); end;
 function Var_TArray2(const v: Double; const aSize: Integer = 1): TDoubleArray; overload; cdecl; begin Result := v.TArray(aSize); end;
