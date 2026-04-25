@@ -1318,6 +1318,7 @@ begin
   AddFunction(@TRange_Subdivide, 'function TRange_Subdivide(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Subdivided, 'function TRange_Subdivided(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Subdivision, 'function TRange_Subdivision(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
+  AddFunction(@TRange_Subdivisions, 'function TRange_Subdivisions(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Sliced, 'function TRange_Sliced(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Slices, 'function TRange_Slices(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
   AddFunction(@TRange_Splinter, 'function TRange_Splinter(const range: TRange; const partCount: Integer = 2): TRangeArray; overload;');
@@ -1616,6 +1617,35 @@ begin
   AddFunction(@TRange_Linkable, 'function TRange_Linkable(const range: TRange; const target: TRange): Boolean; overload;');
   AddFunction(@TRange_Commonality, 'function TRange_Commonality(const range: TRange; const target: TRange): Integer; overload;');
   AddFunction(@TRange_Relationality, 'function TRange_Relationality(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_Cutout, 'function TRange_Cutout(const range: TRange; const target: TRange): TRangeArray; overload;');
+  AddFunction(@TRange_SpaceAround, 'function TRange_SpaceAround(const range: TRange; const margin: Integer): TRangeArray; overload;');
+  AddFunction(@TRange_Vacuum, 'function TRange_Vacuum(const range: TRange; const target: TRange): TRange; overload;');
+  AddFunction(@TRange_Void, 'function TRange_Void(const range: TRange; const target: TRange): TRange; overload;');
+  AddFunction(@TRange_Compare1, 'function TRange_Compare(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_Compare2, 'function TRange_Compare(const range: TRange; const target: Integer): Integer; overload;');
+  AddFunction(@TRange_Compared1, 'function TRange_Compared(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_Compared2, 'function TRange_Compared(const range: TRange; const target: Integer): Integer; overload;');
+  AddFunction(@TRange_CompareTo1, 'function TRange_CompareTo(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_CompareTo2, 'function TRange_CompareTo(const range: TRange; const target: Integer): Integer; overload;');
+  AddFunction(@TRange_SideOf1, 'function TRange_SideOf(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_SideOf2, 'function TRange_SideOf(const range: TRange; const target: Integer): Integer; overload;');
+  AddFunction(@TRange_SideTo1, 'function TRange_SideTo(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_SideTo2, 'function TRange_SideTo(const range: TRange; const target: Integer): Integer; overload;');
+  AddFunction(@TRange_GapWith, 'function TRange_GapWith(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_Siding1, 'function TRange_Siding(const range: TRange; const target: TRange): Integer; overload;');
+  AddFunction(@TRange_Siding2, 'function TRange_Siding(const range: TRange; const target: Integer): Integer; overload;');
+  AddFunction(@TRange_Assign1, 'function TRange_Assign(var range: TRange; const AStart, AStop: Integer): Integer; overload;');
+  AddFunction(@TRange_Assign2, 'function TRange_Assign(var range: TRange; const ARange: TRange): Integer; overload;');
+  AddFunction(@TRange_Larger, 'function TRange_Larger(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Smaller, 'function TRange_Smaller(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_MinVal, 'function TRange_MinVal(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_MaxVal, 'function TRange_MaxVal(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Leftside, 'function TRange_Leftside(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Rightside, 'function TRange_Rightside(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Lefty, 'function TRange_Lefty(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Righty, 'function TRange_Righty(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Minimer, 'function TRange_Minimer(const range: TRange): Integer; overload;');
+  AddFunction(@TRange_Maximer, 'function TRange_Maximer(const range: TRange): Integer; overload;');
 
   AddFunction(@TSegment_Create1, 'function TSegment_Create(const sA, sB: TPoint): TSegment; overload;');
   AddFunction(@TSegment_Create2, 'function TSegment_Create(const aX, aY, bX, bY: Integer): TSegment; overload;');
@@ -1951,6 +1981,8 @@ begin
   AddFunction(@CIntegerArray_Combine, 'function CIntegerArray_Combine(const A, B: TIntegerArray): TIntegerArray; overload;');
   
   AddFunction(@C2DIntegerArray_Merge, 'function C2DIntegerArray_Merge(const arr: T2DIntegerArray): TIntegerArray; overload;');
+  AddFunction(@T2DIntegerArray_Fusage, 'function T2DIntegerArray_Fusage(const arr: T2DIntegerArray; const rAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@T2DIntegerArray_Fusaged, 'function T2DIntegerArray_Fusaged(const arr: T2DIntegerArray; const rAscending: Boolean = True): TIntegerArray; overload;');
 
   AddFunction(@TDoubleArray_Reinit, 'function TDoubleArray_Reinit(var arr: TDoubleArray): Integer;');
   AddFunction(@TDoubleArray_Attach, 'function TDoubleArray_Attach(var arr: TDoubleArray; const items: TDoubleArray): Integer; overload;');
@@ -7515,4 +7547,16 @@ begin
   AddFunction(@T2DArray_Squeezed6, 'function T2DArray_Squeezed(const arr: T2DPointArray): T2DPointArray; overload;');
   AddFunction(@T2DArray_Squeezed7, 'function T2DArray_Squeezed(const arr: T2DBoxArray): T2DBoxArray; overload;');
   AddFunction(@T2DArray_Squeezed8, 'function T2DArray_Squeezed(const arr: T2DRangeArray): T2DRangeArray; overload;');
+  
+  AddFunction(@T2DArray_Flatty1, 'function T2DArray_Flatty(const arr: T2DIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@T2DArray_Flatty2, 'function T2DArray_Flatty(const arr: T2DDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@T2DArray_Flatty3, 'function T2DArray_Flatty(const arr: T2DStringArray; const oAscending: Boolean = True): TStringArray; overload;');
+  AddFunction(@T2DArray_Flatty4, 'function T2DArray_Flatty(const arr: T2DCharArray; const oAscending: Boolean = True): TCharArray; overload;');
+  AddFunction(@T2DArray_Flatty5, 'function T2DArray_Flatty(const arr: T2DPointArray; const oAscending: Boolean = True): TPointArray; overload;');
+  
+  AddFunction(@T2DArray_Flattify1, 'function T2DArray_Flattify(const arr: T2DIntegerArray; const oAscending: Boolean = True): TIntegerArray; overload;');
+  AddFunction(@T2DArray_Flattify2, 'function T2DArray_Flattify(const arr: T2DDoubleArray; const oAscending: Boolean = True): TDoubleArray; overload;');
+  AddFunction(@T2DArray_Flattify3, 'function T2DArray_Flattify(const arr: T2DStringArray; const oAscending: Boolean = True): TStringArray; overload;');
+  AddFunction(@T2DArray_Flattify4, 'function T2DArray_Flattify(const arr: T2DCharArray; const oAscending: Boolean = True): TCharArray; overload;');
+  AddFunction(@T2DArray_Flattify5, 'function T2DArray_Flattify(const arr: T2DPointArray; const oAscending: Boolean = True): TPointArray; overload;');
 end;
